@@ -20,20 +20,20 @@ Your PC doesn't need to be on. GitHub runs it for free.
 Sign up at <https://console.anthropic.com>, add some credit, and create an API key. Keep it secret.
 
 ### 2. Put this folder on GitHub
-Create a new **public** repository called `ai-morning-brief` on <https://github.com/new> (GitHub Pages is free for public repos; the page only contains public news). Then in this folder:
+Create a new **public** repository called `dailydigest` on <https://github.com/new> (GitHub Pages is free for public repos; the page only contains public news). Then in this folder:
 
 ```bash
 git init
 git add .
 git commit -m "AI Morning Brief"
 git branch -M main
-git remote add origin https://github.com/YOUR-USERNAME/ai-morning-brief.git
+git remote add origin https://github.com/Raulnech/dailydigest.git
 git push -u origin main
 ```
 
 ### 3. Turn on GitHub Pages
 Repo → **Settings → Pages** → Source: *Deploy from a branch* → Branch: `main`, folder: `/docs` → Save.
-Your digest will live at `https://YOUR-USERNAME.github.io/ai-morning-brief/`.
+Your digest will live at `https://raulnech.github.io/dailydigest/`.
 
 ### 4. Pick a notification topic and install ntfy
 Make up a hard-to-guess topic name, e.g. `ai-brief-7f3k9q2m` (anyone who knows it can see your notifications).
@@ -48,7 +48,7 @@ Repo → **Settings → Secrets and variables → Actions**:
 |---|---|---|
 | Secrets | `ANTHROPIC_API_KEY` | your Claude API key |
 | Secrets | `NTFY_TOPIC` | your topic name |
-| Variables | `SITE_URL` | `https://YOUR-USERNAME.github.io/ai-morning-brief/` |
+| Variables | `SITE_URL` | `https://raulnech.github.io/dailydigest/` |
 
 ### 6. Test it
 Repo → **Actions → Daily digest → Run workflow**. In 2–3 minutes you should get a notification. After that it runs every morning at 05:30 UTC (06:30 UK summer time). Change the `cron` line in `.github/workflows/daily.yml` to move it.
