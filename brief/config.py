@@ -2,7 +2,7 @@
 
 # Which Claude model writes the digest. Opus 5 gives the best explanations.
 # Swap to "claude-sonnet-5" to cut the daily cost by roughly 60%.
-MODEL = "claude-opus-5"
+MODEL = "claude-sonnet-5"
 
 # Your timezone, used for the date shown on the digest.
 TIMEZONE = "Europe/London"
