@@ -1,0 +1,9 @@
+{
+  "name": "AI Morning Brief",
+  "short_name": "AI Brief",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#F3F4F7",
+  "theme_color": "#3A55C8",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}

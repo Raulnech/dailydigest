@@ -1,0 +1,22 @@
+# Secrets: never commit your API key
+.env
+.env.*
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+
+# Editors
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Note: docs/ is NOT ignored. It's the published website and must be committed.

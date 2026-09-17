@@ -1,0 +1,108 @@
+{
+  "sources": {
+    "0": {"name": "AI Weekly", "link": "https://aiweekly.co/alerts/salesforce-and-anthropic-put-37-sales-skills-into-claude"},
+    "1": {"name": "AI Agent Store", "link": "https://aiagentstore.ai/ai-agent-news/this-week"},
+    "2": {"name": "AI Weekly", "link": "https://aiweekly.co/alerts/google-ships-gemini-38-live-and-extended-thinking-tops-speech-to-speech-quality"},
+    "3": {"name": "Bloomberg", "link": "https://www.bloomberg.com/news/articles/2026-09-16/ai-debt-boom-heads-from-wall-street-to-europe-despite-tech-angst"},
+    "4": {"name": "AI Weekly", "link": "https://aiweekly.co/alerts/kalshi-pulled-ai-compute-curve-after-commerce-order-semafor"},
+    "5": {"name": "BNN Bloomberg", "link": "https://www.bnnbloomberg.ca/business/artificial-intelligence/2026/09/15/ai-finance-is-here-but-scaling-hurdles-abound-fintech-execs/"},
+    "6": {"name": "Mean CEO", "link": "https://blog.mean.ceo/ai-startup-funding-news-september-2026-2/"},
+    "7": {"name": "TechCrunch", "link": "https://techcrunch.com/2026/09/01/air-raises-50m-to-help-companies-vet-the-skills-and-add-ons-ai-agents-use/"}
+  },
+  "digest": {
+    "talking_points": [
+      "AI agents are becoming the product: Salesforce just put 37 sales tasks inside Claude, and security worries about agents are growing just as fast.",
+      "The biggest money is going into infrastructure: chips, data centres and the debt that pays for them.",
+      "Startup funding has split in two: record rounds for compute companies, and a much harder fundraise for everyone else."
+    ],
+    "industry": [
+      {
+        "headline": "Salesforce puts 37 sales workflows directly inside Claude",
+        "what_happened": "A beta plugin lets salespeople research accounts, prepare for calls and review their pipeline from inside Anthropic's Claude, using existing Salesforce permissions. Changes to the customer database still need a human to confirm them.",
+        "plain_english": "Instead of clicking through Salesforce screens, a salesperson can ask an AI to prep them for a call and it pulls the data. The AI does the work, but a person approves anything it changes.",
+        "concept_term": "Human-in-the-loop",
+        "concept_definition": "An AI system that does the work but stops for a person to approve risky actions.",
+        "why_it_matters": "Enterprise software firms are plugging into AI models rather than building their own. The platform-plus-model partnership is a strong commercial-awareness point for interviews.",
+        "source_ids": [0]
+      },
+      {
+        "headline": "Hackers used AI agents to break into 395 organisations in 48 countries",
+        "what_happened": "An attacker built exploits for two PaperCut flaws, then used AI agents to automate the intrusions, reaching at least 440 systems. In one burst, 11 organisations were compromised in 26 seconds.",
+        "plain_english": "The same AI that does helpful tasks automatically can do harmful ones automatically. One attacker can now hit hundreds of companies at once.",
+        "concept_term": "Prompt injection",
+        "concept_definition": "Hiding instructions in content an AI reads so it does something its user never asked for.",
+        "why_it_matters": "AI security is one of the fastest-growing hiring areas, and plenty of roles don't need a PhD.",
+        "source_ids": [1]
+      },
+      {
+        "headline": "Google ships Gemini 3.8 Live, a real-time voice model that can reason first",
+        "what_happened": "The model holds spoken conversations in real time and can pause to reason before answering. It scored 82.6 on Artificial Analysis' speech-to-speech index.",
+        "plain_english": "Voice assistants used to be fast but shallow. This one can talk naturally and think through harder questions, which makes AI phone agents far more realistic.",
+        "concept_term": "Benchmark",
+        "concept_definition": "A standard test used to compare models; companies still care most about performance on their own tasks.",
+        "why_it_matters": "Call centres are a huge cost for banks and insurers, so voice AI is where you'll see job changes first.",
+        "source_ids": [2]
+      }
+    ],
+    "finance": [
+      {
+        "headline": "JPMorgan and Goldman Sachs line up to lend billions to European AI",
+        "what_happened": "Big US banks are preparing to finance billions of dollars of debt for European AI projects, mostly data centres, despite investor nerves about AI spending.",
+        "plain_english": "Data centres cost billions, so companies borrow, like a mortgage on a very expensive building. Banks earn interest; the risk is AI demand not growing fast enough to repay it.",
+        "concept_term": "Debt vs equity",
+        "concept_definition": "Debt is borrowing and paying interest; equity is selling part of the company to investors.",
+        "why_it_matters": "When asked 'is AI a bubble?', mention that AI spending is increasingly debt-funded, which spreads the risk to lenders.",
+        "source_ids": [3]
+      },
+      {
+        "headline": "Kalshi pulls its GPU rental price market after a reported government request",
+        "what_happened": "Prediction market Kalshi took down a product tracking AI chip rental prices after the US Commerce Department reportedly raised national-security concerns. Commerce denies it.",
+        "plain_english": "AI computing power is becoming something people want to trade, like oil. Governments see it as strategic and are wary of live prices.",
+        "concept_term": "Compute as a commodity",
+        "concept_definition": "The idea that GPU hours will be bought, sold and hedged like electricity.",
+        "why_it_matters": "It's a niche where finance, AI and geopolitics overlap, and few people understand all three.",
+        "source_ids": [4]
+      },
+      {
+        "headline": "Banks want AI everywhere, but most of their systems aren't ready",
+        "what_happened": "Banking and tech leaders said banks want to roll AI out to millions of customers but haven't built it into most core systems yet.",
+        "plain_english": "Old bank IT makes modern AI slow to add, and regulators want banks to explain any AI decision about loans.",
+        "concept_term": "Explainability",
+        "concept_definition": "Being able to show why a model made a decision, often a legal requirement in finance.",
+        "why_it_matters": "Most finance AI jobs sit in the gap between demo and production: data engineering, model risk and compliance.",
+        "source_ids": [5]
+      }
+    ],
+    "startups": [
+      {
+        "headline": "Gimlet Labs raises $300M at a $3B valuation, six months after its Series A",
+        "what_happened": "The AI infrastructure startup's Series B was led by Andreessen Horowitz, half a year after an $80M Series A.",
+        "plain_english": "Investors bought a slice valuing the whole company at $3 billion. Raising again this fast signals very rapid growth.",
+        "concept_term": "Funding rounds",
+        "concept_definition": "Seed, Series A, B, C: each a new sale of shares, usually at a higher valuation and with more proof required.",
+        "why_it_matters": "Freshly funded startups are hiring, so they're some of the best places to apply.",
+        "source_ids": [6]
+      },
+      {
+        "headline": "AIR raises $50M to vet the add-ons AI agents use",
+        "what_happened": "The AI security startup raised across two seed rounds to monitor the plugins and skills companies let their agents install.",
+        "plain_english": "Agents gain abilities by installing add-ons, like phone apps. A dodgy one could leak data, so AIR checks them first.",
+        "concept_term": "Supply-chain security",
+        "concept_definition": "Protecting against risks in the third-party code and tools you rely on.",
+        "why_it_matters": "A new problem appeared and startups raised money to fix it within months. Spotting that pattern is commercial awareness.",
+        "source_ids": [7]
+      }
+    ],
+    "vocabulary": [
+      {"term": "Valuation", "definition": "What investors say the whole company is worth."},
+      {"term": "AI agent", "definition": "An AI that takes actions, not just answers questions."},
+      {"term": "Inference", "definition": "Running a trained model to get answers; the ongoing cost of using AI."},
+      {"term": "Hyperscaler", "definition": "The giant cloud providers: AWS, Microsoft Azure and Google Cloud."}
+    ],
+    "quiz": [
+      {"question": "A startup raises $50M at a $250M valuation. Roughly what share did investors buy?", "answer": "About 20%: $50M divided by $250M."},
+      {"question": "Why might a bank prefer an explainable credit model over a slightly more accurate black box?", "answer": "Regulators require lenders to justify decisions and show they aren't discriminatory."},
+      {"question": "Name one job area that AI agents are creating demand for.", "answer": "AI security, deploying agents inside enterprise software, or financing AI infrastructure."}
+    ]
+  }
+}
