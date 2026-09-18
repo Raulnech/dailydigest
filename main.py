@@ -48,8 +48,9 @@ def build(sample: bool) -> None:
         payload = json.loads(Path("sample_digest.json").read_text(encoding="utf-8"))
         digest, sources = payload["digest"], {int(k): v for k, v in payload["sources"].items()}
     else:
+        from brief.articles import full_text_for
         from brief.fetch import fetch_candidates
-        from brief.summarise import write_digest
+        from brief.summarise import pick_stories, write_digest
 
         history = load_history()
         seen_links = {link for day in history for link in day.get("links", [])}
@@ -60,16 +61,29 @@ def build(sample: bool) -> None:
         if len(candidates) < 5:
             raise SystemExit("Too few news items found. Are the feeds reachable?")
 
+        print(f"Asking {config.MODEL} to pick today's stories...")
+        picks = pick_stories(candidates, [h for day in history for h in day["headlines"]])
+        by_id = {c.id: c for c in candidates}
+        picked = [by_id[i] for p in picks for i in p.candidate_ids if i in by_id]
+
+        print("Reading the full articles...")
+        full_text = full_text_for(picked)
+        readable = sum(any(i in full_text for i in p.candidate_ids) for p in picks)
+        print(f"  full text for {readable} of {len(picks)} stories")
+
         print(f"Asking {config.MODEL} to write the digest...")
         result = write_digest(
-            candidates, date_label,
-            recent_headlines=[h for day in history for h in day["headlines"]],
+            picks, candidates, full_text, date_label,
             recent_concepts=[c for day in history for c in day["concepts"]],
         )
         digest = result.model_dump()
-        by_id = {c.id: c for c in candidates}
-        used_ids = {i for s in ("industry", "finance", "startups") for story in digest[s] for i in story["source_ids"]}
-        sources = {i: {"name": by_id[i].source, "link": by_id[i].link} for i in used_ids if i in by_id}
+
+        # Sources for each story, publisher links first
+        sources = {}
+        for n, pick in enumerate(picks):
+            items = sorted((by_id[i] for i in pick.candidate_ids if i in by_id),
+                           key=lambda c: "news.google.com" in c.link)
+            sources[n] = [{"name": c.source, "link": c.link} for c in items[:3]]
 
         # Remember what we covered so tomorrow doesn't repeat it.
         stories = [s for sec in ("industry", "finance", "startups") for s in digest[sec]]
@@ -77,8 +91,8 @@ def build(sample: bool) -> None:
         history.append({
             "date": date_iso,
             "headlines": [s["headline"] for s in stories],
-            "concepts": [s["concept_term"] for s in stories],
-            "links": [src["link"] for src in sources.values()],
+            "concepts": [c["term"] for s in stories for c in s["concepts"]],
+            "links": [c.link for c in picked],
         })
         DATA.mkdir(parents=True, exist_ok=True)
         (DATA / "history.json").write_text(json.dumps(history, indent=2), encoding="utf-8")

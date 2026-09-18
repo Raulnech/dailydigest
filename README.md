@@ -12,7 +12,7 @@ Your PC doesn't need to be on. GitHub runs it for free.
 ## Cost
 
 - GitHub, GitHub Pages and ntfy: free.
-- Claude API: roughly $0.25–0.50 a day with Opus 5 (about £6–12 a month). Set `MODEL = "claude-sonnet-5"` in `brief/config.py` to cut that by more than half. You can set a monthly spend limit in the Claude Console.
+- Claude API: roughly $0.20–0.40 a day with Sonnet 5 (about £5–10 a month), set by `MODEL` in `brief/config.py`. Opus 5 writes better explanations but costs about 2.5× more. You can set a monthly spend limit in the Claude Console.
 
 ## One-time setup (about 15 minutes)
 

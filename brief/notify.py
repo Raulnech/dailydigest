@@ -5,10 +5,15 @@ import urllib.request
 
 
 def send_notification(title: str, message: str, click_url: str) -> None:
-    topic = os.environ.get("NTFY_TOPIC")
+    topic = os.environ.get("NTFY_TOPIC", "").strip()
     if not topic:
-        print("  NTFY_TOPIC not set, skipping notification")
-        return
+        raise SystemExit(
+            "NTFY_TOPIC is not set. Add it under Settings > Secrets and variables > "
+            "Actions > Secrets (the name must be exactly NTFY_TOPIC)."
+        )
+    if not click_url:
+        print("  ! SITE_URL variable not set: the notification won't open the digest")
+    print(f"  sending to ntfy topic '{topic[:4]}...' ")
 
     request = urllib.request.Request(
         f"https://ntfy.sh/{topic}",

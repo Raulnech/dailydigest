@@ -15,7 +15,17 @@ SECTIONS = [
 ]
 
 
-def render_site(digest: dict, sources: dict[int, dict], date_iso: str, date_label: str) -> Path:
+def _word_count(value) -> int:
+    if isinstance(value, str):
+        return len(value.split())
+    if isinstance(value, dict):
+        return sum(_word_count(v) for v in value.values())
+    if isinstance(value, list):
+        return sum(_word_count(v) for v in value)
+    return 0
+
+
+def render_site(digest: dict, sources: dict[int, list], date_iso: str, date_label: str) -> Path:
     out = Path(config.OUTPUT_DIR)
     (out / "archive").mkdir(parents=True, exist_ok=True)
 
@@ -23,15 +33,21 @@ def render_site(digest: dict, sources: dict[int, dict], date_iso: str, date_labe
     if date_iso not in archive:
         archive.insert(0, date_iso)
 
+    stories = {s["story_number"]: s for key, _, _ in SECTIONS for s in digest[key]}
+    glossary = sorted(
+        {c["term"].lower(): {**c, "story": s["story_number"]}
+         for s in stories.values() for c in s["concepts"]}.values(),
+        key=lambda c: c["term"].lower(),
+    )
+
     env = Environment(loader=FileSystemLoader(TEMPLATES), autoescape=select_autoescape())
     template = env.get_template("digest.html")
 
-    minutes = max(4, round(len(json.dumps(digest).split()) / 220))
-
     def page(root: str) -> str:
         return template.render(
-            d=digest, sources=sources, sections=SECTIONS, date_label=date_label,
-            date_iso=date_iso, minutes=minutes, archive=archive[:30], root=root,
+            d=digest, sources=sources, sections=SECTIONS, stories=stories, glossary=glossary,
+            date_label=date_label, date_iso=date_iso, minutes=max(5, round(_word_count(digest) / 230)),
+            archive=archive[:30], root=root,
         )
 
     # Today's page lives at the site root so the link never changes...

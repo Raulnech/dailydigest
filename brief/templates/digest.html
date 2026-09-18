@@ -11,7 +11,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 :root{
   color-scheme:light dark;
@@ -19,7 +19,8 @@
   --industry:#3A55C8; --industry-soft:#E6EAFA;
   --finance:#1C7453; --finance-soft:#E1F1EA;
   --startups:#A8561A; --startups-soft:#F7EADF;
-  --explain:#F7F8FB;
+  --code-bg:#161A26; --code-ink:#E4E7F0;
+  --right:#1C7453; --right-soft:#E1F1EA; --wrong:#B3261E; --wrong-soft:#FBE7E5;
 }
 @media (prefers-color-scheme: dark){
   :root{
@@ -27,58 +28,90 @@
     --industry:#8FA3F5; --industry-soft:#20284A;
     --finance:#6CCBA3; --finance-soft:#15332A;
     --startups:#E8A06A; --startups-soft:#3A2618;
-    --explain:#1D2230;
+    --code-bg:#0B0D14; --code-ink:#E4E7F0;
+    --right:#6CCBA3; --right-soft:#15332A; --wrong:#F2A29B; --wrong-soft:#3A1B19;
   }
 }
 *{box-sizing:border-box}
 html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.6 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;padding-inline:16px;padding-block:28px 64px}
-.wrap{max-width:680px;margin:0 auto;display:grid;gap:36px}
+.wrap{max-width:700px;margin:0 auto;display:grid;gap:36px}
 a{color:inherit}
-a:focus-visible,summary:focus-visible{outline:2px solid var(--industry);outline-offset:3px;border-radius:4px}
+a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var(--industry);outline-offset:3px;border-radius:4px}
 .mono{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400}
 header{display:grid;gap:10px}
 header .date{color:var(--muted)}
 h1{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(44px,11vw,64px);line-height:1;margin:0;letter-spacing:-.01em}
 h1 em{color:var(--industry)}
-.lede{color:var(--muted);margin:0;max-width:58ch}
-nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ground);padding-block:10px;display:flex;gap:8px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
-nav a{text-decoration:none;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--paper)}
+.lede{color:var(--muted);margin:0;max-width:60ch}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ground);padding-block:10px;display:flex;gap:8px;overflow-x:auto;border-bottom:1px solid var(--line)}
+nav a{flex:none;text-decoration:none;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--paper);font-size:14px}
 nav a.industry{color:var(--industry)} nav a.finance{color:var(--finance)} nav a.startups{color:var(--startups)}
 
-.talk{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:12px}
-.talk h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:28px;margin:0;line-height:1.15}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:14px;scroll-margin-top:64px}
+.panel h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:30px;margin:0;line-height:1.15}
+.panel > .mono{color:var(--muted)}
 .talk ol{margin:0;padding-left:20px;display:grid;gap:8px}
+.toc{display:grid;gap:14px}
+.toc h3{margin:0 0 4px}
+.toc ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.toc li a{text-decoration:none}
+.toc li a:hover{text-decoration:underline}
 
-section{display:grid;gap:18px;scroll-margin-top:64px}
+section{display:grid;gap:22px;scroll-margin-top:64px}
 .sec-head{display:grid;gap:2px;border-top:3px solid var(--c);padding-top:12px}
 .sec-head h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:36px;margin:0;line-height:1.1;text-wrap:balance}
 .sec-head p{margin:0;color:var(--muted)}
 .sec-head .mono{color:var(--c)}
-#industry{--c:var(--industry);--cs:var(--industry-soft)}
-#finance{--c:var(--finance);--cs:var(--finance-soft)}
-#startups{--c:var(--startups);--cs:var(--startups-soft)}
+.industry{--c:var(--industry);--cs:var(--industry-soft)}
+.finance{--c:var(--finance);--cs:var(--finance-soft)}
+.startups{--c:var(--startups);--cs:var(--startups-soft)}
 
-article{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:14px}
-article h3{font-size:20px;line-height:1.3;margin:0;font-weight:600;text-wrap:balance}
-article p{margin:0}
-.what{color:var(--muted)}
-.plain{background:var(--explain);border-radius:10px;padding:14px 16px;display:grid;gap:6px}
-.plain .mono,.why .mono{color:var(--c)}
-.concept{display:flex;gap:4px 10px;align-items:baseline;flex-wrap:wrap;background:var(--cs);border-radius:10px;padding:12px 16px}
-.concept b{font-weight:600}
-.concept .term{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:13px;color:var(--c);white-space:nowrap}
+article{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px 20px;display:grid;gap:16px;scroll-margin-top:64px}
+article .kicker{color:var(--c)}
+article h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(26px,6vw,32px);line-height:1.15;margin:0;text-wrap:balance}
+.standfirst{margin:0;font-size:18px;line-height:1.5;color:var(--muted)}
+.body{display:grid;gap:14px;font-family:"Source Serif 4",Georgia,serif;font-size:18px;line-height:1.65;max-width:65ch}
+.body p{margin:0}
+.src{margin:0;font-size:13px;color:var(--muted)}
+.concepts{background:var(--cs);border-radius:12px;padding:16px 18px;display:grid;gap:12px}
+.concepts .mono{color:var(--c)}
+.concepts dl{margin:0;display:grid;gap:10px}
+.concepts dt{font-weight:600}
+.concepts dd{margin:2px 0 0}
 .why{display:grid;gap:4px;border-left:2px solid var(--c);padding-left:14px}
-.src{font-size:13px;color:var(--muted)}
+.why .mono{color:var(--c)}
+.why p{margin:0}
 
-.panel{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:16px;scroll-margin-top:64px}
-.panel h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:32px;margin:0}
-dl{margin:0;display:grid;gap:12px}
-dt{font-weight:600}
-dd{margin:0;color:var(--muted)}
-details{border-top:1px solid var(--line);padding-top:12px}
-summary{cursor:pointer;font-weight:500}
-details p{margin:8px 0 0;color:var(--muted)}
+pre{margin:0;background:var(--code-bg);color:var(--code-ink);border-radius:10px;padding:16px;overflow-x:auto;font:14px/1.55 "IBM Plex Mono",ui-monospace,Consolas,monospace}
+.walk{margin:0;padding-left:20px;display:grid;gap:6px}
+code{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:.9em}
+.tryit{background:var(--industry-soft);border-radius:10px;padding:12px 16px}
+.tryit p{margin:0}
+
+.q{display:grid;gap:12px;border-top:1px solid var(--line);padding-top:18px}
+.q:first-of-type{border-top:0;padding-top:0}
+.scenario{margin:0;font-family:"Source Serif 4",Georgia,serif;font-style:italic;font-size:17px}
+.q .ask{margin:0;font-weight:600}
+.opts{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.opts button{width:100%;text-align:left;font:inherit;color:var(--ink);background:var(--ground);border:1px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer;display:flex;gap:10px}
+.opts button:hover{border-color:var(--industry)}
+.opts button b{font-family:"IBM Plex Mono",ui-monospace,monospace;font-weight:500}
+.opts button.right{background:var(--right-soft);border-color:var(--right)}
+.opts button.wrong{background:var(--wrong-soft);border-color:var(--wrong)}
+.opts button:disabled{cursor:default}
+details{border-radius:10px}
+summary{cursor:pointer;font-weight:500;color:var(--industry)}
+.answer{display:grid;gap:8px;margin-top:10px}
+.answer p{margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:13px;padding:2px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+
+.gloss{margin:0;display:grid;gap:12px}
+.gloss dt{font-weight:600}
+.gloss dt a{font-weight:400;font-size:13px;color:var(--muted);margin-left:6px}
+.gloss dd{margin:2px 0 0;color:var(--muted)}
 .archive{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
 .archive a{display:inline-block;padding:4px 10px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-variant-numeric:tabular-nums;font-size:14px}
 .archive a[aria-current]{border-color:var(--industry);color:var(--industry)}
@@ -91,58 +124,124 @@ footer{color:var(--muted);font-size:13px}
 <header>
   <span class="mono date">{{ date_label }} · {{ minutes }} min read</span>
   <h1>AI Morning <em>Brief</em></h1>
-  <p class="lede">The AI business news that matters for landing a job in the industry, explained from scratch. Every story ends with one concept to learn and a line you could use in an interview.</p>
+  <p class="lede">Today's AI and fintech news as short articles, with every key concept explained, a bit of Python, and a scenario quiz to check it stuck.</p>
 </header>
 
 <nav aria-label="Sections">
   {% for key, title, _ in sections %}<a href="#{{ key }}" class="{{ key }}">{{ title }}</a>
-  {% endfor %}<a href="#learn">Learn &amp; test</a>
+  {% endfor %}<a href="#code">Code corner</a>
+  <a href="#quiz">Quiz</a>
+  <a href="#glossary">Glossary</a>
 </nav>
 
-<div class="talk">
-  <span class="mono" style="color:var(--muted)">If you only read one thing</span>
+<div class="panel talk">
+  <span class="mono">If you only read one thing</span>
   <h2>Three things to be able to say today</h2>
   <ol>{% for point in d.talking_points %}<li>{{ point }}</li>{% endfor %}</ol>
 </div>
 
+<div class="panel">
+  <span class="mono">In today's brief</span>
+  <div class="toc">
+  {% for key, title, _ in sections %}{% if d[key] %}
+    <div class="{{ key }}"><h3 class="mono" style="color:var(--c)">{{ title }}</h3>
+      <ul>{% for s in d[key] %}<li><a href="#story-{{ s.story_number }}">{{ s.headline }}</a></li>{% endfor %}</ul>
+    </div>
+  {% endif %}{% endfor %}
+  </div>
+</div>
+
 {% for key, title, blurb in sections %}
-<section id="{{ key }}">
+<section id="{{ key }}" class="{{ key }}">
   <div class="sec-head">
     <span class="mono">Section {{ loop.index }}</span>
     <h2>{{ title }}</h2>
     <p>{{ blurb }}</p>
   </div>
   {% for s in d[key] %}
-  <article>
+  <article id="story-{{ s.story_number }}">
+    <span class="mono kicker">{{ title }}</span>
     <h3>{{ s.headline }}</h3>
-    <p class="what">{{ s.what_happened }}</p>
-    <div class="plain"><span class="mono">In plain English</span><p>{{ s.plain_english }}</p></div>
-    <div class="concept"><span class="term">Key concept</span><span><b>{{ s.concept_term }}:</b> {{ s.concept_definition }}</span></div>
+    <p class="standfirst">{{ s.standfirst }}</p>
+    <div class="body">{% for p in s.paragraphs %}<p>{{ p }}</p>{% endfor %}</div>
+    {% set links = sources.get(s.story_number, []) %}
+    {% if links %}<p class="src">Sources: {% for l in links %}<a href="{{ l.link }}" target="_blank" rel="noopener">{{ l.name }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</p>{% endif %}
+    {% if s.concepts %}
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl>{% for c in s.concepts %}<div><dt>{{ c.term }}</dt><dd>{{ c.explanation }}</dd></div>{% endfor %}</dl>
+    </div>
+    {% endif %}
     <div class="why"><span class="mono">Why it matters for you</span><p>{{ s.why_it_matters }}</p></div>
-    {% set links = s.source_ids | select("in", sources) | list %}
-    {% if links %}<p class="src">Sources: {% for i in links %}<a href="{{ sources[i].link }}" target="_blank" rel="noopener">{{ sources[i].name }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</p>{% endif %}
   </article>
   {% else %}
-  <p class="what">Nothing significant in this area today.</p>
+  <p class="standfirst">Nothing significant in this area today.</p>
   {% endfor %}
 </section>
 {% endfor %}
 
-<div class="panel" id="learn">
-  <span class="mono" style="color:var(--muted)">Learn &amp; test</span>
-  <h2>Today's vocabulary</h2>
-  <dl>{% for t in d.vocabulary %}<div><dt>{{ t.term }}</dt><dd>{{ t.definition }}</dd></div>{% endfor %}</dl>
+{% set cc = d.code_corner %}
+<div class="panel" id="code">
+  <span class="mono">Code corner</span>
+  <h2>{{ cc.title }}</h2>
+  {% if cc.linked_story_number in stories %}<p class="src">Based on: <a href="#story-{{ cc.linked_story_number }}">{{ stories[cc.linked_story_number].headline }}</a></p>{% endif %}
+  <p style="margin:0">{{ cc.intro }}</p>
+  <pre><code>{{ cc.code }}</code></pre>
+  <span class="mono">Line by line</span>
+  <ol class="walk">{% for w in cc.walkthrough %}<li>{{ w }}</li>{% endfor %}</ol>
+  <div class="tryit"><p><b>Try it:</b> {{ cc.try_it }}</p></div>
+</div>
+
+<div class="panel" id="quiz">
+  <span class="mono">Quiz · apply today's concepts</span>
+  <h2>What would you do?</h2>
   {% for q in d.quiz %}
-  <details><summary>Quiz: {{ q.question }}</summary><p>{{ q.answer }}</p></details>
+  <div class="q" data-correct="{{ q.correct_option }}">
+    <span class="mono" style="color:var(--muted)">Scenario {{ loop.index }}</span>
+    <p class="scenario">{{ q.scenario }}</p>
+    <p class="ask">{{ q.question }}</p>
+    <ol class="opts">{% for o in q.options %}<li><button type="button" data-i="{{ loop.index0 }}"><b>{{ "ABCDEF"[loop.index0] }}</b><span>{{ o }}</span></button></li>{% endfor %}</ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: {{ "ABCDEF"[q.correct_option] }}.</b> {{ q.explanation }}</p>
+        {% if q.concepts_tested %}<div class="chips">{% for c in q.concepts_tested %}<span>{{ c }}</span>{% endfor %}</div>{% endif %}
+      </div>
+    </details>
+  </div>
   {% endfor %}
 </div>
 
+<div class="panel" id="glossary">
+  <span class="mono">Glossary</span>
+  <h2>Every concept from today</h2>
+  <dl class="gloss">{% for c in glossary %}<div><dt>{{ c.term }}<a href="#story-{{ c.story }}">see story</a></dt><dd>{{ c.explanation }}</dd></div>{% endfor %}</dl>
+</div>
+
 <div class="panel">
-  <span class="mono" style="color:var(--muted)">Past digests</span>
+  <span class="mono">Past digests</span>
   <ul class="archive">{% for day in archive %}<li><a href="{{ root }}archive/{{ day }}.html"{% if day == date_iso %} aria-current="page"{% endif %}>{{ day }}</a></li>{% endfor %}</ul>
 </div>
 
-<footer>Summaries written by Claude from headlines and snippets in the linked sources. Check the original article before quoting figures in an interview.</footer>
+<footer>Written by Claude from the linked sources. Check the original article before quoting figures in an interview.</footer>
 </div>
+<script>
+document.querySelectorAll(".q").forEach(function (q) {
+  var correct = Number(q.dataset.correct);
+  var buttons = q.querySelectorAll(".opts button");
+  buttons.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var picked = Number(b.dataset.i);
+      buttons.forEach(function (x) {
+        var i = Number(x.dataset.i);
+        if (i === correct) x.classList.add("right");
+        else if (i === picked) x.classList.add("wrong");
+        x.disabled = true;
+      });
+      q.querySelector("details").open = true;
+    });
+  });
+});
+</script>
 </body>
 </html>

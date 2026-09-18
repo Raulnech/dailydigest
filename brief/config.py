@@ -1,8 +1,14 @@
 """Everything you might want to tweak lives here."""
 
-# Which Claude model writes the digest. Opus 5 gives the best explanations.
-# Swap to "claude-sonnet-5" to cut the daily cost by roughly 60%.
+# Which Claude model writes the digest. "claude-opus-5" gives the best
+# explanations; "claude-sonnet-5" costs roughly 60% less.
 MODEL = "claude-sonnet-5"
+
+# Who the digest is written for. Claude tailors explanations to this.
+READER = (
+    "someone breaking into AI and fintech: early in their career, learning Python, "
+    "and wanting to understand how LLMs work and how the AI industry makes money"
+)
 
 # Your timezone, used for the date shown on the digest.
 TIMEZONE = "Europe/London"
@@ -10,8 +16,12 @@ TIMEZONE = "Europe/London"
 # How far back to look for news, in hours.
 LOOKBACK_HOURS = 28
 
-# How many stories per section.
-STORIES_PER_SECTION = {"industry": 4, "finance": 3, "startups": 3}
+# How many stories per section. Each is a ~250-word article, so 8 stories
+# is roughly a 15-minute read including concepts and the quiz.
+STORIES_PER_SECTION = {"industry": 3, "finance": 3, "startups": 2}
+
+# How much of each full article to send to Claude (characters).
+MAX_ARTICLE_CHARS = 6000
 
 # Google News search feeds are great for filling gaps in specific topics.
 def _google_news(query: str) -> str:
