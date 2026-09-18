@@ -1,8 +1,8 @@
 {
-  "date_label": "Thursday 17 September 2026",
+  "date_label": "Friday 18 September 2026",
   "talking_points": [
-    "OpenAI and Anthropic are now publishing details of when their own models have lied, cheated or gone rogue, but critics say self-policing won't be enough.",
-    "Tech CEOs are publicly split on whether to slow AI development, with Zuckerberg and Nvidia's Huang pushing back hard against Anthropic's caution.",
-    "Wall Street is increasingly nervous about the mountain of debt being used to fund AI data centres, even as fresh mega-deals like the $22bn Blackstone-Alphabet chip financing keep landing."
+    "Say that white-hat researchers reportedly used Anthropic's Claude to expose a security hole in OpenAI's own systems, showing AI labs are now testing each other's defences.",
+    "Mention that Nvidia's Jensen Huang expects chip sales to double again next year, even as AI safety warnings mount.",
+    "Note that the SEC has opened a legal pathway for tokenised stocks, potentially pushing US equities towards 24/7 trading."
   ]
 }
