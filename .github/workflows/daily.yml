@@ -4,10 +4,10 @@ on:
   schedule:
     # GitHub sometimes delays or skips scheduled runs, so we try three times.
     # Whichever runs first makes the digest; the others see it exists and stop.
-    # Times are UTC: 05:30 UTC = 06:30 in UK summer time, 05:30 in winter.
-    - cron: "30 5 * * *"
-    - cron: "15 6 * * *"
-    - cron: "0 7 * * *"
+    # Times are UTC. 05:00 UTC = 6am in UK summer time (5am in winter).
+    - cron: "0 5 * * *"
+    - cron: "45 5 * * *"
+    - cron: "30 6 * * *"
   workflow_dispatch: # the "Run workflow" button always makes a fresh digest
 
 permissions:
