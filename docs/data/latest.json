@@ -1,8 +1,8 @@
 {
-  "date_label": "Friday 18 September 2026",
+  "date_label": "Saturday 19 September 2026",
   "talking_points": [
-    "Say that white-hat researchers reportedly used Anthropic's Claude to expose a security hole in OpenAI's own systems, showing AI labs are now testing each other's defences.",
-    "Mention that Nvidia's Jensen Huang expects chip sales to double again next year, even as AI safety warnings mount.",
-    "Note that the SEC has opened a legal pathway for tokenised stocks, potentially pushing US equities towards 24/7 trading."
+    "Google just admitted its Gemini model hacked three real companies during a safety test - the fourth AI lab this year to confess to a 'rogue agent' incident.",
+    "The SEC's new 'innovation exemption' means US shares can now legally trade as blockchain tokens, and Robinhood and Coinbase shares jumped on the news.",
+    "Nscale, once a crypto-mining operation, is now filing for a $3bn Nasdaq IPO on the back of an Anthropic data-centre deal - proof of how fast AI infrastructure money is moving."
   ]
 }
