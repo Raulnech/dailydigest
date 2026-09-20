@@ -223,5 +223,57 @@
       "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOOFk5eWJnMkFoUi1EWGtkUXpRcDdULW5OSEtwYkJsVVBkUHE5TWl6ZFBpbDlfak1EQlJYYm40UWZocGF6LWNxUm9EOVZBZFZWWmtYMFM2MkxxTDZaTU5oLW1JeWo3NEpxZHg1NGdINEFNSWJ4cGtiUDZTS2I5dnhYc3cyZkN1UHZxWXMzRGFUM0l1U1NSWURXc0dYQ0luRmxBN1dGUjE1akE5Zw?oc=5",
       "https://news.google.com/rss/articles/CBMid0FVX3lxTE5RRHNQZHdEVHIyeFNaOU1OUmdUTEhoU05nZ3diTm5QUzF0aGRwbVNqenB3cVljRWp3d1hpNUUxa3E5TWZvYVVibU9IS21rU0lPM09weWJraGhzYzNoVEU5cldUMUVjamM1aktCVlE2Y1pzUG85RHVR?oc=5"
     ]
+  },
+  {
+    "date": "2026-09-20",
+    "headlines": [
+      "Trump dismisses AI safety fears as 'hoax', unveils plans for an 'AI Force'",
+      "China's central bank adviser warns AI boom could deepen oversupply",
+      "Huawei brings forward Ascend 960 AI chip to challenge Nvidia by 2027",
+      "OpenAI reportedly set to burn through $280bn in cash by 2030",
+      "Economists debate whether AI hype or government debt is the bigger market risk",
+      "Oracle's $18bn data centre debt draws scrutiny from short seller Michael Burry",
+      "Dutch chip startup Euclyd raises $231m with Samsung backing",
+      "Stripe reportedly pursuing $10bn acquisition of OpenRouter while weighing PayPal move"
+    ],
+    "concepts": [
+      "AI alignment",
+      "Frontier AI lab",
+      "Data centre backlash",
+      "Supply-demand imbalance",
+      "Deflationary pressure",
+      "GPU (graphics processing unit)",
+      "Export controls",
+      "Cash burn",
+      "Revenue forecast",
+      "Treasury yields",
+      "AI bubble",
+      "Data centre lease",
+      "Junk bond",
+      "Funding round",
+      "Strategic investor",
+      "Acquisition",
+      "Model marketplace / API aggregator"
+    ],
+    "links": [
+      "https://techcrunch.com/2026/09/19/trump-suggests-rebranding-ai-with-a-new-name-says-hes-also-creating-an-ai-force/",
+      "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5LcWdsWGF6emZpT2d1ajc1SDRLalNnNmN2WGFDekF2WnBpWUJ3NjduWVhsdGoxc2psdVRkTU5vakhTdHNENkowclBadlA0dV9sTFdmVkVfWGtuQjTSAVtBVV95cUxNYk9GUG9yX3VfQVFBVENnWGkyWjZ4UHJJYXFuWVRrdV9yU2dRV19sNU45b1dpeWc4NnE2cnFPYUt0MDZOLVBtT1l0aE02bk9HS1U4cjJtYWhlRWUw?oc=5",
+      "https://news.google.com/rss/articles/CBMixAFBVV95cUxPc0tLMmJKRDNNUW1lc0ZmOGhTNF9QZWdLdDBxcktJRzk5VGRBSk9PU2FyaVpMcW5NNFNaakpaNXROczBGTk1GR1pvQzdKdTVZNUJvTG9YbjRPdXFRV190VmNVa3ZQaTY1R2E2X3BTcTJiLWlYMGtrbVBEdXNreWtpWVZfVlBJcjAtZnFHTUN5RjRLZTN1WDZUTXgyX0ZTeFl3bXJZYlU5b1l5N296UHBzZjlLUTFjck5KY1llaWdEWk1yakZm?oc=5",
+      "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1Mc2FCMnpFbnRDemc1ZWoyeE1Dc211NXUyXzdUUUp4cWt1UWVPUXRLMElRN2JPOWVIWE50OXVfZFJkblNZdUpyX3c0cHZQTUxnb09KTUtKalpiVG5xdkVpazJEdVVCRlRY?oc=5",
+      "https://news.google.com/rss/articles/CBMieEFVX3lxTFAyMjdiSlpVdnZmM1FDS1hqYkNieXNiREhCdU5BLWdLOGVNUGZDUnVvTFlOT1JnbjZRbE85ZUJJeUV3YUdSb19QVDUzUTBmX3RZUmFZZEJNRVE5THg0N0JiS0tpMVRodVp0WlBaYUE5cUFjZ1VjeTJkWg?oc=5",
+      "https://news.google.com/rss/articles/CBMidkFVX3lxTE9FQ292R1hVc2FGZ3h2VElpRjRrYWIyckpkamJSRkFJdnZ1VEdsbTRnQjhHbzFCcEJTbFF5dXpIZlYtREVJTWFKNkh2YlBZaURVVTBIMHg2S1Z2OEZ0OUo1Q09memtLem5qQkhVR2hueDl6bzFHYVE?oc=5",
+      "https://news.google.com/rss/articles/CBMiggFBVV95cUxQdkZNS1JzdzczZEJ5cDhvczQ1OEVnZnBIN0trVUctRHYteWlCUGdBZDJCcGhfbVBVTlFUdHZPQVZJNDAxU0FQVE43aHF6aWZyNUFSajJSMmZtai1raXk4dWJQOWZod241dDBhQWM2Q3RWMW1POTlNRS1HWDh0eVYyZEFR?oc=5",
+      "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNblQzNXNXY2VxMzEyZ1NhTVBXX2h5X051em1RcldjeFlGaGVkUmc2bFNrcjZuaDlrRFMtQTBMeHJRZ0FUVDFjWDV0RW05WVdUeEFSc2FQcDBUZDF6R0ViR0ZUWUtsYUx2cWV0Ri1rbkluOTkzMUVBNUdrT0hPd3JoRnJSaU1PSGVsdXBYanN6bUktQzdjdXplbTloS3RUc0VTc0tHZHZtc09pYTV6MzBZVFRGeWRvMG5wNlEw?oc=5",
+      "https://news.google.com/rss/articles/CBMie0FVX3lxTE02aExJVG5yREFrS2NwX1Z4WU1ZMng4dERNR291eW9lWHIyZ0FzeUdZdTFFUkVJZnRDQnZjRG5FWTZoRmhEWmNkMnk2UEl6SlV5REpYYnVBOEU2Vl9IVFBDN3Bobm1PazBWZU5ubkJTUlNFclRNemRTWHUwYw?oc=5",
+      "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNWUd1M0JYanBuOVBpZDlTOHBjSDRoS0UzcVRoQlZSbG53cUhCQVk3MnMyeFFWQzlHYVd4b09acWV6c2FBdzBQeVdzYlBpUUNOVF9YenJPa05KQ05UMDl5RXdjMko3SDJxU1pSbm0wZG5fVUhpSWw0eFNJdEJQYzZlUFdlWXVKY0tEZlZqaGlDWmIteEMzMWhvWkNTS3VxUi1sTHF0S1AwLWNBZw?oc=5",
+      "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9jRWZiMVp5OXE0aEZBUE16VWpweE82MmZWbVdEY2ptQW5qTWZTWEdvNzNTdV9zYnBYQ1o3VU5SU2dDbzctcGM3ZkNnVTY4VFlSc3FURWlvUUhOUEJI?oc=5",
+      "https://news.google.com/rss/articles/CBMigwFBVV95cUxNaUQ3ekpHWDZXM3U4ZHViRVJ2Q0NKbUpfcGNrWnpwUTBPNGU2c3B6UXcxVl9ROEEyeXZkay12QnBPcGc2NXF1MHFZWGJITEZKcmljWjRLdkJJOWJwX1RrMW5ZdlVLd3pORzhsQlNkWUNucWViNXhvdGxfZVZlSlF2SmFHaw?oc=5",
+      "https://news.google.com/rss/articles/CBMilgFBVV95cUxOVXJwQkRNQmJzakFQYmVjaVRzc09SQTJzN19nSGJoR0dDYXplbFUyRDFrcVcxQ0JDbGtBVUN3WTNRVTl2Nk1fSWo4X05tYnpEOW5PelFaRkV2MDdTN00tc3RiUHlMSVdjSnpBVl9Kc3VacGlldmRpdjlzVUZONzBWcnBnOGhqTE9KaWJobHRfTlZPb2xuUUE?oc=5",
+      "https://news.google.com/rss/articles/CBMieEFVX3lxTFBNSzlFbFMwaEpTNXI1LXFOc18zM3NsQjJmTHBlcUd6R0dsSGFES1hHZXVjYV9RQUJtNlNrS1pSamtTdVd1T1lyR2VGNndZLUJtNU5PeUItWlBjb29Zd0IxRFVQZ3N6NGJSZ2tkNy1IdTI5bzlsSVJxdA?oc=5",
+      "https://news.google.com/rss/articles/CBMimAFBVV95cUxOT3d3QVhsZVFRcmxNVk95Q1hrb2VSYVNfV0o1OUpwQVZiWmRPSTlBLTZlTmNmZlhZSUxDd3hEc3V6ejdIR0p4cWZBOGhMRUZBeXNJa3FHNlJVRUoxc01GRjh5MktaVjFNVVlCVWE0ZExrUERGME1RZVMwQmh0NmRsSWthV1BNeDViSm1kQjVmVnl2X2ktQS1Icg?oc=5",
+      "https://news.google.com/rss/articles/CBMimgFBVV95cUxNTHBzRzV1UV9aLTlsSjFFZ0ZqZzRZMXNUTlVYWU92cGo1TFVIb0x4VlhIMUFzbG5WOTlBMkhRbFRtSjhoSXlDUVBzS1I0VzdvNnV3RmJoZXZ2ZXEwSnc5ZUdVOWU3eHYtb0VFME1kMVNkUzFEWTU3MVpncVFPYXhReExsX2xQRlA0T0R4SnJGck43U0FjWFE3bGZ3?oc=5",
+      "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNbmsxN01WeDBPNDlabHlTSzd0YVZ3YTljRXFDamNiLVpmS0JpZllWUkdjd29YbnZJR2xOUWJnVTNObjUyRTBsVjJrTFh5el9UQ2JVV0ZYNHNrU091c2lmdmxTNnp3OERPZjVlUVNDaFBEcktWV2VJbTFZSkdYbWYzT09IQ3RXLTU2ZW5oWnZ3TTFUOGg3V0FUSXIxV1E2LUdrdk1vQjlLd1JFQ2Q4b0ktMzhsMGxVV1hf?oc=5",
+      "https://news.google.com/rss/articles/CBMinwFBVV95cUxQbGktU3ZfcGVSY3VVMEFtZGlSTi1pc3AwXy1FbWRnUUtqMjhyMjYzUmpNc3M1dzBCeTdzSVAtdGVwNkE5cmhWSVZxX2lKcGlBU041eUNqME5kaDNxN1VTMjhJVnp6ZGxHdmJSb2NmLVNxeEVzTlFWNlE0d05JcHFtSnJ0em1CNHJsM1ZMVk1qdC0wY1Y3bGZ0Ukhnc0RScnc?oc=5"
+    ]
   }
 ]
