@@ -334,5 +334,55 @@
       "https://news.google.com/rss/articles/CBMixAFBVV95cUxQTHBtN1BCSlVleTJQNVBsTFdpZTFOUlRXR3I3Q0hWbUFtOWo3ekVzd1BzYWI2Z3BWa2k3MEdRc21pNFpnUHF6bmlJeThXRlc3YTVZdjdscVpKVDVYX21sZGdnQm9OUWRQZUNhbUlfQWpzZXF4MVg0V0c5ZldvQVdaQi1RTnIxSXNGN1R1MFQxSHlrTE1oSUJ6U1RXQmdVS0sxZGJoX09VeldWZnVFVU1ibHI5T0ZrLVA2NjNwWDlZSUhQZ25U?oc=5",
       "https://news.google.com/rss/articles/CBMisAFBVV95cUxNcDloRGI3cXpNV0U2VmwyMGtqc3c5UTZMWHhxWlhHd1hRWjZmRlZNUVB2ZHFRVF9IdkdERG9LQTZ3Q2tid0R6QktDRHZtVTJjaDFxSUlIVDZid0dLd2lCOEFOTXpaWDFNYldXcmNQQnFBZ1RvcEdTaUZEcTBuTEdqSTZ2bHNKVHZ5RUtIbnVVWjh1SlozeW14T0VVclhKUGhGRENJVGQzU213UDFPS0l1Xw?oc=5"
     ]
+  },
+  {
+    "date": "2026-09-23",
+    "headlines": [
+      "Anthropic's Opus 5.5 and OpenAI's GPT-6 Sol and Luna cut prices by up to 60%",
+      "Brazil's antitrust watchdog CADE to review Amazon-Anthropic AI tie-up",
+      "Bond investors push back as Alphabet, Meta and Nvidia seek to fund AI buildout with debt",
+      "Data centre firm Accelevation targets $5.4bn valuation in Nasdaq IPO",
+      "TD Bank and Cohere strike $25m AI partnership",
+      "Cognex to buy Intel's former RealSense unit for $600 million",
+      "Legal AI startup Legora seeks funding at $8.5bn, up more than 50% in months"
+    ],
+    "concepts": [
+      "Token",
+      "Model router",
+      "Open-weight model",
+      "Merger notification",
+      "Strategic investor",
+      "Bond yield",
+      "Debt financing",
+      "IPO (initial public offering)",
+      "Valuation",
+      "Large language model (LLM)",
+      "Enterprise AI",
+      "Acquisition",
+      "Computational photography",
+      "Valuation jump",
+      "Funding round"
+    ],
+    "links": [
+      "https://arstechnica.com/ai/2026/09/new-anthropic-openai-models-make-same-promise-a-little-more-for-a-lot-less-money/",
+      "https://news.google.com/rss/articles/CBMihAFBVV95cUxOc0REaFI3OHIxNmtEdnB6Vy01bUZPaWxoMU0zVm9SZTEyVU04cm1tSWdRNjBLTGJpTnJRd0ZWbFg4RDhac1NCTG1fVms5OTNfd3dta290enpZeTlTTnRScjRPM0NvbzJBRTFrN0I0bkNES0NJRVM5TUwyeHRLaTB3WVY1Skg?oc=5",
+      "https://news.google.com/rss/articles/CBMixwFBVV95cUxNU3paNUN6bmt3RFlzT0RmZHl0U0NkT1REdmFTd0tjcUxLaEJINGZQZEpUMHlnUEJKcGxwQWZVUmZEZ0J1am85S0E3b0NXZ1VKaTRtcFNKZDVBSDZXRmxVSXlteF85Wlh6MGxmQ3MyN2J2Ynp2LS00V2EtenNReFExNjhWRF9KZ1VUREV3bm9aZHQ4NmdLOElDaDUtWXQwR29RNnJJaGN0N3JjRXZCdExhME5YeURUdllpSmt6VjhWeUEtVFVqTXNz?oc=5",
+      "https://www.cnbc.com/2026/09/22/anthropic-openai-cheaper-ai-models.html",
+      "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOOFVVWlhKQ2x0ZEFrdkYzX1lTRm9hN0lmZ1pnc3IyaThHSm5TLU9ZcjJyUmx0cURINlRSQjJPRnl2MUVzaHpUZ3pNTGstY042QlhPNDcxMW80djRub0xMSWl3YzVNZVBqQS1Xa2cyLXNRUkFVZzdiY3RjWEUxRlJodUtTYlhjbFhON2prSkpoVW1MTnllOElxNnpGZ2ROd3BuaGoxby0yWHJEcHBGcU9uSlJ0a0hZUkNVSjVLb2ptcWhDMzVKdWRTVjVxOVk0aWRyQ0EybmVYV0JzVGZhbE50Yjl30gFaQVVfeXFMTk9mZ2U1T0lIcHVIbHhSR0xxdFFyV0dtcU5NNmtKbi10aGtFWTU3QjhOdGxUT21iOUJVMENsSFNyN2ZVWXdFa2lSWkFiSHhsV3M5MHllT0lCSmFB?oc=5",
+      "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPenQ5eWJwZmw0aEtNdXNZUlZDQXNtRHRMemYyWjdrWGM1cUVFZU82bTlwRE91ZUtGLVRkMHVOMlp1QktDR2NMek9GWFFrcEo3R3pjUVFVYXBTTFhhb3JjREV0X3VDX0tGZFJCVUJvNGhoRjlfUU9xcnVYUWhPWXVsakNtVWZ1Z0NneWczUkVMUU5xTEVsb29US2JPQTd0aFhvbFVrSDJ5M1l6X2tWbVdlRGNMQzFOZUEy?oc=5",
+      "https://news.google.com/rss/articles/CBMi9wFBVV95cUxQX1FYRnhTdlJEWFhWbFVpbzZ4VFhRODRqM241bW4xY044OU9razV1VGQ4LW9DbjFsT0Y1aEZnMFZ1a1NILTlZSlNHT0ZwV1lhaFFSaGlJTU9pRjFvb3J4UGY0MUsyelJwcUM1V3paU0E2eXJUU1gwOGE1c3Vfb2psUmNkNWhoaG16S2UyT1p2b2Zva0VaMy1BUDlpcXF0WV9xSHIyakdzOHE2Ykt2eDg2OGc0QVFuamtfMGxieWEzZUpqSk9CbUQwY2VQbjBMZENSci1zazQwSVRkeTdIUmVFN01WNkZXMWxaYldFc2xlNTNuaG9PR2dr?oc=5",
+      "https://news.google.com/rss/articles/CBMigwFBVV95cUxPQnhLaXY1Q2FxSkRYNUNKRlp4Wlc5WUFWbjBadXNRbUpBM2NHR3RneC1idm93WlB1X0NiMUZxcUtUanZQQ0E5THhrbjlWSnR1SENGQmhwSVVvU0JFZS0yUF9oWUZQeDhIaG1FZEltZ0xOVWJpVklLVGttcTJrRno4STRqdw?oc=5",
+      "https://news.google.com/rss/articles/CBMinAFBVV95cUxNcWRwZS1feHZJdllyNHhVSlFtb0FpTjdSaEpSMUJCdXVhOE9WVk5xX2NpWHJmWFV1cHk2eDVLbHdPSUhVQnVUdmhtMG1RbGU1dk9qN3FRNE5va01YRHNocHZEaGRhdzVXbHY5eEVaZGFWd3Z1Y2hxYmxXRWtQYy1rd3A0NExUc2prS3BBWENxV1V0ZnFFckhEdXhBbk8?oc=5",
+      "https://news.google.com/rss/articles/CBMisAFBVV95cUxNRDRMeHFtU1FFeUpsYmJkUXlTdWlHWUZWNFlrT0pBZkhYWDhmSTVXV0Y1RE1kSUswck5JN010RWQtUGtSa3VPUG9CTUlMY01LakdGbGhHdFFUUk02ZzBadGkzblZWX0xMSzEzLVFCUVgwNmRkZnJsRHc5UW5tVnNGb3ZpN0xlMXpYTDlHSUNzXzNxYWpCbDhhWFJYVEdZeUxUWVIwdm40cWFpc3c4OWVGbQ?oc=5",
+      "https://news.google.com/rss/articles/CBMikwFBVV95cUxQMHkzaHo0VlgtbXN5RTdPNl95Z0gzYWJ0Nml4dnVrYnhBNXFvc0djTGxSd0tVdFZIdWw2MG1NQnlkbUl1QWpxMG5rU2Q3YmRtbHB4RjNQRjJWaW1WZ0lzS3R1Y2x5TmJoZVVQVnlTT1Z3RXp1LXBJS3NpRzgwaHk4OXBLRFBPaDZzRTNzTXlOLVBObkE?oc=5",
+      "https://news.google.com/rss/articles/CBMiggFBVV95cUxORTdISVpGaW4xOW5CWElOY0ZIanZvNkpNZVl3bVlkTGR1SUlPQ25Xc1d6WVZrLTZVazBhOF94bDYzVk5ZUlJwU05EY201SllsX0YzUURWTVRrQXRweVQ2X0ZxOEJGcUZuY1JMZGVSR0ViRGFYMUZxRFB2a3JDMWpKa1FR?oc=5",
+      "https://news.google.com/rss/articles/CBMiygFBVV95cUxPOHdodHJYV0pHWUlJOUhxckdzOHFvN1NFZ2VoQTJST0RENF8xUk1UakJuUjNWUHhMWnNuY2k0TFNSYmdlcjBXd2JWaVV1bG9sTzFRWTl5VU5sYVdxQW1rS3BINU9QTmNJMmJtdU1CRkhBM2tqNEE2TlUzVFlyT29tT21Dd192UEJxR2d0SU1oOFVOTGcxUUNHZVNRUFdYZnQ2SWtYY2lGMFJMWGVhVEJXSVk0WnNkZ21PTkpLVXczVFpoZ0tFMnNtSW930gHKAUFVX3lxTE84d2h0clhXSkdZSUk5SHFyR3M4cW83U0VnZWhBMlJPREQ0XzFSTVRqQm5SM1ZQeExac25jaTRMU1JiZ2VyMFd3YlZpVXVsb2xPMVFZOXlVTmxhV3FBbWtLcEg1T1BOY0kyYm11TUJGSEEza2o0QTZOVTNUWXJPb21PbUN3X3ZQQnFHZ3RJTWg4VU5MZzFRQ0dlU1FQV1hmdDZJa1hjaUYwUkxYZWFUQldJWTRac2RnbU9OSktVdzNUWmhnS0Uyc21Jb3c?oc=5",
+      "https://news.google.com/rss/articles/CBMilgFBVV95cUxPaVowVVRKMnhCY1hIUl96Snd1V0ZTdThnRkZkNlFDc0s4dElSN3gxRlEyTjg5ZVVTdXR1YVVVWFRoY2VCdkhsV1dYX19zQUlob0pVM3BSVWR3UE94cWZtN09ReUI2dWZCTDh4Rk5sTnJLVUpLWE9kWXc4THRBTEt5ZnNwM0ZhekdCWldxREpjZmJKbV9yZEE?oc=5",
+      "https://news.google.com/rss/articles/CBMi7AFBVV95cUxOS21ZVTUyVU94V0xGX0UwSHR5RVlORG5CSE1fSl9MVG1fXzZldmtXRW5rWllDM1pvd2JUbHd4S0t1N0pHa2NDUmdmeUlwOTI5bVk1RkhEUDk2ZzQ2SWRMWkhOYWxjd1ZPTTQyM1J0SWNBMWx1M2o1ZWxlNkhXbk1WZ1lGWlhwS2hSclE5R3NvVHBUZ1Itc0JJdHJuODFfRFFCYmd3RTBpR1UtTzhjWjJGMjZIbWJtYmExVERNTVRhYXJFUGpzSTJTY2RleG56Z2VIZ2lmYnlnaWdiVHdZZUJTbnBvSDZJbldUMDZGdg?oc=5",
+      "https://news.google.com/rss/articles/CBMiaEFVX3lxTFAxa1Z6WVEzX0VlVEVQY0l2Q1lNLXZpRmtNRjFnc05qTGMtd0E3MWEwbHNZMEU0cDV2TFBGekk2QlVFVnhpaTl6dU1FZzNVZEVDQ0Z3a3VWTUxmRzlMTlV0UzVkREdXbkVw?oc=5",
+      "https://news.google.com/rss/articles/CBMibkFVX3lxTE5EWFE5N1luWUZhRjM2Uk1EZzhoWDdaVVdnc2ZLdllHUWxNRjQtZ214TTBHSFY4d3dSWlVKQmduTnRZcUI5blJackdUbHlFaFdZSldmd2Rqbkw5b0xPdm41QjkzekNLM2lRdG5NZGl3?oc=5",
+      "https://news.google.com/rss/articles/CBMibEFVX3lxTFB4N2Z4WFoydnF0Z1ZaWlNaR1NaY3AtcEdua0drVEpSN1JFQVhzbXVSRzd2ZTRZNVhsRnJfNXBERUdZNFhQMGpMSW9OeUhyb3YwUjZTWjlPOUdlMnY0OUF0QjRjSl9GLWM1cUpLZw?oc=5",
+      "https://news.google.com/rss/articles/CBMisAFBVV95cUxNdnB4SS1XRjV6dEpOMmhlWk5tekdGWmpuYUw4bXdiMDgtSktoSTVPWWNtSnFfM3FVREh2elBEVHVEZXdxNy1RdWE2LURWTHlBdlM1STRid1hNdXRYb0YzZmpGQkVpY0R3aVJadXJIb0ZuTGJ6NHdTMVUxOEpoX3JST1YxbEFzOUI3UkluMDBWV29tXzZveG9VVV9obHdZREFvRUZZeTBIWkVKMzNQeEpDMQ?oc=5"
+    ]
   }
 ]
