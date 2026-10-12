@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI Morning Brief · Monday 12 October 2026</title>
+<meta name="theme-color" content="#3A55C8">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  color-scheme:light dark;
+  --ground:#F3F4F7; --paper:#FFFFFF; --ink:#141827; --muted:#5B6275; --line:#DDE0E8;
+  --industry:#3A55C8; --industry-soft:#E6EAFA;
+  --finance:#1C7453; --finance-soft:#E1F1EA;
+  --startups:#A8561A; --startups-soft:#F7EADF;
+  --code-bg:#161A26; --code-ink:#E4E7F0;
+  --right:#1C7453; --right-soft:#E1F1EA; --wrong:#B3261E; --wrong-soft:#FBE7E5;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --ground:#0F121B; --paper:#171B27; --ink:#E8EAF1; --muted:#9AA1B4; --line:#2A3042;
+    --industry:#8FA3F5; --industry-soft:#20284A;
+    --finance:#6CCBA3; --finance-soft:#15332A;
+    --startups:#E8A06A; --startups-soft:#3A2618;
+    --code-bg:#0B0D14; --code-ink:#E4E7F0;
+    --right:#6CCBA3; --right-soft:#15332A; --wrong:#F2A29B; --wrong-soft:#3A1B19;
+  }
+}
+*{box-sizing:border-box}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.6 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;padding-inline:16px;padding-block:28px 64px}
+.wrap{max-width:700px;margin:0 auto;display:grid;gap:36px}
+a{color:inherit}
+a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var(--industry);outline-offset:3px;border-radius:4px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400}
+header{display:grid;gap:10px}
+header .date{color:var(--muted)}
+h1{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(44px,11vw,64px);line-height:1;margin:0;letter-spacing:-.01em}
+h1 em{color:var(--industry)}
+.lede{color:var(--muted);margin:0;max-width:60ch}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ground);padding-block:10px;display:flex;gap:8px;overflow-x:auto;border-bottom:1px solid var(--line)}
+nav a{flex:none;text-decoration:none;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--paper);font-size:14px}
+nav a.industry{color:var(--industry)} nav a.finance{color:var(--finance)} nav a.startups{color:var(--startups)}
+
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:14px;scroll-margin-top:64px}
+.panel h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:30px;margin:0;line-height:1.15}
+.panel > .mono{color:var(--muted)}
+.talk ol{margin:0;padding-left:20px;display:grid;gap:8px}
+.toc{display:grid;gap:14px}
+.toc h3{margin:0 0 4px}
+.toc ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.toc li a{text-decoration:none}
+.toc li a:hover{text-decoration:underline}
+
+section{display:grid;gap:22px;scroll-margin-top:64px}
+.sec-head{display:grid;gap:2px;border-top:3px solid var(--c);padding-top:12px}
+.sec-head h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:36px;margin:0;line-height:1.1;text-wrap:balance}
+.sec-head p{margin:0;color:var(--muted)}
+.sec-head .mono{color:var(--c)}
+.industry{--c:var(--industry);--cs:var(--industry-soft)}
+.finance{--c:var(--finance);--cs:var(--finance-soft)}
+.startups{--c:var(--startups);--cs:var(--startups-soft)}
+
+article{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px 20px;display:grid;gap:16px;scroll-margin-top:64px}
+article .kicker{color:var(--c)}
+article h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(26px,6vw,32px);line-height:1.15;margin:0;text-wrap:balance}
+.standfirst{margin:0;font-size:18px;line-height:1.5;color:var(--muted)}
+.body{display:grid;gap:14px;font-family:"Source Serif 4",Georgia,serif;font-size:18px;line-height:1.65;max-width:65ch}
+.body p{margin:0}
+.src{margin:0;font-size:13px;color:var(--muted)}
+.concepts{background:var(--cs);border-radius:12px;padding:16px 18px;display:grid;gap:12px}
+.concepts .mono{color:var(--c)}
+.concepts dl{margin:0;display:grid;gap:10px}
+.concepts dt{font-weight:600}
+.concepts dd{margin:2px 0 0}
+.why{display:grid;gap:4px;border-left:2px solid var(--c);padding-left:14px}
+.why .mono{color:var(--c)}
+.why p{margin:0}
+
+pre{margin:0;background:var(--code-bg);color:var(--code-ink);border-radius:10px;padding:16px;overflow-x:auto;font:14px/1.55 "IBM Plex Mono",ui-monospace,Consolas,monospace}
+.walk{margin:0;padding-left:20px;display:grid;gap:6px}
+code{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:.9em}
+.tryit{background:var(--industry-soft);border-radius:10px;padding:12px 16px}
+.tryit p{margin:0}
+
+.q{display:grid;gap:12px;border-top:1px solid var(--line);padding-top:18px}
+.q:first-of-type{border-top:0;padding-top:0}
+.scenario{margin:0;font-family:"Source Serif 4",Georgia,serif;font-style:italic;font-size:17px}
+.q .ask{margin:0;font-weight:600}
+.opts{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.opts button{width:100%;text-align:left;font:inherit;color:var(--ink);background:var(--ground);border:1px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer;display:flex;gap:10px}
+.opts button:hover{border-color:var(--industry)}
+.opts button b{font-family:"IBM Plex Mono",ui-monospace,monospace;font-weight:500}
+.opts button.right{background:var(--right-soft);border-color:var(--right)}
+.opts button.wrong{background:var(--wrong-soft);border-color:var(--wrong)}
+.opts button:disabled{cursor:default}
+details{border-radius:10px}
+summary{cursor:pointer;font-weight:500;color:var(--industry)}
+.answer{display:grid;gap:8px;margin-top:10px}
+.answer p{margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:13px;padding:2px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+
+.gloss{margin:0;display:grid;gap:12px}
+.gloss dt{font-weight:600}
+.gloss dt a{font-weight:400;font-size:13px;color:var(--muted);margin-left:6px}
+.gloss dd{margin:2px 0 0;color:var(--muted)}
+.archive{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.archive a{display:inline-block;padding:4px 10px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-variant-numeric:tabular-nums;font-size:14px}
+.archive a[aria-current]{border-color:var(--industry);color:var(--industry)}
+footer{color:var(--muted);font-size:13px}
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="mono date">Monday 12 October 2026 · 15 min read</span>
+  <h1>AI Morning <em>Brief</em></h1>
+  <p class="lede">Today's AI and fintech news as short articles, with every key concept explained, a bit of Python, and a scenario quiz to check it stuck.</p>
+</header>
+
+<nav aria-label="Sections">
+  <a href="#industry" class="industry">The AI industry</a>
+  <a href="#finance" class="finance">AI &amp; finance</a>
+  <a href="#startups" class="startups">Startups &amp; funding</a>
+  <a href="#code">Code corner</a>
+  <a href="#quiz">Quiz</a>
+  <a href="#glossary">Glossary</a>
+</nav>
+
+<div class="panel talk">
+  <span class="mono">If you only read one thing</span>
+  <h2>Three things to be able to say today</h2>
+  <ol><li>Chipmakers Broadcom and Intel are now flagging the cost of capital, not chips or power, as AI&#39;s next bottleneck.</li><li>The IMF says AI is propping up global growth near 3% while hitting young workers like a &#39;slow-moving tsunami&#39;.</li><li>Amazon is reportedly closing in on a $7 billion deal for video-AI startup Decart after Nvidia and Anthropic walked away.</li></ol>
+</div>
+
+<div class="panel">
+  <span class="mono">In today's brief</span>
+  <div class="toc">
+  
+    <div class="industry"><h3 class="mono" style="color:var(--c)">The AI industry</h3>
+      <ul><li><a href="#story-0">Broadcom and Intel CEOs say capital, not chips, could be AI&#39;s biggest bottleneck</a></li><li><a href="#story-1">IMF chief warns AI hitting jobs like a &#39;slow-moving tsunami&#39;, young workers most exposed</a></li><li><a href="#story-2">US software developer job postings up 15% since Claude Code&#39;s launch, despite AI writing more code</a></li></ul>
+    </div>
+  
+    <div class="finance"><h3 class="mono" style="color:var(--c)">AI &amp; finance</h3>
+      <ul><li><a href="#story-3">IMF: AI investment keeps global growth near 3% but brings &#39;massive disruption&#39;</a></li><li><a href="#story-4">AI spending pushes up borrowing costs worldwide</a></li><li><a href="#story-5">AI borrowers now make up half of America&#39;s investment-grade bond market</a></li></ul>
+    </div>
+  
+    <div class="startups"><h3 class="mono" style="color:var(--c)">Startups &amp; funding</h3>
+      <ul><li><a href="#story-6">Amazon in talks to buy AI video startup Decart for around $7 billion</a></li><li><a href="#story-7">Hospital staffing startup Vitalize raises $31 million Series A</a></li></ul>
+    </div>
+  
+  </div>
+</div>
+
+
+<section id="industry" class="industry">
+  <div class="sec-head">
+    <span class="mono">Section 1</span>
+    <h2>The AI industry</h2>
+    <p>Big labs, big tech and the direction of travel.</p>
+  </div>
+  
+  <article id="story-0">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Broadcom and Intel CEOs say capital, not chips, could be AI&#39;s biggest bottleneck</h3>
+    <p class="standfirst">Speaking in Singapore, both chief executives warned that the rising cost of borrowing could slow AI build-out even as demand for computing power keeps outstripping supply.</p>
+    <div class="body"><p>Broadcom&#39;s Hock Tan and Intel&#39;s Lip-Bu Tan told the DBS Asia Future Forward Conference on Monday that financing, rather than semiconductor shortages or power shortages, could become the biggest constraint on the artificial intelligence boom. Both companies sell chips used to build the data centres that train and run AI models, so their comments carry weight on where the industry&#39;s next pinch point lies.</p><p>The warning comes as borrowing costs rise globally, making it pricier for tech firms to fund the data centres, chips and electricity infrastructure that AI demands. Hock Tan said the industry has repeatedly hit bottlenecks over the past two years — including memory shortages — and overcome them, with wafer shortages potentially easing by 2028 or 2029. But capital is different: it depends on investors believing AI spending will eventually pay off.</p><p>Lip-Bu Tan pointed to a looming reckoning over return on investment, the profit a company makes relative to what it spent to get it. If AI adoption disappoints or model improvements plateau, Hock Tan warned, demand for computing infrastructure could slow. For now, both executives see no major slowdown in the next two to three years, with demand for compute outstripping supply possibly through 2029 or 2030 — but only if businesses can show AI spending is actually paying for itself.</p></div>
+    
+    <p class="src">Sources: <a href="https://www.cnbc.com/2026/10/12/intel-broadcom-ceos-warn-capital-crunch-could-become-ai-bottleneck.html" target="_blank" rel="noopener">Tech</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Cost of capital</dt><dd>This is the price a company pays to borrow or raise money, usually expressed as an interest rate or required return. If it costs more to borrow, expensive long-term projects like data centres become harder to justify.</dd></div><div><dt>Return on investment (ROI)</dt><dd>ROI measures the profit generated from money spent, as a percentage of that spend. Spending £10 billion on data centres only makes sense if it eventually generates more than £10 billion in extra profit.</dd></div><div><dt>Capital expenditure (capex)</dt><dd>Capex is money spent on long-term physical assets, such as chips, buildings or power infrastructure, rather than day-to-day running costs. AI companies&#39; capex has exploded as they race to build data centres.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>If you want to work in AI infrastructure, finance or chip sales, understanding how financing costs shape investment decisions is as important as understanding the technology itself. It&#39;s also a good interview talking point: it shows you see AI as a business story, not just a technology story.</p></div>
+  </article>
+  
+  <article id="story-1">
+    <span class="mono kicker">The AI industry</span>
+    <h3>IMF chief warns AI hitting jobs like a &#39;slow-moving tsunami&#39;, young workers most exposed</h3>
+    <p class="standfirst">Kristalina Georgieva and World Bank Jobs Council co-chair Tharman Shanmugaratnam called for permanent crisis-style employment support as entry-level hiring weakens.</p>
+    <div class="body"><p>IMF Managing Director Kristalina Georgieva warned in Bangkok on Monday that artificial intelligence is disrupting the global labour market like a slow-moving tsunami, hitting young people entering work hardest. She said graduates traditionally start in routine, repetitive jobs and climb the ranks over time — but AI is increasingly automating exactly those roles.</p><p>Singapore&#39;s Tharman Shanmugaratnam, who co-chairs the World Bank&#39;s Jobs Council, called for governments to treat crisis-era job support, the kind rolled out during Covid-19, as a permanent policy tool rather than an emergency measure. World Bank President Ajay Banga noted that 1.2 billion young people will turn 18 over the next 15 years, and the private sector, which already creates most jobs globally, will need to absorb them with government help to &#39;de-risk&#39; private investment.</p><p>The IMF estimates roughly 40% of jobs worldwide will eventually be augmented, downgraded or eliminated by AI, with exposure around 60% in advanced economies versus 23% in low-income ones. Yet AI is also propping up global economic growth, adding an estimated 0.5 to 1 percentage point in advanced Asia. Shanmugaratnam cautioned that growth alone won&#39;t guarantee job creation, warning that fast-growing economies like China and India already show weak job creation that AI could widen further.</p></div>
+    
+    <p class="src">Sources: <a href="https://www.cnbc.com/2026/10/12/imf-world-bank-ai-jobs-inflation-.html" target="_blank" rel="noopener">Tech</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Automation</dt><dd>Automation means using technology to perform tasks that humans used to do. AI automation differs from older factory automation because it increasingly affects office and knowledge work, not just manual labour.</dd></div><div><dt>GDP (gross domestic product)</dt><dd>GDP measures the total value of goods and services a country produces in a year. The IMF says AI investment is currently helping keep global GDP growth near 3%, even as it disrupts jobs.</dd></div><div><dt>Labour market exposure</dt><dd>This describes how likely a type of job is to be changed or replaced by a new technology. A call-centre job has high AI exposure because chatbots can handle similar tasks; a plumber&#39;s job has low exposure.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>If you&#39;re early in your career, this is a direct warning: build skills in applying and overseeing AI tools, not just skills AI can replicate. It&#39;s worth raising in interviews to show you understand the labour-market stakes of the technology you&#39;re being hired to use.</p></div>
+  </article>
+  
+  <article id="story-2">
+    <span class="mono kicker">The AI industry</span>
+    <h3>US software developer job postings up 15% since Claude Code&#39;s launch, despite AI writing more code</h3>
+    <p class="standfirst">Hiring is rebounding for senior and AI-focused developer roles even as AI automates more programming tasks, Indeed Hiring Lab data shows.</p>
+    <div class="body"><p>US software-development job postings have risen nearly 15% since February 2025 — the month Anthropic launched its AI coding tool Claude Code — even as the broader job market weakened, according to Indeed Hiring Lab. That&#39;s despite warnings that AI would rapidly erase coding jobs: GitHub, Microsoft&#39;s code-hosting platform, says one in three proposed code changes, known as pull requests, now involve an AI agent, up from fewer than one in ten a year earlier.</p><p>McKinsey&#39;s North America chair Eric Kutcher said the rebound contradicts earlier predictions that developers would be the biggest losers from AI. Instead, companies are producing more code than ever and still need people to check it, refine products and connect AI tools into their broader systems. Indeed economist Sneha Puri said firms increasingly value developers who can apply AI to business problems, not just write code from scratch.</p><p>But the recovery is uneven. Senior roles accounted for 71% of the increase in postings between May 2025 and May 2026, and postings remain 27.5% below pre-pandemic levels overall. Stanford&#39;s 2026 AI Index found employment for early-career software developers aged 22–25 has fallen 20% since generative AI&#39;s rise. GitHub itself warned that as AI pushes more code into the world, humans must scale their oversight of it or risk a growing pile of unchecked security flaws.</p></div>
+    
+    <p class="src">Sources: <a href="https://www.cnbc.com/2026/10/11/ai-software-developer-jobs.html" target="_blank" rel="noopener">Tech</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Pull request</dt><dd>A pull request is a proposed change to a piece of software that a developer submits for others to review before it&#39;s added to the main project. AI agents can now draft pull requests, but humans typically still review them.</dd></div><div><dt>AI agent (reminder)</dt><dd>An AI agent is a system that can take multi-step actions on its own, like writing and submitting code, rather than just answering a single question.</dd></div><div><dt>Entry-level job market</dt><dd>This refers to roles aimed at people with little or no professional experience. AI is shrinking this market in software because it can now do many of the simple, repetitive tasks juniors used to learn on.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>This should shape how you plan your own career: lean into becoming someone who can supervise, debug and apply AI-generated code rather than just produce it. In interviews, mentioning you understand the gap between junior and senior AI-era demand shows real market awareness.</p></div>
+  </article>
+  
+</section>
+
+<section id="finance" class="finance">
+  <div class="sec-head">
+    <span class="mono">Section 2</span>
+    <h2>AI &amp; finance</h2>
+    <p>Where Wall Street and the City meet AI, as users and as funders.</p>
+  </div>
+  
+  <article id="story-3">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>IMF: AI investment keeps global growth near 3% but brings &#39;massive disruption&#39;</h3>
+    <p class="standfirst">The fund says AI spending is propping up the world economy even as it reshapes labour markets.</p>
+    <div class="body"><p>The IMF said AI-related investment is helping keep global economic growth around 3%, even as the technology causes significant disruption to jobs and industries, according to Reuters. The comments echo remarks made separately by IMF chief Kristalina Georgieva about AI&#39;s dual role as both a growth engine and a source of labour-market upheaval.</p><p>Limited detail is available beyond the headline figures, but the framing lines up with Georgieva&#39;s warning elsewhere that AI&#39;s economic boost could, in the best case, outweigh the drag from ageing populations in some regions. It underscores how central AI spending has become to global growth forecasts this year.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMiwgFBVV95cUxONXItVGZaTjNISE9iMlVzZzhlV2ZmYzFDR29feFhfWFRhRzJFdWlwYXk5QkZpUHQ3WVhLZEZId2xobTNmc1E2Y25FN2c1TTg1eldiR3RLR003ajh2RUpSN1RxYXVzYjJ4TW5ZMW1ZcVljRndfSUpoNVVlLUE3eWc1MkhqUUtGQTdYdC1zVUxIbnNJWVJYb2ZIcVN1S3QzWWhQUmdsQ3VFVG9xSEs4NDVvOTZ5dHJRZUNNaUtsazVSMThYQQ?oc=5" target="_blank" rel="noopener">Reuters</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Economic growth rate</dt><dd>This is the percentage increase in a country&#39;s or the world&#39;s total economic output over a year. A 3% global growth rate is considered roughly average by recent historical standards.</dd></div><div><dt>Economic disruption</dt><dd>This means significant, often fast, change to how industries and jobs work. AI is disruptive because it changes how work gets done faster than people and institutions can adapt.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Understanding that AI is simultaneously boosting GDP and disrupting jobs helps you make sense of mixed headlines you&#39;ll see all year — strong markets alongside hiring freezes.</p></div>
+  </article>
+  
+  <article id="story-4">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>AI spending pushes up borrowing costs worldwide</h3>
+    <p class="standfirst">Heavy AI-related debt issuance is reportedly putting upward pressure on global borrowing costs.</p>
+    <div class="body"><p>Fortune reports that AI companies&#39; enormous spending on data centres and chips is contributing to rising borrowing costs globally, as firms increasingly turn to debt markets to fund their infrastructure build-out. Limited further detail is available from the snippet, but the claim aligns with broader warnings from executives at Intel and Broadcom about the rising cost of capital for AI projects.</p><p>Higher borrowing costs matter because they raise the bar for how profitable an investment needs to be to make financial sense, potentially slowing the pace of AI infrastructure spending if conditions tighten further.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMilAFBVV95cUxNd2UxVkFJX0pqOG1NdUZTZUlvQ1A2VndWbDNVa3Jya2lpcWRIVXNTS3hzTzA3ZTFXVmNPWmR6ZTdoVzhuU19YN0RKRS1kUW52cVNNLUN1MmFPbDNDWUF3Ym5KS0t2ekctZWEzM1l3S05lMDRkRUY0a002M21FcUFXUVdkN0xaeXRiNW5TQU5SSm84LTgz?oc=5" target="_blank" rel="noopener">Startup Fortune</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Borrowing costs</dt><dd>This is the interest rate a company or government pays to borrow money. If a firm borrows £1 billion at 6% interest instead of 4%, it pays an extra £20 million a year just in interest.</dd></div><div><dt>Credit spread</dt><dd>A credit spread is the extra interest a riskier borrower pays compared with a very safe borrower like the US government. Wider spreads mean investors see more risk in lending to that company.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Rising borrowing costs connect directly to today&#39;s Intel/Broadcom story — it&#39;s the same financing squeeze seen from two different angles, industry executives and bond markets.</p></div>
+  </article>
+  
+  <article id="story-5">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>AI borrowers now make up half of America&#39;s investment-grade bond market</h3>
+    <p class="standfirst">Companies financing AI infrastructure reportedly account for roughly half of high-quality US corporate debt issuance.</p>
+    <div class="body"><p>Fortune reports that AI-related borrowers now represent about half of America&#39;s investment-grade bond market — debt issued by financially strong companies seen as low-risk. This concentration suggests how dominant AI infrastructure spending has become in corporate finance, with data centre operators, chipmakers and cloud providers among the heaviest borrowers.</p><p>Limited detail is available beyond this headline figure, but the scale raises questions about what happens to credit markets if AI returns disappoint, since so much investment-grade debt is now tied to a single sector&#39;s fortunes.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxNaWd3ME9rd3U3S1JiYmRvNGZ2Z1R2aF8wTWFNNTVSOE5VN3k0VS1SZlFxeDF4NkNZdkpmSGtHV2ZDM3Nzd3RtOWh1eDZjWUNSUnRsUkNYdEE0ekRnaDJQTG5UWEJ4bXI1ZEJZZ0xPc3g4VTRQTXdTaWlPdTFrOVlTb2ptVS1PR1d5SzRSS3ZYVkxVaDZQU0Vrd0VrLVJGU3c2?oc=5" target="_blank" rel="noopener">Startup Fortune</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Investment-grade bond</dt><dd>This is a bond issued by a company considered financially strong and unlikely to default, rated highly by credit agencies. These bonds typically pay lower interest than riskier &#39;junk&#39; bonds because lenders see less risk.</dd></div><div><dt>Bond market concentration</dt><dd>This means a large share of total borrowing in a market comes from one sector or theme. If half of investment-grade debt is AI-related, problems in AI spending could ripple through the wider bond market.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>This is a systemic risk story: so much safe-rated debt is now tied to AI that a slowdown in the sector wouldn&#39;t just hurt tech stocks, it could hit the broader credit market too.</p></div>
+  </article>
+  
+</section>
+
+<section id="startups" class="startups">
+  <div class="sec-head">
+    <span class="mono">Section 3</span>
+    <h2>Startups &amp; funding</h2>
+    <p>Who raised, how much, and what investors are betting on.</p>
+  </div>
+  
+  <article id="story-6">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>Amazon in talks to buy AI video startup Decart for around $7 billion</h3>
+    <p class="standfirst">The Israeli-founded startup, known for real-time AI video generation, is reportedly in advanced acquisition talks after both Nvidia and Anthropic considered deals.</p>
+    <div class="body"><p>Amazon is in talks to acquire Decart, an Israeli-founded AI startup, for roughly $7 billion, according to The Wall Street Journal and widely echoed by other outlets. Decart builds technology for generating and manipulating video in real time using AI, an area sometimes linked to &#39;world models&#39; that let AI systems understand and simulate physical scenes.</p><p>Several reports say Decart had previously drawn interest from Nvidia and Anthropic, both of which reportedly walked away before Amazon entered talks. If completed at the reported price, the deal would be one of Amazon&#39;s largest AI acquisitions and would give it in-house real-time video-generation technology, an area increasingly contested among big tech and frontier AI labs.</p><p>Terms have not been finalised and Amazon has not confirmed the reports. The deal, if it goes ahead, would be watched closely as a sign of how aggressively big cloud providers are moving to acquire specialised AI talent and technology rather than build everything internally.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMiqAFBVV95cUxQOGxqNnJoTC12VnZiQm1ZTUhITmQ0RjZyTWhIRDYwcGQxZm9ZMW9tbVl2NU9BNk05LUlhQ3ZDbXZjdjNJNVZQRnhsU3ZveXFjRFBrRTlmMkJKc0JVREZiVlNZbVRKM3Z2bWd5XzVyMHFDdzk2MEJyaHpRRWRmWTlxQVg4c2l4UnZIM002Szhfem9kWHJUTlZZWktDb1NQU0JOb0xaV2hxNjE?oc=5" target="_blank" rel="noopener">WSJ</a> · <a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxOTTcya1BRQmxVNHprU2lRT2ZVZDJ6dnpndWRCSkRjV280UUx2aHZPU1JNSk5Dd3lRdm4zRmwxekg5NmZJdmVNcXlwWHJDZlZyU2R2d2lLdkkxNGczVGlDeUc1NkIyUU1QVFh4bVd6VGNGME9JV3RTUXFxWHBXWjFISVZVMDRwNk9CUXF1Si0xSXotUG42Nk8zVng1cnFWd3NzN2FRaXg3cS1va1UwR01z?oc=5" target="_blank" rel="noopener">The Media Line</a> · <a href="https://news.google.com/rss/articles/CBMilgFBVV95cUxNaWZCX0FlSVYtU2cxRXlMZWVpeUd1dlNTUlEydjNMN3FxVWRjMlkwX3h1Q1RNQ0d2cU00S241UkZrcW1jODNIOFI0dDJCa210MzhGR0M0dHNtbHNhQU5qNDVvOTBNX0twdm1LSnZ3M3k2ZGNucHdKTGphLWxxRzVKcjNYMW9DNjhyVUNMVXp3R09GQ19tQnc?oc=5" target="_blank" rel="noopener">Yahoo Finance</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Acquisition (reminder)</dt><dd>An acquisition is when one company buys another, usually gaining full control of its technology, products and staff. Amazon buying Decart would fold its video-AI technology directly into Amazon&#39;s business.</dd></div><div><dt>Real-time AI video generation</dt><dd>This is AI technology that creates or alters video as it happens, rather than processing it afterwards. It&#39;s used for things like instantly transforming a live video feed or generating realistic video from a text description.</dd></div><div><dt>Bidding war</dt><dd>A bidding war happens when multiple buyers compete to acquire the same company, often pushing up the price. Decart reportedly drew interest from Nvidia and Anthropic before Amazon entered talks.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Big tech companies increasingly acquire promising AI startups rather than compete with them, which is worth knowing if you&#39;re considering joining an early-stage AI company — acquisition, not IPO, may be the more likely outcome.</p></div>
+  </article>
+  
+  <article id="story-7">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>Hospital staffing startup Vitalize raises $31 million Series A</h3>
+    <p class="standfirst">The startup is building what it calls an AI operating system for managing hospital staffing and capacity.</p>
+    <div class="body"><p>Vitalize has raised a $31 million Series A funding round to build an AI-powered system that helps hospitals manage staffing levels and bed capacity, according to a brief report. Hospital staffing is a persistent operational headache, with mismatches between patient demand and available nurses or beds driving both costs and burnout.</p><p>Limited further detail is available, but the round reflects continued investor appetite for AI applied to specific, high-value operational problems in large, complex industries like healthcare, rather than only general-purpose chatbots.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMivgFBVV95cUxNTUtuRGhqWjlIRVpIeUpWRmI0X29hSGs1ZHQwQnpBdWZjcEdIYUlEdGl6MzBsMnpGWnpQeVpoQzFyNzg4SUJnREZXUUJkcXpEYzVlaXZqMDgzNGJNUTZmT1pQdVVpMmMxZ3UzVE05bmhjNkFDQmcxMmQ4VDVtUlZRZzYtNndLbEVTdWp0RXlaSHo0Q1JfREVNNWlJelFyR3JIU1llYUVFOXBvdE5GYldCOS15Y2JYU0JPSzhydEdR?oc=5" target="_blank" rel="noopener">news.lavx.hu</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Series A</dt><dd>A Series A is typically a startup&#39;s first major round of venture funding after initial seed money, usually used to grow the product and team once there&#39;s early evidence it works.</dd></div><div><dt>Vertical AI</dt><dd>Vertical AI means building AI tools tailored to one specific industry, like healthcare staffing, rather than general tools meant for many industries. These products often embed deep knowledge of that industry&#39;s rules and workflows.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>This is a good example of &#39;boring but valuable&#39; AI: applying the technology to unglamorous operational problems can be just as fundable as flashy consumer AI, and it&#39;s a growing area for analysts and engineers interested in healthcare tech.</p></div>
+  </article>
+  
+</section>
+
+
+
+<div class="panel" id="code">
+  <span class="mono">Code corner</span>
+  <h2>How rising interest rates make AI debt more expensive</h2>
+  <p class="src">Based on: <a href="#story-4">AI spending pushes up borrowing costs worldwide</a></p>
+  <p style="margin:0">Today&#39;s finance stories describe how heavy AI borrowing is pushing up global interest rates. Here&#39;s a tiny Python script that shows how a change in interest rate affects the cost of a company&#39;s debt over time.</p>
+  <pre><code>def annual_interest_cost(principal, rate):
+    return principal * rate
+
+def total_interest_over_years(principal, rate, years):
+    return annual_interest_cost(principal, rate) * years
+
+principal = 10_000_000_000  # $10 billion borrowed for data centres
+old_rate = 0.04  # 4% interest
+new_rate = 0.06  # 6% interest, after rates rise
+years = 5
+
+old_cost = total_interest_over_years(principal, old_rate, years)
+new_cost = total_interest_over_years(principal, new_rate, years)
+extra_cost = new_cost - old_cost
+
+print(f&#34;Interest cost at 4%: ${old_cost:,.0f}&#34;)
+print(f&#34;Interest cost at 6%: ${new_cost:,.0f}&#34;)
+print(f&#34;Extra cost from higher rates: ${extra_cost:,.0f}&#34;)</code></pre>
+  <span class="mono">Line by line</span>
+  <ol class="walk"><li>`def annual_interest_cost(principal, rate):` defines a function that multiplies the amount borrowed by the interest rate to get one year&#39;s interest.</li><li>`def total_interest_over_years(...)` multiplies that annual cost by the number of years to get the total interest paid over the loan&#39;s life.</li><li>`principal = 10_000_000_000` sets a $10 billion loan, similar in scale to AI infrastructure financing; underscores in the number just make it easier to read.</li><li>`old_rate` and `new_rate` represent interest rates before and after the kind of rate rise described in today&#39;s bond market stories.</li><li>The `print` statements use f-strings with `:,.0f` formatting to show the numbers with commas and no decimal places, making large sums easier to read.</li></ol>
+  <div class="tryit"><p><b>Try it:</b> Change `principal` to $50 billion and `years` to 10, then rerun the script to see how much more the extra interest cost grows — this mirrors why executives are worried about financing much larger AI build-outs over longer timeframes.</p></div>
+</div>
+
+<div class="panel" id="quiz">
+  <span class="mono">Quiz · apply today's concepts</span>
+  <h2>What would you do?</h2>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 1</span>
+    <p class="scenario">You&#39;re in a team meeting at a bank discussing whether to invest in bonds issued by AI infrastructure companies.</p>
+    <p class="ask">A colleague argues these bonds are safe because they&#39;re investment-grade. What&#39;s the strongest concern to raise given today&#39;s stories?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>Investment-grade bonds never default, so there&#39;s no risk at all</span></button></li><li><button type="button" data-i="1"><b>B</b><span>Roughly half of the US investment-grade bond market is now reportedly tied to AI borrowers, so a sector-wide AI slowdown could hit a large share of &#39;safe&#39; debt at once</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Investment-grade bonds always pay higher interest than junk bonds</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Bond yields have no connection to how companies finance data centres</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> Today&#39;s story noted AI borrowers reportedly make up about half of the investment-grade bond market, creating concentrated, systemic exposure if AI returns disappoint. Option 0 is wrong because &#39;investment-grade&#39; only means lower risk, not zero risk; option 2 reverses the usual relationship (junk bonds pay more, not less); option 3 ignores the direct link described in the stories.</p>
+        <div class="chips"><span>Investment-grade bond</span><span>Bond market concentration</span><span>Systemic risk</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 2</span>
+    <p class="scenario">In a graduate interview, you&#39;re asked how you&#39;d advise a startup founder nervous about AI automating junior developer jobs.</p>
+    <p class="ask">Based on today&#39;s software-developer hiring story, what&#39;s the most accurate advice?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>Junior developers are no longer needed at all, so avoid hiring any</span></button></li><li><button type="button" data-i="1"><b>B</b><span>Demand has grown mainly for senior and AI-oriented roles, so junior hires should focus on learning to review, integrate and oversee AI-generated code, not just write code from scratch</span></button></li><li><button type="button" data-i="2"><b>C</b><span>AI coding tools have had zero effect on the job market</span></button></li><li><button type="button" data-i="3"><b>D</b><span>All software jobs are shrinking equally regardless of seniority</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> The story showed postings rising mostly for senior and AI-focused roles, with juniors advised to build skills around reviewing and applying AI output. Option 0 overstates the decline, option 2 ignores the clear data showing AI&#39;s impact, and option 3 is contradicted by the finding that the decline is concentrated among early-career roles.</p>
+        <div class="chips"><span>Pull request</span><span>Entry-level job market</span><span>AI agent (reminder)</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 3</span>
+    <p class="scenario">A founder pitching you says their startup will be acquired for a huge sum because &#39;AI deals always get acquired at a premium.&#39;</p>
+    <p class="ask">Thinking about the Decart story, what&#39;s the most accurate way to frame this claim?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>All AI startups are guaranteed big acquisitions, so valuation doesn&#39;t matter</span></button></li><li><button type="button" data-i="1"><b>B</b><span>Acquisitions depend on specific buyer interest and competition, as shown by Decart reportedly drawing interest from Nvidia and Anthropic before Amazon entered talks, not a universal rule</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Decart&#39;s reported $7 billion deal proves every AI startup is worth billions</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Big tech companies never acquire AI startups, they only build in-house</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> Decart&#39;s situation shows that acquisition outcomes depend on which buyers are interested and how competitive the process becomes, not a guaranteed rule for all AI startups. The other options either overgeneralise from one example or contradict the facts of the story.</p>
+        <div class="chips"><span>Acquisition (reminder)</span><span>Bidding war</span><span>Real-time AI video generation</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 4</span>
+    <p class="scenario">During your first week as a junior analyst, your manager mentions that &#39;the cost of capital could be the biggest constraint on AI growth, not chips.&#39;</p>
+    <p class="ask">What does this mean in practice?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>It means AI companies will run out of electricity before anything else</span></button></li><li><button type="button" data-i="1"><b>B</b><span>It means that even with enough chips and power, rising interest rates and investors&#39; caution about returns could make it too expensive to keep funding AI infrastructure</span></button></li><li><button type="button" data-i="2"><b>C</b><span>It means AI companies have unlimited free money to spend</span></button></li><li><button type="button" data-i="3"><b>D</b><span>It means chip shortages have become permanent and unsolvable</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> Both Broadcom&#39;s and Intel&#39;s CEOs specifically flagged financing costs and investor expectations around returns as a potential bottleneck, separate from physical constraints like chips or power. The other options either describe a different bottleneck entirely or misstate the executives&#39; actual comments.</p>
+        <div class="chips"><span>Cost of capital</span><span>Return on investment (ROI)</span><span>Capital expenditure (capex)</span></div>
+      </div>
+    </details>
+  </div>
+  
+</div>
+
+<div class="panel" id="glossary">
+  <span class="mono">Glossary</span>
+  <h2>Every concept from today</h2>
+  <dl class="gloss"><div><dt>Acquisition (reminder)<a href="#story-6">see story</a></dt><dd>An acquisition is when one company buys another, usually gaining full control of its technology, products and staff. Amazon buying Decart would fold its video-AI technology directly into Amazon&#39;s business.</dd></div><div><dt>AI agent (reminder)<a href="#story-2">see story</a></dt><dd>An AI agent is a system that can take multi-step actions on its own, like writing and submitting code, rather than just answering a single question.</dd></div><div><dt>Automation<a href="#story-1">see story</a></dt><dd>Automation means using technology to perform tasks that humans used to do. AI automation differs from older factory automation because it increasingly affects office and knowledge work, not just manual labour.</dd></div><div><dt>Bidding war<a href="#story-6">see story</a></dt><dd>A bidding war happens when multiple buyers compete to acquire the same company, often pushing up the price. Decart reportedly drew interest from Nvidia and Anthropic before Amazon entered talks.</dd></div><div><dt>Bond market concentration<a href="#story-5">see story</a></dt><dd>This means a large share of total borrowing in a market comes from one sector or theme. If half of investment-grade debt is AI-related, problems in AI spending could ripple through the wider bond market.</dd></div><div><dt>Borrowing costs<a href="#story-4">see story</a></dt><dd>This is the interest rate a company or government pays to borrow money. If a firm borrows £1 billion at 6% interest instead of 4%, it pays an extra £20 million a year just in interest.</dd></div><div><dt>Capital expenditure (capex)<a href="#story-0">see story</a></dt><dd>Capex is money spent on long-term physical assets, such as chips, buildings or power infrastructure, rather than day-to-day running costs. AI companies&#39; capex has exploded as they race to build data centres.</dd></div><div><dt>Cost of capital<a href="#story-0">see story</a></dt><dd>This is the price a company pays to borrow or raise money, usually expressed as an interest rate or required return. If it costs more to borrow, expensive long-term projects like data centres become harder to justify.</dd></div><div><dt>Credit spread<a href="#story-4">see story</a></dt><dd>A credit spread is the extra interest a riskier borrower pays compared with a very safe borrower like the US government. Wider spreads mean investors see more risk in lending to that company.</dd></div><div><dt>Economic disruption<a href="#story-3">see story</a></dt><dd>This means significant, often fast, change to how industries and jobs work. AI is disruptive because it changes how work gets done faster than people and institutions can adapt.</dd></div><div><dt>Economic growth rate<a href="#story-3">see story</a></dt><dd>This is the percentage increase in a country&#39;s or the world&#39;s total economic output over a year. A 3% global growth rate is considered roughly average by recent historical standards.</dd></div><div><dt>Entry-level job market<a href="#story-2">see story</a></dt><dd>This refers to roles aimed at people with little or no professional experience. AI is shrinking this market in software because it can now do many of the simple, repetitive tasks juniors used to learn on.</dd></div><div><dt>GDP (gross domestic product)<a href="#story-1">see story</a></dt><dd>GDP measures the total value of goods and services a country produces in a year. The IMF says AI investment is currently helping keep global GDP growth near 3%, even as it disrupts jobs.</dd></div><div><dt>Investment-grade bond<a href="#story-5">see story</a></dt><dd>This is a bond issued by a company considered financially strong and unlikely to default, rated highly by credit agencies. These bonds typically pay lower interest than riskier &#39;junk&#39; bonds because lenders see less risk.</dd></div><div><dt>Labour market exposure<a href="#story-1">see story</a></dt><dd>This describes how likely a type of job is to be changed or replaced by a new technology. A call-centre job has high AI exposure because chatbots can handle similar tasks; a plumber&#39;s job has low exposure.</dd></div><div><dt>Pull request<a href="#story-2">see story</a></dt><dd>A pull request is a proposed change to a piece of software that a developer submits for others to review before it&#39;s added to the main project. AI agents can now draft pull requests, but humans typically still review them.</dd></div><div><dt>Real-time AI video generation<a href="#story-6">see story</a></dt><dd>This is AI technology that creates or alters video as it happens, rather than processing it afterwards. It&#39;s used for things like instantly transforming a live video feed or generating realistic video from a text description.</dd></div><div><dt>Return on investment (ROI)<a href="#story-0">see story</a></dt><dd>ROI measures the profit generated from money spent, as a percentage of that spend. Spending £10 billion on data centres only makes sense if it eventually generates more than £10 billion in extra profit.</dd></div><div><dt>Series A<a href="#story-7">see story</a></dt><dd>A Series A is typically a startup&#39;s first major round of venture funding after initial seed money, usually used to grow the product and team once there&#39;s early evidence it works.</dd></div><div><dt>Vertical AI<a href="#story-7">see story</a></dt><dd>Vertical AI means building AI tools tailored to one specific industry, like healthcare staffing, rather than general tools meant for many industries. These products often embed deep knowledge of that industry&#39;s rules and workflows.</dd></div></dl>
+</div>
+
+<div class="panel">
+  <span class="mono">Past digests</span>
+  <ul class="archive"><li><a href="../archive/2026-10-12.html" aria-current="page">2026-10-12</a></li><li><a href="../archive/2026-10-11.html">2026-10-11</a></li><li><a href="../archive/2026-10-10.html">2026-10-10</a></li><li><a href="../archive/2026-10-09.html">2026-10-09</a></li><li><a href="../archive/2026-10-05.html">2026-10-05</a></li><li><a href="../archive/2026-10-04.html">2026-10-04</a></li><li><a href="../archive/2026-10-03.html">2026-10-03</a></li><li><a href="../archive/2026-09-23.html">2026-09-23</a></li><li><a href="../archive/2026-09-22.html">2026-09-22</a></li><li><a href="../archive/2026-09-20.html">2026-09-20</a></li><li><a href="../archive/2026-09-19.html">2026-09-19</a></li><li><a href="../archive/2026-09-18.html">2026-09-18</a></li><li><a href="../archive/2026-09-17.html">2026-09-17</a></li></ul>
+</div>
+
+<footer>Written by Claude from the linked sources. Check the original article before quoting figures in an interview.</footer>
+</div>
+<script>
+document.querySelectorAll(".q").forEach(function (q) {
+  var correct = Number(q.dataset.correct);
+  var buttons = q.querySelectorAll(".opts button");
+  buttons.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var picked = Number(b.dataset.i);
+      buttons.forEach(function (x) {
+        var i = Number(x.dataset.i);
+        if (i === correct) x.classList.add("right");
+        else if (i === picked) x.classList.add("wrong");
+        x.disabled = true;
+      });
+      q.querySelector("details").open = true;
+    });
+  });
+});
+</script>
+</body>
+</html>
