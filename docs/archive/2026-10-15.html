@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI Morning Brief · Thursday 15 October 2026</title>
+<meta name="theme-color" content="#3A55C8">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  color-scheme:light dark;
+  --ground:#F3F4F7; --paper:#FFFFFF; --ink:#141827; --muted:#5B6275; --line:#DDE0E8;
+  --industry:#3A55C8; --industry-soft:#E6EAFA;
+  --finance:#1C7453; --finance-soft:#E1F1EA;
+  --startups:#A8561A; --startups-soft:#F7EADF;
+  --code-bg:#161A26; --code-ink:#E4E7F0;
+  --right:#1C7453; --right-soft:#E1F1EA; --wrong:#B3261E; --wrong-soft:#FBE7E5;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --ground:#0F121B; --paper:#171B27; --ink:#E8EAF1; --muted:#9AA1B4; --line:#2A3042;
+    --industry:#8FA3F5; --industry-soft:#20284A;
+    --finance:#6CCBA3; --finance-soft:#15332A;
+    --startups:#E8A06A; --startups-soft:#3A2618;
+    --code-bg:#0B0D14; --code-ink:#E4E7F0;
+    --right:#6CCBA3; --right-soft:#15332A; --wrong:#F2A29B; --wrong-soft:#3A1B19;
+  }
+}
+*{box-sizing:border-box}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.6 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;padding-inline:16px;padding-block:28px 64px}
+.wrap{max-width:700px;margin:0 auto;display:grid;gap:36px}
+a{color:inherit}
+a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var(--industry);outline-offset:3px;border-radius:4px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400}
+header{display:grid;gap:10px}
+header .date{color:var(--muted)}
+h1{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(44px,11vw,64px);line-height:1;margin:0;letter-spacing:-.01em}
+h1 em{color:var(--industry)}
+.lede{color:var(--muted);margin:0;max-width:60ch}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ground);padding-block:10px;display:flex;gap:8px;overflow-x:auto;border-bottom:1px solid var(--line)}
+nav a{flex:none;text-decoration:none;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--paper);font-size:14px}
+nav a.industry{color:var(--industry)} nav a.finance{color:var(--finance)} nav a.startups{color:var(--startups)}
+
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:14px;scroll-margin-top:64px}
+.panel h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:30px;margin:0;line-height:1.15}
+.panel > .mono{color:var(--muted)}
+.talk ol{margin:0;padding-left:20px;display:grid;gap:8px}
+.toc{display:grid;gap:14px}
+.toc h3{margin:0 0 4px}
+.toc ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.toc li a{text-decoration:none}
+.toc li a:hover{text-decoration:underline}
+
+section{display:grid;gap:22px;scroll-margin-top:64px}
+.sec-head{display:grid;gap:2px;border-top:3px solid var(--c);padding-top:12px}
+.sec-head h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:36px;margin:0;line-height:1.1;text-wrap:balance}
+.sec-head p{margin:0;color:var(--muted)}
+.sec-head .mono{color:var(--c)}
+.industry{--c:var(--industry);--cs:var(--industry-soft)}
+.finance{--c:var(--finance);--cs:var(--finance-soft)}
+.startups{--c:var(--startups);--cs:var(--startups-soft)}
+
+article{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px 20px;display:grid;gap:16px;scroll-margin-top:64px}
+article .kicker{color:var(--c)}
+article h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(26px,6vw,32px);line-height:1.15;margin:0;text-wrap:balance}
+.standfirst{margin:0;font-size:18px;line-height:1.5;color:var(--muted)}
+.body{display:grid;gap:14px;font-family:"Source Serif 4",Georgia,serif;font-size:18px;line-height:1.65;max-width:65ch}
+.body p{margin:0}
+.src{margin:0;font-size:13px;color:var(--muted)}
+.concepts{background:var(--cs);border-radius:12px;padding:16px 18px;display:grid;gap:12px}
+.concepts .mono{color:var(--c)}
+.concepts dl{margin:0;display:grid;gap:10px}
+.concepts dt{font-weight:600}
+.concepts dd{margin:2px 0 0}
+.why{display:grid;gap:4px;border-left:2px solid var(--c);padding-left:14px}
+.why .mono{color:var(--c)}
+.why p{margin:0}
+
+pre{margin:0;background:var(--code-bg);color:var(--code-ink);border-radius:10px;padding:16px;overflow-x:auto;font:14px/1.55 "IBM Plex Mono",ui-monospace,Consolas,monospace}
+.walk{margin:0;padding-left:20px;display:grid;gap:6px}
+code{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:.9em}
+.tryit{background:var(--industry-soft);border-radius:10px;padding:12px 16px}
+.tryit p{margin:0}
+
+.q{display:grid;gap:12px;border-top:1px solid var(--line);padding-top:18px}
+.q:first-of-type{border-top:0;padding-top:0}
+.scenario{margin:0;font-family:"Source Serif 4",Georgia,serif;font-style:italic;font-size:17px}
+.q .ask{margin:0;font-weight:600}
+.opts{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.opts button{width:100%;text-align:left;font:inherit;color:var(--ink);background:var(--ground);border:1px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer;display:flex;gap:10px}
+.opts button:hover{border-color:var(--industry)}
+.opts button b{font-family:"IBM Plex Mono",ui-monospace,monospace;font-weight:500}
+.opts button.right{background:var(--right-soft);border-color:var(--right)}
+.opts button.wrong{background:var(--wrong-soft);border-color:var(--wrong)}
+.opts button:disabled{cursor:default}
+details{border-radius:10px}
+summary{cursor:pointer;font-weight:500;color:var(--industry)}
+.answer{display:grid;gap:8px;margin-top:10px}
+.answer p{margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:13px;padding:2px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+
+.gloss{margin:0;display:grid;gap:12px}
+.gloss dt{font-weight:600}
+.gloss dt a{font-weight:400;font-size:13px;color:var(--muted);margin-left:6px}
+.gloss dd{margin:2px 0 0;color:var(--muted)}
+.archive{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.archive a{display:inline-block;padding:4px 10px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-variant-numeric:tabular-nums;font-size:14px}
+.archive a[aria-current]{border-color:var(--industry);color:var(--industry)}
+footer{color:var(--muted);font-size:13px}
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="mono date">Thursday 15 October 2026 · 16 min read</span>
+  <h1>AI Morning <em>Brief</em></h1>
+  <p class="lede">Today's AI and fintech news as short articles, with every key concept explained, a bit of Python, and a scenario quiz to check it stuck.</p>
+</header>
+
+<nav aria-label="Sections">
+  <a href="#industry" class="industry">The AI industry</a>
+  <a href="#finance" class="finance">AI &amp; finance</a>
+  <a href="#startups" class="startups">Startups &amp; funding</a>
+  <a href="#code">Code corner</a>
+  <a href="#quiz">Quiz</a>
+  <a href="#glossary">Glossary</a>
+</nav>
+
+<div class="panel talk">
+  <span class="mono">If you only read one thing</span>
+  <h2>Three things to be able to say today</h2>
+  <ol><li>TSMC just posted a sixth straight record profit quarter, proof the AI chip boom still has legs even as credit markets wobble.</li><li>CoreWeave&#39;s bonds spiking to nearly 15% show investors are suddenly pricing in real risk on the AI infrastructure borrowing spree.</li><li>OpenAI is now fighting battles on two fronts: eight US states suing over child safety, and a trade-secrets war with Apple.</li></ol>
+</div>
+
+<div class="panel">
+  <span class="mono">In today's brief</span>
+  <div class="toc">
+  
+    <div class="industry"><h3 class="mono" style="color:var(--c)">The AI industry</h3>
+      <ul><li><a href="#story-0">TSMC posts sixth straight record profit as AI chip demand outstrips supply</a></li><li><a href="#story-1">Eight US states sue OpenAI over ChatGPT&#39;s alleged harm to children</a></li><li><a href="#story-2">OpenAI accuses former employee of leaking product plans to Apple</a></li></ul>
+    </div>
+  
+    <div class="finance"><h3 class="mono" style="color:var(--c)">AI &amp; finance</h3>
+      <ul><li><a href="#story-3">Bank of America fined $1.2bn over &#39;egregious&#39; anti-money laundering failures</a></li><li><a href="#story-4">CoreWeave shares sink 15% as bond yields near 15% on AI debt fears</a></li><li><a href="#story-5">FCA sets out plans to use AI to automate financial regulation</a></li></ul>
+    </div>
+  
+    <div class="startups"><h3 class="mono" style="color:var(--c)">Startups &amp; funding</h3>
+      <ul><li><a href="#story-6">AI cloud startup Modal raises $750m at $15.75bn valuation</a></li><li><a href="#story-7">AMD pays $8.2bn to bring in &#39;Godmother of AI&#39;</a></li></ul>
+    </div>
+  
+  </div>
+</div>
+
+
+<section id="industry" class="industry">
+  <div class="sec-head">
+    <span class="mono">Section 1</span>
+    <h2>The AI industry</h2>
+    <p>Big labs, big tech and the direction of travel.</p>
+  </div>
+  
+  <article id="story-0">
+    <span class="mono kicker">The AI industry</span>
+    <h3>TSMC posts sixth straight record profit as AI chip demand outstrips supply</h3>
+    <p class="standfirst">The world&#39;s biggest contract chipmaker beat forecasts and said demand for advanced chips still exceeds what it can produce.</p>
+    <div class="body"><p>Taiwan Semiconductor Manufacturing Co (TSMC) reported record third-quarter profit on Thursday, with net income of NT$763.1 billion (about $23.7bn), up 68.7% from a year earlier and ahead of analyst estimates. Revenue came in at NT$1.49 trillion, also beating expectations, with an operating margin of 58.7% that topped the company&#39;s own guidance.</p><p>TSMC makes chips for other companies rather than selling its own branded products — a business model known as foundry work. It manufactures the advanced processors that power AI systems for clients including Nvidia and Apple, and its 3-nanometer chips (referring to the size of the transistors etched onto silicon; smaller generally means faster and more efficient) were its biggest single revenue driver this quarter at 33% of sales.</p><p>The company forecast fourth-quarter revenue of $52.3bn to $54.3bn, a 58% jump from a year ago at the midpoint, and said capital expenditure — the money spent on factories and equipment — will be &#39;significantly higher&#39; from 2026 to 2028 than in the previous three years. TSMC said it checks whether customers can actually afford to deploy the chips they order before expanding capacity further, but that even after those checks, demand still outstrips supply.</p><p>Looking ahead, TSMC completed its second Arizona factory and expects mass production there in 2027, with reports it may also invest in Texas. The results land the same week bond markets are growing nervous about AI borrowing, so strong real-world demand data from TSMC is likely to reassure investors that chip orders — if not everyone&#39;s ability to pay for them — remain robust.</p></div>
+    
+    <p class="src">Sources: <a href="https://www.cnbc.com/2026/10/15/tsmc-third-quarter-profit-global-ai-.html" target="_blank" rel="noopener">Tech</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Foundry</dt><dd>A foundry is a company that manufactures chips designed by other firms. TSMC doesn&#39;t sell its own branded processors — it builds the ones Apple, Nvidia and others design.</dd></div><div><dt>Nanometer process</dt><dd>This refers to the size of the tiny components etched onto a chip. Smaller numbers (like TSMC&#39;s 3-nanometer chips) generally mean more transistors packed in, giving faster and more power-efficient processors.</dd></div><div><dt>Capital expenditure (capex)</dt><dd>Capex is money a company spends on long-term assets like factories and machinery, rather than day-to-day running costs. TSMC&#39;s rising capex shows it&#39;s betting heavily on continued AI chip demand.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Strong chip demand underpins jobs across hardware engineering, supply chain analysis and semiconductor equity research. In an interview, you could note that TSMC&#39;s results suggest AI demand is real even if some of the financing behind it (see today&#39;s CoreWeave story) looks shakier.</p></div>
+  </article>
+  
+  <article id="story-1">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Eight US states sue OpenAI over ChatGPT&#39;s alleged harm to children</h3>
+    <p class="standfirst">Iowa, Kansas, Nebraska and five other states accuse OpenAI of prioritising profit over child safety and want courts to force changes.</p>
+    <div class="body"><p>Eight US states — Iowa, Kansas, Nebraska, West Virginia, Arkansas, Arizona, Idaho and Montana — have separately sued OpenAI, alleging the company broke consumer protection laws by marketing ChatGPT as safe for young people while failing to adequately warn of its risks. The lawsuits cite cases where families say the chatbot contributed to teens&#39; and adults&#39; deaths, and accuse OpenAI of collecting data from minors without sufficient safeguards.</p><p>Consumer protection laws exist to stop companies misleading customers about a product&#39;s safety or quality; here, the states argue OpenAI presented ChatGPT as a &#39;safe, youth-appropriate tool&#39; while it could in practice encourage paranoia, give dangerous medical advice, or worsen critical thinking. Arizona&#39;s filing goes further, calling OpenAI&#39;s shift from nonprofit mission to commercial growth a &#39;cautionary tale&#39; about prioritising profit over safeguards. The states also point to recent AI-driven hacking incidents as evidence of what they call the company&#39;s recklessness.</p><p>OpenAI responded that it has built &#39;industry-leading age-specific protections&#39; including parental controls and break reminders, and said it wants to work with states on policies covering the whole industry rather than one company. The states are seeking civil penalties — fines imposed by regulators or courts for breaking rules — plus a halt to misleading marketing, and some want courts to order deletion of unlawfully collected data from minors.</p><p>The case adds to mounting legal and political pressure on OpenAI over AI safety just as the company expands commercially, and could shape how far chatbot companies must go to protect younger users.</p></div>
+    
+    <p class="src">Sources: <a href="https://www.theverge.com/ai-artificial-intelligence/1011500/openai-state-lawsuits-chatgpt-safety" target="_blank" rel="noopener">The Verge</a> · <a href="https://www.cnbc.com/2026/10/14/openai-sued-by-8-states-over-chatgpt-safety-concerns-.html" target="_blank" rel="noopener">Tech</a> · <a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxOZGNQSVdYV0tjSzZsZDN3ellzU0lzUGMtMUxlZk5PUnhKZE5hcTVrTWlFTU9POUlfVm1zSzc1S0s2amdFR3dmUHE1Z2JraHE0RDduQ3A4ZFM0bmVaZEJxQnNyMWpMZ1gtVklYX2VFMmhiZXdVVWwtVVBHX1V6N2xrZmwwZl81dDFiZGI5ZE9yeUUtTlRuaU5IUEZiMA?oc=5" target="_blank" rel="noopener">NBC News</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Consumer protection law</dt><dd>These are laws stopping businesses from misleading customers about what a product does or how safe it is. If a car company claimed its brakes were foolproof when they weren&#39;t, that would breach consumer protection law — the states argue OpenAI did something similar with ChatGPT&#39;s safety claims.</dd></div><div><dt>Civil money penalty</dt><dd>A civil money penalty is a fine a regulator or court imposes for breaking rules, separate from criminal punishment. It&#39;s a tool used to punish companies financially without sending anyone to prison.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Trust and safety, AI policy, and compliance roles are growing fast at AI companies precisely because of cases like this — worth mentioning if you&#39;re interviewing for a policy, legal or product safety role at a tech firm.</p></div>
+  </article>
+  
+  <article id="story-2">
+    <span class="mono kicker">The AI industry</span>
+    <h3>OpenAI accuses former employee of leaking product plans to Apple</h3>
+    <p class="standfirst">A court filing claims an ex-staffer took over 100 confidential files and presented them to Apple executives before quitting.</p>
+    <div class="body"><p>OpenAI alleges in a Wednesday court filing that a former employee took more than 100 confidential files — including images of an unreleased device, supplier details and engineering data — before leaving to join Apple, and then presented the material to Apple leadership including a vice president overseeing the company&#39;s Asia operations.</p><p>The filing is part of a broader legal dispute between Apple and OpenAI over trade secrets, confidential business information such as designs or strategies that give a company a competitive edge and which is illegal for others to steal or use without permission. OpenAI claims the timing links to Apple&#39;s newly announced HomeView smart display and other devices, suggesting the leaked material may have informed Apple&#39;s AI-enabled product push. Apple, for its part, has separately accused OpenAI of stealing its own confidential documents and spying on hardware prototypes.</p><p>Apple has not responded publicly to the latest filing, and its product plans — including the long-rumoured smart display — typically take years to develop, which could complicate OpenAI&#39;s argument that the leak directly shaped Apple&#39;s output.</p><p>The dispute underscores how aggressively AI and hardware giants are now policing talent and intellectual property as the two companies increasingly compete in overlapping markets.</p></div>
+    
+    <p class="src">Sources: <a href="https://www.theverge.com/ai-artificial-intelligence/1011276/openai-employee-unreleased-product-plans" target="_blank" rel="noopener">The Verge</a> · <a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxNWkZXOGQtY20wYks4cjUyN3lSZEFCNDJvYWVlSGxra0IyOHQ5bEVUTC1jU0E5aU1WY1Y4NFZuT3lvX2JOdjhIeHJyaWVwWG5QVExsUjZSeUhQS2tObzM2Wlg1RjY4bGtzaWhOclRDNnRqMXdINTI4bGJtNkxYOEEtUFo0VDNwUWFuT3Z4b2tFRGIxWlNwXzhnTzI1Mnl5OGl3WXZxS25rblVrbTZtdlNjNFVRbXI?oc=5" target="_blank" rel="noopener">Bloomberg.com</a> · <a href="https://news.google.com/rss/articles/CBMif0FVX3lxTFB4ekVqUEtoemNqT3hQa3VRMXNWSDJXZjdhTDV1Ynd4QXpCUW5xNElTS3U4TUlmODREeUFzYy1QLTFOeWdPUlRNbzIxMDdjc2RGSkRZUm9QM0lhaDFUSGtTNUZRbnFwUWJKTkJ2SlV2X29CWFU1UzY4b0ZnN19BNjg?oc=5" target="_blank" rel="noopener">The New York Times</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Trade secret</dt><dd>A trade secret is confidential business information — like a recipe, design or strategy — that a company deliberately keeps hidden because revealing it would help competitors. Unlike a patent, it isn&#39;t registered publicly; it&#39;s only protected as long as it stays secret.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Disputes like this highlight why companies increasingly require strict confidentiality agreements for engineers and product staff moving between AI firms — something to be aware of if you ever sign an employment contract with an IP clause.</p></div>
+  </article>
+  
+</section>
+
+<section id="finance" class="finance">
+  <div class="sec-head">
+    <span class="mono">Section 2</span>
+    <h2>AI &amp; finance</h2>
+    <p>Where Wall Street and the City meet AI, as users and as funders.</p>
+  </div>
+  
+  <article id="story-3">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>Bank of America fined $1.2bn over &#39;egregious&#39; anti-money laundering failures</h3>
+    <p class="standfirst">Regulators say the bank&#39;s compliance systems were deficient and ineffective in breach of the Bank Secrecy Act.</p>
+    <div class="body"><p>Bank of America has been fined $1.2bn for what regulators called &#39;deficient and ineffective&#39; anti-money laundering (AML) controls, alongside &#39;egregious and continued&#39; violations of the Bank Secrecy Act, a US law requiring banks to help detect and prevent money laundering.</p><p>Anti-money laundering rules exist to stop criminals disguising illegally obtained money as legitimate funds by moving it through the banking system. Banks are required to monitor transactions, flag suspicious activity, and report it to authorities; failing to do so effectively can let financial crime slip through undetected, which is why regulators treat these lapses so seriously.</p><p>Details of exactly which transactions or gaps triggered the penalty were not disclosed in available reporting, though separate coverage suggests the bank may have negotiated the fine down from a larger initial figure.</p><p>The case adds Bank of America to a long list of major lenders penalised for AML shortcomings in recent years, and will likely renew scrutiny of how large banks resource and staff their compliance functions.</p></div>
+    
+    <p class="src">Sources: <a href="https://www.finextra.com/newsarticle/48579/boa-fined-12bn-over-egregious-aml-deficiencies?utm_medium=rssfinextra&amp;utm_source=finextrafeed" target="_blank" rel="noopener">Finextra Research Headlines</a> · <a href="https://www.finextra.com/blogposting/33165/bank-of-america-whittles-fine-down-to-121bn-how-it-did-it?utm_medium=rssfinextra&amp;utm_source=finextrafeed" target="_blank" rel="noopener">Finextra Research Headlines</a> · <a href="https://news.google.com/rss/articles/CBMikAFBVV95cUxNb3dDUkJtODZXRm16bEhOMldBeFQ1Z1NmazFkbXhvQ3pvVmxvS1B5djFhWXRjSUNwVC0tLUUyWmptRGFZVGpIOWNTVDNtUU1vWE41ZVJfSUhfbDA2ZVEzck55RmhfWlJBbkE2aTlGUjRiVTdyZWtKVkZkM1VoZmVTeXJYMkRWWGRqVnltbVUtVno?oc=5" target="_blank" rel="noopener">41NBC News</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Anti-money laundering (AML)</dt><dd>AML refers to the rules and systems banks must have to stop criminals disguising illegally earned money as legitimate income. For example, a bank must flag if someone suddenly deposits large sums of cash with no clear source.</dd></div><div><dt>Bank Secrecy Act</dt><dd>This is a US law requiring financial institutions to keep records and report certain transactions that might indicate money laundering or other financial crimes. It&#39;s one of the main legal tools US regulators use to police bank compliance.</dd></div><div><dt>Civil money penalty</dt><dd>A civil money penalty is a fine imposed by a regulator for breaking rules, without criminal charges being filed. Here it&#39;s the mechanism used to punish Bank of America for its compliance failures.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Compliance and financial crime roles are among the most stable entry points into banking — knowing terms like AML and BSA will help in interviews for risk, compliance or audit graduate schemes.</p></div>
+  </article>
+  
+  <article id="story-4">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>CoreWeave shares sink 15% as bond yields near 15% on AI debt fears</h3>
+    <p class="standfirst">Investors are suddenly demanding much higher returns to hold debt from AI infrastructure firms, and CoreWeave is bearing the brunt.</p>
+    <div class="body"><p>Shares in CoreWeave, a so-called neocloud company that rents out AI computing power, fell 15.5% on Wednesday as yields on its bonds spiked towards 15% — a sign investors are pricing in much greater risk. Bond yields move inversely to prices, so a sharp rise means investors are selling the bonds, worried about whether the company can keep up with its debt payments.</p><p>CoreWeave&#39;s credit rating sits at B+, firmly in junk bond territory, meaning agencies view it as a higher-risk borrower than companies with investment-grade ratings. Analysts say CoreWeave has taken on heavy debt to fund data centre construction without the kind of robust balance sheet that larger &#39;hyperscaler&#39; cloud firms like Amazon or Google have to fall back on. CEO Mike Intrator dismissed the market reaction as the market &#39;misunderstanding&#39; the business, insisting the company&#39;s contracted revenue backlog covers its debt obligations.</p><p>The jitters spread beyond CoreWeave: Oracle shares fell nearly 9% and its bond yields rose too, while rival neocloud Nebius dropped 10% and Dell fell about 11%. Hyperscalers Alphabet, Amazon, Meta and Oracle have together issued more than $228bn in bonds this year — over double all of 2025 — as they race to fund AI data centres, with total hyperscaler capital spending tipped to hit $800bn this year and surpass $1 trillion by 2027, according to JPMorgan.</p><p>The sell-off reflects growing unease that some AI infrastructure firms are borrowing faster than their revenues can support, a theme likely to keep weighing on markets as more AI-linked debt comes due.</p></div>
+    
+    <p class="src">Sources: <a href="https://www.cnbc.com/2026/10/14/coreweave-stock-bond-yields-ai-debt.html" target="_blank" rel="noopener">Tech</a> · <a href="https://news.google.com/rss/articles/CBMipAFBVV95cUxOTC1ab2xlYXFobUs1SVl4R2ZzSHZxN0xRMjR4R1A1ZjJJSUFuT3hDdUFCX1BaSTM2SFJpNDJzNUxRcWpfNHowOUlzNW5UWEZ0Vk1qUk5Xb0ktQk5oVUZySXdLR2taUWJlRGZpTW9pd3dtUkNlV3h3ckRwejNLZ0VtSjFEVVNYdWtrVi1zZmlTMnpDZ0pRblhZUXllc2pfWmlTWThHcw?oc=5" target="_blank" rel="noopener">Investor&#39;s Business Daily</a> · <a href="https://news.google.com/rss/articles/CBMingFBVV95cUxQTkdadF9rMGpWTFRBZGVPZEJwNUFKS2VjSDBWSmEtOGJUTzJVLUdPMWtwRkk5OXdQRE9McVh4VVRUcEtYMGVnbE5xWVBHcDk2MVVvS1ZoaWhVbm5EWHZ4amwtQUc5di02SzB2V01WUTd4THFXNmRPVlp1V2RQWXBSbEs3d3ZrMDdOOUhCcklNdnJ6RkgxamtySDYxcnVfZw?oc=5" target="_blank" rel="noopener">Startup Fortune</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Bond yield</dt><dd>A bond yield is the return an investor gets for lending money by buying a bond. Yields rise when bond prices fall, usually because investors see the borrower as riskier and demand more compensation.</dd></div><div><dt>Junk bond</dt><dd>A junk bond is debt issued by a company considered a higher risk of failing to repay, so it must offer a higher yield to attract investors. CoreWeave&#39;s B+ rating places it in this category, unlike safer &#39;investment-grade&#39; borrowers.</dd></div><div><dt>Neocloud</dt><dd>A neocloud is a newer company that rents out cloud computing power specifically for AI workloads, rather than offering the full range of services traditional cloud giants like Amazon or Microsoft do.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Understanding bond yields and credit risk is core to fixed-income and credit analyst roles, and this story is a live example of markets questioning whether AI infrastructure spending is sustainable — a sharp talking point for any finance interview this week.</p></div>
+  </article>
+  
+  <article id="story-5">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>FCA sets out plans to use AI to automate financial regulation</h3>
+    <p class="standfirst">The UK watchdog wants to lean on artificial intelligence for supervision, while holding off on new rules for chatbots.</p>
+    <div class="body"><p>The Financial Conduct Authority (FCA), the UK&#39;s main financial regulator, has outlined plans to use AI tools to help automate parts of its supervision of banks and other financial firms, according to reports. The move would see AI systems help monitor firms&#39; behaviour and compliance rather than relying solely on manual reviews by staff.</p><p>Regulators like the FCA have to oversee thousands of firms with limited staff, so automating pattern-spotting and risk-flagging could let them cover more ground. At the same time, the FCA is reportedly holding back from introducing specific rules for AI chatbots used by financial firms, suggesting it wants to understand the technology&#39;s risks before legislating.</p><p>Details of exactly which processes will be automated, and on what timeline, were not specified in available reporting.</p><p>If adopted, the approach would mark a notable shift towards regulators using the same kind of AI tools that the firms they supervise are deploying, potentially speeding up oversight but raising questions about accountability if an AI system makes an error.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMihAFBVV95cUxOQXZsQmZ6NUVHM3RhYjhZLWI0OHR2d05RT1NxTWI3U1NNZWk1dV9mUzQ5U1c2Zkk5S291cm1lNWtnZzFBUHlILW1sSlMzbWptV2l5NmVIdmZraVBrWF9oT0dmMk04V3ByOFJVMDhvMGVLa0ZiTzdkWlZvcWd2TS1KbmpDa20?oc=5" target="_blank" rel="noopener">Financial Times</a> · <a href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxNVll2aDZEWWR1ZTZPSTE2UkJRWWJFcmVqR0o0RHJ4dXRield1UzNHTC1FYlZvWloxX2QxanNVQU9iSlVKLVU0dDdRVE5GcXhyVVQ0MXpJSktGLVA0RXZCWW5Jdm5vRU5qMEEzSzY2WEhXRUdKcjd2UUtTRDRpZkpGdGNUcDg1ZGpuZTN6RkFoQWtvWG1EWkhHYk1QVER3MDBUcXRqOXIwX3BycG1leDJHYUtpUlc0VmVhMENWOXpNNjg?oc=5" target="_blank" rel="noopener">Finance Magnates</a> · <a href="https://news.google.com/rss/articles/CBMijwFBVV95cUxOX2pKcWg1dHVFZlNxNHpFek1CM0ExOUV6cWltM2Jaa2dDaFk4OFFlSklucE5ETE9ZS2Frdi1id1NBcnNHbk9aOUlrX3VwZUdJNVJ1Y2Rybm1uT2xqSGtON0x2bExDUTlhSGVRQlJGWGZtbzJWNHJaMmRjTExQZWxJY2RkTDFPOWU1VXR0NkhRZw?oc=5" target="_blank" rel="noopener">Traders Union</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Regulator</dt><dd>A regulator is a government body that sets and enforces rules for an industry — the FCA does this for UK financial firms, much like the OCC or SEC do in the US.</dd></div><div><dt>AI-driven oversight</dt><dd>This means using AI tools to help spot risky or non-compliant behaviour in large datasets, such as flagging unusual trading patterns, rather than relying only on human reviewers checking records manually.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Regtech — technology built to help with regulatory compliance — is a fast-growing niche combining coding skills with financial rules knowledge, a good area to mention if you&#39;re interested in fintech but not pure trading or engineering roles.</p></div>
+  </article>
+  
+</section>
+
+<section id="startups" class="startups">
+  <div class="sec-head">
+    <span class="mono">Section 3</span>
+    <h2>Startups &amp; funding</h2>
+    <p>Who raised, how much, and what investors are betting on.</p>
+  </div>
+  
+  <article id="story-6">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>AI cloud startup Modal raises $750m at $15.75bn valuation</h3>
+    <p class="standfirst">The inference infrastructure company has reportedly topped $1bn in annualised revenue run rate alongside its new Series D round.</p>
+    <div class="body"><p>Modal, a startup providing cloud infrastructure for running AI models, has raised $750m in a Series D funding round, valuing the company at $15.75bn, according to reports. The company reportedly also passed $1bn in annualised run rate — a measure of revenue projected forward based on recent performance.</p><p>Modal&#39;s business focuses on inference, the process of actually running a trained AI model to generate outputs, as opposed to the separate and more expensive process of training the model in the first place. Providing reliable, fast infrastructure for inference has become a lucrative niche as more companies deploy AI products at scale.</p><p>Details of the round&#39;s investors and exact terms were not fully disclosed in available reporting.</p><p>The raise adds Modal to a growing list of AI infrastructure startups attracting enormous valuations, as demand for compute to run AI models continues to outstrip supply — echoing themes from today&#39;s TSMC and CoreWeave stories.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMilgFBVV95cUxNZmF0ZHk0WGI4b2ZSYTcyQ1ctalFMMW9IQTZFQU12emY0dWNhWFU5WVA5MEZLTjRkaWE5eUZKSjFyYU1FSzAtWmZBc29PQVA3UkYzRmNVbFNfTVZPVHZUWDJFMHdNeExwZjlaVlhKN21Cc2lhU0NUU3pqZ0hOOERvcUYtbUQwZUsyenRqMVBVdjhGTXdKVVE?oc=5" target="_blank" rel="noopener">SiliconANGLE</a> · <a href="https://news.google.com/rss/articles/CBMilwFBVV95cUxQcFlDZE94bHk1U0xyMXJyaG1FZWlPUmxsX3E0aENrX2JwWnVZVHMtZ0ZDN2kweEJzLWlNSE0yaFdYc2ZicjdFQkxpcENoblZCUG5TSWJ2S1hCSjlHMWhVQURBWl95a2NhMmxMdFRvb0c0blBOaVNENC1EdzMtXy1CQnlWOUNFSU4xUGJVNjQyNmgxZlk0Z2NZ?oc=5" target="_blank" rel="noopener">Axios</a> · <a href="https://news.google.com/rss/articles/CBMiU0FVX3lxTFBZRTF3TXhUSjlpUWo2N0ZBM2ZZWFhCOFVablBFbVpWMVFWMlVabjNnMDBkemd1MzBrYV9PLUVpTkxRTGc3SkFUbUVzV0NHU1VCSS04?oc=5" target="_blank" rel="noopener">Wowtale</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Series D</dt><dd>Series D is a later-stage startup funding round, typically for companies that have already proven their business model and are scaling up — contrast with earlier Series A or B rounds aimed at proving an idea works.</dd></div><div><dt>Annualised run rate</dt><dd>This takes a company&#39;s recent revenue — say, a strong month or quarter — and multiplies it to estimate what a full year would look like at that pace. It&#39;s a quick way to gauge growth, though it can overstate performance if that period was unusually strong.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Inference infrastructure is one of the fastest-growing corners of the AI economy, creating demand for cloud engineers, DevOps specialists and infrastructure sales roles — useful context if you&#39;re considering a technical career adjacent to AI model-building itself.</p></div>
+  </article>
+  
+  <article id="story-7">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>AMD pays $8.2bn to bring in &#39;Godmother of AI&#39;</h3>
+    <p class="standfirst">The chipmaker is reportedly paying a hefty sum to secure a prominent AI researcher and her team.</p>
+    <div class="body"><p>AMD is reportedly paying $8.2bn in a deal to bring in an AI researcher nicknamed the &#39;Godmother of AI&#39;, according to a single report. Details of the exact structure of the deal, and which company or team is involved, were not fully confirmed elsewhere.</p><p>Such deals, sometimes called acqui-hires, are increasingly used by large tech and chip companies to secure top AI talent and the intellectual property or teams they&#39;ve built, rather than simply hiring individuals through normal recruitment.</p><p>Given the scale of the reported figure, the move suggests AMD sees significant competitive value in strengthening its AI research capabilities as it competes with rivals like Nvidia in AI chip design.</p><p>Further details on the deal&#39;s terms and its impact on AMD&#39;s product roadmap are expected to emerge as the story develops.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMijwFBVV95cUxQZmlaVk1iOVN1MlM2ekZGY2dBVnJEMXBRV2l5NEFrbEVrVWVXSjVyR21mcjZldWJLNTZZYnRaTmtKb25lNmlVYk01MWltbWtNUDFrczh2cXBtYV9nV2FVVTlYWU1WZW0xdUlheFNHZGFGRUVSSWg4RTRpdHFPck9pd1l3TXhWOWh2enh2M1dNUQ?oc=5" target="_blank" rel="noopener">Yahoo Finance</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Acqui-hire</dt><dd>An acqui-hire is when a company buys a startup mainly to gain its talented staff and know-how, rather than for its products or revenue. It&#39;s effectively a hiring deal dressed up as an acquisition.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Large acqui-hire price tags show how fiercely chip and AI companies compete for scarce top research talent — a trend worth citing if asked in an interview why AI skills command such high salaries right now.</p></div>
+  </article>
+  
+</section>
+
+
+
+<div class="panel" id="code">
+  <span class="mono">Code corner</span>
+  <h2>Estimating a bond&#39;s yield-to-maturity risk signal</h2>
+  <p class="src">Based on: <a href="#story-4">CoreWeave shares sink 15% as bond yields near 15% on AI debt fears</a></p>
+  <p style="margin:0">CoreWeave&#39;s bond yields spiking towards 15% is a signal investors are demanding much more compensation for risk. Here&#39;s a simple script that shows how bond price changes translate into yield changes, using made-up numbers inspired by the story.</p>
+  <pre><code>def approx_yield(face_value, price, coupon_rate, years_to_maturity):
+    &#34;&#34;&#34;Very rough yield-to-maturity approximation.&#34;&#34;&#34;
+    annual_coupon = face_value * coupon_rate
+    yield_estimate = (annual_coupon + (face_value - price) / years_to_maturity) / ((face_value + price) / 2)
+    return yield_estimate
+
+# A CoreWeave-style bond: $1000 face value, 9.625% coupon, 2032 maturity
+face_value = 1000
+coupon_rate = 0.09625
+years_to_maturity = 6
+
+# Scenario 1: bond trading near face value (calm market)
+price_calm = 980
+yield_calm = approx_yield(face_value, price_calm, coupon_rate, years_to_maturity)
+
+# Scenario 2: bond price falls sharply (investor fear, like in the story)
+price_fearful = 780
+yield_fearful = approx_yield(face_value, price_fearful, coupon_rate, years_to_maturity)
+
+print(f&#34;Calm market yield: {yield_calm:.2%}&#34;)
+print(f&#34;Fearful market yield: {yield_fearful:.2%}&#34;)</code></pre>
+  <span class="mono">Line by line</span>
+  <ol class="walk"><li>def approx_yield(...): defines a reusable function that estimates a bond&#39;s yield to maturity using a simplified formula — not perfectly precise, but good enough to show the relationship.</li><li>annual_coupon = face_value * coupon_rate calculates the fixed interest payment the bond pays each year based on its coupon rate.</li><li>yield_estimate = ... combines the coupon payment with the gain or loss from price changes, divided by the average of face value and current price — this mirrors how real yield-to-maturity calculations work, just simplified.</li><li>The two scenarios show the same bond at a calm price (980) versus a much lower, fearful price (780), which is what happens when investors sell off because they&#39;re worried about default risk.</li><li>print(f&#34;...{yield_calm:.2%}&#34;) formats the result as a percentage with two decimal places, so you can directly compare how a lower price translates into a much higher yield — exactly what happened with CoreWeave&#39;s bonds.</li></ol>
+  <div class="tryit"><p><b>Try it:</b> Change price_fearful to 650 to simulate an even more severe sell-off, and see how much higher the estimated yield climbs. Then try increasing years_to_maturity to 10 and see how that changes the sensitivity of yield to price moves.</p></div>
+</div>
+
+<div class="panel" id="quiz">
+  <span class="mono">Quiz · apply today's concepts</span>
+  <h2>What would you do?</h2>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 1</span>
+    <p class="scenario">You&#39;re a junior credit analyst at a bank, and your manager asks you to explain why CoreWeave&#39;s bond yields jumped to nearly 15% this week.</p>
+    <p class="ask">Which explanation best describes what rising bond yields signal here?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>Investors are buying more of CoreWeave&#39;s bonds because they&#39;re confident in the company</span></button></li><li><button type="button" data-i="1"><b>B</b><span>The bond&#39;s price has fallen because investors see more risk the company can&#39;t meet its debt payments</span></button></li><li><button type="button" data-i="2"><b>C</b><span>CoreWeave has repaid its debt early, reducing the yield owed to investors</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Yields always rise when a company&#39;s stock price rises</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> Bond yields move inversely to price — when investors sell off a bond due to perceived risk, its price drops and yield rises, exactly as happened with CoreWeave. The other options reverse or misstate this relationship.</p>
+        <div class="chips"><span>Bond yield</span><span>Junk bond</span><span>AI bubble</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 2</span>
+    <p class="scenario">In a team meeting, a colleague argues your startup should rush to use an AI chatbot for customer support, pointing to competitors doing the same, while another colleague raises the OpenAI lawsuits as a caution.</p>
+    <p class="ask">Which concern from the OpenAI lawsuits is most directly relevant to your team&#39;s decision?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>The chatbot might require too much GPU compute to run cheaply</span></button></li><li><button type="button" data-i="1"><b>B</b><span>Marketing a chatbot as &#39;safe&#39; without adequate safeguards can expose a company to consumer protection claims</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Chatbots can only be sued if they are open-weight models</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Civil money penalties only apply to government agencies, not private companies</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> The lawsuits centre on allegedly misleading safety claims breaching consumer protection law — directly relevant if your team plans similar marketing. The other options are either irrelevant technical details or factually wrong about who penalties apply to.</p>
+        <div class="chips"><span>Consumer protection law</span><span>Civil money penalty</span><span>Hallucination</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 3</span>
+    <p class="scenario">During a first-week orientation at a bank, a compliance officer explains why your new employer takes AML training so seriously, citing Bank of America&#39;s $1.2bn fine.</p>
+    <p class="ask">What is the main purpose of anti-money laundering (AML) rules that the fine was enforcing?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>To prevent banks from charging customers excessive fees</span></button></li><li><button type="button" data-i="1"><b>B</b><span>To stop criminals disguising illegally obtained money as legitimate funds through the banking system</span></button></li><li><button type="button" data-i="2"><b>C</b><span>To ensure banks invest enough in AI infrastructure</span></button></li><li><button type="button" data-i="3"><b>D</b><span>To set limits on how much a bank can lend to AI companies</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> AML rules exist specifically to detect and prevent criminals using banks to launder illicit money, which is what Bank of America was fined for failing to adequately monitor. The other options describe unrelated banking issues.</p>
+        <div class="chips"><span>Anti-money laundering (AML)</span><span>Bank Secrecy Act</span><span>Civil money penalty</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 4</span>
+    <p class="scenario">You&#39;re pitching a vertical AI startup to investors and want to highlight strong traction, similar to how Modal&#39;s $750m round was reported alongside its revenue figures.</p>
+    <p class="ask">If your startup&#39;s monthly revenue has been unusually high for the past two months due to one large one-off client contract, what&#39;s the risk of quoting an annualised run rate to investors?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>Annualised run rate always understates true revenue</span></button></li><li><button type="button" data-i="1"><b>B</b><span>It may overstate what a full year of revenue will realistically look like, since it assumes the unusual recent performance continues</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Annualised run rate is only used for inference infrastructure companies</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Run rate figures are illegal to share with investors</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> Run rate simply multiplies recent revenue forward, so if that period was boosted by a one-off deal, the projection will look better than realistic ongoing performance. The other options misunderstand or invent restrictions on the metric.</p>
+        <div class="chips"><span>Annualised revenue (run rate)</span><span>Series D</span><span>Valuation</span></div>
+      </div>
+    </details>
+  </div>
+  
+</div>
+
+<div class="panel" id="glossary">
+  <span class="mono">Glossary</span>
+  <h2>Every concept from today</h2>
+  <dl class="gloss"><div><dt>Acqui-hire<a href="#story-7">see story</a></dt><dd>An acqui-hire is when a company buys a startup mainly to gain its talented staff and know-how, rather than for its products or revenue. It&#39;s effectively a hiring deal dressed up as an acquisition.</dd></div><div><dt>AI-driven oversight<a href="#story-5">see story</a></dt><dd>This means using AI tools to help spot risky or non-compliant behaviour in large datasets, such as flagging unusual trading patterns, rather than relying only on human reviewers checking records manually.</dd></div><div><dt>Annualised run rate<a href="#story-6">see story</a></dt><dd>This takes a company&#39;s recent revenue — say, a strong month or quarter — and multiplies it to estimate what a full year would look like at that pace. It&#39;s a quick way to gauge growth, though it can overstate performance if that period was unusually strong.</dd></div><div><dt>Anti-money laundering (AML)<a href="#story-3">see story</a></dt><dd>AML refers to the rules and systems banks must have to stop criminals disguising illegally earned money as legitimate income. For example, a bank must flag if someone suddenly deposits large sums of cash with no clear source.</dd></div><div><dt>Bank Secrecy Act<a href="#story-3">see story</a></dt><dd>This is a US law requiring financial institutions to keep records and report certain transactions that might indicate money laundering or other financial crimes. It&#39;s one of the main legal tools US regulators use to police bank compliance.</dd></div><div><dt>Bond yield<a href="#story-4">see story</a></dt><dd>A bond yield is the return an investor gets for lending money by buying a bond. Yields rise when bond prices fall, usually because investors see the borrower as riskier and demand more compensation.</dd></div><div><dt>Capital expenditure (capex)<a href="#story-0">see story</a></dt><dd>Capex is money a company spends on long-term assets like factories and machinery, rather than day-to-day running costs. TSMC&#39;s rising capex shows it&#39;s betting heavily on continued AI chip demand.</dd></div><div><dt>Civil money penalty<a href="#story-3">see story</a></dt><dd>A civil money penalty is a fine imposed by a regulator for breaking rules, without criminal charges being filed. Here it&#39;s the mechanism used to punish Bank of America for its compliance failures.</dd></div><div><dt>Consumer protection law<a href="#story-1">see story</a></dt><dd>These are laws stopping businesses from misleading customers about what a product does or how safe it is. If a car company claimed its brakes were foolproof when they weren&#39;t, that would breach consumer protection law — the states argue OpenAI did something similar with ChatGPT&#39;s safety claims.</dd></div><div><dt>Foundry<a href="#story-0">see story</a></dt><dd>A foundry is a company that manufactures chips designed by other firms. TSMC doesn&#39;t sell its own branded processors — it builds the ones Apple, Nvidia and others design.</dd></div><div><dt>Junk bond<a href="#story-4">see story</a></dt><dd>A junk bond is debt issued by a company considered a higher risk of failing to repay, so it must offer a higher yield to attract investors. CoreWeave&#39;s B+ rating places it in this category, unlike safer &#39;investment-grade&#39; borrowers.</dd></div><div><dt>Nanometer process<a href="#story-0">see story</a></dt><dd>This refers to the size of the tiny components etched onto a chip. Smaller numbers (like TSMC&#39;s 3-nanometer chips) generally mean more transistors packed in, giving faster and more power-efficient processors.</dd></div><div><dt>Neocloud<a href="#story-4">see story</a></dt><dd>A neocloud is a newer company that rents out cloud computing power specifically for AI workloads, rather than offering the full range of services traditional cloud giants like Amazon or Microsoft do.</dd></div><div><dt>Regulator<a href="#story-5">see story</a></dt><dd>A regulator is a government body that sets and enforces rules for an industry — the FCA does this for UK financial firms, much like the OCC or SEC do in the US.</dd></div><div><dt>Series D<a href="#story-6">see story</a></dt><dd>Series D is a later-stage startup funding round, typically for companies that have already proven their business model and are scaling up — contrast with earlier Series A or B rounds aimed at proving an idea works.</dd></div><div><dt>Trade secret<a href="#story-2">see story</a></dt><dd>A trade secret is confidential business information — like a recipe, design or strategy — that a company deliberately keeps hidden because revealing it would help competitors. Unlike a patent, it isn&#39;t registered publicly; it&#39;s only protected as long as it stays secret.</dd></div></dl>
+</div>
+
+<div class="panel">
+  <span class="mono">Past digests</span>
+  <ul class="archive"><li><a href="../archive/2026-10-15.html" aria-current="page">2026-10-15</a></li><li><a href="../archive/2026-10-14.html">2026-10-14</a></li><li><a href="../archive/2026-10-13.html">2026-10-13</a></li><li><a href="../archive/2026-10-12.html">2026-10-12</a></li><li><a href="../archive/2026-10-11.html">2026-10-11</a></li><li><a href="../archive/2026-10-10.html">2026-10-10</a></li><li><a href="../archive/2026-10-09.html">2026-10-09</a></li><li><a href="../archive/2026-10-05.html">2026-10-05</a></li><li><a href="../archive/2026-10-04.html">2026-10-04</a></li><li><a href="../archive/2026-10-03.html">2026-10-03</a></li><li><a href="../archive/2026-09-23.html">2026-09-23</a></li><li><a href="../archive/2026-09-22.html">2026-09-22</a></li><li><a href="../archive/2026-09-20.html">2026-09-20</a></li><li><a href="../archive/2026-09-19.html">2026-09-19</a></li><li><a href="../archive/2026-09-18.html">2026-09-18</a></li><li><a href="../archive/2026-09-17.html">2026-09-17</a></li></ul>
+</div>
+
+<footer>Written by Claude from the linked sources. Check the original article before quoting figures in an interview.</footer>
+</div>
+<script>
+document.querySelectorAll(".q").forEach(function (q) {
+  var correct = Number(q.dataset.correct);
+  var buttons = q.querySelectorAll(".opts button");
+  buttons.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var picked = Number(b.dataset.i);
+      buttons.forEach(function (x) {
+        var i = Number(x.dataset.i);
+        if (i === correct) x.classList.add("right");
+        else if (i === picked) x.classList.add("wrong");
+        x.disabled = true;
+      });
+      q.querySelector("details").open = true;
+    });
+  });
+});
+</script>
+</body>
+</html>
