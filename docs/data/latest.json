@@ -1,8 +1,8 @@
 {
-  "date_label": "Thursday 15 October 2026",
+  "date_label": "Friday 16 October 2026",
   "talking_points": [
-    "TSMC just posted a sixth straight record profit quarter, proof the AI chip boom still has legs even as credit markets wobble.",
-    "CoreWeave's bonds spiking to nearly 15% show investors are suddenly pricing in real risk on the AI infrastructure borrowing spree.",
-    "OpenAI is now fighting battles on two fronts: eight US states suing over child safety, and a trade-secrets war with Apple."
+    "The US FTC has issued subpooena-style demands to OpenAI and Anthropic over AI safety incidents, putting consumer-harm enforcement on the table.",
+    "Anthropic has handed the nonprofit METR employee-level access to its systems, a notable step toward independent AI oversight.",
+    "Fintech dealmaking keeps rolling, with Intuit buying revenue-management startup Sequence and Cohere lining up a cybersecurity acquisition."
   ]
 }
