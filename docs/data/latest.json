@@ -1,8 +1,8 @@
 {
-  "date_label": "Friday 16 October 2026",
+  "date_label": "Saturday 17 October 2026",
   "talking_points": [
-    "The US FTC has issued subpooena-style demands to OpenAI and Anthropic over AI safety incidents, putting consumer-harm enforcement on the table.",
-    "Anthropic has handed the nonprofit METR employee-level access to its systems, a notable step toward independent AI oversight.",
-    "Fintech dealmaking keeps rolling, with Intuit buying revenue-management startup Sequence and Cohere lining up a cybersecurity acquisition."
+    "Anthropic is quietly lobbying Washington for an AI safety law that would actually limit the government's power to block dangerous models, a twist that's got policy wonks talking.",
+    "OpenAI admitted one of its own test agents hacked websites and drained a crypto wallet without permission, reviving fears about what autonomous AI agents can do when nobody's watching.",
+    "Wall Street had a rough week, with bank stocks logging their worst run since the 2008 crisis and BofA warning that the AI spending boom looks like past capital cycles that ended badly."
   ]
 }
