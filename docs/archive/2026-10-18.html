@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI Morning Brief · Sunday 18 October 2026</title>
+<meta name="theme-color" content="#3A55C8">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  color-scheme:light dark;
+  --ground:#F3F4F7; --paper:#FFFFFF; --ink:#141827; --muted:#5B6275; --line:#DDE0E8;
+  --industry:#3A55C8; --industry-soft:#E6EAFA;
+  --finance:#1C7453; --finance-soft:#E1F1EA;
+  --startups:#A8561A; --startups-soft:#F7EADF;
+  --code-bg:#161A26; --code-ink:#E4E7F0;
+  --right:#1C7453; --right-soft:#E1F1EA; --wrong:#B3261E; --wrong-soft:#FBE7E5;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --ground:#0F121B; --paper:#171B27; --ink:#E8EAF1; --muted:#9AA1B4; --line:#2A3042;
+    --industry:#8FA3F5; --industry-soft:#20284A;
+    --finance:#6CCBA3; --finance-soft:#15332A;
+    --startups:#E8A06A; --startups-soft:#3A2618;
+    --code-bg:#0B0D14; --code-ink:#E4E7F0;
+    --right:#6CCBA3; --right-soft:#15332A; --wrong:#F2A29B; --wrong-soft:#3A1B19;
+  }
+}
+*{box-sizing:border-box}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.6 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;padding-inline:16px;padding-block:28px 64px}
+.wrap{max-width:700px;margin:0 auto;display:grid;gap:36px}
+a{color:inherit}
+a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var(--industry);outline-offset:3px;border-radius:4px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400}
+header{display:grid;gap:10px}
+header .date{color:var(--muted)}
+h1{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(44px,11vw,64px);line-height:1;margin:0;letter-spacing:-.01em}
+h1 em{color:var(--industry)}
+.lede{color:var(--muted);margin:0;max-width:60ch}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ground);padding-block:10px;display:flex;gap:8px;overflow-x:auto;border-bottom:1px solid var(--line)}
+nav a{flex:none;text-decoration:none;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--paper);font-size:14px}
+nav a.industry{color:var(--industry)} nav a.finance{color:var(--finance)} nav a.startups{color:var(--startups)}
+
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:14px;scroll-margin-top:64px}
+.panel h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:30px;margin:0;line-height:1.15}
+.panel > .mono{color:var(--muted)}
+.talk ol{margin:0;padding-left:20px;display:grid;gap:8px}
+.toc{display:grid;gap:14px}
+.toc h3{margin:0 0 4px}
+.toc ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.toc li a{text-decoration:none}
+.toc li a:hover{text-decoration:underline}
+
+section{display:grid;gap:22px;scroll-margin-top:64px}
+.sec-head{display:grid;gap:2px;border-top:3px solid var(--c);padding-top:12px}
+.sec-head h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:36px;margin:0;line-height:1.1;text-wrap:balance}
+.sec-head p{margin:0;color:var(--muted)}
+.sec-head .mono{color:var(--c)}
+.industry{--c:var(--industry);--cs:var(--industry-soft)}
+.finance{--c:var(--finance);--cs:var(--finance-soft)}
+.startups{--c:var(--startups);--cs:var(--startups-soft)}
+
+article{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px 20px;display:grid;gap:16px;scroll-margin-top:64px}
+article .kicker{color:var(--c)}
+article h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(26px,6vw,32px);line-height:1.15;margin:0;text-wrap:balance}
+.standfirst{margin:0;font-size:18px;line-height:1.5;color:var(--muted)}
+.body{display:grid;gap:14px;font-family:"Source Serif 4",Georgia,serif;font-size:18px;line-height:1.65;max-width:65ch}
+.body p{margin:0}
+.src{margin:0;font-size:13px;color:var(--muted)}
+.concepts{background:var(--cs);border-radius:12px;padding:16px 18px;display:grid;gap:12px}
+.concepts .mono{color:var(--c)}
+.concepts dl{margin:0;display:grid;gap:10px}
+.concepts dt{font-weight:600}
+.concepts dd{margin:2px 0 0}
+.why{display:grid;gap:4px;border-left:2px solid var(--c);padding-left:14px}
+.why .mono{color:var(--c)}
+.why p{margin:0}
+
+pre{margin:0;background:var(--code-bg);color:var(--code-ink);border-radius:10px;padding:16px;overflow-x:auto;font:14px/1.55 "IBM Plex Mono",ui-monospace,Consolas,monospace}
+.walk{margin:0;padding-left:20px;display:grid;gap:6px}
+code{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:.9em}
+.tryit{background:var(--industry-soft);border-radius:10px;padding:12px 16px}
+.tryit p{margin:0}
+
+.q{display:grid;gap:12px;border-top:1px solid var(--line);padding-top:18px}
+.q:first-of-type{border-top:0;padding-top:0}
+.scenario{margin:0;font-family:"Source Serif 4",Georgia,serif;font-style:italic;font-size:17px}
+.q .ask{margin:0;font-weight:600}
+.opts{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.opts button{width:100%;text-align:left;font:inherit;color:var(--ink);background:var(--ground);border:1px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer;display:flex;gap:10px}
+.opts button:hover{border-color:var(--industry)}
+.opts button b{font-family:"IBM Plex Mono",ui-monospace,monospace;font-weight:500}
+.opts button.right{background:var(--right-soft);border-color:var(--right)}
+.opts button.wrong{background:var(--wrong-soft);border-color:var(--wrong)}
+.opts button:disabled{cursor:default}
+details{border-radius:10px}
+summary{cursor:pointer;font-weight:500;color:var(--industry)}
+.answer{display:grid;gap:8px;margin-top:10px}
+.answer p{margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:13px;padding:2px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+
+.gloss{margin:0;display:grid;gap:12px}
+.gloss dt{font-weight:600}
+.gloss dt a{font-weight:400;font-size:13px;color:var(--muted);margin-left:6px}
+.gloss dd{margin:2px 0 0;color:var(--muted)}
+.archive{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.archive a{display:inline-block;padding:4px 10px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-variant-numeric:tabular-nums;font-size:14px}
+.archive a[aria-current]{border-color:var(--industry);color:var(--industry)}
+footer{color:var(--muted);font-size:13px}
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="mono date">Sunday 18 October 2026 · 13 min read</span>
+  <h1>AI Morning <em>Brief</em></h1>
+  <p class="lede">Today's AI and fintech news as short articles, with every key concept explained, a bit of Python, and a scenario quiz to check it stuck.</p>
+</header>
+
+<nav aria-label="Sections">
+  <a href="#industry" class="industry">The AI industry</a>
+  <a href="#finance" class="finance">AI &amp; finance</a>
+  <a href="#startups" class="startups">Startups &amp; funding</a>
+  <a href="#code">Code corner</a>
+  <a href="#quiz">Quiz</a>
+  <a href="#glossary">Glossary</a>
+</nav>
+
+<div class="panel talk">
+  <span class="mono">If you only read one thing</span>
+  <h2>Three things to be able to say today</h2>
+  <ol><li>DeepSeek says its refreshed model is faster and cheaper to run, turning up the heat on the global chip-and-inference price war.</li><li>Jensen Huang&#39;s warning that Nvidia could cut off &#39;unsafe&#39; AI customers shows chipmakers increasingly see themselves as gatekeepers, not just suppliers.</li><li>Franklin Templeton&#39;s boss is nervous about the debt piling up to fund AI data centres, echoing wider worries about an AI bubble.</li></ol>
+</div>
+
+<div class="panel">
+  <span class="mono">In today's brief</span>
+  <div class="toc">
+  
+    <div class="industry"><h3 class="mono" style="color:var(--c)">The AI industry</h3>
+      <ul><li><a href="#story-0">DeepSeek Releases Faster, Leaner AI Model in Latest Update</a></li><li><a href="#story-1">Nvidia&#39;s Huang Warns He Could Cut Chip Supply to &#39;Unsafe&#39; AI Builders</a></li><li><a href="#story-2">Microsoft Pulls Out of AI Data Centre Deal, UK Builder Left Exposed</a></li></ul>
+    </div>
+  
+    <div class="finance"><h3 class="mono" style="color:var(--c)">AI &amp; finance</h3>
+      <ul><li><a href="#story-3">Hong Kong Sets Out AI Rulebook for Banks as Agentic Tools Spread</a></li><li><a href="#story-4">South Korea Summons Bank Chiefs Over AI-Driven Hacking Incidents</a></li><li><a href="#story-5">Franklin Templeton Chief Warns AI Debt Deals Are Getting Too Complex</a></li></ul>
+    </div>
+  
+    <div class="startups"><h3 class="mono" style="color:var(--c)">Startups &amp; funding</h3>
+      <ul><li><a href="#story-6">Intel and Qualcomm Reportedly Vie for Stake in Jim Keller&#39;s Tenstorrent</a></li><li><a href="#story-7">Low-Profile Investor Behind Ramp and Cognition Draws Conflict Questions</a></li></ul>
+    </div>
+  
+  </div>
+</div>
+
+
+<section id="industry" class="industry">
+  <div class="sec-head">
+    <span class="mono">Section 1</span>
+    <h2>The AI industry</h2>
+    <p>Big labs, big tech and the direction of travel.</p>
+  </div>
+  
+  <article id="story-0">
+    <span class="mono kicker">The AI industry</span>
+    <h3>DeepSeek Releases Faster, Leaner AI Model in Latest Update</h3>
+    <p class="standfirst">The Chinese AI lab says its newest release trims computing costs while speeding up responses, intensifying competition with pricier Western rivals.</p>
+    <div class="body"><p>DeepSeek has pushed out an updated version of its large language model, which the company says runs faster and uses fewer computing resources than its predecessor, according to Bloomberg. Details beyond the headline claims are limited, but the update continues DeepSeek&#39;s pattern of releasing cheaper, efficient models that rattle assumptions about how much it costs to build cutting-edge AI.</p><p>DeepSeek shot to global attention last year when it released a model that reportedly matched the performance of leading American systems at a fraction of the training cost. Since then, it has kept iterating, putting pressure on both Chinese and Western labs to justify their own spending on expensive chips and data centres.</p><p>If the efficiency claims hold up, it could mean cheaper AI tools for consumers and businesses, but also raises further questions about whether the billions being poured into AI infrastructure by rivals like OpenAI and Google are being spent wisely.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxNd0JqQlRDd3JxZG9sWmUyLU03cFkwSDJLbkhOc0tpa2NUS24zby1jU0JQX242dEdFYWtRSXNNbUJOM2hwdDFJX3VKc1E4UFN1VVVsYi1ncl9qNkg4ZnhhcERDMkc1ZkhXUlRxUy1BdW9JTC1wYmV5YVlTZmYtUWlLRnNJQ2ZUWEw3UHNXMkdNMUdVLXJGR2M1YXRYcFFacFNmSWJCLVNxNkZ4bTZ4UXVpOXNR?oc=5" target="_blank" rel="noopener">Bloomberg.com</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Inference</dt><dd>Inference is the process of an already-trained AI model actually answering a question or generating text. A &#39;leaner&#39; model needs less computing power per answer, which lowers running costs.</dd></div><div><dt>Benchmark</dt><dd>A benchmark is a standard test used to compare AI models, like a set of exam questions. Companies use benchmarks to back up claims that a new model is &#39;faster&#39; or &#39;better&#39; than the last one.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Cheaper, efficient models mean more startups can afford to build AI products without needing huge compute budgets, which is good news if you&#39;re hoping to break into AI product or engineering roles rather than infrastructure.</p></div>
+  </article>
+  
+  <article id="story-1">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Nvidia&#39;s Huang Warns He Could Cut Chip Supply to &#39;Unsafe&#39; AI Builders</h3>
+    <p class="standfirst">The Nvidia chief executive reportedly suggested the company might refuse to sell chips to customers whose AI software is judged unsafe.</p>
+    <div class="body"><p>Nvidia chief executive Jensen Huang has reportedly said the company could stop supplying its powerful AI chips to customers building software it considers unsafe, according to TokenPost. The comment positions Nvidia, the world&#39;s dominant maker of the graphics processing units that power most AI systems, as a potential enforcer of safety standards across the industry.</p><p>Nvidia&#39;s chips underpin nearly every major AI lab&#39;s training and running of large models, giving the company unusual leverage. Until now, that leverage has mostly been discussed in terms of export controls limiting sales to certain countries, rather than safety-based restrictions on individual companies.</p><p>Exactly how Nvidia would judge &#39;unsafe&#39; AI software, and whether it would actually act on such threats, remains unclear from the limited reporting. But the remark signals growing anxiety at the top of the AI supply chain about reputational and regulatory risk if customers deploy poorly tested systems.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMiW0FVX3lxTE43emxiTmM2LUdkc1g1NWFqOVNSN0F0ajlfcTRBcThidVc1MWY2ci02ZHc3TUR5SXljNDFLdklsTlhLYzlYSi10Y2R4SURjRU9nN0dESHlkUldlVWc?oc=5" target="_blank" rel="noopener">TOKENPOST</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>AI alignment</dt><dd>AI alignment means making sure an AI system actually does what its creators intend, rather than behaving in harmful or unpredictable ways. Huang&#39;s comment implies Nvidia wants its chips used only by companies taking this seriously.</dd></div><div><dt>GPU (graphics processing unit)</dt><dd>A GPU is a specialised chip, originally built for video game graphics, that is very good at the parallel maths needed to train and run AI models. Nvidia makes most of the GPUs used by major AI labs.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>If chipmakers start policing safety, it creates new compliance and red-teaming job opportunities inside AI companies that want to keep their hardware supply secure.</p></div>
+  </article>
+  
+  <article id="story-2">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Microsoft Pulls Out of AI Data Centre Deal, UK Builder Left Exposed</h3>
+    <p class="standfirst">A British data centre developer has reportedly lost a major contract with Microsoft, raising questions about the pace of the UK&#39;s AI infrastructure buildout.</p>
+    <div class="body"><p>Microsoft has reportedly cancelled an AI-related agreement with a UK data centre developer, according to the Telegraph, in a setback for a company positioning itself as a pioneer of British AI infrastructure. Few details of the deal&#39;s size or terms have been disclosed.</p><p>Data centres, the large facilities packed with servers and chips that train and run AI models, have become one of the most capital-intensive parts of the AI boom. Big tech firms like Microsoft have been signing enormous contracts with developers worldwide to secure enough computing capacity, often locking in power supply and construction years in advance.</p><p>A cancelled deal of this kind suggests Microsoft may be reassessing its capacity needs or costs, which could unsettle other developers betting on long-term AI infrastructure demand, particularly in markets like the UK trying to attract such investment.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMipAFBVV95cUxNSFdYVTNWOGFOMl9DYTBBWmhZM3NiRGk1aUtKVWFhVnkyb2VGMU5UTDZBTndmTGpBcHRnb3RjelNlNU9JY182aXFGOE5BcWlJMGFqZnhKYmlXTjdvRGlyUUlUZUtXWFpjcXJ6UWxRYkhiWExoZVBWc3JmY2x3WFR4Mm45ZW5KZ0wtVXBMRmNleXViT0huREtRUU9zNUdnWDEzUDAycA?oc=5" target="_blank" rel="noopener">The Telegraph</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>AI infrastructure</dt><dd>AI infrastructure covers the physical building blocks needed to run AI, mainly chips, data centres, and electricity supply. It is extremely expensive to build, which is why long-term contracts with big tech firms matter so much to developers.</dd></div><div><dt>Capital expenditure (capex)</dt><dd>Capex is money a company spends upfront on long-lasting physical assets, like buildings or chips, rather than day-to-day running costs. Data centre deals involve huge capex commitments that can take years to pay back.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Cancelled infrastructure deals are an early warning sign worth tracking if you&#39;re assessing AI bubble risk, especially when thinking about careers or investments tied to data centre construction and energy supply.</p></div>
+  </article>
+  
+</section>
+
+<section id="finance" class="finance">
+  <div class="sec-head">
+    <span class="mono">Section 2</span>
+    <h2>AI &amp; finance</h2>
+    <p>Where Wall Street and the City meet AI, as users and as funders.</p>
+  </div>
+  
+  <article id="story-3">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>Hong Kong Sets Out AI Rulebook for Banks as Agentic Tools Spread</h3>
+    <p class="standfirst">Hong Kong&#39;s financial regulator has published guidance for banks deploying AI, as autonomous &#39;agentic&#39; systems move deeper into everyday banking.</p>
+    <div class="body"><p>Hong Kong has unveiled a new framework setting expectations for how banks should use artificial intelligence, as agentic AI applications, systems that can take actions on their own rather than just answering questions, gain traction in the industry, according to Crowdfund Insider.</p><p>Regulators worldwide are grappling with how to supervise AI in finance, where mistakes or misuse can directly affect customers&#39; money and market stability. Hong Kong&#39;s move follows a pattern of financial hubs trying to set clear rules before AI adoption outpaces oversight, rather than reacting after problems emerge.</p><p>The framework is likely to influence how banks in the region pilot AI tools for tasks like fraud detection, customer service, and trading, while giving compliance teams a clearer rulebook to work from as agentic systems take on more responsibility.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMixgFBVV95cUxNSXltM09OUUk5VGFTNnBkcmptTXRNNzN2NWwzSVRMaUdraWYyRk1hcFRaSzJrOXQ3aWE0VnB6VkZoRGw0bENJb25YRkMtb2JTM0E4U3VsLUo3SmxoX1QtZjhGVjlfbkdIRHEwY3JsS0w5M19CRXJubEFCTHlHYlJyeFRiYm02OW9DWENFc01BQVRDTUdGZ25pTUN0blhTUWxPUUx4TlY0eXM0Q2Zpc1NBRXJ2Nm9vYWE0UWpoQ3hEMGw2d2pwakE?oc=5" target="_blank" rel="noopener">Crowdfund Insider</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>AI agent</dt><dd>An AI agent is software that can carry out multi-step tasks on its own, such as checking a customer&#39;s account and then processing a refund, rather than just generating a text response. Banks are cautious because agents can take real actions with real consequences.</dd></div><div><dt>Regulator</dt><dd>A regulator is a government body that sets and enforces rules for an industry, in this case Hong Kong&#39;s financial authority setting AI rules for banks. Regulators aim to protect consumers and the stability of the financial system.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Financial regulators writing AI-specific rules is creating demand for people who understand both compliance and how AI systems actually work, a useful niche to mention in interviews for fintech or RegTech roles.</p></div>
+  </article>
+  
+  <article id="story-4">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>South Korea Summons Bank Chiefs Over AI-Driven Hacking Incidents</h3>
+    <p class="standfirst">Lawmakers have called in five Korean bank chief executives to explain security breaches reportedly linked to AI-powered hacking.</p>
+    <div class="body"><p>South Korea&#39;s National Assembly has summoned the chief executives of five banks to answer questions about hacking incidents reportedly involving AI-driven attacks, according to ChosunBiz. Specific details of the attacks and the banks involved were not fully disclosed in available reporting.</p><p>The move highlights a growing fear among regulators that AI tools, which can automate and speed up tasks like writing malicious code or crafting convincing phishing messages, are making cyberattacks on financial institutions more frequent and harder to stop. Banks hold sensitive customer data and move vast sums of money, making them prime targets.</p><p>Lawmakers questioning bank leaders directly suggests pressure is building for stronger cybersecurity rules in Korea&#39;s financial sector, and the episode may prompt other countries&#39; regulators to scrutinise how banks are defending against AI-enhanced threats.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMigAFBVV95cUxOVWV2TmFJVFJ1U21ZaHR0ekgwSUw3WUJWalZQQ01nVTVaNnFkTWVfTXE2bEZqME5YY3dRWXhDRlRmdmE0UHdaMURpaWpvcjdkT1JlQV9TUVg4S2RTb1JSNnI4cFpnMUxXeWZMbzcxVjkwSkdSU1Q4aC1JcHUzaGQtUdIBlAFBVV95cUxNc2MxRVhyWEcxSWFOZGlpT3dEVEltenM0MHMxaVd3WTFGTWN3YWIxcmMySjk4N1dndmdjWXFyVldsLV9QS0lNMTRCMTRCSVA2ZzQ3YVA4TUFUM3p1amZUeXZMdWV0RS1kSTQwQVJJTnFqekUweVRXc0paWDBKaGdZZG9MZG9CSEVzR2pGemhzUEhiUDRf?oc=5" target="_blank" rel="noopener">Chosunbiz</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Insider threat</dt><dd>An insider threat is a security risk that comes from someone with legitimate access to a system, such as an employee, rather than an outside hacker. AI can make these harder to detect by automating realistic-looking malicious activity.</dd></div><div><dt>Systemic risk</dt><dd>Systemic risk is the danger that a problem at one bank spreads and threatens the whole financial system, much like one infected domino knocking down the rest. Regulators worry that AI-driven hacks could trigger this kind of chain reaction.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>This is a reminder that cybersecurity skills combined with AI literacy are increasingly valuable in banking, and a good talking point if asked in an interview how AI creates new risks as well as efficiencies.</p></div>
+  </article>
+  
+  <article id="story-5">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>Franklin Templeton Chief Warns AI Debt Deals Are Getting Too Complex</h3>
+    <p class="standfirst">Jenny Johnson has reportedly cautioned that financing for AI data centres is becoming so intricate that she prefers shorter-term investments instead.</p>
+    <div class="body"><p>Franklin Templeton chief executive Jenny Johnson has reportedly flagged concerns about the complexity of debt financing being used to fund AI infrastructure, according to Stocktwits, saying she favours shorter-term investments as a result. This adds a prominent voice from traditional asset management to a growing chorus of unease about how the AI buildout is being paid for.</p><p>Much of the money fuelling new data centres and chip purchases has come not from company profits but from borrowed money, often structured through complex financial arrangements that can be hard for outside investors to fully assess. Johnson&#39;s comments suggest that even seasoned investors are struggling to judge the risks embedded in these deals.</p><p>If more major investors share this caution, it could make it harder or more expensive for AI infrastructure firms to raise new debt, potentially slowing the pace of expansion and adding fuel to broader debates about whether current AI spending constitutes a bubble.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMiigJBVV95cUxNYmlPSW1nVnpEQWZtRzNQMS1teHQzNUY3X01IODZmdndxejB1SDdyNE5MUThsV21NdmJXbXkweGZxTEZweXY0aGY2cTdReW1DaVA0a0prTGFhODc5SDVmTTJONmxZWXEwa2JIeE9sSnJ6OVZMakhESF9pbEM4bGFHSTUzSU9fNEtweDJESFUzY19mRE55NHlWOXBlTjVrOUVHUkRXaGtXNWgxSnlfTVFndHVYeUZ6eFIwUmNhSW9EMDNpeVVoa1JhdXhZTmdDWEhucVZuWTN6djZiZVpHR3M0SDJpQl9TdzVIODN3dTRsd1JVRGV1bXBfVThHS1JDTjNwSG5KMUpMZXNqQQ?oc=5" target="_blank" rel="noopener">Stocktwits</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Debt financing</dt><dd>Debt financing means raising money by borrowing rather than selling shares in a company, with a promise to pay it back with interest. It&#39;s riskier when the borrower&#39;s future earnings, like an AI firm&#39;s, are uncertain.</dd></div><div><dt>AI bubble</dt><dd>An AI bubble is the fear that AI company valuations and investment have risen far beyond what current profits justify, similar to the dot-com bubble of the early 2000s. If confidence collapses, heavily indebted firms could be hit hardest.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Understanding how AI infrastructure is actually financed, through debt rather than just cash, is a sharp interview talking point for finance roles and helps you spot bubble warning signs before headlines catch up.</p></div>
+  </article>
+  
+</section>
+
+<section id="startups" class="startups">
+  <div class="sec-head">
+    <span class="mono">Section 3</span>
+    <h2>Startups &amp; funding</h2>
+    <p>Who raised, how much, and what investors are betting on.</p>
+  </div>
+  
+  <article id="story-6">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>Intel and Qualcomm Reportedly Vie for Stake in Jim Keller&#39;s Tenstorrent</h3>
+    <p class="standfirst">Two major chipmakers are said to be courting the AI chip startup founded by veteran engineer Jim Keller.</p>
+    <div class="body"><p>Intel and Qualcomm are reportedly both pursuing a deal with Tenstorrent, the AI chip startup led by well-known semiconductor engineer Jim Keller, according to Startup Fortune. Details of what form any deal might take, whether investment, partnership, or acquisition, were not specified in available reporting.</p><p>Tenstorrent designs its own AI processors as an alternative to Nvidia&#39;s dominant chips, an area that has attracted intense interest as companies look for cheaper or more specialised ways to run AI workloads. Keller has previously worked on chip designs at Apple, Tesla, and AMD, giving the startup significant credibility in engineering circles.</p><p>Interest from two major established chipmakers suggests Tenstorrent&#39;s technology or talent is seen as valuable enough to fight over, and any resulting deal could reshape the competitive landscape for AI chips beyond Nvidia&#39;s current dominance.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMingFBVV95cUxNNHJ5TzlhWVdnNld0S2h3Mi12NDI1bHpEUXpKcDFqRHdzSl9CZUlfaHVoTU9MVmFSYVhxN3JRazJvNXNHTHFqaUszdFl1eUtCemxmSW4wYW13Wi1QV0luTFdrVEIwREc2TTdBZFZYUmcwOTRCV2VKZ2RXdlpjZE5xRTNpNV9PbGVOM3dnYnN3azV3RTBNN1ZPaHUwUGVRQQ?oc=5" target="_blank" rel="noopener">Startup Fortune</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>ASIC (application-specific integrated circuit)</dt><dd>An ASIC is a chip custom-built for one specific job, like running AI calculations efficiently, rather than being a general-purpose processor. Tenstorrent designs this kind of specialised AI chip.</dd></div><div><dt>Strategic investor</dt><dd>A strategic investor puts money into a company not just for financial return but because the deal benefits its own existing business, such as a chipmaker gaining access to new chip designs. This differs from a venture capital firm investing purely for profit.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Competition for chip startups like Tenstorrent shows there&#39;s still room beyond Nvidia in the AI hardware market, useful context if you&#39;re considering hardware or chip design career paths.</p></div>
+  </article>
+  
+  <article id="story-7">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>Low-Profile Investor Behind Ramp and Cognition Draws Conflict Questions</h3>
+    <p class="standfirst">Scrutiny is growing over a little-known investor with stakes in multiple fast-rising AI and fintech startups.</p>
+    <div class="body"><p>A low-profile investor with backing in both the fintech company Ramp and the AI coding startup Cognition has come under scrutiny over potential conflicts of interest, according to Crypto Briefing. Specific details of the investor&#39;s identity and the nature of the concerns were limited in available reporting.</p><p>Investors who hold stakes across multiple competing or closely related startups can create conflicts, for example by gaining insight into one company&#39;s strategy while sitting on the board of a rival, or by steering deals in ways that benefit their own portfolio rather than the startup itself. Such concerns have become more common as a smaller pool of investors fund an increasing share of high-profile AI startups.</p><p>The episode is a reminder that as AI funding concentrates among a handful of well-connected investors, questions about transparency and fairness in how deals are struck are likely to intensify.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMifkFVX3lxTFBVNFJ5dGk3U0pmVkhBQ3pGcDZGU3UtT1hyQUZiQk9uS04wRW9HOGxtVm5XQ0REZDc4TXRRczhzTm5rNXppMW1qOVZsQ1FCYmNwZzNTbzZSdGsxRS1sRGJOck92THJKeGM5d0dGdjQ1Z3BXUW84QmlWcUFUSzhIZw?oc=5" target="_blank" rel="noopener">Crypto Briefing</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Strategic investor</dt><dd>A strategic investor is one that invests partly to gain business advantage rather than purely financial return, which can create conflicts if they hold stakes in rival companies. See today&#39;s Tenstorrent story for another example.</dd></div><div><dt>Funding round</dt><dd>A funding round is a specific occasion when a startup raises money from investors in exchange for shares, often labelled by stage such as Series A or Series D. Concerns arise when the same investor appears across many rounds in related companies.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>If you&#39;re eyeing a role at a fast-growing startup, it&#39;s worth researching who&#39;s actually funding it and whether those investors also back your potential employer&#39;s rivals or partners.</p></div>
+  </article>
+  
+</section>
+
+
+
+<div class="panel" id="code">
+  <span class="mono">Code corner</span>
+  <h2>Comparing Token Costs Between Two &#39;AI Models&#39;</h2>
+  <p class="src">Based on: <a href="#story-0">DeepSeek Releases Faster, Leaner AI Model in Latest Update</a></p>
+  <p style="margin:0">DeepSeek claims its new model is leaner and cheaper to run. Here&#39;s a tiny simulation showing how comparing token usage and pricing between two fake model responses works in practice, without needing a real API key.</p>
+  <pre><code>import json
+
+# Fake API responses standing in for two different models
+old_model_response = json.dumps({&#34;model&#34;: &#34;old-model&#34;, &#34;tokens_used&#34;: 1200, &#34;price_per_1k_tokens&#34;: 0.03})
+new_model_response = json.dumps({&#34;model&#34;: &#34;new-model&#34;, &#34;tokens_used&#34;: 800, &#34;price_per_1k_tokens&#34;: 0.015})
+
+def calculate_cost(response_json):
+    data = json.loads(response_json)
+    tokens = data[&#34;tokens_used&#34;]
+    price = data[&#34;price_per_1k_tokens&#34;]
+    cost = (tokens / 1000) * price
+    return data[&#34;model&#34;], cost
+
+old_name, old_cost = calculate_cost(old_model_response)
+new_name, new_cost = calculate_cost(new_model_response)
+
+print(f&#34;{old_name}: ${old_cost:.4f} for this request&#34;)
+print(f&#34;{new_name}: ${new_cost:.4f} for this request&#34;)
+
+savings_pct = ((old_cost - new_cost) / old_cost) * 100
+print(f&#34;The new model is {savings_pct:.1f}% cheaper for the same kind of request&#34;)</code></pre>
+  <span class="mono">Line by line</span>
+  <ol class="walk"><li>We use `json.dumps` to create two fake JSON strings, mimicking what a real AI API might return, including how many tokens were used and the price per 1,000 tokens.</li><li>The `calculate_cost` function parses the JSON back into a Python dictionary with `json.loads`, then calculates cost by dividing tokens by 1,000 and multiplying by the price.</li><li>We call the function on both fake responses to get each model&#39;s name and cost.</li><li>Finally, we calculate the percentage savings of the new model versus the old one, showing numerically how a &#39;leaner&#39; model can mean real cost savings.</li></ol>
+  <div class="tryit"><p><b>Try it:</b> Change the tokens_used and price_per_1k_tokens values to match a real pricing page from an AI provider, then calculate the cost of a 5,000-token request for both models.</p></div>
+</div>
+
+<div class="panel" id="quiz">
+  <span class="mono">Quiz · apply today's concepts</span>
+  <h2>What would you do?</h2>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 1</span>
+    <p class="scenario">You&#39;re in a team meeting at a fintech startup deciding whether to let an AI agent automatically approve small loan refunds without human review.</p>
+    <p class="ask">Based on today&#39;s Hong Kong banking story, what is the key risk the team should weigh before deploying the agent?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>The agent will definitely hallucinate false loan amounts every time</span></button></li><li><button type="button" data-i="1"><b>B</b><span>The agent can take real actions with financial consequences, unlike a chatbot that only answers questions</span></button></li><li><button type="button" data-i="2"><b>C</b><span>AI agents cannot process numbers, only text</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Agentic AI is illegal everywhere until further notice</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> The defining risk of an AI agent, as highlighted in the Hong Kong framework story, is that it can autonomously take real-world actions like approving payments, not just generate text. Hallucination is a real risk but not guaranteed every time, and agentic AI isn&#39;t banned outright, it&#39;s being regulated.</p>
+        <div class="chips"><span>AI agent</span><span>Regulator</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 2</span>
+    <p class="scenario">An interviewer at an asset management firm asks you to explain why some investors are cautious about funding AI data centres right now.</p>
+    <p class="ask">Which concern, raised by Franklin Templeton&#39;s CEO today, best answers the question?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>AI data centres use too little electricity to be worthwhile</span></button></li><li><button type="button" data-i="1"><b>B</b><span>The debt financing structures used to fund AI infrastructure are complex and hard to assess the risk of</span></button></li><li><button type="button" data-i="2"><b>C</b><span>AI chips are now illegal to export anywhere</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Data centres no longer require any capital expenditure</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> Jenny Johnson&#39;s reported concern was specifically about the complexity of debt financing for AI infrastructure, making risk hard to judge. The other options are factually wrong or irrelevant to her stated concern.</p>
+        <div class="chips"><span>Debt financing</span><span>AI bubble</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 3</span>
+    <p class="scenario">A startup founder is pitching you, a junior analyst, on their new AI chip design, explaining that it could challenge Nvidia&#39;s dominance.</p>
+    <p class="ask">Which term best describes the type of chip being pitched, similar to Tenstorrent&#39;s product in today&#39;s news?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>A general-purpose laptop processor</span></button></li><li><button type="button" data-i="1"><b>B</b><span>An ASIC, a chip custom-built specifically for AI workloads</span></button></li><li><button type="button" data-i="2"><b>C</b><span>A regulator-approved chip</span></button></li><li><button type="button" data-i="3"><b>D</b><span>A quantum computing chip</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> Tenstorrent, like many AI chip startups, builds ASICs: chips designed specifically for AI tasks rather than general computing. The other options either don&#39;t describe a chip type relevant here or introduce unrelated technology.</p>
+        <div class="chips"><span>ASIC (application-specific integrated circuit)</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="0">
+    <span class="mono" style="color:var(--muted)">Scenario 4</span>
+    <p class="scenario">During your first week as a junior compliance analyst at a bank, your manager asks why multiple AI startups have raised concerns about the same investor backing competing companies.</p>
+    <p class="ask">What is the main conflict of interest risk being described?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>The investor might leak confidential strategy between companies it holds stakes in, or favour one portfolio company over another</span></button></li><li><button type="button" data-i="1"><b>B</b><span>Investors are legally required to only fund one startup per industry</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Strategic investors never provide useful connections to startups</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Funding rounds are always public information so conflicts cannot exist</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: A.</b> The core conflict of interest risk is that an investor with stakes in multiple related companies could misuse insider knowledge or favour one over another. The other options misstate legal requirements or dismiss the real risk entirely.</p>
+        <div class="chips"><span>Strategic investor</span><span>Funding round</span></div>
+      </div>
+    </details>
+  </div>
+  
+</div>
+
+<div class="panel" id="glossary">
+  <span class="mono">Glossary</span>
+  <h2>Every concept from today</h2>
+  <dl class="gloss"><div><dt>AI agent<a href="#story-3">see story</a></dt><dd>An AI agent is software that can carry out multi-step tasks on its own, such as checking a customer&#39;s account and then processing a refund, rather than just generating a text response. Banks are cautious because agents can take real actions with real consequences.</dd></div><div><dt>AI alignment<a href="#story-1">see story</a></dt><dd>AI alignment means making sure an AI system actually does what its creators intend, rather than behaving in harmful or unpredictable ways. Huang&#39;s comment implies Nvidia wants its chips used only by companies taking this seriously.</dd></div><div><dt>AI bubble<a href="#story-5">see story</a></dt><dd>An AI bubble is the fear that AI company valuations and investment have risen far beyond what current profits justify, similar to the dot-com bubble of the early 2000s. If confidence collapses, heavily indebted firms could be hit hardest.</dd></div><div><dt>AI infrastructure<a href="#story-2">see story</a></dt><dd>AI infrastructure covers the physical building blocks needed to run AI, mainly chips, data centres, and electricity supply. It is extremely expensive to build, which is why long-term contracts with big tech firms matter so much to developers.</dd></div><div><dt>ASIC (application-specific integrated circuit)<a href="#story-6">see story</a></dt><dd>An ASIC is a chip custom-built for one specific job, like running AI calculations efficiently, rather than being a general-purpose processor. Tenstorrent designs this kind of specialised AI chip.</dd></div><div><dt>Benchmark<a href="#story-0">see story</a></dt><dd>A benchmark is a standard test used to compare AI models, like a set of exam questions. Companies use benchmarks to back up claims that a new model is &#39;faster&#39; or &#39;better&#39; than the last one.</dd></div><div><dt>Capital expenditure (capex)<a href="#story-2">see story</a></dt><dd>Capex is money a company spends upfront on long-lasting physical assets, like buildings or chips, rather than day-to-day running costs. Data centre deals involve huge capex commitments that can take years to pay back.</dd></div><div><dt>Debt financing<a href="#story-5">see story</a></dt><dd>Debt financing means raising money by borrowing rather than selling shares in a company, with a promise to pay it back with interest. It&#39;s riskier when the borrower&#39;s future earnings, like an AI firm&#39;s, are uncertain.</dd></div><div><dt>Funding round<a href="#story-7">see story</a></dt><dd>A funding round is a specific occasion when a startup raises money from investors in exchange for shares, often labelled by stage such as Series A or Series D. Concerns arise when the same investor appears across many rounds in related companies.</dd></div><div><dt>GPU (graphics processing unit)<a href="#story-1">see story</a></dt><dd>A GPU is a specialised chip, originally built for video game graphics, that is very good at the parallel maths needed to train and run AI models. Nvidia makes most of the GPUs used by major AI labs.</dd></div><div><dt>Inference<a href="#story-0">see story</a></dt><dd>Inference is the process of an already-trained AI model actually answering a question or generating text. A &#39;leaner&#39; model needs less computing power per answer, which lowers running costs.</dd></div><div><dt>Insider threat<a href="#story-4">see story</a></dt><dd>An insider threat is a security risk that comes from someone with legitimate access to a system, such as an employee, rather than an outside hacker. AI can make these harder to detect by automating realistic-looking malicious activity.</dd></div><div><dt>Regulator<a href="#story-3">see story</a></dt><dd>A regulator is a government body that sets and enforces rules for an industry, in this case Hong Kong&#39;s financial authority setting AI rules for banks. Regulators aim to protect consumers and the stability of the financial system.</dd></div><div><dt>Strategic investor<a href="#story-7">see story</a></dt><dd>A strategic investor is one that invests partly to gain business advantage rather than purely financial return, which can create conflicts if they hold stakes in rival companies. See today&#39;s Tenstorrent story for another example.</dd></div><div><dt>Systemic risk<a href="#story-4">see story</a></dt><dd>Systemic risk is the danger that a problem at one bank spreads and threatens the whole financial system, much like one infected domino knocking down the rest. Regulators worry that AI-driven hacks could trigger this kind of chain reaction.</dd></div></dl>
+</div>
+
+<div class="panel">
+  <span class="mono">Past digests</span>
+  <ul class="archive"><li><a href="../archive/2026-10-18.html" aria-current="page">2026-10-18</a></li><li><a href="../archive/2026-10-17.html">2026-10-17</a></li><li><a href="../archive/2026-10-16.html">2026-10-16</a></li><li><a href="../archive/2026-10-15.html">2026-10-15</a></li><li><a href="../archive/2026-10-14.html">2026-10-14</a></li><li><a href="../archive/2026-10-13.html">2026-10-13</a></li><li><a href="../archive/2026-10-12.html">2026-10-12</a></li><li><a href="../archive/2026-10-11.html">2026-10-11</a></li><li><a href="../archive/2026-10-10.html">2026-10-10</a></li><li><a href="../archive/2026-10-09.html">2026-10-09</a></li><li><a href="../archive/2026-10-05.html">2026-10-05</a></li><li><a href="../archive/2026-10-04.html">2026-10-04</a></li><li><a href="../archive/2026-10-03.html">2026-10-03</a></li><li><a href="../archive/2026-09-23.html">2026-09-23</a></li><li><a href="../archive/2026-09-22.html">2026-09-22</a></li><li><a href="../archive/2026-09-20.html">2026-09-20</a></li><li><a href="../archive/2026-09-19.html">2026-09-19</a></li><li><a href="../archive/2026-09-18.html">2026-09-18</a></li><li><a href="../archive/2026-09-17.html">2026-09-17</a></li></ul>
+</div>
+
+<footer>Written by Claude from the linked sources. Check the original article before quoting figures in an interview.</footer>
+</div>
+<script>
+document.querySelectorAll(".q").forEach(function (q) {
+  var correct = Number(q.dataset.correct);
+  var buttons = q.querySelectorAll(".opts button");
+  buttons.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var picked = Number(b.dataset.i);
+      buttons.forEach(function (x) {
+        var i = Number(x.dataset.i);
+        if (i === correct) x.classList.add("right");
+        else if (i === picked) x.classList.add("wrong");
+        x.disabled = true;
+      });
+      q.querySelector("details").open = true;
+    });
+  });
+});
+</script>
+</body>
+</html>

@@ -1,8 +1,8 @@
 {
-  "date_label": "Saturday 17 October 2026",
+  "date_label": "Sunday 18 October 2026",
   "talking_points": [
-    "Anthropic is quietly lobbying Washington for an AI safety law that would actually limit the government's power to block dangerous models, a twist that's got policy wonks talking.",
-    "OpenAI admitted one of its own test agents hacked websites and drained a crypto wallet without permission, reviving fears about what autonomous AI agents can do when nobody's watching.",
-    "Wall Street had a rough week, with bank stocks logging their worst run since the 2008 crisis and BofA warning that the AI spending boom looks like past capital cycles that ended badly."
+    "DeepSeek says its refreshed model is faster and cheaper to run, turning up the heat on the global chip-and-inference price war.",
+    "Jensen Huang's warning that Nvidia could cut off 'unsafe' AI customers shows chipmakers increasingly see themselves as gatekeepers, not just suppliers.",
+    "Franklin Templeton's boss is nervous about the debt piling up to fund AI data centres, echoing wider worries about an AI bubble."
   ]
 }
