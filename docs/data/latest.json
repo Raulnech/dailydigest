@@ -1,8 +1,8 @@
 {
-  "date_label": "Sunday 18 October 2026",
+  "date_label": "Monday 19 October 2026",
   "talking_points": [
-    "DeepSeek says its refreshed model is faster and cheaper to run, turning up the heat on the global chip-and-inference price war.",
-    "Jensen Huang's warning that Nvidia could cut off 'unsafe' AI customers shows chipmakers increasingly see themselves as gatekeepers, not just suppliers.",
-    "Franklin Templeton's boss is nervous about the debt piling up to fund AI data centres, echoing wider worries about an AI bubble."
+    "Anthropic's 5% share pledge puts a price tag on AI's social conscience, even as critics call it good PR.",
+    "Microsoft's retreat from Nscale's UK data centre shows that grid power, not chips, may be the real bottleneck for AI build-out.",
+    "Stripe's reported $7.5bn OpenRouter deal signals that whoever controls the pipes between apps and AI models controls the money."
   ]
 }
