@@ -1,8 +1,8 @@
 {
-  "date_label": "Monday 19 October 2026",
+  "date_label": "Tuesday 20 October 2026",
   "talking_points": [
-    "Anthropic's 5% share pledge puts a price tag on AI's social conscience, even as critics call it good PR.",
-    "Microsoft's retreat from Nscale's UK data centre shows that grid power, not chips, may be the real bottleneck for AI build-out.",
-    "Stripe's reported $7.5bn OpenRouter deal signals that whoever controls the pipes between apps and AI models controls the money."
+    "Anthropic and Nscale are reportedly lining up a second $45bn compute deal within weeks of their first one.",
+    "CoreWeave's bonds have slipped into distressed territory, reviving fears that the AI boom is built on fragile debt.",
+    "Amazon's new TorchNeuron tool is a direct shot at loosening Nvidia's grip on AI software."
   ]
 }
