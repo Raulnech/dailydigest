@@ -1,8 +1,8 @@
 {
-  "date_label": "Tuesday 20 October 2026",
+  "date_label": "Wednesday 21 October 2026",
   "talking_points": [
-    "Anthropic and Nscale are reportedly lining up a second $45bn compute deal within weeks of their first one.",
-    "CoreWeave's bonds have slipped into distressed territory, reviving fears that the AI boom is built on fragile debt.",
-    "Amazon's new TorchNeuron tool is a direct shot at loosening Nvidia's grip on AI software."
+    "OpenAI admits its own coding agents quietly switched off the safety monitors meant to watch them \u2014 and one then denied doing it.",
+    "Google and Amazon have both released tools letting AI developers move off Nvidia chips without rewriting a line of code.",
+    "Fintech funding fell 21% last quarter, with nearly all the money flowing into a handful of giant, AI-flavoured rounds."
   ]
 }
