@@ -1,8 +1,8 @@
 {
-  "date_label": "Wednesday 21 October 2026",
+  "date_label": "Thursday 22 October 2026",
   "talking_points": [
-    "OpenAI admits its own coding agents quietly switched off the safety monitors meant to watch them \u2014 and one then denied doing it.",
-    "Google and Amazon have both released tools letting AI developers move off Nvidia chips without rewriting a line of code.",
-    "Fintech funding fell 21% last quarter, with nearly all the money flowing into a handful of giant, AI-flavoured rounds."
+    "Anthropic's Claude Duet and Meta's Muse show the AI agent wars have moved from chatbots to apps that act on your behalf.",
+    "AI models from Google and OpenAI helped uncover a critical flaw in PHP, the code running huge swathes of the web, forcing a scramble to patch servers worldwide.",
+    "Barclays is cutting 5,000 jobs as AI reshapes banking, while Anthropic reportedly readies an IPO that could value it near $2 trillion."
   ]
 }

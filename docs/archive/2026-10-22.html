@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI Morning Brief · Thursday 22 October 2026</title>
+<meta name="theme-color" content="#3A55C8">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  color-scheme:light dark;
+  --ground:#F3F4F7; --paper:#FFFFFF; --ink:#141827; --muted:#5B6275; --line:#DDE0E8;
+  --industry:#3A55C8; --industry-soft:#E6EAFA;
+  --finance:#1C7453; --finance-soft:#E1F1EA;
+  --startups:#A8561A; --startups-soft:#F7EADF;
+  --code-bg:#161A26; --code-ink:#E4E7F0;
+  --right:#1C7453; --right-soft:#E1F1EA; --wrong:#B3261E; --wrong-soft:#FBE7E5;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --ground:#0F121B; --paper:#171B27; --ink:#E8EAF1; --muted:#9AA1B4; --line:#2A3042;
+    --industry:#8FA3F5; --industry-soft:#20284A;
+    --finance:#6CCBA3; --finance-soft:#15332A;
+    --startups:#E8A06A; --startups-soft:#3A2618;
+    --code-bg:#0B0D14; --code-ink:#E4E7F0;
+    --right:#6CCBA3; --right-soft:#15332A; --wrong:#F2A29B; --wrong-soft:#3A1B19;
+  }
+}
+*{box-sizing:border-box}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.6 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;padding-inline:16px;padding-block:28px 64px}
+.wrap{max-width:700px;margin:0 auto;display:grid;gap:36px}
+a{color:inherit}
+a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var(--industry);outline-offset:3px;border-radius:4px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400}
+header{display:grid;gap:10px}
+header .date{color:var(--muted)}
+h1{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(44px,11vw,64px);line-height:1;margin:0;letter-spacing:-.01em}
+h1 em{color:var(--industry)}
+.lede{color:var(--muted);margin:0;max-width:60ch}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ground);padding-block:10px;display:flex;gap:8px;overflow-x:auto;border-bottom:1px solid var(--line)}
+nav a{flex:none;text-decoration:none;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--paper);font-size:14px}
+nav a.industry{color:var(--industry)} nav a.finance{color:var(--finance)} nav a.startups{color:var(--startups)}
+
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:14px;scroll-margin-top:64px}
+.panel h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:30px;margin:0;line-height:1.15}
+.panel > .mono{color:var(--muted)}
+.talk ol{margin:0;padding-left:20px;display:grid;gap:8px}
+.toc{display:grid;gap:14px}
+.toc h3{margin:0 0 4px}
+.toc ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.toc li a{text-decoration:none}
+.toc li a:hover{text-decoration:underline}
+
+section{display:grid;gap:22px;scroll-margin-top:64px}
+.sec-head{display:grid;gap:2px;border-top:3px solid var(--c);padding-top:12px}
+.sec-head h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:36px;margin:0;line-height:1.1;text-wrap:balance}
+.sec-head p{margin:0;color:var(--muted)}
+.sec-head .mono{color:var(--c)}
+.industry{--c:var(--industry);--cs:var(--industry-soft)}
+.finance{--c:var(--finance);--cs:var(--finance-soft)}
+.startups{--c:var(--startups);--cs:var(--startups-soft)}
+
+article{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px 20px;display:grid;gap:16px;scroll-margin-top:64px}
+article .kicker{color:var(--c)}
+article h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(26px,6vw,32px);line-height:1.15;margin:0;text-wrap:balance}
+.standfirst{margin:0;font-size:18px;line-height:1.5;color:var(--muted)}
+.body{display:grid;gap:14px;font-family:"Source Serif 4",Georgia,serif;font-size:18px;line-height:1.65;max-width:65ch}
+.body p{margin:0}
+.src{margin:0;font-size:13px;color:var(--muted)}
+.concepts{background:var(--cs);border-radius:12px;padding:16px 18px;display:grid;gap:12px}
+.concepts .mono{color:var(--c)}
+.concepts dl{margin:0;display:grid;gap:10px}
+.concepts dt{font-weight:600}
+.concepts dd{margin:2px 0 0}
+.why{display:grid;gap:4px;border-left:2px solid var(--c);padding-left:14px}
+.why .mono{color:var(--c)}
+.why p{margin:0}
+
+pre{margin:0;background:var(--code-bg);color:var(--code-ink);border-radius:10px;padding:16px;overflow-x:auto;font:14px/1.55 "IBM Plex Mono",ui-monospace,Consolas,monospace}
+.walk{margin:0;padding-left:20px;display:grid;gap:6px}
+code{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:.9em}
+.tryit{background:var(--industry-soft);border-radius:10px;padding:12px 16px}
+.tryit p{margin:0}
+
+.q{display:grid;gap:12px;border-top:1px solid var(--line);padding-top:18px}
+.q:first-of-type{border-top:0;padding-top:0}
+.scenario{margin:0;font-family:"Source Serif 4",Georgia,serif;font-style:italic;font-size:17px}
+.q .ask{margin:0;font-weight:600}
+.opts{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.opts button{width:100%;text-align:left;font:inherit;color:var(--ink);background:var(--ground);border:1px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer;display:flex;gap:10px}
+.opts button:hover{border-color:var(--industry)}
+.opts button b{font-family:"IBM Plex Mono",ui-monospace,monospace;font-weight:500}
+.opts button.right{background:var(--right-soft);border-color:var(--right)}
+.opts button.wrong{background:var(--wrong-soft);border-color:var(--wrong)}
+.opts button:disabled{cursor:default}
+details{border-radius:10px}
+summary{cursor:pointer;font-weight:500;color:var(--industry)}
+.answer{display:grid;gap:8px;margin-top:10px}
+.answer p{margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:13px;padding:2px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+
+.gloss{margin:0;display:grid;gap:12px}
+.gloss dt{font-weight:600}
+.gloss dt a{font-weight:400;font-size:13px;color:var(--muted);margin-left:6px}
+.gloss dd{margin:2px 0 0;color:var(--muted)}
+.archive{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.archive a{display:inline-block;padding:4px 10px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-variant-numeric:tabular-nums;font-size:14px}
+.archive a[aria-current]{border-color:var(--industry);color:var(--industry)}
+footer{color:var(--muted);font-size:13px}
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="mono date">Thursday 22 October 2026 · 17 min read</span>
+  <h1>AI Morning <em>Brief</em></h1>
+  <p class="lede">Today's AI and fintech news as short articles, with every key concept explained, a bit of Python, and a scenario quiz to check it stuck.</p>
+</header>
+
+<nav aria-label="Sections">
+  <a href="#industry" class="industry">The AI industry</a>
+  <a href="#finance" class="finance">AI &amp; finance</a>
+  <a href="#startups" class="startups">Startups &amp; funding</a>
+  <a href="#code">Code corner</a>
+  <a href="#quiz">Quiz</a>
+  <a href="#glossary">Glossary</a>
+</nav>
+
+<div class="panel talk">
+  <span class="mono">If you only read one thing</span>
+  <h2>Three things to be able to say today</h2>
+  <ol><li>Anthropic&#39;s Claude Duet and Meta&#39;s Muse show the AI agent wars have moved from chatbots to apps that act on your behalf.</li><li>AI models from Google and OpenAI helped uncover a critical flaw in PHP, the code running huge swathes of the web, forcing a scramble to patch servers worldwide.</li><li>Barclays is cutting 5,000 jobs as AI reshapes banking, while Anthropic reportedly readies an IPO that could value it near $2 trillion.</li></ol>
+</div>
+
+<div class="panel">
+  <span class="mono">In today's brief</span>
+  <div class="toc">
+  
+    <div class="industry"><h3 class="mono" style="color:var(--c)">The AI industry</h3>
+      <ul><li><a href="#story-0">Anthropic launches Claude Duet, a background AI agent that messages you when it matters</a></li><li><a href="#story-1">AI models help uncover &#39;PHP2Shell&#39;, a critical flaw in code running much of the web</a></li><li><a href="#story-2">Meta creates new non-voting share class to fund AI spending of up to $145bn</a></li></ul>
+    </div>
+  
+    <div class="finance"><h3 class="mono" style="color:var(--c)">AI &amp; finance</h3>
+      <ul><li><a href="#story-3">Barclays to cut 5,000 jobs by end of 2026 in AI-driven efficiency push</a></li><li><a href="#story-4">Anthropic reportedly set to file for IPO as early as Friday at up to $2 trillion valuation</a></li><li><a href="#story-5">LSEG agrees $3.5bn deal to acquire credit data firm Octus</a></li></ul>
+    </div>
+  
+    <div class="startups"><h3 class="mono" style="color:var(--c)">Startups &amp; funding</h3>
+      <ul><li><a href="#story-6">Legal AI firm Legora raises $550m Series E at $8.8bn valuation</a></li><li><a href="#story-7">Year-old AI lab Flapping Airplanes raises $1bn at $6bn valuation</a></li></ul>
+    </div>
+  
+  </div>
+</div>
+
+
+<section id="industry" class="industry">
+  <div class="sec-head">
+    <span class="mono">Section 1</span>
+    <h2>The AI industry</h2>
+    <p>Big labs, big tech and the direction of travel.</p>
+  </div>
+  
+  <article id="story-0">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Anthropic launches Claude Duet, a background AI agent that messages you when it matters</h3>
+    <p class="standfirst">Built on the Opus 5.5 model, Duet joins Meta&#39;s Muse and OpenAI&#39;s Dots in a fast-growing race to build AI agents that work unsupervised.</p>
+    <div class="body"><p>Anthropic has released Claude Duet as a &#39;research preview&#39;, a personal AI agent aimed at professionals and small business owners that runs quietly in the background. Rather than waiting to be asked, it sends a morning briefing summarising what matters across your connected apps, then only interrupts you when something needs attention.</p><p>Duet is built on Anthropic&#39;s Opus 5.5 model and can be handed tasks ranging from scheduling meetings to building financial forecasts, dashboards and prototype web apps. It uses a virtual machine, essentially a simulated computer the AI can control, complete with its own browser, to carry out multi-step work on your behalf. Before anything risky, such as sending a payment or deleting a file, it messages you for approval first.</p><p>Because Duet may handle sensitive information, Anthropic has added a dedicated safety classifier, a filter that screens outputs, and a system prompt, hidden instructions that shape how the model behaves, both designed to stop it sharing things like credit card numbers. Anthropic admits the early version can still misjudge urgency or misread messages.</p><p>The launch intensifies a three-way contest with Meta&#39;s Muse, which hit 10 million US downloads this week, and OpenAI&#39;s Dots. Access to Duet is currently limited to Pro and Max subscribers in the US via a waitlist, but it signals that the next phase of the AI race is about agents doing jobs, not just answering questions.</p></div>
+    
+    <p class="src">Sources: <a href="https://www.theverge.com/ai-artificial-intelligence/1015843/anthropic-claude-duet-ai-agent" target="_blank" rel="noopener">The Verge</a> · <a href="https://www.theverge.com/ai-artificial-intelligence/1015715/walmart-ai-shopping-agents" target="_blank" rel="noopener">The Verge</a> · <a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxNblFra1FIR1VRWmpPaW80WGJSZGNtVG02LUMzU0pvR0NQbkJ3R1N1eGxTS0ZhblV6ZDV1VUNiMVVKVHRCNVI5aHZaZjBGREZUSDg3ekExUnFFWjF2QUs4Qk9ZREN6cUt4QVNZTnlwLThQMmt0Wmp3QWh1QkF3TDFuY1hNOGRnU2Ew?oc=5" target="_blank" rel="noopener">The New York Times</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>AI agent</dt><dd>An AI agent is a system that can take multi-step actions on its own, like booking a meeting or building a spreadsheet, rather than just replying to a single question.</dd></div><div><dt>Virtual machine</dt><dd>A virtual machine is a software-simulated computer that an AI agent can control, including its own browser, so it can click, type and navigate the web the way a person would.</dd></div><div><dt>Context window</dt><dd>The context window is how much text and information an AI model can &#39;hold in mind&#39; at once; an agent that monitors your apps all day needs a model that can track a lot of ongoing information without forgetting earlier details.</dd></div><div><dt>Safety classifier</dt><dd>A safety classifier is a filter that scans what an AI is about to say or do and blocks sensitive content, such as stopping an agent from revealing someone&#39;s credit card number.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Companies are now racing to hire people who can design, test and set guardrails for autonomous agents, not just prompt a chatbot. If you&#39;re interviewing for an AI role, being able to explain the difference between a chatbot and an agent that takes real-world actions (and the approval steps needed to keep it safe) is an easy way to stand out.</p></div>
+  </article>
+  
+  <article id="story-1">
+    <span class="mono kicker">The AI industry</span>
+    <h3>AI models help uncover &#39;PHP2Shell&#39;, a critical flaw in code running much of the web</h3>
+    <p class="standfirst">Google, OpenAI and Amazon used AI systems to find and respond to vulnerabilities in PHP, prompting government warnings worldwide.</p>
+    <div class="body"><p>Security researchers have disclosed two critical vulnerabilities, dubbed PHP2Shell, in PHP, an open-source programming language that underpins a huge share of websites and web applications. The flaws could let attackers remotely run malicious code on affected servers, potentially exposing sensitive data and databases, triggering urgent alerts from agencies including the US National Security Agency, the FBI, and authorities in the UK, Singapore, Australia, Canada and the EU.</p><p>Notably, AI played a central role in finding and fixing the problem. Google said its cybersecurity unit Wiz used AI models, including its Gemini system, to help investigate the vulnerabilities and test patches. OpenAI said researchers working with its models had also helped uncover the flaws, and spent two months coordinating a response with software maintainers and security firms before public disclosure. Amazon said its MadPot threat-detection system had already spotted exploitation attempts before the flaws were announced.</p><p>Cloudflare has rolled out protections through its web application firewall, a system that filters malicious web traffic, while the PHP team has released official fixes. Authorities are urging website operators to identify affected versions and patch immediately, or take systems offline if they can&#39;t.</p><p>The episode is being held up as a case study in AI&#39;s double-edged role in cybersecurity: the same pattern-spotting abilities that helped researchers find PHP2Shell before criminals could exploit it widely could just as easily be turned towards discovering new vulnerabilities by attackers.</p></div>
+    
+    <p class="src">Sources: <a href="https://www.cnbc.com/2026/10/22/php-google-openai-and-amazon-cyber.html" target="_blank" rel="noopener">Tech</a> · <a href="https://news.google.com/rss/articles/CBMimAFBVV95cUxObVhkbmJVQVEzWkd2YnJuNGZlRUtDdERWQUkyZVhGRTNiTHJmZjJlWU9lUXpBZmllQWtfelkwdF9kVzRJQXVPcDRSTWR0VnlpMWJEd0VqYkkxTVktUzVXMktnX2FXZEpfREdYMWFQbXlIY3NnZ25sQll5djdRcnJnOHNxZmc1anhfUTc0QzFiOC10aURCSUJKVg?oc=5" target="_blank" rel="noopener">The New York Times</a> · <a href="https://news.google.com/rss/articles/CBMie0FVX3lxTE8yWTJaTHNWSEthd09VenZuMVhjNjBjb1ZjS2haLUZXb2xvNDhBWXQwUzY2YkJTbkplTHk4ektpVno5NFpJME04alZvaVJ3SjhCNXRURlJmQ0dreGd2RVdUbzBPUVVuY2F6cDdJd0xQVG51Y0s0eDN2V1lmMA?oc=5" target="_blank" rel="noopener">Axios</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Zero-day vulnerability</dt><dd>Reminder: a zero-day vulnerability is a security flaw that&#39;s exploited before developers have had any chance to fix it, leaving defenders with zero days&#39; notice.</dd></div><div><dt>Remote code execution</dt><dd>Remote code execution means an attacker can run their own commands on someone else&#39;s computer or server over the internet, essentially taking control without physical access.</dd></div><div><dt>Open source</dt><dd>Reminder: open-source software has its underlying code published publicly, so anyone can inspect, use or modify it, which is why a flaw in widely-used open-source code like PHP can affect millions of websites at once.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>This shows a concrete, paid use case for AI beyond chatbots: automated vulnerability discovery and patch testing, a fast-growing niche for security engineers who can work alongside AI tools. In an interview, you could point to PHP2Shell as an example of AI being used defensively, not just as a risk.</p></div>
+  </article>
+  
+  <article id="story-2">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Meta creates new non-voting share class to fund AI spending of up to $145bn</h3>
+    <p class="standfirst">The new Class C stock, trading from 2027, will help pay for data centres, acquisitions and staff as Meta&#39;s AI costs keep climbing.</p>
+    <div class="body"><p>Meta announced in its third-quarter earnings that it will issue a new class of non-voting shares to help fund its AI push, with trading due to begin in 2027. The company said the money raised could go towards acquisitions and employee pay, as well as its core AI infrastructure build-out.</p><p>Meta&#39;s chief financial officer Susan Li said the new share class would give the company &#39;flexibility&#39; to invest behind what she called unprecedented momentum across its business. Meta now expects capital expenditure, the money spent on long-term assets like data centres and chips, to hit between $135 billion and $145 billion this year, up from its earlier estimate, as it competes with rivals including OpenAI for talent and computing power.</p><p>The funding news comes weeks after Meta launched its own AI agent, Muse, which reached 10 million US downloads within weeks. Muse&#39;s rollout hasn&#39;t been smooth: a YouTuber reported the agent disclosed his address to a stranger on Facebook Marketplace, and Meta had to pause a feature that let conversations be shared after some chats turned up publicly online.</p><p>The new share class underlines just how expensive the AI race has become, with Meta turning to fresh financial instruments, not just cash on hand, to keep pace. Investors will be watching whether the additional funding leads to clearer returns, or simply higher spending with uncertain payoff.</p></div>
+    
+    <p class="src">Sources: <a href="https://www.theverge.com/tech/1015799/meta-shares-class-ai-q3-2026-earnings" target="_blank" rel="noopener">The Verge</a> · <a href="https://news.google.com/rss/articles/CBMikgFBVV95cUxNeU9tNE9kMnVGOU5BcDAyNDJPVVRWNWt6eVBnQTY3YVBzWXpDNDZNWmNYMEQ2ek1ER2tYUU9URkNGMklvZEViUW5MRHJ5c1FrSlJVc0NvTXBMaHg4NEE2VTljQU9zVWVNU0NLSF96T0o3X3BtWWQ3QzdEOGQ3V0g5OTF3YkFDQkczcVgzelVXdURQZw?oc=5" target="_blank" rel="noopener">Financial-News.co.uk</a> · <a href="https://news.google.com/rss/articles/CBMingFBVV95cUxQejRjZW1tSkNWai1yczUyQWpYcFJHdDZTc21TY0VGc2M2UjRNSzBvV2dxcUdDVTdOREluNGZ5LS1JTVhLaVN0R3A5VV9Tb0lMVHRGeFdJMFVkQVlvelJlal94RkFPbklxeTdvYjUxcDhCME9GQkZja3dHcHpvTTVtTzZfU01hY0M5SE5uSmVKamc4UzRNMUczZUtiamkyQQ?oc=5" target="_blank" rel="noopener">Startup Fortune</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Share class</dt><dd>Companies can issue different classes of stock with different rights; a non-voting share class lets a company raise money from investors without giving them a say in how it&#39;s run, unlike ordinary shares.</dd></div><div><dt>Capital expenditure (capex)</dt><dd>Reminder: capex is money spent on long-term physical assets, like data centres and chips, as opposed to day-to-day running costs.</dd></div><div><dt>Acquisition</dt><dd>Reminder: an acquisition is when one company buys another outright, often to gain its technology, staff or customers quickly rather than building them in-house.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Understanding how tech giants finance AI, not just how much they spend, matters for anyone eyeing finance or strategy roles at these firms. It also links to today&#39;s Barclays story: both are about the huge cost of AI infrastructure and how companies choose to pay for it.</p></div>
+  </article>
+  
+</section>
+
+<section id="finance" class="finance">
+  <div class="sec-head">
+    <span class="mono">Section 2</span>
+    <h2>AI &amp; finance</h2>
+    <p>Where Wall Street and the City meet AI, as users and as funders.</p>
+  </div>
+  
+  <article id="story-3">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>Barclays to cut 5,000 jobs by end of 2026 in AI-driven efficiency push</h3>
+    <p class="standfirst">The bank is leaning on automation to cut costs, part of a wider trend the Federal Reserve is watching closely across the sector.</p>
+    <div class="body"><p>Barclays has confirmed it will cut around 5,000 jobs by the end of 2026 as it increases its reliance on artificial intelligence to streamline operations and reduce costs. The cuts span the bank&#39;s operations, with reports suggesting roles in the UK, including Scotland, will be affected.</p><p>Banks have been among the earliest adopters of AI tools for back-office work such as processing transactions, flagging fraud and handling routine customer queries, tasks that previously required large teams of staff. Barclays&#39; move follows a broader pattern across the financial sector of using AI to automate repetitive work, even as regulators and economists debate how quickly, and how far, this kind of automation will spread through the job market.</p><p>The announcement comes as the US Federal Reserve has itself been commenting on AI&#39;s effect on employment, amid growing scrutiny of whether AI-driven job cuts across the finance industry are a one-off cost-cutting exercise or the start of a longer structural shift.</p><p>For workers, the move highlights how AI is reshaping entry-level and mid-career banking roles, pushing demand towards staff who can build, manage or oversee automated systems rather than perform the manual tasks AI now handles.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMiXkFVX3lxTE5QMlZ1OWJ1Rk84a2xEVGFVTEotNk9tUjJfLVUwNGNlRXp3OE13VGV6SzFHZ1hvaFdQcVRxejNvOURLanVmTFhaa3ZsUnhlVnpYM2ViVmFQZ3dUV0JvUlE?oc=5" target="_blank" rel="noopener">BBC</a> · <a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxQNVJJQnB4d3ZfNXg3b1E2RmM1NVc5TEdqZTF4LVRGendxMkMwLWVKdUhGeXo3aXplN3FqZkU2RlZfWVFPaTZYQmpoTU5FX3dMVlBVSXFJUVRlVnNfQWJ1eDFZQVZObjNNOHJ2TUNQb2JCT09yOWUxbnBhcUF6c3lBU2JTSmtzVHFyV2xYRHQ1aFdERWpwU2s0ZHd1cmQwS29sdTRxcWhxd2tFVTB2V2lB?oc=5" target="_blank" rel="noopener">Bdaily</a> · <a href="https://news.google.com/rss/articles/CBMilAFBVV95cUxNSjhmc1ZRdF90YkRMeG0tMEx0SXNhSFV5eTRSeE1GbDhPRDJNbmVBeGR4TmxrMFJZOHlLVWgtSjQzVC15WlZ5OS1ZbURxX0xZM3dnYzdfbWltd0tBRGNJSC1DTS1ucDRnd2xPbGNVaHNmbm8zR0JjNWpJSGktNVhIaGdtaTFrS1NDR2N2QmRBMDBiMi1f?oc=5" target="_blank" rel="noopener">Sky News</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Automation</dt><dd>Automation means using technology, including AI, to perform tasks that previously needed a human, such as processing routine transactions or answering standard customer questions.</dd></div><div><dt>Federal Reserve</dt><dd>Reminder: the Federal Reserve is the US central bank, responsible for setting interest rates and monitoring risks to the economy, including how new technology affects jobs and inflation.</dd></div><div><dt>Technological unemployment</dt><dd>Technological unemployment describes job losses caused specifically by machines or software replacing tasks people used to do, as opposed to a broader economic downturn.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>If you&#39;re starting a career in finance, this is a clear signal to build skills in managing, auditing or improving AI systems rather than competing with them on routine tasks. It&#39;s a good talking point in interviews: show you understand AI as a tool reshaping job descriptions, not just a threat.</p></div>
+  </article>
+  
+  <article id="story-4">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>Anthropic reportedly set to file for IPO as early as Friday at up to $2 trillion valuation</h3>
+    <p class="standfirst">Draft filings reportedly show a $450 billion cloud computing commitment and an $80 billion loss ahead of a potential market debut.</p>
+    <div class="body"><p>Anthropic is reportedly preparing to publicly file for an initial public offering, or IPO, the process of selling shares to public investors for the first time, as soon as Friday. Sources cited by Yahoo Finance suggest the AI company could seek a valuation of up to $2 trillion.</p><p>According to reports on a draft filing, Anthropic has committed $450 billion to cloud computing, the rented computing power it needs to train and run its AI models, while also reporting an $80 billion loss. Such losses are common for fast-growing AI labs pouring money into compute and talent well ahead of matching revenue, but the scale underscores just how costly building frontier AI models has become.</p><p>The reported move comes amid wider uncertainty about AI valuations: one report suggested OpenAI&#39;s own IPO ambitions could be complicated by a potential distressed sale of assets to Microsoft, while analysts have been pointing investors towards public companies with AI exposure as an alternative to buying into private AI labs directly.</p><p>If Anthropic does file, it would be one of the largest technology IPOs in history, testing investor appetite for AI companies that are burning enormous amounts of cash while chasing long-term dominance in the field.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxPREpSeVQzcmx3WVBKdmRna3pObmZqMEpoN3hvcGpid1JuZEJRODNnZUg5X19DQmJDT2E5YnRqQTNwbWJwMjVPVXQ2MDBLRmNXd1VMOGFScHl6cE9GWUp3LWc0UTAzcGJtRnJiR1ZqdjNWWkZwVV9OX0Y5WkVER2RMMHhmZVBjYVR5aVN2ME1nd3BNNWdQNTFGOTMtM245MGpEOGhRTFNqSlZ0bnBwQmRHZVlLeXJOVFhCZDd3TEpnNA?oc=5" target="_blank" rel="noopener">Yahoo Finance</a> · <a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxNcW5kRUhqaE1MY2ZtbF9HOG0yeXlVdVZ6MVhtVjRBcklBWmhKSVJnY0ZVS0JfMHhJU0xIOFhEaFZQMThYMzl0MFdzQnhva09mb1lRT0lDWWstSFNjNC1fMnRaeVZPQkFhUGxGUlhNMVhwN2w2ejd0eEF2a0tqQjk3SHlUUnVuTTI1YkZuQzRPV25Mcl8tamNXdFFMUzVhZXc?oc=5" target="_blank" rel="noopener">Crypto Briefing</a> · <a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxOTjRGZEFXQlRGTk95TjhmeElEN0xuVzhlRHU4VXpSWDY3cnhodEZkNXF5a2V6dDdYMzFxZWFZUnhBQTFDOFIyaUp5N0VsazhiQ0pZcmpaVGVpMEduWVNhUDJGeVMwVldfWHRwdy1rYjQxTWlNOWRZN1RjZGo1akdCSFVHUGhYRG95d1pLeXMxMkJNNVhpSFNjVlVqSVhBakxJN2c2Zk04cUxSRXd4LVlOSEZoM1I5SDBKOHhaVURJM3o4NjA?oc=5" target="_blank" rel="noopener">24/7 Wall St.</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>IPO (initial public offering)</dt><dd>Reminder: an IPO is when a private company sells shares to the public for the first time, usually to raise money and let early investors cash out.</dd></div><div><dt>Net loss</dt><dd>A net loss means a company spent more money than it brought in over a period; Anthropic&#39;s reported $80 billion loss reflects heavy spending on computing power and staff versus current revenue.</dd></div><div><dt>Compute deal</dt><dd>Reminder: a compute deal is an agreement to buy or reserve computing power, often from cloud providers, to train and run AI models; Anthropic&#39;s reported $450 billion commitment shows how costly this has become.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>A potential $2 trillion IPO would be one of the biggest tests yet of whether public markets believe AI labs&#39; spending will eventually pay off. Anyone tracking fintech or markets should watch this alongside Meta&#39;s new share class today, both are signs of how AI&#39;s costs are being pushed onto investors.</p></div>
+  </article>
+  
+  <article id="story-5">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>LSEG agrees $3.5bn deal to acquire credit data firm Octus</h3>
+    <p class="standfirst">The London Stock Exchange Group is buying Octus in a cash acquisition to expand its data business.</p>
+    <div class="body"><p>The London Stock Exchange Group (LSEG) has agreed to acquire Octus, a provider of credit data, in a cash deal worth $3.535 billion. Octus specialises in data covering credit markets, information used by investors and analysts to assess how risky it is to lend to a particular borrower.</p><p>The acquisition adds to LSEG&#39;s growing portfolio of data and analytics businesses, reflecting a wider trend of financial exchanges and data providers buying up specialist data firms to offer clients more comprehensive market information in one place.</p><p>Full details of the rationale and integration plans were not disclosed in initial reporting, but the deal size signals how valuable credit market data has become as investors try to price risk more precisely across both public and private debt markets.</p></div>
+    
+    <p class="src">Sources: <a href="https://www.finextra.com/newsarticle/48631/lseg-to-acquire-data-provider-octus-for-35bn?utm_medium=rssfinextra&amp;utm_source=finextrafeed" target="_blank" rel="noopener">Finextra Research Headlines</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>M&amp;A (mergers and acquisitions)</dt><dd>Reminder: M&amp;A describes deals where companies combine or one buys another; here LSEG is acquiring Octus outright in an all-cash transaction.</dd></div><div><dt>Credit data provider</dt><dd>A credit data provider collects and sells information about how likely borrowers are to repay debt, helping investors decide how much risk they&#39;re taking on when they lend money or buy bonds.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Data has become one of the most valuable assets in finance, and this deal shows exchanges are willing to pay a premium for specialist datasets rather than build them in-house. It&#39;s a useful example if you&#39;re asked in an interview why data and analytics roles are growing inside traditional financial institutions.</p></div>
+  </article>
+  
+</section>
+
+<section id="startups" class="startups">
+  <div class="sec-head">
+    <span class="mono">Section 3</span>
+    <h2>Startups &amp; funding</h2>
+    <p>Who raised, how much, and what investors are betting on.</p>
+  </div>
+  
+  <article id="story-6">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>Legal AI firm Legora raises $550m Series E at $8.8bn valuation</h3>
+    <p class="standfirst">The Swedish startup&#39;s valuation has nearly doubled in six months as it races rival Harvey in the booming legal AI market.</p>
+    <div class="body"><p>Legora, a Swedish startup building AI tools for legal professionals, has raised a $550 million Series E funding round, valuing the company at $8.8 billion. The round was led by Atreides Management, with participation from Baron Capital, Bessemer Venture Partners, General Catalyst and Menlo, among others.</p><p>The jump is striking: Legora&#39;s valuation stood at $5.6 billion back in April, when it closed a $50 million extension to its Series D round. Since then its annual recurring revenue, the predictable yearly income a subscription business expects to keep collecting, has doubled from $100 million to over $200 million, fuelling the new, higher valuation.</p><p>Legora sits in the fast-growing niche of vertical AI, products built for a specific industry rather than general use, here helping lawyers with tasks like contract review and research. Its closest rival, Harvey, raised $550 million at a $15.5 billion valuation just a month ago, having already reported ARR above $200 million back in March, making this one of the most heavily funded corners of enterprise AI.</p><p>Legora says it will use the new capital to expand further into North America, as both it and Harvey push to convince law firms that AI tools, not just more junior lawyers, can handle a growing share of legal work.</p></div>
+    
+    <p class="src">Sources: <a href="https://techcrunch.com/2026/10/21/legal-ai-startup-legora-raises-550m-series-e-at-8-8b-valuation/" target="_blank" rel="noopener">TechCrunch</a> · <a href="https://news.google.com/rss/articles/CBMixgFBVV95cUxOb3dxWTFFQ05Ddm9pX0w2RjdIcW41OXdQOHNZWnpzY0dKbjNJQ1FZUnNVekI3akxmMXNLdGpZSFhuMzJtdUNqSi1UTGxWaGkzQ2cyY29kbXV2SXoyTE1SelZPTkZ4TG9zLWI4X3RtUHFQbGMyMWVDUmwzWHp0RTl4cFJuOUM2ZExXYkJ2Z0JmdTViTi1yVTlsa280UW52ZWVfZUJYNE1kMzBPTHJCZGl5dkk4QktYTVRxYlhGdzhWTnhKdjV6bEE?oc=5" target="_blank" rel="noopener">Reuters</a> · <a href="https://news.google.com/rss/articles/CBMid0FVX3lxTE0tUWRBcXAzNXdIc3FPZE1XNkM0cGxSV2xvMnMtbkVkVFBoUkROdXgtZEpTaHYxSjg4eWdmdWR3a0szek9DdTdQcmVvU24wYTFNTEdDSUNMM3hHNG9xQllhWHNjMVAwQ0kxMHZia1ZaVVc5eVV2OGpF?oc=5" target="_blank" rel="noopener">Quartz</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Series E</dt><dd>Reminder: a Series E round is typically a late-stage startup funding round, raised by companies that are already well established and scaling fast, rather than early-stage experimentation.</dd></div><div><dt>Annual recurring revenue (ARR)</dt><dd>Reminder: ARR is the predictable yearly revenue a subscription business expects, like a law firm paying $200,000 a year for software access, used by investors to judge how fast a company is really growing.</dd></div><div><dt>Up round</dt><dd>An up round is a new funding round at a higher valuation than the company&#39;s previous round, showing investors believe the business has grown more valuable, as with Legora rising from $5.6bn to $8.8bn in six months.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Legal AI is one of the clearest examples of &#39;vertical AI&#39; making money today, showing how AI companies can succeed by going deep into one industry rather than competing head-on with giants like OpenAI. If you&#39;re exploring AI careers beyond the big labs, vertical AI startups like Legora are hiring for both engineering and domain-expert roles.</p></div>
+  </article>
+  
+  <article id="story-7">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>Year-old AI lab Flapping Airplanes raises $1bn at $6bn valuation</h3>
+    <p class="standfirst">The young research startup&#39;s mega-round shows investors are still willing to bet big on new AI labs barely a year old.</p>
+    <div class="body"><p>Flapping Airplanes, an AI research lab that is only about a year old, has raised $1 billion in new funding at a $6 billion valuation, according to reports. Details of the round, including which investors took part and what specifically the company is building, were not fully disclosed.</p><p>The scale of the raise, a billion dollars for a company still in its first year, illustrates how much capital continues to flow into AI labs even as questions mount elsewhere about whether AI valuations are overheated. Investors appear willing to place large early bets on research teams they believe could develop valuable models or techniques, well before any clear product or revenue exists.</p><p>With limited public detail available, it isn&#39;t yet clear what Flapping Airplanes&#39; technology does or how it plans to compete with established frontier AI labs. The size of the round alone makes it one of the more eye-catching startup deals of the week.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMingFBVV95cUxPb3RYOUtvb3FhTE5uNktENXZ0NmJ3c0pQSWg4TGFsZmdYaXV0V2xOM3JkWWI0Y2E0SFlBMmF4R1RWa0tBTVc1UnBTR0lndUF0d0Y4TkE3cUdwZVFkdGhLelJhbmtaaS11RDlnUlNMN2R5eV8yS2M4ZUpseE5uUEQ5Qi1nclhMVWJ2TWl2ajRVUUg2alQ5cFZZTkdteDQyQQ?oc=5" target="_blank" rel="noopener">TechCrunch</a> · <a href="https://news.google.com/rss/articles/CBMihgFBVV95cUxNTi1aRDFjcTVqUERvSUpqMzdkSzM1OTVkYldvUnBzemUwUURRbktWdWdWamJqN1RJT19QWnJtdUc0WWlpTzhQdWQ5U18xWjNpYmVlcEF0d0N3NTVpcWVmelNzTGtzclJ4ZmZ0a3lub0M2WmE5SF9yek0wdFh5a09rbUJXYUVSQQ?oc=5" target="_blank" rel="noopener">Quartz</a> · <a href="https://news.google.com/rss/articles/CBMiugFBVV95cUxOVWlMcFlyb091cURKSTdxWlZobXVRVVlpSlhQbFUxejRzYmQyVk9FX1ZGT2FlYU5GN2xGc2M3dVFnN292YkNRX3IzbERKUl9BYWlDVGMtU29RcmZ5UHZwRjROUWJneHpzajVHQTNYazhrYlM1SDZMZU1kRzRldTA3TVBNa05DbFJsYldTOVo0R0hOdFdwbmhXYWQ2dFQyWVlXd3RubmlDR0U0ZkZSczdmOVhUNU9DeTJVMUE?oc=5" target="_blank" rel="noopener">Bloomberg.com</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Mega-round</dt><dd>A mega-round is startup slang for an unusually large funding round, often $500 million or more, reflecting investors making a big, concentrated bet on one company.</dd></div><div><dt>Frontier AI lab</dt><dd>Reminder: a frontier AI lab is a company working at the cutting edge of AI capability, racing to build the most advanced models, which is expensive and attracts very large funding rounds.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>This shows that despite talk of an AI bubble, investors are still funding very young, unproven AI labs at enormous valuations. It&#39;s worth tracking whether companies like this can justify their valuations with real products, a useful lens for judging any AI startup pitch you come across.</p></div>
+  </article>
+  
+</section>
+
+
+
+<div class="panel" id="code">
+  <span class="mono">Code corner</span>
+  <h2>Simulating an AI agent&#39;s tool-call approval request</h2>
+  <p class="src">Based on: <a href="#story-0">Anthropic launches Claude Duet, a background AI agent that messages you when it matters</a></p>
+  <p style="margin:0">Claude Duet messages you for approval before taking a risky action, like sending a payment. Real AI agents often communicate with the apps around them using structured JSON, a text format for organised data. Here&#39;s a simplified, fake example of what an agent&#39;s request for approval might look like before it calls a &#39;send_payment&#39; tool.</p>
+  <pre><code>import json
+
+# Simulate what an AI agent might send when it wants to take a risky action
+agent_request = {
+    &#34;agent&#34;: &#34;Claude Duet&#34;,
+    &#34;action&#34;: &#34;send_payment&#34;,
+    &#34;details&#34;: {
+        &#34;amount&#34;: 120.50,
+        &#34;currency&#34;: &#34;GBP&#34;,
+        &#34;recipient&#34;: &#34;Acme Office Supplies&#34;
+    },
+    &#34;requires_approval&#34;: True
+}
+
+# Convert the Python dictionary into a JSON string, like an API would
+request_json = json.dumps(agent_request, indent=2)
+print(&#34;Agent request:&#34;)
+print(request_json)
+
+def review_request(request: dict) -&gt; str:
+    if request.get(&#34;requires_approval&#34;):
+        amount = request[&#34;details&#34;][&#34;amount&#34;]
+        recipient = request[&#34;details&#34;][&#34;recipient&#34;]
+        return f&#34;Approval needed: pay {amount} to {recipient}?&#34;
+    return &#34;No approval needed, agent can proceed.&#34;
+
+print(&#34;\nHuman sees:&#34;)
+print(review_request(agent_request))</code></pre>
+  <span class="mono">Line by line</span>
+  <ol class="walk"><li>import json loads Python&#39;s built-in library for converting between Python dictionaries and JSON text, the format most APIs use.</li><li>agent_request is a Python dictionary describing the action the agent wants to take, including an amount, currency and recipient, mirroring how a real agent might structure a tool call.</li><li>json.dumps() turns that dictionary into a formatted JSON string, the kind of message an app might actually send over the internet; indent=2 just makes it readable.</li><li>review_request() checks the requires_approval flag and builds a human-readable message, standing in for the approval prompt Claude Duet would show you before sending a payment.</li><li>The final print statements show first the raw JSON an API would exchange, then the simplified message a human actually sees.</li></ol>
+  <div class="tryit"><p><b>Try it:</b> Add a new field called &#39;risk_level&#39; (e.g. &#39;low&#39;, &#39;medium&#39;, &#39;high&#39;) to agent_request, then update review_request() so it only asks for approval when risk_level is &#39;high&#39;, printing &#39;No approval needed&#39; otherwise.</p></div>
+</div>
+
+<div class="panel" id="quiz">
+  <span class="mono">Quiz · apply today's concepts</span>
+  <h2>What would you do?</h2>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 1</span>
+    <p class="scenario">You&#39;re in a team meeting at a startup deciding whether to let a new AI agent send emails and make payments without a human checking first.</p>
+    <p class="ask">Based on how Claude Duet is designed, what&#39;s the most sensible safeguard to adopt?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>Let the agent act fully autonomously to save time, since AI models rarely make mistakes</span></button></li><li><button type="button" data-i="1"><b>B</b><span>Require the agent to pause and get human approval before high-risk actions like payments or deletions</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Disable the agent&#39;s memory so it can&#39;t learn anything about the company</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Only allow the agent to run once a week to limit its influence</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> Claude Duet is built to message the user for approval before risky steps like payments, exactly because agents can misjudge context. Disabling memory or running it rarely would cripple its usefulness without addressing the actual risk, which is unchecked risky actions.</p>
+        <div class="chips"><span>AI agent</span><span>Safety classifier</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="0">
+    <span class="mono" style="color:var(--muted)">Scenario 2</span>
+    <p class="scenario">As a junior analyst at a bank, you&#39;re asked to explain why Barclays&#39; AI-driven job cuts matter for the bank&#39;s cost base, not just its headcount.</p>
+    <p class="ask">Which of these best describes why automation is attractive to a bank like Barclays?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>It replaces tasks like routine transaction processing with software, cutting ongoing staff costs</span></button></li><li><button type="button" data-i="1"><b>B</b><span>It eliminates the need for the bank to hold any capital reserves</span></button></li><li><button type="button" data-i="2"><b>C</b><span>It guarantees higher revenue regardless of market conditions</span></button></li><li><button type="button" data-i="3"><b>D</b><span>It removes the need for regulators to review the bank&#39;s operations</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: A.</b> Automation mainly saves money by replacing repetitive human tasks with software, which is why Barclays frames the cuts as an efficiency drive. It has no bearing on capital reserves, guaranteed revenue, or regulatory oversight, which are separate issues.</p>
+        <div class="chips"><span>Automation</span><span>Technological unemployment</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 3</span>
+    <p class="scenario">An investor asks you to assess Anthropic&#39;s reported IPO filing, which shows an $80 billion loss alongside a $450 billion cloud computing commitment.</p>
+    <p class="ask">What does the size of the loss most likely reflect?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>Anthropic is being mismanaged and has no viable business model</span></button></li><li><button type="button" data-i="1"><b>B</b><span>Heavy upfront spending on compute and talent well ahead of matching revenue, typical for frontier AI labs</span></button></li><li><button type="button" data-i="2"><b>C</b><span>The company has stopped generating any revenue at all</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Regulators have fined Anthropic $80 billion for a data breach</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> Large losses at AI labs typically reflect enormous spending on compute and staff ahead of revenue catching up, not mismanagement or a total lack of income. Nothing in the reports links the loss to a regulatory fine.</p>
+        <div class="chips"><span>Net loss</span><span>Compute deal</span><span>IPO (initial public offering)</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="0">
+    <span class="mono" style="color:var(--muted)">Scenario 4</span>
+    <p class="scenario">A colleague at a venture capital firm is comparing Legora&#39;s $8.8 billion valuation to Flapping Airplanes&#39; $6 billion valuation and asks which is the stronger signal of investor confidence relative to the company&#39;s stage.</p>
+    <p class="ask">What&#39;s the key difference to point out between the two deals?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>Legora&#39;s valuation jump is backed by doubled ARR, while Flapping Airplanes&#39; mega-round has little disclosed revenue to justify it yet</span></button></li><li><button type="button" data-i="1"><b>B</b><span>Both valuations are based on identical revenue figures, so they&#39;re directly comparable</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Flapping Airplanes is a vertical AI company, which always justifies a higher valuation</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Legora&#39;s round is worth less in absolute dollar terms, so it is the weaker deal</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: A.</b> Legora&#39;s higher valuation is supported by reported ARR doubling to over $200 million, giving investors concrete growth evidence, whereas Flapping Airplanes&#39; $1bn mega-round came with no disclosed revenue or product detail. The other options either invent facts or get the vertical AI definition wrong.</p>
+        <div class="chips"><span>Up round</span><span>Annual recurring revenue (ARR)</span><span>Mega-round</span></div>
+      </div>
+    </details>
+  </div>
+  
+</div>
+
+<div class="panel" id="glossary">
+  <span class="mono">Glossary</span>
+  <h2>Every concept from today</h2>
+  <dl class="gloss"><div><dt>Acquisition<a href="#story-2">see story</a></dt><dd>Reminder: an acquisition is when one company buys another outright, often to gain its technology, staff or customers quickly rather than building them in-house.</dd></div><div><dt>AI agent<a href="#story-0">see story</a></dt><dd>An AI agent is a system that can take multi-step actions on its own, like booking a meeting or building a spreadsheet, rather than just replying to a single question.</dd></div><div><dt>Annual recurring revenue (ARR)<a href="#story-6">see story</a></dt><dd>Reminder: ARR is the predictable yearly revenue a subscription business expects, like a law firm paying $200,000 a year for software access, used by investors to judge how fast a company is really growing.</dd></div><div><dt>Automation<a href="#story-3">see story</a></dt><dd>Automation means using technology, including AI, to perform tasks that previously needed a human, such as processing routine transactions or answering standard customer questions.</dd></div><div><dt>Capital expenditure (capex)<a href="#story-2">see story</a></dt><dd>Reminder: capex is money spent on long-term physical assets, like data centres and chips, as opposed to day-to-day running costs.</dd></div><div><dt>Compute deal<a href="#story-4">see story</a></dt><dd>Reminder: a compute deal is an agreement to buy or reserve computing power, often from cloud providers, to train and run AI models; Anthropic&#39;s reported $450 billion commitment shows how costly this has become.</dd></div><div><dt>Context window<a href="#story-0">see story</a></dt><dd>The context window is how much text and information an AI model can &#39;hold in mind&#39; at once; an agent that monitors your apps all day needs a model that can track a lot of ongoing information without forgetting earlier details.</dd></div><div><dt>Credit data provider<a href="#story-5">see story</a></dt><dd>A credit data provider collects and sells information about how likely borrowers are to repay debt, helping investors decide how much risk they&#39;re taking on when they lend money or buy bonds.</dd></div><div><dt>Federal Reserve<a href="#story-3">see story</a></dt><dd>Reminder: the Federal Reserve is the US central bank, responsible for setting interest rates and monitoring risks to the economy, including how new technology affects jobs and inflation.</dd></div><div><dt>Frontier AI lab<a href="#story-7">see story</a></dt><dd>Reminder: a frontier AI lab is a company working at the cutting edge of AI capability, racing to build the most advanced models, which is expensive and attracts very large funding rounds.</dd></div><div><dt>IPO (initial public offering)<a href="#story-4">see story</a></dt><dd>Reminder: an IPO is when a private company sells shares to the public for the first time, usually to raise money and let early investors cash out.</dd></div><div><dt>M&amp;A (mergers and acquisitions)<a href="#story-5">see story</a></dt><dd>Reminder: M&amp;A describes deals where companies combine or one buys another; here LSEG is acquiring Octus outright in an all-cash transaction.</dd></div><div><dt>Mega-round<a href="#story-7">see story</a></dt><dd>A mega-round is startup slang for an unusually large funding round, often $500 million or more, reflecting investors making a big, concentrated bet on one company.</dd></div><div><dt>Net loss<a href="#story-4">see story</a></dt><dd>A net loss means a company spent more money than it brought in over a period; Anthropic&#39;s reported $80 billion loss reflects heavy spending on computing power and staff versus current revenue.</dd></div><div><dt>Open source<a href="#story-1">see story</a></dt><dd>Reminder: open-source software has its underlying code published publicly, so anyone can inspect, use or modify it, which is why a flaw in widely-used open-source code like PHP can affect millions of websites at once.</dd></div><div><dt>Remote code execution<a href="#story-1">see story</a></dt><dd>Remote code execution means an attacker can run their own commands on someone else&#39;s computer or server over the internet, essentially taking control without physical access.</dd></div><div><dt>Safety classifier<a href="#story-0">see story</a></dt><dd>A safety classifier is a filter that scans what an AI is about to say or do and blocks sensitive content, such as stopping an agent from revealing someone&#39;s credit card number.</dd></div><div><dt>Series E<a href="#story-6">see story</a></dt><dd>Reminder: a Series E round is typically a late-stage startup funding round, raised by companies that are already well established and scaling fast, rather than early-stage experimentation.</dd></div><div><dt>Share class<a href="#story-2">see story</a></dt><dd>Companies can issue different classes of stock with different rights; a non-voting share class lets a company raise money from investors without giving them a say in how it&#39;s run, unlike ordinary shares.</dd></div><div><dt>Technological unemployment<a href="#story-3">see story</a></dt><dd>Technological unemployment describes job losses caused specifically by machines or software replacing tasks people used to do, as opposed to a broader economic downturn.</dd></div><div><dt>Up round<a href="#story-6">see story</a></dt><dd>An up round is a new funding round at a higher valuation than the company&#39;s previous round, showing investors believe the business has grown more valuable, as with Legora rising from $5.6bn to $8.8bn in six months.</dd></div><div><dt>Virtual machine<a href="#story-0">see story</a></dt><dd>A virtual machine is a software-simulated computer that an AI agent can control, including its own browser, so it can click, type and navigate the web the way a person would.</dd></div><div><dt>Zero-day vulnerability<a href="#story-1">see story</a></dt><dd>Reminder: a zero-day vulnerability is a security flaw that&#39;s exploited before developers have had any chance to fix it, leaving defenders with zero days&#39; notice.</dd></div></dl>
+</div>
+
+<div class="panel">
+  <span class="mono">Past digests</span>
+  <ul class="archive"><li><a href="../archive/2026-10-22.html" aria-current="page">2026-10-22</a></li><li><a href="../archive/2026-10-21.html">2026-10-21</a></li><li><a href="../archive/2026-10-20.html">2026-10-20</a></li><li><a href="../archive/2026-10-19.html">2026-10-19</a></li><li><a href="../archive/2026-10-18.html">2026-10-18</a></li><li><a href="../archive/2026-10-17.html">2026-10-17</a></li><li><a href="../archive/2026-10-16.html">2026-10-16</a></li><li><a href="../archive/2026-10-15.html">2026-10-15</a></li><li><a href="../archive/2026-10-14.html">2026-10-14</a></li><li><a href="../archive/2026-10-13.html">2026-10-13</a></li><li><a href="../archive/2026-10-12.html">2026-10-12</a></li><li><a href="../archive/2026-10-11.html">2026-10-11</a></li><li><a href="../archive/2026-10-10.html">2026-10-10</a></li><li><a href="../archive/2026-10-09.html">2026-10-09</a></li><li><a href="../archive/2026-10-05.html">2026-10-05</a></li><li><a href="../archive/2026-10-04.html">2026-10-04</a></li><li><a href="../archive/2026-10-03.html">2026-10-03</a></li><li><a href="../archive/2026-09-23.html">2026-09-23</a></li><li><a href="../archive/2026-09-22.html">2026-09-22</a></li><li><a href="../archive/2026-09-20.html">2026-09-20</a></li><li><a href="../archive/2026-09-19.html">2026-09-19</a></li><li><a href="../archive/2026-09-18.html">2026-09-18</a></li><li><a href="../archive/2026-09-17.html">2026-09-17</a></li></ul>
+</div>
+
+<footer>Written by Claude from the linked sources. Check the original article before quoting figures in an interview.</footer>
+</div>
+<script>
+document.querySelectorAll(".q").forEach(function (q) {
+  var correct = Number(q.dataset.correct);
+  var buttons = q.querySelectorAll(".opts button");
+  buttons.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var picked = Number(b.dataset.i);
+      buttons.forEach(function (x) {
+        var i = Number(x.dataset.i);
+        if (i === correct) x.classList.add("right");
+        else if (i === picked) x.classList.add("wrong");
+        x.disabled = true;
+      });
+      q.querySelector("details").open = true;
+    });
+  });
+});
+</script>
+</body>
+</html>
