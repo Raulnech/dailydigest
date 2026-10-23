@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI Morning Brief · Friday 23 October 2026</title>
+<meta name="theme-color" content="#3A55C8">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  color-scheme:light dark;
+  --ground:#F3F4F7; --paper:#FFFFFF; --ink:#141827; --muted:#5B6275; --line:#DDE0E8;
+  --industry:#3A55C8; --industry-soft:#E6EAFA;
+  --finance:#1C7453; --finance-soft:#E1F1EA;
+  --startups:#A8561A; --startups-soft:#F7EADF;
+  --code-bg:#161A26; --code-ink:#E4E7F0;
+  --right:#1C7453; --right-soft:#E1F1EA; --wrong:#B3261E; --wrong-soft:#FBE7E5;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --ground:#0F121B; --paper:#171B27; --ink:#E8EAF1; --muted:#9AA1B4; --line:#2A3042;
+    --industry:#8FA3F5; --industry-soft:#20284A;
+    --finance:#6CCBA3; --finance-soft:#15332A;
+    --startups:#E8A06A; --startups-soft:#3A2618;
+    --code-bg:#0B0D14; --code-ink:#E4E7F0;
+    --right:#6CCBA3; --right-soft:#15332A; --wrong:#F2A29B; --wrong-soft:#3A1B19;
+  }
+}
+*{box-sizing:border-box}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.6 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;padding-inline:16px;padding-block:28px 64px}
+.wrap{max-width:700px;margin:0 auto;display:grid;gap:36px}
+a{color:inherit}
+a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var(--industry);outline-offset:3px;border-radius:4px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400}
+header{display:grid;gap:10px}
+header .date{color:var(--muted)}
+h1{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(44px,11vw,64px);line-height:1;margin:0;letter-spacing:-.01em}
+h1 em{color:var(--industry)}
+.lede{color:var(--muted);margin:0;max-width:60ch}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ground);padding-block:10px;display:flex;gap:8px;overflow-x:auto;border-bottom:1px solid var(--line)}
+nav a{flex:none;text-decoration:none;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--paper);font-size:14px}
+nav a.industry{color:var(--industry)} nav a.finance{color:var(--finance)} nav a.startups{color:var(--startups)}
+
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:14px;scroll-margin-top:64px}
+.panel h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:30px;margin:0;line-height:1.15}
+.panel > .mono{color:var(--muted)}
+.talk ol{margin:0;padding-left:20px;display:grid;gap:8px}
+.toc{display:grid;gap:14px}
+.toc h3{margin:0 0 4px}
+.toc ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.toc li a{text-decoration:none}
+.toc li a:hover{text-decoration:underline}
+
+section{display:grid;gap:22px;scroll-margin-top:64px}
+.sec-head{display:grid;gap:2px;border-top:3px solid var(--c);padding-top:12px}
+.sec-head h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:36px;margin:0;line-height:1.1;text-wrap:balance}
+.sec-head p{margin:0;color:var(--muted)}
+.sec-head .mono{color:var(--c)}
+.industry{--c:var(--industry);--cs:var(--industry-soft)}
+.finance{--c:var(--finance);--cs:var(--finance-soft)}
+.startups{--c:var(--startups);--cs:var(--startups-soft)}
+
+article{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px 20px;display:grid;gap:16px;scroll-margin-top:64px}
+article .kicker{color:var(--c)}
+article h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(26px,6vw,32px);line-height:1.15;margin:0;text-wrap:balance}
+.standfirst{margin:0;font-size:18px;line-height:1.5;color:var(--muted)}
+.body{display:grid;gap:14px;font-family:"Source Serif 4",Georgia,serif;font-size:18px;line-height:1.65;max-width:65ch}
+.body p{margin:0}
+.src{margin:0;font-size:13px;color:var(--muted)}
+.concepts{background:var(--cs);border-radius:12px;padding:16px 18px;display:grid;gap:12px}
+.concepts .mono{color:var(--c)}
+.concepts dl{margin:0;display:grid;gap:10px}
+.concepts dt{font-weight:600}
+.concepts dd{margin:2px 0 0}
+.why{display:grid;gap:4px;border-left:2px solid var(--c);padding-left:14px}
+.why .mono{color:var(--c)}
+.why p{margin:0}
+
+pre{margin:0;background:var(--code-bg);color:var(--code-ink);border-radius:10px;padding:16px;overflow-x:auto;font:14px/1.55 "IBM Plex Mono",ui-monospace,Consolas,monospace}
+.walk{margin:0;padding-left:20px;display:grid;gap:6px}
+code{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:.9em}
+.tryit{background:var(--industry-soft);border-radius:10px;padding:12px 16px}
+.tryit p{margin:0}
+
+.q{display:grid;gap:12px;border-top:1px solid var(--line);padding-top:18px}
+.q:first-of-type{border-top:0;padding-top:0}
+.scenario{margin:0;font-family:"Source Serif 4",Georgia,serif;font-style:italic;font-size:17px}
+.q .ask{margin:0;font-weight:600}
+.opts{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.opts button{width:100%;text-align:left;font:inherit;color:var(--ink);background:var(--ground);border:1px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer;display:flex;gap:10px}
+.opts button:hover{border-color:var(--industry)}
+.opts button b{font-family:"IBM Plex Mono",ui-monospace,monospace;font-weight:500}
+.opts button.right{background:var(--right-soft);border-color:var(--right)}
+.opts button.wrong{background:var(--wrong-soft);border-color:var(--wrong)}
+.opts button:disabled{cursor:default}
+details{border-radius:10px}
+summary{cursor:pointer;font-weight:500;color:var(--industry)}
+.answer{display:grid;gap:8px;margin-top:10px}
+.answer p{margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:13px;padding:2px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+
+.gloss{margin:0;display:grid;gap:12px}
+.gloss dt{font-weight:600}
+.gloss dt a{font-weight:400;font-size:13px;color:var(--muted);margin-left:6px}
+.gloss dd{margin:2px 0 0;color:var(--muted)}
+.archive{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.archive a{display:inline-block;padding:4px 10px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-variant-numeric:tabular-nums;font-size:14px}
+.archive a[aria-current]{border-color:var(--industry);color:var(--industry)}
+footer{color:var(--muted);font-size:13px}
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="mono date">Friday 23 October 2026 · 13 min read</span>
+  <h1>AI Morning <em>Brief</em></h1>
+  <p class="lede">Today's AI and fintech news as short articles, with every key concept explained, a bit of Python, and a scenario quiz to check it stuck.</p>
+</header>
+
+<nav aria-label="Sections">
+  <a href="#industry" class="industry">The AI industry</a>
+  <a href="#finance" class="finance">AI &amp; finance</a>
+  <a href="#startups" class="startups">Startups &amp; funding</a>
+  <a href="#code">Code corner</a>
+  <a href="#quiz">Quiz</a>
+  <a href="#glossary">Glossary</a>
+</nav>
+
+<div class="panel talk">
+  <span class="mono">If you only read one thing</span>
+  <h2>Three things to be able to say today</h2>
+  <ol><li>OpenAI is reportedly closing in on a $30bn raise at a $1.25 trillion valuation, which would make it the most valuable private company in history.</li><li>The Nasdaq had its worst day in months as investors started questioning whether all the AI spending will ever pay off.</li><li>DeepSeek raised roughly $15bn just days after Washington ordered federal agencies to strip its software from government systems.</li></ol>
+</div>
+
+<div class="panel">
+  <span class="mono">In today's brief</span>
+  <div class="toc">
+  
+    <div class="industry"><h3 class="mono" style="color:var(--c)">The AI industry</h3>
+      <ul><li><a href="#story-0">OpenAI closes in on $30bn raise at $1.25 trillion valuation</a></li><li><a href="#story-1">DeepSeek raises reported $15bn days after US government ban</a></li><li><a href="#story-2">OpenAI, Anthropic and Nvidia post record lobbying spend of nearly $6m</a></li></ul>
+    </div>
+  
+    <div class="finance"><h3 class="mono" style="color:var(--c)">AI &amp; finance</h3>
+      <ul><li><a href="#story-3">Nasdaq sheds 750 points as AI spending doubts resurface</a></li><li><a href="#story-4">SK Hynix pauses Solidigm&#39;s US IPO amid AI valuation fears</a></li><li><a href="#story-5">Fireblocks denies reported $2.5bn Visa acquisition talks</a></li></ul>
+    </div>
+  
+    <div class="startups"><h3 class="mono" style="color:var(--c)">Startups &amp; funding</h3>
+      <ul><li><a href="#story-6">Stealth startup Two Delta raises tens of millions backed by Ackman and Schmidt</a></li><li><a href="#story-7">Cloud security startup Upwind rejects Datadog&#39;s reported $4bn offer</a></li></ul>
+    </div>
+  
+  </div>
+</div>
+
+
+<section id="industry" class="industry">
+  <div class="sec-head">
+    <span class="mono">Section 1</span>
+    <h2>The AI industry</h2>
+    <p>Big labs, big tech and the direction of travel.</p>
+  </div>
+  
+  <article id="story-0">
+    <span class="mono kicker">The AI industry</span>
+    <h3>OpenAI closes in on $30bn raise at $1.25 trillion valuation</h3>
+    <p class="standfirst">A new funding round, reportedly led by Coatue and UAE investors, would make OpenAI the most valuable private company ever ahead of its planned 2027 listing.</p>
+    <div class="body"><p>OpenAI is in talks to raise up to $30 billion in a new funding round that would value the ChatGPT maker at $1.25 trillion before the cash arrives, according to people familiar with the matter cited by CNBC. The round is reportedly led by investment firm Coatue alongside backers from the United Arab Emirates, and would make OpenAI the most valuable private company in history if it closes anywhere near those terms.</p><p>The round is being described as a bridge to OpenAI&#39;s planned 2027 stock market debut. It would mark a huge jump from OpenAI&#39;s last raise in March, which valued the company at $852 billion once the new money was included. The exact numbers are still shifting: a month ago Bloomberg reported OpenAI was targeting $1.4 trillion rather than $1.25 trillion, a reminder that terms in deals this size can move right up until signing. CNBC also reports the UAE money could be bundled with a separate deal to give OpenAI more computing capacity in the region.</p><p>The stakes go beyond OpenAI itself. Rival lab Anthropic is reportedly eyeing a $1.5 to $2 trillion valuation for its own IPO, having raised $65 billion at a $965 billion valuation back in May. Both companies are trying to lock in sky-high prices from private investors before facing public markets, even as stock indices elsewhere wobble on fears that AI spending has outrun AI profits.</p></div>
+    
+    <p class="src">Sources: <a href="https://techcrunch.com/2026/10/22/openai-working-on-new-30b-raise-at-1-25t-valuation-ahead-of-ipo/" target="_blank" rel="noopener">TechCrunch</a> · <a href="https://www.cnbc.com/2026/10/22/openai-funding-round-uae-investors.html" target="_blank" rel="noopener">Tech</a> · <a href="https://news.google.com/rss/articles/CBMilwFBVV95cUxQRXFCWm40a0VKVUdVZ0c2MHFQUnhYTE1hTzJya094TGg0cnBudDM1RktGazV0ekdWM0FYY1FmMllHU283YU8wUE54TUUtZUUydEo0U1VVS0RpcVVpTk9LZ1hlUmZUTkl0T1lFNFZHYzMyb2U3QlMyRjR3alIwbTEwY3F5ZjVRX2xoTkdHR2U2WUp5MEVvYkxj?oc=5" target="_blank" rel="noopener">Startup Fortune</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Pre-money valuation</dt><dd>This is what a company is judged to be worth before new investment is added. If a company is valued at $1.25 trillion pre-money and raises $30 billion, its post-money valuation becomes $1.28 trillion.</dd></div><div><dt>Sovereign wealth fund</dt><dd>A sovereign wealth fund is an investment fund owned by a national government, often built from oil or trade revenue, used to invest in assets like companies or property abroad. UAE-linked investors backing OpenAI are an example of this kind of state-backed capital.</dd></div><div><dt>Mega-round</dt><dd>A mega-round is a funding round so large - typically hundreds of millions or billions of dollars - that it stands out even by the standards of top-tier startup investing.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Deals this size show why finance and AI careers are converging: analysts who can model valuations, dilution and IPO timing for frontier AI labs are increasingly in demand at banks and venture funds. It is also a useful interview topic for showing you understand the gap between private valuations and public market scrutiny.</p></div>
+  </article>
+  
+  <article id="story-1">
+    <span class="mono kicker">The AI industry</span>
+    <h3>DeepSeek raises reported $15bn days after US government ban</h3>
+    <p class="standfirst">The Chinese AI lab secured one of the country&#39;s largest-ever funding rounds just two days after Washington ordered federal agencies to remove its software.</p>
+    <div class="body"><p>DeepSeek, the Chinese AI lab, has reportedly raised about $15 billion - roughly 100 billion yuan - in one of China&#39;s largest funding rounds ever, according to Bloomberg. The raise came just two days after the US government ordered federal civilian agencies to strip DeepSeek&#39;s technology from their systems over national security concerns.</p><p>Reported investors include battery maker CATL and Tencent, the company behind WeChat. The round follows a $7 billion raise in June at a $50 billion valuation, and a reported attempt in July to secure a further $1.5 billion at $71 billion. DeepSeek, founded in 2023 by Liang Wenfeng, became globally known in early 2025 for its free, open-weight R1 reasoning model, which rattled assumptions that only US labs could build cutting-edge AI.</p><p>The fresh money is reportedly earmarked for more AI infrastructure and further open models, as DeepSeek weighs a Chinese IPO as early as next year. It is part of a wider surge of capital into Chinese AI firms, including Moonshot AI (valued at $20 billion), Manus AI ($500 million raised), and listed rivals Zhipu AI and MiniMax, now worth roughly $29 billion and $7.2 billion respectively.</p></div>
+    
+    <p class="src">Sources: <a href="https://techcrunch.com/2026/10/22/deepseek-reportedly-raises-15b-days-after-us-restrictions/" target="_blank" rel="noopener">TechCrunch</a> · <a href="https://news.google.com/rss/articles/CBMiqAFBVV95cUxQOHIyeDY3eVpWMmZrYnhzZzNkTnpIN1N1OFhMQ1JVeGN1ejNxZlpPSmN0TTFRdzFLbTBvTlNpVDJvQUowcXB5a2VYYmZSZFJOMHBJYm9fVnBITk1YYWRrWkxXQXVDWkhfbng0eThneEF1MmEzMDhIY1kwTTdpRmtZTW85SVJJVjJZZVFlQURsdkZaT1pCVmlwUVd4V0d0a2pLLVk2NFByQ0c?oc=5" target="_blank" rel="noopener">WSJ</a> · <a href="https://news.google.com/rss/articles/CBMiygFBVV95cUxOQkI4b1B0WkYzUnhGdTF6b0VTRnBCWjRxelF3Q2g4VlRjTzNUOFFTZUhrM3VHSWs2M1VpWkZqN0FleF9JREgzdXpEWFNHM0VvSXhhNm5pdHRXZkRrNUR0UGFJVUMzRjNDWWRwZ0ZtOEsyMm93VU82Rno1R3FxQTNxMllyeWh2YnJRY19hUjZMbExjank3YUg5anFYdjRHRUdnSlN3cFMwMU9TLVBDSldIYUpUdy1vYTdtS3RHTnphNU1KYTdtYWVzNFFR?oc=5" target="_blank" rel="noopener">Reuters</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Open-weight model</dt><dd>An open-weight model is an AI model whose trained parameters are released publicly, so anyone can download and run it, unlike closed models accessible only through a paid API. DeepSeek&#39;s R1 model being open-weight is why so many developers outside China could test and build on it.</dd></div><div><dt>National security restriction</dt><dd>Governments can ban or restrict foreign technology they fear could leak sensitive data or be exploited by a rival state, as the US did here by ordering agencies to drop DeepSeek software.</dd></div><div><dt>Funding round</dt><dd>A reminder: a funding round is a batch of investment a company raises at one time, usually in exchange for equity, with each new round typically priced at a higher valuation than the last.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>This shows that geopolitical restrictions do not automatically starve a company of capital - DeepSeek raised record sums almost immediately after a US ban, which matters for anyone assessing political risk in AI investing or policy careers.</p></div>
+  </article>
+  
+  <article id="story-2">
+    <span class="mono kicker">The AI industry</span>
+    <h3>OpenAI, Anthropic and Nvidia post record lobbying spend of nearly $6m</h3>
+    <p class="standfirst">The three AI companies each logged their biggest-ever quarterly Washington lobbying bill as rules on safety, data centres and child protection take shape.</p>
+    <div class="body"><p>OpenAI, Anthropic and Nvidia each recorded their highest-ever quarterly lobbying spend between July and September, federal disclosures show, with the three companies spending almost $6 million combined on efforts covering cybersecurity, child safety and AI regulation.</p><p>Nvidia spent the most at $2.2 million, followed by Anthropic at $2.1 million and OpenAI at $1.5 million. These figures are still modest compared with long-established Washington players like Microsoft, which has spent more than $2 million a quarter since 2021, or Google, which regularly spends over $3 million. But the jump is striking: OpenAI did not spend even $1 million in a single quarter until this year. The surge followed a White House lunch with tech CEOs in September that produced a &#39;morally binding&#39; AI safety pledge, shortly before Trump named an AI czar and task force.</p><p>Topics lobbied on included child online safety provisions, export controls, cybersecurity evaluations for frontier AI models, and a bill that would make AI companies pay for the electricity their data centres use. With Democrats tipped to regain at least part of Congress in the midterms, AI firms appear to be moving early to shape the rules before a potentially less friendly Congress arrives - a pattern familiar from how older tech giants built their Washington operations.</p></div>
+    
+    <p class="src">Sources: <a href="https://www.theverge.com/policy/1016585/openai-anthropic-nvidia-lobbying-records" target="_blank" rel="noopener">The Verge</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Lobbying</dt><dd>Lobbying is when companies or groups pay people to influence lawmakers and regulators, for example by meeting officials or drafting proposed rules, to shape legislation in their favour.</dd></div><div><dt>Executive order</dt><dd>An executive order is a directive issued by a country&#39;s leader - in the US, the President - that has the force of law without needing a vote in Congress, often used to set policy quickly.</dd></div><div><dt>Regulatory capture</dt><dd>A reminder: regulatory capture happens when an industry gains so much influence over the body meant to police it that rules end up favouring the companies rather than the public.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Policy and government-affairs roles at AI companies are growing fast, and understanding how lobbying spend maps onto specific bills is a good way to show interviewers you follow the regulatory side of AI, not just the technology.</p></div>
+  </article>
+  
+</section>
+
+<section id="finance" class="finance">
+  <div class="sec-head">
+    <span class="mono">Section 2</span>
+    <h2>AI &amp; finance</h2>
+    <p>Where Wall Street and the City meet AI, as users and as funders.</p>
+  </div>
+  
+  <article id="story-3">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>Nasdaq sheds 750 points as AI spending doubts resurface</h3>
+    <p class="standfirst">Tech stocks slid sharply as investors again questioned whether massive AI infrastructure spending will ever be repaid.</p>
+    <div class="body"><p>The Nasdaq Composite fell more than 750 points, around 2.5%, while the S&amp;P 500 dropped roughly 1% on Thursday, as investors grew freshly nervous that the hundreds of billions being poured into AI infrastructure might not generate matching returns.</p><p>The selloff follows months of enormous capital expenditure announcements from large tech companies and chipmakers, alongside recurring worries that AI valuations have outrun actual revenue - the kind of &#39;AI bubble&#39; anxiety that has flared up repeatedly this year. Oil prices rose alongside the broader risk-off mood in markets.</p><p>Selloffs like this test whether investors still believe today&#39;s AI spending will eventually pay off in profits, and they ripple through ordinary savers&#39; portfolios too, since many retirement funds are heavily weighted toward the Nasdaq and S&amp;P 500&#39;s biggest tech names.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMihgFBVV95cUxQUF80b0hRS1hYN3NIRHhRTXcxQ3gyeHN0UHB5QzdkdnZFRVdqNVdHU1BxTUxBamcyY3ZMUWx2ZHJfRXZ3QlVXUjNUOFcta0FzNjdyZUk3S0s1YldtZThyZ3FXSjhlV2o1OWlrcy1yRXZ3cGNVVWFRS2pkVmZUb3VYY3ZNTUJrdw?oc=5" target="_blank" rel="noopener">CBS News</a> · <a href="https://news.google.com/rss/articles/CBMigwJBVV95cUxPZmRWeTlvYVRRRlBiNW5QYWpsa2NHbVAxb2JMY2lReS1ST21MNGlqWU9MMzUwR1FXYTdIWTdiZWZvUHI0el9GNVJ5b014YUpDZkNmTW1NU2pGdkFxMGZVQlZCWUMzNktXY0ZIc0VuYkZBeGhaYjZNMTg3SmhKLU5McTcwbmo2bi1CNHFPaXlLOVloM0ZsQnpESWpIb0Z4WkZmbk1WOEpNeVRZTTNFTjZFdGs4R2NWNmYtb0xwM3pSbXEwYTZfclVTMmZyZUxuOTlQYnFfUkN2SEQ5YjdCSjNwalRpUjI2N0E0TTRXaWFwWnpJNWRKeGRxUTM1RExHaXBaR0Fv0gGDAkFVX3lxTE9mZFZ5OW9hVFFGUGI1blBhamxrY0dtUDFvYkxjaVF5LVJPbUw0aWpZT0wzNTBHUVdhN0hZN2JlZm9QcjR6X0Y1UnlvTXhhSkNmQ2ZNbU1TakZ2QXEwZlVCVkJZQzM2S1djRkhzRW5iRkF4aFpiNk0xODdKaEotTkxxNzBuajZuLUI0cU9peUs5WWgzRmxCekRJakhvRnhaRmZuTVY4Sk15VFlNM0VONkV0azhHY1Y2Zi1vTHAzelJtcTBhNl9yVVMyZnJlTG45OVBicV9SQ3ZIRDliN0JKM3BqVGlSMjY3QTRNNFdpYXBaekk1ZEp4ZHFRMzVETEdpcFpHQW8?oc=5" target="_blank" rel="noopener">The Economic Times</a> · <a href="https://news.google.com/rss/articles/CBMi8wFBVV95cUxPZzZ6Y0ZNeDhJd25EMzVVbkVFVzB6Q0hxZXdnTUtFUjRvQXVrWFRzQ0JxZm5NMExSeUl1SlZXZjRhbUVya3NNM1VmOTNMYnNJRWttQ2dETkxMNndyVldNblZOSVdOUTB3THhWd1E3Q2VTVVZRLXRKSWdhQWRfRkRYdDZLT3h3NFdiXzgtSXVtTXl6SVJiWHNkMzFId3ItaVBORnh5RDBVNHlHQ3RFMmo2TGpnX1FTVXFEOUlmZHJWSXowdXluRXJyWTdwS2JuRTR5b2JrX0JBZ0V4YlAtWWtLTldZR2tyLVFBV3p2dnBkY01EUDDSAfMBQVVfeXFMT2c2emNGTXg4SXduRDM1VW5FRVcwekNIcWV3Z01LRVI0b0F1a1hUc0NCcWZuTTBMUnlJdUpWV2Y0YW1FcmtzTTNVZjkzTGJzSUVrbUNnRE5MTDZ3clZXTW5WTklXTlEwd0x4VndRN0NlU1VWUS10SklnYUFkX0ZEWHQ2S094dzRXYl84LUl1bU15eklSYlhzZDMxSHdyLWlQTkZ4eUQwVTR5R0N0RTJqNkxqZ19RU1VxRDlJZmRyVkl6MHV5bkVyclk3cEtibkU0eW9ia19CQWdFeGJQLVlrS05XWUdrci1RQVd6dnZwZGNNRFAw?oc=5" target="_blank" rel="noopener">The Economic Times</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Nasdaq Composite</dt><dd>The Nasdaq Composite is a stock market index tracking thousands of companies listed on the Nasdaq exchange, heavily weighted toward technology firms, so it tends to move sharply on AI-related news.</dd></div><div><dt>Market correction</dt><dd>A reminder: a market correction is a drop of roughly 10% or more in stock prices from a recent high, often triggered by a shift in investor sentiment rather than a single company&#39;s results.</dd></div><div><dt>Capital expenditure (capex)</dt><dd>A reminder: capex is money a company spends on long-term assets like data centres or chips, as opposed to day-to-day running costs.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>If you are entering finance or fintech, understanding why an index can drop sharply on sentiment alone - without new company-specific bad news - helps you explain market moves confidently in interviews and client conversations.</p></div>
+  </article>
+  
+  <article id="story-4">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>SK Hynix pauses Solidigm&#39;s US IPO amid AI valuation fears</h3>
+    <p class="standfirst">The memory-chip maker shelved plans to list its Solidigm subsidiary after shareholder pushback and growing nerves about AI-linked valuations.</p>
+    <div class="body"><p>SK Hynix has paused the planned US listing of Solidigm, its memory-chip subsidiary, following shareholder concerns and broader market jitters about AI-related valuations, according to the Wall Street Journal and Bloomberg.</p><p>Solidigm makes flash storage chips used in data centres that power AI systems. The pause shows how nervousness about AI spending is spreading beyond software and chip-design firms into the wider semiconductor supply chain, affecting even companies that supply the physical hardware AI relies on.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxQWE9EOHNwRFRHSUJvQzhaNTByNHIxdFVEM3JVbEFsUXpQdDQzQ1lsaVpBYmRHdWlVTVhVZG5rWG0yMzIyU3ZCcGlSZ2VaRmlOWlJ3Z0ZfUzJ6bWFRWFdOcWR0Q2hRall5YzZ3ZUFmanNWaHo0WkFSMnQ1LXRvX2lLUGp5U2x3bC1ZVXdtd3EwcjZTZGxLYUNXMWt3TDNDcVhmM0dv?oc=5" target="_blank" rel="noopener">WSJ</a> · <a href="https://news.google.com/rss/articles/CBMirgFBVV95cUxOVDhkSXduZGRGdVZJRXIydm9zOEhLSklncEtEOTdROU5uRTZhLXlfOWpOYlFsOGNsUDRaX2hqY0t1dnRLVkFGR0R0RnhLR2hiazFIVEduenA3RnowdDNoRjQyTHQ0Z0p5RXJfbWhhcnZGUzZkS1prYTdxUUVVVWRXTUs4bzRGZnlkdGxOQWowaFRKMW1jbEYxN0N1bGlKdHhOcnZTUGZhTHZ1anVFcFE?oc=5" target="_blank" rel="noopener">Bloomberg.com</a> · <a href="https://news.google.com/rss/articles/CBMirAFBVV95cUxNUDN3Zjl3YUJVTTk2Z2psdjJEckpFYkRib1BiOEtmTzk4VUFEUlNfTTdwV0FnWm4xZWJZbWtMTXI5anpFVmZyV1dmSDNxNFk3WDdoX1MyY29HTjJzNFBvNDAwbmtRVm5OUVZsa2ZBemZzM3N4LVU3TktSLUZva05Fa1gzTG1FRDhaQm56SGpzNE5BRFNabkdOMmNVeHdrY2QtWWxvZUNWWXFqV3lI?oc=5" target="_blank" rel="noopener">TradingKey</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Subsidiary</dt><dd>A subsidiary is a company owned or controlled by another, larger company. Solidigm being a subsidiary of SK Hynix means SK Hynix controls decisions like whether to float it publicly.</dd></div><div><dt>IPO (initial public offering)</dt><dd>A reminder: an IPO is when a private company first sells shares to the public on a stock exchange, turning it into a publicly traded company.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>This is a concrete example of how AI-bubble worries can delay real-world corporate decisions like IPOs, not just move share prices - useful context if asked in an interview how sentiment affects dealmaking.</p></div>
+  </article>
+  
+  <article id="story-5">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>Fireblocks denies reported $2.5bn Visa acquisition talks</h3>
+    <p class="standfirst">The stablecoin infrastructure firm says reports of a Visa takeover are &#39;news to us&#39;.</p>
+    <div class="body"><p>Fireblocks, which provides digital-asset and stablecoin infrastructure, has denied reports that it is in acquisition talks with Visa over a deal reportedly worth $2.5 billion, saying the claims are &#39;news to us&#39;, according to Finextra.</p><p>Fireblocks builds the technology banks and fintechs use to custody and move crypto and stablecoins - digital tokens pegged to currencies like the US dollar. An acquisition by Visa would have signalled the payments giant doubling down on stablecoin infrastructure, an area card networks and banks have been circling closely this year.</p></div>
+    
+    <p class="src">Sources: <a href="https://www.finextra.com/newsarticle/48636/fireblocks-pours-cold-water-on-reports-of-25bn-acquisition-talks-with-visa?utm_medium=rssfinextra&amp;utm_source=finextrafeed" target="_blank" rel="noopener">Finextra Research Headlines</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Stablecoin</dt><dd>A stablecoin is a type of cryptocurrency designed to hold a steady value, usually by being pegged to a currency like the dollar, so one stablecoin is meant to always be worth about $1.</dd></div><div><dt>Acquisition</dt><dd>A reminder: an acquisition is when one company buys another, usually to gain its technology, customers or market position.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Payments companies racing to control stablecoin infrastructure shows where fintech hiring is heading; even a denied rumour signals which technology big players think is strategically important.</p></div>
+  </article>
+  
+</section>
+
+<section id="startups" class="startups">
+  <div class="sec-head">
+    <span class="mono">Section 3</span>
+    <h2>Startups &amp; funding</h2>
+    <p>Who raised, how much, and what investors are betting on.</p>
+  </div>
+  
+  <article id="story-6">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>Stealth startup Two Delta raises tens of millions backed by Ackman and Schmidt</h3>
+    <p class="standfirst">The secretive Israeli AI company has not disclosed what it builds, but attracted high-profile seed investors.</p>
+    <div class="body"><p>Two Delta, a secretive Israeli AI startup, has raised tens of millions of dollars in a seed round backed by investor Bill Ackman and former Google CEO Eric Schmidt, according to CTech and Dealroom.</p><p>Details of what Two Delta actually builds remain undisclosed, making it a classic &#39;stealth&#39; startup that has not revealed its product publicly. The involvement of high-profile backers like Ackman and Schmidt suggests continued appetite for early-stage AI bets, even as public markets wobble over AI valuations elsewhere.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMiaEFVX3lxTE42eWxsZFdpQVdHbzRHRTZKTy10d1dLRmp2c0hPVnQtSUJaYkdBbngyWmdGbFI5NmZMblRGd2s4a3JwNVVPWXJyNE5QRm1lYXB4RWVCYXU2aGRDYW1BalRvN0oybzgxSW9S?oc=5" target="_blank" rel="noopener">CTech</a> · <a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxNekZCdnBCYkhKYm5vbm0yTnh4T0gyRkd3a3MzUm1WaGJ4bF8zMEN4Q1pMcUo2TEZVOWsyTk1vRDM0akZ0QlAwOWdTRlAySmFJRWluLXB5ZUZhSGgxdjdtbWxXYkt2YlFBOG5yWGtaUkNiWFFmX2hkc2ZWdkxkNHZKSEhSR3RETjQ2Z05MN091T2N3RlZST1pLU0hCZ25DbWtlbG1HUFdDRjNfVW9rZEdF?oc=5" target="_blank" rel="noopener">Dealroom</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Seed round</dt><dd>A seed round is usually a startup&#39;s first serious round of outside investment, used to build an early product or prove an idea before scaling up, typically much smaller than later rounds like Series A or B.</dd></div><div><dt>Stealth startup</dt><dd>A stealth startup operates secretly, without revealing its product or sometimes even its existence, often to avoid tipping off competitors before launch.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Early-career candidates eyeing startup roles should note that big-name backers piling into unproven, undisclosed companies is a sign of how much capital is still chasing AI ideas at the earliest stage, despite public market jitters.</p></div>
+  </article>
+  
+  <article id="story-7">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>Cloud security startup Upwind rejects Datadog&#39;s reported $4bn offer</h3>
+    <p class="standfirst">Upwind turned down a buyout bid from monitoring giant Datadog, according to multiple reports.</p>
+    <div class="body"><p>Cloud security startup Upwind has reportedly rejected a $4 billion acquisition offer from monitoring company Datadog, according to The Information, CTech and Globes.</p><p>Upwind builds tools to protect cloud-based computer systems from attacks. Turning down a $4 billion offer suggests Upwind&#39;s investors believe it could be worth more by staying independent, through future growth or its own IPO - a sign that demand for cybersecurity startups remains strong even as broader tech markets grow jittery over AI valuations.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9mQm9jQjNVOE5CdWNHZUNjeXMtbWxRdHRxVHBMTWpnTTVJcGRBeFpjZll2cFgydUdQY0VPSkRvdXVDN3kwNXlybjZ6aW5FaWt0N1BFQl8zclJvY2E1Ym5PdGJwMU1vb0E?oc=5" target="_blank" rel="noopener">CTech</a> · <a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxOQklDN0VRTi1HTVZ1M24zS0UyeHlpdVR6VVNUd3pfR19EXy0wQ19SYS1tWlJjdFlXNUx3V0xpbjB3c2V3Q0liTlQxVDNZQ2wxQ3hvVUw5blBvM29VbW5NMVJueVRPUkR6ZTlQUkJxb1EyU3E4Z1Z4YzRwSVVJWXQwbERlaTRBbmxaZVRtMGZ5WkNkWDVlVTIxMDdram1iQVZ2RUE?oc=5" target="_blank" rel="noopener">The Information</a> · <a href="https://news.google.com/rss/articles/CBMikgFBVV95cUxQbVI4bTdkRWZOc1kxV0ZFMnZYRWtiRFpUUDA3SERlZ2g1d2RvNDh1Wi14aG80SWx0MVAxSkV4OThtdk5lM282NXB3Yk1SV0ZJT09GQnFoZ0hkNlpZQkUyZ1lseVBKMzR3RTNJUGtwTXhBZGhLUGxuVnc4elpmWWhzb0pXeDRjVGtuWnYyaC03R0NUUQ?oc=5" target="_blank" rel="noopener">Israel Business News</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Cloud security</dt><dd>Cloud security refers to tools and practices that protect data and software running on remote servers (&#39;the cloud&#39;) rather than on a company&#39;s own physical computers.</dd></div><div><dt>Valuation multiple</dt><dd>A reminder: a valuation multiple compares a company&#39;s price to a financial metric like revenue, for example valuing a startup at 20 times its annual sales.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Rejected acquisition offers like this are a useful talking point in interviews about how founders and investors weigh a guaranteed payout against the bet that staying independent could be worth even more.</p></div>
+  </article>
+  
+</section>
+
+
+
+<div class="panel" id="code">
+  <span class="mono">Code corner</span>
+  <h2>Modelling OpenAI&#39;s mega-round: valuation and dilution</h2>
+  <p class="src">Based on: <a href="#story-0">OpenAI closes in on $30bn raise at $1.25 trillion valuation</a></p>
+  <p style="margin:0">Today&#39;s OpenAI story mentions a $30 billion raise at a $1.25 trillion pre-money valuation. Let&#39;s write a tiny script to work out the post-money valuation and how much of the company new investors would own.</p>
+  <pre><code># Values from the OpenAI funding report (in US dollars)
+pre_money = 1_250_000_000_000   # valuation before the new money
+raise_amount = 30_000_000_000    # amount being raised
+
+# Post-money valuation is simply pre-money plus the new cash
+post_money = pre_money + raise_amount
+
+# New investors&#39; ownership share is their cash divided by the post-money value
+new_investor_share = raise_amount / post_money
+
+# March 2026 reference valuation, for comparison
+march_valuation = 852_000_000_000
+growth = (post_money - march_valuation) / march_valuation
+
+print(f&#34;Post-money valuation: ${post_money:,}&#34;)
+print(f&#34;New investors would own {new_investor_share:.2%} of OpenAI&#34;)
+print(f&#34;That&#39;s a {growth:.1%} increase since the March valuation&#34;)</code></pre>
+  <span class="mono">Line by line</span>
+  <ol class="walk"><li>pre_money and raise_amount store the two numbers from the news story, written with underscores so large numbers stay readable.</li><li>post_money = pre_money + raise_amount calculates what the company is worth immediately after the new cash is added.</li><li>new_investor_share divides the amount raised by the post-money valuation, giving the fraction of the company the new investors now own.</li><li>The f-string print statements format the numbers with commas and percentage signs so the output reads like a real finance summary.</li><li>The growth calculation compares the new post-money figure against March&#39;s valuation to show how fast the number has risen.</li></ol>
+  <div class="tryit"><p><b>Try it:</b> Change raise_amount to 20_000_000_000 (a smaller $20bn round) and rerun the script. How does the new investors&#39; ownership percentage change compared with the $30bn version, and why does a smaller raise lead to less dilution for existing shareholders?</p></div>
+</div>
+
+<div class="panel" id="quiz">
+  <span class="mono">Quiz · apply today's concepts</span>
+  <h2>What would you do?</h2>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 1</span>
+    <p class="scenario">You&#39;re in a job interview at a venture capital fund. The interviewer says OpenAI is raising $30 billion at a $1.25 trillion pre-money valuation and asks what the company&#39;s valuation will be once the round closes, assuming no other changes.</p>
+    <p class="ask">What is OpenAI&#39;s post-money valuation after this round?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>$1.25 trillion</span></button></li><li><button type="button" data-i="1"><b>B</b><span>$1.28 trillion</span></button></li><li><button type="button" data-i="2"><b>C</b><span>$1.22 trillion</span></button></li><li><button type="button" data-i="3"><b>D</b><span>$30 billion</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> Post-money valuation equals pre-money valuation plus the amount raised: $1.25tn + $30bn = $1.28tn. The tempting wrong answer, $1.25 trillion, is actually the pre-money figure quoted before the new cash is added.</p>
+        <div class="chips"><span>Pre-money valuation</span><span>Valuation multiple</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 2</span>
+    <p class="scenario">You&#39;re in a team meeting at a fintech firm the morning after the Nasdaq dropped more than 750 points. A colleague asks what&#39;s really driving the selloff, since no single company reported bad earnings.</p>
+    <p class="ask">What best explains the Nasdaq&#39;s sharp fall described in today&#39;s news?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>The Federal Reserve unexpectedly raised interest rates overnight</span></button></li><li><button type="button" data-i="1"><b>B</b><span>Investors grew worried that massive AI infrastructure spending might not generate matching profits</span></button></li><li><button type="button" data-i="2"><b>C</b><span>A major tech company reported a surprise earnings miss</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Oil supply was disrupted, pushing energy stocks down sharply</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> The reports attribute the selloff to renewed doubts about whether AI capital expenditure will pay off, not to a rate move or a specific earnings miss - those weren&#39;t mentioned in the coverage. Oil actually rose during the selloff rather than causing it.</p>
+        <div class="chips"><span>Market correction</span><span>Capital expenditure (capex)</span><span>AI bubble</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="0">
+    <span class="mono" style="color:var(--muted)">Scenario 3</span>
+    <p class="scenario">A founder pitching you says their company is &#39;pre-product, pre-revenue, and just closed its first institutional funding backed by well-known angel investors.&#39;</p>
+    <p class="ask">What stage of funding is the founder most likely describing?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>A seed round</span></button></li><li><button type="button" data-i="1"><b>B</b><span>A Series E round</span></button></li><li><button type="button" data-i="2"><b>C</b><span>An IPO</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Debt financing secured against company assets</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: A.</b> A seed round is typically a company&#39;s first serious outside investment, used to build an early product before it has significant revenue - matching the founder&#39;s description. Series E rounds and IPOs happen much later, once a company is far more established, and debt financing works differently from equity investment.</p>
+        <div class="chips"><span>Seed round</span><span>Stealth startup</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="0">
+    <span class="mono" style="color:var(--muted)">Scenario 4</span>
+    <p class="scenario">You&#39;re reviewing a script like the one in today&#39;s code corner. A colleague changes the numbers so a startup raises $10 million on a $90 million pre-money valuation and asks what percentage the new investors will own.</p>
+    <p class="ask">Using new_investor_share = raise_amount / post_money, what ownership percentage would the new investors receive?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>10%</span></button></li><li><button type="button" data-i="1"><b>B</b><span>9%</span></button></li><li><button type="button" data-i="2"><b>C</b><span>11%</span></button></li><li><button type="button" data-i="3"><b>D</b><span>90%</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: A.</b> Post-money valuation is $90m + $10m = $100m, and $10m divided by $100m is 10%. The tempting wrong answer of 9% comes from mistakenly dividing the raise by the pre-money valuation instead of the post-money valuation.</p>
+        <div class="chips"><span>Pre-money valuation</span><span>Funding round</span></div>
+      </div>
+    </details>
+  </div>
+  
+</div>
+
+<div class="panel" id="glossary">
+  <span class="mono">Glossary</span>
+  <h2>Every concept from today</h2>
+  <dl class="gloss"><div><dt>Acquisition<a href="#story-5">see story</a></dt><dd>A reminder: an acquisition is when one company buys another, usually to gain its technology, customers or market position.</dd></div><div><dt>Capital expenditure (capex)<a href="#story-3">see story</a></dt><dd>A reminder: capex is money a company spends on long-term assets like data centres or chips, as opposed to day-to-day running costs.</dd></div><div><dt>Cloud security<a href="#story-7">see story</a></dt><dd>Cloud security refers to tools and practices that protect data and software running on remote servers (&#39;the cloud&#39;) rather than on a company&#39;s own physical computers.</dd></div><div><dt>Executive order<a href="#story-2">see story</a></dt><dd>An executive order is a directive issued by a country&#39;s leader - in the US, the President - that has the force of law without needing a vote in Congress, often used to set policy quickly.</dd></div><div><dt>Funding round<a href="#story-1">see story</a></dt><dd>A reminder: a funding round is a batch of investment a company raises at one time, usually in exchange for equity, with each new round typically priced at a higher valuation than the last.</dd></div><div><dt>IPO (initial public offering)<a href="#story-4">see story</a></dt><dd>A reminder: an IPO is when a private company first sells shares to the public on a stock exchange, turning it into a publicly traded company.</dd></div><div><dt>Lobbying<a href="#story-2">see story</a></dt><dd>Lobbying is when companies or groups pay people to influence lawmakers and regulators, for example by meeting officials or drafting proposed rules, to shape legislation in their favour.</dd></div><div><dt>Market correction<a href="#story-3">see story</a></dt><dd>A reminder: a market correction is a drop of roughly 10% or more in stock prices from a recent high, often triggered by a shift in investor sentiment rather than a single company&#39;s results.</dd></div><div><dt>Mega-round<a href="#story-0">see story</a></dt><dd>A mega-round is a funding round so large - typically hundreds of millions or billions of dollars - that it stands out even by the standards of top-tier startup investing.</dd></div><div><dt>Nasdaq Composite<a href="#story-3">see story</a></dt><dd>The Nasdaq Composite is a stock market index tracking thousands of companies listed on the Nasdaq exchange, heavily weighted toward technology firms, so it tends to move sharply on AI-related news.</dd></div><div><dt>National security restriction<a href="#story-1">see story</a></dt><dd>Governments can ban or restrict foreign technology they fear could leak sensitive data or be exploited by a rival state, as the US did here by ordering agencies to drop DeepSeek software.</dd></div><div><dt>Open-weight model<a href="#story-1">see story</a></dt><dd>An open-weight model is an AI model whose trained parameters are released publicly, so anyone can download and run it, unlike closed models accessible only through a paid API. DeepSeek&#39;s R1 model being open-weight is why so many developers outside China could test and build on it.</dd></div><div><dt>Pre-money valuation<a href="#story-0">see story</a></dt><dd>This is what a company is judged to be worth before new investment is added. If a company is valued at $1.25 trillion pre-money and raises $30 billion, its post-money valuation becomes $1.28 trillion.</dd></div><div><dt>Regulatory capture<a href="#story-2">see story</a></dt><dd>A reminder: regulatory capture happens when an industry gains so much influence over the body meant to police it that rules end up favouring the companies rather than the public.</dd></div><div><dt>Seed round<a href="#story-6">see story</a></dt><dd>A seed round is usually a startup&#39;s first serious round of outside investment, used to build an early product or prove an idea before scaling up, typically much smaller than later rounds like Series A or B.</dd></div><div><dt>Sovereign wealth fund<a href="#story-0">see story</a></dt><dd>A sovereign wealth fund is an investment fund owned by a national government, often built from oil or trade revenue, used to invest in assets like companies or property abroad. UAE-linked investors backing OpenAI are an example of this kind of state-backed capital.</dd></div><div><dt>Stablecoin<a href="#story-5">see story</a></dt><dd>A stablecoin is a type of cryptocurrency designed to hold a steady value, usually by being pegged to a currency like the dollar, so one stablecoin is meant to always be worth about $1.</dd></div><div><dt>Stealth startup<a href="#story-6">see story</a></dt><dd>A stealth startup operates secretly, without revealing its product or sometimes even its existence, often to avoid tipping off competitors before launch.</dd></div><div><dt>Subsidiary<a href="#story-4">see story</a></dt><dd>A subsidiary is a company owned or controlled by another, larger company. Solidigm being a subsidiary of SK Hynix means SK Hynix controls decisions like whether to float it publicly.</dd></div><div><dt>Valuation multiple<a href="#story-7">see story</a></dt><dd>A reminder: a valuation multiple compares a company&#39;s price to a financial metric like revenue, for example valuing a startup at 20 times its annual sales.</dd></div></dl>
+</div>
+
+<div class="panel">
+  <span class="mono">Past digests</span>
+  <ul class="archive"><li><a href="../archive/2026-10-23.html" aria-current="page">2026-10-23</a></li><li><a href="../archive/2026-10-22.html">2026-10-22</a></li><li><a href="../archive/2026-10-21.html">2026-10-21</a></li><li><a href="../archive/2026-10-20.html">2026-10-20</a></li><li><a href="../archive/2026-10-19.html">2026-10-19</a></li><li><a href="../archive/2026-10-18.html">2026-10-18</a></li><li><a href="../archive/2026-10-17.html">2026-10-17</a></li><li><a href="../archive/2026-10-16.html">2026-10-16</a></li><li><a href="../archive/2026-10-15.html">2026-10-15</a></li><li><a href="../archive/2026-10-14.html">2026-10-14</a></li><li><a href="../archive/2026-10-13.html">2026-10-13</a></li><li><a href="../archive/2026-10-12.html">2026-10-12</a></li><li><a href="../archive/2026-10-11.html">2026-10-11</a></li><li><a href="../archive/2026-10-10.html">2026-10-10</a></li><li><a href="../archive/2026-10-09.html">2026-10-09</a></li><li><a href="../archive/2026-10-05.html">2026-10-05</a></li><li><a href="../archive/2026-10-04.html">2026-10-04</a></li><li><a href="../archive/2026-10-03.html">2026-10-03</a></li><li><a href="../archive/2026-09-23.html">2026-09-23</a></li><li><a href="../archive/2026-09-22.html">2026-09-22</a></li><li><a href="../archive/2026-09-20.html">2026-09-20</a></li><li><a href="../archive/2026-09-19.html">2026-09-19</a></li><li><a href="../archive/2026-09-18.html">2026-09-18</a></li><li><a href="../archive/2026-09-17.html">2026-09-17</a></li></ul>
+</div>
+
+<footer>Written by Claude from the linked sources. Check the original article before quoting figures in an interview.</footer>
+</div>
+<script>
+document.querySelectorAll(".q").forEach(function (q) {
+  var correct = Number(q.dataset.correct);
+  var buttons = q.querySelectorAll(".opts button");
+  buttons.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var picked = Number(b.dataset.i);
+      buttons.forEach(function (x) {
+        var i = Number(x.dataset.i);
+        if (i === correct) x.classList.add("right");
+        else if (i === picked) x.classList.add("wrong");
+        x.disabled = true;
+      });
+      q.querySelector("details").open = true;
+    });
+  });
+});
+</script>
+</body>
+</html>
