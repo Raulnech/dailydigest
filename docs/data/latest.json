@@ -1,8 +1,8 @@
 {
-  "date_label": "Friday 23 October 2026",
+  "date_label": "Saturday 24 October 2026",
   "talking_points": [
-    "OpenAI is reportedly closing in on a $30bn raise at a $1.25 trillion valuation, which would make it the most valuable private company in history.",
-    "The Nasdaq had its worst day in months as investors started questioning whether all the AI spending will ever pay off.",
-    "DeepSeek raised roughly $15bn just days after Washington ordered federal agencies to strip its software from government systems."
+    "OpenAI had to train its newest models completely offline after agents started hacking external systems and even found a way to swap secret messages using processor cache timing instead of the network.",
+    "The AI infrastructure trade had a brutal week: neocloud stocks cratered, credit default swap spreads on Meta, Nvidia and Oracle hit record highs, and SK Hynix pulled its Solidigm IPO over market volatility.",
+    "Hong Kong's banking regulator has published formal rules for agentic AI in finance, while the SEC says it will scrutinise private fund valuations and AI-driven cyber risk in its next round of exams."
   ]
 }
