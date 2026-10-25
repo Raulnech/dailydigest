@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI Morning Brief · Sunday 25 October 2026</title>
+<meta name="theme-color" content="#3A55C8">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  color-scheme:light dark;
+  --ground:#F3F4F7; --paper:#FFFFFF; --ink:#141827; --muted:#5B6275; --line:#DDE0E8;
+  --industry:#3A55C8; --industry-soft:#E6EAFA;
+  --finance:#1C7453; --finance-soft:#E1F1EA;
+  --startups:#A8561A; --startups-soft:#F7EADF;
+  --code-bg:#161A26; --code-ink:#E4E7F0;
+  --right:#1C7453; --right-soft:#E1F1EA; --wrong:#B3261E; --wrong-soft:#FBE7E5;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --ground:#0F121B; --paper:#171B27; --ink:#E8EAF1; --muted:#9AA1B4; --line:#2A3042;
+    --industry:#8FA3F5; --industry-soft:#20284A;
+    --finance:#6CCBA3; --finance-soft:#15332A;
+    --startups:#E8A06A; --startups-soft:#3A2618;
+    --code-bg:#0B0D14; --code-ink:#E4E7F0;
+    --right:#6CCBA3; --right-soft:#15332A; --wrong:#F2A29B; --wrong-soft:#3A1B19;
+  }
+}
+*{box-sizing:border-box}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.6 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;padding-inline:16px;padding-block:28px 64px}
+.wrap{max-width:700px;margin:0 auto;display:grid;gap:36px}
+a{color:inherit}
+a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var(--industry);outline-offset:3px;border-radius:4px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400}
+header{display:grid;gap:10px}
+header .date{color:var(--muted)}
+h1{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(44px,11vw,64px);line-height:1;margin:0;letter-spacing:-.01em}
+h1 em{color:var(--industry)}
+.lede{color:var(--muted);margin:0;max-width:60ch}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ground);padding-block:10px;display:flex;gap:8px;overflow-x:auto;border-bottom:1px solid var(--line)}
+nav a{flex:none;text-decoration:none;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--paper);font-size:14px}
+nav a.industry{color:var(--industry)} nav a.finance{color:var(--finance)} nav a.startups{color:var(--startups)}
+
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:14px;scroll-margin-top:64px}
+.panel h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:30px;margin:0;line-height:1.15}
+.panel > .mono{color:var(--muted)}
+.talk ol{margin:0;padding-left:20px;display:grid;gap:8px}
+.toc{display:grid;gap:14px}
+.toc h3{margin:0 0 4px}
+.toc ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.toc li a{text-decoration:none}
+.toc li a:hover{text-decoration:underline}
+
+section{display:grid;gap:22px;scroll-margin-top:64px}
+.sec-head{display:grid;gap:2px;border-top:3px solid var(--c);padding-top:12px}
+.sec-head h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:36px;margin:0;line-height:1.1;text-wrap:balance}
+.sec-head p{margin:0;color:var(--muted)}
+.sec-head .mono{color:var(--c)}
+.industry{--c:var(--industry);--cs:var(--industry-soft)}
+.finance{--c:var(--finance);--cs:var(--finance-soft)}
+.startups{--c:var(--startups);--cs:var(--startups-soft)}
+
+article{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px 20px;display:grid;gap:16px;scroll-margin-top:64px}
+article .kicker{color:var(--c)}
+article h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(26px,6vw,32px);line-height:1.15;margin:0;text-wrap:balance}
+.standfirst{margin:0;font-size:18px;line-height:1.5;color:var(--muted)}
+.body{display:grid;gap:14px;font-family:"Source Serif 4",Georgia,serif;font-size:18px;line-height:1.65;max-width:65ch}
+.body p{margin:0}
+.src{margin:0;font-size:13px;color:var(--muted)}
+.concepts{background:var(--cs);border-radius:12px;padding:16px 18px;display:grid;gap:12px}
+.concepts .mono{color:var(--c)}
+.concepts dl{margin:0;display:grid;gap:10px}
+.concepts dt{font-weight:600}
+.concepts dd{margin:2px 0 0}
+.why{display:grid;gap:4px;border-left:2px solid var(--c);padding-left:14px}
+.why .mono{color:var(--c)}
+.why p{margin:0}
+
+pre{margin:0;background:var(--code-bg);color:var(--code-ink);border-radius:10px;padding:16px;overflow-x:auto;font:14px/1.55 "IBM Plex Mono",ui-monospace,Consolas,monospace}
+.walk{margin:0;padding-left:20px;display:grid;gap:6px}
+code{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:.9em}
+.tryit{background:var(--industry-soft);border-radius:10px;padding:12px 16px}
+.tryit p{margin:0}
+
+.q{display:grid;gap:12px;border-top:1px solid var(--line);padding-top:18px}
+.q:first-of-type{border-top:0;padding-top:0}
+.scenario{margin:0;font-family:"Source Serif 4",Georgia,serif;font-style:italic;font-size:17px}
+.q .ask{margin:0;font-weight:600}
+.opts{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.opts button{width:100%;text-align:left;font:inherit;color:var(--ink);background:var(--ground);border:1px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer;display:flex;gap:10px}
+.opts button:hover{border-color:var(--industry)}
+.opts button b{font-family:"IBM Plex Mono",ui-monospace,monospace;font-weight:500}
+.opts button.right{background:var(--right-soft);border-color:var(--right)}
+.opts button.wrong{background:var(--wrong-soft);border-color:var(--wrong)}
+.opts button:disabled{cursor:default}
+details{border-radius:10px}
+summary{cursor:pointer;font-weight:500;color:var(--industry)}
+.answer{display:grid;gap:8px;margin-top:10px}
+.answer p{margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:13px;padding:2px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+
+.gloss{margin:0;display:grid;gap:12px}
+.gloss dt{font-weight:600}
+.gloss dt a{font-weight:400;font-size:13px;color:var(--muted);margin-left:6px}
+.gloss dd{margin:2px 0 0;color:var(--muted)}
+.archive{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.archive a{display:inline-block;padding:4px 10px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-variant-numeric:tabular-nums;font-size:14px}
+.archive a[aria-current]{border-color:var(--industry);color:var(--industry)}
+footer{color:var(--muted);font-size:13px}
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="mono date">Sunday 25 October 2026 · 14 min read</span>
+  <h1>AI Morning <em>Brief</em></h1>
+  <p class="lede">Today's AI and fintech news as short articles, with every key concept explained, a bit of Python, and a scenario quiz to check it stuck.</p>
+</header>
+
+<nav aria-label="Sections">
+  <a href="#industry" class="industry">The AI industry</a>
+  <a href="#finance" class="finance">AI &amp; finance</a>
+  <a href="#startups" class="startups">Startups &amp; funding</a>
+  <a href="#code">Code corner</a>
+  <a href="#quiz">Quiz</a>
+  <a href="#glossary">Glossary</a>
+</nav>
+
+<div class="panel talk">
+  <span class="mono">If you only read one thing</span>
+  <h2>Three things to be able to say today</h2>
+  <ol><li>Elvis Presley&#39;s estate has sued Anthropic, accusing it of training its AI on his music without permission.</li><li>The IMF has warned that the AI industry could face a jaw-dropping $8.5 trillion revenue shortfall if the hype doesn&#39;t convert into real earnings.</li><li>SpaceX is reportedly closing in on a $60 billion deal to buy AI coding startup Cursor.</li></ol>
+</div>
+
+<div class="panel">
+  <span class="mono">In today's brief</span>
+  <div class="toc">
+  
+    <div class="industry"><h3 class="mono" style="color:var(--c)">The AI industry</h3>
+      <ul><li><a href="#story-0">Elvis Presley Estate Sues Anthropic Over AI Training on His Music</a></li><li><a href="#story-1">OpenAI Pushes Into Enterprise With Decisions API and Uber Deal</a></li><li><a href="#story-2">Google DeepMind Staff Quit Over Pentagon AI Contracts</a></li></ul>
+    </div>
+  
+    <div class="finance"><h3 class="mono" style="color:var(--c)">AI &amp; finance</h3>
+      <ul><li><a href="#story-3">IMF Warns AI Spending Could Leave $8.5 Trillion Revenue Gap</a></li><li><a href="#story-4">UK Government to Pump £20 Billion Into State-Backed Lenders</a></li><li><a href="#story-5">Tokio Marine Becomes First Japanese Insurer to Cover AI Robots</a></li></ul>
+    </div>
+  
+    <div class="startups"><h3 class="mono" style="color:var(--c)">Startups &amp; funding</h3>
+      <ul><li><a href="#story-6">SpaceX Reportedly Nears $60 Billion Deal to Buy AI Coding Startup Cursor</a></li><li><a href="#story-7">Pathos AI Raises $237 Million to Expand Agentic Drug Discovery Platform</a></li></ul>
+    </div>
+  
+  </div>
+</div>
+
+
+<section id="industry" class="industry">
+  <div class="sec-head">
+    <span class="mono">Section 1</span>
+    <h2>The AI industry</h2>
+    <p>Big labs, big tech and the direction of travel.</p>
+  </div>
+  
+  <article id="story-0">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Elvis Presley Estate Sues Anthropic Over AI Training on His Music</h3>
+    <p class="standfirst">The singer&#39;s estate accuses the AI firm of copying his catalogue &#39;at a scale never seen before&#39; to train its chatbot Claude.</p>
+    <div class="body"><p>The estate that controls Elvis Presley&#39;s music rights has filed a lawsuit against Anthropic, the company behind the Claude chatbot, alleging that his songs were used without permission to train its artificial intelligence models.</p><p>Lawsuits like this have become common as rights holders discover that AI companies scraped vast amounts of text, music and images from the internet to build their systems. Training an AI model means feeding it huge quantities of existing data so it can learn patterns, and large language models are built by digesting these datasets before they can generate new text, images or sound.</p><p>The case adds Anthropic to a growing list of AI firms facing copyright claims from musicians, authors and publishers. How courts rule on whether using copyrighted material to train AI counts as fair use could shape the economics of the entire industry, since licensing deals with every rights holder would be vastly more expensive than scraping freely available data.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMie0FVX3lxTE8tQUZPNFFsYXJZcnJydGJWWldtMmJLZEF4QlpiVWtQeHVZY1UwdjJHOFRLMHEyS0FvR0pjZ0ZXZHdQQURfNDNuWXNMaHlnZUdjUUYzeHF1T2pscmtVUFhXYTdwUkE2NmdWaEY4RkdneUhHNXFUdzZVbG5kOA?oc=5" target="_blank" rel="noopener">Billboard</a> · <a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxNX2w5MWpVOHBzaUxLMllrM0c1SDcxREV3WGt1VGdMNjM2STE3VHBlSEZwSnBDc1lKWnJ5c0pPNWJHMHlZcV9rVXRRVjNGYkxOcUpNZmRQVmVHTEZJZ1NYcUJhVzBCeW1hQ09mZTIzZm5JVDZ0emRMN3hSUXdhUnhodkF5NWJYTVBZNzNVejk4RjJQWTd0b0lROXNjWHpYM0NKc0hSb1ZtVmM0QQ?oc=5" target="_blank" rel="noopener">The Hollywood Reporter</a> · <a href="https://news.google.com/rss/articles/CBMizAFBVV95cUxNYkpHcG95OGt1cGU3Z3VWSmJHZkVzUVRlUko5S0xpLVM5REs2RUxkeHlENUQ3SzhYV3psUllVUE02YXM4bFVMbHlMbEgyaHIyM0ltNm9pdmJLTFY3aFpyNS1KTDFjRFo2enVVeVpjMUJXektqU21hbmRDZHVfQk81WlVVLWpmZEQ2dzRWcUI4TTd5M0dRbjFjM2RNWkc2eHQ2NEZOdTFETTVHdHV1OE9TOXVOSGdvYWNMQlJ4azFGYU1pUmFTUExoeTB0bFY?oc=5" target="_blank" rel="noopener">VICE</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Training data</dt><dd>This is the raw material—text, images, audio—that an AI model learns from before it can generate anything. Feed it millions of songs and it starts to recognise patterns in melody, lyrics and style.</dd></div><div><dt>Copyright infringement</dt><dd>This happens when someone uses a creator&#39;s protected work without permission or payment. If proven, Anthropic could face damages or be forced to change how it sources training material.</dd></div><div><dt>Fair use</dt><dd>A legal doctrine that sometimes allows limited use of copyrighted material without permission, for example for criticism or research. Whether AI training counts as fair use is still being decided by courts.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>If you&#39;re aiming for a role in AI policy, legal tech or data licensing, these lawsuits are becoming a major battleground worth following closely. It&#39;s also a good interview talking point: discussing the tension between open scraping and licensed data shows you understand the business risks facing AI labs.</p></div>
+  </article>
+  
+  <article id="story-1">
+    <span class="mono kicker">The AI industry</span>
+    <h3>OpenAI Pushes Into Enterprise With Decisions API and Uber Deal</h3>
+    <p class="standfirst">OpenAI is reportedly expanding tools that let AI agents make business decisions, while also cutting frontier model training off from live internet access.</p>
+    <div class="body"><p>OpenAI has reportedly expanded a product called the Decisions API, aimed at letting AI agents handle business decision-making tasks, and is scaling up enterprise partnerships including one with ride-hailing giant Uber. An AI agent is a system that doesn&#39;t just answer questions but can take multi-step actions on its own, such as comparing options and choosing one.</p><p>The same report says OpenAI is cutting its frontier model training off from the live internet. A frontier model is the most advanced, largest AI system a lab builds, and training it on real-time internet data can introduce messy or unreliable information, as well as legal risk from unlicensed content.</p><p>Enterprise deals like the Uber partnership show how AI labs are trying to turn flashy chatbot technology into recurring revenue from large companies who need decision-support tools, not just conversational assistants. Competition in this space is heating up, with rivals such as Jev already offering similar decision-making products for businesses.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMi6AFBVV95cUxPZ1ZXUzdOZGRzNHJhZ19Yc21pSnZ2Z1dUbmk0Q3RhTEVwSUljSGZFQ2xrUE8zd1dLX3RlR2xnVURzNG5fXzB4UXE4SFdPbVd6N0w0aG51djB2QnJseVpfRGlIT2xReXJmWVYtRS1hTUNuRjN5dnBDM3BZbU15Wl9OSHRKZld6aGE2cWdVZW1aWk9KRnNCN0tIR1EwQjRpZFlDWXlWNWs2Nll0QVNyVVZiQzVCVlB4ajBKUE1sa3ZZUDVzaE9UWTZ0R0xTMTI1eThjYzNmTGF4dmR4X3BnNGdqQm91bmNCcnUy?oc=5" target="_blank" rel="noopener">AI Insider</a> · <a href="https://news.google.com/rss/articles/CBMixAFBVV95cUxNSjQ3ajQta2FYSjVfWjg2ZW9ZX3dzV1hnOEJITGRLMkFpR0J0MTJQQU5wX0VLX3RnUHMycmU4TEl5OHRGM0U2MGhWNFVEekUxVmxyLXF4aEMzT1dYUVJ5aXFVU09SWEJFOFQzNGlVbF93NE9udld4cnZTQW5lamUxRkdjXzBPSExwZm1IOVcyMFFwUUtiSFhpNEFaUkdYYWFLdTlyRjJmNmhncElTLUZXNDluYmdLOHo0QTUyNG15aXZOVk5Y0gHKAUFVX3lxTE9RU3JZQ25yQy0zeFhMTGRvMGo2V3hpT01rY2NNVFRpMXc5QUluQ3ZuOFFxYm1sM0pFOXgwLTN4OWR0WFpOQTNBTTU3c3FGMDdhaDY5eExWLWlOLVdnaldhZmtSWk95b2dKVEJ2WENOcXUwOWJPVjBjeFFuaW53ZGZCSjhiTTRpNTZiMm5jdVNaOEhIMjJvcUVQMjBobk9DNUFUX2doUG83NkI1NG5ESzNYbFZaTzg0Slo0dVVETE5sRU9yLXN3M0pScFE?oc=5" target="_blank" rel="noopener">The Economic Times</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>AI agent</dt><dd>An AI agent can take a goal and carry out multiple steps to achieve it, like booking a flight by comparing prices across websites, rather than just answering a single question.</dd></div><div><dt>API (application programming interface)</dt><dd>An API is a way for different pieces of software to talk to each other. A Decisions API lets a company&#39;s own software send a problem to OpenAI&#39;s system and get back a recommended decision.</dd></div><div><dt>Frontier AI model</dt><dd>This refers to the most capable AI systems currently being built, pushing the boundary of what&#39;s possible. Training them carefully, rather than on live unfiltered internet data, is meant to improve reliability and safety.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Enterprise AI integration work—connecting APIs, designing agent workflows—is becoming a core skill for software and data roles, so mentioning hands-on API experience in interviews carries real weight. It also links to today&#39;s Cursor story: AI companies increasingly compete by embedding themselves deep into business workflows rather than just selling chat access.</p></div>
+  </article>
+  
+  <article id="story-2">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Google DeepMind Staff Quit Over Pentagon AI Contracts</h3>
+    <p class="standfirst">A handful of employees reportedly left the AI lab citing ethical objections to military work.</p>
+    <div class="body"><p>Several employees at Google DeepMind, the AI research lab behind models like Gemini, have reportedly resigned over the company&#39;s involvement in deals with the US Department of Defense, known as the Pentagon. The departures reflect ongoing unease inside AI labs about how their technology gets used once it leaves the research building.</p><p>Defence contracts are lucrative for AI companies, given governments&#39; appetite for faster data analysis and autonomous systems, but they raise hard questions about accountability when AI is involved in military decision-making. This isn&#39;t the first time tech workers have pushed back against military contracts; similar protests have hit other large tech firms in recent years.</p><p>The resignations highlight the gap between AI labs&#39; public commitments to safety and ethics, and commercial pressure to win defence contracts, a tension regulators and the public are likely to keep scrutinising as militaries worldwide invest more heavily in AI.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMi1wFBVV95cUxNN01YaEJ0VjgySzFoN0w4NnpFb3ZQOVEzMGMwWEoxQk4wSU1FQkZ0NV9JVFpxM0Y1Vnpmby1OM3hwX1QyT3l2X3pmOVk5RTZLR1ZBNl95ZUtDdGJqalg0UWhyb2lFN01Mc2s5MDNVb1U0empFelIxNFpTZDNXc1h1R2ZCNm55aTZsX1pKLTZjaVE3U2ZsTW82WlpvNndSRnE1VFdfLTc3M3pWSTB5RUZlQXJudG4zOVZTU0ZrWE5HcHJrT1JFajlSRTNtWk1BbEVLSXRCTExtd9IB3AFBVV95cUxNQ0ZYMFBJckEwRG9JSU9FVnJRYlVrY3Zya29xY1R6bGlNV0dPU092bWFDNF81Q2hmMHpubENWTVZYZUdOZEVRbGNhd1ZlbTFoS0UycnhnLU1TMW4zYk8yZ1cwX25NWEdISVcwWDJCbVhoNVU4YUZfUEVMU2ExNkY1ZkF3b3A0dXlBNnJPOUtVNFgtTjlLSkJCZEtWcFpDRmRrX2lBeDh2RVp6dE00NlV2eXd1d0dqMmFVZkJHSTRWZGhOZ3dzQkZMYW9kaUhGektPWFpyNk1OZkJMbG1K?oc=5" target="_blank" rel="noopener">Hindustan Times</a> · <a href="https://news.google.com/rss/articles/CBMiigFBVV95cUxPbThOemJtVjRmeUFRMjY2Y3ZnMjlCUG1TT1JaUU4tN2hMb0dOMC0zZUNOdDhZekQxWjh5OS1RaV9rMXY2OFBURzYwOXc2Nkl6dXRRU18xR25oUzdFUGJGbUhERjhSYUNfNkt2bjNMa2xFcHhsMlBEc2FWWEc5U0RYbkNOUjdTbEJUa3c?oc=5" target="_blank" rel="noopener">NeoTeo</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Dual-use technology</dt><dd>This is technology that can serve both civilian and military purposes, like AI image recognition that can tag photos or identify targets. It&#39;s why AI ethics debates often clash with defence interests.</dd></div><div><dt>AI alignment</dt><dd>This is the effort to make sure AI systems act in ways that match human values and intentions. Employees worried about military use are essentially questioning whether defence applications align with the lab&#39;s stated mission.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Understanding the ethics-versus-revenue tension inside AI labs is useful if you&#39;re considering a career in AI policy, trust and safety, or even just want a thoughtful answer to &#39;how do you think about responsible AI&#39; in an interview.</p></div>
+  </article>
+  
+</section>
+
+<section id="finance" class="finance">
+  <div class="sec-head">
+    <span class="mono">Section 2</span>
+    <h2>AI &amp; finance</h2>
+    <p>Where Wall Street and the City meet AI, as users and as funders.</p>
+  </div>
+  
+  <article id="story-3">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>IMF Warns AI Spending Could Leave $8.5 Trillion Revenue Gap</h3>
+    <p class="standfirst">The International Monetary Fund flags a mismatch between how much is being borrowed to build AI infrastructure and how much revenue it&#39;s actually generating.</p>
+    <div class="body"><p>The International Monetary Fund has reportedly warned that the AI industry faces a potential $8.5 trillion gap between the money being spent—much of it borrowed—on AI infrastructure like data centres and chips, and the actual revenue that AI products are bringing in.</p><p>This echoes warnings from other analysts about an &#39;AI bubble&#39;, where companies take on debt financing to fund enormous capital expenditure on GPUs (graphics processing units) and data centres, betting that future AI revenue will justify the spending. If that revenue doesn&#39;t materialise quickly enough, lenders and investors could be left exposed.</p><p>The warning adds to a chorus of concern from economists about systemic risk—the danger that trouble in one heavily leveraged corner of the AI industry could ripple out to banks, bondholders and the wider economy, much as mortgage debt did in 2008.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMidkFVX3lxTE5RajctV1k4dGEtdVNZeDZwMGFLT0ZOQ0haUG9mWGtVLUs0N2xEVEtjMGVwbzFDOFpvR1QtbHZIZzdZLWJEQkdLWVpydHhsRTN6eW1yRFBGSXhSUnBhcVJWYVNwUzJ1NjdCM1B4cXdGTWdlOVNST3c?oc=5" target="_blank" rel="noopener">BigGo Finance</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>AI bubble</dt><dd>This describes a situation where AI company valuations and spending surge far beyond what current revenue can justify, similar to the dot-com bubble of the late 1990s.</dd></div><div><dt>Debt financing</dt><dd>This is borrowing money, often by issuing bonds or taking loans, rather than raising it by selling equity. The risk is that debt must be repaid with interest regardless of whether the business succeeds.</dd></div><div><dt>Systemic risk</dt><dd>This is the danger that the failure of one company or sector triggers a much wider financial crisis, because banks and investors are all interconnected.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>If you work in finance or risk analysis, understanding how AI capex is funded—and the warning signs the IMF is pointing to—will help you spot whether a company&#39;s AI bet is backed by solid fundamentals or just hype.</p></div>
+  </article>
+  
+  <article id="story-4">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>UK Government to Pump £20 Billion Into State-Backed Lenders</h3>
+    <p class="standfirst">The move is reportedly part of the upcoming budget, aimed at shoring up lending capacity.</p>
+    <div class="body"><p>The UK government is reportedly planning to inject £20 billion into state-backed lenders as part of its upcoming budget. State-backed lenders are financial institutions that the government owns or guarantees, often set up to support lending when private banks are cautious.</p><p>This kind of capital injection increases a lender&#39;s ability to issue loans, which can support small businesses, housing, or infrastructure projects. Governments often turn to these institutions during periods of economic uncertainty when private banks pull back on risk.</p><p>Further details on which lenders will benefit and the conditions attached to the funding are expected when the full budget is published.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxNajFIbTg1cWFXMnFncWh3RWxNZ3IxRGQ4eHZhZWxGeExzXzI0MjFzWlJKRFo3ZDRsOFQ0VGZDQlZOWmxPSm9zT2FXbmRBRDh5bDE3RWVXQUZNYVY4Qk5wdTVkMHlWc0xxWDhrY1ZMbEJCZmFZR1Y1bk1KV1lnM1RmWnBLVDJLa0VoeXl4RDRLTEhmWkpISV9NUFVXcDVBNXJ1QUE?oc=5" target="_blank" rel="noopener">Global Banking &amp; Finance Review</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>State-backed lender</dt><dd>This is a bank or financial institution backed by government money or guarantees, designed to lend when commercial banks are reluctant, similar to how a parent might co-sign a loan for a child.</dd></div><div><dt>Capital injection</dt><dd>This means adding fresh money into a financial institution to strengthen its ability to lend or absorb losses, much like topping up a savings account before making a big purchase.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Budget decisions like this affect credit availability across the economy, which is useful context for anyone entering retail or commercial banking roles this year.</p></div>
+  </article>
+  
+  <article id="story-5">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>Tokio Marine Becomes First Japanese Insurer to Cover AI Robots</h3>
+    <p class="standfirst">The insurer is reportedly offering policies specifically for AI-enabled robots used in businesses.</p>
+    <div class="body"><p>Tokio Marine has reportedly become the first non-life insurer in Japan to offer insurance coverage for AI-enabled robots. As robots powered by artificial intelligence move into warehouses, factories and other workplaces, insurers are being asked to cover new kinds of risk, from physical damage to liability if a robot malfunctions and causes harm.</p><p>Insurance products for physical AI systems mark a shift from insuring software failures to insuring machines that can make autonomous decisions in the real world, blending traditional equipment insurance with new questions about AI liability.</p><p>As AI-enabled robots become more common in Japan and beyond, more insurers are likely to follow with similar products, creating a new niche within the insurance industry.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMi0AFBVV95cUxOdjNfMGFlN3lkejRoQ1lNMzhMWjgzbkwzbDZZblFPQkZvWEZ5Nmx4ZmJsenRTOUhfNEJfMFJYVU5vOXo2cVRibWMxVjJfVXNWRjBtV2NTOVI3TEs0Uk9xcDNJOC05MEVQX3lCT1BJUzR2SzBnVkFFQ1k5c1NXUVI3X0I5ZXAxWGZKYnRHdHVCR1V0YWpTXzNxOW82UWZXNFBBczhaaS05SklUWnplY2ZjaHpHcXZsZnFpbG5QQThMYnpYT3EtSWdXVnN2N3BBT3pf?oc=5" target="_blank" rel="noopener">Nikkei Asia</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Liability insurance</dt><dd>This type of policy covers the cost if your equipment or actions cause harm to someone else, for example if a warehouse robot damages goods or injures a worker.</dd></div><div><dt>AI-enabled robot</dt><dd>This is a physical machine that uses AI software to sense its environment and make decisions, rather than following a fixed, pre-programmed set of movements.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>This signals a growing market for insurance professionals who understand both actuarial risk and how AI systems actually behave, a useful niche to mention if you&#39;re interested in insurtech.</p></div>
+  </article>
+  
+</section>
+
+<section id="startups" class="startups">
+  <div class="sec-head">
+    <span class="mono">Section 3</span>
+    <h2>Startups &amp; funding</h2>
+    <p>Who raised, how much, and what investors are betting on.</p>
+  </div>
+  
+  <article id="story-6">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>SpaceX Reportedly Nears $60 Billion Deal to Buy AI Coding Startup Cursor</h3>
+    <p class="standfirst">The rocket company is said to be closing in on an acquisition of the popular AI programming assistant, with rebranding plans already under discussion.</p>
+    <div class="body"><p>SpaceX is reportedly nearing a deal to acquire Cursor, the AI-powered coding assistant startup, in a transaction valued at around $60 billion. Cursor has become popular among software developers for its ability to write, edit and debug code using large language models.</p><p>An acquisition at this scale would be a major move for SpaceX, which is primarily known for rockets and satellites, suggesting the company sees value in owning AI tools that could support its own software-heavy operations or represent a standalone investment bet. Cursor is reportedly already outlining rebranding plans as part of the deal.</p><p>If confirmed, this would be one of the largest acquisitions of an AI coding startup to date, underscoring how highly investors are valuing tools that make software engineers more productive using AI.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxOT3JJQnJZdHRjQTVMbjh1LUlnU1pGaTBpUFFubzZWYXN4OTZJNUo0RjBkZGk1S2NvX29TUEd5TjY1ckpXaHFhV0JXTmdhdUJNWVk4U1M4RHJJc2VPQ1NQMUtUYjJjaHFYV3VjMG1ld01LOG1rNUlmN2szbVk3WXpVUWlwLThVNTNRbDNYSWQ4aExZeUp0dzVFbEpwMVUzRTZFMkE3cGpmS2xldjBhcHd4dnRR?oc=5" target="_blank" rel="noopener">Stocktwits</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Acquisition</dt><dd>This is when one company buys another, usually gaining full ownership and control. A $60 billion acquisition is enormous, putting Cursor in the same league as major public companies.</dd></div><div><dt>Vertical AI</dt><dd>This refers to AI products built for a specific industry or task, like coding, rather than general-purpose chatbots. Cursor is a vertical AI tool focused specifically on software development.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>AI coding assistants are reshaping how software engineers work, so understanding tools like Cursor—and the fact that they&#39;re now valued at tens of billions of dollars—is useful whether you&#39;re learning Python or aiming for a job in software engineering.</p></div>
+  </article>
+  
+  <article id="story-7">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>Pathos AI Raises $237 Million to Expand Agentic Drug Discovery Platform</h3>
+    <p class="standfirst">The Series E round will fund an AI platform aimed at speeding up oncology drug development.</p>
+    <div class="body"><p>Pathos AI has reportedly raised $237 million in a Series E funding round to scale up its agentic AI platform for drug development, with a particular focus on oncology, the branch of medicine dealing with cancer treatment. A Series E round is a later-stage funding round, typically for companies that have already proven their business model and are scaling up operations.</p><p>The platform is described as &#39;agentic&#39;, meaning it uses AI agents capable of carrying out multi-step research tasks autonomously, rather than simply assisting human researchers with isolated queries. This reflects a wider trend of applying AI agents to complex scientific workflows like identifying promising drug compounds faster than traditional methods allow.</p><p>The funding will reportedly go towards advancing Pathos AI&#39;s oncology pipeline, the set of drug candidates it is developing and testing, as the company competes with other biotech and AI startups racing to shorten the years-long, costly process of bringing new cancer treatments to market.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMi7wFBVV95cUxPUHIwenBJU3lpWG5xNW5HbllKYVpvdHgxbUdJVndpYXBXV0JHOEtNeXRxVkNXdnhQNVpKR0w5RHdFS1Z3Zi1qbG03TzQ5VEtMdmV1cWo5TmtCa2lWQWRzRXVyVkJQSFkwc0YxeGFxOEd0UGxqbGhkbDRaQkJMT01laHRjbHpiUnh3ZFZXM0xjMUlxM3JCUjNVeGpMcHozaGxSZ2QtczQtOG1IY1BWVUlibXBPWi1Bd0xLcXRTSExGVy1DWWFtcWJHaE1EdzhrcDIzVjRRS0tpbWFDVEdzeFg1NklIdUFCUTJZbVZZWlJPaw?oc=5" target="_blank" rel="noopener">AI Insider</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Series E</dt><dd>This is a later round of startup funding, usually happening after a company has shown strong growth and needs capital to expand further, as opposed to an early Series A or seed round.</dd></div><div><dt>Agentic AI</dt><dd>This describes AI systems designed to autonomously carry out multi-step tasks toward a goal, such as searching chemical databases and proposing experiments, rather than just answering single questions.</dd></div><div><dt>Drug pipeline</dt><dd>This is the set of drug candidates a company has in development at various stages, from early research through clinical trials, similar to a sales pipeline but for medicines.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>AI applied to biotech is a fast-growing field combining data science, biology and Python skills, making it a strong area to highlight if you&#39;re interested in roles that blend healthcare with machine learning.</p></div>
+  </article>
+  
+</section>
+
+
+
+<div class="panel" id="code">
+  <span class="mono">Code corner</span>
+  <h2>Simulating an AI Decisions API Response</h2>
+  <p class="src">Based on: <a href="#story-1">OpenAI Pushes Into Enterprise With Decisions API and Uber Deal</a></p>
+  <p style="margin:0">OpenAI&#39;s Decisions API reportedly lets an AI agent weigh options and return a recommended choice. Here&#39;s a simplified, fake version in Python that shows how such a response might be structured as JSON, without needing a real API key.</p>
+  <pre><code>import json
+
+def fake_decisions_api(options):
+    # Pretend the AI agent scores each option and picks the best one
+    scored = []
+    for option in options:
+        score = len(option) * 2.5  # fake scoring rule
+        scored.append({&#34;option&#34;: option, &#34;score&#34;: score})
+    best = max(scored, key=lambda x: x[&#34;score&#34;])
+    response = {
+        &#34;decision&#34;: best[&#34;option&#34;],
+        &#34;confidence&#34;: round(best[&#34;score&#34;] / 100, 2),
+        &#34;all_scores&#34;: scored
+    }
+    return json.dumps(response, indent=2)
+
+options = [&#34;use supplier A&#34;, &#34;use supplier B&#34;, &#34;build in-house&#34;]
+result = fake_decisions_api(options)
+print(result)</code></pre>
+  <span class="mono">Line by line</span>
+  <ol class="walk"><li>import json lets us convert Python dictionaries into JSON text, the format APIs typically use to send data.</li><li>fake_decisions_api takes a list of options the business is choosing between, simulating what a real Decisions API call might receive.</li><li>The for loop assigns each option a fake &#39;score&#39; based on its text length, standing in for whatever real scoring logic an AI model would use.</li><li>max() with a key function finds the option with the highest score, just like an AI agent picking the best decision.</li><li>The response dictionary mimics what a real API might return: the chosen decision, a confidence level, and all scores for transparency.</li><li>json.dumps formats the dictionary as a readable JSON string, similar to what you&#39;d get back from a real API call.</li></ol>
+  <div class="tryit"><p><b>Try it:</b> Change the scoring rule inside the for loop to multiply by the number of vowels in each option instead of the length, and see how the decision changes.</p></div>
+</div>
+
+<div class="panel" id="quiz">
+  <span class="mono">Quiz · apply today's concepts</span>
+  <h2>What would you do?</h2>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 1</span>
+    <p class="scenario">You&#39;re in a team meeting at a fintech startup discussing whether to let an AI system autonomously approve small business loans.</p>
+    <p class="ask">A colleague says the system is just &#39;a chatbot that answers questions, nothing to worry about.&#39; What&#39;s the key distinction you should raise?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>It doesn&#39;t matter, chatbots and loan-approval systems work identically</span></button></li><li><button type="button" data-i="1"><b>B</b><span>The system described is actually an AI agent, since it takes multi-step actions like approving loans rather than just answering queries, which raises different accountability risks</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Loan approval systems never use AI, so the concern is irrelevant</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Chatbots are always safer than loan-approval systems because they don&#39;t access the internet</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> An AI agent takes autonomous, multi-step actions toward a goal (like approving a loan), which is riskier and requires more oversight than a chatbot that only answers questions. The other options either dismiss the distinction or make unfounded claims about safety.</p>
+        <div class="chips"><span>AI agent</span><span>AI alignment</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="0">
+    <span class="mono" style="color:var(--muted)">Scenario 2</span>
+    <p class="scenario">During a first-week orientation at an investment bank, a senior analyst mentions concerns about an &#39;AI bubble&#39; forming in markets.</p>
+    <p class="ask">Which statement best reflects what this term means in the context of today&#39;s IMF warning?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>AI companies are spending and borrowing heavily on infrastructure, and valuations may be outpacing actual revenue, risking a sharp correction if returns don&#39;t materialise</span></button></li><li><button type="button" data-i="1"><b>B</b><span>AI bubble refers to a literal bubble used in semiconductor manufacturing</span></button></li><li><button type="button" data-i="2"><b>C</b><span>It means AI companies have too much cash and not enough spending plans</span></button></li><li><button type="button" data-i="3"><b>D</b><span>It&#39;s a term for when AI models become too large to run efficiently</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: A.</b> An AI bubble describes spending and valuations racing ahead of actual revenue generation, which is precisely the imbalance the IMF flagged. The other options confuse the term with unrelated technical or financial concepts.</p>
+        <div class="chips"><span>AI bubble</span><span>Debt financing</span><span>Capital expenditure (capex)</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="0">
+    <span class="mono" style="color:var(--muted)">Scenario 3</span>
+    <p class="scenario">A friend considering a startup job asks why SpaceX buying an AI coding startup for $60 billion is noteworthy, beyond just the size of the deal.</p>
+    <p class="ask">What&#39;s the best explanation?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>It shows AI coding tools like Cursor are considered vertical AI products valuable enough to be acquired at scale, reflecting how highly markets value tools that boost developer productivity</span></button></li><li><button type="button" data-i="1"><b>B</b><span>It proves that all rocket companies are secretly AI companies</span></button></li><li><button type="button" data-i="2"><b>C</b><span>It means Cursor will stop being used by developers immediately</span></button></li><li><button type="button" data-i="3"><b>D</b><span>It has no connection to AI industry trends, since SpaceX is unrelated to software</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: A.</b> The deal reflects how specialised, vertical AI tools focused on a single task (like coding) are being valued extremely highly, even by companies outside the traditional AI industry. The other options misrepresent the significance or draw false conclusions.</p>
+        <div class="chips"><span>Acquisition</span><span>Vertical AI</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="0">
+    <span class="mono" style="color:var(--muted)">Scenario 4</span>
+    <p class="scenario">You&#39;re writing a small Python script to simulate how a fintech company might call an AI decision-making API before building the real integration.</p>
+    <p class="ask">Why is it useful to use a function like fake_decisions_api() that returns mock JSON, instead of calling a real API during development?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>It lets you test your code&#39;s logic and data handling without needing API keys, internet access, or incurring costs, before wiring up the real service</span></button></li><li><button type="button" data-i="1"><b>B</b><span>Mock functions always produce more accurate results than real APIs</span></button></li><li><button type="button" data-i="2"><b>C</b><span>It&#39;s required by law to test with fake data before using real AI services</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Fake responses are only used for AI agents, never for other software</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: A.</b> Using a mock or fake response lets developers build and test their code structure safely and cheaply, without needing credentials or risking costs, before connecting to the real API. The other options are either false or irrelevant.</p>
+        <div class="chips"><span>API (application programming interface)</span><span>AI agent</span></div>
+      </div>
+    </details>
+  </div>
+  
+</div>
+
+<div class="panel" id="glossary">
+  <span class="mono">Glossary</span>
+  <h2>Every concept from today</h2>
+  <dl class="gloss"><div><dt>Acquisition<a href="#story-6">see story</a></dt><dd>This is when one company buys another, usually gaining full ownership and control. A $60 billion acquisition is enormous, putting Cursor in the same league as major public companies.</dd></div><div><dt>Agentic AI<a href="#story-7">see story</a></dt><dd>This describes AI systems designed to autonomously carry out multi-step tasks toward a goal, such as searching chemical databases and proposing experiments, rather than just answering single questions.</dd></div><div><dt>AI agent<a href="#story-1">see story</a></dt><dd>An AI agent can take a goal and carry out multiple steps to achieve it, like booking a flight by comparing prices across websites, rather than just answering a single question.</dd></div><div><dt>AI alignment<a href="#story-2">see story</a></dt><dd>This is the effort to make sure AI systems act in ways that match human values and intentions. Employees worried about military use are essentially questioning whether defence applications align with the lab&#39;s stated mission.</dd></div><div><dt>AI bubble<a href="#story-3">see story</a></dt><dd>This describes a situation where AI company valuations and spending surge far beyond what current revenue can justify, similar to the dot-com bubble of the late 1990s.</dd></div><div><dt>AI-enabled robot<a href="#story-5">see story</a></dt><dd>This is a physical machine that uses AI software to sense its environment and make decisions, rather than following a fixed, pre-programmed set of movements.</dd></div><div><dt>API (application programming interface)<a href="#story-1">see story</a></dt><dd>An API is a way for different pieces of software to talk to each other. A Decisions API lets a company&#39;s own software send a problem to OpenAI&#39;s system and get back a recommended decision.</dd></div><div><dt>Capital injection<a href="#story-4">see story</a></dt><dd>This means adding fresh money into a financial institution to strengthen its ability to lend or absorb losses, much like topping up a savings account before making a big purchase.</dd></div><div><dt>Copyright infringement<a href="#story-0">see story</a></dt><dd>This happens when someone uses a creator&#39;s protected work without permission or payment. If proven, Anthropic could face damages or be forced to change how it sources training material.</dd></div><div><dt>Debt financing<a href="#story-3">see story</a></dt><dd>This is borrowing money, often by issuing bonds or taking loans, rather than raising it by selling equity. The risk is that debt must be repaid with interest regardless of whether the business succeeds.</dd></div><div><dt>Drug pipeline<a href="#story-7">see story</a></dt><dd>This is the set of drug candidates a company has in development at various stages, from early research through clinical trials, similar to a sales pipeline but for medicines.</dd></div><div><dt>Dual-use technology<a href="#story-2">see story</a></dt><dd>This is technology that can serve both civilian and military purposes, like AI image recognition that can tag photos or identify targets. It&#39;s why AI ethics debates often clash with defence interests.</dd></div><div><dt>Fair use<a href="#story-0">see story</a></dt><dd>A legal doctrine that sometimes allows limited use of copyrighted material without permission, for example for criticism or research. Whether AI training counts as fair use is still being decided by courts.</dd></div><div><dt>Frontier AI model<a href="#story-1">see story</a></dt><dd>This refers to the most capable AI systems currently being built, pushing the boundary of what&#39;s possible. Training them carefully, rather than on live unfiltered internet data, is meant to improve reliability and safety.</dd></div><div><dt>Liability insurance<a href="#story-5">see story</a></dt><dd>This type of policy covers the cost if your equipment or actions cause harm to someone else, for example if a warehouse robot damages goods or injures a worker.</dd></div><div><dt>Series E<a href="#story-7">see story</a></dt><dd>This is a later round of startup funding, usually happening after a company has shown strong growth and needs capital to expand further, as opposed to an early Series A or seed round.</dd></div><div><dt>State-backed lender<a href="#story-4">see story</a></dt><dd>This is a bank or financial institution backed by government money or guarantees, designed to lend when commercial banks are reluctant, similar to how a parent might co-sign a loan for a child.</dd></div><div><dt>Systemic risk<a href="#story-3">see story</a></dt><dd>This is the danger that the failure of one company or sector triggers a much wider financial crisis, because banks and investors are all interconnected.</dd></div><div><dt>Training data<a href="#story-0">see story</a></dt><dd>This is the raw material—text, images, audio—that an AI model learns from before it can generate anything. Feed it millions of songs and it starts to recognise patterns in melody, lyrics and style.</dd></div><div><dt>Vertical AI<a href="#story-6">see story</a></dt><dd>This refers to AI products built for a specific industry or task, like coding, rather than general-purpose chatbots. Cursor is a vertical AI tool focused specifically on software development.</dd></div></dl>
+</div>
+
+<div class="panel">
+  <span class="mono">Past digests</span>
+  <ul class="archive"><li><a href="../archive/2026-10-25.html" aria-current="page">2026-10-25</a></li><li><a href="../archive/2026-10-24.html">2026-10-24</a></li><li><a href="../archive/2026-10-23.html">2026-10-23</a></li><li><a href="../archive/2026-10-22.html">2026-10-22</a></li><li><a href="../archive/2026-10-21.html">2026-10-21</a></li><li><a href="../archive/2026-10-20.html">2026-10-20</a></li><li><a href="../archive/2026-10-19.html">2026-10-19</a></li><li><a href="../archive/2026-10-18.html">2026-10-18</a></li><li><a href="../archive/2026-10-17.html">2026-10-17</a></li><li><a href="../archive/2026-10-16.html">2026-10-16</a></li><li><a href="../archive/2026-10-15.html">2026-10-15</a></li><li><a href="../archive/2026-10-14.html">2026-10-14</a></li><li><a href="../archive/2026-10-13.html">2026-10-13</a></li><li><a href="../archive/2026-10-12.html">2026-10-12</a></li><li><a href="../archive/2026-10-11.html">2026-10-11</a></li><li><a href="../archive/2026-10-10.html">2026-10-10</a></li><li><a href="../archive/2026-10-09.html">2026-10-09</a></li><li><a href="../archive/2026-10-05.html">2026-10-05</a></li><li><a href="../archive/2026-10-04.html">2026-10-04</a></li><li><a href="../archive/2026-10-03.html">2026-10-03</a></li><li><a href="../archive/2026-09-23.html">2026-09-23</a></li><li><a href="../archive/2026-09-22.html">2026-09-22</a></li><li><a href="../archive/2026-09-20.html">2026-09-20</a></li><li><a href="../archive/2026-09-19.html">2026-09-19</a></li><li><a href="../archive/2026-09-18.html">2026-09-18</a></li><li><a href="../archive/2026-09-17.html">2026-09-17</a></li></ul>
+</div>
+
+<footer>Written by Claude from the linked sources. Check the original article before quoting figures in an interview.</footer>
+</div>
+<script>
+document.querySelectorAll(".q").forEach(function (q) {
+  var correct = Number(q.dataset.correct);
+  var buttons = q.querySelectorAll(".opts button");
+  buttons.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var picked = Number(b.dataset.i);
+      buttons.forEach(function (x) {
+        var i = Number(x.dataset.i);
+        if (i === correct) x.classList.add("right");
+        else if (i === picked) x.classList.add("wrong");
+        x.disabled = true;
+      });
+      q.querySelector("details").open = true;
+    });
+  });
+});
+</script>
+</body>
+</html>

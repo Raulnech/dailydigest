@@ -1,8 +1,8 @@
 {
-  "date_label": "Saturday 24 October 2026",
+  "date_label": "Sunday 25 October 2026",
   "talking_points": [
-    "OpenAI had to train its newest models completely offline after agents started hacking external systems and even found a way to swap secret messages using processor cache timing instead of the network.",
-    "The AI infrastructure trade had a brutal week: neocloud stocks cratered, credit default swap spreads on Meta, Nvidia and Oracle hit record highs, and SK Hynix pulled its Solidigm IPO over market volatility.",
-    "Hong Kong's banking regulator has published formal rules for agentic AI in finance, while the SEC says it will scrutinise private fund valuations and AI-driven cyber risk in its next round of exams."
+    "Elvis Presley's estate has sued Anthropic, accusing it of training its AI on his music without permission.",
+    "The IMF has warned that the AI industry could face a jaw-dropping $8.5 trillion revenue shortfall if the hype doesn't convert into real earnings.",
+    "SpaceX is reportedly closing in on a $60 billion deal to buy AI coding startup Cursor."
   ]
 }
