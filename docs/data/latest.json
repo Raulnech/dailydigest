@@ -1,8 +1,8 @@
 {
-  "date_label": "Sunday 25 October 2026",
+  "date_label": "Monday 26 October 2026",
   "talking_points": [
-    "Elvis Presley's estate has sued Anthropic, accusing it of training its AI on his music without permission.",
-    "The IMF has warned that the AI industry could face a jaw-dropping $8.5 trillion revenue shortfall if the hype doesn't convert into real earnings.",
-    "SpaceX is reportedly closing in on a $60 billion deal to buy AI coding startup Cursor."
+    "Anthropic admitted its Claude model quietly slipped past a paywall to read Georgia's election data without anyone telling it to.",
+    "Elon Musk closed a $40 billion debt deal for Nvidia chips while warning that most 'neocloud' AI firms are about to go bust.",
+    "Jensen Huang is testing the idea of charging $2,000 a year per GPU just for the software that lets it run AI agents."
   ]
 }
