@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI Morning Brief · Wednesday 28 October 2026</title>
+<meta name="theme-color" content="#3A55C8">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  color-scheme:light dark;
+  --ground:#F3F4F7; --paper:#FFFFFF; --ink:#141827; --muted:#5B6275; --line:#DDE0E8;
+  --industry:#3A55C8; --industry-soft:#E6EAFA;
+  --finance:#1C7453; --finance-soft:#E1F1EA;
+  --startups:#A8561A; --startups-soft:#F7EADF;
+  --code-bg:#161A26; --code-ink:#E4E7F0;
+  --right:#1C7453; --right-soft:#E1F1EA; --wrong:#B3261E; --wrong-soft:#FBE7E5;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --ground:#0F121B; --paper:#171B27; --ink:#E8EAF1; --muted:#9AA1B4; --line:#2A3042;
+    --industry:#8FA3F5; --industry-soft:#20284A;
+    --finance:#6CCBA3; --finance-soft:#15332A;
+    --startups:#E8A06A; --startups-soft:#3A2618;
+    --code-bg:#0B0D14; --code-ink:#E4E7F0;
+    --right:#6CCBA3; --right-soft:#15332A; --wrong:#F2A29B; --wrong-soft:#3A1B19;
+  }
+}
+*{box-sizing:border-box}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.6 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;padding-inline:16px;padding-block:28px 64px}
+.wrap{max-width:700px;margin:0 auto;display:grid;gap:36px}
+a{color:inherit}
+a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var(--industry);outline-offset:3px;border-radius:4px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400}
+header{display:grid;gap:10px}
+header .date{color:var(--muted)}
+h1{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(44px,11vw,64px);line-height:1;margin:0;letter-spacing:-.01em}
+h1 em{color:var(--industry)}
+.lede{color:var(--muted);margin:0;max-width:60ch}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ground);padding-block:10px;display:flex;gap:8px;overflow-x:auto;border-bottom:1px solid var(--line)}
+nav a{flex:none;text-decoration:none;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--paper);font-size:14px}
+nav a.industry{color:var(--industry)} nav a.finance{color:var(--finance)} nav a.startups{color:var(--startups)}
+
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:14px;scroll-margin-top:64px}
+.panel h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:30px;margin:0;line-height:1.15}
+.panel > .mono{color:var(--muted)}
+.talk ol{margin:0;padding-left:20px;display:grid;gap:8px}
+.toc{display:grid;gap:14px}
+.toc h3{margin:0 0 4px}
+.toc ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.toc li a{text-decoration:none}
+.toc li a:hover{text-decoration:underline}
+
+section{display:grid;gap:22px;scroll-margin-top:64px}
+.sec-head{display:grid;gap:2px;border-top:3px solid var(--c);padding-top:12px}
+.sec-head h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:36px;margin:0;line-height:1.1;text-wrap:balance}
+.sec-head p{margin:0;color:var(--muted)}
+.sec-head .mono{color:var(--c)}
+.industry{--c:var(--industry);--cs:var(--industry-soft)}
+.finance{--c:var(--finance);--cs:var(--finance-soft)}
+.startups{--c:var(--startups);--cs:var(--startups-soft)}
+
+article{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px 20px;display:grid;gap:16px;scroll-margin-top:64px}
+article .kicker{color:var(--c)}
+article h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(26px,6vw,32px);line-height:1.15;margin:0;text-wrap:balance}
+.standfirst{margin:0;font-size:18px;line-height:1.5;color:var(--muted)}
+.body{display:grid;gap:14px;font-family:"Source Serif 4",Georgia,serif;font-size:18px;line-height:1.65;max-width:65ch}
+.body p{margin:0}
+.src{margin:0;font-size:13px;color:var(--muted)}
+.concepts{background:var(--cs);border-radius:12px;padding:16px 18px;display:grid;gap:12px}
+.concepts .mono{color:var(--c)}
+.concepts dl{margin:0;display:grid;gap:10px}
+.concepts dt{font-weight:600}
+.concepts dd{margin:2px 0 0}
+.why{display:grid;gap:4px;border-left:2px solid var(--c);padding-left:14px}
+.why .mono{color:var(--c)}
+.why p{margin:0}
+
+pre{margin:0;background:var(--code-bg);color:var(--code-ink);border-radius:10px;padding:16px;overflow-x:auto;font:14px/1.55 "IBM Plex Mono",ui-monospace,Consolas,monospace}
+.walk{margin:0;padding-left:20px;display:grid;gap:6px}
+code{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:.9em}
+.tryit{background:var(--industry-soft);border-radius:10px;padding:12px 16px}
+.tryit p{margin:0}
+
+.q{display:grid;gap:12px;border-top:1px solid var(--line);padding-top:18px}
+.q:first-of-type{border-top:0;padding-top:0}
+.scenario{margin:0;font-family:"Source Serif 4",Georgia,serif;font-style:italic;font-size:17px}
+.q .ask{margin:0;font-weight:600}
+.opts{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.opts button{width:100%;text-align:left;font:inherit;color:var(--ink);background:var(--ground);border:1px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer;display:flex;gap:10px}
+.opts button:hover{border-color:var(--industry)}
+.opts button b{font-family:"IBM Plex Mono",ui-monospace,monospace;font-weight:500}
+.opts button.right{background:var(--right-soft);border-color:var(--right)}
+.opts button.wrong{background:var(--wrong-soft);border-color:var(--wrong)}
+.opts button:disabled{cursor:default}
+details{border-radius:10px}
+summary{cursor:pointer;font-weight:500;color:var(--industry)}
+.answer{display:grid;gap:8px;margin-top:10px}
+.answer p{margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:13px;padding:2px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+
+.gloss{margin:0;display:grid;gap:12px}
+.gloss dt{font-weight:600}
+.gloss dt a{font-weight:400;font-size:13px;color:var(--muted);margin-left:6px}
+.gloss dd{margin:2px 0 0;color:var(--muted)}
+.archive{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.archive a{display:inline-block;padding:4px 10px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-variant-numeric:tabular-nums;font-size:14px}
+.archive a[aria-current]{border-color:var(--industry);color:var(--industry)}
+footer{color:var(--muted);font-size:13px}
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="mono date">Wednesday 28 October 2026 · 16 min read</span>
+  <h1>AI Morning <em>Brief</em></h1>
+  <p class="lede">Today's AI and fintech news as short articles, with every key concept explained, a bit of Python, and a scenario quiz to check it stuck.</p>
+</header>
+
+<nav aria-label="Sections">
+  <a href="#industry" class="industry">The AI industry</a>
+  <a href="#finance" class="finance">AI &amp; finance</a>
+  <a href="#startups" class="startups">Startups &amp; funding</a>
+  <a href="#code">Code corner</a>
+  <a href="#quiz">Quiz</a>
+  <a href="#glossary">Glossary</a>
+</nav>
+
+<div class="panel talk">
+  <span class="mono">If you only read one thing</span>
+  <h2>Three things to be able to say today</h2>
+  <ol><li>Google&#39;s Genie 4 world model now generates real-time audio and lets users edit scenes mid-simulation with plain language.</li><li>Big Tech capex hit roughly $725 billion as Microsoft, Meta and Google tried to convince investors their AI spending is paying off.</li><li>OpenAI is reportedly diversifying its chip supply by buying Google-made AI chips instead of relying solely on Nvidia.</li></ol>
+</div>
+
+<div class="panel">
+  <span class="mono">In today's brief</span>
+  <div class="toc">
+  
+    <div class="industry"><h3 class="mono" style="color:var(--c)">The AI industry</h3>
+      <ul><li><a href="#story-0">Google&#39;s Genie 4 world model adds audio and lets you edit scenes as they run</a></li><li><a href="#story-1">Big Tech capex nears $725bn as Microsoft, Meta and Google defend AI spending</a></li><li><a href="#story-2">OpenAI reportedly plans to buy Google&#39;s AI chips, reducing reliance on Nvidia</a></li></ul>
+    </div>
+  
+    <div class="finance"><h3 class="mono" style="color:var(--c)">AI &amp; finance</h3>
+      <ul><li><a href="#story-3">RBC blocks personal AI agents from online banking over &#39;unacceptable&#39; risk</a></li><li><a href="#story-4">Meta&#39;s near-$100bn stock sale signals a new way Big Tech funds AI</a></li><li><a href="#story-5">World Bank&#39;s Banga says capital is &#39;not really an issue&#39; despite AI-driven borrowing costs</a></li></ul>
+    </div>
+  
+    <div class="startups"><h3 class="mono" style="color:var(--c)">Startups &amp; funding</h3>
+      <ul><li><a href="#story-6">Guidewire buys AI underwriting startup Hyperexponential for up to $2.1bn</a></li><li><a href="#story-7">Robotics startup Physical Intelligence in talks to double valuation to $20bn</a></li></ul>
+    </div>
+  
+  </div>
+</div>
+
+
+<section id="industry" class="industry">
+  <div class="sec-head">
+    <span class="mono">Section 1</span>
+    <h2>The AI industry</h2>
+    <p>Big labs, big tech and the direction of travel.</p>
+  </div>
+  
+  <article id="story-0">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Google&#39;s Genie 4 world model adds audio and lets you edit scenes as they run</h3>
+    <p class="standfirst">DeepMind&#39;s latest world model doubles scene length to two minutes and introduces real-time audio and natural-language editing.</p>
+    <div class="body"><p>Google DeepMind released Genie 4, the newest version of its world model, in research preview on Tuesday. A world model is a type of AI system that generates an interactive, explorable environment from a prompt, rather than just a static image or video clip. Genie 4&#39;s headline upgrades are the ability to add synchronised audio, such as music and dialogue, and to let users type instructions mid-simulation to change the weather, camera angle, or add new objects and characters.</p><p>The new model can hold a consistent scene for up to two minutes, twice as long as its predecessor Genie 3, which launched a little over a year ago. Under the hood, Genie 4 works alongside Google&#39;s Gemini model, which plans out steps and checks frames while Genie generates the visuals. In one experiment tied to Gemini Robotics, this combination broke a task into steps that were then simulated in real time, hinting at a future where robots are tested virtually before acting in the real world.</p><p>The release lands amid a scramble among AI labs to dominate world models, with rivals including Runway and Decart also building similar tools, and a wave of recent acquisitions in the space. Google says early testers see potential uses in gaming, education and especially film prototyping, where rapid, flowing experimentation matters. Genie 4 is rolling out first to trusted testers, with wider access for Google AI Ultra subscribers and developers expected in the coming weeks. The company admits the technology is still rough around the edges: details can drift in longer simulations, and in-world text and audio accuracy remain unsolved problems.</p></div>
+    
+    <p class="src">Sources: <a href="https://techcrunch.com/2026/10/27/googles-genie-4-world-model-adds-audio-more-realistic-worlds-and-real-time-steering/" target="_blank" rel="noopener">TechCrunch</a> · <a href="https://www.theverge.com/tech/1019076/google-genie-4-ai-model" target="_blank" rel="noopener">The Verge</a> · <a href="https://arstechnica.com/google/2026/10/deepminds-genie-4-world-model-adds-audio-and-more-realistic-people-to-simulations/" target="_blank" rel="noopener">AI - Ars Technica</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>World model</dt><dd>An AI system trained to generate and update an interactive virtual environment in response to prompts, rather than producing a single fixed image or video. Think of it as a video game level created on the fly by AI instead of by human designers.</dd></div><div><dt>Multimodal AI</dt><dd>AI that can work with more than one type of data at once, such as text, images, audio and video together. Genie 4 is multimodal because it generates matching visuals and sound from a single prompt.</dd></div><div><dt>Context window</dt><dd>The amount of information an AI model can &#39;keep in mind&#39; at once before it starts forgetting earlier details. Genie 4&#39;s two-minute scene limit is effectively its context window for maintaining a consistent simulated world.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>World models are becoming a testing ground for robotics and gaming, so skills in simulation, prompt engineering and multimodal AI tools are increasingly valuable for engineering and product roles. In an interview, you could mention Genie 4 as an example of how AI labs are moving beyond text generation into interactive, physically grounded systems.</p></div>
+  </article>
+  
+  <article id="story-1">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Big Tech capex nears $725bn as Microsoft, Meta and Google defend AI spending</h3>
+    <p class="standfirst">A blockbuster earnings night put pressure on the tech giants to prove their enormous AI investments are finally paying off.</p>
+    <div class="body"><p>Microsoft, Meta and Google&#39;s parent Alphabet reported earnings this week that pushed combined Big Tech capital expenditure, or capex, towards an estimated $725 billion. Capex is the money companies spend on long-term assets like data centres and chips, as opposed to day-to-day running costs. Investors have grown increasingly nervous about whether this spending spree on AI infrastructure will generate enough revenue to justify itself, especially as it eats into free cash flow, the money left over after a company pays for both operations and investments.</p><p>The earnings, released alongside a closely watched Federal Reserve interest rate decision, were seen as a crucial test of investor patience with the so-called AI trade, the broad bet that AI spending will drive stock market gains. Some reports characterised the results as having &#39;silenced&#39; sceptics, while others noted that scrutiny of AI cash burn remains intense given the scale of the numbers involved.</p><p>What happens next matters beyond Silicon Valley: these companies are the biggest customers for chipmakers, cloud providers and data centre builders, so their spending decisions ripple through the wider economy. If revenue growth from AI products fails to keep pace with this spending, it could fuel talk of a broader market correction, a sharp pullback in asset prices after a period of rapid gains.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxNaGpuODBWVHpLV2lPSklYTm1ld1BhMHB0NHBiNFZOUGtvNGFtZ0pBalJwdW4ycEdKbXhudmV5NVhVa21mUHl0bzNCZnI2TG9saTZIdVg2V1o4b2hFVGtHd1h6RGYyNFNyWmpOR0hKYXc3cnhscm9aXzRIZ09INUdmbjJyd2FXYkV1RmdJcVZpX0JHY3pTand0V1NaSm1Wa0hPUVZJMHVHa0t2TG4zZURhRmFSRDU?oc=5" target="_blank" rel="noopener">Bloomberg.com</a> · <a href="https://news.google.com/rss/articles/CBMizwFBVV95cUxNSHR0NnN1Y0dqWlpzcXZBWlRvaDBud2E2UkQ2X29ld01qcHhsb2xIcnhEOFA4LTFsTUdrRTVIVTl5anVXMW02bkZqX2lGeXpqTVA3Rm9tRXNrUGlBc1dOc21MX2ZUYkZ0OTZaN2R5dV9jWFNHcVk3Z3FOWHp6cHFTQzhVdXZQMGktNVFiUll1ZFlxbDdhYXZXU2hLNFpVQXdYUU5Iek5wWUYtS2J4dE5ZWlFkR3JKNFV6ZFEyVmlpTFhxd2dZLU84WHFWakU5ZVU?oc=5" target="_blank" rel="noopener">Bloomberg.com</a> · <a href="https://news.google.com/rss/articles/CBMiiwJBVV95cUxNQ2ZDQkRWWGZaNVdBV1UwS0FEY0RvVVJqUFUxNXd2eHpWM1haeXltLUNpaXB2TW5kcHlJRFo0WFNOQWZFaGNDZ2p3WlcwZjhPVndrYkQwWVAxR0tVVnotaFdDNnZHT1IxZ1BJVHJXZXFpVG5ROUlMcGZoR29iczhkOGM4VG9UMEVWWHJoUEY5TlBCN0RiTEotLTFWNVdFZHZpUmVBOHBuYWVaN0xYMEJzSkgtSno4WHhuc2x4TmpMUkV5bHJDaTNqVHFKalBIMl9pZ01MSjF2a0hpczUtYjMxUHk1OGt0VUxxbHRuaHZ3Nkt4ekRLTl9YZzVQX04wYjFUS25wLUZwWUJwTFU?oc=5" target="_blank" rel="noopener">Stocktwits</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Capital expenditure (capex)</dt><dd>Reminder: capex is money spent on long-term physical assets such as buildings, chips and data centres, distinct from everyday operating costs. A company building a $10bn data centre records that as capex, not as a regular expense.</dd></div><div><dt>Free cash flow</dt><dd>The cash a company has left after covering both its operating costs and its capital expenditure. If a firm earns $50bn but spends $45bn on capex and operations, its free cash flow is $5bn, which it can use to pay down debt, buy back shares, or invest further.</dd></div><div><dt>Market correction</dt><dd>Reminder: a drop of roughly 10% or more in stock prices from a recent peak, usually triggered by changed expectations about future earnings or interest rates.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Understanding capex and free cash flow is essential for anyone analysing tech or AI company financials, whether in equity research, venture capital, or corporate strategy roles. It&#39;s also a great interview talking point: being able to explain why heavy AI spending worries some investors shows you can connect technology trends to financial fundamentals.</p></div>
+  </article>
+  
+  <article id="story-2">
+    <span class="mono kicker">The AI industry</span>
+    <h3>OpenAI reportedly plans to buy Google&#39;s AI chips, reducing reliance on Nvidia</h3>
+    <p class="standfirst">A longtime Nvidia customer is said to be diversifying its compute supply as competition in AI chips intensifies.</p>
+    <div class="body"><p>OpenAI is reportedly planning to buy AI chips made by Google, according to The Information, marking a shift for a company that has long relied on Nvidia&#39;s processors to train and run its models. A compute deal of this kind involves securing access to the specialised chips and data centre capacity needed to train and operate large AI models, which remain in high demand and short supply.</p><p>The move would see OpenAI diversify its hardware sources at a moment when Nvidia faces growing competition from rivals including Google&#39;s own custom chip division. Relying on a single supplier for compute can leave a company exposed to price rises, shortages or vendor lock-in, a situation where switching to a different supplier becomes costly or technically difficult once a system is built around one company&#39;s tools.</p><p>Details remain limited, with reporting so far based on a single outlet. If confirmed, the shift would be notable given Nvidia&#39;s dominant position in AI chips and OpenAI&#39;s history as one of its largest customers, potentially reshaping competitive dynamics in the AI hardware market.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxQMHVUUUdOMmpGd3dxdWhJS0t6c3FlVmh1eXg1ckptWEFhX2JGbVByMGozdHZRQks4YUV0dzM2dWI0Tm05cmlXcG53Q09IYXNJYlFab3BjV0NSVnNoR05TQXFLQ2thQlV0OVFWdDJyM2wzOFVCdG13X0hsSHVQNFRTQ2hGNThFeFJjeWhqMlZLTW1RQ1RUNVU4UnBtMU93eEk?oc=5" target="_blank" rel="noopener">The Information</a> · <a href="https://news.google.com/rss/articles/CBMiygFBVV95cUxNTHhxTTY2Zlc3a2FERFlCdFRreVZrSVVpWUdaeTU1OEZaMnpvSEFhY3hPRnduVkEyeUctUXJSd2FXVFJVZGJNUVRxRGc1UjY2Y3FtSnNMaXhHWjlKTUMtX3RlTGlmTVFDY2lzd09JR0VRWk5wVGpfbVhiZFpBXy04T1ZfZW5wVDZvXzdXeXZyMFRBcWtBR2o4Z2lmTTVXTHpMQ2VMN1VhdDd6ZFV3U0VnaTlXLUFjUnVIYXBxd3ZsMHFqSTNJS2pfWGZn?oc=5" target="_blank" rel="noopener">TradingKey</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Compute deal</dt><dd>Reminder: an agreement giving a company access to the computing power, chips and data centres needed to train or run AI models, often worth billions of dollars.</dd></div><div><dt>Vendor lock-in</dt><dd>Reminder: when switching away from a supplier becomes expensive or difficult because a company&#39;s systems are built to work specifically with that supplier&#39;s technology.</dd></div><div><dt>Inference</dt><dd>Reminder: the process of running a trained AI model to generate outputs, like answering a question, as opposed to training the model in the first place. Buying more chips helps companies handle growing inference demand from millions of users.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Chip supply decisions affect pricing and reliability for anyone building products on top of AI models, making compute strategy a useful topic to understand for roles in AI infrastructure, procurement or strategy. If asked in an interview why companies diversify suppliers, you can point to this story as a live example of managing vendor lock-in risk.</p></div>
+  </article>
+  
+</section>
+
+<section id="finance" class="finance">
+  <div class="sec-head">
+    <span class="mono">Section 2</span>
+    <h2>AI &amp; finance</h2>
+    <p>Where Wall Street and the City meet AI, as users and as funders.</p>
+  </div>
+  
+  <article id="story-3">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>RBC blocks personal AI agents from online banking over &#39;unacceptable&#39; risk</h3>
+    <p class="standfirst">The Canadian bank says it will not allow AI assistants to log into customer accounts, citing client safety concerns.</p>
+    <div class="body"><p>Royal Bank of Canada is reportedly barring personal AI agents, software assistants that can act on a user&#39;s behalf, from accessing its online banking and other digital services. An AI agent in this context might be a tool that logs into a bank account to pay bills or move money automatically, following instructions from its user.</p><p>According to Bloomberg and The Globe and Mail, RBC&#39;s move stems from concern that letting AI agents interact directly with banking systems creates risks it considers unacceptable for clients, such as unauthorised transactions or security breaches. Banks typically control access to their systems through an API, a defined set of rules that lets different pieces of software communicate, and RBC appears to be restricting AI agents from using these channels without proper safeguards, known as guardrails.</p><p>The decision reflects a broader tension in finance: AI agents promise convenience by automating tasks like bill payments or budgeting, but banks remain wary of ceding control over sensitive financial systems to third-party software they don&#39;t fully control. Expect other banks to face similar questions as AI agents become more capable and widely used by consumers.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxQdFhmMDEtV2dqellwNWNSVm1DRC1uNXBPR1Z2Q1d5cFMxUmxCX0dpVkIxYkFoWlN5aVdPXzNqME9RVFFRc0k4bjdpU2pKc3ZGMUF2dVJCcGNGQ2tTdXYteTBQYWJSaG44SlNWUkZtSHJBNHRmNklleEdhOVNWMi1ZdjJrSk5nR0dINkl3XzEyMVp0RFQ2VDhMdEljQ01fWThFaUM0UFRNaWMzZlJHUEx3?oc=5" target="_blank" rel="noopener">Bloomberg.com</a> · <a href="https://news.google.com/rss/articles/CBMiigFBVV95cUxQVWlGRGJkSlRETXowMlZSTlhQUkV1Q2NIMXc3Q0tRZXJZM0JGS2F3T1RCZGJBZDdBbG9YT1RsZjRMb3FXVjFOaVA5ejdNdmNlbjdheFZ5V1FDMWRjMUh6MU8zYzZ4LUcyQjNUQTYyUE9iMWswTm94V2l3RnJnMVFnT211VTJvM1hwbHc?oc=5" target="_blank" rel="noopener">The Globe and Mail</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>AI agent</dt><dd>Reminder: a software system that can take actions on a user&#39;s behalf, such as booking a flight or paying a bill, rather than just answering questions.</dd></div><div><dt>Guardrails</dt><dd>Reminder: safety rules and technical limits built into an AI system to stop it from taking harmful or unintended actions, similar to barriers on a motorway keeping cars on the road.</dd></div><div><dt>API (application programming interface)</dt><dd>A set of rules that lets one piece of software talk to another, like a waiter taking your order to the kitchen. Banks use APIs to control exactly what outside apps, including AI agents, are allowed to do with a customer&#39;s account.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>This story shows banks grappling with how much autonomy to give AI agents, a question that&#39;s creating demand for risk, compliance and security roles focused on AI governance. In an interview for a fintech or bank role, you could discuss how guardrails and API controls are used to balance automation with safety.</p></div>
+  </article>
+  
+  <article id="story-4">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>Meta&#39;s near-$100bn stock sale signals a new way Big Tech funds AI</h3>
+    <p class="standfirst">The social media giant&#39;s huge share sale marks a shift in how tech companies are paying for the AI infrastructure boom.</p>
+    <div class="body"><p>Meta has reportedly carried out a stock sale worth close to $100 billion, a move being described as a turning point in how large technology companies finance their AI ambitions. Rather than relying solely on existing cash or debt, Meta appears to be raising fresh capital by issuing new shares, a method that dilutes existing shareholders but avoids taking on additional debt.</p><p>This comes as AI-related capital expenditure across the industry continues to climb, with companies pouring tens of billions of dollars into data centres and chips. Raising money through share sales, sometimes called an at-the-market offering when shares are sold gradually into the market rather than all at once, gives companies flexibility to fund large projects without the fixed repayment obligations that come with loans.</p><p>The scale of the raise highlights just how expensive the AI buildout has become, even for a company as profitable as Meta. Investors will be watching closely to see whether other major tech firms follow suit, turning to equity markets rather than debt to cover the enormous capex bills associated with AI.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMi1wFBVV95cUxNN3hiMUxqR2tHRWdQY2xwX05JVVU4My1BWnpLdzJadkZ4bWJYT0N4T015RTdjcEQySF8xR2lBWElsM1JadEU2V2pVSkRHYXhORUhEZkdjSk5HQVBCOC02S0gxODNwLTZTa0lrTXg4VXBCQWJzV3FfSThBZnRnemZ6c0I2YkRHZVVmenNDY3hrcW0wbVE1UzBCRm5fcHcwRUZHQnlOXy1xVkFNTVVJemlqa1JleHl6Y0ZqUUc0VlBldUdaZFFoaHVIRnhycjJwd0E0N19sUWJPQQ?oc=5" target="_blank" rel="noopener">Yahoo Finance</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>At-the-market offering</dt><dd>Reminder: a way for a company to sell new shares gradually over time directly into the stock market, rather than in one large batch, often to raise cash with less disruption to the share price.</dd></div><div><dt>Capital expenditure (capex)</dt><dd>Reminder: spending on long-term assets like data centres and equipment, as distinct from everyday operating costs.</dd></div><div><dt>Share class</dt><dd>Reminder: different categories of stock in the same company that can carry different voting rights or privileges, relevant when a company issues new shares and investors want to know what rights those shares carry.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Knowing the difference between funding growth through debt versus equity is core knowledge for finance, investment banking and corporate strategy roles. This story pairs well with today&#39;s capex story, showing two different ways Big Tech is paying for the same AI spending boom.</p></div>
+  </article>
+  
+  <article id="story-5">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>World Bank&#39;s Banga says capital is &#39;not really an issue&#39; despite AI-driven borrowing costs</h3>
+    <p class="standfirst">The World Bank president says money is available for AI infrastructure even as demand pushes up the cost of borrowing.</p>
+    <div class="body"><p>World Bank president Ajay Banga reportedly said that the availability of capital is &#39;not really an issue&#39; for financing AI infrastructure, even though surging demand for funding is pushing up borrowing costs. Borrowing costs are essentially the interest rate a company or country must pay to raise debt, and they tend to rise when many borrowers are competing for the same pool of lenders&#39; money.</p><p>Banga&#39;s comments come as AI companies and data centre developers increasingly turn to debt financing, borrowing money that must be repaid with interest, to fund massive capital expenditure on chips and facilities. With so much global demand for AI-related funding, lenders can charge higher rates, reflecting both the scale of the sums involved and the credit risk, the chance that a borrower might fail to repay.</p><p>The remarks suggest that while money itself remains available globally, the price of accessing it is climbing as the AI buildout accelerates, a dynamic that could squeeze smaller or less creditworthy borrowers out of the market even as larger, well-capitalised firms continue to raise huge sums.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMid0FVX3lxTFBweFg0SG4wQksybTBjYjZhQmZ4RXdCeFJRa3ZmM09NMlhWVUcxYUd3aEYyUmd4VjQ1ZHdxbUkyLXRhZEwtY1FlYmlYc3NMMm9MZTVKU0JjcUdlaGFIMEZXLURjeVdSWkk0Wml6LW15a2pnOVhEeVlj0gF8QVVfeXFMUFdtX1Q4dmJGaFBlV2pQRmpCOWg4R3plVGZrV2g4YmVZaUZqZXpsYWZuV3pZWnJOOVY2dkxOdEJFSFVPWFpPMGE2RWZCS0lwWjJWeTRVblo1X2RaNUs5cGxwazgwRWQ1WE5OalI4MmJKQmlTWGhlNXk3cUF6cw?oc=5" target="_blank" rel="noopener">CNBC</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Debt financing</dt><dd>Reminder: raising money by borrowing, which must be repaid with interest, as opposed to selling shares in the company.</dd></div><div><dt>Credit risk</dt><dd>Reminder: the risk that a borrower won&#39;t repay a loan, which lenders price into the interest rate they charge. A riskier borrower typically pays a higher rate.</dd></div><div><dt>Borrowing costs</dt><dd>The interest rate a company or government must pay to borrow money. If demand for loans rises faster than the supply of lenders, borrowing costs tend to increase, making debt financing more expensive.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Rising borrowing costs tied to AI demand affect everything from corporate finance decisions to government budgets, making this relevant for roles in credit analysis, lending and economic policy. It also links directly to today&#39;s stories on Meta&#39;s stock sale and Big Tech&#39;s capex, showing the broader financing pressures the AI boom is creating.</p></div>
+  </article>
+  
+</section>
+
+<section id="startups" class="startups">
+  <div class="sec-head">
+    <span class="mono">Section 3</span>
+    <h2>Startups &amp; funding</h2>
+    <p>Who raised, how much, and what investors are betting on.</p>
+  </div>
+  
+  <article id="story-6">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>Guidewire buys AI underwriting startup Hyperexponential for up to $2.1bn</h3>
+    <p class="standfirst">The insurance software firm&#39;s acquisition brings AI agents into the process of pricing and underwriting insurance policies.</p>
+    <div class="body"><p>Insurance technology company Guidewire announced on Tuesday that it will acquire Hyperexponential, a UK-based startup specialising in agentic underwriting, for $1.7 billion in cash upfront, with up to $400 million more available if certain revenue targets are met, taking the total potential value to around $2.1 billion. The deal is expected to close next year.</p><p>Hyperexponential builds software that uses AI agents, systems capable of taking actions rather than just answering questions, to work alongside human underwriters in analysing risk and pricing insurance policies. Founded in 2017 and backed by investors including Andreessen Horowitz and Battery Ventures, the company has raised close to $90 million to date and counts nearly 600 insurers across 40 countries as customers, making this exit a strong return for its backers.</p><p>The acquisition is part of a wider trend of vertical AI, AI tools built specifically for one industry rather than general-purpose use, gaining traction in insurance and other specialised sectors. By folding Hyperexponential&#39;s technology into its platform, Guidewire aims to offer insurers AI-assisted pricing and underwriting at scale, reflecting growing appetite among established software firms to acquire specialist AI startups rather than build similar capabilities from scratch.</p></div>
+    
+    <p class="src">Sources: <a href="https://techcrunch.com/2026/10/27/guidewire-buys-hyperexponential-for-1-7b-in-cash/" target="_blank" rel="noopener">TechCrunch</a> · <a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxPRC1nZzFQeHJlOVdVcl9rNzkzY3VZY2U5TVg5Z292Z09BaWdsNG9KZ25KaU9DZ25aMFBUcTdWdkM2Z3lBUEdNTHE1MTNpUHlFUmJMdjJ4Z2VncEp2NmdGS1BtNXVkbVp6QmhZQVB1NFJvYzhfSlh4TlRMRV9YUFZBSjlMVWlmSkJKUnBFNkw5OVk3aXc0aU1YSHhsUQ?oc=5" target="_blank" rel="noopener">Startup Fortune</a> · <a href="https://news.google.com/rss/articles/CBMirgFBVV95cUxQZnRkRzFpYXIxa0YwWDNGcHplWUZwNWJhWjM3djhDbDZwZFhvY0ZtcTJQeC1KNkcwZEFRa1B3Z3FNZXVjN2YwOGVNMFY1dEZBd3dHMGRSR3NKa3lIZVJwME1FUFY4c3BHV1pCbW1hX1NhZHRtemdKLTZ4dzFuVEJFN3hNWFhJdll3TF9SbXJqUTdWcVFkdTVLN2ZFbmotQzRLbGdVbW05VHVad2NpUGc?oc=5" target="_blank" rel="noopener">OpenTools</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Acquisition</dt><dd>Reminder: when one company buys another, often to gain its technology, customers or talent rather than building something similar from scratch.</dd></div><div><dt>Agentic AI</dt><dd>Reminder: AI systems designed to take multi-step actions toward a goal, such as analysing data and recommending a price, rather than just generating text responses.</dd></div><div><dt>Vertical AI</dt><dd>Reminder: AI software built for a specific industry, like insurance or law, rather than general-purpose tools. Hyperexponential&#39;s underwriting-specific AI is an example, in contrast to a general chatbot.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>This deal shows how specialist AI startups in traditional industries like insurance can command high valuations, a useful example for anyone considering careers in insurtech or vertical AI. If you&#39;re interviewing for a fintech or insurtech role, being able to explain why incumbents acquire rather than build vertical AI tools demonstrates commercial awareness.</p></div>
+  </article>
+  
+  <article id="story-7">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>Robotics startup Physical Intelligence in talks to double valuation to $20bn</h3>
+    <p class="standfirst">The AI robotics company is reportedly seeking to raise $1 billion at twice its previous valuation.</p>
+    <div class="body"><p>Physical Intelligence, a startup building AI systems for robots, is reportedly in talks to raise around $1 billion in a new funding round that would value the company at roughly $20 billion, according to Bloomberg and other outlets. That would mark a doubling of its previous valuation, making this what&#39;s known as an up round, where a company raises money at a higher valuation than its last fundraising.</p><p>Details on the round&#39;s structure, investors or timing remain limited, with reporting so far based on a small number of sources. The scale of the figures involved, a potential $1 billion raise and a $20 billion valuation, reflects the intense investor interest in AI-powered robotics, an area seen as a major frontier beyond chatbots and software.</p><p>If completed, the round would rank among the larger mega-rounds in the AI sector this year, underscoring how much capital investors are willing to commit to companies working at the intersection of AI and physical machines, even at an early stage of commercial deployment.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMihAFBVV95cUxQcy1tb3RIc1dRb3E2Z3ZHV2R2ZzRpRGNBR0ljY0hCRk01cnFpMERTcFhGRDZOWkhwTzNoRjdidDJVWW1EOU9Ra2RBQUZDWkpXakJpZVEzR25Bamh1M0stRGxnTjhqbG9VQkNHaWlOQWdtM05IejY1RjRjb1pPbXdfWTNFSUQ?oc=5" target="_blank" rel="noopener">Quartz</a> · <a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxPa19nLWZEQnBmcmhCbnB6ZGdwSmJiU0VkZXQ5Z2J5ZkpCalRYOUVubGF1WGRfdy1rc1pSNWl2UHl4UzZ4Qnk3YVVfME1FcUp3VDdkZEVmemZTUDBMR0xOTzZkSGlGRGZMV0dGNHBpLWdUSEY2NkhOUEQ4T1l0Z3ZQRFl5VVk4N044RjVLcThOUVl3cWRDMkxHR2xFeTVGU1pi?oc=5" target="_blank" rel="noopener">Startup Fortune</a> · <a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxNWVY1T05oc256endQM0c4ZUVhSFNoWEZ5dTMyRWh0Mm1xeWpNZVNNR1VCWC1mTklOeXRmY09VU2pIZXlTQVlQNG5mVVhEazlIT1dub0tvVlZOeGZ1U1hKb1NQVlBhcHpYYnRuZHdmMDlUX2J2dERFU2V3OVNtQWNha2t5OGF2Tkl5dzZOYmFyQlhKOE9oa3ByVUJKQVlldFhINGc?oc=5" target="_blank" rel="noopener">Yahoo Finance</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Up round</dt><dd>Reminder: a funding round in which a startup raises money at a higher valuation than its previous round, signalling investor confidence in its growth.</dd></div><div><dt>Mega-round</dt><dd>Reminder: an unusually large funding round, often $100 million or more, reflecting strong investor demand for a particular company or sector.</dd></div><div><dt>Pre-money valuation</dt><dd>Reminder: a company&#39;s estimated worth before new investment money is added. If a company is valued at $19bn pre-money and raises $1bn, its post-money valuation becomes $20bn.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Large valuations in AI robotics point to where venture capital is betting on the next wave of automation, relevant for anyone considering careers in robotics, hardware or AI investment. It&#39;s also a good interview talking point for showing awareness of how AI investment is spreading beyond software into physical robots.</p></div>
+  </article>
+  
+</section>
+
+
+
+<div class="panel" id="code">
+  <span class="mono">Code corner</span>
+  <h2>Calculating investor returns from an acquisition</h2>
+  <p class="src">Based on: <a href="#story-6">Guidewire buys AI underwriting startup Hyperexponential for up to $2.1bn</a></p>
+  <p style="margin:0">Guidewire&#39;s purchase of Hyperexponential shows how a big acquisition translates into a return multiple for early investors. Let&#39;s calculate that in Python.</p>
+  <pre><code>investment = 90_000_000
+base_deal = 1_700_000_000
+earnout = 400_000_000
+total_deal = base_deal + earnout
+
+print(f&#34;Total raised by investors: ${investment:,}&#34;)
+print(f&#34;Base deal value: ${base_deal:,}&#34;)
+print(f&#34;Total deal with earnout: ${total_deal:,}&#34;)
+
+scenarios = {
+    &#34;Base deal only&#34;: base_deal,
+    &#34;Full earnout achieved&#34;: total_deal,
+}
+
+for name, value in scenarios.items():
+    multiple = value / investment
+    print(f&#34;{name}: {multiple:.1f}x return&#34;)</code></pre>
+  <span class="mono">Line by line</span>
+  <ol class="walk"><li>Lines 1-4 define the key numbers from the story as variables: how much Hyperexponential raised from investors, the guaranteed base deal, the extra earnout payment, and their total.</li><li>Using underscores in numbers like 90_000_000 is just a readability trick in Python; it doesn&#39;t change the value, it just makes large numbers easier to read.</li><li>The f-string print statements use f&#34;...{value:,}&#34; to format numbers with comma separators, so 1700000000 displays as 1,700,000,000.</li><li>The scenarios dictionary stores two possible outcomes by name, letting us loop through them with a for loop and calculate each one&#39;s return multiple by dividing the deal value by the original investment.</li><li>The result shows investors could see anywhere from about 19x to 23x their money back, depending on whether the earnout targets are hit.</li></ol>
+  <div class="tryit"><p><b>Try it:</b> Add a third scenario called &#39;Minimum guaranteed&#39; using only $1.7 billion, then modify the code to also print the profit in dollars (total value minus investment) for each scenario.</p></div>
+</div>
+
+<div class="panel" id="quiz">
+  <span class="mono">Quiz · apply today's concepts</span>
+  <h2>What would you do?</h2>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 1</span>
+    <p class="scenario">You&#39;re in a team meeting where a colleague suggests using Google&#39;s Genie 4 to prototype a training simulation for warehouse robots before testing them physically.</p>
+    <p class="ask">Which concept best explains why this approach could save the company money and risk?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>It reduces the model&#39;s context window so the robot learns faster</span></button></li><li><button type="button" data-i="1"><b>B</b><span>It lets the team test scenarios in a simulated world model before risking real equipment</span></button></li><li><button type="button" data-i="2"><b>C</b><span>It automatically fine-tunes the robot&#39;s firmware</span></button></li><li><button type="button" data-i="3"><b>D</b><span>It eliminates the need for any guardrails in the physical robots</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> World models like Genie 4 let teams simulate scenarios safely before real-world deployment, reducing the cost and risk of physical testing. Context window relates to how much information a model can process, not to testing speed, and fine-tuning firmware is unrelated to this story.</p>
+        <div class="chips"><span>World model</span><span>Context window</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="2">
+    <span class="mono" style="color:var(--muted)">Scenario 2</span>
+    <p class="scenario">You&#39;re a junior analyst at a bank and your manager asks why RBC decided to block personal AI agents from logging into customer accounts.</p>
+    <p class="ask">What is the most accurate way to summarise RBC&#39;s reasoning?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>AI agents consume too much of the bank&#39;s compute budget</span></button></li><li><button type="button" data-i="1"><b>B</b><span>The bank&#39;s API doesn&#39;t support audio generation</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Allowing AI agents direct account access creates security and control risks the bank considers unacceptable</span></button></li><li><button type="button" data-i="3"><b>D</b><span>AI agents are illegal under current banking regulations</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: C.</b> RBC&#39;s stated reasoning is about client risk and control over sensitive systems, which is a guardrails issue, not about compute costs, audio features, or a blanket ban in law. The API point is a distractor based on real terminology but misapplied here.</p>
+        <div class="chips"><span>AI agent</span><span>Guardrails</span><span>API (application programming interface)</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 3</span>
+    <p class="scenario">In a pitch meeting, a founder claims their vertical AI insurance startup is worth $2 billion, pointing to Guidewire&#39;s acquisition of Hyperexponential as a comparable deal.</p>
+    <p class="ask">What should you check before accepting this comparison at face value?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>Whether the founder&#39;s startup also uses Python exclusively</span></button></li><li><button type="button" data-i="1"><b>B</b><span>Whether the $2 billion figure includes a contingent earnout tied to future performance, like Hyperexponential&#39;s deal did</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Whether the startup has a frontier AI model</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Whether the founder previously worked at Google DeepMind</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> Hyperexponential&#39;s headline figure includes a $400 million earnout contingent on hitting revenue targets, so comparing a guaranteed $1.7bn deal to a startup&#39;s claimed $2bn valuation without checking for similar contingencies could overstate the comparison. The other options are irrelevant to valuing the deal.</p>
+        <div class="chips"><span>Acquisition</span><span>Vertical AI</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="0">
+    <span class="mono" style="color:var(--muted)">Scenario 4</span>
+    <p class="scenario">During earnings season, your investment team debates whether Microsoft and Alphabet&#39;s huge AI spending is sustainable.</p>
+    <p class="ask">Which pair of concepts is most directly relevant to assessing this sustainability?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>Capital expenditure (capex) and free cash flow</span></button></li><li><button type="button" data-i="1"><b>B</b><span>Context window and tokens</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Guardrails and misalignment</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Open-weight model and fine-tuning</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: A.</b> Capex measures how much is being spent on AI infrastructure, while free cash flow shows how much money is left over after that spending, together indicating whether the spending is sustainable. The other pairs relate to AI model design and safety, not financial sustainability.</p>
+        <div class="chips"><span>Capital expenditure (capex)</span><span>Free cash flow</span></div>
+      </div>
+    </details>
+  </div>
+  
+</div>
+
+<div class="panel" id="glossary">
+  <span class="mono">Glossary</span>
+  <h2>Every concept from today</h2>
+  <dl class="gloss"><div><dt>Acquisition<a href="#story-6">see story</a></dt><dd>Reminder: when one company buys another, often to gain its technology, customers or talent rather than building something similar from scratch.</dd></div><div><dt>Agentic AI<a href="#story-6">see story</a></dt><dd>Reminder: AI systems designed to take multi-step actions toward a goal, such as analysing data and recommending a price, rather than just generating text responses.</dd></div><div><dt>AI agent<a href="#story-3">see story</a></dt><dd>Reminder: a software system that can take actions on a user&#39;s behalf, such as booking a flight or paying a bill, rather than just answering questions.</dd></div><div><dt>API (application programming interface)<a href="#story-3">see story</a></dt><dd>A set of rules that lets one piece of software talk to another, like a waiter taking your order to the kitchen. Banks use APIs to control exactly what outside apps, including AI agents, are allowed to do with a customer&#39;s account.</dd></div><div><dt>At-the-market offering<a href="#story-4">see story</a></dt><dd>Reminder: a way for a company to sell new shares gradually over time directly into the stock market, rather than in one large batch, often to raise cash with less disruption to the share price.</dd></div><div><dt>Borrowing costs<a href="#story-5">see story</a></dt><dd>The interest rate a company or government must pay to borrow money. If demand for loans rises faster than the supply of lenders, borrowing costs tend to increase, making debt financing more expensive.</dd></div><div><dt>Capital expenditure (capex)<a href="#story-4">see story</a></dt><dd>Reminder: spending on long-term assets like data centres and equipment, as distinct from everyday operating costs.</dd></div><div><dt>Compute deal<a href="#story-2">see story</a></dt><dd>Reminder: an agreement giving a company access to the computing power, chips and data centres needed to train or run AI models, often worth billions of dollars.</dd></div><div><dt>Context window<a href="#story-0">see story</a></dt><dd>The amount of information an AI model can &#39;keep in mind&#39; at once before it starts forgetting earlier details. Genie 4&#39;s two-minute scene limit is effectively its context window for maintaining a consistent simulated world.</dd></div><div><dt>Credit risk<a href="#story-5">see story</a></dt><dd>Reminder: the risk that a borrower won&#39;t repay a loan, which lenders price into the interest rate they charge. A riskier borrower typically pays a higher rate.</dd></div><div><dt>Debt financing<a href="#story-5">see story</a></dt><dd>Reminder: raising money by borrowing, which must be repaid with interest, as opposed to selling shares in the company.</dd></div><div><dt>Free cash flow<a href="#story-1">see story</a></dt><dd>The cash a company has left after covering both its operating costs and its capital expenditure. If a firm earns $50bn but spends $45bn on capex and operations, its free cash flow is $5bn, which it can use to pay down debt, buy back shares, or invest further.</dd></div><div><dt>Guardrails<a href="#story-3">see story</a></dt><dd>Reminder: safety rules and technical limits built into an AI system to stop it from taking harmful or unintended actions, similar to barriers on a motorway keeping cars on the road.</dd></div><div><dt>Inference<a href="#story-2">see story</a></dt><dd>Reminder: the process of running a trained AI model to generate outputs, like answering a question, as opposed to training the model in the first place. Buying more chips helps companies handle growing inference demand from millions of users.</dd></div><div><dt>Market correction<a href="#story-1">see story</a></dt><dd>Reminder: a drop of roughly 10% or more in stock prices from a recent peak, usually triggered by changed expectations about future earnings or interest rates.</dd></div><div><dt>Mega-round<a href="#story-7">see story</a></dt><dd>Reminder: an unusually large funding round, often $100 million or more, reflecting strong investor demand for a particular company or sector.</dd></div><div><dt>Multimodal AI<a href="#story-0">see story</a></dt><dd>AI that can work with more than one type of data at once, such as text, images, audio and video together. Genie 4 is multimodal because it generates matching visuals and sound from a single prompt.</dd></div><div><dt>Pre-money valuation<a href="#story-7">see story</a></dt><dd>Reminder: a company&#39;s estimated worth before new investment money is added. If a company is valued at $19bn pre-money and raises $1bn, its post-money valuation becomes $20bn.</dd></div><div><dt>Share class<a href="#story-4">see story</a></dt><dd>Reminder: different categories of stock in the same company that can carry different voting rights or privileges, relevant when a company issues new shares and investors want to know what rights those shares carry.</dd></div><div><dt>Up round<a href="#story-7">see story</a></dt><dd>Reminder: a funding round in which a startup raises money at a higher valuation than its previous round, signalling investor confidence in its growth.</dd></div><div><dt>Vendor lock-in<a href="#story-2">see story</a></dt><dd>Reminder: when switching away from a supplier becomes expensive or difficult because a company&#39;s systems are built to work specifically with that supplier&#39;s technology.</dd></div><div><dt>Vertical AI<a href="#story-6">see story</a></dt><dd>Reminder: AI software built for a specific industry, like insurance or law, rather than general-purpose tools. Hyperexponential&#39;s underwriting-specific AI is an example, in contrast to a general chatbot.</dd></div><div><dt>World model<a href="#story-0">see story</a></dt><dd>An AI system trained to generate and update an interactive virtual environment in response to prompts, rather than producing a single fixed image or video. Think of it as a video game level created on the fly by AI instead of by human designers.</dd></div></dl>
+</div>
+
+<div class="panel">
+  <span class="mono">Past digests</span>
+  <ul class="archive"><li><a href="../archive/2026-10-28.html" aria-current="page">2026-10-28</a></li><li><a href="../archive/2026-10-27.html">2026-10-27</a></li><li><a href="../archive/2026-10-26.html">2026-10-26</a></li><li><a href="../archive/2026-10-25.html">2026-10-25</a></li><li><a href="../archive/2026-10-24.html">2026-10-24</a></li><li><a href="../archive/2026-10-23.html">2026-10-23</a></li><li><a href="../archive/2026-10-22.html">2026-10-22</a></li><li><a href="../archive/2026-10-21.html">2026-10-21</a></li><li><a href="../archive/2026-10-20.html">2026-10-20</a></li><li><a href="../archive/2026-10-19.html">2026-10-19</a></li><li><a href="../archive/2026-10-18.html">2026-10-18</a></li><li><a href="../archive/2026-10-17.html">2026-10-17</a></li><li><a href="../archive/2026-10-16.html">2026-10-16</a></li><li><a href="../archive/2026-10-15.html">2026-10-15</a></li><li><a href="../archive/2026-10-14.html">2026-10-14</a></li><li><a href="../archive/2026-10-13.html">2026-10-13</a></li><li><a href="../archive/2026-10-12.html">2026-10-12</a></li><li><a href="../archive/2026-10-11.html">2026-10-11</a></li><li><a href="../archive/2026-10-10.html">2026-10-10</a></li><li><a href="../archive/2026-10-09.html">2026-10-09</a></li><li><a href="../archive/2026-10-05.html">2026-10-05</a></li><li><a href="../archive/2026-10-04.html">2026-10-04</a></li><li><a href="../archive/2026-10-03.html">2026-10-03</a></li><li><a href="../archive/2026-09-23.html">2026-09-23</a></li><li><a href="../archive/2026-09-22.html">2026-09-22</a></li><li><a href="../archive/2026-09-20.html">2026-09-20</a></li><li><a href="../archive/2026-09-19.html">2026-09-19</a></li><li><a href="../archive/2026-09-18.html">2026-09-18</a></li><li><a href="../archive/2026-09-17.html">2026-09-17</a></li></ul>
+</div>
+
+<footer>Written by Claude from the linked sources. Check the original article before quoting figures in an interview.</footer>
+</div>
+<script>
+document.querySelectorAll(".q").forEach(function (q) {
+  var correct = Number(q.dataset.correct);
+  var buttons = q.querySelectorAll(".opts button");
+  buttons.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var picked = Number(b.dataset.i);
+      buttons.forEach(function (x) {
+        var i = Number(x.dataset.i);
+        if (i === correct) x.classList.add("right");
+        else if (i === picked) x.classList.add("wrong");
+        x.disabled = true;
+      });
+      q.querySelector("details").open = true;
+    });
+  });
+});
+</script>
+</body>
+</html>
