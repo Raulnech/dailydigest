@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI Morning Brief · Thursday 29 October 2026</title>
+<meta name="theme-color" content="#3A55C8">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  color-scheme:light dark;
+  --ground:#F3F4F7; --paper:#FFFFFF; --ink:#141827; --muted:#5B6275; --line:#DDE0E8;
+  --industry:#3A55C8; --industry-soft:#E6EAFA;
+  --finance:#1C7453; --finance-soft:#E1F1EA;
+  --startups:#A8561A; --startups-soft:#F7EADF;
+  --code-bg:#161A26; --code-ink:#E4E7F0;
+  --right:#1C7453; --right-soft:#E1F1EA; --wrong:#B3261E; --wrong-soft:#FBE7E5;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --ground:#0F121B; --paper:#171B27; --ink:#E8EAF1; --muted:#9AA1B4; --line:#2A3042;
+    --industry:#8FA3F5; --industry-soft:#20284A;
+    --finance:#6CCBA3; --finance-soft:#15332A;
+    --startups:#E8A06A; --startups-soft:#3A2618;
+    --code-bg:#0B0D14; --code-ink:#E4E7F0;
+    --right:#6CCBA3; --right-soft:#15332A; --wrong:#F2A29B; --wrong-soft:#3A1B19;
+  }
+}
+*{box-sizing:border-box}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.6 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;padding-inline:16px;padding-block:28px 64px}
+.wrap{max-width:700px;margin:0 auto;display:grid;gap:36px}
+a{color:inherit}
+a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var(--industry);outline-offset:3px;border-radius:4px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400}
+header{display:grid;gap:10px}
+header .date{color:var(--muted)}
+h1{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(44px,11vw,64px);line-height:1;margin:0;letter-spacing:-.01em}
+h1 em{color:var(--industry)}
+.lede{color:var(--muted);margin:0;max-width:60ch}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ground);padding-block:10px;display:flex;gap:8px;overflow-x:auto;border-bottom:1px solid var(--line)}
+nav a{flex:none;text-decoration:none;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--paper);font-size:14px}
+nav a.industry{color:var(--industry)} nav a.finance{color:var(--finance)} nav a.startups{color:var(--startups)}
+
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:14px;scroll-margin-top:64px}
+.panel h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:30px;margin:0;line-height:1.15}
+.panel > .mono{color:var(--muted)}
+.talk ol{margin:0;padding-left:20px;display:grid;gap:8px}
+.toc{display:grid;gap:14px}
+.toc h3{margin:0 0 4px}
+.toc ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.toc li a{text-decoration:none}
+.toc li a:hover{text-decoration:underline}
+
+section{display:grid;gap:22px;scroll-margin-top:64px}
+.sec-head{display:grid;gap:2px;border-top:3px solid var(--c);padding-top:12px}
+.sec-head h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:36px;margin:0;line-height:1.1;text-wrap:balance}
+.sec-head p{margin:0;color:var(--muted)}
+.sec-head .mono{color:var(--c)}
+.industry{--c:var(--industry);--cs:var(--industry-soft)}
+.finance{--c:var(--finance);--cs:var(--finance-soft)}
+.startups{--c:var(--startups);--cs:var(--startups-soft)}
+
+article{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px 20px;display:grid;gap:16px;scroll-margin-top:64px}
+article .kicker{color:var(--c)}
+article h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(26px,6vw,32px);line-height:1.15;margin:0;text-wrap:balance}
+.standfirst{margin:0;font-size:18px;line-height:1.5;color:var(--muted)}
+.body{display:grid;gap:14px;font-family:"Source Serif 4",Georgia,serif;font-size:18px;line-height:1.65;max-width:65ch}
+.body p{margin:0}
+.src{margin:0;font-size:13px;color:var(--muted)}
+.concepts{background:var(--cs);border-radius:12px;padding:16px 18px;display:grid;gap:12px}
+.concepts .mono{color:var(--c)}
+.concepts dl{margin:0;display:grid;gap:10px}
+.concepts dt{font-weight:600}
+.concepts dd{margin:2px 0 0}
+.why{display:grid;gap:4px;border-left:2px solid var(--c);padding-left:14px}
+.why .mono{color:var(--c)}
+.why p{margin:0}
+
+pre{margin:0;background:var(--code-bg);color:var(--code-ink);border-radius:10px;padding:16px;overflow-x:auto;font:14px/1.55 "IBM Plex Mono",ui-monospace,Consolas,monospace}
+.walk{margin:0;padding-left:20px;display:grid;gap:6px}
+code{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:.9em}
+.tryit{background:var(--industry-soft);border-radius:10px;padding:12px 16px}
+.tryit p{margin:0}
+
+.q{display:grid;gap:12px;border-top:1px solid var(--line);padding-top:18px}
+.q:first-of-type{border-top:0;padding-top:0}
+.scenario{margin:0;font-family:"Source Serif 4",Georgia,serif;font-style:italic;font-size:17px}
+.q .ask{margin:0;font-weight:600}
+.opts{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.opts button{width:100%;text-align:left;font:inherit;color:var(--ink);background:var(--ground);border:1px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer;display:flex;gap:10px}
+.opts button:hover{border-color:var(--industry)}
+.opts button b{font-family:"IBM Plex Mono",ui-monospace,monospace;font-weight:500}
+.opts button.right{background:var(--right-soft);border-color:var(--right)}
+.opts button.wrong{background:var(--wrong-soft);border-color:var(--wrong)}
+.opts button:disabled{cursor:default}
+details{border-radius:10px}
+summary{cursor:pointer;font-weight:500;color:var(--industry)}
+.answer{display:grid;gap:8px;margin-top:10px}
+.answer p{margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:13px;padding:2px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+
+.gloss{margin:0;display:grid;gap:12px}
+.gloss dt{font-weight:600}
+.gloss dt a{font-weight:400;font-size:13px;color:var(--muted);margin-left:6px}
+.gloss dd{margin:2px 0 0;color:var(--muted)}
+.archive{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.archive a{display:inline-block;padding:4px 10px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-variant-numeric:tabular-nums;font-size:14px}
+.archive a[aria-current]{border-color:var(--industry);color:var(--industry)}
+footer{color:var(--muted);font-size:13px}
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="mono date">Thursday 29 October 2026 · 16 min read</span>
+  <h1>AI Morning <em>Brief</em></h1>
+  <p class="lede">Today's AI and fintech news as short articles, with every key concept explained, a bit of Python, and a scenario quiz to check it stuck.</p>
+</header>
+
+<nav aria-label="Sections">
+  <a href="#industry" class="industry">The AI industry</a>
+  <a href="#finance" class="finance">AI &amp; finance</a>
+  <a href="#startups" class="startups">Startups &amp; funding</a>
+  <a href="#code">Code corner</a>
+  <a href="#quiz">Quiz</a>
+  <a href="#glossary">Glossary</a>
+</nav>
+
+<div class="panel talk">
+  <span class="mono">If you only read one thing</span>
+  <h2>Three things to be able to say today</h2>
+  <ol><li>Microsoft finally revealed Azure pulled in $33.2bn last quarter, nudging ahead of Google Cloud in the race to rent out AI computing power.</li><li>Alphabet&#39;s shares fell 10% after free cash flow turned sharply negative, a warning sign that the AI spending boom is starting to squeeze even the biggest tech balance sheets.</li><li>Big Canadian banks are locking third-party AI agents out of online banking over fraud fears, just as Anthropic faces questions from a senator and a famous short-seller ahead of its IPO.</li></ol>
+</div>
+
+<div class="panel">
+  <span class="mono">In today's brief</span>
+  <div class="toc">
+  
+    <div class="industry"><h3 class="mono" style="color:var(--c)">The AI industry</h3>
+      <ul><li><a href="#story-0">Microsoft&#39;s Azure hits $33.2bn in a quarter, overtaking Google Cloud</a></li><li><a href="#story-1">Alphabet shares plunge 10% as AI spending squeezes cash flow</a></li><li><a href="#story-2">US antitrust regulators scrutinise Nvidia&#39;s purchase of Hugging Face</a></li></ul>
+    </div>
+  
+    <div class="finance"><h3 class="mono" style="color:var(--c)">AI &amp; finance</h3>
+      <ul><li><a href="#story-3">Warren presses Anthropic chief on AI risks ahead of planned IPO</a></li><li><a href="#story-4">Michael Burry says Anthropic&#39;s IPO filing exposes a &#39;catastrophically vulnerable&#39; AI industry</a></li><li><a href="#story-5">RBC and BMO bar outside AI agents from online banking over fraud fears</a></li><li><a href="#story-6">Fraud-fighting AI startup Casap raises $56m Series B</a></li><li><a href="#story-7">Anthropic buys one-person biotech Mithril to launch drug discovery programmes</a></li></ul>
+    </div>
+  
+  </div>
+</div>
+
+
+<section id="industry" class="industry">
+  <div class="sec-head">
+    <span class="mono">Section 1</span>
+    <h2>The AI industry</h2>
+    <p>Big labs, big tech and the direction of travel.</p>
+  </div>
+  
+  <article id="story-0">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Microsoft&#39;s Azure hits $33.2bn in a quarter, overtaking Google Cloud</h3>
+    <p class="standfirst">Microsoft broke with years of secrecy to reveal Azure&#39;s actual dollar revenue, letting investors compare it directly against Amazon and Google for the first time.</p>
+    <div class="body"><p>Microsoft has always been coy about exactly how much money its cloud computing arm, Azure, makes, usually only giving a growth percentage. That changed this week when the company revealed Azure brought in $33.2 billion in revenue for the July-to-September quarter, up 48% on the same period last year.</p><p>The disclosure matters because it lets analysts line Azure up against its two biggest rivals. Google&#39;s parent company Alphabet reported $30.7 billion from Google Cloud for the same quarter, putting Microsoft slightly ahead in dollar terms, even though Google&#39;s cloud business grew faster, roughly doubling year on year. Amazon Web Services, the long-standing market leader, reports its own figures on Thursday.</p><p>Azure now sits inside a newly created segment called Agents and Infra, which groups the cloud business with Microsoft 365&#39;s cloud products and brought in $76.8 billion overall. Azure&#39;s growth also beat the 44-45% forecast Microsoft&#39;s own finance chief had given analysts in July, a sign that demand for renting computing power to build and run AI models keeps outstripping expectations.</p><p>With all three hyperscalers now reporting clearer figures, investors have a sharper view of who is actually winning the infrastructure race underpinning the AI boom - though Amazon&#39;s results on Thursday will show whether its long-held lead is shrinking.</p></div>
+    
+    <p class="src">Sources: <a href="https://techcrunch.com/2026/10/28/microsoft-just-shared-azures-actual-revenue-in-dollars-33-2-billion/" target="_blank" rel="noopener">TechCrunch</a> · <a href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxQN2VFNFpET3I0VThqOHJwd3hwTmw5dy11VDBOWnU3bE4ydjhDYWVLVFV4cHJaSlNleVVTbTZsMHlralJIenBueHRkbmd3aGNKcE1KR09zMC0xblREbE9MMU9xR1pYalFqNnBodGo5b3Qwa3hEWlFkREk1SkNPVVg0djljeWt1Z2RPTDNadFI5QTNIQmh2ZFVQdHExazRSV0huZFlXUlZkZjJ2cmdTaGk3UzZjOVN4QWRISW5Cc1ZiNzE?oc=5" target="_blank" rel="noopener">GeekWire</a> · <a href="https://news.google.com/rss/articles/CBMilgFBVV95cUxPUGUwWWQ1Z09pcS1ZdlVoZndfUXZkS0lzbjUteTcyNWlJR0JCdTlFU1ZNeDlqX19maVZicloxMUFEZmxPajd2UkhmSnE5MWZYUjZJY29kX1ZHOEFHY1VMN1dLaHk3TlFFaEVDMXo3dy04UUxtMTFicDFJbTU4bG5vc3BBSy1HSWJET2xiekwzaXQ0ZnJ6bnc?oc=5" target="_blank" rel="noopener">https://tech-insider.org/</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Hyperscaler</dt><dd>A hyperscaler is a company that runs enormous networks of data centres to rent out computing power at massive scale - think Microsoft, Amazon and Google, whose cloud divisions power most of the world&#39;s websites and AI models.</dd></div><div><dt>Cloud computing</dt><dd>Instead of buying and running your own servers, cloud computing lets a business rent computing power, storage and software over the internet, paying only for what it uses, much like renting a flat instead of buying a house.</dd></div><div><dt>Revenue growth rate</dt><dd>This is how much a company&#39;s income from sales increased compared with a previous period, usually shown as a percentage - Azure&#39;s 48% growth means its revenue nearly grew by half again in a year.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Cloud engineers, AI infrastructure analysts and sales roles at Azure, AWS and Google Cloud are all benefiting from this spending surge, so understanding how to read hyperscaler earnings is a useful interview skill. It also sets up today&#39;s Alphabet story, where the same AI spending boom is starting to worry investors rather than excite them.</p></div>
+  </article>
+  
+  <article id="story-1">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Alphabet shares plunge 10% as AI spending squeezes cash flow</h3>
+    <p class="standfirst">Google&#39;s parent company missed profit and revenue forecasts for the first time in nearly four years after a surprise drop in cash generation rattled investors.</p>
+    <div class="body"><p>Alphabet shares fell more than 10% after the company reported a steep and unexpected drop in free cash flow, the money left over after a business pays its everyday bills and its investments. The company posted negative free cash flow of $9.07 billion for the third quarter, far worse than the $2.70 billion shortfall analysts had expected, even though revenue still grew 25% year on year to $127.58 billion.</p><p>The miss comes as Alphabet keeps pouring money into AI infrastructure. Its capital expenditure, the money spent on physical assets like data centres and chips, came in at $51.36 billion for the quarter, and the company says annual capex will top $200 billion this year before climbing past $300 billion in 2027. Long-term debt more than quintupled over the past year to $125.1 billion as Alphabet borrows to fund the build-out.</p><p>Not everything disappointed. Google Cloud revenue more than doubled to $30.7 billion, beating forecasts, and chief executive Sundar Pichai said the Gemini app has reached 1 billion users, its fastest-growing product ever. But core search revenue grew only 12%, missing estimates, feeding worries that AI chatbots are starting to eat into Google&#39;s traditional search business.</p><p>Investors are now watching closely for proof that all this spending eventually pays off. With capex set to keep rising sharply into 2027, Alphabet&#39;s next few earnings calls will be a key test of whether the AI bet is translating into profit, or just burning cash.</p></div>
+    
+    <p class="src">Sources: <a href="https://www.cnbc.com/2026/10/28/alphabet-googl-earnings-q3-2026.html" target="_blank" rel="noopener">Tech</a> · <a href="https://www.cnbc.com/2026/10/29/alphabet-google-search-ai-earnings.html" target="_blank" rel="noopener">Tech</a> · <a href="https://www.cnbc.com/2026/10/29/alphabet-google-microsoft-msft-shares-today-earnings.html" target="_blank" rel="noopener">Tech</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Free cash flow (reminder)</dt><dd>Free cash flow is the cash a company has left after paying its operating costs and investments; Alphabet&#39;s dropped into negative territory, meaning it spent more cash than it brought in during the quarter.</dd></div><div><dt>Capital expenditure (capex) (reminder)</dt><dd>Capex is money spent on long-term physical assets like buildings, servers and chips, as opposed to day-to-day running costs - Alphabet&#39;s capex is mostly going on AI data centres.</dd></div><div><dt>Operating income</dt><dd>Operating income is the profit a company makes from its core business before interest, taxes and one-off items are taken into account - Alphabet&#39;s came in below forecasts this quarter.</dd></div><div><dt>Equity stake valuation gain/loss</dt><dd>When a company owns shares in other firms, like Alphabet&#39;s stakes in SpaceX and Anthropic, changes in those firms&#39; value show up on its books as gains or losses, even though no cash actually changes hands.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>This is a classic test of whether AI capital expenditure is sustainable, a theme that recurs across today&#39;s stories about Nvidia, Anthropic and bank AI policies; being able to explain the difference between revenue growth, profit and cash flow is a core skill for any finance or analyst interview.</p></div>
+  </article>
+  
+  <article id="story-2">
+    <span class="mono kicker">The AI industry</span>
+    <h3>US antitrust regulators scrutinise Nvidia&#39;s purchase of Hugging Face</h3>
+    <p class="standfirst">The Department of Justice is reportedly examining whether Nvidia&#39;s acquisition of the open-source AI platform could harm competition.</p>
+    <div class="body"><p>The US Department of Justice is reportedly asking questions about Nvidia&#39;s acquisition of Hugging Face, a popular platform where developers share and download open-source AI models, according to Reuters and other outlets. The inquiry focuses on whether the deal could hand Nvidia too much control over a key piece of AI infrastructure.</p><p>Hugging Face has become one of the most widely used hubs for sharing open-weight models, the freely downloadable AI models that researchers and smaller companies rely on as an alternative to paying for access to closed models from labs like OpenAI or Anthropic. Nvidia already dominates the market for the specialised chips used to train and run these models, so regulators are reportedly concerned the combination could squeeze out rivals.</p><p>No formal action has been announced, and the reports describe an early-stage inquiry rather than a lawsuit. Still, the scrutiny reflects growing regulatory nervousness about a handful of companies controlling both the hardware and the software layers of the AI stack.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMirgFBVV95cUxNQi1pQlpXMFg0djlmZFhkcGFlc3hJWmxKNXIzeFlTOWRxSXd5YWtCX1FRdUdlWWM1NEZxQVpOWktKbVkyWWR1aFRhbFd3SnRRcW5SZTJ0YXRvQTZ6MjlmVmFMVThhSldFTUpseWRtblVrel8tM0VISmVOVmdVend5UTFOTHhKazBXalpIOHVUdkVmcm5YdTI4UWk3MUJObk9GMzRYOEpkeEFXVnhwZXc?oc=5" target="_blank" rel="noopener">Reuters</a> · <a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxPVWtEYVhvUjdTempueng5Szd0dEEwZWhPS3Z6TXczZElwcTJBbkFYQVhLTjlKY3Z3cUUtOHFMM3BuQjBnak9UanFidk1wSHpHZHp6TGtTU3d1aEdNcWJIZ24xdFZCclJIRHhPNnNMNjNvOXQzaHFiR241NDM4V2x6d0hMYWo2bTVvTGJmRjV3dE5PM1hsczFFUnRzMUZKZVFI0gGmAUFVX3lxTE5WSzl6MTN6WHFnRE5sUVdkYjJmREJPQ3dmSFZmaG9FM3ozX1RkTWFnVVBweVI3bnZSclI5d3RCOXJDZ0h5c2JPMHhVM3N2TkNKV1VmVk1UYXpCSFNvRklEaUtWeHpvcmN6WGg5djNFblI1NEJWTTBFWlR1UU1aY08wYlNXWWIwZmNVVjFiU0Y0cUxUbHVfeFNNdlZib09hVGZYYTFPWWc?oc=5" target="_blank" rel="noopener">Firstpost</a> · <a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxNenVaY3RjSm9EYnZYY1lqZG85LXNuaFgta0xaV2Zsb0EtUnUzSnRlR09uNkxVMTk1Y3ZPOXdCc083dUtqU1Z0dXJGRTRrbi1Xc0VoaUFiUmtpdVhCYXZ5UV9Vd1ZoU1gwZXRUcUVhVE0xVFJLOUhNUW5RcXZFOUxFZ1lWUVNaaEha0gGcAUFVX3lxTE1kNzE1SXl4MXUySGRsUGhMbjNRN2NnNlA3bDJPZGlpRW9mUFlnajVkcFBnZUpjOWNWemVpM1JVVVBpTnF3SUlXZHVXYmVmNDlQR19FU2s4bUFSNE42WGdlSk5wcndGOGhIcXNqQU5QajVDeVJhR2JtX0Q4LWx0QWdhZThleTRMSTVlYUV3NVBMU0lnUHdGQ3NVaXpLLQ?oc=5" target="_blank" rel="noopener">Chosunbiz</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Antitrust review</dt><dd>Antitrust laws exist to stop companies becoming so dominant that they harm competition; a review is when regulators investigate whether a merger or acquisition might create that kind of unfair advantage.</dd></div><div><dt>Open source (reminder)</dt><dd>Open-source software, including many AI models, has its underlying code or weights made freely available for anyone to use, study or modify, rather than being locked behind a paywall.</dd></div><div><dt>Vertical integration</dt><dd>Vertical integration happens when a company buys up different stages of a supply chain, like Nvidia owning both the chips that run AI models and a platform that distributes them, which can strengthen its market position.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Antitrust cases around AI infrastructure are becoming a hot topic for policy and legal careers in tech, and it is worth being able to explain why owning both chips and model distribution raises competition concerns in an interview.</p></div>
+  </article>
+  
+</section>
+
+<section id="finance" class="finance">
+  <div class="sec-head">
+    <span class="mono">Section 2</span>
+    <h2>AI &amp; finance</h2>
+    <p>Where Wall Street and the City meet AI, as users and as funders.</p>
+  </div>
+  
+  <article id="story-3">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>Warren presses Anthropic chief on AI risks ahead of planned IPO</h3>
+    <p class="standfirst">Senator Elizabeth Warren has reportedly asked Anthropic&#39;s chief executive to address the existential risks of advanced AI before the company goes public.</p>
+    <div class="body"><p>Senator Elizabeth Warren has reportedly written to Anthropic&#39;s chief executive urging the company to directly address concerns about the existential risks posed by advanced AI systems before pursuing an initial public offering, the process by which a private company sells shares to the public for the first time.</p><p>Anthropic, the maker of the Claude chatbot, has built its public image partly around AI safety, a stance that makes the letter notable: the company that most loudly warns about AI dangers is now being asked to prove it takes those warnings seriously as it prepares to raise money from public investors.</p><p>Details of Anthropic&#39;s response, if any, were not available at the time of reporting.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMipwFBVV95cUxOeXJlV3llNV9GUkdLWGc1Sm9nc3V4N05naTlaNGNHVkpBZW5wcDk4dUlxNEdlVEZaTXdxTGFpVkZlUGVaeWpRcnRXcGZMWHNUeGtsUHNVV09VZFM5cTJEck9nU3J5NWp0ejJYWU9vVlFtc0Y3N2luaDkxaTRnYm52a2FJVjhiQi15by03cGFicW9iaTNfUmNiN2M3TTV4RGxYSTVMVk9EQQ?oc=5" target="_blank" rel="noopener">Spectrum News</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>IPO (reminder)</dt><dd>An IPO, or initial public offering, is when a private company first sells shares to public investors on a stock exchange, which brings in extra regulatory scrutiny and public accountability.</dd></div><div><dt>Existential risk</dt><dd>In AI discussions, existential risk refers to the idea that sufficiently advanced AI systems could cause catastrophic, irreversible harm to humanity, a concern some AI companies themselves have raised.</dd></div><div><dt>AI alignment (reminder)</dt><dd>AI alignment is the effort to make sure an AI system&#39;s goals and behaviour actually match what humans intend, rather than pursuing its training objective in unintended or harmful ways.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Anyone heading into AI policy, compliance or investor relations roles should expect questions like Warren&#39;s to become standard as AI companies approach public markets, so it is worth understanding how safety commitments and IPO readiness interact.</p></div>
+  </article>
+  
+  <article id="story-4">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>Michael Burry says Anthropic&#39;s IPO filing exposes a &#39;catastrophically vulnerable&#39; AI industry</h3>
+    <p class="standfirst">The investor who predicted the 2008 financial crisis has reportedly argued that Anthropic&#39;s IPO paperwork reveals deep fragility across the AI sector.</p>
+    <div class="body"><p>Michael Burry, the investor made famous by correctly betting against the US housing market before the 2008 financial crisis, has reportedly said that Anthropic&#39;s IPO filing shows the wider AI industry is &#39;catastrophically vulnerable&#39;. His comments add a prominent sceptical voice to growing debate over whether current AI valuations are justified.</p><p>Burry has previously questioned whether heavy AI spending by big tech companies is being matched by real returns, a concern echoed in Alphabet&#39;s cash flow drop reported today. An IPO filing, known as an S-1, requires a company to disclose detailed financials, which can expose weaknesses that were previously hidden while the company stayed private.</p><p>It is not yet clear which specific figures in Anthropic&#39;s filing prompted Burry&#39;s remarks, and Anthropic has not publicly responded.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxPeFZIUmhLTm9LNzJ0X3Yya0RwS1gzTGx0WEdLUmduOHFiVUF2U2pQYWh1d25TLUVabnJGLTRZMEtta042NW51R1lxYnNZOE1SdENjUHVVa3VtdVcwODVhZ3kxMG9XdGFia21JRHlVdnRwTVU0Z3pGakxrRkxjTU5CQ3lMcU9VSjl1XzBHUDJKal9KaWlURmpaTXNETkVOS3ItQ0pR?oc=5" target="_blank" rel="noopener">Business Insider</a> · <a href="https://news.google.com/rss/articles/CBMiqwJBVV95cUxNRFNxQXo3bzRuVERjaWJpSy1JX3NQWEVhS2ZYVExMdE5WRDZreXRhTUJhQWhhQ1hGTV9JM19aRjVaVHozWlVMSGJBT0FuSVRBcFl2STlMZEtOX1VyOW12ejRLOUEwY3dHbEhyVDdlZEVSUUtLQjV6VTRCaUpTbEpGZGZBMjV6NVc5cEZiRnc2NVlkMjRoRDNiUWRQSGZIVDRwbW9EQ3VaZV9fM3F2bTRYSVJPNVE1X1ZPdXBjLXdrR3U2N2lkT3lSdUpKS29EMW5DWkEtTVNaTEx4bGJ2Q2xxZG5fZlFObnBuaWJHb0dmWTItM2FJVms0TUZZYURBUjFYeTZCMm9vUzZOZU9OQ3dSdWs5OG5FOFJLUFJLRHdRRm14WHdESXQ5cWRWa9IBpAJBVV95cUxQdVJVcXd4MGFPMEFGcmJjX250TmM5aU9fcWN2OUJ0WTlxQmw0MVU4c1NFSVloWlhfSTdLcTY3Tjk5Nm1HVklIaklTa2NEdXBVcWdPN1gyZ0RuWFpzdExXNW1LLTl5eWgyNENmR0xzMkplblRGN24xMHNPVFhXYnJ5aEhSYkVpcEdsT0VLVXdMQk1YaXFJSEkxaUFwcGlMU2w4eXRRUWgzRVpTY3JMQ3ktVHB2dzdNNVhGc016UHVqanhJczZsNXJYak9namF1TlVkczFfYXRaRlNBOVpVY0ZGc2t5UnYxSHBOcDFKREhTX2h3cmx1c3VqblYzeXd3NzNwZnVHbjdfZVZDS3FsRkZKVkRnbkFQT3VMd2cwLU5zVDBwQ3Bt?oc=5" target="_blank" rel="noopener">The Economic Times</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>AI bubble (reminder)</dt><dd>An AI bubble is the fear that AI company valuations have risen far beyond what their actual profits or revenue justify, similar to the dot-com bubble of the late 1990s.</dd></div><div><dt>S-1 filing</dt><dd>An S-1 is the detailed financial and business disclosure document a company must file with US regulators before its IPO, giving outsiders their first close look at its real finances.</dd></div><div><dt>Short selling</dt><dd>Short selling is a way of betting that an asset&#39;s price will fall, by borrowing and selling it now with a plan to buy it back cheaper later - it&#39;s how Burry profited from the 2008 crash.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Skeptical voices like Burry&#39;s are a reminder that understanding a company&#39;s actual financials, not just its hype, is essential for anyone working in equity research, venture capital or fintech risk analysis.</p></div>
+  </article>
+  
+  <article id="story-5">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>RBC and BMO bar outside AI agents from online banking over fraud fears</h3>
+    <p class="standfirst">Major Canadian banks are reportedly blocking third-party AI assistants from accessing customer accounts, citing the risk of fraud.</p>
+    <div class="body"><p>Royal Bank of Canada and Bank of Montreal are reportedly refusing to let third-party AI agents, software tools that can act on a user&#39;s behalf, log into or interact with customers&#39; online banking accounts. The banks say letting outside AI tools handle logins and transactions creates new openings for fraud.</p><p>The move comes as more consumers experiment with giving AI assistants access to financial accounts to automate tasks like bill payments or budgeting. Banks worry that if an AI agent&#39;s credentials or permissions are compromised, fraudsters could exploit the connection to drain accounts, especially since many of these agents rely on the same login details a human would use rather than secure, limited-access connections.</p><p>The decision highlights a broader tension in finance: banks want to offer the convenience of AI automation while protecting systems that were not designed with autonomous software users in mind. Expect more banks to set clear rules on what AI agents can and cannot touch.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxNa1JPWXVmMmt1bHN6MFZUaURDUGJlTUx3Y1FKckJQb0t3eUxmSG5uTlg4NGZwZmlsQlY2aHlPX2d4SFoxSlRHZ3NOSFVnNnhkLTdFbm5NMnFaQ2hSeHJXOV9kX0h0ZVZYbHRDd3ZGLW53MHpnZm01WnU4VXNDWi1lcUpYeWVzaFJtYXkyalBIVlRCT3BsVjgxNzc5U2tpQUU?oc=5" target="_blank" rel="noopener">CBS News</a> · <a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxNUlIzMTNkUzAwZXo1blc1R29WZlJvSW9tUGt3QUtVbnB3YjNZODk0dzd2VGdtaHAzazY3dE44djk4ZGNrNHF6MzFZMzVVWU4xY1p2bklpd3BmRlpaUHNZM0xUa3Jvcmxnc0ZQY2gxcFNYZEt3c0pyM1VXWWd2bG1VblEzeHNOYTc2QzZwcHFaZ0I5ZVpNMGRKNkY0RHdSUmtIYlE?oc=5" target="_blank" rel="noopener">PYMNTS.com</a> · <a href="https://news.google.com/rss/articles/CBMiugFBVV95cUxNSTE4ME5iLVJFWUhvVE8zbDFTcUZfdC1aYzRyeTdjWkdXME5EUmV2bTJpR0xpOERiNTVXRUhqR0EyQ0IxZUVPd21fcUJqZm9faE53dm43ajVpNUhWdzhFNXVuVzlzdHJhV1VWeERFVzlGNVJrdFgzV0I5ZmJOdUdDSG9rc0VFWHBNM0dxUzNRWUM5Y2FtWlRqVG82SGZPa2R0bWdZUmdHcEVncDdFQXg0RVptWXJaUXFIbFE?oc=5" target="_blank" rel="noopener">Global News</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>AI agent (reminder)</dt><dd>An AI agent is software that can take actions on a user&#39;s behalf, such as logging into accounts or making payments, rather than just answering questions.</dd></div><div><dt>API (reminder)</dt><dd>An API, or application programming interface, is a controlled way for software to talk to other software; banks prefer AI tools to use secure APIs with limited permissions rather than logging in like a human with full account access.</dd></div><div><dt>Fraud risk</dt><dd>Fraud risk is the chance that someone will exploit a system to steal money or data; giving AI agents broad account access increases this risk if those agents&#39; credentials are stolen or misused.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Banks are actively hiring for roles in AI risk, fraud prevention and secure API design, so being able to explain why banks limit AI agent access is a strong talking point in fintech interviews, and links directly to today&#39;s Casap funding story.</p></div>
+  </article>
+  
+  <article id="story-6">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>Fraud-fighting AI startup Casap raises $56m Series B</h3>
+    <p class="standfirst">Casap has reportedly raised $56 million to help banks use AI to catch a growing wave of customer fraud.</p>
+    <div class="body"><p>Casap, a startup building AI tools to help banks detect and stop fraud, has reportedly raised $56 million in a Series B funding round, a later-stage investment typically used to scale a proven product rather than test an idea.</p><p>The raise comes as banks grapple with rising fraud linked to digital banking and, increasingly, AI itself - a concern underlined by today&#39;s news that RBC and BMO are blocking third-party AI agents from online banking over fraud worries. Casap&#39;s pitch is that AI can also be turned the other way, helping banks spot suspicious activity faster than human analysts alone.</p><p>Details on Casap&#39;s investors and valuation were not disclosed in the available reporting.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMiSkFVX3lxTE8zVW5LU0VuODhsUllnUkN4V2pBQmN4bGhXVVBLLWJpQjJJMDNyRHJzYXFrSHhncHFQdHBuTTd0cVVfdFVvaWJPelVB?oc=5" target="_blank" rel="noopener">Fortune</a> · <a href="https://news.google.com/rss/articles/CBMikgFBVV95cUxQZzhYRUNEeTBJZWRyZVFtYXZjWnZQYmNjQVA2MVVIUGtWMV9aNUtwY1A5RHNHTFZWWHVfX0s2VFVuSEZ4SmppX0JPeU1NekI4Szd2RU1KejgwS1pjX1E2ZFNaMi1oTFVJVTVLNWZPRUNCcVQyT1FzbGIzaVdzV2Nnellvamt6U280bUppazNjS2FmZw?oc=5" target="_blank" rel="noopener">KuCoin</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Series B</dt><dd>A Series B is typically the second major round of venture funding a startup raises, used to grow a business that has already shown its product works, as opposed to an earlier seed round used to get started.</dd></div><div><dt>Vertical AI (reminder)</dt><dd>Vertical AI refers to AI products built for one specific industry, like fraud detection in banking, rather than general-purpose tools used across many sectors.</dd></div><div><dt>Fraud detection AI</dt><dd>Fraud detection AI analyses patterns in transactions or account activity to flag behaviour that looks suspicious, much like a smoke alarm trained to notice warning signs before a fire spreads.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Fraud detection is one of the clearest, most fundable use cases for AI in finance, so it is a good example to cite when discussing where AI creates real revenue rather than just hype, directly tying into today&#39;s bank and Alphabet stories.</p></div>
+  </article>
+  
+  <article id="story-7">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>Anthropic buys one-person biotech Mithril to launch drug discovery programmes</h3>
+    <p class="standfirst">Anthropic has reportedly acquired a solo-founder biotech startup called Mithril and begun new drug development programmes.</p>
+    <div class="body"><p>Anthropic, the AI company behind the Claude chatbot, has reportedly acquired Mithril, a biotech startup run by a single person, and used the deal to kick off its own drug discovery programmes. The move signals Anthropic&#39;s ambition to push beyond chatbots and enterprise software into applying AI directly to scientific research.</p><p>Details of the acquisition price and Mithril&#39;s prior work were not disclosed in available reporting, but the deal fits a wider pattern of AI labs moving into drug discovery, where AI models can help predict how molecules behave far faster than traditional lab experiments.</p><p>It remains to be seen how quickly Anthropic&#39;s new drug programmes could produce results, since turning an early AI-driven discovery into an approved medicine typically takes years of further testing and regulatory approval.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE1XY3FHSmo5aHdLVjQ1dTVYdUx5Vm5BYmJJX3JjVnNuZDgwRHN1T28zUTlqQ2w0VHJMU3pDblIzV2QzVmh1NnJrWjc5di1QVnhQaXFaNzMySDAzXzF6MWZleGtSU1drVUwtM2hiZmRmdTk3SG5Ea3F1UlBXOFJNWlU?oc=5" target="_blank" rel="noopener">Quartz</a> · <a href="https://news.google.com/rss/articles/CBMie0FVX3lxTE9zM28xM1lhal8zSTh1NE0zZ0NfcmlkaWJON0dnU0FBRXNVc3BVNDI0cnQzdERxZDN2cUJYRnczRDFycklERk5yOFFzYkNxdXBHaVNWaThWXzJyQ2tUeUplckVZUEEwZTlvT3dtSDcybmtYcFU1cDlBeEZUYw?oc=5" target="_blank" rel="noopener">Trak.in</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Acquisition (reminder)</dt><dd>An acquisition is when one company buys another, in this case Anthropic absorbing a tiny one-person startup to gain its technology or expertise rather than hiring a large team.</dd></div><div><dt>Drug pipeline (reminder)</dt><dd>A drug pipeline is the set of potential new medicines a company has in development, at various stages from early research through to clinical trials and approval.</dd></div><div><dt>AI for drug discovery</dt><dd>AI for drug discovery uses machine learning models to predict which chemical compounds might work as medicines, potentially cutting years off the traditional trial-and-error process of finding new drugs.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>This shows frontier AI labs increasingly see commercial opportunity well beyond chatbots, including in life sciences, which is worth mentioning if you are asked in an interview where AI value might come from beyond consumer products.</p></div>
+  </article>
+  
+</section>
+
+<section id="startups" class="startups">
+  <div class="sec-head">
+    <span class="mono">Section 3</span>
+    <h2>Startups &amp; funding</h2>
+    <p>Who raised, how much, and what investors are betting on.</p>
+  </div>
+  
+  <p class="standfirst">Nothing significant in this area today.</p>
+  
+</section>
+
+
+
+<div class="panel" id="code">
+  <span class="mono">Code corner</span>
+  <h2>Simulating a Bank&#39;s AI Agent Guardrail</h2>
+  <p class="src">Based on: <a href="#story-5">RBC and BMO bar outside AI agents from online banking over fraud fears</a></p>
+  <p style="margin:0">Inspired by RBC and BMO blocking outside AI agents from online banking, here&#39;s a tiny simulation of how a bank&#39;s system might decide whether to let an AI agent&#39;s request through, without making any real network calls.</p>
+  <pre><code>def check_agent_request(request):
+    allowed_sources = {&#34;bank_internal_assistant&#34;}
+    if request[&#34;source&#34;] not in allowed_sources:
+        return {&#34;status&#34;: &#34;blocked&#34;, &#34;reason&#34;: &#34;third-party AI agent not authorised&#34;}
+    if request[&#34;action&#34;] == &#34;transfer_funds&#34; and request[&#34;amount&#34;] &gt; 1000:
+        return {&#34;status&#34;: &#34;blocked&#34;, &#34;reason&#34;: &#34;amount exceeds auto-approval limit&#34;}
+    return {&#34;status&#34;: &#34;approved&#34;, &#34;action&#34;: request[&#34;action&#34;]}
+
+requests = [
+    {&#34;source&#34;: &#34;third_party_ai_agent&#34;, &#34;action&#34;: &#34;check_balance&#34;, &#34;amount&#34;: 0},
+    {&#34;source&#34;: &#34;bank_internal_assistant&#34;, &#34;action&#34;: &#34;transfer_funds&#34;, &#34;amount&#34;: 500},
+    {&#34;source&#34;: &#34;bank_internal_assistant&#34;, &#34;action&#34;: &#34;transfer_funds&#34;, &#34;amount&#34;: 5000},
+]
+
+for req in requests:
+    result = check_agent_request(req)
+    print(req[&#34;source&#34;], &#34;-&gt;&#34;, result)</code></pre>
+  <span class="mono">Line by line</span>
+  <ol class="walk"><li>def check_agent_request(request): defines a function that takes one request, represented as a dictionary of details, and decides what to do with it.</li><li>allowed_sources is a set containing only the bank&#39;s own assistant, representing the policy of refusing outside AI agents, just like RBC and BMO reportedly did.</li><li>The first if statement blocks any request whose source isn&#39;t in allowed_sources, returning a dictionary explaining why it was blocked.</li><li>The second if statement adds a second guardrail: even an approved source can&#39;t move more than $1000 without extra checks.</li><li>The for loop runs three example requests through the function and prints the outcome for each, showing approved and blocked cases side by side.</li></ol>
+  <div class="tryit"><p><b>Try it:</b> Add a new rule that blocks any &#39;transfer_funds&#39; request made outside a list of allowed hours (say, only approve transfers between 9 and 17), and test it by adding a request with a &#39;hour&#39; key to the dictionary.</p></div>
+</div>
+
+<div class="panel" id="quiz">
+  <span class="mono">Quiz · apply today's concepts</span>
+  <h2>What would you do?</h2>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 1</span>
+    <p class="scenario">You&#39;re in a fintech analyst interview and the interviewer asks why it mattered that Microsoft disclosed Azure&#39;s dollar revenue this quarter.</p>
+    <p class="ask">What is the best explanation of why this disclosure was significant?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>It proved Azure is now unprofitable</span></button></li><li><button type="button" data-i="1"><b>B</b><span>It allowed investors to directly compare Azure&#39;s cloud revenue against Google Cloud and AWS for the first time</span></button></li><li><button type="button" data-i="2"><b>C</b><span>It meant Microsoft would stop investing in AI data centres</span></button></li><li><button type="button" data-i="3"><b>D</b><span>It showed Azure had overtaken AWS as the largest cloud provider</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> Microsoft had previously only given growth percentages, so revealing the dollar figure let analysts compare Azure directly with rivals who already disclose dollar revenue. It did not show Azure overtaking AWS, since Amazon&#39;s results weren&#39;t out yet, and nothing in the story suggests reduced investment or unprofitability.</p>
+        <div class="chips"><span>Hyperscaler</span><span>Cloud computing</span><span>Revenue growth rate</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 2</span>
+    <p class="scenario">In your first week as a junior analyst at an investment bank, your manager asks you to explain why Alphabet&#39;s shares fell 10% even though revenue grew 25% year on year.</p>
+    <p class="ask">Which factor best explains the market&#39;s negative reaction?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>Alphabet&#39;s search revenue fell to zero</span></button></li><li><button type="button" data-i="1"><b>B</b><span>Free cash flow turned sharply negative and missed expectations by a wide margin, raising concerns about the cost of the AI buildout</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Google Cloud revenue declined compared to the prior year</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Alphabet announced it was cancelling its Gemini AI model</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> The steep, unexpected drop in free cash flow, far worse than analysts&#39; forecasts, was the key trigger for investor concern, even though revenue and cloud growth were both up. Search revenue grew (just less than expected), Google Cloud revenue more than doubled, and there&#39;s no mention of Gemini being cancelled.</p>
+        <div class="chips"><span>Free cash flow (reminder)</span><span>Capital expenditure (capex) (reminder)</span><span>Operating income</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="2">
+    <span class="mono" style="color:var(--muted)">Scenario 3</span>
+    <p class="scenario">Your team at a bank is debating whether to let a third-party AI agent built by an outside startup log into customers&#39; online banking to automate bill payments.</p>
+    <p class="ask">Based on how RBC and BMO reportedly handled this issue, what is the most sound approach?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>Allow the agent full login access since convenience matters most to customers</span></button></li><li><button type="button" data-i="1"><b>B</b><span>Block the agent entirely and never revisit AI automation</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Restrict the agent to a secure API with limited permissions rather than giving it full login credentials</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Let the agent use the same password as the customer to simplify integration</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: C.</b> Banks&#39; concern was that AI agents logging in like a human with broad access creates fraud risk; a secure, permission-limited API connection reduces that risk while still allowing automation. Giving full access or shared passwords increases fraud risk, and permanently blocking all AI ignores the real demand for automation shown by Casap&#39;s funding round.</p>
+        <div class="chips"><span>AI agent (reminder)</span><span>API (reminder)</span><span>Fraud risk</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 4</span>
+    <p class="scenario">In a startup pitch meeting, a founder points to Anthropic&#39;s acquisition of the one-person biotech Mithril as proof that AI labs can easily expand into new industries.</p>
+    <p class="ask">What is the most accurate response to this claim?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>It proves AI can fully replace human drug researchers immediately</span></button></li><li><button type="button" data-i="1"><b>B</b><span>It shows AI labs see opportunity beyond chatbots, but turning early AI-driven discoveries into approved drugs still takes years of testing and regulatory approval</span></button></li><li><button type="button" data-i="2"><b>C</b><span>It means Anthropic will now focus entirely on biotech instead of AI models</span></button></li><li><button type="button" data-i="3"><b>D</b><span>It confirms that all one-person startups are easy acquisition targets for AI labs</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> The acquisition shows Anthropic diversifying into drug discovery, but the article notes that turning discoveries into actual medicines requires years of further testing, so the claim should be tempered rather than treated as an instant breakthrough. The other options overstate the story&#39;s implications, which only describe one acquisition, not a wholesale pivot or a general rule about startups.</p>
+        <div class="chips"><span>Acquisition (reminder)</span><span>Drug pipeline (reminder)</span><span>AI for drug discovery</span></div>
+      </div>
+    </details>
+  </div>
+  
+</div>
+
+<div class="panel" id="glossary">
+  <span class="mono">Glossary</span>
+  <h2>Every concept from today</h2>
+  <dl class="gloss"><div><dt>Acquisition (reminder)<a href="#story-7">see story</a></dt><dd>An acquisition is when one company buys another, in this case Anthropic absorbing a tiny one-person startup to gain its technology or expertise rather than hiring a large team.</dd></div><div><dt>AI agent (reminder)<a href="#story-5">see story</a></dt><dd>An AI agent is software that can take actions on a user&#39;s behalf, such as logging into accounts or making payments, rather than just answering questions.</dd></div><div><dt>AI alignment (reminder)<a href="#story-3">see story</a></dt><dd>AI alignment is the effort to make sure an AI system&#39;s goals and behaviour actually match what humans intend, rather than pursuing its training objective in unintended or harmful ways.</dd></div><div><dt>AI bubble (reminder)<a href="#story-4">see story</a></dt><dd>An AI bubble is the fear that AI company valuations have risen far beyond what their actual profits or revenue justify, similar to the dot-com bubble of the late 1990s.</dd></div><div><dt>AI for drug discovery<a href="#story-7">see story</a></dt><dd>AI for drug discovery uses machine learning models to predict which chemical compounds might work as medicines, potentially cutting years off the traditional trial-and-error process of finding new drugs.</dd></div><div><dt>Antitrust review<a href="#story-2">see story</a></dt><dd>Antitrust laws exist to stop companies becoming so dominant that they harm competition; a review is when regulators investigate whether a merger or acquisition might create that kind of unfair advantage.</dd></div><div><dt>API (reminder)<a href="#story-5">see story</a></dt><dd>An API, or application programming interface, is a controlled way for software to talk to other software; banks prefer AI tools to use secure APIs with limited permissions rather than logging in like a human with full account access.</dd></div><div><dt>Capital expenditure (capex) (reminder)<a href="#story-1">see story</a></dt><dd>Capex is money spent on long-term physical assets like buildings, servers and chips, as opposed to day-to-day running costs - Alphabet&#39;s capex is mostly going on AI data centres.</dd></div><div><dt>Cloud computing<a href="#story-0">see story</a></dt><dd>Instead of buying and running your own servers, cloud computing lets a business rent computing power, storage and software over the internet, paying only for what it uses, much like renting a flat instead of buying a house.</dd></div><div><dt>Drug pipeline (reminder)<a href="#story-7">see story</a></dt><dd>A drug pipeline is the set of potential new medicines a company has in development, at various stages from early research through to clinical trials and approval.</dd></div><div><dt>Equity stake valuation gain/loss<a href="#story-1">see story</a></dt><dd>When a company owns shares in other firms, like Alphabet&#39;s stakes in SpaceX and Anthropic, changes in those firms&#39; value show up on its books as gains or losses, even though no cash actually changes hands.</dd></div><div><dt>Existential risk<a href="#story-3">see story</a></dt><dd>In AI discussions, existential risk refers to the idea that sufficiently advanced AI systems could cause catastrophic, irreversible harm to humanity, a concern some AI companies themselves have raised.</dd></div><div><dt>Fraud detection AI<a href="#story-6">see story</a></dt><dd>Fraud detection AI analyses patterns in transactions or account activity to flag behaviour that looks suspicious, much like a smoke alarm trained to notice warning signs before a fire spreads.</dd></div><div><dt>Fraud risk<a href="#story-5">see story</a></dt><dd>Fraud risk is the chance that someone will exploit a system to steal money or data; giving AI agents broad account access increases this risk if those agents&#39; credentials are stolen or misused.</dd></div><div><dt>Free cash flow (reminder)<a href="#story-1">see story</a></dt><dd>Free cash flow is the cash a company has left after paying its operating costs and investments; Alphabet&#39;s dropped into negative territory, meaning it spent more cash than it brought in during the quarter.</dd></div><div><dt>Hyperscaler<a href="#story-0">see story</a></dt><dd>A hyperscaler is a company that runs enormous networks of data centres to rent out computing power at massive scale - think Microsoft, Amazon and Google, whose cloud divisions power most of the world&#39;s websites and AI models.</dd></div><div><dt>IPO (reminder)<a href="#story-3">see story</a></dt><dd>An IPO, or initial public offering, is when a private company first sells shares to public investors on a stock exchange, which brings in extra regulatory scrutiny and public accountability.</dd></div><div><dt>Open source (reminder)<a href="#story-2">see story</a></dt><dd>Open-source software, including many AI models, has its underlying code or weights made freely available for anyone to use, study or modify, rather than being locked behind a paywall.</dd></div><div><dt>Operating income<a href="#story-1">see story</a></dt><dd>Operating income is the profit a company makes from its core business before interest, taxes and one-off items are taken into account - Alphabet&#39;s came in below forecasts this quarter.</dd></div><div><dt>Revenue growth rate<a href="#story-0">see story</a></dt><dd>This is how much a company&#39;s income from sales increased compared with a previous period, usually shown as a percentage - Azure&#39;s 48% growth means its revenue nearly grew by half again in a year.</dd></div><div><dt>S-1 filing<a href="#story-4">see story</a></dt><dd>An S-1 is the detailed financial and business disclosure document a company must file with US regulators before its IPO, giving outsiders their first close look at its real finances.</dd></div><div><dt>Series B<a href="#story-6">see story</a></dt><dd>A Series B is typically the second major round of venture funding a startup raises, used to grow a business that has already shown its product works, as opposed to an earlier seed round used to get started.</dd></div><div><dt>Short selling<a href="#story-4">see story</a></dt><dd>Short selling is a way of betting that an asset&#39;s price will fall, by borrowing and selling it now with a plan to buy it back cheaper later - it&#39;s how Burry profited from the 2008 crash.</dd></div><div><dt>Vertical AI (reminder)<a href="#story-6">see story</a></dt><dd>Vertical AI refers to AI products built for one specific industry, like fraud detection in banking, rather than general-purpose tools used across many sectors.</dd></div><div><dt>Vertical integration<a href="#story-2">see story</a></dt><dd>Vertical integration happens when a company buys up different stages of a supply chain, like Nvidia owning both the chips that run AI models and a platform that distributes them, which can strengthen its market position.</dd></div></dl>
+</div>
+
+<div class="panel">
+  <span class="mono">Past digests</span>
+  <ul class="archive"><li><a href="../archive/2026-10-29.html" aria-current="page">2026-10-29</a></li><li><a href="../archive/2026-10-28.html">2026-10-28</a></li><li><a href="../archive/2026-10-27.html">2026-10-27</a></li><li><a href="../archive/2026-10-26.html">2026-10-26</a></li><li><a href="../archive/2026-10-25.html">2026-10-25</a></li><li><a href="../archive/2026-10-24.html">2026-10-24</a></li><li><a href="../archive/2026-10-23.html">2026-10-23</a></li><li><a href="../archive/2026-10-22.html">2026-10-22</a></li><li><a href="../archive/2026-10-21.html">2026-10-21</a></li><li><a href="../archive/2026-10-20.html">2026-10-20</a></li><li><a href="../archive/2026-10-19.html">2026-10-19</a></li><li><a href="../archive/2026-10-18.html">2026-10-18</a></li><li><a href="../archive/2026-10-17.html">2026-10-17</a></li><li><a href="../archive/2026-10-16.html">2026-10-16</a></li><li><a href="../archive/2026-10-15.html">2026-10-15</a></li><li><a href="../archive/2026-10-14.html">2026-10-14</a></li><li><a href="../archive/2026-10-13.html">2026-10-13</a></li><li><a href="../archive/2026-10-12.html">2026-10-12</a></li><li><a href="../archive/2026-10-11.html">2026-10-11</a></li><li><a href="../archive/2026-10-10.html">2026-10-10</a></li><li><a href="../archive/2026-10-09.html">2026-10-09</a></li><li><a href="../archive/2026-10-05.html">2026-10-05</a></li><li><a href="../archive/2026-10-04.html">2026-10-04</a></li><li><a href="../archive/2026-10-03.html">2026-10-03</a></li><li><a href="../archive/2026-09-23.html">2026-09-23</a></li><li><a href="../archive/2026-09-22.html">2026-09-22</a></li><li><a href="../archive/2026-09-20.html">2026-09-20</a></li><li><a href="../archive/2026-09-19.html">2026-09-19</a></li><li><a href="../archive/2026-09-18.html">2026-09-18</a></li><li><a href="../archive/2026-09-17.html">2026-09-17</a></li></ul>
+</div>
+
+<footer>Written by Claude from the linked sources. Check the original article before quoting figures in an interview.</footer>
+</div>
+<script>
+document.querySelectorAll(".q").forEach(function (q) {
+  var correct = Number(q.dataset.correct);
+  var buttons = q.querySelectorAll(".opts button");
+  buttons.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var picked = Number(b.dataset.i);
+      buttons.forEach(function (x) {
+        var i = Number(x.dataset.i);
+        if (i === correct) x.classList.add("right");
+        else if (i === picked) x.classList.add("wrong");
+        x.disabled = true;
+      });
+      q.querySelector("details").open = true;
+    });
+  });
+});
+</script>
+</body>
+</html>
