@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI Morning Brief · Friday 30 October 2026</title>
+<meta name="theme-color" content="#3A55C8">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  color-scheme:light dark;
+  --ground:#F3F4F7; --paper:#FFFFFF; --ink:#141827; --muted:#5B6275; --line:#DDE0E8;
+  --industry:#3A55C8; --industry-soft:#E6EAFA;
+  --finance:#1C7453; --finance-soft:#E1F1EA;
+  --startups:#A8561A; --startups-soft:#F7EADF;
+  --code-bg:#161A26; --code-ink:#E4E7F0;
+  --right:#1C7453; --right-soft:#E1F1EA; --wrong:#B3261E; --wrong-soft:#FBE7E5;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --ground:#0F121B; --paper:#171B27; --ink:#E8EAF1; --muted:#9AA1B4; --line:#2A3042;
+    --industry:#8FA3F5; --industry-soft:#20284A;
+    --finance:#6CCBA3; --finance-soft:#15332A;
+    --startups:#E8A06A; --startups-soft:#3A2618;
+    --code-bg:#0B0D14; --code-ink:#E4E7F0;
+    --right:#6CCBA3; --right-soft:#15332A; --wrong:#F2A29B; --wrong-soft:#3A1B19;
+  }
+}
+*{box-sizing:border-box}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.6 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;padding-inline:16px;padding-block:28px 64px}
+.wrap{max-width:700px;margin:0 auto;display:grid;gap:36px}
+a{color:inherit}
+a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var(--industry);outline-offset:3px;border-radius:4px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400}
+header{display:grid;gap:10px}
+header .date{color:var(--muted)}
+h1{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(44px,11vw,64px);line-height:1;margin:0;letter-spacing:-.01em}
+h1 em{color:var(--industry)}
+.lede{color:var(--muted);margin:0;max-width:60ch}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ground);padding-block:10px;display:flex;gap:8px;overflow-x:auto;border-bottom:1px solid var(--line)}
+nav a{flex:none;text-decoration:none;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--paper);font-size:14px}
+nav a.industry{color:var(--industry)} nav a.finance{color:var(--finance)} nav a.startups{color:var(--startups)}
+
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:14px;scroll-margin-top:64px}
+.panel h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:30px;margin:0;line-height:1.15}
+.panel > .mono{color:var(--muted)}
+.talk ol{margin:0;padding-left:20px;display:grid;gap:8px}
+.toc{display:grid;gap:14px}
+.toc h3{margin:0 0 4px}
+.toc ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.toc li a{text-decoration:none}
+.toc li a:hover{text-decoration:underline}
+
+section{display:grid;gap:22px;scroll-margin-top:64px}
+.sec-head{display:grid;gap:2px;border-top:3px solid var(--c);padding-top:12px}
+.sec-head h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:36px;margin:0;line-height:1.1;text-wrap:balance}
+.sec-head p{margin:0;color:var(--muted)}
+.sec-head .mono{color:var(--c)}
+.industry{--c:var(--industry);--cs:var(--industry-soft)}
+.finance{--c:var(--finance);--cs:var(--finance-soft)}
+.startups{--c:var(--startups);--cs:var(--startups-soft)}
+
+article{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px 20px;display:grid;gap:16px;scroll-margin-top:64px}
+article .kicker{color:var(--c)}
+article h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(26px,6vw,32px);line-height:1.15;margin:0;text-wrap:balance}
+.standfirst{margin:0;font-size:18px;line-height:1.5;color:var(--muted)}
+.body{display:grid;gap:14px;font-family:"Source Serif 4",Georgia,serif;font-size:18px;line-height:1.65;max-width:65ch}
+.body p{margin:0}
+.src{margin:0;font-size:13px;color:var(--muted)}
+.concepts{background:var(--cs);border-radius:12px;padding:16px 18px;display:grid;gap:12px}
+.concepts .mono{color:var(--c)}
+.concepts dl{margin:0;display:grid;gap:10px}
+.concepts dt{font-weight:600}
+.concepts dd{margin:2px 0 0}
+.why{display:grid;gap:4px;border-left:2px solid var(--c);padding-left:14px}
+.why .mono{color:var(--c)}
+.why p{margin:0}
+
+pre{margin:0;background:var(--code-bg);color:var(--code-ink);border-radius:10px;padding:16px;overflow-x:auto;font:14px/1.55 "IBM Plex Mono",ui-monospace,Consolas,monospace}
+.walk{margin:0;padding-left:20px;display:grid;gap:6px}
+code{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:.9em}
+.tryit{background:var(--industry-soft);border-radius:10px;padding:12px 16px}
+.tryit p{margin:0}
+
+.q{display:grid;gap:12px;border-top:1px solid var(--line);padding-top:18px}
+.q:first-of-type{border-top:0;padding-top:0}
+.scenario{margin:0;font-family:"Source Serif 4",Georgia,serif;font-style:italic;font-size:17px}
+.q .ask{margin:0;font-weight:600}
+.opts{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.opts button{width:100%;text-align:left;font:inherit;color:var(--ink);background:var(--ground);border:1px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer;display:flex;gap:10px}
+.opts button:hover{border-color:var(--industry)}
+.opts button b{font-family:"IBM Plex Mono",ui-monospace,monospace;font-weight:500}
+.opts button.right{background:var(--right-soft);border-color:var(--right)}
+.opts button.wrong{background:var(--wrong-soft);border-color:var(--wrong)}
+.opts button:disabled{cursor:default}
+details{border-radius:10px}
+summary{cursor:pointer;font-weight:500;color:var(--industry)}
+.answer{display:grid;gap:8px;margin-top:10px}
+.answer p{margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:13px;padding:2px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+
+.gloss{margin:0;display:grid;gap:12px}
+.gloss dt{font-weight:600}
+.gloss dt a{font-weight:400;font-size:13px;color:var(--muted);margin-left:6px}
+.gloss dd{margin:2px 0 0;color:var(--muted)}
+.archive{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.archive a{display:inline-block;padding:4px 10px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-variant-numeric:tabular-nums;font-size:14px}
+.archive a[aria-current]{border-color:var(--industry);color:var(--industry)}
+footer{color:var(--muted);font-size:13px}
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="mono date">Friday 30 October 2026 · 15 min read</span>
+  <h1>AI Morning <em>Brief</em></h1>
+  <p class="lede">Today's AI and fintech news as short articles, with every key concept explained, a bit of Python, and a scenario quiz to check it stuck.</p>
+</header>
+
+<nav aria-label="Sections">
+  <a href="#industry" class="industry">The AI industry</a>
+  <a href="#finance" class="finance">AI &amp; finance</a>
+  <a href="#startups" class="startups">Startups &amp; funding</a>
+  <a href="#code">Code corner</a>
+  <a href="#quiz">Quiz</a>
+  <a href="#glossary">Glossary</a>
+</nav>
+
+<div class="panel talk">
+  <span class="mono">If you only read one thing</span>
+  <h2>Three things to be able to say today</h2>
+  <ol><li>Microsoft is borrowing $25 billion to keep funding its AI data centre build-out, joining Amazon, Alphabet and Oracle in tapping bond markets.</li><li>Big Tech wiped out nearly $900 billion in value this week as investors grew nervous about AI capital spending paying off.</li><li>Canada and Nvidia have backed Cohere at a $35.7 billion valuation, while DoorDash is buying Instacart for $17 billion.</li></ol>
+</div>
+
+<div class="panel">
+  <span class="mono">In today's brief</span>
+  <div class="toc">
+  
+    <div class="industry"><h3 class="mono" style="color:var(--c)">The AI industry</h3>
+      <ul><li><a href="#story-0">Microsoft Raises $25 Billion in Bonds to Fund AI Spending Spree</a></li><li><a href="#story-1">Big Tech Sheds Nearly $900 Billion as AI Spending Fears Spook Markets</a></li><li><a href="#story-2">Nvidia Denies Report That CEO Jensen Huang Was Target of Chinese Spy Plot</a></li></ul>
+    </div>
+  
+    <div class="finance"><h3 class="mono" style="color:var(--c)">AI &amp; finance</h3>
+      <ul><li><a href="#story-3">SoftBank&#39;s AI Bet Tops $80 Billion Since 2024</a></li><li><a href="#story-4">UBS Staff Now Run 12,700 AI Agents Across the Bank</a></li><li><a href="#story-5">Aon CEO Warns Data Centre Clustering Could Choke Off AI Financing</a></li></ul>
+    </div>
+  
+    <div class="startups"><h3 class="mono" style="color:var(--c)">Startups &amp; funding</h3>
+      <ul><li><a href="#story-6">Cohere Valued at $35.7 Billion as Canada and Nvidia Back New Funding Round</a></li><li><a href="#story-7">DoorDash to Buy Instacart in $17 Billion Grocery Delivery Deal</a></li></ul>
+    </div>
+  
+  </div>
+</div>
+
+
+<section id="industry" class="industry">
+  <div class="sec-head">
+    <span class="mono">Section 1</span>
+    <h2>The AI industry</h2>
+    <p>Big labs, big tech and the direction of travel.</p>
+  </div>
+  
+  <article id="story-0">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Microsoft Raises $25 Billion in Bonds to Fund AI Spending Spree</h3>
+    <p class="standfirst">The software giant tapped debt markets for the first time in years as it races to build data centres for OpenAI and Anthropic.</p>
+    <div class="body"><p>Microsoft announced on Thursday it would raise $25 billion by selling bonds, debt instruments that investors buy in exchange for regular interest payments and repayment of the original sum later. The company said the money could go towards working capital, acquisitions, share buybacks and capital expenditure, the spending on physical assets like data centres and chips.</p><p>Microsoft can borrow cheaply because it holds a top AAA credit rating from S&amp;P, a grade reserved for companies seen as extremely unlikely to default. The firm is targeting around $170 billion in capital expenditure for 2026 as demand from AI labs explodes. Unlike rivals Meta, Alphabet and Amazon, which have all reported negative free cash flow recently, Microsoft still generates more cash than it spends, giving it more room to borrow rather than burn through its own reserves.</p><p>Microsoft&#39;s finance chief said the company would keep combining cash flow, leasing and debt to pay for its AI ambitions, noting it hadn&#39;t yet needed to tap bond markets as heavily as some peers. Oracle also announced a $10 billion debt raise the same day. The moves show how even the best-capitalised tech giants are leaning on borrowed money to keep pace with AI infrastructure demand, raising questions about how exposed the industry has become to rising borrowing costs.</p></div>
+    
+    <p class="src">Sources: <a href="https://www.cnbc.com/2026/10/29/microsoft-25-billion-debt-offering.html" target="_blank" rel="noopener">Tech</a> · <a href="https://news.google.com/rss/articles/CBMirAFBVV95cUxNYUc0X25ObjJzb0ZRbkM1RDlyUnFHbFpZM2pBMEVRbHNmaW5PbW1hR1B0cFhsMW9hc0RiUnpjSXFRWXJIdF9DcjdXRlFDM0kxeDBkaWRyd1BCbzlaOXM2NDgxX2JGRlpHS2FUeDRMSzBFN2VJcG1pX0RQbm91eW41czRTQkFQbFlsc1VxdC1lM2ZnWGx2TmVJeE5oWEV0NWtvUEJZSFJRcUZsQTlS?oc=5" target="_blank" rel="noopener">ITP.net</a> · <a href="https://news.google.com/rss/articles/CBMisAFBVV95cUxNVW1FNlVmV2VIM1BicUxLa0t2X2xDaDF5X0dScC0tVmlnX1Z3OGJYVWRVcGtJaGx4R3cwR3E3cFA0enExcXhNUE01bWdyYXl5Z1paeVYyV284SDFkVTFFeWdPYTVLODVMZ29UbzVkSzA0Vlhxc1JlNEhwMnVhMVMzQzU4cmVqdGJEY1I5X0tkaGdkZ1VTQm1JREFoYUV4Q183cFVKT1hQS3JhTkdYbHVwbw?oc=5" target="_blank" rel="noopener">Bloomberg.com</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Bond</dt><dd>A bond is essentially an IOU: investors lend a company money upfront, and the company promises to pay interest and return the original amount later. If Microsoft sells $25 billion in bonds at 5% interest, it owes $1.25 billion a year just in interest.</dd></div><div><dt>Credit rating</dt><dd>A credit rating is a grade given by agencies like S&amp;P showing how likely a borrower is to repay its debts. A AAA rating, the highest, means lenders see Microsoft as a very safe bet, so it can borrow at lower interest rates than riskier companies.</dd></div><div><dt>Free cash flow</dt><dd>Free cash flow is the money left over after a company pays for its operations and investments. Positive free cash flow means Microsoft is still generating more cash than it spends, even while funding huge AI projects.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>This matters if you&#39;re interested in credit analysis or corporate finance roles at banks, since understanding why AAA-rated firms are suddenly borrowing billions is a hot interview topic. It also links to Story 5 today, where insurers are growing wary of financing AI data centres built on debt.</p></div>
+  </article>
+  
+  <article id="story-1">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Big Tech Sheds Nearly $900 Billion as AI Spending Fears Spook Markets</h3>
+    <p class="standfirst">Disappointing earnings from Amazon, Intel and Alphabet triggered the Nasdaq&#39;s worst week in months, while a record crypto hack added to the unease.</p>
+    <div class="body"><p>Shares in some of the world&#39;s largest tech companies tumbled this week, wiping out close to $900 billion in combined value, according to the Financial Times. Amazon fell more than 7% in premarket trading after missing earnings per share (EPS) and revenue forecasts despite its fastest cloud growth in five years. Intel plunged 25% after warning of a weak fourth quarter, and Alphabet faced a record post-earnings loss.</p><p>The common thread was investor anxiety over soaring AI capital expenditure with uncertain near-term payoff. Analysts flagged Amazon&#39;s enormous spending commitments as &#39;the elephant in the room,&#39; while Intel&#39;s chief financial officer warned of a continuing slump in the PC market. Some investors argued the sell-off was an overreaction and a buying opportunity, while others saw it as a sign the AI investment boom is due a correction.</p><p>Adding to the chaos, crypto exchange Binance revealed the largest hack in the industry&#39;s history, affecting $6.3 billion in assets, reportedly traced to a compromised employee laptop and suspected state-backed hackers. Bitcoin fell below $78,000 as exchanges scrambled to freeze funds. Together, the tech slide and crypto shock capped a week in which markets questioned whether the money pouring into AI infrastructure will ever be recouped.</p></div>
+    
+    <p class="src">Sources: <a href="https://www.cnbc.com/2026/10/30/tech-trade-nasdaq-futures-crypto-hack.html" target="_blank" rel="noopener">Tech</a> · <a href="https://www.cnbc.com/2026/10/30/amazon-intel-earnings-big-tech-ai-spending-concerns.html" target="_blank" rel="noopener">Tech</a> · <a href="https://www.cnbc.com/2026/10/29/alphabet-nasdaq-futures-record-post-earnings-loss.html" target="_blank" rel="noopener">Tech</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Earnings per share (EPS)</dt><dd>EPS shows how much profit a company made per share of stock. If a company earns $10 billion in profit and has 1 billion shares, its EPS is $10; missing analysts&#39; EPS forecasts often triggers a stock price drop.</dd></div><div><dt>Market correction</dt><dd>A market correction is a drop of roughly 10% or more in stock prices after a period of gains, often triggered by fears that valuations have run too far ahead of actual profits.</dd></div><div><dt>Capital expenditure (capex)</dt><dd>Capex is money spent on long-term physical assets like buildings, chips and data centres rather than day-to-day costs. Heavy AI capex worries investors because it can take years to pay off, if it pays off at all.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Understanding why heavy AI capex spooks markets, even at profitable companies, is useful shorthand in finance interviews and links directly to the Microsoft bond story above. It also shows why insurers and lenders, as in today&#39;s Aon story, are growing cautious about financing the AI build-out.</p></div>
+  </article>
+  
+  <article id="story-2">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Nvidia Denies Report That CEO Jensen Huang Was Target of Chinese Spy Plot</h3>
+    <p class="standfirst">The New York Times reported US intelligence had surveilled a Singapore executive close to Huang over suspicions she may have gathered information for China.</p>
+    <div class="body"><p>US intelligence agencies reportedly spent about a year surveilling an executive at Singapore-based AI cloud firm Megaspeed, named Alice Huang, over concerns she could be passing information about Nvidia to China, according to the New York Times. She had been photographed at business dinners with Nvidia chief executive Jensen Huang and other industry figures in the Singapore region.</p><p>Nvidia strongly disputed the characterisation, saying such meetings are a routine part of any chief executive&#39;s job and that regional customers receive only ordinary business information, not sensitive trade secrets or anything relevant to national security. The company said earlier allegations that chips had been diverted through such channels had already been &#39;investigated and debunked.&#39;</p><p>The episode follows a 2025 investigation into Megaspeed over claims it helped Chinese buyers sidestep US export controls restricting advanced AI chip sales to China, rules designed to limit China&#39;s access to technology with both civilian and military uses. The story underlines how tightly US-China tensions are now entangled with the AI chip trade, and how even informal customer relationships can draw scrutiny from national security officials.</p></div>
+    
+    <p class="src">Sources: <a href="https://techcrunch.com/2026/10/29/u-s-investigated-chinese-spy-plot-aimed-at-nvidia-ceo/" target="_blank" rel="noopener">TechCrunch</a> · <a href="https://www.cnbc.com/2026/10/29/nvidia-jensen-huang-chinese-intelligence-asset.html" target="_blank" rel="noopener">Tech</a> · <a href="https://news.google.com/rss/articles/CBMihwFBVV95cUxNOE4yOXpzenF3TnhZeDBKTDVZRG9DQ2ZGcU84LWtUQnBRMHg4TmlXWGtKc3pDU2ZWVWdlV1NRclJsSWRoVW5CUk03aHFZVjg1V0ZsRGhwNFV5YUVjVTBWVDVfa2N3WTN4RXpaZ1E2Y2FPeW1uamwzdWV6MnVDb3ZYZFZBb3U3Uzg?oc=5" target="_blank" rel="noopener">CNET</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Export control evasion</dt><dd>This refers to attempts to get restricted goods, like advanced AI chips, into a country they&#39;re banned from reaching, often by routing sales through third parties or resellers in other countries.</dd></div><div><dt>Dual-use technology</dt><dd>Dual-use technology can serve both civilian and military purposes, which is why governments restrict its export. Advanced AI chips used for chatbots can also power military simulations or weapons systems.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Export controls and chip geopolitics increasingly shape where AI companies can sell and who they can hire, which matters if you&#39;re considering compliance, trade or policy roles tied to the chip industry. It&#39;s also a reminder that even casual business relationships can carry national security implications in this sector.</p></div>
+  </article>
+  
+</section>
+
+<section id="finance" class="finance">
+  <div class="sec-head">
+    <span class="mono">Section 2</span>
+    <h2>AI &amp; finance</h2>
+    <p>Where Wall Street and the City meet AI, as users and as funders.</p>
+  </div>
+  
+  <article id="story-3">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>SoftBank&#39;s AI Bet Tops $80 Billion Since 2024</h3>
+    <p class="standfirst">The Japanese conglomerate has poured tens of billions into AI companies, raising questions about who is funding the spree.</p>
+    <div class="body"><p>SoftBank has committed close to $80 billion to artificial intelligence investments since 2024, according to Disruption Banking. The firm, long known for its aggressive technology bets through its Vision Fund, has positioned itself as one of the largest financial backers of the AI boom.</p><p>Details on the specific sources of this capital remain limited, but SoftBank has historically relied on a mix of its own balance sheet, debt and outside investors including sovereign wealth funds, state-owned investment vehicles that manage a country&#39;s reserves, to fund its mega-rounds, unusually large funding rounds often exceeding a billion dollars.</p><p>The scale of SoftBank&#39;s AI commitments illustrates how much capital is flowing into the sector from outside traditional venture capital circles, and raises the question of how sustainable such enormous bets are if AI company valuations cool.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMiwgFBVV95cUxQd3MxRkJUdUF0ZlROS3J1X2FuWU9tVFlRcm9JaEJWVS1mRGxlcFViaEFvVHRDVGpKUXZSSGhNSF9tNVVaVnBKOUJ6V1M5Sk5xT2NZU3lkT3dMS3FMVHFhcUw4Qm5Mc0dCeDNjOHBZMUJSTGMyY0VLZldqSXBJUHZKa3Z5R1o4ZHltYThkanVLV0ZzWVdYY2hPVGRDSmdCb2M1VjJjODVsT196eS1QakswTjM4NHVTc0FjeG9hTUZZU0hjQQ?oc=5" target="_blank" rel="noopener">Disruption Banking</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Sovereign wealth fund</dt><dd>A sovereign wealth fund is a pool of money a government invests on behalf of its country, often built from oil revenue or trade surpluses. Norway and Saudi Arabia both run some of the world&#39;s largest sovereign wealth funds.</dd></div><div><dt>Mega-round</dt><dd>A mega-round is a funding round, typically $1 billion or more, that lets a startup raise huge sums in one go rather than through several smaller rounds over time.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>If you&#39;re interested in venture capital or private equity, tracking who is bankrolling AI mega-rounds like SoftBank&#39;s tells you where the real power and risk in the industry sits. It&#39;s a good topic to raise in interviews about AI funding sustainability.</p></div>
+  </article>
+  
+  <article id="story-4">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>UBS Staff Now Run 12,700 AI Agents Across the Bank</h3>
+    <p class="standfirst">The Swiss bank&#39;s rapid rollout shows how quickly automation is spreading through everyday financial work.</p>
+    <div class="body"><p>UBS employees are reportedly running 12,700 AI agents, software programmes that can independently carry out multi-step tasks such as retrieving data or drafting reports, according to PYMNTS.com. The figure signals how far automation has moved from pilot projects into daily operations at a major global bank.</p><p>While details of exactly which tasks these agents perform weren&#39;t fully specified, the scale suggests UBS has moved beyond simple chatbots into deploying agents across many parts of its workforce, echoing a broader trend among banks racing to cut costs and speed up routine work using AI.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxQOG1QQTVna1AzTVZKUi1kSXF6SnZWbW9TZ0JSZzA5c0xKNndJVmhIckVuTGktVzJjcHMweVExblZBOVkwN1k1OVBqSEpSYURMMW1YX1NjTlEtTi1temNzREhSZ1NCUTdMMWlsd1FweEtIVEN4RGt1R3dPS3ZKV0s0LV9QbFFoU0FneGhSYmt6dzR0dDhCWDJ0aGRHR2M2Nzk4UnNXRHBMNDZKdw?oc=5" target="_blank" rel="noopener">PYMNTS.com</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>AI agent</dt><dd>An AI agent is a programme built on a language model that can take actions, like searching data or filling in forms, rather than just answering questions. Think of it as the difference between a chatbot that tells you how to book a flight and one that actually books it for you.</dd></div><div><dt>Automation</dt><dd>Automation means using technology to perform tasks that previously needed a human. Running thousands of AI agents at a bank automates work like data entry or report generation that analysts used to do manually.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Banking roles are increasingly about supervising and building AI agents rather than doing repetitive tasks by hand, so understanding agent deployment is valuable if you&#39;re aiming for a career in finance or fintech. This is a good concrete example to mention when asked in interviews how AI is changing banking jobs.</p></div>
+  </article>
+  
+  <article id="story-5">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>Aon CEO Warns Data Centre Clustering Could Choke Off AI Financing</h3>
+    <p class="standfirst">Insurers are growing wary of underwriting the risks behind billions of dollars in data centre debt.</p>
+    <div class="body"><p>The chief executive of insurance giant Aon has warned that the clustering of AI data centres in concentrated locations could make them too risky to insure, which in turn could threaten lenders&#39; willingness to finance new projects, according to CNBC. Liability insurance protects companies and lenders against losses from accidents, outages or disasters, and insurers are reportedly reassessing how much exposure they&#39;re comfortable taking on where many data centres sit close together.</p><p>Separately, Barclays has reportedly turned to insurers to hedge billions of dollars in data centre debt, seeking ways to offload some of the financial risk tied to these large infrastructure loans. The reports suggest that as AI data centre construction accelerates, the insurance industry is becoming a crucial, if underappreciated, gatekeeper for how much debt can realistically be raised to fund it.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMigAFBVV95cUxPekFhZE9lQ0p5SUFMS3dMN3VhREszZndabm1fRW91TW1OYmFLa1RFVnBsbXI4LUQ1VWJkYl9iVjV6dDRETUJhSzdIcDlabXktRGFJM2VrQmtCbF9IWFhDZk15NkhoUXA0T2NFb2lYX3F5Z0dkSFJOZmd6bHRfMWpYTNIBhgFBVV95cUxNM3AwVEtCaEJ3dXdiTHEzZ0hVUzNfelBlb2ViMWwwckhQNm9jTUpEZC13bDhYb2F2YXVtQ2hoeGxFNzJIRjR6eGFnd3JTY3VwUWlRU0FWeTNnMGNWM0tRcjF3cHdTTHkyd0w5b3ZBWF8wVzIwZi1rYm1rV05Qb2ZsZmVNN29aQQ?oc=5" target="_blank" rel="noopener">CNBC</a> · <a href="https://news.google.com/rss/articles/CBMifkFVX3lxTE81dGMzMFZoM0kzdG41UHB0RmNDNHZqdm9GY0RGZzNSaTNGU0hrXzRULTA5QmNtTmFfZ2tGUU5kRUdua0hDenlIajlYZVZIR2lvQVFBWm83dUJ1NW5UOTA4R0Nack9PQnNXQk1BVEZfS3pCdmhzWDNLUkRqX3cwdw?oc=5" target="_blank" rel="noopener">Insurance Journal</a> · <a href="https://news.google.com/rss/articles/CBMidkFVX3lxTFBia3lVYnBwRDZwcWJQSGNoTWpZeUZUSkxzeUNPODUyZzhiRmUtV053UkhTd1ROeGxwTDF5OXRWYkt4Ni1ydGs2UTVJd2cxbHpVbHVtcDRQSW1EYnVpdE5Zc1k1RlRleGtvTlhuMHIyZHAtUVhSaVE?oc=5" target="_blank" rel="noopener">BigGo Finance</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Liability insurance</dt><dd>Liability insurance pays out if an insured party causes damage or loss, covering costs the responsible party might otherwise struggle to pay. Insurers for data centres might cover losses from fires, power failures or equipment damage.</dd></div><div><dt>Debt financing</dt><dd>Debt financing means raising money by borrowing rather than selling ownership stakes. If insurers refuse to cover the risks tied to a data centre, lenders may see it as too risky to offer debt financing for its construction.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>This story shows that AI&#39;s physical infrastructure boom depends on unglamorous industries like insurance just as much as on chips, and it connects directly to the Microsoft bond story above, where debt is funding the same build-out. Risk management and underwriting roles tied to data centres could become a growing niche within insurance and finance.</p></div>
+  </article>
+  
+</section>
+
+<section id="startups" class="startups">
+  <div class="sec-head">
+    <span class="mono">Section 3</span>
+    <h2>Startups &amp; funding</h2>
+    <p>Who raised, how much, and what investors are betting on.</p>
+  </div>
+  
+  <article id="story-6">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>Cohere Valued at $35.7 Billion as Canada and Nvidia Back New Funding Round</h3>
+    <p class="standfirst">The Canadian AI startup&#39;s valuation has soared, with Ottawa investing up to $1.6 billion alongside chipmaker Nvidia.</p>
+    <div class="body"><p>Canadian AI company Cohere has raised a new funding round that values the business at over $20 billion according to Bloomberg, with the Globe and Mail reporting the figure has climbed as high as $35.7 billion. The Canadian government is reportedly investing up to $1.6 billion as part of the round, alongside chipmaker Nvidia, a notable example of a national government becoming a direct strategic investor in a domestic AI company.</p><p>Separately, South Korean internet giant Naver has raised $1 billion from Nvidia to expand its &#39;AI factory&#39; business, building infrastructure to run large-scale AI models. Both deals show Nvidia extending its reach beyond selling chips into becoming a direct investor in companies that will ultimately buy and use those chips.</p><p>The involvement of a national government in Cohere&#39;s funding round highlights how some countries are treating leading AI firms as strategic assets worth public investment, not just private venture bets, as the race to build sovereign AI capability intensifies.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxQVk0xNE9EYzVuMEQ0OUJvYXNDMTFEN2tfVkVYWV9xSXpQWnlQUkNVTTIyWG5XOThJMHY3WWs5RktqWXpVMjN1ZmtXcVFUeVJMYjJNaEhFTTg1b0RNblJUTHZ3LW1wZ0JmRUZEUURwTy0yaC1nXzlHM3ZKeWFIUVJBdUZ5VlU0RXZxcTNKdGZ0ZHVoVWFILTRRWmVyVlN3V2V1X1VONWdTNjFYYVcwYUlj?oc=5" target="_blank" rel="noopener">Bloomberg.com</a> · <a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxNeGJlb1pvWktqeU11WENkWlJkdjZjc1FBcEVXTXA5UnlaMHlGNW9CU3ZjRmRpSWRZSXFITVJnX1FZbHRUYzJLY2dlYl84bUtnVVF0SmJsRjM5eE40UGFXMG90Zm5PQmNsZzFBZ2thOFRIeUJfYld0Ym9SRF9oN2NZLTdZOGZScmdfM2p6dndhX1hEMGRwVlJ3LTNOY1VIYk9jVVJGcVpyZ3NSUQ?oc=5" target="_blank" rel="noopener">The Globe and Mail</a> · <a href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE1SNTRnNHZUc1hLcHpmU1hyLWY4QU1zRkNXeUVEQmFjSzhuNWdPZkR6dmhsX3BLOHpkN0dZMzhERXJyT3dlODh4OXd1ZW5sdWNUYXdN?oc=5" target="_blank" rel="noopener">Wowtale</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Funding round</dt><dd>A funding round is when a company raises money from investors in exchange for equity, usually done in stages as the company grows, such as seed, Series A, B and so on.</dd></div><div><dt>Strategic investor</dt><dd>A strategic investor puts money into a company not purely for financial return but to gain influence, access or alignment with their own goals, such as a government wanting domestic AI capability or a chipmaker wanting its chips widely used.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Governments investing directly in AI startups is becoming a recognisable pattern worth understanding if you&#39;re tracking how &#39;sovereign AI&#39; strategies are shaping the industry. It&#39;s also useful context for Story 3 today, where SoftBank&#39;s huge AI bets show private capital doing something similar at even bigger scale.</p></div>
+  </article>
+  
+  <article id="story-7">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>DoorDash to Buy Instacart in $17 Billion Grocery Delivery Deal</h3>
+    <p class="standfirst">The acquisition would combine two of America&#39;s biggest delivery platforms and give customers access to tens of thousands more stores.</p>
+    <div class="body"><p>DoorDash has agreed to acquire rival delivery company Instacart for $17 billion, according to reports from The Economic Times and other outlets. The deal is expected to give DoorDash customers access to roughly 50,000 additional stores through Instacart&#39;s grocery delivery network.</p><p>The acquisition, a purchase of one company by another, would significantly consolidate the US food and grocery delivery market, bringing together two major players that have historically competed for the same customers and retail partners. Combining platforms could allow DoorDash to cut costs and offer a wider range of grocery options under one app.</p><p>Details on regulatory scrutiny of the deal weren&#39;t available, but a merger of this size between major delivery platforms is likely to draw attention from competition regulators given its potential to reduce choice for both consumers and retailers in the sector.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMi5AFBVV95cUxQNFF2WV9iZ2thNjZiY0YwMzhieGFITkRncjBobDlRbjBOaHg2bEpTV05WU0Y2SzZkNDZEODNFN0Fpc2twMy1ZdzNUc2V4cF9VcDUxYVUwS2YyaGNyNjBLYXg4dWkzcFBtRW9QcEhwOGJiRzhPdHJ1eUJsRnhjZkM2c1dLSkEtblQxTXB3YkU1QXdJSDQwVm9LS3I5NjJyeWlPOWI5cWVCM0o2SnZ6N3p5amMxV21GOV8yMlZYQkRJTFdidUNPcEwzX2RsdWh5cGotbWJhTWU5NTFjQlJJendVUFotSEPSAeoBQVVfeXFMTm85cUJxNUxibTJxSzl5M0JDTUJ5RW9vRGlNaC1LTkNzN1VIYVV3am1sSm80dExnWHBMSEI0eDNzdFlVWHpzUkNWaXBycFExd0R1QWhzN3llMGtTbFFsVm9JRC1faXQ3S0RqZHdYMFk1Nkp5ZkVLWm42RlFPQjhfWFpOV3NTOFlpZVd3Q2ROTDU3SW9RTmtJbno2X1pMWHVsM3ZDQkpOT0xHNmU1UGV0SjNKc0NscUlNUlhnX1pGd1Y2MjRfdDdXQV94c2xHUmFyZVBnamlqX1QySm1Da2FaMjh2Y2FhS2JYMldR?oc=5" target="_blank" rel="noopener">The Economic Times</a> · <a href="https://news.google.com/rss/articles/CBMijwFBVV95cUxPcFRrdXNmX1dLVkgtT0c2eGF4bEtpVkhTYllrOVJCbEh6RWk1bUc5QnZoOEFXcjM1SnhqcnJJWDdoRmlVMFhzU0VHQnlTMHhMNUdlX0J4Z3p1RzRpdnpGSWFsWHAyVEpZU2NOM0d6aWFTUWxIZjJrMURMd01YTHlSNGh6SjNKUFRNa1pBYi1TOA?oc=5" target="_blank" rel="noopener">https://ascendants.in/</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Acquisition</dt><dd>An acquisition is when one company buys another, usually taking full ownership and control. DoorDash buying Instacart for $17 billion means Instacart would become part of DoorDash rather than operating independently.</dd></div><div><dt>Market consolidation</dt><dd>Market consolidation happens when fewer, larger companies come to dominate an industry, often through mergers and acquisitions. If DoorDash absorbs Instacart, there would be one less major competitor in grocery delivery.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Big consolidation deals like this are a staple topic in finance and consulting interviews, since you&#39;re often asked to reason through why companies merge and what risks regulators might flag. It&#39;s also a reminder that not every tech headline this week is about AI, even if AI-driven logistics and recommendation systems sit behind these delivery platforms.</p></div>
+  </article>
+  
+</section>
+
+
+
+<div class="panel" id="code">
+  <span class="mono">Code corner</span>
+  <h2>Working Out the Cost of Microsoft&#39;s $25 Billion Bond Sale</h2>
+  <p class="src">Based on: <a href="#story-0">Microsoft Raises $25 Billion in Bonds to Fund AI Spending Spree</a></p>
+  <p style="margin:0">Today&#39;s Microsoft story mentioned it&#39;s borrowing $25 billion through bonds. Let&#39;s write a simple Python script to calculate how much interest Microsoft would owe each year and in total, depending on the coupon rate (the annual interest rate on the bond).</p>
+  <pre><code>principal = 25_000_000_000  # the $25 billion raised
+coupon_rate = 0.05  # 5% annual interest
+years = 10  # length of the bond
+
+annual_interest = principal * coupon_rate
+total_interest = annual_interest * years
+total_repaid = principal + total_interest
+
+print(f&#34;Annual interest payment: ${annual_interest:,.0f}&#34;)
+print(f&#34;Total interest over {years} years: ${total_interest:,.0f}&#34;)
+print(f&#34;Total amount repaid: ${total_repaid:,.0f}&#34;)</code></pre>
+  <span class="mono">Line by line</span>
+  <ol class="walk"><li>principal = 25_000_000_000 stores the amount borrowed; underscores just make large numbers easier to read in Python.</li><li>coupon_rate = 0.05 represents a 5% annual interest rate, a reasonable guess for a well-rated company like Microsoft.</li><li>annual_interest = principal * coupon_rate calculates how much interest Microsoft pays each year by multiplying the loan size by the rate.</li><li>total_interest = annual_interest * years multiplies that yearly cost by how many years the bond runs, giving the total interest paid over its life.</li><li>total_repaid adds the interest back onto the original amount borrowed to show the full cost of the debt.</li><li>The f-strings with :,.0f format the numbers with commas and no decimal places, so they&#39;re easy to read.</li></ol>
+  <div class="tryit"><p><b>Try it:</b> Change coupon_rate to 0.065 to see how a higher interest rate, reflecting a riskier borrower, increases the total cost, and try reducing years to 5 to see how a shorter bond changes total interest paid.</p></div>
+</div>
+
+<div class="panel" id="quiz">
+  <span class="mono">Quiz · apply today's concepts</span>
+  <h2>What would you do?</h2>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 1</span>
+    <p class="scenario">You&#39;re a junior credit analyst asked to explain why Microsoft can raise $25 billion in bonds more cheaply than a smaller AI cloud company like CoreWeave.</p>
+    <p class="ask">What&#39;s the main reason Microsoft gets lower interest rates on its debt?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>Microsoft doesn&#39;t have to repay bond investors</span></button></li><li><button type="button" data-i="1"><b>B</b><span>Microsoft holds a top AAA credit rating, signalling very low default risk</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Bonds don&#39;t carry interest payments for large companies</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Microsoft&#39;s bonds are backed by sovereign wealth funds</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> A AAA credit rating signals to lenders that a company is extremely unlikely to default, letting it borrow at lower rates. Bonds always carry interest and repayment obligations, which rules out options 0 and 2, and sovereign wealth fund backing wasn&#39;t mentioned for Microsoft&#39;s bonds.</p>
+        <div class="chips"><span>Credit rating</span><span>Bond</span><span>Debt financing</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="0">
+    <span class="mono" style="color:var(--muted)">Scenario 2</span>
+    <p class="scenario">In a team meeting, a colleague argues the market sell-off in Amazon, Intel and Alphabet shares this week proves AI investment is a complete waste of money.</p>
+    <p class="ask">What&#39;s the most accurate interpretation of the sell-off based on today&#39;s reporting?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>Investors are worried AI capex is too high relative to near-term payoff, which isn&#39;t the same as AI being worthless</span></button></li><li><button type="button" data-i="1"><b>B</b><span>The sell-off was caused entirely by the Binance hack</span></button></li><li><button type="button" data-i="2"><b>C</b><span>All three companies reported falling revenue</span></button></li><li><button type="button" data-i="3"><b>D</b><span>The sell-off proves AI technology doesn&#39;t work</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: A.</b> Reports focused on investor anxiety over heavy capital expenditure and uncertain returns, not a verdict on whether AI technology itself works. The Binance hack was a separate story affecting crypto markets, and none of the companies were reported to have falling revenue, Amazon&#39;s cloud unit actually grew strongly.</p>
+        <div class="chips"><span>Capital expenditure (capex)</span><span>Market correction</span><span>Earnings per share (EPS)</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 3</span>
+    <p class="scenario">A founder pitches you on their startup, saying a national government is investing directly in their company, similar to Canada&#39;s involvement in Cohere.</p>
+    <p class="ask">Why might a government choose to directly fund an AI startup rather than leave it purely to private investors?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>Governments always get better financial returns than venture capitalists</span></button></li><li><button type="button" data-i="1"><b>B</b><span>Governments want to build domestic AI capability they consider strategically important</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Private investors are legally barred from funding AI companies</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Direct government funding removes the need for future funding rounds</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> Governments sometimes act as strategic investors to secure national capability in critical technology, not purely for profit. Private investors aren&#39;t barred from AI funding, government involvement doesn&#39;t guarantee better returns, and startups can still need further funding rounds later.</p>
+        <div class="chips"><span>Strategic investor</span><span>Funding round</span><span>Sovereign wealth fund</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 4</span>
+    <p class="scenario">During a first-week orientation at a bank, a manager mentions that your team now works alongside 12,700 AI agents like those reportedly used at UBS.</p>
+    <p class="ask">What best describes what an AI agent does compared to a basic chatbot?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>It can only answer simple yes-or-no questions</span></button></li><li><button type="button" data-i="1"><b>B</b><span>It can take multi-step actions independently, like retrieving data or completing a task, not just answer questions</span></button></li><li><button type="button" data-i="2"><b>C</b><span>It replaces the need for any human oversight at the bank</span></button></li><li><button type="button" data-i="3"><b>D</b><span>It is identical to a search engine</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> AI agents go beyond answering questions by autonomously carrying out tasks, such as pulling data or generating reports, which is what distinguishes them from basic chatbots. Human oversight is still typically needed, and agents are not the same as search engines or limited to yes/no answers.</p>
+        <div class="chips"><span>AI agent</span><span>Automation</span></div>
+      </div>
+    </details>
+  </div>
+  
+</div>
+
+<div class="panel" id="glossary">
+  <span class="mono">Glossary</span>
+  <h2>Every concept from today</h2>
+  <dl class="gloss"><div><dt>Acquisition<a href="#story-7">see story</a></dt><dd>An acquisition is when one company buys another, usually taking full ownership and control. DoorDash buying Instacart for $17 billion means Instacart would become part of DoorDash rather than operating independently.</dd></div><div><dt>AI agent<a href="#story-4">see story</a></dt><dd>An AI agent is a programme built on a language model that can take actions, like searching data or filling in forms, rather than just answering questions. Think of it as the difference between a chatbot that tells you how to book a flight and one that actually books it for you.</dd></div><div><dt>Automation<a href="#story-4">see story</a></dt><dd>Automation means using technology to perform tasks that previously needed a human. Running thousands of AI agents at a bank automates work like data entry or report generation that analysts used to do manually.</dd></div><div><dt>Bond<a href="#story-0">see story</a></dt><dd>A bond is essentially an IOU: investors lend a company money upfront, and the company promises to pay interest and return the original amount later. If Microsoft sells $25 billion in bonds at 5% interest, it owes $1.25 billion a year just in interest.</dd></div><div><dt>Capital expenditure (capex)<a href="#story-1">see story</a></dt><dd>Capex is money spent on long-term physical assets like buildings, chips and data centres rather than day-to-day costs. Heavy AI capex worries investors because it can take years to pay off, if it pays off at all.</dd></div><div><dt>Credit rating<a href="#story-0">see story</a></dt><dd>A credit rating is a grade given by agencies like S&amp;P showing how likely a borrower is to repay its debts. A AAA rating, the highest, means lenders see Microsoft as a very safe bet, so it can borrow at lower interest rates than riskier companies.</dd></div><div><dt>Debt financing<a href="#story-5">see story</a></dt><dd>Debt financing means raising money by borrowing rather than selling ownership stakes. If insurers refuse to cover the risks tied to a data centre, lenders may see it as too risky to offer debt financing for its construction.</dd></div><div><dt>Dual-use technology<a href="#story-2">see story</a></dt><dd>Dual-use technology can serve both civilian and military purposes, which is why governments restrict its export. Advanced AI chips used for chatbots can also power military simulations or weapons systems.</dd></div><div><dt>Earnings per share (EPS)<a href="#story-1">see story</a></dt><dd>EPS shows how much profit a company made per share of stock. If a company earns $10 billion in profit and has 1 billion shares, its EPS is $10; missing analysts&#39; EPS forecasts often triggers a stock price drop.</dd></div><div><dt>Export control evasion<a href="#story-2">see story</a></dt><dd>This refers to attempts to get restricted goods, like advanced AI chips, into a country they&#39;re banned from reaching, often by routing sales through third parties or resellers in other countries.</dd></div><div><dt>Free cash flow<a href="#story-0">see story</a></dt><dd>Free cash flow is the money left over after a company pays for its operations and investments. Positive free cash flow means Microsoft is still generating more cash than it spends, even while funding huge AI projects.</dd></div><div><dt>Funding round<a href="#story-6">see story</a></dt><dd>A funding round is when a company raises money from investors in exchange for equity, usually done in stages as the company grows, such as seed, Series A, B and so on.</dd></div><div><dt>Liability insurance<a href="#story-5">see story</a></dt><dd>Liability insurance pays out if an insured party causes damage or loss, covering costs the responsible party might otherwise struggle to pay. Insurers for data centres might cover losses from fires, power failures or equipment damage.</dd></div><div><dt>Market consolidation<a href="#story-7">see story</a></dt><dd>Market consolidation happens when fewer, larger companies come to dominate an industry, often through mergers and acquisitions. If DoorDash absorbs Instacart, there would be one less major competitor in grocery delivery.</dd></div><div><dt>Market correction<a href="#story-1">see story</a></dt><dd>A market correction is a drop of roughly 10% or more in stock prices after a period of gains, often triggered by fears that valuations have run too far ahead of actual profits.</dd></div><div><dt>Mega-round<a href="#story-3">see story</a></dt><dd>A mega-round is a funding round, typically $1 billion or more, that lets a startup raise huge sums in one go rather than through several smaller rounds over time.</dd></div><div><dt>Sovereign wealth fund<a href="#story-3">see story</a></dt><dd>A sovereign wealth fund is a pool of money a government invests on behalf of its country, often built from oil revenue or trade surpluses. Norway and Saudi Arabia both run some of the world&#39;s largest sovereign wealth funds.</dd></div><div><dt>Strategic investor<a href="#story-6">see story</a></dt><dd>A strategic investor puts money into a company not purely for financial return but to gain influence, access or alignment with their own goals, such as a government wanting domestic AI capability or a chipmaker wanting its chips widely used.</dd></div></dl>
+</div>
+
+<div class="panel">
+  <span class="mono">Past digests</span>
+  <ul class="archive"><li><a href="../archive/2026-10-30.html" aria-current="page">2026-10-30</a></li><li><a href="../archive/2026-10-29.html">2026-10-29</a></li><li><a href="../archive/2026-10-28.html">2026-10-28</a></li><li><a href="../archive/2026-10-27.html">2026-10-27</a></li><li><a href="../archive/2026-10-26.html">2026-10-26</a></li><li><a href="../archive/2026-10-25.html">2026-10-25</a></li><li><a href="../archive/2026-10-24.html">2026-10-24</a></li><li><a href="../archive/2026-10-23.html">2026-10-23</a></li><li><a href="../archive/2026-10-22.html">2026-10-22</a></li><li><a href="../archive/2026-10-21.html">2026-10-21</a></li><li><a href="../archive/2026-10-20.html">2026-10-20</a></li><li><a href="../archive/2026-10-19.html">2026-10-19</a></li><li><a href="../archive/2026-10-18.html">2026-10-18</a></li><li><a href="../archive/2026-10-17.html">2026-10-17</a></li><li><a href="../archive/2026-10-16.html">2026-10-16</a></li><li><a href="../archive/2026-10-15.html">2026-10-15</a></li><li><a href="../archive/2026-10-14.html">2026-10-14</a></li><li><a href="../archive/2026-10-13.html">2026-10-13</a></li><li><a href="../archive/2026-10-12.html">2026-10-12</a></li><li><a href="../archive/2026-10-11.html">2026-10-11</a></li><li><a href="../archive/2026-10-10.html">2026-10-10</a></li><li><a href="../archive/2026-10-09.html">2026-10-09</a></li><li><a href="../archive/2026-10-05.html">2026-10-05</a></li><li><a href="../archive/2026-10-04.html">2026-10-04</a></li><li><a href="../archive/2026-10-03.html">2026-10-03</a></li><li><a href="../archive/2026-09-23.html">2026-09-23</a></li><li><a href="../archive/2026-09-22.html">2026-09-22</a></li><li><a href="../archive/2026-09-20.html">2026-09-20</a></li><li><a href="../archive/2026-09-19.html">2026-09-19</a></li><li><a href="../archive/2026-09-18.html">2026-09-18</a></li></ul>
+</div>
+
+<footer>Written by Claude from the linked sources. Check the original article before quoting figures in an interview.</footer>
+</div>
+<script>
+document.querySelectorAll(".q").forEach(function (q) {
+  var correct = Number(q.dataset.correct);
+  var buttons = q.querySelectorAll(".opts button");
+  buttons.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var picked = Number(b.dataset.i);
+      buttons.forEach(function (x) {
+        var i = Number(x.dataset.i);
+        if (i === correct) x.classList.add("right");
+        else if (i === picked) x.classList.add("wrong");
+        x.disabled = true;
+      });
+      q.querySelector("details").open = true;
+    });
+  });
+});
+</script>
+</body>
+</html>
