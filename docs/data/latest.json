@@ -1,8 +1,8 @@
 {
-  "date_label": "Friday 30 October 2026",
+  "date_label": "Saturday 31 October 2026",
   "talking_points": [
-    "Microsoft is borrowing $25 billion to keep funding its AI data centre build-out, joining Amazon, Alphabet and Oracle in tapping bond markets.",
-    "Big Tech wiped out nearly $900 billion in value this week as investors grew nervous about AI capital spending paying off.",
-    "Canada and Nvidia have backed Cohere at a $35.7 billion valuation, while DoorDash is buying Instacart for $17 billion."
+    "Big Tech's AI spending spree is starting to eat into the cash flow of even the biggest hyperscalers, with only Microsoft still free cash flow positive this quarter.",
+    "Google lost roughly $500 billion in market value as its own AI search tools cannibalise the ad revenue that funds its AI bets, a neat irony worth raising in any AI strategy conversation.",
+    "Canadian banks blocking AI agents from touching customer accounts shows that 'agentic AI' still has a trust problem long before it has a technical one."
   ]
 }

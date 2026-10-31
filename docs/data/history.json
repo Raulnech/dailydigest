@@ -1,57 +1,5 @@
 [
   {
-    "date": "2026-10-24",
-    "headlines": [
-      "OpenAI trains frontier models offline after agents 'escaped' to hack outside systems",
-      "Neocloud stocks lose a third of their value in October as AI credit fears spike",
-      "TikTok US reportedly seeks 4 gigawatts of computing power by early 2030s",
-      "Hong Kong regulator issues 'ART' rulebook for AI agents in banking",
-      "American Express to cut around 3,500 jobs",
-      "SEC exams to target private fund valuations and AI cyber risk",
-      "Rivian buys UK AI startup Third Dimension to boost self-driving tech",
-      "Meta acquires AI analytics startup Sundial, founded by former employees"
-    ],
-    "concepts": [
-      "Frontier AI model",
-      "Virtual machine",
-      "AI alignment",
-      "Credit default swap (CDS)",
-      "Neocloud",
-      "Capital expenditure (capex)",
-      "Gigawatt (as a measure of compute)",
-      "Inference",
-      "AI agent",
-      "Regulator",
-      "Automation",
-      "Private fund valuation",
-      "Regulator",
-      "AI simulation",
-      "Acquisition",
-      "AI analytics platform",
-      "Acquisition"
-    ],
-    "links": [
-      "https://www.theverge.com/ai-artificial-intelligence/1018021/openai-training-top-ai-models-no-internet",
-      "https://news.google.com/rss/articles/CBMivwFBVV95cUxQOS01OUZRS1hEaFFMU0pJSkEwdEVKQThtcVJITXJ6elVKbFVHV0QwQVFyc1VUb1NVZExxQ2J4YkN0MTVxS094bUFqdmZYa3QwSUprRjlVX3YwSkZfcEF5U1JEV0h0aWVjUldENHFIaEtZR0RPU3Y0WHpjQXFmRUw2SVROYXQ2NWwzZmNGWG9lcTdwYkhFd0NvY3poSG1YVHRfclVsMmZ0OXRDV245cmx3ckRFVENhZUJydkVXYjVrOA?oc=5",
-      "https://news.google.com/rss/articles/CBMikgFBVV95cUxOdGFtX0FmQk9RdVF6d3U4NVZLWTJFdEp1VE8wZTg4cnBoWWEzUTRIREQxQ0o5XzNrUXJPNS1uYWYxMmRPaGlLRElxbW5IZnIyYWVBd2NtVHl5aXF3SkVUa0p0dG5TYVljbllYU1VlbWtKcGF0QXhGMTV4bG01MWNrajdnWVBhekhJZ25GR0ZuY0hvdw?oc=5",
-      "https://www.cnbc.com/2026/10/23/ai-turmoil-neoclouds-struggle-credit-risks-jump-solidigm-pulls-ipo.html",
-      "https://www.cnbc.com/2026/10/23/sk-hynix-solidigm-ipo-.html",
-      "https://news.google.com/rss/articles/CBMidkFVX3lxTE94WldMMW1Yb1BXUmt5ZzBzMUJJSHBCbGxxbGVfRTlCajE4Wm92VUhCLVlQU3V4RjBwbzNOa3lfRTB0NnB4NGxoS0x6UmpGb1k0QU5mNU1MTnVxYmJLVnlsdlR4eFJZTERKN2xUZk5GbFc5ZTlzTFE?oc=5",
-      "https://www.cnbc.com/2026/10/23/tiktok-us-compute-capacity.html",
-      "https://news.google.com/rss/articles/CBMilgFBVV95cUxNMlFhRU1CT3hwZngzOUREM24tWjRfSU80OWg0YjdRNlhXVW54clJoYWt1YWs3Y012Yk1aTV9GMTRObzBpeEoyQjZHcjNOREpoeloydGZHMmFReHk0b05BMEFVOEhTZXd4amxSNFk2ZVh4VnB0c2pWMU5qbm1OTzdoc1c5cTBYdEE4RExoUEs3UlUzYXp2RFE?oc=5",
-      "https://news.google.com/rss/articles/CBMiygFBVV95cUxQVFB0YmZSeElzckZKQlFoSHBSSXVtZGlzckcyWmQyRk1USl9mXzRGUEkzRllEYXZVc1RzTjNoNlpqcE8xT3Rxc1ZsVWhuWFNlQVA0SW5Eazl1Wjhxa1RPemFXOURuV0FXeDZBLWpoUURTZUdnVUxSM29RN1E5OUhfQUo0V050aDZlQVV3WlJzekRrbFFabUhJSjJRa1Vnc1BsNDhidjB4NkV3NDlib25QbTM3MUNZVHNOakhrZ0V6ZlJzcDRURTJTNGFn?oc=5",
-      "https://news.google.com/rss/articles/CBMilgFBVV95cUxOanpFTUtPNkdpMU1xQ2g0WW0wTF9BN0I1RUFNd0dKdnN6bnVSTXJSdGRJaGtZRTZDendDN2dKM2diejczTlFSSTRxTUMxczlkNllyQV9zX0h5SlVPVXZXUFhkLWtLS0ZGSmVReGNXRlpQdUs3ZTBadXV6THFyWm4ybkdUSjFITTFZNnphSjRJaWFiZllQa2c?oc=5",
-      "https://news.google.com/rss/articles/CBMisgFBVV95cUxPZzRzQUYycVk1WHZ1QzBTcnAyT1dRbFdJLU96OHktc1dtdkNPeVkzZmt3aVpjZVRZaExVVDR5SGZ5bWktWGV3Y2NuMlpmN1lEWWxjdmtWemstVGY2UnNIX21wWlRlTFY5TkgyTHJSYjNYeFQxaC15ai1UbmVHUk8tTzRyYlo2SEhHNkNieWN6cUhiSzNmX25HdDF6Q0h6OVNTQXd6ZnBuMDJMejQ4dHdkMUV3?oc=5",
-      "https://news.google.com/rss/articles/CBMikAFBVV95cUxNdGtTck9RSUdBS3pQTllRcmhCa2c1V2tSYVY4LU12M3JVbWtJcTVYZTVPWFdVejgtMjR2d25fbGs3RnBPTzc5M3ZYM0pWTUhnN3gxNVYzTEpGdklkdU5mU3ltdEdwRk1YcHVWbTl1Z2FPWXVvbVRYU2VRbUJ5RXFzUkxaNGM0cWVDbzBVUk9UOW8?oc=5",
-      "https://news.google.com/rss/articles/CBMif0FVX3lxTE5rXzVHWVU0RFU5MXVTempLelJMVGkwOXd2ZEJBZ2xVd0ZEQ24tY2ZuVGNjMWNuQkoxVm03QzZzSWFWTWxIblU0Wkc0RkdUUUdNUWxIZ2poUnI3V21SWlNWX25ibEtJSzFOUk5pSm1qX3NwUWwxMWtsYXJFRWI3ZW8?oc=5",
-      "https://news.google.com/rss/articles/CBMilwFBVV95cUxQSjJDU2lZZU1RTWpDZkdVZTFmVW50QzN0U1hYeWkyMTQ0X2VYRDFfdDZrVzU4YjUzNDgzNldGNFJPQzJfYWpqX1hIWEdrSzEzMnQ1dGlZR3p1U1VLYVRMdktfYWpuMXFKVnZiVW5RUTY5bXJPMUN5N28xXzB1dzJKX1VGRUVoYWZLaFRsdHJidF83MWQzZEhZ?oc=5",
-      "https://news.google.com/rss/articles/CBMitwFBVV95cUxNVTUycnl1X1FBOGQ4cGxGMGlfdlVmV19oSzVkZE1TaHZza1cyRkdvb3VTWEhQTmV4ZWVRR1JTNDMteDJkZEZGQ2p2RXhqOENPQWJEVzQ2M2xZUHpVbnR3V2hwWEJpRi1wZ2tFSUFza3llSzlqclNWOU4yUXdfcUVlOWNKWVdpbTZPdDN2emcwX29ycEpnLXZ1Q1pBajJVTkRIblQ4RXNCMFF5aDFHbVlGZmlOYWFndlU?oc=5",
-      "https://news.google.com/rss/articles/CBMiigFBVV95cUxOS1doWnRWTUh3TnZyUjVWSXVIQ2phQkFKQ0R5ZTlWeHJ0ZzVBc1VFNG5XV2p2dm1mTVNWcGo0UEZlM1hTMDk3NlBjbjN4SGRVa2NONnBkWVFLbDJfYTBmVE56X1NNbWd5b2xSZ1B5WjhBZUdlSkxTWi1oU2VWS0xEa0tHbVM0aTBuMUE?oc=5",
-      "https://news.google.com/rss/articles/CBMijwFBVV95cUxOMHhMaG55djFwcmRrWWNMZ3VqNElQZjlpdmFoU1hsZnBhejJRT2ZBekExNDZlOFZnMUZtVEwwTWRfc2pnTEpBa1lmSjhTSjdidEhYZ3pMMnc3N2w3djl3R1RfZFhURlN4NlVvUVNYV09pc0hCZFdqRWhtS0xRd1QxRU5vdGUxZi1oNXZ5NktiTQ?oc=5",
-      "https://news.google.com/rss/articles/CBMidEFVX3lxTE41WUh6R2dlaWVoNkRJNkl4dEtKNUt6TXZxcWRhTHN6MzZYQjdXa3UtTHpDekxpSWY5NE54QThYbGU5LVc3OUllVWt5dnpDaGN3NjRWaHU4TTlZVTZkNXZjU2ZtMWwwdkY0d2pMYlhrNnlOTW9j?oc=5"
-    ]
-  },
-  {
     "date": "2026-10-25",
     "headlines": [
       "Elvis Presley Estate Sues Anthropic Over AI Training on His Music",
@@ -454,6 +402,61 @@
       "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1SNTRnNHZUc1hLcHpmU1hyLWY4QU1zRkNXeUVEQmFjSzhuNWdPZkR6dmhsX3BLOHpkN0dZMzhERXJyT3dlODh4OXd1ZW5sdWNUYXdN?oc=5",
       "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQNFF2WV9iZ2thNjZiY0YwMzhieGFITkRncjBobDlRbjBOaHg2bEpTV05WU0Y2SzZkNDZEODNFN0Fpc2twMy1ZdzNUc2V4cF9VcDUxYVUwS2YyaGNyNjBLYXg4dWkzcFBtRW9QcEhwOGJiRzhPdHJ1eUJsRnhjZkM2c1dLSkEtblQxTXB3YkU1QXdJSDQwVm9LS3I5NjJyeWlPOWI5cWVCM0o2SnZ6N3p5amMxV21GOV8yMlZYQkRJTFdidUNPcEwzX2RsdWh5cGotbWJhTWU5NTFjQlJJendVUFotSEPSAeoBQVVfeXFMTm85cUJxNUxibTJxSzl5M0JDTUJ5RW9vRGlNaC1LTkNzN1VIYVV3am1sSm80dExnWHBMSEI0eDNzdFlVWHpzUkNWaXBycFExd0R1QWhzN3llMGtTbFFsVm9JRC1faXQ3S0RqZHdYMFk1Nkp5ZkVLWm42RlFPQjhfWFpOV3NTOFlpZVd3Q2ROTDU3SW9RTmtJbno2X1pMWHVsM3ZDQkpOT0xHNmU1UGV0SjNKc0NscUlNUlhnX1pGd1Y2MjRfdDdXQV94c2xHUmFyZVBnamlqX1QySm1Da2FaMjh2Y2FhS2JYMldR?oc=5",
       "https://news.google.com/rss/articles/CBMijwFBVV95cUxPcFRrdXNmX1dLVkgtT0c2eGF4bEtpVkhTYllrOVJCbEh6RWk1bUc5QnZoOEFXcjM1SnhqcnJJWDdoRmlVMFhzU0VHQnlTMHhMNUdlX0J4Z3p1RzRpdnpGSWFsWHAyVEpZU2NOM0d6aWFTUWxIZjJrMURMd01YTHlSNGh6SjNKUFRNa1pBYi1TOA?oc=5"
+    ]
+  },
+  {
+    "date": "2026-10-31",
+    "headlines": [
+      "Google loses $500bn in value as its own AI search undercuts ad sales",
+      "Intel shares crash 28%, cutting $12bn from the US government's stake",
+      "Big Tech's $3 trillion AI bet starts to strain its cash machines",
+      "Nasdaq loses around $2 trillion in October as AI spending fears grow",
+      "AI's circular financing web spreads into Asia",
+      "Canadian banks block personal AI agents over security fears",
+      "AI inference startup Baseten eyes $30bn valuation",
+      "Apple acquires agentic AI data startup Ascend.io"
+    ],
+    "concepts": [
+      "Market capitalisation",
+      "Generative search",
+      "Gross margin",
+      "Semiconductor fab",
+      "Equity stake valuation gain/loss",
+      "Free cash flow",
+      "Capital expenditure (capex)",
+      "Operating income",
+      "Market correction",
+      "Nasdaq Composite",
+      "Circular financing",
+      "Contagion risk",
+      "AI agent",
+      "Open Banking",
+      "Inference",
+      "Valuation",
+      "Agentic AI",
+      "Data engineering",
+      "Acquisition"
+    ],
+    "links": [
+      "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5HNW9FUzgyTXVpc0pmUHo2T3F2bWh1T0pxaFhGZzFueWhsNjdWVXdNYzJwcXBPeUdVSUdGYVZDdUZwUDl3bzBESUdkb24zdmJHNV9iR2toaWUyYlk?oc=5",
+      "https://techcrunch.com/2026/10/30/intels-stock-crashes-knocking-12b-from-governments-stake/",
+      "https://news.google.com/rss/articles/CBMisgFBVV95cUxQM3JIVGVpMDhiOFU1Z1Jhc25WM3M0Nm5qTHVGekRPLVhGb05sUktwYVFTWTZCcEE5eFJQTWZHcDhrRUJuaHZldW55UGpFelBfQlJyNWpvQzU1ZTdtWnlHdEozRkVQVUZpOUVIcDJURlF0cDJ0bm9EVEcyWEdtUi1wYk9OdXpFdEhiZG1tbU5xSnZGTkZTeEwtb0xiWlNJaU9CdEt5TERaNW1Xc0ZPTVVTWVBR?oc=5",
+      "https://www.cnbc.com/2026/10/30/tech-giants-alphabet-meta-microsoft-amazon-ai-buildouts.html",
+      "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPNkNDLXpLZ1A0VklROTJVenpDRlZBWE10ZE1qWWk4ZFVqalgzWWJFdThSd2ZKeUhDanVRQjRhVVVZZGlGZzY1UWYzLXRSZTNHNDNPTkZZRUFJazAzYmV6NzF3QUJtNjhkWHY5OHZNZWVsSFdyY0NScGJadnE3T0dPTWtBUXZOaDJPYWJuX1NOVXkwbGlQSW9MdjlXTlNQTzdLZEdzTHFsQ2gzaEcwTkNHZTNCNF9hMG9lazFHRXItSzg?oc=5",
+      "https://news.google.com/rss/articles/CBMilgFBVV95cUxQa3d4RHVLejNUQk5KamNvZkpmVm9BT1JQUS0xQXNxaHFVVHYwYTJ4TnRIQ0I4RkUwbmR2aWQ4VXRzaDAwdmI4Q3Q4S1lFZlhqNTBxY1p6WDVGdkFxQjdPa05BYWx4TGdsempHY3YzWllDRDRxN2Z0T2w5M1FtVGcydzNaOUdRWWgzYTdfVFJQTDJZU25NOUE?oc=5",
+      "https://news.google.com/rss/articles/CBMid0FVX3lxTFBfRVpGbTZuZHdXLTY3cDdfcWtIaEx1cUxiZTVqU3B5NTV1QU8zOVd2Nl9aVlZWUlpPenlfRThzSm5nMGJBZzJnazVzazBYQzNRcEFkWWFOXzVZbmc3aEVUandqYUJRTnlIV195QjZUbWtqZlRNVmo0?oc=5",
+      "https://news.google.com/rss/articles/CBMirwFBVV95cUxNNFpmZHBNV1FsV2J6X3pyVzNEdzRHMzFPV2FHQ1hwcFZFZlR6WW1FelY2My02Y2RxOWtPWUxtYTNZTVJoT19PTmMzX19FMGx1Y21kSUpsZFNxb01ERDFUMTFNeExvUnpuM2ZqdHdVSXFxTko4OWoyTXRydzVQaVdZRkdaeWNCLW5BcVM5LWR0dTlVanM1emZGc1BGWEY3RUN1M1dVYlVMUlpDVEREZm1j?oc=5",
+      "https://news.google.com/rss/articles/CBMikwFBVV95cUxQR0xGY1AwbWNaRnlWdEJtdHZQYzhTRE1yd204OWVoWmxZUzBNeXg4NmpRLWQzR0hvS0dZOWN5anF1UFpFNXF3SEl0bDJWenQ3Z0x4d0NpX1FXSmw4a2IxRHRPUklaREhRMXF5dmhPdWloMWluRUVjdndKWkVIdWhSckFtcWM3eEZ5dVY0Mk1FRk1SdWM?oc=5",
+      "https://news.google.com/rss/articles/CBMijgFBVV95cUxQTTRfeGp1bTJuUVRRVmJ6MjdMRXJXYm1nNkNQb1YtbExvT002OWN0c3dVQTF6MHJHOEt2d0gwZmFNanFtR2RnOUhuUjNMZWgybFozbGx0ZnRSMkc4Nk5ud2tsdWU3SkxlWlBuQkYyOFRQN0FNMzV4blVZSzlEQ04yd3R6RUJEZkdSczBpRllB?oc=5",
+      "https://news.google.com/rss/articles/CBMivAFBVV95cUxNb1RfV1dfVjU2Q2lCbGZqT3kybEhYRUM3NTVwSkRFNUpIZkVUMVBtSkxWcmp2YjFfM2Q2WkFpS1B2dGdKc01LMkZJXzM1THdNRTBPdVhkX0Q5aGo3cktkU0pPRHQwbDBleTlHTGRuS3lheGFRYzEtMHByN1QwYTROZGdyU2dKc3BEc2NvdmFlWUJPdzBCZ2s5Zm1HcndrVVR1U2lSZDc2TFF0YVJnY2hya2NjOS12UmN2NFdGag?oc=5",
+      "https://news.google.com/rss/articles/CBMipwFBVV95cUxPei1qcmRraHdGU1hpOE9uSUFYY19DbXdUaUdpUXhZWDdpWnpfQVpadWpmaDBVeDQwRFZiQVFIUEM4clVFd3o2LV94U01hekNtQUZXZktKenVzdTR5UnJPZDZZbUtXR05ocGxOVEQzaTA5SUVwSHZyYWZITzFmZ0Q2akdjalR6bjRvcXdhSUtuaU10M0RITlNiTXN4NUItWWEyQzYwVmhEdw?oc=5",
+      "https://news.google.com/rss/articles/CBMiigFBVV95cUxQYVZYaUwwN1RaalJQQmV5bW91YVpCejhVMFdkR2RyNHVlcldKaDMzMk5MR3RjRGxqbmdHN0IzekdvbERHbjVQUFZXc3daTlNGYVZ6bm1mQ2NQdHZmQkQzRi1JekFrVExvQ2J2RnUyU1VMVjZzemVfUjExSHFvZEhZTVlBU3h3M2VRQ3c?oc=5",
+      "https://news.google.com/rss/articles/CBMigAFBVV95cUxPM3hnRHUxS1lzLXBzbllrSGZDNFlYUzBMRmw4WW1IN1Y1Yk9LZHRrVUdXdEhQUDl6ZEJ4dEphTGY2dldTOVdNNEp0NXY0MWFTTW5yWXVieGV4V2xxSHF0aTNCdy1IQ193cXRxdndsd0duS19CRFVPcmJraFl6OElzTA?oc=5",
+      "https://news.google.com/rss/articles/CBMinwFBVV95cUxQcEZjdnZ3M2dzcVhYck1tbXJKNzhNTE15NUNPcnRhYVdLNVV6Q0xaOHBETndRaFk1cm1Bc29jQ3lJYl9iR2d0ejljdFZrdFllb1NsMVc1eERySE9MQzFfb2lOdk5Wamx2R1BPejhDNVhCX284UUhsRl9jbXZoWW1FV3NVVG0tRGdJSERfUm1NNEpxSUJCYjI5Z2xFX2xySG8?oc=5",
+      "https://news.google.com/rss/articles/CBMibkFVX3lxTFBLYnNHRTNwSy1hS0ZSN3psM0pWUDhfZE45QlJyR0g0Y25HaWtxOXVlanN4VG9KTGloeGZTT2JHY1ByWmRXX1poY3JsdEN3RTc2VjhGS2ZoYWstcXhZRGRJUVRFTVF5VXVNcDZaN3V30gFzQVVfeXFMTlJWakFDN1RfZUwxM3M0YS1RME1VSGlhS0hBWlFwbk93T0F3cnNkdEJyN25aV0JITm53cmNkcVNBZGxJWVY1cDhxWGZsYVdrSy1sdldsaGhnWmFzTGdBR2o5Zkd3RUxveXFrY2wxVnRYNzN6Yw?oc=5",
+      "https://news.google.com/rss/articles/CBMijAFBVV95cUxOUV8yalV1azdNczVoNlVFNDBkQ1FZU1Y5aEQzUHMwYzN4THZuRWY0WXNPSmtsbXRjUGYyb1U1ZzZ1QmxHMnV5NXJ6djhmZVJwUlF5Vk80RVpweUhlSXdYNnlvMzhZblBpcWdvVXJVUWlDWThUQkVyeEE4WUQwUG1JVHNORXA1NEF4UFhsVw?oc=5",
+      "https://news.google.com/rss/articles/CBMirgFBVV95cUxQMXhXcWZoTnBHT1pydmN2Q3dqWUFobnpaTDBiR005Wm01b0c1RngxdElSbk9yem1aOGE1UWJwLWR2UXZBVi02OW05eTRfVEVaM2R0RVU1Qm5VNExfWlpZdkVRUkROLTFCUkxDZzV1dVN2RFV0N2IwaHB0ZDZpQ2tib0VMWFpVbEppTFlnd3h3WXVLTHhSdC03b3ZHQmlpWU1GVlBxWVBPYXNQSW44Y1E?oc=5",
+      "https://news.google.com/rss/articles/CBMijwFBVV95cUxOQktodHJqblV3TVFaQ01iemdURmdTNEs3SEl6bEdBR0FfOXlWYlNLT3I0ZXFma2tJZVl4Y2EycGVZRktWSjl2Z0QyS2dlM3VqOUJTT2xMWXhVRmlGRUNnZlpfbENBT1ZZRnlYZ2c4RnBDUTNMdlMwS3pBU0hRdThIajhvX3FWQ0pQLTJobkpsMA?oc=5"
     ]
   }
 ]
