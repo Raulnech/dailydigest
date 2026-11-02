@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI Morning Brief · Monday 2 November 2026</title>
+<meta name="theme-color" content="#3A55C8">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  color-scheme:light dark;
+  --ground:#F3F4F7; --paper:#FFFFFF; --ink:#141827; --muted:#5B6275; --line:#DDE0E8;
+  --industry:#3A55C8; --industry-soft:#E6EAFA;
+  --finance:#1C7453; --finance-soft:#E1F1EA;
+  --startups:#A8561A; --startups-soft:#F7EADF;
+  --code-bg:#161A26; --code-ink:#E4E7F0;
+  --right:#1C7453; --right-soft:#E1F1EA; --wrong:#B3261E; --wrong-soft:#FBE7E5;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --ground:#0F121B; --paper:#171B27; --ink:#E8EAF1; --muted:#9AA1B4; --line:#2A3042;
+    --industry:#8FA3F5; --industry-soft:#20284A;
+    --finance:#6CCBA3; --finance-soft:#15332A;
+    --startups:#E8A06A; --startups-soft:#3A2618;
+    --code-bg:#0B0D14; --code-ink:#E4E7F0;
+    --right:#6CCBA3; --right-soft:#15332A; --wrong:#F2A29B; --wrong-soft:#3A1B19;
+  }
+}
+*{box-sizing:border-box}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.6 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;padding-inline:16px;padding-block:28px 64px}
+.wrap{max-width:700px;margin:0 auto;display:grid;gap:36px}
+a{color:inherit}
+a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var(--industry);outline-offset:3px;border-radius:4px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400}
+header{display:grid;gap:10px}
+header .date{color:var(--muted)}
+h1{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(44px,11vw,64px);line-height:1;margin:0;letter-spacing:-.01em}
+h1 em{color:var(--industry)}
+.lede{color:var(--muted);margin:0;max-width:60ch}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ground);padding-block:10px;display:flex;gap:8px;overflow-x:auto;border-bottom:1px solid var(--line)}
+nav a{flex:none;text-decoration:none;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--paper);font-size:14px}
+nav a.industry{color:var(--industry)} nav a.finance{color:var(--finance)} nav a.startups{color:var(--startups)}
+
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:14px;scroll-margin-top:64px}
+.panel h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:30px;margin:0;line-height:1.15}
+.panel > .mono{color:var(--muted)}
+.talk ol{margin:0;padding-left:20px;display:grid;gap:8px}
+.toc{display:grid;gap:14px}
+.toc h3{margin:0 0 4px}
+.toc ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.toc li a{text-decoration:none}
+.toc li a:hover{text-decoration:underline}
+
+section{display:grid;gap:22px;scroll-margin-top:64px}
+.sec-head{display:grid;gap:2px;border-top:3px solid var(--c);padding-top:12px}
+.sec-head h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:36px;margin:0;line-height:1.1;text-wrap:balance}
+.sec-head p{margin:0;color:var(--muted)}
+.sec-head .mono{color:var(--c)}
+.industry{--c:var(--industry);--cs:var(--industry-soft)}
+.finance{--c:var(--finance);--cs:var(--finance-soft)}
+.startups{--c:var(--startups);--cs:var(--startups-soft)}
+
+article{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px 20px;display:grid;gap:16px;scroll-margin-top:64px}
+article .kicker{color:var(--c)}
+article h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(26px,6vw,32px);line-height:1.15;margin:0;text-wrap:balance}
+.standfirst{margin:0;font-size:18px;line-height:1.5;color:var(--muted)}
+.body{display:grid;gap:14px;font-family:"Source Serif 4",Georgia,serif;font-size:18px;line-height:1.65;max-width:65ch}
+.body p{margin:0}
+.src{margin:0;font-size:13px;color:var(--muted)}
+.concepts{background:var(--cs);border-radius:12px;padding:16px 18px;display:grid;gap:12px}
+.concepts .mono{color:var(--c)}
+.concepts dl{margin:0;display:grid;gap:10px}
+.concepts dt{font-weight:600}
+.concepts dd{margin:2px 0 0}
+.why{display:grid;gap:4px;border-left:2px solid var(--c);padding-left:14px}
+.why .mono{color:var(--c)}
+.why p{margin:0}
+
+pre{margin:0;background:var(--code-bg);color:var(--code-ink);border-radius:10px;padding:16px;overflow-x:auto;font:14px/1.55 "IBM Plex Mono",ui-monospace,Consolas,monospace}
+.walk{margin:0;padding-left:20px;display:grid;gap:6px}
+code{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:.9em}
+.tryit{background:var(--industry-soft);border-radius:10px;padding:12px 16px}
+.tryit p{margin:0}
+
+.q{display:grid;gap:12px;border-top:1px solid var(--line);padding-top:18px}
+.q:first-of-type{border-top:0;padding-top:0}
+.scenario{margin:0;font-family:"Source Serif 4",Georgia,serif;font-style:italic;font-size:17px}
+.q .ask{margin:0;font-weight:600}
+.opts{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.opts button{width:100%;text-align:left;font:inherit;color:var(--ink);background:var(--ground);border:1px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer;display:flex;gap:10px}
+.opts button:hover{border-color:var(--industry)}
+.opts button b{font-family:"IBM Plex Mono",ui-monospace,monospace;font-weight:500}
+.opts button.right{background:var(--right-soft);border-color:var(--right)}
+.opts button.wrong{background:var(--wrong-soft);border-color:var(--wrong)}
+.opts button:disabled{cursor:default}
+details{border-radius:10px}
+summary{cursor:pointer;font-weight:500;color:var(--industry)}
+.answer{display:grid;gap:8px;margin-top:10px}
+.answer p{margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:13px;padding:2px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+
+.gloss{margin:0;display:grid;gap:12px}
+.gloss dt{font-weight:600}
+.gloss dt a{font-weight:400;font-size:13px;color:var(--muted);margin-left:6px}
+.gloss dd{margin:2px 0 0;color:var(--muted)}
+.archive{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.archive a{display:inline-block;padding:4px 10px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-variant-numeric:tabular-nums;font-size:14px}
+.archive a[aria-current]{border-color:var(--industry);color:var(--industry)}
+footer{color:var(--muted);font-size:13px}
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="mono date">Monday 2 November 2026 · 13 min read</span>
+  <h1>AI Morning <em>Brief</em></h1>
+  <p class="lede">Today's AI and fintech news as short articles, with every key concept explained, a bit of Python, and a scenario quiz to check it stuck.</p>
+</header>
+
+<nav aria-label="Sections">
+  <a href="#industry" class="industry">The AI industry</a>
+  <a href="#finance" class="finance">AI &amp; finance</a>
+  <a href="#startups" class="startups">Startups &amp; funding</a>
+  <a href="#code">Code corner</a>
+  <a href="#quiz">Quiz</a>
+  <a href="#glossary">Glossary</a>
+</nav>
+
+<div class="panel talk">
+  <span class="mono">If you only read one thing</span>
+  <h2>Three things to be able to say today</h2>
+  <ol><li>OpenAI has sealed a flurry of Abu Dhabi deals covering energy, government and investment as it races to close a fresh $20 billion funding round.</li><li>Anthropic says AI now does roughly a quarter of its own model-development work, up from almost nothing in March.</li><li>Markets got another AI-spending jitter today as S&amp;P cut Meta&#39;s credit outlook over its soaring capital expenditure.</li></ol>
+</div>
+
+<div class="panel">
+  <span class="mono">In today's brief</span>
+  <div class="toc">
+  
+    <div class="industry"><h3 class="mono" style="color:var(--c)">The AI industry</h3>
+      <ul><li><a href="#story-0">OpenAI signs four Abu Dhabi deals covering oil, government and investment</a></li><li><a href="#story-1">Anthropic says AI now leads 26% of its own research, up from 1% in March</a></li><li><a href="#story-2">Google and Anthropic push back on Japan&#39;s AI copyright transparency rules</a></li></ul>
+    </div>
+  
+    <div class="finance"><h3 class="mono" style="color:var(--c)">AI &amp; finance</h3>
+      <ul><li><a href="#story-3">Marvell and Lumentum agree to combine in AI networking tie-up</a></li><li><a href="#story-4">Anthropic reportedly seeks $3.5 billion from Japan amid tech sell-off</a></li><li><a href="#story-5">S&amp;P cuts Meta&#39;s outlook to negative over capex and cash flow risks</a></li></ul>
+    </div>
+  
+    <div class="startups"><h3 class="mono" style="color:var(--c)">Startups &amp; funding</h3>
+      <ul><li><a href="#story-6">Aramco pays $2.6 billion for 49% of Saudi AI firm Humain</a></li><li><a href="#story-7">Deepgram acquires voice AI startup Daily, maker of Pipecat</a></li></ul>
+    </div>
+  
+  </div>
+</div>
+
+
+<section id="industry" class="industry">
+  <div class="sec-head">
+    <span class="mono">Section 1</span>
+    <h2>The AI industry</h2>
+    <p>Big labs, big tech and the direction of travel.</p>
+  </div>
+  
+  <article id="story-0">
+    <span class="mono kicker">The AI industry</span>
+    <h3>OpenAI signs four Abu Dhabi deals covering oil, government and investment</h3>
+    <p class="standfirst">Sam Altman meets Abu Dhabi&#39;s crown prince as OpenAI deepens Gulf ties while chasing a fresh $20 billion funding round.</p>
+    <div class="body"><p>OpenAI has signed four agreements in Abu Dhabi spanning energy, government and investment, the Abu Dhabi Media Office said on Monday, as chief executive Sam Altman met Khaled bin Mohamed bin Zayed Al Nahyan, the emirate&#39;s crown prince. State oil company ADNOC, working with AI firm G42, agreed to deploy OpenAI&#39;s most advanced (&#39;frontier&#39;) models and AI agents across its oil and gas operations. Sovereign investor Mubadala and Inception42 separately agreed to apply AI to investment analysis, while the Abu Dhabi government struck a deal to translate policies and regulations into machine-readable form.</p><p>The Gulf has become one of the most important regions for AI expansion, with US tech giants building huge data centres there even as regional conflicts test that appeal. OpenAI and rival Anthropic have increasingly turned to Middle Eastern investors for capital as the cost of training frontier AI models balloons. Abu Dhabi&#39;s MGX fund has backed both labs, co-leading Anthropic&#39;s $30 billion raise in February and OpenAI&#39;s $122 billion raise in March.</p><p>The timing matters: OpenAI is reportedly seeking to raise a further $20 billion, co-led by UAE investors, according to CNBC. Altman said the UAE was &#39;setting a bold, global standard&#39; for AI adoption, framing the deals around safety and accessibility.</p><p>The agreements tighten the financial and operational links between a leading AI lab and Gulf state capital, raising questions about how deeply AI infrastructure becomes entwined with oil money, sovereign funds and government decision-making.</p></div>
+    
+    <p class="src">Sources: <a href="https://www.cnbc.com/2026/11/02/openai-abu-dhabi-ai-deals.html" target="_blank" rel="noopener">Tech</a> · <a href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxOc1Bfd1U2WFJHQWFiNEM2SG5wOHc0ZEtYYW5fYnR2QW93NFpsNHNrYzVEcW5kY3B0MVZ4b1d1b0hnVzhtb3c3bGtPVjJycms3TUtZZENhMWs2QnNOdUJPMU40Y3lmVWZWTzFHUW04TXFaU29Xdkh6VWZsYVlta0M1R2ZrbU1pYUl3aFdwaW1ycGJYV1hDVjlLdWFrZm43VnRFelBTeUI0dlhiWjdQRXpJbjgwSlo3d2s4eFAtdjVDWlc?oc=5" target="_blank" rel="noopener">Investing.com UK</a> · <a href="https://news.google.com/rss/articles/CBMipwFBVV95cUxQM3pKREhYYmFudkxOam5JLXRVbkp1Mnpuc0pBOEZlNG0ycVo0SS1mTGkyRi1kb043b1RnVktnVTJnSzlyWXFrWVhVNXhmQm4yM2hOcXNJZ09CSTRoUlpkTnFud2M0OGZGVEtGOXdBR0dGdEVSUm5iSDZNcmczSnhrZGhCdzJuNG5rcU5oODMwSVNmNlRUUWRDanllam9BZzE2R1BhekJoa9IBrAFBVV95cUxNeEpGdnZpakVnUGxCU08yY3Etb3F4VzUzUW1CVkF0anUxTFBUODZzXzZtcjlhZVRuTk9qNkUtVlIzMGRuWmh1bHBLMXFDbDZ2clViYi1ObnNVaTlKUThCVkt2T0FQT1VRcVJRTFNLQW8tQ1gySE5meVFfZkUzUlN1Ujh0d0hJYXVUTEF0RDlGT2pOelFPNUQtWUNnUDF4SGpCVmo0NzlGRnhXWVpx?oc=5" target="_blank" rel="noopener">Crude Oil Prices Today | OilPrice.com</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Sovereign wealth fund</dt><dd>A reminder: this is a state-owned investment fund, often built from oil or gas revenue, that buys stakes in companies abroad. Abu Dhabi&#39;s Mubadala and MGX are examples investing heavily in AI.</dd></div><div><dt>AI agent</dt><dd>A reminder: an AI agent is software that can take multi-step actions on its own, such as monitoring an oil pump&#39;s sensors and deciding when to schedule maintenance, rather than just answering a single question.</dd></div><div><dt>Frontier AI lab</dt><dd>A reminder: this refers to companies like OpenAI and Anthropic building the most advanced, expensive AI models, as opposed to firms that just use existing models.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Deals like this create demand for people who understand both AI deployment and energy or government operations, so experience translating technical AI capability into industry-specific use cases is valuable. In interviews, you can mention how Gulf sovereign capital is becoming central to funding frontier AI labs.</p></div>
+  </article>
+  
+  <article id="story-1">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Anthropic says AI now leads 26% of its own research, up from 1% in March</h3>
+    <p class="standfirst">An internal Anthropic chart shows AI-led work on its next-generation Claude models has surged in eight months.</p>
+    <div class="body"><p>Anthropic has reportedly disclosed that AI systems now lead around 26% of the research and development work behind its next-generation Claude models, up from just 1% in March, according to an internal analysis cited by Dealroom and BigGo Finance.</p><p>The figure, described as one of the most closely watched charts among AI insiders, suggests AI labs are rapidly using their own models to speed up the process of building newer, better models - a trend sometimes called &#39;automating AI research itself&#39;.</p><p>If accurate, this points to AI development accelerating faster than headcount alone could explain, since AI tools can write and test code or analyse experiment results without a person doing every step.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMi7gFBVV95cUxQdS1ZWlBfSU03WE1OSGl0cFVoOXV1V0xoNXRydlJCVTRuc2pUeHpISEU1ak9NamM0NzVIRHh4T1VjU05LaWJYdmY5UkQzbUJ4WkJLR3BMa3RDam1UeEQyRVc4RFo1c19RYVdIUlpXemJrbDQzT0dpWEV3TjdDMmdBbHJ6a25lV3RSd0xiSFRuSXU0dlp0dUYtU0V3MkpIQng3NEdqRWt5WDB6LThjaGs1bXNXZTkxb3RfREFucEJSYllwM0d1WmpTYXg3dVltRHRhZ1FmSUlJcWM1enpFckF4Zk5ULUJRWlY3TTBIUDZn?oc=5" target="_blank" rel="noopener">Dealroom</a> · <a href="https://news.google.com/rss/articles/CBMidkFVX3lxTFBwSWV1VUtBSmVHM0JFTGVCaS1PT3VENG1nSTFBOTFMamtnYTNRQXRGbVp0eFZvVExhclVkZ01mLUpVU0EwYnJIbk1rd0ttQ0QwVVNOQVZVVmc3NUxRMDVGbFhUc3F0TnNkSEh2WDBTejJPbTktSXc?oc=5" target="_blank" rel="noopener">BigGo Finance</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Automation</dt><dd>A reminder: automation means a machine or program doing a task that previously needed a human, such as AI drafting and testing code changes for a new model version.</dd></div><div><dt>AI agent</dt><dd>A reminder: software that performs multi-step tasks with some autonomy, here apparently used to help design and test new versions of Claude.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>This is a strong talking point for interviews about AI research productivity: it shows how AI companies are using their own models as tools, not just products, which is reshaping how fast the whole field moves.</p></div>
+  </article>
+  
+  <article id="story-2">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Google and Anthropic push back on Japan&#39;s AI copyright transparency rules</h3>
+    <p class="standfirst">Both companies reportedly say Japan&#39;s new AI transparency code limits how far regulators can probe their use of copyrighted material.</p>
+    <div class="body"><p>Google and Anthropic have reportedly told Japanese authorities that there are limits on how much they can disclose about copyright issues under Japan&#39;s AI transparency code, according to MLex.</p><p>The code is meant to make AI companies more open about what data they use to train models, amid growing global pressure from authors, publishers and artists who argue their copyrighted work is being used without permission or payment.</p><p>The pushback highlights an unresolved tension at the heart of AI regulation: governments want visibility into training data, while AI firms often argue that full disclosure is impractical or commercially sensitive.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMiyAFBVV95cUxNVmhRRkQxcGxYaWVqRjVPeGh3ZGxuRkRDMFNBZ0owZGFRZS1VTC1YRHRNX0FRdXJLTWJFRnd3THlzRWtOQ1NQU1NEU2lWT2dfUHp0czRsVENaWjljcTU1aG5IVVl1el9NbHVPcEV1c0M0ZWk1NVloeFMzWm5TSGhVNVJXOGFSMVUwTk93Z0FMRy1zTkdMM3M0ZTFwMlJ0U1ZEYmdndTB5OUQ2dFd5eXNXUnlVS2cxOV9HUkl0eVc2dkw3MU13QzFndNIBWkFVX3lxTFBmZmpiRldUaWxQS3plNFdIaUhJMkxUQWpGbnpnRzlUNU1RYUl5NU8zUXNPMm9GVzZsaGh6Z0owSFNYTGkxWkNtQUZXODVxNVJCUU1vYllfOFBGQQ?oc=5" target="_blank" rel="noopener">MLex</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Regulator</dt><dd>A reminder: a regulator is a government body that sets and enforces rules for an industry, in this case overseeing how AI companies disclose the data used to train their models.</dd></div><div><dt>Copyright</dt><dd>Copyright is the legal right that gives creators control over use of their original work, such as books or articles. AI firms are being questioned over whether training models on copyrighted text without permission breaks this right.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Understanding AI copyright disputes is useful in both legal and product roles, as it shapes what data companies can legally use for training and could affect costs and licensing deals across the industry.</p></div>
+  </article>
+  
+</section>
+
+<section id="finance" class="finance">
+  <div class="sec-head">
+    <span class="mono">Section 2</span>
+    <h2>AI &amp; finance</h2>
+    <p>Where Wall Street and the City meet AI, as users and as funders.</p>
+  </div>
+  
+  <article id="story-3">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>Marvell and Lumentum agree to combine in AI networking tie-up</h3>
+    <p class="standfirst">The chipmaker and optical components maker plan to merge into what they call a category leader in AI connectivity, sending Marvell shares higher.</p>
+    <div class="body"><p>Marvell Technology and Lumentum have agreed to combine their businesses, aiming to create a leading supplier of the networking hardware that connects AI data centres together, according to Yahoo Finance. Marvell&#39;s stock rallied on the news, per Investing.com.</p><p>The deal brings together Marvell&#39;s chip expertise with Lumentum&#39;s optical components, which are used to move data at high speed between the thousands of GPUs that power AI training and inference. As AI data centres scale up, the links between chips become as important as the chips themselves.</p><p>The tie-up is part of a broader wave of consolidation in AI infrastructure supply chains, as companies race to control more of the &#39;full stack&#39; needed to build and run AI systems at scale.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxNSjlNUmhmdWJnTmsxMFpicTEzdk9GWV9ucW1hMzZWM0FtZnBqM2w1SkNIcE5SZ3lUUXNFMGx4U28yMk9pbm8tdWVhTGhTNWVkSXlDZllHcE01cUxVemVvYkxHRnpMQzhSYWdna1E1dDUzMDlVcktJVWhfSDZKT09qVWpNNlNKczVOU3BiT1oycWtsdmRHSW5xVXNwRGtTNHV6RmVnTlJpc1BIdw?oc=5" target="_blank" rel="noopener">Yahoo Finance</a> · <a href="https://news.google.com/rss/articles/CBMirAFBVV95cUxNblIwWFlQZU5ERk4xRGh6TUpwVXJ3V0dNVDlxWWpfbktlUDB1V3YtaVRKMVBwS2Y2TkR1REZxa3I2bFNncnVpc1FHMC11dUZ3b1NnblBJVG9hbDh3VkU2aGRRN2dQNXE2ZlUwQmdXZGlfX0lWaTByQ2ozOWxJS2RZbTVDX3ZIcGRfQVNXNXVZX2FEdXJQQ0FQT0FOWW03Rm9sVUxWWkU5Q0wyVnc2?oc=5" target="_blank" rel="noopener">Investing.com</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Acquisition</dt><dd>A reminder: this is when one company buys or merges with another, here combining chip-making with optical networking to serve AI data centres.</dd></div><div><dt>Full AI stack</dt><dd>A reminder: this means owning multiple layers needed to deliver AI, from chips and networking to software, rather than relying on outside suppliers for each piece.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>This deal shows investors rewarding companies that control critical AI infrastructure bottlenecks like data centre networking, a trend worth mentioning if asked about where AI value is concentrating beyond chipmakers like Nvidia.</p></div>
+  </article>
+  
+  <article id="story-4">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>Anthropic reportedly seeks $3.5 billion from Japan amid tech sell-off</h3>
+    <p class="standfirst">Anthropic is said to be raising fresh cash in Japan to fund AI computing power as tech stocks wobble and AI financing comes under strain.</p>
+    <div class="body"><p>Anthropic is reportedly seeking to raise $3.5 billion in Japan, according to Moomoo, as pressure mounts on AI financing amid a sharp sell-off in technology stocks.</p><p>The AI lab needs cash urgently to expand its computing capacity, the report says, reflecting how quickly the costs of running and training large AI models are rising even for well-funded firms.</p><p>The move comes as markets grow more cautious about heavy AI spending, making this an early signal of how AI labs might respond if investor appetite for funding rounds cools further.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxQLTdFZFppaWo1cXFvNEtORU9jNlFUWTRrT2VMWUNIMG9rRE1qZFdXMV9mSkxWZDEyQWU3MUdlQ2RqMlJGWlpOWHV1SzNhUXY2NC1VMjVsVlRTYlFDM3BVdUs4N1V4M2ZLWFZJaXA0YThvRWFHNU5oQWVENlhpb2lyYUdYVTZ1VzgtSDc1Q1JILTA1cFVPdXJjelZ0cw?oc=5" target="_blank" rel="noopener">Moomoo</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Market correction</dt><dd>A reminder: a market correction is a notable fall in asset prices, often 10% or more, following a period of strong gains. A tech sell-off can make it harder and pricier for companies to raise money.</dd></div><div><dt>Funding round</dt><dd>A reminder: this is when a company raises money from investors in exchange for equity or debt, used here by Anthropic to pay for expensive AI computing power.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>If AI labs are raising cash during a tech sell-off, it signals growing pressure on the sector&#39;s financing model, which is directly relevant if you work in markets, venture capital or corporate finance roles touching AI.</p></div>
+  </article>
+  
+  <article id="story-5">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>S&amp;P cuts Meta&#39;s outlook to negative over capex and cash flow risks</h3>
+    <p class="standfirst">The ratings agency warns Meta&#39;s soaring AI spending could strain its finances, even as its core business remains highly profitable.</p>
+    <div class="body"><p>S&amp;P Global has cut its outlook on Meta Platforms to negative, citing concerns over the company&#39;s elevated capital expenditure and the risks this poses to its cash flow, according to TradingView.</p><p>Meta has been pouring billions into AI infrastructure, including data centres and chips, as it competes with rivals like Google and Microsoft to build and run ever-larger AI models.</p><p>A negative outlook does not mean an immediate downgrade, but it signals that S&amp;P sees a real chance Meta&#39;s credit rating could be cut if spending keeps outpacing the cash the business generates.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMi0gFBVV95cUxPZEFsbk1CbEw5dlFlR0RpZ3V6YmJJWTFqVmFzR3JHUHVUVUR4Q0lacVpmdkRQdFFpU0JPMWxMdC1BYzZnaE10bUh2X3BYeGswMkozVE10X1RWRldhY090UXkyNlQ5dWRuLURuS3ZuaE5rLWxIMGxuR1Y2OUhhdG1oV1hGV2VrT2psUjBpNUh5Z1Y2RU5sM0t4bVVUMGJwQVFfQy1ZcDdRanhyS0tqWHFGaElSaktRdnNwUUxiaWJlYVdOenp3b0RId0xKMFU1V1VTUkE?oc=5" target="_blank" rel="noopener">TradingView</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Credit rating</dt><dd>A reminder: this is an assessment of how likely a company is to repay its debts, issued by agencies like S&amp;P. A lower rating usually means it costs the company more to borrow money.</dd></div><div><dt>Capital expenditure (capex)</dt><dd>A reminder: capex is money spent on long-term assets like data centres and chips. High capex can boost future growth but reduces cash available today.</dd></div><div><dt>Free cash flow</dt><dd>A reminder: free cash flow is the cash a company has left after paying for operations and capex. Falling free cash flow despite rising revenue is what worries ratings agencies.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Credit rating moves on big tech firms show how seriously investors are weighing AI spending risk, a useful example for finance interviews discussing how to assess a company&#39;s financial health beyond its headline revenue growth.</p></div>
+  </article>
+  
+</section>
+
+<section id="startups" class="startups">
+  <div class="sec-head">
+    <span class="mono">Section 3</span>
+    <h2>Startups &amp; funding</h2>
+    <p>Who raised, how much, and what investors are betting on.</p>
+  </div>
+  
+  <article id="story-6">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>Aramco pays $2.6 billion for 49% of Saudi AI firm Humain</h3>
+    <p class="standfirst">Saudi oil giant Aramco takes a near-half stake in state-backed AI company Humain, while sovereign fund PIF keeps majority control.</p>
+    <div class="body"><p>Saudi Aramco has closed a $2.6 billion deal to acquire a 49% stake in Humain, the kingdom&#39;s AI champion, according to GamesBeat and Startup Fortune. Saudi Arabia&#39;s Public Investment Fund (PIF) retains the remaining 51%, keeping majority control.</p><p>Humain was set up as part of Saudi Arabia&#39;s push to build its own domestic AI capabilities, covering everything from models to infrastructure, as the kingdom looks to diversify its economy beyond oil.</p><p>The deal brings Aramco&#39;s cash and industrial assets together with Humain&#39;s AI ambitions, echoing a wider pattern of Gulf oil wealth being funnelled directly into AI champions, similar to ADNOC&#39;s tie-up with OpenAI and G42.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMiiwFBVV95cUxNUV9zdlo3UVBfNE5XZWdkVjR0M1FBNXlPdzlaNGNyTUxJTDFmYTh0YnViLVNIVHdnU2xJVTV0M3R6b3owQ0dGREZlUnl6RV9taV9wS29Jem9BR3BaSmhIZkRqNDFzOXdEUTQ0Uy1sZ2NSMmVaMm02NHpYZFBsa3ptcHhVMEFjb1JrTE53?oc=5" target="_blank" rel="noopener">GamesBeat</a> · <a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxPSno5STJaZUpTOHZzT0xKMUc3Z1Z3a3hDam5XQ2xJRnZHcTctSEJfRnJHRS1DRDFuM19hSUxEWUc5N1BqclNMWXZxY3pmamJYaUw1d29JYjBTdDk3NllxMlh5eW1jeENTSG9md2tabHlEcnJDc2tuZEVud3k5Q0wtazZWMDZHeGdqenVaSDVMTGV6MFJHSEZPN3BqT3VkRTZrV2c?oc=5" target="_blank" rel="noopener">Startup Fortune</a> · <a href="https://news.google.com/rss/articles/CBMihAFBVV95cUxQR3oweDhpYl9aS3lreU9GbXJZbDg3cEJtemtzRTJpaDFubG1JYTNnbEhJT3UzZEwtQjVxVndWMjl1Sm1XX1RBckpmaWpQb3FsMTd0UUtaMmJoZUpZbGluVXUwSFJaT1JYdUVMbWp4Uy15WVJ5T2VnbGZubWRwSHBYckhQQ1k?oc=5" target="_blank" rel="noopener">Unite.AI</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Equity stake valuation gain/loss</dt><dd>A reminder: this is the change in value of a company&#39;s ownership stake in another business. If Humain&#39;s value rises after the deal, Aramco&#39;s $2.6 billion stake becomes worth more on paper.</dd></div><div><dt>Full AI stack</dt><dd>A reminder: Humain is reportedly building AI capability across multiple layers, from infrastructure to models, rather than specialising in just one part of the technology.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>This deal shows how Gulf states are using oil profits to build sovereign AI champions rather than just funding Western labs, a pattern worth knowing if you&#39;re tracking where global AI capital and control are heading.</p></div>
+  </article>
+  
+  <article id="story-7">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>Deepgram acquires voice AI startup Daily, maker of Pipecat</h3>
+    <p class="standfirst">Speech recognition company Deepgram buys Daily, whose open-source framework Pipecat helps developers build voice AI agents.</p>
+    <div class="body"><p>Voice AI company Deepgram has acquired Daily, the startup behind the open-source voice AI framework Pipecat, according to AI Insider.</p><p>Pipecat is used by developers to build real-time voice applications, such as AI agents that can hold spoken conversations, by connecting speech recognition, language models and text-to-speech tools together.</p><p>The acquisition brings Deepgram, known for speech-to-text technology, closer to offering a complete toolkit for building voice-based AI agents, rather than just one piece of the pipeline.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMirgFBVV95cUxPYkIybnllMDJEQUVzeXllX041NFNGMnRrWXEwcDBXblBqdTdfNnlweFdhOGkwYzA4UjE5WkR5OXB0TWNlNFpWcHZfWlZFY090bE0zMndGTkI5Qy12SlkwU3pvTkdBazJlclZJZEMxZlNwU1FqdU1HMl9YR1d4a25DTUYtQ0NsTGNLM0NMRzZpY1FUY0tPUlEyQm0zR1dUZXEzbnZkU0NvU3Nid1FpQmc?oc=5" target="_blank" rel="noopener">AI Insider</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Open source</dt><dd>A reminder: open-source software has its code made publicly available, so anyone can use, inspect or modify it, as with Pipecat&#39;s framework for building voice AI tools.</dd></div><div><dt>API (application programming interface)</dt><dd>A reminder: an API is a set way for different software to talk to each other. Pipecat lets developers connect an API for speech recognition, an API for an LLM, and an API for speech generation into one voice assistant.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Voice AI is becoming a distinct product category, so understanding frameworks like Pipecat is useful if you want to build or discuss conversational AI agents in interviews, especially in customer service or fintech voice applications.</p></div>
+  </article>
+  
+</section>
+
+
+
+<div class="panel" id="code">
+  <span class="mono">Code corner</span>
+  <h2>Simulating an AI agent&#39;s JSON response for an oil field sensor alert</h2>
+  <p class="src">Based on: <a href="#story-0">OpenAI signs four Abu Dhabi deals covering oil, government and investment</a></p>
+  <p style="margin:0">ADNOC is deploying OpenAI&#39;s AI agents to help run oil and gas operations. Real systems call an LLM API and get back structured JSON data that other code can act on. Here&#39;s a simplified, offline version showing how that works, using a fake response instead of a real API call.</p>
+  <pre><code>import json
+
+def fake_llm_response(prompt):
+    # Pretend this came back from an LLM API after analysing a sensor log
+    return json.dumps({
+        &#34;summary&#34;: &#34;Pump 4 shows early signs of wear.&#34;,
+        &#34;action&#34;: &#34;schedule_maintenance&#34;,
+        &#34;urgency&#34;: &#34;medium&#34;
+    })
+
+prompt = &#34;Analyse sensor log: Pump 4 vibration up 12% this week.&#34;
+raw_response = fake_llm_response(prompt)
+data = json.loads(raw_response)
+
+print(f&#34;Summary: {data[&#39;summary&#39;]}&#34;)
+print(f&#34;Action recommended: {data[&#39;action&#39;]}&#34;)
+print(f&#34;Urgency: {data[&#39;urgency&#39;]}&#34;)
+
+if data[&#34;urgency&#34;] == &#34;medium&#34;:
+    print(&#34;Flagging to human engineer for review.&#34;)
+elif data[&#34;urgency&#34;] == &#34;high&#34;:
+    print(&#34;Triggering immediate shutdown protocol.&#34;)
+else:
+    print(&#34;No action needed right now.&#34;)</code></pre>
+  <span class="mono">Line by line</span>
+  <ol class="walk"><li>`fake_llm_response` stands in for a real API call to an LLM, returning a JSON string just like a real AI agent might after analysing sensor data.</li><li>`json.dumps(...)` converts a Python dictionary into a JSON-formatted string, mimicking what an API would send over the network.</li><li>`json.loads(raw_response)` parses that JSON string back into a Python dictionary so we can use its values in code.</li><li>The f-strings print out specific fields from the dictionary, such as `data[&#39;action&#39;]`, showing how code reads structured AI output rather than plain text.</li><li>The if/elif/else block shows how an application decides what to do next based on the AI&#39;s urgency rating, which is the core idea behind an AI agent taking action.</li></ol>
+  <div class="tryit"><p><b>Try it:</b> Change the urgency value to &#34;high&#34; in fake_llm_response and run the code again to see the shutdown branch trigger. Then try adding a new field like &#34;confidence&#34;: 0.82 to the dictionary and print it out.</p></div>
+</div>
+
+<div class="panel" id="quiz">
+  <span class="mono">Quiz · apply today's concepts</span>
+  <h2>What would you do?</h2>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 1</span>
+    <p class="scenario">You&#39;re in a job interview for a junior analyst role at an energy company exploring AI partnerships, and the interviewer mentions ADNOC&#39;s new deal with OpenAI and G42.</p>
+    <p class="ask">They ask you to explain what makes this different from simply using a chatbot to answer employee questions. What&#39;s the best answer?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>It&#39;s the same thing, just with a different company name attached</span></button></li><li><button type="button" data-i="1"><b>B</b><span>The deal involves AI agents that can take multi-step actions on real operations, not just answer single questions</span></button></li><li><button type="button" data-i="2"><b>C</b><span>It only matters because oil prices are high right now</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Chatbots and AI agents are interchangeable terms for the same technology</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> AI agents are designed to carry out sequences of actions with some autonomy, such as monitoring equipment and scheduling maintenance, which goes beyond answering one-off questions like a simple chatbot. Saying it&#39;s &#39;the same thing&#39; misses this key distinction that the interviewer is testing for.</p>
+        <div class="chips"><span>AI agent</span><span>Compute deal</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 2</span>
+    <p class="scenario">It&#39;s your first week as a credit analyst at a bank, and your manager asks you to summarise why S&amp;P moved Meta&#39;s outlook to negative.</p>
+    <p class="ask">Which explanation correctly captures the concern?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>Meta&#39;s revenue fell sharply last quarter</span></button></li><li><button type="button" data-i="1"><b>B</b><span>Meta&#39;s heavy capital expenditure on AI infrastructure is squeezing its free cash flow</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Meta is being investigated for antitrust violations</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Meta&#39;s credit rating was downgraded immediately</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> S&amp;P&#39;s negative outlook reflects worry that rising capex on AI data centres and chips could strain Meta&#39;s free cash flow, not an actual revenue decline or a confirmed downgrade. A negative outlook is a warning of possible future action, not a downgrade itself.</p>
+        <div class="chips"><span>Capital expenditure (capex)</span><span>Free cash flow</span><span>Credit rating</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="2">
+    <span class="mono" style="color:var(--muted)">Scenario 3</span>
+    <p class="scenario">You&#39;re in a startup pitch meeting and a founder cites Aramco&#39;s $2.6 billion purchase of 49% of Humain as proof that &#39;big oil money is flowing into AI champions.&#39;</p>
+    <p class="ask">Which statement best reflects what actually happened in that deal?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>Aramco now owns a majority stake and controls Humain outright</span></button></li><li><button type="button" data-i="1"><b>B</b><span>PIF sold its entire stake in Humain to Aramco</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Aramco bought a 49% stake while Saudi Arabia&#39;s PIF retained 51% and majority control</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Humain is now a fully independent company with no state ownership</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: C.</b> Aramco acquired 49% of Humain for $2.6 billion, but PIF kept 51%, maintaining majority ownership and control. The other options incorrectly imply Aramco gained full or majority control, or that the state exited entirely.</p>
+        <div class="chips"><span>Equity stake valuation gain/loss</span><span>Sovereign wealth fund</span><span>Acquisition</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 4</span>
+    <p class="scenario">In a team meeting, a colleague argues that because Anthropic says AI now leads 26% of its own model research, your company should let an LLM agent handle all internal code reviews unsupervised.</p>
+    <p class="ask">What is the most sensible response based on today&#39;s reporting?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>Agree immediately, since Anthropic&#39;s figures prove full automation is now safe everywhere</span></button></li><li><button type="button" data-i="1"><b>B</b><span>Point out that even Anthropic&#39;s reported figure describes AI assisting research, not fully replacing human oversight, so guardrails are still needed</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Refuse to use AI at all, since the figure can&#39;t be trusted</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Argue that 26% means AI is now more reliable than any human reviewer</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> The reported 26% figure describes AI contributing to research tasks, not operating fully unsupervised at scale; it&#39;s reasonable to use this as evidence AI can assist, but not as proof it should replace human review entirely. The other options overreact in either direction, dismissing the data or overtrusting it.</p>
+        <div class="chips"><span>Automation</span><span>AI agent</span><span>Guardrails</span></div>
+      </div>
+    </details>
+  </div>
+  
+</div>
+
+<div class="panel" id="glossary">
+  <span class="mono">Glossary</span>
+  <h2>Every concept from today</h2>
+  <dl class="gloss"><div><dt>Acquisition<a href="#story-3">see story</a></dt><dd>A reminder: this is when one company buys or merges with another, here combining chip-making with optical networking to serve AI data centres.</dd></div><div><dt>AI agent<a href="#story-1">see story</a></dt><dd>A reminder: software that performs multi-step tasks with some autonomy, here apparently used to help design and test new versions of Claude.</dd></div><div><dt>API (application programming interface)<a href="#story-7">see story</a></dt><dd>A reminder: an API is a set way for different software to talk to each other. Pipecat lets developers connect an API for speech recognition, an API for an LLM, and an API for speech generation into one voice assistant.</dd></div><div><dt>Automation<a href="#story-1">see story</a></dt><dd>A reminder: automation means a machine or program doing a task that previously needed a human, such as AI drafting and testing code changes for a new model version.</dd></div><div><dt>Capital expenditure (capex)<a href="#story-5">see story</a></dt><dd>A reminder: capex is money spent on long-term assets like data centres and chips. High capex can boost future growth but reduces cash available today.</dd></div><div><dt>Copyright<a href="#story-2">see story</a></dt><dd>Copyright is the legal right that gives creators control over use of their original work, such as books or articles. AI firms are being questioned over whether training models on copyrighted text without permission breaks this right.</dd></div><div><dt>Credit rating<a href="#story-5">see story</a></dt><dd>A reminder: this is an assessment of how likely a company is to repay its debts, issued by agencies like S&amp;P. A lower rating usually means it costs the company more to borrow money.</dd></div><div><dt>Equity stake valuation gain/loss<a href="#story-6">see story</a></dt><dd>A reminder: this is the change in value of a company&#39;s ownership stake in another business. If Humain&#39;s value rises after the deal, Aramco&#39;s $2.6 billion stake becomes worth more on paper.</dd></div><div><dt>Free cash flow<a href="#story-5">see story</a></dt><dd>A reminder: free cash flow is the cash a company has left after paying for operations and capex. Falling free cash flow despite rising revenue is what worries ratings agencies.</dd></div><div><dt>Frontier AI lab<a href="#story-0">see story</a></dt><dd>A reminder: this refers to companies like OpenAI and Anthropic building the most advanced, expensive AI models, as opposed to firms that just use existing models.</dd></div><div><dt>Full AI stack<a href="#story-6">see story</a></dt><dd>A reminder: Humain is reportedly building AI capability across multiple layers, from infrastructure to models, rather than specialising in just one part of the technology.</dd></div><div><dt>Funding round<a href="#story-4">see story</a></dt><dd>A reminder: this is when a company raises money from investors in exchange for equity or debt, used here by Anthropic to pay for expensive AI computing power.</dd></div><div><dt>Market correction<a href="#story-4">see story</a></dt><dd>A reminder: a market correction is a notable fall in asset prices, often 10% or more, following a period of strong gains. A tech sell-off can make it harder and pricier for companies to raise money.</dd></div><div><dt>Open source<a href="#story-7">see story</a></dt><dd>A reminder: open-source software has its code made publicly available, so anyone can use, inspect or modify it, as with Pipecat&#39;s framework for building voice AI tools.</dd></div><div><dt>Regulator<a href="#story-2">see story</a></dt><dd>A reminder: a regulator is a government body that sets and enforces rules for an industry, in this case overseeing how AI companies disclose the data used to train their models.</dd></div><div><dt>Sovereign wealth fund<a href="#story-0">see story</a></dt><dd>A reminder: this is a state-owned investment fund, often built from oil or gas revenue, that buys stakes in companies abroad. Abu Dhabi&#39;s Mubadala and MGX are examples investing heavily in AI.</dd></div></dl>
+</div>
+
+<div class="panel">
+  <span class="mono">Past digests</span>
+  <ul class="archive"><li><a href="../archive/2026-11-02.html" aria-current="page">2026-11-02</a></li><li><a href="../archive/2026-11-01.html">2026-11-01</a></li><li><a href="../archive/2026-10-31.html">2026-10-31</a></li><li><a href="../archive/2026-10-30.html">2026-10-30</a></li><li><a href="../archive/2026-10-29.html">2026-10-29</a></li><li><a href="../archive/2026-10-28.html">2026-10-28</a></li><li><a href="../archive/2026-10-27.html">2026-10-27</a></li><li><a href="../archive/2026-10-26.html">2026-10-26</a></li><li><a href="../archive/2026-10-25.html">2026-10-25</a></li><li><a href="../archive/2026-10-24.html">2026-10-24</a></li><li><a href="../archive/2026-10-23.html">2026-10-23</a></li><li><a href="../archive/2026-10-22.html">2026-10-22</a></li><li><a href="../archive/2026-10-21.html">2026-10-21</a></li><li><a href="../archive/2026-10-20.html">2026-10-20</a></li><li><a href="../archive/2026-10-19.html">2026-10-19</a></li><li><a href="../archive/2026-10-18.html">2026-10-18</a></li><li><a href="../archive/2026-10-17.html">2026-10-17</a></li><li><a href="../archive/2026-10-16.html">2026-10-16</a></li><li><a href="../archive/2026-10-15.html">2026-10-15</a></li><li><a href="../archive/2026-10-14.html">2026-10-14</a></li><li><a href="../archive/2026-10-13.html">2026-10-13</a></li><li><a href="../archive/2026-10-12.html">2026-10-12</a></li><li><a href="../archive/2026-10-11.html">2026-10-11</a></li><li><a href="../archive/2026-10-10.html">2026-10-10</a></li><li><a href="../archive/2026-10-09.html">2026-10-09</a></li><li><a href="../archive/2026-10-05.html">2026-10-05</a></li><li><a href="../archive/2026-10-04.html">2026-10-04</a></li><li><a href="../archive/2026-10-03.html">2026-10-03</a></li><li><a href="../archive/2026-09-23.html">2026-09-23</a></li><li><a href="../archive/2026-09-22.html">2026-09-22</a></li></ul>
+</div>
+
+<footer>Written by Claude from the linked sources. Check the original article before quoting figures in an interview.</footer>
+</div>
+<script>
+document.querySelectorAll(".q").forEach(function (q) {
+  var correct = Number(q.dataset.correct);
+  var buttons = q.querySelectorAll(".opts button");
+  buttons.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var picked = Number(b.dataset.i);
+      buttons.forEach(function (x) {
+        var i = Number(x.dataset.i);
+        if (i === correct) x.classList.add("right");
+        else if (i === picked) x.classList.add("wrong");
+        x.disabled = true;
+      });
+      q.querySelector("details").open = true;
+    });
+  });
+});
+</script>
+</body>
+</html>
