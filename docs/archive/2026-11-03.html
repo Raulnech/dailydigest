@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI Morning Brief · Tuesday 3 November 2026</title>
+<meta name="theme-color" content="#3A55C8">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  color-scheme:light dark;
+  --ground:#F3F4F7; --paper:#FFFFFF; --ink:#141827; --muted:#5B6275; --line:#DDE0E8;
+  --industry:#3A55C8; --industry-soft:#E6EAFA;
+  --finance:#1C7453; --finance-soft:#E1F1EA;
+  --startups:#A8561A; --startups-soft:#F7EADF;
+  --code-bg:#161A26; --code-ink:#E4E7F0;
+  --right:#1C7453; --right-soft:#E1F1EA; --wrong:#B3261E; --wrong-soft:#FBE7E5;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --ground:#0F121B; --paper:#171B27; --ink:#E8EAF1; --muted:#9AA1B4; --line:#2A3042;
+    --industry:#8FA3F5; --industry-soft:#20284A;
+    --finance:#6CCBA3; --finance-soft:#15332A;
+    --startups:#E8A06A; --startups-soft:#3A2618;
+    --code-bg:#0B0D14; --code-ink:#E4E7F0;
+    --right:#6CCBA3; --right-soft:#15332A; --wrong:#F2A29B; --wrong-soft:#3A1B19;
+  }
+}
+*{box-sizing:border-box}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.6 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;padding-inline:16px;padding-block:28px 64px}
+.wrap{max-width:700px;margin:0 auto;display:grid;gap:36px}
+a{color:inherit}
+a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var(--industry);outline-offset:3px;border-radius:4px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400}
+header{display:grid;gap:10px}
+header .date{color:var(--muted)}
+h1{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(44px,11vw,64px);line-height:1;margin:0;letter-spacing:-.01em}
+h1 em{color:var(--industry)}
+.lede{color:var(--muted);margin:0;max-width:60ch}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ground);padding-block:10px;display:flex;gap:8px;overflow-x:auto;border-bottom:1px solid var(--line)}
+nav a{flex:none;text-decoration:none;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--paper);font-size:14px}
+nav a.industry{color:var(--industry)} nav a.finance{color:var(--finance)} nav a.startups{color:var(--startups)}
+
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:14px;scroll-margin-top:64px}
+.panel h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:30px;margin:0;line-height:1.15}
+.panel > .mono{color:var(--muted)}
+.talk ol{margin:0;padding-left:20px;display:grid;gap:8px}
+.toc{display:grid;gap:14px}
+.toc h3{margin:0 0 4px}
+.toc ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.toc li a{text-decoration:none}
+.toc li a:hover{text-decoration:underline}
+
+section{display:grid;gap:22px;scroll-margin-top:64px}
+.sec-head{display:grid;gap:2px;border-top:3px solid var(--c);padding-top:12px}
+.sec-head h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:36px;margin:0;line-height:1.1;text-wrap:balance}
+.sec-head p{margin:0;color:var(--muted)}
+.sec-head .mono{color:var(--c)}
+.industry{--c:var(--industry);--cs:var(--industry-soft)}
+.finance{--c:var(--finance);--cs:var(--finance-soft)}
+.startups{--c:var(--startups);--cs:var(--startups-soft)}
+
+article{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px 20px;display:grid;gap:16px;scroll-margin-top:64px}
+article .kicker{color:var(--c)}
+article h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(26px,6vw,32px);line-height:1.15;margin:0;text-wrap:balance}
+.standfirst{margin:0;font-size:18px;line-height:1.5;color:var(--muted)}
+.body{display:grid;gap:14px;font-family:"Source Serif 4",Georgia,serif;font-size:18px;line-height:1.65;max-width:65ch}
+.body p{margin:0}
+.src{margin:0;font-size:13px;color:var(--muted)}
+.concepts{background:var(--cs);border-radius:12px;padding:16px 18px;display:grid;gap:12px}
+.concepts .mono{color:var(--c)}
+.concepts dl{margin:0;display:grid;gap:10px}
+.concepts dt{font-weight:600}
+.concepts dd{margin:2px 0 0}
+.why{display:grid;gap:4px;border-left:2px solid var(--c);padding-left:14px}
+.why .mono{color:var(--c)}
+.why p{margin:0}
+
+pre{margin:0;background:var(--code-bg);color:var(--code-ink);border-radius:10px;padding:16px;overflow-x:auto;font:14px/1.55 "IBM Plex Mono",ui-monospace,Consolas,monospace}
+.walk{margin:0;padding-left:20px;display:grid;gap:6px}
+code{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:.9em}
+.tryit{background:var(--industry-soft);border-radius:10px;padding:12px 16px}
+.tryit p{margin:0}
+
+.q{display:grid;gap:12px;border-top:1px solid var(--line);padding-top:18px}
+.q:first-of-type{border-top:0;padding-top:0}
+.scenario{margin:0;font-family:"Source Serif 4",Georgia,serif;font-style:italic;font-size:17px}
+.q .ask{margin:0;font-weight:600}
+.opts{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.opts button{width:100%;text-align:left;font:inherit;color:var(--ink);background:var(--ground);border:1px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer;display:flex;gap:10px}
+.opts button:hover{border-color:var(--industry)}
+.opts button b{font-family:"IBM Plex Mono",ui-monospace,monospace;font-weight:500}
+.opts button.right{background:var(--right-soft);border-color:var(--right)}
+.opts button.wrong{background:var(--wrong-soft);border-color:var(--wrong)}
+.opts button:disabled{cursor:default}
+details{border-radius:10px}
+summary{cursor:pointer;font-weight:500;color:var(--industry)}
+.answer{display:grid;gap:8px;margin-top:10px}
+.answer p{margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:13px;padding:2px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+
+.gloss{margin:0;display:grid;gap:12px}
+.gloss dt{font-weight:600}
+.gloss dt a{font-weight:400;font-size:13px;color:var(--muted);margin-left:6px}
+.gloss dd{margin:2px 0 0;color:var(--muted)}
+.archive{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.archive a{display:inline-block;padding:4px 10px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-variant-numeric:tabular-nums;font-size:14px}
+.archive a[aria-current]{border-color:var(--industry);color:var(--industry)}
+footer{color:var(--muted);font-size:13px}
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="mono date">Tuesday 3 November 2026 · 14 min read</span>
+  <h1>AI Morning <em>Brief</em></h1>
+  <p class="lede">Today's AI and fintech news as short articles, with every key concept explained, a bit of Python, and a scenario quiz to check it stuck.</p>
+</header>
+
+<nav aria-label="Sections">
+  <a href="#industry" class="industry">The AI industry</a>
+  <a href="#finance" class="finance">AI &amp; finance</a>
+  <a href="#startups" class="startups">Startups &amp; funding</a>
+  <a href="#code">Code corner</a>
+  <a href="#quiz">Quiz</a>
+  <a href="#glossary">Glossary</a>
+</nav>
+
+<div class="panel talk">
+  <span class="mono">If you only read one thing</span>
+  <h2>Three things to be able to say today</h2>
+  <ol><li>Palantir&#39;s commercial AI revenue has overtaken its government business for the first time ever.</li><li>OpenAI reportedly raised less than half its $30bn target, reviving talk of an AI funding bubble.</li><li>Goldman Sachs has banned traders and bankers from using AI coding tools like Claude Code and GitHub Copilot.</li></ol>
+</div>
+
+<div class="panel">
+  <span class="mono">In today's brief</span>
+  <div class="toc">
+  
+    <div class="industry"><h3 class="mono" style="color:var(--c)">The AI industry</h3>
+      <ul><li><a href="#story-0">Nvidia Tells Data Centre Partners to Cut China Exposure, FT Reports</a></li><li><a href="#story-1">OpenAI Reportedly Raises Less Than Half of $30bn Target</a></li><li><a href="#story-2">Palantir&#39;s Commercial Revenue Hits $984m, Overtakes Government Business</a></li></ul>
+    </div>
+  
+    <div class="finance"><h3 class="mono" style="color:var(--c)">AI &amp; finance</h3>
+      <ul><li><a href="#story-3">Goldman Sachs Bars Staff From Using Claude Code and GitHub Copilot</a></li><li><a href="#story-4">ECB Flags AI Valuations and Bond Market Stress as Top Financial Risks</a></li><li><a href="#story-5">Barclays Reportedly Plans 5,000 Job Cuts Tied to AI Push</a></li></ul>
+    </div>
+  
+    <div class="startups"><h3 class="mono" style="color:var(--c)">Startups &amp; funding</h3>
+      <ul><li><a href="#story-6">Salesforce to Acquire Voice-AI Startup Cresta for $2.7bn</a></li><li><a href="#story-7">Chip Startup FuriosaAI Raises $620m at $2.9bn Valuation</a></li></ul>
+    </div>
+  
+  </div>
+</div>
+
+
+<section id="industry" class="industry">
+  <div class="sec-head">
+    <span class="mono">Section 1</span>
+    <h2>The AI industry</h2>
+    <p>Big labs, big tech and the direction of travel.</p>
+  </div>
+  
+  <article id="story-0">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Nvidia Tells Data Centre Partners to Cut China Exposure, FT Reports</h3>
+    <p class="standfirst">The chipmaker has reportedly instructed clients to limit Chinese access to its AI computing power through overseas facilities.</p>
+    <div class="body"><p>Nvidia has told data centre partners to reduce their exposure to China, according to the Financial Times, with follow-up reports suggesting the company is restricting Chinese access to its AI computing power that is routed through overseas data centres.</p><p>The move comes against a backdrop of tightening US export controls, which already bar Nvidia from selling its most advanced AI chips directly to Chinese customers. Routing compute through data centres based outside China has been one way around those restrictions, and regulators have grown wary of this kind of indirect access.</p><p>If confirmed, the instruction would mark a tightening of Nvidia&#39;s compliance stance, caught between booming demand from Chinese firms and Washington&#39;s determination to keep cutting-edge AI chips out of reach of a strategic rival.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMihAFBVV95cUxNcERsWE1GekIyVGJ1cmZzdHdvQnp2TkUtUi00eW5kUlBoeFZNbE5xNFZCMHNZdC02cmhvWXFudFRhRmM3RlpHUWtaZEdpR21rWnpwaFBaajNGMHY0WHYwcGlKbFZwUnhCLVQtRmZGZ0tBVV9fd1dlV041LUg3bnhDcE14emY?oc=5" target="_blank" rel="noopener">Financial Times</a> · <a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxQTE5VaW1iQnZJMlM4aS1lbk9zSWZ5ZEdvdjRULXJuUTE5c3JGdlctT2s4clhIZjRFWnZpR25IVkE5QUlQWEJhNmRHamk4UVg3bmZjT3MwYV9YUzh1c2JwMDhlZk53b1NZX0g4Zmh2QTFoeUJrVjE1QlJSMjN3cV82RVJmVHZJUkpLcU1raUZXdF9OeFhTMGxqc0pMMHhIVmtjaUZvTlgtSGpPQQ?oc=5" target="_blank" rel="noopener">Yahoo Finance</a> · <a href="https://news.google.com/rss/articles/CBMiigFBVV95cUxPTi1yMnROTHA1TU1iaXN3X3dMQm1ZZlNCQUJLTnRkNmVSbFBGSDRuU0owYUhvZDZCZUJHVFIwbnRab0hzU1hzaW1xRV92RkxWWl9RVlRYTGdjLXI3NUY3VDliRXJWOV92RHVST3k2dm5Pa1o4SjB4RG41bWdOTjBWal93NWw2dmR5ZVE?oc=5" target="_blank" rel="noopener">Yahoo Finance Singapore</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Export control evasion</dt><dd>This is when a company or buyer finds a workaround to get hold of restricted goods, like routing a shipment through a third country to dodge a ban. Governments watch for this and can close the loophole, as Nvidia is reportedly now doing itself.</dd></div><div><dt>Dual-use technology</dt><dd>Dual-use technology can be used for both civilian and military purposes, which is why advanced AI chips are tightly controlled. A chip that trains a chatbot can also, in theory, help design weapons systems, so export rules try to limit who gets access.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>This matters for anyone in chip supply chains, trade compliance or China-facing tech roles, since export control enforcement is becoming a bigger part of doing business in AI hardware. In interviews, flagging awareness of US-China chip restrictions shows commercial and geopolitical literacy.</p></div>
+  </article>
+  
+  <article id="story-1">
+    <span class="mono kicker">The AI industry</span>
+    <h3>OpenAI Reportedly Raises Less Than Half of $30bn Target</h3>
+    <p class="standfirst">A smaller-than-hoped funding round has reignited questions about whether AI valuations have run too far ahead of reality.</p>
+    <div class="body"><p>OpenAI has reportedly raised less than half of the $30 billion it was seeking in its latest funding round, according to the Wall Street Journal. The shortfall has rattled some investors already nervous about stretched valuations across the AI sector.</p><p>OpenAI has previously raised enormous sums at ever-higher valuations, fuelled by investor enthusiasm for generative AI and the belief that whoever builds the most capable models will capture outsized profits. A round landing well short of target suggests some investors are growing more cautious about writing ever-larger cheques.</p><p>The question now is whether this is a one-off hiccup or an early sign of a broader pullback in private AI funding. Given how much capital OpenAI needs to keep building data centres and training ever larger models, a weaker fundraising environment could force difficult trade-offs.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMipAFBVV95cUxQTW9TMmVsZkc2b05TYkloVW41X050RjdtZ1F5U01TRnJOSEthYTJpcDdPWVhJb0FvRGEteHgtbVhSS0lOVEZ3T2N5MTNpSUNWNXpETThZR0RvcFQwY2Q5R3ctRUFvM1ZtdFdMaXhGSnpPM2FiLUhORXNrem84cUpfVGpuQ0VmaGNsZUlxUVQ0dk4zQUE2cWFzUk8yM1R3cjc3dEczVw?oc=5" target="_blank" rel="noopener">WSJ</a> · <a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxNSDVfdjhZdEJVWUxXMkZaczFhOTUwQVBvQ1BaQTI1VkU0UWlpTjZTaWRvQ253NU5IQzJsN2dqcEc5UkQzSkhMOWcwaHRBdVc0VFQ1QlBiRE1JZEhqWWtfOENZVmdNeDhzNUQyeFRTT1AxbHJ1dXZRcEtHX1pBTHItNVJ5Nld4LU9qYUNaN0R3OVdZRFl6cFh3Snpmaw?oc=5" target="_blank" rel="noopener">Yahoo Finance</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Mega-round</dt><dd>A mega-round is a very large single funding round, often in the billions of dollars, raised by a company investors see as a sure bet. OpenAI&#39;s past rounds have counted among the biggest in corporate history.</dd></div><div><dt>Pre-money valuation</dt><dd>This is what a company is judged to be worth before new investment is added. If a company is valued at $100bn pre-money and raises $10bn, its post-money valuation becomes $110bn.</dd></div><div><dt>AI bubble</dt><dd>This is the worry that AI company valuations have been pushed up by hype rather than matching profits, similar to the dot-com bubble of the late 1990s. A funding shortfall like this one is exactly the sort of signal bubble-watchers look for.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Fundraising numbers like this are a quick gauge of investor sentiment that analysts and journalists track closely, and understanding the difference between pre- and post-money valuation is a basic skill for anyone working in venture capital or startup finance.</p></div>
+  </article>
+  
+  <article id="story-2">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Palantir&#39;s Commercial Revenue Hits $984m, Overtakes Government Business</h3>
+    <p class="standfirst">The data analytics firm posted record quarterly profit as US businesses rushed to adopt its AI tools.</p>
+    <div class="body"><p>Palantir beat Wall Street&#39;s expectations in its third-quarter results, reporting revenue of $2.31 billion against forecasts of $2.18 billion, and adjusted earnings per share of 44 cents versus the 41 cents analysts expected. Net income more than doubled year-on-year to $1.13 billion. Despite the beat, shares dipped around 3% in after-hours trading.</p><p>The standout figure was commercial revenue in the US, which jumped 148% to $984 million, overtaking US government revenue of $953 million, up 96%, for the first time in the company&#39;s history. Palantir built its reputation supplying data and AI software to defence and intelligence agencies, but its commercial segment has now grown more than fivefold over two years as ordinary businesses adopt its AI platforms. CEO Alex Karp said the firm was achieving unprecedented results without a traditional sales team.</p><p>Palantir raised its full-year guidance, now expecting US commercial revenue above $3.56 billion and total 2026 revenue of roughly $8.53 billion. Karp has also used his platform to call for AI labs to be nationalised, arguing this is the only realistic way to manage liability risks, a stance that stands out given growing debate over AI safety following recent researcher warnings about existential risk from the technology.</p><p>The results underline how quickly enterprise adoption of AI tools is translating into real revenue, not just promises, making Palantir a bellwether for whether commercial AI spending can keep outpacing government contracts.</p></div>
+    
+    <p class="src">Sources: <a href="https://www.cnbc.com/2026/11/02/palantir-pltr-earnings-q3-2026.html" target="_blank" rel="noopener">Tech</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Revenue growth rate</dt><dd>This measures how much a company&#39;s income has increased over a period, usually shown as a percentage. Palantir&#39;s commercial revenue growing 148% means it nearly two-and-a-half times its previous value.</dd></div><div><dt>Earnings per share (EPS)</dt><dd>EPS is a company&#39;s profit divided by the number of shares outstanding, used to judge profitability per unit of ownership. Beating the expected EPS of 41 cents with an actual 44 cents signals stronger-than-forecast profit.</dd></div><div><dt>Vertical AI</dt><dd>Vertical AI refers to AI products built for a specific industry or use case, rather than general-purpose tools. Palantir&#39;s data platforms for government and commercial clients are a classic example, tailored to specific operational needs.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Strong commercial AI revenue growth is a signal that enterprise software and data analyst roles increasingly require AI literacy, and quoting real growth figures like Palantir&#39;s in interviews shows you can read a results statement, not just repeat headlines.</p></div>
+  </article>
+  
+</section>
+
+<section id="finance" class="finance">
+  <div class="sec-head">
+    <span class="mono">Section 2</span>
+    <h2>AI &amp; finance</h2>
+    <p>Where Wall Street and the City meet AI, as users and as funders.</p>
+  </div>
+  
+  <article id="story-3">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>Goldman Sachs Bars Staff From Using Claude Code and GitHub Copilot</h3>
+    <p class="standfirst">The bank has reportedly restricted traders and bankers from using advanced AI coding tools over productivity and risk worries.</p>
+    <div class="body"><p>Goldman Sachs has banned traders and other employees from using certain advanced AI coding tools, including Anthropic&#39;s Claude Code and GitHub&#39;s tools, according to Bloomberg. The restriction reportedly stems from concerns about both productivity and risk.</p><p>Banks have been racing to adopt AI tools to speed up coding and analysis, but Goldman&#39;s move suggests some firms are pulling back where tools can autonomously write or execute code with limited oversight. Financial institutions face strict rules on data handling and system stability, making unsupervised AI coding tools a potential source of errors or security gaps.</p><p>The decision highlights a tension in finance: AI can speed up routine work, but mistakes in trading or banking systems carry outsized consequences, pushing some firms towards tighter controls rather than wider rollout.</p></div>
+    
+    <p class="src">Sources: <a href="https://www.finextra.com/newsarticle/48690/goldman-bans-traders-and-bankers-from-using-ai-coding-tools?utm_medium=rssfinextra&amp;utm_source=finextrafeed" target="_blank" rel="noopener">Finextra Research Headlines</a> · <a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxNclZrZGl6M0NLSFpRNXhZMEItQmhQR1QyUEpudk5WeU02eXF4MjAzUS15VlllV0ZyYXZkQmdPM1BZZzZac2VTQTJvekM3VTYtOEx1aXBudmpVakw5RXNXYWExc05Od1FOdzY0T01sZkNCOU80X3lVOXJfVXFJR0FjdXVmTUJVTHgzSGFJWEFLMHRTQmRPaU5RWUdzOHFBWTJvbE5sZFp6NmVCbC1JN2RQS2Npaw?oc=5" target="_blank" rel="noopener">PYMNTS.com</a> · <a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxOQkQxS3NGS0FqcXR4TmVZLWk5R0J5NWZIZ0JvZmJFbU5ZTDZkUnJoTVM1dFRFaHNaWVNrRE5TUERaWVVsaVlnUnJ6YW1HeUpUV2ZWc1FIZzU4ckhUTnE5V1NEdllvM3k3eHdldG0zajExWVJXYnNEdjRncTU1ZHFRSjhDb1VGRUFLU3lyTXowalJuaWFhUm8wa09TSmhsd3E4aUgxXzk3aTJ1UnV2ZkRKNFdHdw?oc=5" target="_blank" rel="noopener">Bloomberg.com</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>AI agent</dt><dd>An AI agent is software that can take actions on its own, such as writing and running code, rather than just answering questions. Tools like Claude Code can autonomously edit files and execute commands, which is exactly what makes banks nervous.</dd></div><div><dt>Guardrails</dt><dd>Guardrails are the rules and limits put around an AI system to stop it doing something harmful or unintended, like a chatbot refusing to reveal passwords. Banning a tool entirely is the bluntest possible guardrail.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>This shows that compliance and risk teams increasingly shape how AI tools get used inside banks, which is useful to know if you&#39;re applying for technology or risk roles in finance, where understanding both the capability and the danger of AI agents is now expected.</p></div>
+  </article>
+  
+  <article id="story-4">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>ECB Flags AI Valuations and Bond Market Stress as Top Financial Risks</h3>
+    <p class="standfirst">Europe&#39;s central bank has warned that overstretched AI valuations could combine with bond market strain to hit investment funds.</p>
+    <div class="body"><p>The European Central Bank has identified AI company valuations, stress in bond markets, and losses at investment funds as among the main risks facing the financial system, according to reports.</p><p>Central banks have grown increasingly vocal about the risk that AI stocks, trading at very high valuations relative to earnings, could suffer a sharp correction. A sudden repricing could spill over into other markets, particularly if funds holding AI-related debt or equity are forced to sell assets to cover losses.</p><p>The warning adds to a chorus of similar concerns from regulators and investors this year, underlining that policymakers see AI-driven market exuberance as a genuine systemic risk, not just a tech-sector curiosity.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxNcm9fN3piSDBLZzJEd0p1OVAyQ0xTZl9UcTR5TGQ4bVZTd19PYkpUdnFTUnN6Z05YV3NRR0hncnFrNl9hTkdrVDEycnpSNWdjMEI0R0FHR2tJelR1SWI2N1NFUnh2Sk9vanVjeC1RbzJleENnYnVya2lvY3BmWV9OQzY3RkRzR19lLW5LbTE2aTRkUE1VTFZpUlZ4VDBNdUZiNnR3Vi1WelNxWE55XzFxWTkwQXoxMHBMalZv?oc=5" target="_blank" rel="noopener">The Standard (HK)</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>AI bubble</dt><dd>An AI bubble describes a situation where AI company share prices rise far beyond what their profits justify, driven by hype rather than fundamentals. If sentiment turns, prices can fall sharply, as happened with dot-com stocks in 2000.</dd></div><div><dt>Contagion risk</dt><dd>Contagion risk is the danger that trouble in one market or company spreads to others, like a cold passing between people in a crowded room. A crash in AI stocks could hit funds that hold them, forcing wider asset sales.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Central bank warnings like this shape regulation and risk management practices across finance, so understanding why regulators worry about AI valuations is useful shorthand in any banking, asset management or fintech interview this year.</p></div>
+  </article>
+  
+  <article id="story-5">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>Barclays Reportedly Plans 5,000 Job Cuts Tied to AI Push</h3>
+    <p class="standfirst">The British bank is said to be leaning on automation to reduce headcount as it reshapes operations around AI tools.</p>
+    <div class="body"><p>Barclays is reportedly facing AI-driven cuts of around 5,000 jobs, according to a single report. Details on timing and which departments are affected have not been confirmed.</p><p>Banks have been investing heavily in AI tools to automate back-office tasks like processing, compliance checks and customer service, hoping to cut costs as competition in digital banking intensifies. Job cuts tied to automation have already featured at other major banks this year.</p><p>If confirmed, the cuts would be among the larger AI-linked reductions announced by a UK bank, adding to concerns about how quickly automation is reshaping employment in financial services.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxOWXpUWTdKZlBsbXM5VjlkQXphTEx5ZF8tbC1EbWFEaTVQbmVEckxYdGhSNWY0TVJ6MjhiQkE1XzA3enRQN3hSSGIwMEhDTHN5OTUycWVkbi0tZnVLeEJhN0dZa05WRnNfLTJWTXNxdjlmWkZIMUpuLXhEUVVjVGV2NDAxM2FfQy12RXh1aDd4SzVyZGZPN213Y2oyaHlBTzlBYjhHRUY1ZHZOaExQNklnTUh3?oc=5" target="_blank" rel="noopener">ad-hoc-news.de</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Automation</dt><dd>Automation means using technology to do tasks that previously required a person, like software that processes loan applications automatically instead of a human reviewing each one.</dd></div><div><dt>Technological unemployment</dt><dd>This is when workers lose jobs because machines or software can do their tasks more cheaply or efficiently. It&#39;s a long-running economic debate, going back to concerns about factory machinery in the 19th century.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Understanding which banking roles are most exposed to automation helps you target skills, like overseeing or building AI systems, that are less likely to be automated away, and it&#39;s a natural talking point if asked in an interview how AI is changing financial services jobs.</p></div>
+  </article>
+  
+</section>
+
+<section id="startups" class="startups">
+  <div class="sec-head">
+    <span class="mono">Section 3</span>
+    <h2>Startups &amp; funding</h2>
+    <p>Who raised, how much, and what investors are betting on.</p>
+  </div>
+  
+  <article id="story-6">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>Salesforce to Acquire Voice-AI Startup Cresta for $2.7bn</h3>
+    <p class="standfirst">The enterprise software giant is buying a contact-centre AI specialist to bolster its customer service offering.</p>
+    <div class="body"><p>Salesforce has signed a definitive agreement to acquire Cresta, a startup specialising in voice AI for contact centres, for $2.7 billion, according to reports and Salesforce&#39;s own announcement.</p><p>Cresta builds AI tools that help contact centre agents handle calls more effectively, a fast-growing niche as companies look to automate and improve customer service. The acquisition fits Salesforce&#39;s broader strategy of bolting AI capabilities onto its existing customer relationship management software rather than building every feature from scratch.</p><p>The deal adds to a wave of acquisitions by major software companies looking to buy specialised AI startups rather than compete with them, and signals continued appetite for deals in applied, industry-specific AI even as some investors worry about broader AI valuations.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMingFBVV95cUxQWm95Y2tDemxpeUFueHdIU3ZuUTN4MC1VU3dGc2hpWDZWOWZJOTNNQXVNd1ZMaXRLQnA0TTN1OExoM3JyUkpOeC0yNnB1SEcwdjBleXItRmFidjBuaEw4NDBhQllEejgzdlpyN1JSYzhja0FYZkYzNllLcWp1SndMZzRDdVo3MlVkNXBYM2c5aXVMS2lsaUE5Qzd4Si1SZw?oc=5" target="_blank" rel="noopener">The Information</a> · <a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxPRkRKVlBvYXpwbWxyT1hXRjdrVVNsYnZHZlFNZHl4Vnhnb1FvcWhiaDJ0Ry0taUVfc2lTWE9kUTcydmJDZHZJeVdiSE83V1NNdmtXRVd6a0pMRkIwd0UzZ25abFd3N3lxb3RILU1iak5XNGUwU1dQSTdrVUxaUzhyNDE2Q2ZLanlnT2QzZ3k2YlJJNG9jRUp4M1l6WHM?oc=5" target="_blank" rel="noopener">Salesforce</a> · <a href="https://news.google.com/rss/articles/CBMijAFBVV95cUxOejZZdlRoNlluM2Z5bmg2Y0ZSUVJRRlR6S2RWQk9xXzRPRjVlUFNFUG9Gc3NSMEN5OVZjMzdmbmwzWGZXVERHUzZrRHc1NHRGVGJNa284aGgwb1FTYnFaN1IwSkJoaWh0NlNwTnFtZC1GUzVES2tyRktodFpveEJZMjRlWXpySzE1UjBvTw?oc=5" target="_blank" rel="noopener">Dealroom</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Acquisition</dt><dd>An acquisition is when one company buys another outright, taking full ownership and control. Salesforce acquiring Cresta for $2.7bn means Cresta&#39;s technology, team and customers now become part of Salesforce.</dd></div><div><dt>Vertical AI</dt><dd>Vertical AI products are built for a specific use case or industry, like Cresta&#39;s focus on contact-centre voice AI, rather than being general-purpose tools usable for anything.</dd></div><div><dt>Agentic AI</dt><dd>Agentic AI refers to systems that can take multi-step actions on their own, such as handling a customer call end-to-end rather than just suggesting a response. Voice AI for contact centres is increasingly built this way.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Big software firms buying AI startups rather than building in-house shows where the demand is for specialised AI talent, and it&#39;s worth knowing how acquisitions like this value a startup&#39;s technology and customer base when discussing M&amp;A in interviews.</p></div>
+  </article>
+  
+  <article id="story-7">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>Chip Startup FuriosaAI Raises $620m at $2.9bn Valuation</h3>
+    <p class="standfirst">The AI chip designer has secured fresh funding as competition to challenge Nvidia in AI hardware intensifies.</p>
+    <div class="body"><p>FuriosaAI has raised $620 million in a new funding round, putting its post-money valuation at approximately $2.9 billion, according to Data Center Dynamics.</p><p>The company designs custom AI chips aimed at offering an alternative to Nvidia&#39;s dominant AI processors, part of a wider trend of startups and tech giants trying to reduce reliance on a single supplier for AI compute. Building competitive chips requires enormous capital for design, testing and manufacturing, which explains the size of the raise.</p><p>The funding reflects continued investor appetite for AI infrastructure plays even as some question whether overall AI valuations have become stretched, betting that whoever controls chip supply controls a key bottleneck in the AI boom.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxNYm1VYVJMSVFSaXlhdTlVSG92OW83djVLaEJUZTBXV2Fia1Jyc3p5cDNpUXVkQmo2ZC02ZzZwMXQ0UHlvWjdDR2hEUmctZTE0eVpxeURmVXo4Rnl0YzBacjBRNkVYSHhNeTB5MDhXUklWSll4am5UTlZJWGo5NHJCUkJPbVc0UTVqcHNRellLTVNCUXdJRUpSMWlsbmhrbWZORjZuX2VocFcxb2ZXem84dXFVUQ?oc=5" target="_blank" rel="noopener">Data Center Dynamics</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Funding round</dt><dd>A funding round is when a company raises money from investors in exchange for equity, usually done in stages as the business grows. FuriosaAI&#39;s $620m raise is one such round.</dd></div><div><dt>Custom chip (TPU)</dt><dd>A custom chip is hardware designed for a specific purpose, like running AI models efficiently, rather than general computing. Google&#39;s TPU is a well-known example; FuriosaAI is trying to build something similar as an Nvidia alternative.</dd></div><div><dt>Semiconductor fab</dt><dd>A fab, short for fabrication plant, is the highly specialised factory where chips are physically manufactured. Chip designers like FuriosaAI typically don&#39;t own fabs themselves and instead pay contract manufacturers to produce their designs.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>This is a reminder that AI&#39;s supply chain extends well beyond software into chip design and manufacturing, opening career paths in hardware engineering and semiconductor finance, and it pairs with today&#39;s Nvidia story on how compute access is becoming a geopolitical and commercial battleground.</p></div>
+  </article>
+  
+</section>
+
+
+
+<div class="panel" id="code">
+  <span class="mono">Code corner</span>
+  <h2>Calculating Revenue Growth Like an Analyst</h2>
+  <p class="src">Based on: <a href="#story-2">Palantir&#39;s Commercial Revenue Hits $984m, Overtakes Government Business</a></p>
+  <p style="margin:0">Palantir&#39;s results showed commercial revenue up 148% and government revenue up 96%. Here&#39;s how to calculate a growth rate yourself from current and prior figures, the kind of quick check an analyst does before trusting a headline number.</p>
+  <pre><code>def growth_rate(current, prior):
+    return (current - prior) / prior * 100
+
+# Palantir&#39;s reported current-quarter figures
+commercial_current = 984_000_000
+government_current = 953_000_000
+
+# Reported growth rates let us back out prior-year figures
+commercial_prior = commercial_current / (1 + 1.48)
+government_prior = government_current / (1 + 0.96)
+
+commercial_growth = growth_rate(commercial_current, commercial_prior)
+government_growth = growth_rate(government_current, government_prior)
+
+print(f&#34;Commercial revenue grew {commercial_growth:.1f}% year-on-year&#34;)
+print(f&#34;Government revenue grew {government_growth:.1f}% year-on-year&#34;)
+
+if commercial_current &gt; government_current:
+    print(&#34;Commercial revenue has overtaken government revenue.&#34;)
+else:
+    print(&#34;Government revenue is still larger.&#34;)</code></pre>
+  <span class="mono">Line by line</span>
+  <ol class="walk"><li>def growth_rate(current, prior): defines a reusable function that applies the standard growth formula: (new value minus old value) divided by old value, times 100 for a percentage.</li><li>commercial_current and government_current store this quarter&#39;s reported revenue figures in whole dollars, using underscores to make large numbers easier to read.</li><li>commercial_prior and government_prior rearrange the growth formula to work backwards from the reported growth rate and current figure to estimate last year&#39;s revenue.</li><li>growth_rate(commercial_current, commercial_prior) calls the function to check our estimate reproduces roughly the 148% and 96% figures reported.</li><li>The f-string print statements format the result to one decimal place, a common way to present percentages cleanly.</li><li>The if/else block compares the two revenue figures directly to confirm which segment is now larger, mirroring the story&#39;s key finding.</li></ol>
+  <div class="tryit"><p><b>Try it:</b> Change government_current to represent next quarter&#39;s guidance of $2.65 billion in total revenue split however you like between segments, and recalculate which segment would need to grow fastest to stay ahead.</p></div>
+</div>
+
+<div class="panel" id="quiz">
+  <span class="mono">Quiz · apply today's concepts</span>
+  <h2>What would you do?</h2>
+  
+  <div class="q" data-correct="0">
+    <span class="mono" style="color:var(--muted)">Scenario 1</span>
+    <p class="scenario">You&#39;re a junior analyst reviewing Palantir&#39;s earnings release before a morning meeting.</p>
+    <p class="ask">Palantir&#39;s commercial revenue was $984m, up 148% year-on-year. Roughly what was commercial revenue a year earlier?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>About $397m</span></button></li><li><button type="button" data-i="1"><b>B</b><span>About $984m</span></button></li><li><button type="button" data-i="2"><b>C</b><span>About $1.46bn</span></button></li><li><button type="button" data-i="3"><b>D</b><span>About $133m</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: A.</b> To grow 148% from a prior value to $984m, you divide $984m by (1 + 1.48), giving roughly $397m. Option B wrongly assumes zero growth, and the others misapply the percentage.</p>
+        <div class="chips"><span>Revenue growth rate</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="2">
+    <span class="mono" style="color:var(--muted)">Scenario 2</span>
+    <p class="scenario">In a team meeting, a colleague suggests letting an AI coding tool automatically push code changes to the bank&#39;s live trading systems overnight without review.</p>
+    <p class="ask">Given Goldman Sachs&#39; recent decision to restrict certain AI coding tools, what is the most sensible response?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>Agree, since AI agents are always safer than human coders</span></button></li><li><button type="button" data-i="1"><b>B</b><span>Reject the idea outright and ban all AI tools from the bank permanently</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Push back, since autonomous AI agents acting without guardrails or review pose real operational risk in critical systems</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Allow it only for junior staff since they make more mistakes anyway</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: C.</b> The Goldman story shows banks are wary of AI coding agents operating with limited oversight in sensitive systems; sensible practice is adding guardrails and review, not blind trust or blanket bans unrelated to the actual risk.</p>
+        <div class="chips"><span>AI agent</span><span>Guardrails</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 3</span>
+    <p class="scenario">A startup founder pitches you, explaining their company just got &#39;acquired&#39; by a major software firm for $2.7bn, similar to the Cresta deal.</p>
+    <p class="ask">What does this acquisition actually mean for Cresta going forward?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>Cresta remains fully independent but gets extra cash to spend as it wishes</span></button></li><li><button type="button" data-i="1"><b>B</b><span>Cresta becomes wholly owned and controlled by Salesforce, integrating into its products</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Cresta merges as an equal partner, sharing control 50/50 with Salesforce</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Cresta simply receives a loan from Salesforce that it must repay with interest</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> An acquisition means full ownership transfers to the buyer, here Salesforce, unlike a funding round (which keeps the company independent) or a loan (which involves repayment, not ownership transfer).</p>
+        <div class="chips"><span>Acquisition</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 4</span>
+    <p class="scenario">During an internship at an asset manager, your supervisor asks you to summarise why the ECB is worried about AI company valuations.</p>
+    <p class="ask">Which explanation best captures the ECB&#39;s concern as reported?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>AI stocks are too cheap and under-owned by institutional investors</span></button></li><li><button type="button" data-i="1"><b>B</b><span>Stretched AI valuations combined with bond market stress could trigger losses that spread through investment funds</span></button></li><li><button type="button" data-i="2"><b>C</b><span>The ECB is only concerned about cybersecurity risks from AI models</span></button></li><li><button type="button" data-i="3"><b>D</b><span>AI valuations are irrelevant to financial stability since AI companies don&#39;t borrow money</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> The ECB flagged AI valuations alongside bond market stress and fund losses as top risks, reflecting contagion concerns, not cheapness or cybersecurity, and many AI firms do carry significant debt and investor exposure.</p>
+        <div class="chips"><span>AI bubble</span><span>Contagion risk</span></div>
+      </div>
+    </details>
+  </div>
+  
+</div>
+
+<div class="panel" id="glossary">
+  <span class="mono">Glossary</span>
+  <h2>Every concept from today</h2>
+  <dl class="gloss"><div><dt>Acquisition<a href="#story-6">see story</a></dt><dd>An acquisition is when one company buys another outright, taking full ownership and control. Salesforce acquiring Cresta for $2.7bn means Cresta&#39;s technology, team and customers now become part of Salesforce.</dd></div><div><dt>Agentic AI<a href="#story-6">see story</a></dt><dd>Agentic AI refers to systems that can take multi-step actions on their own, such as handling a customer call end-to-end rather than just suggesting a response. Voice AI for contact centres is increasingly built this way.</dd></div><div><dt>AI agent<a href="#story-3">see story</a></dt><dd>An AI agent is software that can take actions on its own, such as writing and running code, rather than just answering questions. Tools like Claude Code can autonomously edit files and execute commands, which is exactly what makes banks nervous.</dd></div><div><dt>AI bubble<a href="#story-4">see story</a></dt><dd>An AI bubble describes a situation where AI company share prices rise far beyond what their profits justify, driven by hype rather than fundamentals. If sentiment turns, prices can fall sharply, as happened with dot-com stocks in 2000.</dd></div><div><dt>Automation<a href="#story-5">see story</a></dt><dd>Automation means using technology to do tasks that previously required a person, like software that processes loan applications automatically instead of a human reviewing each one.</dd></div><div><dt>Contagion risk<a href="#story-4">see story</a></dt><dd>Contagion risk is the danger that trouble in one market or company spreads to others, like a cold passing between people in a crowded room. A crash in AI stocks could hit funds that hold them, forcing wider asset sales.</dd></div><div><dt>Custom chip (TPU)<a href="#story-7">see story</a></dt><dd>A custom chip is hardware designed for a specific purpose, like running AI models efficiently, rather than general computing. Google&#39;s TPU is a well-known example; FuriosaAI is trying to build something similar as an Nvidia alternative.</dd></div><div><dt>Dual-use technology<a href="#story-0">see story</a></dt><dd>Dual-use technology can be used for both civilian and military purposes, which is why advanced AI chips are tightly controlled. A chip that trains a chatbot can also, in theory, help design weapons systems, so export rules try to limit who gets access.</dd></div><div><dt>Earnings per share (EPS)<a href="#story-2">see story</a></dt><dd>EPS is a company&#39;s profit divided by the number of shares outstanding, used to judge profitability per unit of ownership. Beating the expected EPS of 41 cents with an actual 44 cents signals stronger-than-forecast profit.</dd></div><div><dt>Export control evasion<a href="#story-0">see story</a></dt><dd>This is when a company or buyer finds a workaround to get hold of restricted goods, like routing a shipment through a third country to dodge a ban. Governments watch for this and can close the loophole, as Nvidia is reportedly now doing itself.</dd></div><div><dt>Funding round<a href="#story-7">see story</a></dt><dd>A funding round is when a company raises money from investors in exchange for equity, usually done in stages as the business grows. FuriosaAI&#39;s $620m raise is one such round.</dd></div><div><dt>Guardrails<a href="#story-3">see story</a></dt><dd>Guardrails are the rules and limits put around an AI system to stop it doing something harmful or unintended, like a chatbot refusing to reveal passwords. Banning a tool entirely is the bluntest possible guardrail.</dd></div><div><dt>Mega-round<a href="#story-1">see story</a></dt><dd>A mega-round is a very large single funding round, often in the billions of dollars, raised by a company investors see as a sure bet. OpenAI&#39;s past rounds have counted among the biggest in corporate history.</dd></div><div><dt>Pre-money valuation<a href="#story-1">see story</a></dt><dd>This is what a company is judged to be worth before new investment is added. If a company is valued at $100bn pre-money and raises $10bn, its post-money valuation becomes $110bn.</dd></div><div><dt>Revenue growth rate<a href="#story-2">see story</a></dt><dd>This measures how much a company&#39;s income has increased over a period, usually shown as a percentage. Palantir&#39;s commercial revenue growing 148% means it nearly two-and-a-half times its previous value.</dd></div><div><dt>Semiconductor fab<a href="#story-7">see story</a></dt><dd>A fab, short for fabrication plant, is the highly specialised factory where chips are physically manufactured. Chip designers like FuriosaAI typically don&#39;t own fabs themselves and instead pay contract manufacturers to produce their designs.</dd></div><div><dt>Technological unemployment<a href="#story-5">see story</a></dt><dd>This is when workers lose jobs because machines or software can do their tasks more cheaply or efficiently. It&#39;s a long-running economic debate, going back to concerns about factory machinery in the 19th century.</dd></div><div><dt>Vertical AI<a href="#story-6">see story</a></dt><dd>Vertical AI products are built for a specific use case or industry, like Cresta&#39;s focus on contact-centre voice AI, rather than being general-purpose tools usable for anything.</dd></div></dl>
+</div>
+
+<div class="panel">
+  <span class="mono">Past digests</span>
+  <ul class="archive"><li><a href="../archive/2026-11-03.html" aria-current="page">2026-11-03</a></li><li><a href="../archive/2026-11-02.html">2026-11-02</a></li><li><a href="../archive/2026-11-01.html">2026-11-01</a></li><li><a href="../archive/2026-10-31.html">2026-10-31</a></li><li><a href="../archive/2026-10-30.html">2026-10-30</a></li><li><a href="../archive/2026-10-29.html">2026-10-29</a></li><li><a href="../archive/2026-10-28.html">2026-10-28</a></li><li><a href="../archive/2026-10-27.html">2026-10-27</a></li><li><a href="../archive/2026-10-26.html">2026-10-26</a></li><li><a href="../archive/2026-10-25.html">2026-10-25</a></li><li><a href="../archive/2026-10-24.html">2026-10-24</a></li><li><a href="../archive/2026-10-23.html">2026-10-23</a></li><li><a href="../archive/2026-10-22.html">2026-10-22</a></li><li><a href="../archive/2026-10-21.html">2026-10-21</a></li><li><a href="../archive/2026-10-20.html">2026-10-20</a></li><li><a href="../archive/2026-10-19.html">2026-10-19</a></li><li><a href="../archive/2026-10-18.html">2026-10-18</a></li><li><a href="../archive/2026-10-17.html">2026-10-17</a></li><li><a href="../archive/2026-10-16.html">2026-10-16</a></li><li><a href="../archive/2026-10-15.html">2026-10-15</a></li><li><a href="../archive/2026-10-14.html">2026-10-14</a></li><li><a href="../archive/2026-10-13.html">2026-10-13</a></li><li><a href="../archive/2026-10-12.html">2026-10-12</a></li><li><a href="../archive/2026-10-11.html">2026-10-11</a></li><li><a href="../archive/2026-10-10.html">2026-10-10</a></li><li><a href="../archive/2026-10-09.html">2026-10-09</a></li><li><a href="../archive/2026-10-05.html">2026-10-05</a></li><li><a href="../archive/2026-10-04.html">2026-10-04</a></li><li><a href="../archive/2026-10-03.html">2026-10-03</a></li><li><a href="../archive/2026-09-23.html">2026-09-23</a></li></ul>
+</div>
+
+<footer>Written by Claude from the linked sources. Check the original article before quoting figures in an interview.</footer>
+</div>
+<script>
+document.querySelectorAll(".q").forEach(function (q) {
+  var correct = Number(q.dataset.correct);
+  var buttons = q.querySelectorAll(".opts button");
+  buttons.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var picked = Number(b.dataset.i);
+      buttons.forEach(function (x) {
+        var i = Number(x.dataset.i);
+        if (i === correct) x.classList.add("right");
+        else if (i === picked) x.classList.add("wrong");
+        x.disabled = true;
+      });
+      q.querySelector("details").open = true;
+    });
+  });
+});
+</script>
+</body>
+</html>
