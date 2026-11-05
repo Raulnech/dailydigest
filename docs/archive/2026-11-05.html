@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI Morning Brief · Thursday 5 November 2026</title>
+<meta name="theme-color" content="#3A55C8">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  color-scheme:light dark;
+  --ground:#F3F4F7; --paper:#FFFFFF; --ink:#141827; --muted:#5B6275; --line:#DDE0E8;
+  --industry:#3A55C8; --industry-soft:#E6EAFA;
+  --finance:#1C7453; --finance-soft:#E1F1EA;
+  --startups:#A8561A; --startups-soft:#F7EADF;
+  --code-bg:#161A26; --code-ink:#E4E7F0;
+  --right:#1C7453; --right-soft:#E1F1EA; --wrong:#B3261E; --wrong-soft:#FBE7E5;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --ground:#0F121B; --paper:#171B27; --ink:#E8EAF1; --muted:#9AA1B4; --line:#2A3042;
+    --industry:#8FA3F5; --industry-soft:#20284A;
+    --finance:#6CCBA3; --finance-soft:#15332A;
+    --startups:#E8A06A; --startups-soft:#3A2618;
+    --code-bg:#0B0D14; --code-ink:#E4E7F0;
+    --right:#6CCBA3; --right-soft:#15332A; --wrong:#F2A29B; --wrong-soft:#3A1B19;
+  }
+}
+*{box-sizing:border-box}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.6 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;padding-inline:16px;padding-block:28px 64px}
+.wrap{max-width:700px;margin:0 auto;display:grid;gap:36px}
+a{color:inherit}
+a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var(--industry);outline-offset:3px;border-radius:4px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400}
+header{display:grid;gap:10px}
+header .date{color:var(--muted)}
+h1{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(44px,11vw,64px);line-height:1;margin:0;letter-spacing:-.01em}
+h1 em{color:var(--industry)}
+.lede{color:var(--muted);margin:0;max-width:60ch}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ground);padding-block:10px;display:flex;gap:8px;overflow-x:auto;border-bottom:1px solid var(--line)}
+nav a{flex:none;text-decoration:none;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--paper);font-size:14px}
+nav a.industry{color:var(--industry)} nav a.finance{color:var(--finance)} nav a.startups{color:var(--startups)}
+
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:14px;scroll-margin-top:64px}
+.panel h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:30px;margin:0;line-height:1.15}
+.panel > .mono{color:var(--muted)}
+.talk ol{margin:0;padding-left:20px;display:grid;gap:8px}
+.toc{display:grid;gap:14px}
+.toc h3{margin:0 0 4px}
+.toc ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.toc li a{text-decoration:none}
+.toc li a:hover{text-decoration:underline}
+
+section{display:grid;gap:22px;scroll-margin-top:64px}
+.sec-head{display:grid;gap:2px;border-top:3px solid var(--c);padding-top:12px}
+.sec-head h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:36px;margin:0;line-height:1.1;text-wrap:balance}
+.sec-head p{margin:0;color:var(--muted)}
+.sec-head .mono{color:var(--c)}
+.industry{--c:var(--industry);--cs:var(--industry-soft)}
+.finance{--c:var(--finance);--cs:var(--finance-soft)}
+.startups{--c:var(--startups);--cs:var(--startups-soft)}
+
+article{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px 20px;display:grid;gap:16px;scroll-margin-top:64px}
+article .kicker{color:var(--c)}
+article h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(26px,6vw,32px);line-height:1.15;margin:0;text-wrap:balance}
+.standfirst{margin:0;font-size:18px;line-height:1.5;color:var(--muted)}
+.body{display:grid;gap:14px;font-family:"Source Serif 4",Georgia,serif;font-size:18px;line-height:1.65;max-width:65ch}
+.body p{margin:0}
+.src{margin:0;font-size:13px;color:var(--muted)}
+.concepts{background:var(--cs);border-radius:12px;padding:16px 18px;display:grid;gap:12px}
+.concepts .mono{color:var(--c)}
+.concepts dl{margin:0;display:grid;gap:10px}
+.concepts dt{font-weight:600}
+.concepts dd{margin:2px 0 0}
+.why{display:grid;gap:4px;border-left:2px solid var(--c);padding-left:14px}
+.why .mono{color:var(--c)}
+.why p{margin:0}
+
+pre{margin:0;background:var(--code-bg);color:var(--code-ink);border-radius:10px;padding:16px;overflow-x:auto;font:14px/1.55 "IBM Plex Mono",ui-monospace,Consolas,monospace}
+.walk{margin:0;padding-left:20px;display:grid;gap:6px}
+code{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:.9em}
+.tryit{background:var(--industry-soft);border-radius:10px;padding:12px 16px}
+.tryit p{margin:0}
+
+.q{display:grid;gap:12px;border-top:1px solid var(--line);padding-top:18px}
+.q:first-of-type{border-top:0;padding-top:0}
+.scenario{margin:0;font-family:"Source Serif 4",Georgia,serif;font-style:italic;font-size:17px}
+.q .ask{margin:0;font-weight:600}
+.opts{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.opts button{width:100%;text-align:left;font:inherit;color:var(--ink);background:var(--ground);border:1px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer;display:flex;gap:10px}
+.opts button:hover{border-color:var(--industry)}
+.opts button b{font-family:"IBM Plex Mono",ui-monospace,monospace;font-weight:500}
+.opts button.right{background:var(--right-soft);border-color:var(--right)}
+.opts button.wrong{background:var(--wrong-soft);border-color:var(--wrong)}
+.opts button:disabled{cursor:default}
+details{border-radius:10px}
+summary{cursor:pointer;font-weight:500;color:var(--industry)}
+.answer{display:grid;gap:8px;margin-top:10px}
+.answer p{margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:13px;padding:2px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+
+.gloss{margin:0;display:grid;gap:12px}
+.gloss dt{font-weight:600}
+.gloss dt a{font-weight:400;font-size:13px;color:var(--muted);margin-left:6px}
+.gloss dd{margin:2px 0 0;color:var(--muted)}
+.archive{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.archive a{display:inline-block;padding:4px 10px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-variant-numeric:tabular-nums;font-size:14px}
+.archive a[aria-current]{border-color:var(--industry);color:var(--industry)}
+footer{color:var(--muted);font-size:13px}
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="mono date">Thursday 5 November 2026 · 13 min read</span>
+  <h1>AI Morning <em>Brief</em></h1>
+  <p class="lede">Today's AI and fintech news as short articles, with every key concept explained, a bit of Python, and a scenario quiz to check it stuck.</p>
+</header>
+
+<nav aria-label="Sections">
+  <a href="#industry" class="industry">The AI industry</a>
+  <a href="#finance" class="finance">AI &amp; finance</a>
+  <a href="#startups" class="startups">Startups &amp; funding</a>
+  <a href="#code">Code corner</a>
+  <a href="#quiz">Quiz</a>
+  <a href="#glossary">Glossary</a>
+</nav>
+
+<div class="panel talk">
+  <span class="mono">If you only read one thing</span>
+  <h2>Three things to be able to say today</h2>
+  <ol><li>Microsoft has reportedly snubbed Nscale&#39;s bid to expand its Texas data centre deal just as the British neocloud eyes a $35bn IPO.</li><li>US banking regulator the OCC has issued its first supervisory framework for AI use, worried about banks&#39; AI agents going rogue.</li><li>Anthropic&#39;s IPO filing has reportedly reopened Wall Street&#39;s door to AI listings, while AMD and Amazon chase chip and startup deals worth billions.</li></ol>
+</div>
+
+<div class="panel">
+  <span class="mono">In today's brief</span>
+  <div class="toc">
+  
+    <div class="industry"><h3 class="mono" style="color:var(--c)">The AI industry</h3>
+      <ul><li><a href="#story-0">Microsoft Declines to Expand Nscale&#39;s Texas AI Deal Ahead of $35bn IPO</a></li><li><a href="#story-1">Nvidia Chips Pile Up in Hong Kong as China Blocks Import Approval</a></li><li><a href="#story-2">Foxconn&#39;s October Sales Jump 46% to $39.7bn on Nvidia AI Server Demand</a></li></ul>
+    </div>
+  
+    <div class="finance"><h3 class="mono" style="color:var(--c)">AI &amp; finance</h3>
+      <ul><li><a href="#story-3">US Bank Regulator OCC Issues First Framework for AI Use by Banks</a></li><li><a href="#story-4">Anthropic&#39;s IPO Filing Sparks Tech Rally as Wider AI IPO Market Stays Shut</a></li><li><a href="#story-5">UBS Lifts AI Capex Forecast to $1.4 Trillion, Flags 2027 Debt Wall Risk</a></li></ul>
+    </div>
+  
+    <div class="startups"><h3 class="mono" style="color:var(--c)">Startups &amp; funding</h3>
+      <ul><li><a href="#story-6">AMD to Buy Toronto AI Chip Startup Taalas for $2.9bn</a></li><li><a href="#story-7">Amazon in Talks to Buy AI Startup Decart for About $7bn</a></li></ul>
+    </div>
+  
+  </div>
+</div>
+
+
+<section id="industry" class="industry">
+  <div class="sec-head">
+    <span class="mono">Section 1</span>
+    <h2>The AI industry</h2>
+    <p>Big labs, big tech and the direction of travel.</p>
+  </div>
+  
+  <article id="story-0">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Microsoft Declines to Expand Nscale&#39;s Texas AI Deal Ahead of $35bn IPO</h3>
+    <p class="standfirst">The tech giant has reportedly turned down an option to grow its Texas data centre contract with British neocloud Nscale, just as the startup prepares to go public.</p>
+    <div class="body"><p>Microsoft has reportedly rejected a multibillion-dollar option to expand its existing data centre deal with UK firm Nscale in Texas, according to the Financial Times and other outlets. The decision comes as Nscale is said to be preparing a $35 billion initial public offering (IPO) — when a private company first sells shares to the public on a stock exchange.</p><p>Nscale is what&#39;s known as a neocloud: a newer company that rents out AI computing power, often by leasing data centres and GPUs rather than owning a sprawling cloud empire like Microsoft or Amazon. Deals with hyperscalers — the handful of giant cloud providers including Microsoft, Amazon and Google — are crucial for neoclouds, since they provide the guaranteed revenue that makes expensive data centre buildouts financeable.</p><p>Microsoft walking away from an expansion option doesn&#39;t necessarily kill the existing deal, but it raises questions about how much hyperscalers want to commit to third-party capacity versus building their own. For Nscale, investors weighing its upcoming IPO will be watching closely for signs that its biggest customer relationship is cooling.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMihAFBVV95cUxNdnNKc0t2WlRGTk9fTmRoLXFJUWkweF9tNXY1UG1FZjUxdkhGVGtUYmlvMmtvS2ZpX3VabTE1VW1jaUNGalhsbTRENTNTZXVwb1dfZ2FDaUJwUkxhYWc0cTA4Rm5wdENKclZPTVRaQV8zT1VpcHV3eVFIUmJUWUdiWlVRRkk?oc=5" target="_blank" rel="noopener">Financial Times</a> · <a href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxNb3YxSi01QlpvU2xqQVk1TUZQVTdjQnlqOUZwaFUzZ2txZHBJaHZ5bTVNOXpRZGV0czNzQkRCamNqNXZ2cUFoZ1JsV1l0cGFKazh4SXpjSlJ0Q1pMR0IyVWhfQkZlbTAtWFJ1ZERpbDdfNzZqaVlZUjg2a2RKNlRfS0N4OFMwSmpERG9EWng5MC1XXy1ENURJMUNWTTEyR3Q0UkE3WnRSMVJmVDAwdlJoVDhXa0h1YXpyYjBR?oc=5" target="_blank" rel="noopener">Reuters</a> · <a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxQTXdIR1lHLTc4bzFubHBXUUgxdEdYdG5aOXp3b2s0TEVfNmpPZTFKQ09vX1BQVUtkZDMyMEJkaU5FQ3hkSGY0d0pYZGNyVFZiLV82ZDlGOWhIMElsOGRpanJMZ3RHSGNCZUhRbnJMUWYybDQwVkhBNWpvSWpELVZqUDBCUQ?oc=5" target="_blank" rel="noopener">Yahoo Finance Singapore</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Hyperscaler</dt><dd>A hyperscaler is one of the few giant companies — Microsoft, Amazon, Google — that run vast global networks of data centres renting out computing power.</dd></div><div><dt>Neocloud</dt><dd>A neocloud is a newer company that rents out AI computing power, often leasing or building data centres packed with GPUs, without the broader cloud business of a hyperscaler.</dd></div><div><dt>IPO (initial public offering)</dt><dd>An IPO is the first time a private company sells shares to public investors on a stock exchange, turning it into a publicly traded firm.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>If you&#39;re eyeing roles in cloud infrastructure or AI finance, understanding the hyperscaler-neocloud relationship explains why so much AI investment flows through a handful of giant contracts. It&#39;s a good interview talking point for showing you understand how AI&#39;s physical infrastructure gets funded.</p></div>
+  </article>
+  
+  <article id="story-1">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Nvidia Chips Pile Up in Hong Kong as China Blocks Import Approval</h3>
+    <p class="standfirst">A stockpile of Nvidia processors is reportedly stuck in Hong Kong awaiting Chinese customs sign-off, highlighting ongoing US-China tech tensions.</p>
+    <div class="body"><p>A stockpile of Nvidia chips is sitting in Hong Kong because Chinese authorities have not approved their import into the mainland, according to reports from Yahoo Finance and the Business Times. The chips are reportedly caught in a bottleneck tied to broader restrictions on advanced semiconductor flows between the US and China.</p><p>Nvidia&#39;s most powerful AI chips are considered dual-use technology — products with both civilian and military applications — which is why Washington has imposed export controls restricting their sale to China. Beijing, in turn, has been slow to approve imports of some Nvidia chips, reportedly pushing domestic buyers towards Chinese-made alternatives instead.</p><p>The standoff matters because China is one of the world&#39;s largest markets for AI chips, and continued friction could reshape where global AI computing power gets built, with ripple effects for chipmakers and cloud providers on both sides.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxOc0xLYXAyT1ZpN0IwV0xDX09TWDl4RjVlX2RqTEZxSnNIMTFZTkJRYW9JRTVCUnRqdUhqRGstUjEzYWVWOFJsTXlPQU5ZYjNENFEzLV9tbUwtSGZKYkZuaWE1Zi04eGhUbzJ2NE14Q3lFRmc3cnNzc2xVMTFSYnVLTFpPNC13YTF2?oc=5" target="_blank" rel="noopener">Yahoo! Finance Canada</a> · <a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxORTlEWXk2eUVRNldKMkZDYm9lUFhOc3QydEVjS2c0dUxaVjBUa21mcjdnMy1QRHhxZ0hvMjJrLVE4cWNscjRoMnFVOW9oRnV3cDc2M0lpNlpZMzhaejVTX2c5RGxQbXBwbUprSzJVMk94d1pBM2Jsd3U0NE9yeEUzdVhUMmszRWh2cVNpLUVGVXJuN1JTWG9hSVRXT0hhek53YTFhZGEyUFVUMDVaRzJV?oc=5" target="_blank" rel="noopener">The Business Times</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Dual-use technology</dt><dd>Dual-use technology is equipment or software that can serve both civilian and military purposes, such as an advanced chip used for AI research or weapons systems — this is why many countries tightly control its export.</dd></div><div><dt>Export controls</dt><dd>Export controls are government rules restricting which products — like advanced semiconductors — can be sold to certain countries, usually for national security reasons.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Geopolitics increasingly shapes who can buy the chips that power AI, which matters for anyone analysing semiconductor stocks or AI supply chains. It&#39;s a useful example in interviews of how policy risk affects even the most in-demand tech products.</p></div>
+  </article>
+  
+  <article id="story-2">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Foxconn&#39;s October Sales Jump 46% to $39.7bn on Nvidia AI Server Demand</h3>
+    <p class="standfirst">Nvidia&#39;s biggest manufacturing partner says AI server orders are fuelling record monthly revenue and a strong fourth quarter ahead.</p>
+    <div class="body"><p>Hon Hai, the Taiwanese company better known as Foxconn, reported that its sales rose 46% in October to $39.7 billion, driven largely by demand for AI servers built for Nvidia. The company, founded by billionaire Terry Gou, is Nvidia&#39;s key contract manufacturer — a firm that assembles products on behalf of another company that designs them.</p><p>Foxconn said it expects the momentum to continue into the fourth quarter, reinforcing the picture of surging demand for the physical hardware behind the AI boom. As one of the world&#39;s largest electronics assemblers, Foxconn&#39;s results are often used as a bellwether for broader AI hardware spending trends.</p><p>The growth figures add to a string of strong results across the AI supply chain this year, even as questions persist about whether that spending pace is sustainable long-term.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMirgFBVV95cUxPY21OQzRnWEJXbm9XazB3Z096RHpjOU53ajNLTG5sb3RGS3JYcDFqZUpwVXNwT3dYRHhZeV90d3hxSVdDNE9Qa21zamctWUtEeGVqVkVLTmhGSUgxQ3ZpUGR5bWg3Q1pOY19qNjBVWlhuMlVxZWo1TDJoSlJENS01a0RxcThfblM0dXhkTGlYM0ZHOUhYNjBwREZwTk1va1hvS0M1cWljY081Z0tCYmc?oc=5" target="_blank" rel="noopener">Bloomberg.com</a> · <a href="https://news.google.com/rss/articles/CBMi5AFBVV95cUxOeGVuNlVVcmZ2UGdtZWQ2TlJoZk4xZE55dXZQdVIwdElsbktxSkJQUkFhWnhKQ21MeVIwY1NPV3oyVi1rc2NKdTg4b2Q0VHVIb01BbE5UcnN2WlUwa0xTN2VWc1Y3aFlxM25pODU5d0NHSlZramFTaFBwZ1BtRUNRRExON3FkNTN6Qk1UellmVW1VZ0FVUmZWTlo1YkFsSVFLWWxVWldiNzlpT2xJYm5fNjl2S25IWFdLLWxZNGEzcE5NT25sVkNTN0xVU01teXl3LWM4YURqaEJoalJYYWo3RDVJbm0?oc=5" target="_blank" rel="noopener">Billionaires.Africa</a> · <a href="https://news.google.com/rss/articles/CBMi3AFBVV95cUxOZGNkcy1JYkE4XzkxdnNFWWVkN2RQZkFDLTNwVjU1cVBDdGEzYW15SFUyTGwxV2JKc1NsazZILVpnMkp1bUZfdE04VmFpSTM2RGZJbzVudW16b2lFNWdsSkZzT21CaDEwcl90T01RaVVJZzNCZVVGelBOVEswdzZmTHNTT1NfUzBobFRVNVl4ejZ6TFhkcXpFUjVlSFhZb05HbkFEZXJ5dnFNU1pxZktra0duTFJscVQ0SU9xWE5NMGJVRHJzWHJkR2tXMGdneE53clJFSlB6bG9hTlhP?oc=5" target="_blank" rel="noopener">TradingView</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Contract manufacturer</dt><dd>A contract manufacturer is a company, like Foxconn, that builds products — such as AI servers — designed by another firm, such as Nvidia, usually at large scale.</dd></div><div><dt>Revenue growth rate</dt><dd>The revenue growth rate measures how much a company&#39;s sales have increased over a period, such as Foxconn&#39;s 46% year-on-year rise in October sales.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Hardware assembly numbers like Foxconn&#39;s are a useful real-world proxy for AI demand that&#39;s independent of any single tech company&#39;s own reporting. Knowing how to read supply chain data is valuable for finance roles analysing the AI sector beyond the headline chipmakers.</p></div>
+  </article>
+  
+</section>
+
+<section id="finance" class="finance">
+  <div class="sec-head">
+    <span class="mono">Section 2</span>
+    <h2>AI &amp; finance</h2>
+    <p>Where Wall Street and the City meet AI, as users and as funders.</p>
+  </div>
+  
+  <article id="story-3">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>US Bank Regulator OCC Issues First Framework for AI Use by Banks</h3>
+    <p class="standfirst">The Office of the Comptroller of the Currency has set out supervisory expectations for how banks deploy AI, amid concerns over unpredictable AI agents.</p>
+    <div class="body"><p>The Office of the Comptroller of the Currency (OCC), a top US bank regulator, has issued its first formal framework guiding how examiners will assess banks&#39; use of artificial intelligence, according to Finextra and PYMNTS. The move follows growing concern about banks deploying AI agents — AI systems that can take actions, like approving transactions, with limited human oversight.</p><p>Decrypt reported the framework arrives as banks battle what it called &#34;rogue agents&#34;: AI tools that behave unpredictably or make decisions outside their intended boundaries. Regulators have been under pressure to catch up with banks&#39; rapid adoption of AI for tasks ranging from fraud detection to customer service, where mistakes can carry real financial and legal consequences.</p><p>The framework is reportedly strict, signalling that US regulators intend to hold banks accountable for AI-driven errors just as they would for human ones, rather than treating automated decisions as a grey area.</p></div>
+    
+    <p class="src">Sources: <a href="https://www.finextra.com/pressarticle/111577/occ-issues-supervisory-framework-on-bank-use-of-ai?utm_medium=rssfinextra&amp;utm_source=finextrafeed" target="_blank" rel="noopener">Finextra Research Headlines</a> · <a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxORWFrMHJaOG1GaVBPcllYNk0wakVtWkIxdzN4bExuWlpHYWc5MGlkUzA5YVBCY0l3aVBGYXdZREh2a0Z0MlFFUll6dkFGZkFFbTNrdVhnNHc2TndacVdfMVA3b1JpVFJaNERDeHRTb05OWGYtM0xKZGFXMDFmc1ZMZF9STTJaMlVFbFJTOFVWUjRzQVhrSHhFLVB1UQ?oc=5" target="_blank" rel="noopener">Decrypt</a> · <a href="https://news.google.com/rss/articles/CBMilwFBVV95cUxQcE1US0QxcTRuQ0FHa0ZZaV8tZkVYaFlWZUJ5TTdiNDZoWS00UDlXU2Z1clNwN2JfT0hHdk5PN0dUN01YTENUc3hBRWRfRXJfaXJQSWhucGtIb0h3QkhVdkMtUXJCZm53Y3RJM282Z1Q4Uk04TU9MWjlyZ2ZFRUsxcmtmRGFTUGx4U1ZVUGlGWHBwdU9RV2ZR?oc=5" target="_blank" rel="noopener">PYMNTS.com</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Regulator</dt><dd>A regulator is a government body — like the OCC for US banks — that sets rules and oversees an industry to protect consumers and the financial system.</dd></div><div><dt>AI agent</dt><dd>An AI agent is an AI system that can take actions on its own, such as approving a loan or flagging a transaction, rather than just answering questions.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Compliance and risk roles in banking increasingly need people who understand both AI and regulation — a rare combination. If you&#39;re interviewing for a fintech or bank analyst role, being able to explain why regulators worry about autonomous AI agents shows you grasp a live industry debate.</p></div>
+  </article>
+  
+  <article id="story-4">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>Anthropic&#39;s IPO Filing Sparks Tech Rally as Wider AI IPO Market Stays Shut</h3>
+    <p class="standfirst">Shares rallied after Anthropic filed for what the Wall Street Journal called a historic listing, even as the IPO window stays closed for most other companies.</p>
+    <div class="body"><p>Tech shares rose after AI company Anthropic filed for what the Wall Street Journal described as a historic IPO. An IPO is the process by which a private company first sells shares to public investors, and Anthropic&#39;s filing is reportedly being treated as a landmark moment for the AI industry&#39;s access to public markets.</p><p>The same report noted that the IPO market is effectively open for Anthropic but largely closed for other companies, suggesting investors remain selective about which AI firms they trust with public money. Anthropic is one of the leading frontier AI labs — companies building the most advanced, large-scale AI models — alongside OpenAI and Google DeepMind.</p><p>The filing will be closely watched as a signal of investor appetite for AI companies more broadly, and could shape whether other AI firms attempt to follow Anthropic onto public markets in the near future.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxOUl9Idk9HS21XSzJpc0NwdVlmSXU1X0xlZnZVMWlWY2c4eGVFMGJpNGVMSl81Y1djWUVvZl81RkFpUXh4aFZCRnVxel8yckF1cjhKZmJhc2tvSWlDVmtiZWtsZW1CeHJVX2Z3S0FyMER0TFZxaGFPWS1PNjZnam1SWG1uMzAtOTNyc0RWcUI1d1pxOXN2MGFvVWRPTQ?oc=5" target="_blank" rel="noopener">WSJ</a> · <a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxQTEZaVk14eGNmSE1wRGRfUU5HN2ZYVW1tOGNFaFA0MWNuSHczWm1hV3VpdC02U01YZEFaQWlwbWhEQTRGNmFqNUNGRm1NblZTT0k3X1B6SnVDWmZrOE5ZZzVmWjAyTS1fYnJNZVFqMW1MQjRpOWtUajRMX3BPYWxHSkpqMjZ2NkY0TFRTUXphcUJOLWREQmV3MkxlNjFoUE4wMEpYazdR?oc=5" target="_blank" rel="noopener">WSJ</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>IPO (initial public offering)</dt><dd>An IPO is when a private company first sells shares to public investors, listing on a stock exchange so anyone can buy or sell its stock.</dd></div><div><dt>Frontier AI lab</dt><dd>A frontier AI lab is a company, such as Anthropic, OpenAI or Google DeepMind, focused on building the most advanced and capable AI models available.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Understanding IPO filings is core knowledge for anyone wanting to work in equity research or investment banking covering tech. Anthropic&#39;s listing will likely become a reference point in interviews about AI valuations for months to come.</p></div>
+  </article>
+  
+  <article id="story-5">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>UBS Lifts AI Capex Forecast to $1.4 Trillion, Flags 2027 Debt Wall Risk</h3>
+    <p class="standfirst">The bank&#39;s analysts now expect even heavier AI infrastructure spending, but warn a looming wave of debt maturities could rattle bond markets in 2027.</p>
+    <div class="body"><p>UBS has raised its forecast for global AI capital expenditure, or capex, to $1.4 trillion, according to investingLive. Capex refers to the money companies spend building long-term assets like data centres and chips, and the AI industry has been spending at an extraordinary pace to keep up with demand for computing power.</p><p>The bank reportedly flagged 2027 as a key risk point because of a wave of debt coming due around that time — often called a debt maturity wall — that AI infrastructure companies have taken on to fund their buildouts. If that debt needs refinancing at a moment when investor confidence in AI spending has cooled, borrowing costs could rise sharply, hitting bond markets.</p><p>The forecast adds to a growing list of warnings from banks and analysts about how much of the AI boom is being financed with debt rather than cash, and what happens if growth doesn&#39;t justify the spending.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMizAFBVV95cUxQaW90dVlLQnRXRHViaHFOQlpqTTBRSEl2WUxpRTlHbWtzN3g0WVhneHVpNE5VY1NNdXZMY2JsZi1NQUhILUNNWnJEYWpmUURQcy1aVUkwQUxqY1JaUk5IbzBDWEhNUEZPajg0d0xDdjZ6aDdJeGtQNjI4NTBLaWtkeGxxTWlZdHZ4TmJuaWNEZTlvRXdPMjBCMG5NYmdzLVcwOVE1Zk1DZ2oyV3VWZFFZRnFaOVhDOVFxVUVtcFE4MWJTVkdfNmNfeFExb0c?oc=5" target="_blank" rel="noopener">investingLive</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Capital expenditure (capex)</dt><dd>Capital expenditure, or capex, is money a company spends on long-term physical assets like buildings, equipment or data centres, as opposed to day-to-day running costs.</dd></div><div><dt>Debt maturity wall</dt><dd>A debt maturity wall is a point in time when a large amount of a company&#39;s or industry&#39;s borrowed money comes due at once, forcing refinancing that can be costly if market conditions are poor.</dd></div><div><dt>Bond</dt><dd>A bond is a loan an investor makes to a company or government, which pays it back with interest over a set period — a key way AI infrastructure projects are funded.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Debt financing is becoming central to the AI buildout story, and spotting maturity walls is a skill used by credit analysts and bond investors. This links directly to today&#39;s Microsoft-Nscale story, since neocloud expansion plans often rely on exactly this kind of debt.</p></div>
+  </article>
+  
+</section>
+
+<section id="startups" class="startups">
+  <div class="sec-head">
+    <span class="mono">Section 3</span>
+    <h2>Startups &amp; funding</h2>
+    <p>Who raised, how much, and what investors are betting on.</p>
+  </div>
+  
+  <article id="story-6">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>AMD to Buy Toronto AI Chip Startup Taalas for $2.9bn</h3>
+    <p class="standfirst">The deal ranks among the largest Canadian tech takeovers as AMD moves to build out its own custom silicon capabilities.</p>
+    <div class="body"><p>AMD has agreed to acquire Taalas, a Toronto-based AI chip startup, for $2.9 billion, according to the Globe and Mail and other outlets. The deal is reportedly one of the largest Canadian technology takeovers to date, underscoring how aggressively major chipmakers are buying up smaller firms with specialised AI hardware expertise.</p><p>Taalas works on custom chips — processors designed for a specific task rather than general-purpose computing — an area increasingly important as AI companies look for ways to run models more cheaply and efficiently than with standard GPUs. For AMD, the acquisition reportedly strengthens its push to offer a fuller AI stack, from chip design through to software, competing more directly with Nvidia.</p><p>The purchase price reflects how highly investors now value even early-stage chip design talent, as the industry races to find efficiency gains in an AI market where computing costs remain a major constraint.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMikwFBVV95cUxQNThUSkFHTG8tdGk5V1ktZWQ5TUhBc2tkOWQtYk9FcjVkVTQ1Q01JdVNDVXJNdC1JOF85M3owTTE5a25OQVl1SlpIRjZ2ZXNGNUtBY2tVSWZSXzZ6R3VoM1hpVWNnVWY4Tm9MMVN3cTVzc2tBcFlaYXBtWExPVDhEZ2Z3M2NZUkJ5VllYM19WV1BGbVU?oc=5" target="_blank" rel="noopener">news.lavx.hu</a> · <a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxQVG5YSjFMVlhXcUM3QVVvREs2T1prWnhmMnRaT2EtOXl3b3JEQ0dzS2lNdEhMbG5vWVA4VnI0NlMzUl9oaVhvSnluZ0FlR3ZSSE9HQkRudDBrQTJCcHhBMDZNcVlCdExpTkg1RDJUSmpZajJVMDlwR1J6ZDNMSUFLTFF2MDNHZEVOQ1dib0JMSHJzQmpYcDVaamRRcw?oc=5" target="_blank" rel="noopener">The Globe and Mail</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Acquisition</dt><dd>An acquisition is when one company buys another, typically gaining full ownership and control of its products, technology or team.</dd></div><div><dt>Custom chip</dt><dd>A custom chip is a processor designed for a specific job, rather than general computing, which can make it faster or cheaper to run for that particular task.</dd></div><div><dt>Full AI stack</dt><dd>A full AI stack refers to owning every layer needed to build AI products, from the chips and data centres up through the software and models, rather than relying on outside suppliers.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Chip M&amp;A is a hot area for careers in deal-making and engineering alike, since control over custom silicon is becoming a competitive edge. Being able to explain why AMD wants its own chip design talent, not just GPUs, shows real understanding of the AI hardware race.</p></div>
+  </article>
+  
+  <article id="story-7">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>Amazon in Talks to Buy AI Startup Decart for About $7bn</h3>
+    <p class="standfirst">placeholder</p>
+    <div class="body"><p>placeholder</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMilgFBVV95cUxNOTJaLUJ1Ql9wQ3RCZGhZYVgyQ0JyeXBURF9ESktxOVp0QUFocGlBMjVfYUQ4Q0o5VHlBWFlvWnY4d1hfdjNNWnNJdFgzM21rMVpfZnBydldWdl9QdDI1Vk1nOWgwRzRpRlNhTUZtSE9fWlZOQ3FORjk5a243THdGZjJnT21VdEZabTk4Tlh5ZzVhcXpvUFE?oc=5" target="_blank" rel="noopener">Startup Fortune</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>placeholder</dt><dd>placeholder</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>placeholder</p></div>
+  </article>
+  
+</section>
+
+
+
+<div class="panel" id="code">
+  <span class="mono">Code corner</span>
+  <h2>Checking an AI Agent&#39;s Decision Before It Acts</h2>
+  <p class="src">Based on: <a href="#story-3">US Bank Regulator OCC Issues First Framework for AI Use by Banks</a></p>
+  <p style="margin:0">The OCC&#39;s new framework worries about banks letting AI agents take actions on their own. Here&#39;s a simplified example of how a bank&#39;s software might call an AI agent, then apply a guardrail before trusting its decision — using a fake response so it runs without any API key.</p>
+  <pre><code>import json
+
+# Simulate a response from an AI agent reviewing a transaction
+def fake_llm_response():
+    return json.dumps({
+        &#34;decision&#34;: &#34;approve&#34;,
+        &#34;confidence&#34;: 0.62,
+        &#34;reason&#34;: &#34;Transaction pattern looks normal&#34;
+    })
+
+def review_transaction(amount):
+    raw_response = fake_llm_response()
+    result = json.loads(raw_response)
+
+    # Guardrail: require high confidence for large amounts
+    if amount &gt; 10000 and result[&#34;confidence&#34;] &lt; 0.9:
+        return &#34;ESCALATE_TO_HUMAN&#34;
+
+    if result[&#34;decision&#34;] == &#34;approve&#34;:
+        return &#34;APPROVED&#34;
+    return &#34;DENIED&#34;
+
+transactions = [5000, 25000, 500]
+for amt in transactions:
+    outcome = review_transaction(amt)
+    print(f&#34;Transaction of £{amt}: {outcome}&#34;)</code></pre>
+  <span class="mono">Line by line</span>
+  <ol class="walk"><li>`import json` loads Python&#39;s built-in tool for reading and writing JSON, the text format most AI APIs use to send structured data.</li><li>`fake_llm_response()` returns a JSON string pretending to be what an AI agent might reply with, so the code runs without needing a real API key.</li><li>`json.loads(raw_response)` converts that JSON text into a Python dictionary we can work with, accessed like `result[&#34;decision&#34;]`.</li><li>The guardrail check — `if amount &gt; 10000 and result[&#34;confidence&#34;] &lt; 0.9` — is the key safety logic: it forces large transactions to go to a human if the AI isn&#39;t highly confident, exactly the kind of control regulators like the OCC want banks to have.</li><li>The loop runs the check across several example transactions and prints the outcome for each.</li></ol>
+  <div class="tryit"><p><b>Try it:</b> Try changing the confidence threshold to 0.95, or add a new rule that always escalates transactions above £50,000 regardless of confidence. What happens to the £25,000 transaction&#39;s outcome?</p></div>
+</div>
+
+<div class="panel" id="quiz">
+  <span class="mono">Quiz · apply today's concepts</span>
+  <h2>What would you do?</h2>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 1</span>
+    <p class="scenario">You&#39;re in a job interview for an entry-level role at a cloud infrastructure company, and the interviewer asks about today&#39;s Microsoft-Nscale news.</p>
+    <p class="ask">Which statement best explains why Microsoft turning down Nscale&#39;s Texas expansion matters for the AI infrastructure market?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>It means Microsoft is exiting the cloud computing business entirely</span></button></li><li><button type="button" data-i="1"><b>B</b><span>It highlights how neoclouds depend heavily on hyperscaler contracts for revenue and financing</span></button></li><li><button type="button" data-i="2"><b>C</b><span>It proves that Nvidia chips are no longer in demand</span></button></li><li><button type="button" data-i="3"><b>D</b><span>It shows that data centres are no longer needed for AI</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> Neoclouds like Nscale rely on contracts with hyperscalers such as Microsoft to secure the guaranteed revenue needed to finance expensive data centre buildouts, so a rejected expansion is a meaningful signal. The other options misread the story — Microsoft isn&#39;t exiting cloud, and chip or data centre demand isn&#39;t in question here.</p>
+        <div class="chips"><span>Hyperscaler</span><span>Neocloud</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="0">
+    <span class="mono" style="color:var(--muted)">Scenario 2</span>
+    <p class="scenario">It&#39;s your first week as a junior analyst at a US bank, and your manager mentions the OCC&#39;s new AI framework while discussing a new AI tool that automatically approves small loans.</p>
+    <p class="ask">Based on the OCC&#39;s framework and concerns about &#39;rogue agents&#39;, what is the most appropriate next question to ask your manager?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>Whether the AI agent has clear limits on what it can approve without human review</span></button></li><li><button type="button" data-i="1"><b>B</b><span>Whether the AI model was trained using Python</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Whether the bank&#39;s competitors use the same software</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Whether the loan approval tool uses GPUs or CPUs</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: A.</b> The OCC&#39;s framework is specifically concerned with banks deploying AI agents that take actions with limited oversight, so asking about guardrails and human review limits directly addresses the regulatory concern. The other options are technical trivia unrelated to the compliance risk at hand.</p>
+        <div class="chips"><span>AI agent</span><span>Regulator</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 3</span>
+    <p class="scenario">You&#39;re in a startup pitch meeting, and a founder mentions that a large tech company is &#39;in talks&#39; to buy their AI startup for $7 billion, similar to today&#39;s Amazon-Decart story.</p>
+    <p class="ask">What does it mean that the deal is &#39;in talks&#39; rather than confirmed?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>The acquisition has definitely closed and the money has changed hands</span></button></li><li><button type="button" data-i="1"><b>B</b><span>The deal is still being negotiated and may not go through</span></button></li><li><button type="button" data-i="2"><b>C</b><span>The startup has already filed for an IPO instead</span></button></li><li><button type="button" data-i="3"><b>D</b><span>The startup has declared bankruptcy</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> &#39;In talks&#39; means negotiations are ongoing but nothing is finalised — the deal could still fall through or change terms. It&#39;s unrelated to IPOs or bankruptcy, which are different corporate events entirely.</p>
+        <div class="chips"><span>Acquisition</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 4</span>
+    <p class="scenario">In a team meeting, a colleague argues the AI industry&#39;s capex spending, flagged by UBS as reaching $1.4 trillion, is completely safe because companies have plenty of cash.</p>
+    <p class="ask">What is the strongest counterpoint based on UBS&#39;s warning about 2027?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>Capex spending never involves any borrowed money, so there&#39;s no risk</span></button></li><li><button type="button" data-i="1"><b>B</b><span>A large share of AI infrastructure spending is funded by debt, and a 2027 maturity wall could raise refinancing costs if confidence drops</span></button></li><li><button type="button" data-i="2"><b>C</b><span>AI companies are not allowed to issue bonds</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Capex only affects a company&#39;s marketing budget, not its finances</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> UBS&#39;s warning specifically concerns a wave of debt maturing around 2027 that was used to fund AI infrastructure; if investor confidence weakens by then, refinancing that debt could become expensive. The other options misunderstand capex and debt financing basics.</p>
+        <div class="chips"><span>Capital expenditure (capex)</span><span>Debt maturity wall</span><span>Bond</span></div>
+      </div>
+    </details>
+  </div>
+  
+</div>
+
+<div class="panel" id="glossary">
+  <span class="mono">Glossary</span>
+  <h2>Every concept from today</h2>
+  <dl class="gloss"><div><dt>Acquisition<a href="#story-6">see story</a></dt><dd>An acquisition is when one company buys another, typically gaining full ownership and control of its products, technology or team.</dd></div><div><dt>AI agent<a href="#story-3">see story</a></dt><dd>An AI agent is an AI system that can take actions on its own, such as approving a loan or flagging a transaction, rather than just answering questions.</dd></div><div><dt>Bond<a href="#story-5">see story</a></dt><dd>A bond is a loan an investor makes to a company or government, which pays it back with interest over a set period — a key way AI infrastructure projects are funded.</dd></div><div><dt>Capital expenditure (capex)<a href="#story-5">see story</a></dt><dd>Capital expenditure, or capex, is money a company spends on long-term physical assets like buildings, equipment or data centres, as opposed to day-to-day running costs.</dd></div><div><dt>Contract manufacturer<a href="#story-2">see story</a></dt><dd>A contract manufacturer is a company, like Foxconn, that builds products — such as AI servers — designed by another firm, such as Nvidia, usually at large scale.</dd></div><div><dt>Custom chip<a href="#story-6">see story</a></dt><dd>A custom chip is a processor designed for a specific job, rather than general computing, which can make it faster or cheaper to run for that particular task.</dd></div><div><dt>Debt maturity wall<a href="#story-5">see story</a></dt><dd>A debt maturity wall is a point in time when a large amount of a company&#39;s or industry&#39;s borrowed money comes due at once, forcing refinancing that can be costly if market conditions are poor.</dd></div><div><dt>Dual-use technology<a href="#story-1">see story</a></dt><dd>Dual-use technology is equipment or software that can serve both civilian and military purposes, such as an advanced chip used for AI research or weapons systems — this is why many countries tightly control its export.</dd></div><div><dt>Export controls<a href="#story-1">see story</a></dt><dd>Export controls are government rules restricting which products — like advanced semiconductors — can be sold to certain countries, usually for national security reasons.</dd></div><div><dt>Frontier AI lab<a href="#story-4">see story</a></dt><dd>A frontier AI lab is a company, such as Anthropic, OpenAI or Google DeepMind, focused on building the most advanced and capable AI models available.</dd></div><div><dt>Full AI stack<a href="#story-6">see story</a></dt><dd>A full AI stack refers to owning every layer needed to build AI products, from the chips and data centres up through the software and models, rather than relying on outside suppliers.</dd></div><div><dt>Hyperscaler<a href="#story-0">see story</a></dt><dd>A hyperscaler is one of the few giant companies — Microsoft, Amazon, Google — that run vast global networks of data centres renting out computing power.</dd></div><div><dt>IPO (initial public offering)<a href="#story-4">see story</a></dt><dd>An IPO is when a private company first sells shares to public investors, listing on a stock exchange so anyone can buy or sell its stock.</dd></div><div><dt>Neocloud<a href="#story-0">see story</a></dt><dd>A neocloud is a newer company that rents out AI computing power, often leasing or building data centres packed with GPUs, without the broader cloud business of a hyperscaler.</dd></div><div><dt>placeholder<a href="#story-7">see story</a></dt><dd>placeholder</dd></div><div><dt>Regulator<a href="#story-3">see story</a></dt><dd>A regulator is a government body — like the OCC for US banks — that sets rules and oversees an industry to protect consumers and the financial system.</dd></div><div><dt>Revenue growth rate<a href="#story-2">see story</a></dt><dd>The revenue growth rate measures how much a company&#39;s sales have increased over a period, such as Foxconn&#39;s 46% year-on-year rise in October sales.</dd></div></dl>
+</div>
+
+<div class="panel">
+  <span class="mono">Past digests</span>
+  <ul class="archive"><li><a href="../archive/2026-11-05.html" aria-current="page">2026-11-05</a></li><li><a href="../archive/2026-11-04.html">2026-11-04</a></li><li><a href="../archive/2026-11-03.html">2026-11-03</a></li><li><a href="../archive/2026-11-02.html">2026-11-02</a></li><li><a href="../archive/2026-11-01.html">2026-11-01</a></li><li><a href="../archive/2026-10-31.html">2026-10-31</a></li><li><a href="../archive/2026-10-30.html">2026-10-30</a></li><li><a href="../archive/2026-10-29.html">2026-10-29</a></li><li><a href="../archive/2026-10-28.html">2026-10-28</a></li><li><a href="../archive/2026-10-27.html">2026-10-27</a></li><li><a href="../archive/2026-10-26.html">2026-10-26</a></li><li><a href="../archive/2026-10-25.html">2026-10-25</a></li><li><a href="../archive/2026-10-24.html">2026-10-24</a></li><li><a href="../archive/2026-10-23.html">2026-10-23</a></li><li><a href="../archive/2026-10-22.html">2026-10-22</a></li><li><a href="../archive/2026-10-21.html">2026-10-21</a></li><li><a href="../archive/2026-10-20.html">2026-10-20</a></li><li><a href="../archive/2026-10-19.html">2026-10-19</a></li><li><a href="../archive/2026-10-18.html">2026-10-18</a></li><li><a href="../archive/2026-10-17.html">2026-10-17</a></li><li><a href="../archive/2026-10-16.html">2026-10-16</a></li><li><a href="../archive/2026-10-15.html">2026-10-15</a></li><li><a href="../archive/2026-10-14.html">2026-10-14</a></li><li><a href="../archive/2026-10-13.html">2026-10-13</a></li><li><a href="../archive/2026-10-12.html">2026-10-12</a></li><li><a href="../archive/2026-10-11.html">2026-10-11</a></li><li><a href="../archive/2026-10-10.html">2026-10-10</a></li><li><a href="../archive/2026-10-09.html">2026-10-09</a></li><li><a href="../archive/2026-10-05.html">2026-10-05</a></li><li><a href="../archive/2026-10-04.html">2026-10-04</a></li></ul>
+</div>
+
+<footer>Written by Claude from the linked sources. Check the original article before quoting figures in an interview.</footer>
+</div>
+<script>
+document.querySelectorAll(".q").forEach(function (q) {
+  var correct = Number(q.dataset.correct);
+  var buttons = q.querySelectorAll(".opts button");
+  buttons.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var picked = Number(b.dataset.i);
+      buttons.forEach(function (x) {
+        var i = Number(x.dataset.i);
+        if (i === correct) x.classList.add("right");
+        else if (i === picked) x.classList.add("wrong");
+        x.disabled = true;
+      });
+      q.querySelector("details").open = true;
+    });
+  });
+});
+</script>
+</body>
+</html>
