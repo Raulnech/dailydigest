@@ -1,8 +1,8 @@
 {
-  "date_label": "Friday 6 November 2026",
+  "date_label": "Saturday 7 November 2026",
   "talking_points": [
-    "Ask what happens to OpenAI's data centre buildout now that 43 of 44 local moratoria passed on election night.",
-    "Mention that hedge funds are reportedly dumping AI-linked debt, which is worth watching for contagion risk.",
-    "Bring up Shield AI's $5.3bn radar acquisition as a sign defence tech consolidation is accelerating."
+    "OpenAI's valuation has jumped to $1.25 trillion on a fresh $11bn capital injection, even as rival Anthropic's IPO plans reportedly shrink.",
+    "Microsoft is said to be stepping back from renting Oracle's AI cloud capacity, a sign hyperscalers are rethinking which compute deals they actually need.",
+    "Wall Street is slicing up AI infrastructure debt - from CoreWeave's bonds to SpaceX's chip lease - spreading the financial risk of the AI buildout far beyond Silicon Valley."
   ]
 }

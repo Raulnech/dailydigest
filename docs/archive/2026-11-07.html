@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI Morning Brief · Saturday 7 November 2026</title>
+<meta name="theme-color" content="#3A55C8">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  color-scheme:light dark;
+  --ground:#F3F4F7; --paper:#FFFFFF; --ink:#141827; --muted:#5B6275; --line:#DDE0E8;
+  --industry:#3A55C8; --industry-soft:#E6EAFA;
+  --finance:#1C7453; --finance-soft:#E1F1EA;
+  --startups:#A8561A; --startups-soft:#F7EADF;
+  --code-bg:#161A26; --code-ink:#E4E7F0;
+  --right:#1C7453; --right-soft:#E1F1EA; --wrong:#B3261E; --wrong-soft:#FBE7E5;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --ground:#0F121B; --paper:#171B27; --ink:#E8EAF1; --muted:#9AA1B4; --line:#2A3042;
+    --industry:#8FA3F5; --industry-soft:#20284A;
+    --finance:#6CCBA3; --finance-soft:#15332A;
+    --startups:#E8A06A; --startups-soft:#3A2618;
+    --code-bg:#0B0D14; --code-ink:#E4E7F0;
+    --right:#6CCBA3; --right-soft:#15332A; --wrong:#F2A29B; --wrong-soft:#3A1B19;
+  }
+}
+*{box-sizing:border-box}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.6 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;padding-inline:16px;padding-block:28px 64px}
+.wrap{max-width:700px;margin:0 auto;display:grid;gap:36px}
+a{color:inherit}
+a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var(--industry);outline-offset:3px;border-radius:4px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400}
+header{display:grid;gap:10px}
+header .date{color:var(--muted)}
+h1{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(44px,11vw,64px);line-height:1;margin:0;letter-spacing:-.01em}
+h1 em{color:var(--industry)}
+.lede{color:var(--muted);margin:0;max-width:60ch}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ground);padding-block:10px;display:flex;gap:8px;overflow-x:auto;border-bottom:1px solid var(--line)}
+nav a{flex:none;text-decoration:none;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--paper);font-size:14px}
+nav a.industry{color:var(--industry)} nav a.finance{color:var(--finance)} nav a.startups{color:var(--startups)}
+
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:14px;scroll-margin-top:64px}
+.panel h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:30px;margin:0;line-height:1.15}
+.panel > .mono{color:var(--muted)}
+.talk ol{margin:0;padding-left:20px;display:grid;gap:8px}
+.toc{display:grid;gap:14px}
+.toc h3{margin:0 0 4px}
+.toc ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.toc li a{text-decoration:none}
+.toc li a:hover{text-decoration:underline}
+
+section{display:grid;gap:22px;scroll-margin-top:64px}
+.sec-head{display:grid;gap:2px;border-top:3px solid var(--c);padding-top:12px}
+.sec-head h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:36px;margin:0;line-height:1.1;text-wrap:balance}
+.sec-head p{margin:0;color:var(--muted)}
+.sec-head .mono{color:var(--c)}
+.industry{--c:var(--industry);--cs:var(--industry-soft)}
+.finance{--c:var(--finance);--cs:var(--finance-soft)}
+.startups{--c:var(--startups);--cs:var(--startups-soft)}
+
+article{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px 20px;display:grid;gap:16px;scroll-margin-top:64px}
+article .kicker{color:var(--c)}
+article h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(26px,6vw,32px);line-height:1.15;margin:0;text-wrap:balance}
+.standfirst{margin:0;font-size:18px;line-height:1.5;color:var(--muted)}
+.body{display:grid;gap:14px;font-family:"Source Serif 4",Georgia,serif;font-size:18px;line-height:1.65;max-width:65ch}
+.body p{margin:0}
+.src{margin:0;font-size:13px;color:var(--muted)}
+.concepts{background:var(--cs);border-radius:12px;padding:16px 18px;display:grid;gap:12px}
+.concepts .mono{color:var(--c)}
+.concepts dl{margin:0;display:grid;gap:10px}
+.concepts dt{font-weight:600}
+.concepts dd{margin:2px 0 0}
+.why{display:grid;gap:4px;border-left:2px solid var(--c);padding-left:14px}
+.why .mono{color:var(--c)}
+.why p{margin:0}
+
+pre{margin:0;background:var(--code-bg);color:var(--code-ink);border-radius:10px;padding:16px;overflow-x:auto;font:14px/1.55 "IBM Plex Mono",ui-monospace,Consolas,monospace}
+.walk{margin:0;padding-left:20px;display:grid;gap:6px}
+code{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:.9em}
+.tryit{background:var(--industry-soft);border-radius:10px;padding:12px 16px}
+.tryit p{margin:0}
+
+.q{display:grid;gap:12px;border-top:1px solid var(--line);padding-top:18px}
+.q:first-of-type{border-top:0;padding-top:0}
+.scenario{margin:0;font-family:"Source Serif 4",Georgia,serif;font-style:italic;font-size:17px}
+.q .ask{margin:0;font-weight:600}
+.opts{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.opts button{width:100%;text-align:left;font:inherit;color:var(--ink);background:var(--ground);border:1px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer;display:flex;gap:10px}
+.opts button:hover{border-color:var(--industry)}
+.opts button b{font-family:"IBM Plex Mono",ui-monospace,monospace;font-weight:500}
+.opts button.right{background:var(--right-soft);border-color:var(--right)}
+.opts button.wrong{background:var(--wrong-soft);border-color:var(--wrong)}
+.opts button:disabled{cursor:default}
+details{border-radius:10px}
+summary{cursor:pointer;font-weight:500;color:var(--industry)}
+.answer{display:grid;gap:8px;margin-top:10px}
+.answer p{margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:13px;padding:2px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+
+.gloss{margin:0;display:grid;gap:12px}
+.gloss dt{font-weight:600}
+.gloss dt a{font-weight:400;font-size:13px;color:var(--muted);margin-left:6px}
+.gloss dd{margin:2px 0 0;color:var(--muted)}
+.archive{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.archive a{display:inline-block;padding:4px 10px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-variant-numeric:tabular-nums;font-size:14px}
+.archive a[aria-current]{border-color:var(--industry);color:var(--industry)}
+footer{color:var(--muted);font-size:13px}
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="mono date">Saturday 7 November 2026 · 12 min read</span>
+  <h1>AI Morning <em>Brief</em></h1>
+  <p class="lede">Today's AI and fintech news as short articles, with every key concept explained, a bit of Python, and a scenario quiz to check it stuck.</p>
+</header>
+
+<nav aria-label="Sections">
+  <a href="#industry" class="industry">The AI industry</a>
+  <a href="#finance" class="finance">AI &amp; finance</a>
+  <a href="#startups" class="startups">Startups &amp; funding</a>
+  <a href="#code">Code corner</a>
+  <a href="#quiz">Quiz</a>
+  <a href="#glossary">Glossary</a>
+</nav>
+
+<div class="panel talk">
+  <span class="mono">If you only read one thing</span>
+  <h2>Three things to be able to say today</h2>
+  <ol><li>OpenAI&#39;s valuation has jumped to $1.25 trillion on a fresh $11bn capital injection, even as rival Anthropic&#39;s IPO plans reportedly shrink.</li><li>Microsoft is said to be stepping back from renting Oracle&#39;s AI cloud capacity, a sign hyperscalers are rethinking which compute deals they actually need.</li><li>Wall Street is slicing up AI infrastructure debt - from CoreWeave&#39;s bonds to SpaceX&#39;s chip lease - spreading the financial risk of the AI buildout far beyond Silicon Valley.</li></ol>
+</div>
+
+<div class="panel">
+  <span class="mono">In today's brief</span>
+  <div class="toc">
+  
+    <div class="industry"><h3 class="mono" style="color:var(--c)">The AI industry</h3>
+      <ul><li><a href="#story-0">OpenAI reportedly raises $11bn at a $1.25 trillion valuation</a></li><li><a href="#story-1">Microsoft reportedly winds down deal to rent AI cloud capacity from Oracle</a></li><li><a href="#story-2">US officials reportedly believe Nvidia&#39;s Jensen Huang had relationship with alleged Chinese spy</a></li></ul>
+    </div>
+  
+    <div class="finance"><h3 class="mono" style="color:var(--c)">AI &amp; finance</h3>
+      <ul><li><a href="#story-3">CoreWeave bond yield tops 16% as AI debt gets pricier</a></li><li><a href="#story-4">ING puts $500m of data centre loans up for sale, including Stargate site debt</a></li><li><a href="#story-5">Goldman and Apollo reportedly shop slices of SpaceX&#39;s $40bn Nvidia chip lease</a></li></ul>
+    </div>
+  
+    <div class="startups"><h3 class="mono" style="color:var(--c)">Startups &amp; funding</h3>
+      <ul><li><a href="#story-6">Palo Alto Networks in advanced talks to buy AI agent security startup Clutch for $500m</a></li><li><a href="#story-7">Sentra raises $150m Series C led by Capital One Ventures</a></li></ul>
+    </div>
+  
+  </div>
+</div>
+
+
+<section id="industry" class="industry">
+  <div class="sec-head">
+    <span class="mono">Section 1</span>
+    <h2>The AI industry</h2>
+    <p>Big labs, big tech and the direction of travel.</p>
+  </div>
+  
+  <article id="story-0">
+    <span class="mono kicker">The AI industry</span>
+    <h3>OpenAI reportedly raises $11bn at a $1.25 trillion valuation</h3>
+    <p class="standfirst">The ChatGPT maker&#39;s valuation has jumped by roughly 47% in eight months, even as rival Anthropic&#39;s IPO ambitions wobble.</p>
+    <div class="body"><p>OpenAI has reportedly raised $11 billion as part of a new funding round that values the company at $1.25 trillion, according to Bloomberg. The round has not yet closed and could eventually total around $20 billion once complete, a figure that falls short of the $30 billion the company was said to be targeting back in September.</p><p>The jump is striking: OpenAI raised $122 billion in March at an $852 billion valuation. A funding round is simply investors agreeing to buy a slice of a private company at an agreed price, which in turn sets a paper value for the whole business, not cash sitting in the bank. OpenAI has previously signalled it could go public, an IPO, but has pushed those plans back, with most expectations now pointing to 2027.</p><p>The timing is notable because reports suggest potential buyers in rival Anthropic&#39;s upcoming IPO are eyeing a valuation as low as $1.1 trillion, well below the $2 trillion once expected. That gap hints at cooling investor enthusiasm across the sector.</p><p>Adding to the uncertainty, the US midterm elections have produced a wave of negative public sentiment towards data centres, raising the prospect of new regulatory hurdles for the AI industry just as the biggest players are asking investors for ever larger sums.</p></div>
+    
+    <p class="src">Sources: <a href="https://techcrunch.com/2026/11/06/openai-reportedly-raises-an-additional-11-billion-at-a-1-25-trillion-valuation/" target="_blank" rel="noopener">TechCrunch</a> · <a href="https://www.theverge.com/ai-artificial-intelligence/1029380/openai-1-25-trillion-investment-valuation" target="_blank" rel="noopener">The Verge</a> · <a href="https://news.google.com/rss/articles/CBMidkFVX3lxTE1qaTdyTVlIVWt6TkpFaFF1V0RCQ05oRDFQZnZhbzZqQ2FTQk9kVkcyRFBEc3AwOXhTUzNrR2VMQzkxUU5ZNXdReXFkb09sMmxGZ3kxUmNIMFdHcW12R1A0QjljcWI2bkpFMTJuWjdNZ2JXVlpGcmfSAXRBVV95cUxOY1JzYzRJMm5ScUVxT0dfX2tyQ1Q0b3BTSnpoeGVDOWxPQkdoMnV0U1RZOXpuZmktbDVpNWtuMHZhM282NnR5cG44TWF4b1EyT1pVaXFlaU55QzZzSnliSUZhTkFUTHk5RkhjMnhaVDFLbWd5dg?oc=5" target="_blank" rel="noopener">Українські Національні Новини (УНН)</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Funding round</dt><dd>A reminder: this is when a company sells new shares to investors in exchange for cash, often in named stages such as Series A, B or C.</dd></div><div><dt>Valuation</dt><dd>A reminder: this is the price tag investors put on a whole company based on what they&#39;re willing to pay for a small slice of it.</dd></div><div><dt>IPO (initial public offering)</dt><dd>A reminder: this is when a private company sells shares to the public for the first time, listing on a stock exchange.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Huge valuations like this fuel hiring in AI research, infrastructure and finance roles that support fundraising and compliance. If you&#39;re interviewing at an AI company, understanding that a valuation is a negotiated price, not cash on hand, shows financial literacy beyond the hype.</p></div>
+  </article>
+  
+  <article id="story-1">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Microsoft reportedly winds down deal to rent AI cloud capacity from Oracle</h3>
+    <p class="standfirst">Bloomberg reports Microsoft will not renew a 2023 agreement, raising questions about Oracle&#39;s huge contract backlog.</p>
+    <div class="body"><p>Microsoft is reportedly winding down a 2023 deal under which it rented AI computing capacity from Oracle, according to Bloomberg, with some reports suggesting older chips in the arrangement no longer met Microsoft&#39;s needs.</p><p>Oracle has built up a contract backlog worth hundreds of billions of dollars from AI-related cloud deals, a figure investors have been watching closely as a sign of future revenue. News that one of its largest customers may be stepping back triggered a share price drop for Oracle.</p><p>The episode highlights how quickly compute capacity deals, essentially long-term rental agreements for data centre hardware, can shift as AI companies reassess which chips and providers best serve their needs.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxPeXFhaDRlRjBvZktGaFM2eExYdGpJakRNazYxc2Y2UWoyMDJzS1VFb2Z5ZTNkSVhMRHBTbUdtb25kZHJUdkpRVXRQU1hQVGtIbS1maVNoeGhSZ2pHOGF1aDY3R1AwSTU4TmlmSEdEc19RYlowVXAzc0NlSzdVZ2xBZXduc2FzT3ViQ0xDS3RYdklKMzFnVzRtUkZKQnVBWlBDTWtGcGZUU01ZSktQTG5aOE9lbXE?oc=5" target="_blank" rel="noopener">Bloomberg.com</a> · <a href="https://news.google.com/rss/articles/CBMivAFBVV95cUxNN0g4UzRRaV9OckNuUjZYeVcybWl4SnhZUHVRR3pXVTFUdVMtWENOSWRKdjhUQThNTWlRWXd3YVJFTUVaM1hOaFI2UWJ6cDlWZjM4Q3NXTWZDVlJFSTdnS3RqNExHcG93anIxTDhpNXJTRGduSEgxcWNaYnNRYTdOdWF4SzBoZzBLV3o1Wi1ZaEVPWkFXZVJSSWhYZWFSdE9BRFlINGtWWjhhM2FLUEdaYjJQOTBLQ0VCLVIyXw?oc=5" target="_blank" rel="noopener">Reuters</a> · <a href="https://news.google.com/rss/articles/CBMihAFBVV95cUxNUmsxSVhhU1lYazBuVUp2UFBkSXpxdm50S2RuNFItNHJGSlNEWkdUQ1RhaldUZW4yb1BqTlN1Qy01U0lZMjRpWk5VbVVjYjF6V1owOC1CNUpTVmlVbmZ3Z3FleXJLWi1Zd0FjNXlEQ25mTkNWcVF1c1h3YVhCVlNOTFU0U1Q?oc=5" target="_blank" rel="noopener">The Next Web</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Contract backlog</dt><dd>This is the total value of signed deals a company hasn&#39;t yet delivered or billed for; a big backlog suggests strong future revenue, but only if customers don&#39;t cancel.</dd></div><div><dt>Compute capacity</dt><dd>This refers to the processing power - chips, servers and data centre space - needed to train or run AI models, which companies often rent rather than buy outright.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Cloud contracts between tech giants shape demand for data centre jobs and chip supply chains; spotting when a backlog might not convert to revenue is a useful skill for anyone analysing tech company earnings.</p></div>
+  </article>
+  
+  <article id="story-2">
+    <span class="mono kicker">The AI industry</span>
+    <h3>US officials reportedly believe Nvidia&#39;s Jensen Huang had relationship with alleged Chinese spy</h3>
+    <p class="standfirst">The Financial Times reports US authorities suspect a personal link between Nvidia&#39;s chief executive and an alleged intelligence operative.</p>
+    <div class="body"><p>The Financial Times has reported that US officials believe Nvidia chief executive Jensen Huang had a romantic relationship with a person alleged to be a Chinese spy. Details beyond the initial report remain limited.</p><p>Nvidia&#39;s chips are central to the global AI boom and are subject to export controls restricting sales to China over national security concerns. Any suggestion of a personal connection between Huang and alleged Chinese intelligence activity would add a new layer of scrutiny to a company already under close government watch.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMihAFBVV95cUxOcHo3eTNwbl9OX25ycmZfZ21DWjNEbTlxZ0w5UTk5RW9KZW5hZ1FUS3ZWblFCVHQ5S0EtVU8tbW94SERsbV8tb1A2NzFrN0htdjBoMzVyM1NHMXd1Wnk1OWJoQk1ORnFna0hMUFRhb2VKQVZGTzBPYWdRRDhrOC1VRjVwZUU?oc=5" target="_blank" rel="noopener">Financial Times</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Export controls</dt><dd>A reminder: these are government rules restricting the sale of sensitive technology, like advanced AI chips, to certain countries for national security reasons.</dd></div><div><dt>National security review</dt><dd>This is when government agencies examine a company, deal or individual for risks to a country&#39;s safety or strategic interests, which can lead to new restrictions or investigations.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Nvidia sits at the centre of AI hardware supply chains, so any political or security scrutiny of its leadership could ripple through chip exports, data centre building plans and investor confidence.</p></div>
+  </article>
+  
+</section>
+
+<section id="finance" class="finance">
+  <div class="sec-head">
+    <span class="mono">Section 2</span>
+    <h2>AI &amp; finance</h2>
+    <p>Where Wall Street and the City meet AI, as users and as funders.</p>
+  </div>
+  
+  <article id="story-3">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>CoreWeave bond yield tops 16% as AI debt gets pricier</h3>
+    <p class="standfirst">Rising borrowing costs for the AI cloud provider suggest investors are demanding a bigger premium for AI infrastructure risk.</p>
+    <div class="body"><p>CNBC reports that yields on bonds issued by CoreWeave, a major AI cloud computing provider, have climbed above 16%. A bond&#39;s yield moves opposite to its price, so a sharply rising yield signals investors are selling the debt or demanding much higher compensation for the risk of lending to the company.</p><p>CoreWeave is one of the so-called neoclouds that rents out GPU computing power to AI labs, often financed heavily with debt secured against its chips. Climbing yields on that debt suggest some investors are growing nervous about whether AI infrastructure spending will keep paying off as expected.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxQZmJ2R19jOTVNbkRoM3U5RWlNUXVuZzdFaWFwR1FEUFBsaTlxZmF4dkdFYjZ1aV9UNzJ3WE54MTFlNnpiR0pXbUZ6ZnYtVG1UdmVSUVNEd1dpbU9zVHdqVlBtOWdZN0pTUjhXdEpya1ZyY2FvTkd6VWZlczhEWVM4R2VONkRGWTdfNmVzV0otYTNIMUVCRXdxemk4QmNjVjg?oc=5" target="_blank" rel="noopener">CNBC</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Bond yield</dt><dd>This is the effective return a bond investor earns; if a $100 bond paying $5 a year falls in price to $80, its yield rises because that same $5 is now a bigger percentage return.</dd></div><div><dt>Credit spread</dt><dd>A reminder: this is the extra interest a risky borrower must pay compared with a safe government bond, and it widens when investors see more risk of default.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Bond yields are an early warning signal in finance; understanding why a rising yield can mean falling confidence is essential for anyone analysing lending risk in fast-growing but debt-heavy sectors like AI infrastructure.</p></div>
+  </article>
+  
+  <article id="story-4">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>ING puts $500m of data centre loans up for sale, including Stargate site debt</h3>
+    <p class="standfirst">The Dutch bank is reportedly auctioning loans tied to AI data centres, among them a slice of OpenAI&#39;s Stargate project.</p>
+    <div class="body"><p>ING Bank is reportedly looking to sell around $500 million of loans linked to data centres in a single auction, including debt connected to OpenAI&#39;s Stargate data centre site, according to BeBeez International and MLQ.ai.</p><p>Selling loans on to other investors, known as the secondary market, lets banks free up money to lend elsewhere while spreading out the risk of financing enormous AI data centre projects. It also signals how much bank balance sheets are now tied up in AI infrastructure lending.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxNXzBOaXBVRVgyQnZ4dEJKNnY0bGd0MmZEajFwRm5ad3VkUTlia2tXSDg0TWROMndjbmxsWEFHSTlnbGhRWXBIbFNQWTBhYWJqQ053V1AxeU9jcXRNV1JQbXdNRW5CeWowN2J3aXFBZEZvd0xySTZwbE1pZGRqV25zY09MSloteGVCNkdUS1B1OGFNMUR2ZUsyOXd4TDVnR3NUdG5qMGxLdkhJWl85cWpYbzlNMA?oc=5" target="_blank" rel="noopener">BeBeez International</a> · <a href="https://news.google.com/rss/articles/CBMivAFBVV95cUxPRXNJTGVCd01aYVVVRFFyVlVKRmNhOVZOUzlxd3lrOFBGalRvOXJDUWVYdmRNMGRaMmdRdXdhNTJxWGg1YXNMVnd2Um5kSWxMbElmSVl4amFMZFVIR1lDelAxVkh2OWJUSEpKcnIyTFk4cVB0MExPMUxidVFBWUlkUXgxVXdvLUl6RVNDOTg3ekZMNzNkbUVrUzJJNnpkSUhmSU1fdkNpZEkwOXI1NU5hMWJua2R5WFZpOUJ3Rg?oc=5" target="_blank" rel="noopener">MLQ.ai</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Loan sale (secondary market)</dt><dd>A reminder: this is when a bank sells an existing loan to another investor, transferring the right to receive repayments along with the risk of default.</dd></div><div><dt>Data centre</dt><dd>A reminder: these are large facilities packed with servers and chips that power AI training and everyday cloud services, and they are extremely expensive to build and finance.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Banks reselling data centre debt shows how AI infrastructure risk is spreading across the financial system, a trend worth understanding if you want to work in credit analysis or risk management.</p></div>
+  </article>
+  
+  <article id="story-5">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>Goldman and Apollo reportedly shop slices of SpaceX&#39;s $40bn Nvidia chip lease</h3>
+    <p class="standfirst">Investment banks are said to be offering investors pieces of a huge chip-leasing deal tied to SpaceX.</p>
+    <div class="body"><p>Goldman Sachs and Apollo are reportedly marketing slices of a $40 billion lease arrangement involving Nvidia chips used by SpaceX, according to MLQ.ai. Breaking a large loan or lease into smaller pieces and selling them to multiple investors is a way of spreading risk and raising more capital than any single lender might want to hold alone.</p><p>The deal underscores how deeply AI chip financing now reaches beyond pure tech companies into aerospace and defence-adjacent firms, and how banks are packaging and reselling that debt much as they do with other large corporate loans.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMipwFBVV95cUxNRVNpV3BrSkhBcWl2M2RDd0MzcklaNnJXMWxOWnpqaHdmd2xRN1F4R3NrdEtYOUV0RjB0QXJDMDZEdmlvb21rSEJac3FGZFVaUU94cjEyZVRSN29vQk0xdjBuTEZPTmJfcWdsZW5xTjBiZWRLVFJUYVJSRDBxX09aNXBMSkZCb1NQeVpxNHdXM0w2cmJTRWNaUnEyM1ljRU1WSjhwV1VmWQ?oc=5" target="_blank" rel="noopener">MLQ.ai</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Securitisation</dt><dd>This is the process of bundling a loan or lease into smaller tradeable pieces that different investors can buy, similar to slicing a pizza so several people can each have a share.</dd></div><div><dt>GPU-backed loan</dt><dd>A reminder: this is when a company borrows money using its graphics processing units, the chips that power AI computing, as collateral.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Seeing AI chip deals packaged like mortgage debt is a reminder that financial engineering, not just AI breakthroughs, is driving the industry&#39;s growth, which matters if you&#39;re weighing a career in structured finance or risk analysis.</p></div>
+  </article>
+  
+</section>
+
+<section id="startups" class="startups">
+  <div class="sec-head">
+    <span class="mono">Section 3</span>
+    <h2>Startups &amp; funding</h2>
+    <p>Who raised, how much, and what investors are betting on.</p>
+  </div>
+  
+  <article id="story-6">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>Palo Alto Networks in advanced talks to buy AI agent security startup Clutch for $500m</h3>
+    <p class="standfirst">The cybersecurity giant is reportedly close to acquiring a startup that protects AI agents from misuse.</p>
+    <div class="body"><p>Palo Alto Networks is reportedly in advanced talks to acquire Clutch Security, a startup focused on securing AI agents, for around $500 million, according to multiple outlets including Security Boulevard and SC Media.</p><p>AI agents, software that can take actions on a user&#39;s behalf such as making purchases or querying databases, increasingly need their own credentials and access permissions, much like human employees. Startups like Clutch build tools to manage and secure those non-human identities, a growing concern as companies deploy more autonomous AI systems.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMingFBVV95cUxNQmhCY0tWUGZSVWk4cl9NaVM5Q21JU0VnTUdQRjRZUGt5S1BRd19Db0R6bVJZR1UwU1NwU29GQlpTMU1hcnpWa3RZek03eVBRemtINlBOdG1iU3I3UU5Fd0tXTjhiTE03UGdJckFId1RLWEVJSmJEY2MyajM3MVBrUF9OdXZkVC1XSGRzV1BPNTdCc3p1V0lNdFg2dHF1QQ?oc=5" target="_blank" rel="noopener">Techzine Global</a> · <a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxOMzRsUC1yQjUzeHl4ZlJQMk9LTzBQSlFROVdjb3VrVTM2RUl0akJoM0owZGljanExR3Iza2s3NGFOb29wQU5sTTFfVlpvb1hWZmdvYm8tbHUwUk5jMmg5U0FicFRYT0o1Y0RJXzYyYzc4VDVQekhIZWJCNkJNZVZmeUpaNWhVc3djMGQzVzZhdEgweHViV1NHZW5TUEU2S05HQlFSLTZyeWZzOVJ3MnFlSW1Nd0FEOEhzVjl6UWp0c1dOZFZsRTk3Z285VQ?oc=5" target="_blank" rel="noopener">Security Boulevard</a> · <a href="https://news.google.com/rss/articles/CBMivAFBVV95cUxObUU4Z2U0c3BobVJvelBxbVcyVEw3ZkQ0TldEeUw5SWdDbTlRb3lwcm8xYXEwWVpnNWVmZzZUdGlZc2JBNHZFU0FBVFFibElJLUpjUVpmMGw5N3FHTER2S2poaThGM2t6UlZENGt5UDBVT1NSWTdOczFxeW1zZFFXZ3JLeWhSb1F3ZkRlOGhrRlIzUVNTMGhVQ0NiN3VwSWJubmIxTmVIdDRRMU0xb2RlOHJHVWNxUlpLNkJXNw?oc=5" target="_blank" rel="noopener">The American Bazaar</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>AI agent</dt><dd>A reminder: this is software that can carry out multi-step tasks on its own, such as booking a flight or querying a database, rather than just answering a single question.</dd></div><div><dt>Acquisition</dt><dd>A reminder: this is when one company buys another outright, often to gain its technology, team or customers quickly rather than building it in-house.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>As companies roll out AI agents, demand is rising fast for cybersecurity specialists who understand how to manage machine identities and permissions, a niche worth knowing about if you&#39;re considering a security career.</p></div>
+  </article>
+  
+  <article id="story-7">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>Sentra raises $150m Series C led by Capital One Ventures</h3>
+    <p class="standfirst">The data security startup&#39;s new funding round was led by the venture arm of a major US bank.</p>
+    <div class="body"><p>Sentra, a data security startup, has raised $150 million in a Series C funding round led by Capital One Ventures, according to Beinsure. Series C typically marks a later-stage round for startups that have already proven their product works and are now scaling sales and operations, as opposed to earlier seed or Series A rounds focused on getting a product off the ground.</p><p>The involvement of Capital One&#39;s venture arm highlights how banks are increasingly investing directly in startups building tools, like data security products, that they themselves may want to use or that protect sensitive financial data.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMiakFVX3lxTFBsTDNrLTk0cVctNEJhUWJNTk5kT0M2Smk5LXhlOFZmRkFfYUtsZFo2cHppYV9zTnMzSm16NTE4UTFrV092YXB1NnViTm1GU0hZWUVpeWJUc1FGaFBCckxVd3JKUjVvNWNYWGc?oc=5" target="_blank" rel="noopener">Beinsure</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Series C funding</dt><dd>This is a later stage of startup fundraising, usually once a company has paying customers and steady revenue, aimed at scaling the business rather than just building the first product.</dd></div><div><dt>Venture capital</dt><dd>This is money invested by specialist firms, or arms of larger companies, into early or growing startups in exchange for equity, betting that some will become very valuable.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Banks investing in security startups shows where financial institutions see future risk, useful context if you&#39;re applying for roles in fintech partnerships or corporate venture teams.</p></div>
+  </article>
+  
+</section>
+
+
+
+<div class="panel" id="code">
+  <span class="mono">Code corner</span>
+  <h2>Calculating a bond&#39;s current yield</h2>
+  <p class="src">Based on: <a href="#story-3">CoreWeave bond yield tops 16% as AI debt gets pricier</a></p>
+  <p style="margin:0">CoreWeave&#39;s bond yield has reportedly climbed above 16% as its price falls. Here&#39;s a simple script that shows how a bond&#39;s price and yield are linked, using only Python&#39;s standard library.</p>
+  <pre><code>def current_yield(face_value, coupon_rate, market_price):
+    annual_coupon = face_value * coupon_rate
+    yield_pct = (annual_coupon / market_price) * 100
+    return round(yield_pct, 2)
+
+face_value = 100
+coupon_rate = 0.08  # 8% annual coupon
+
+prices = [100, 90, 70, 50]
+
+for price in prices:
+    y = current_yield(face_value, coupon_rate, price)
+    print(f&#34;Price: ${price} -&gt; Current yield: {y}%&#34;)</code></pre>
+  <span class="mono">Line by line</span>
+  <ol class="walk"><li>def current_yield(...) defines a function that works out a bond&#39;s yield from its face value, coupon rate and current market price.</li><li>annual_coupon = face_value * coupon_rate calculates the fixed dollar amount the bond pays each year, here $8 on a $100 bond with an 8% coupon.</li><li>yield_pct = (annual_coupon / market_price) * 100 divides that fixed payment by the current price to get the yield as a percentage; as price falls, yield rises.</li><li>The for loop runs the calculation for several falling prices, showing how a bond trading at $50 instead of $100 doubles its yield even though the coupon payment never changes.</li></ol>
+  <div class="tryit"><p><b>Try it:</b> Change the coupon_rate to 0.05 and add a price of $40 to the prices list, then run the script again to see how much higher the yield climbs for a deeply discounted bond.</p></div>
+</div>
+
+<div class="panel" id="quiz">
+  <span class="mono">Quiz · apply today's concepts</span>
+  <h2>What would you do?</h2>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 1</span>
+    <p class="scenario">You&#39;re in a startup pitch meeting and the founder says their company is &#39;worth $2 billion&#39; because that&#39;s what the last funding round implied.</p>
+    <p class="ask">What does that $2 billion valuation actually represent?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>The amount of cash the company currently holds in its bank account</span></button></li><li><button type="button" data-i="1"><b>B</b><span>The price investors agreed to pay for a small stake, extrapolated to the whole company</span></button></li><li><button type="button" data-i="2"><b>C</b><span>The company&#39;s total revenue for the past year</span></button></li><li><button type="button" data-i="3"><b>D</b><span>A guarantee from regulators that the company is worth that much</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> A valuation comes from the price investors pay for a slice of equity in a funding round, multiplied up to the whole company; it is not cash in hand or audited revenue. The tempting wrong answer, cash in the bank, confuses valuation with actual liquid assets, which can be far lower.</p>
+        <div class="chips"><span>Valuation</span><span>Funding round</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="2">
+    <span class="mono" style="color:var(--muted)">Scenario 2</span>
+    <p class="scenario">In your first week as a junior analyst at a bank, you see a note saying CoreWeave&#39;s bond yield has jumped from 10% to 16% while its bond price has fallen.</p>
+    <p class="ask">What does this combination most likely signal?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>Investors are more confident in CoreWeave&#39;s ability to repay its debt</span></button></li><li><button type="button" data-i="1"><b>B</b><span>The bond&#39;s coupon payment has increased to match the new yield</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Investors are demanding a higher return because they see more risk in lending to CoreWeave</span></button></li><li><button type="button" data-i="3"><b>D</b><span>CoreWeave has already defaulted on its bond payments</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: C.</b> A falling bond price pushes up the yield because the fixed coupon payment is now a bigger percentage of a lower price, and this typically happens when investors see more default risk, not less. The coupon itself doesn&#39;t change, and a yield spike is not the same as an actual default.</p>
+        <div class="chips"><span>Bond yield</span><span>Credit spread</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 3</span>
+    <p class="scenario">During a team meeting, a colleague suggests buying Clutch Security&#39;s product because &#39;it manages our AI agents&#39; logins.&#39;</p>
+    <p class="ask">Which best describes why AI agents need something like identity management in the first place?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>AI agents are physical robots that need to be tracked by GPS</span></button></li><li><button type="button" data-i="1"><b>B</b><span>AI agents can take multi-step actions on systems, so they need controlled credentials just like human employees do</span></button></li><li><button type="button" data-i="2"><b>C</b><span>AI agents only answer questions and never access company systems</span></button></li><li><button type="button" data-i="3"><b>D</b><span>AI agents replace the need for any security tools entirely</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> AI agents can log into systems and take actions autonomously, so they need managed credentials and permissions to prevent misuse, similar to employee access controls. The wrong answers either misunderstand what an AI agent is or assume no security risk exists at all.</p>
+        <div class="chips"><span>AI agent</span><span>Acquisition</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 4</span>
+    <p class="scenario">Your team is deciding whether to rent extra cloud computing capacity after reading that Microsoft is scaling back a similar deal with Oracle.</p>
+    <p class="ask">Why might a company reduce how much AI compute capacity it rents from an external provider?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>Because running AI models no longer requires any computing power</span></button></li><li><button type="button" data-i="1"><b>B</b><span>Because inference and training workloads can shift to different or newer hardware, making old rental agreements less useful</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Because renting compute capacity is illegal under new regulations</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Because AI companies always buy their own data centres instead of renting</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> Companies often rent compute capacity for inference, the process of running a trained AI model to generate answers, and training; as better or cheaper hardware becomes available, old rental deals can become less attractive. The other options invent constraints not mentioned in the story.</p>
+        <div class="chips"><span>Compute capacity</span><span>Inference</span></div>
+      </div>
+    </details>
+  </div>
+  
+</div>
+
+<div class="panel" id="glossary">
+  <span class="mono">Glossary</span>
+  <h2>Every concept from today</h2>
+  <dl class="gloss"><div><dt>Acquisition<a href="#story-6">see story</a></dt><dd>A reminder: this is when one company buys another outright, often to gain its technology, team or customers quickly rather than building it in-house.</dd></div><div><dt>AI agent<a href="#story-6">see story</a></dt><dd>A reminder: this is software that can carry out multi-step tasks on its own, such as booking a flight or querying a database, rather than just answering a single question.</dd></div><div><dt>Bond yield<a href="#story-3">see story</a></dt><dd>This is the effective return a bond investor earns; if a $100 bond paying $5 a year falls in price to $80, its yield rises because that same $5 is now a bigger percentage return.</dd></div><div><dt>Compute capacity<a href="#story-1">see story</a></dt><dd>This refers to the processing power - chips, servers and data centre space - needed to train or run AI models, which companies often rent rather than buy outright.</dd></div><div><dt>Contract backlog<a href="#story-1">see story</a></dt><dd>This is the total value of signed deals a company hasn&#39;t yet delivered or billed for; a big backlog suggests strong future revenue, but only if customers don&#39;t cancel.</dd></div><div><dt>Credit spread<a href="#story-3">see story</a></dt><dd>A reminder: this is the extra interest a risky borrower must pay compared with a safe government bond, and it widens when investors see more risk of default.</dd></div><div><dt>Data centre<a href="#story-4">see story</a></dt><dd>A reminder: these are large facilities packed with servers and chips that power AI training and everyday cloud services, and they are extremely expensive to build and finance.</dd></div><div><dt>Export controls<a href="#story-2">see story</a></dt><dd>A reminder: these are government rules restricting the sale of sensitive technology, like advanced AI chips, to certain countries for national security reasons.</dd></div><div><dt>Funding round<a href="#story-0">see story</a></dt><dd>A reminder: this is when a company sells new shares to investors in exchange for cash, often in named stages such as Series A, B or C.</dd></div><div><dt>GPU-backed loan<a href="#story-5">see story</a></dt><dd>A reminder: this is when a company borrows money using its graphics processing units, the chips that power AI computing, as collateral.</dd></div><div><dt>IPO (initial public offering)<a href="#story-0">see story</a></dt><dd>A reminder: this is when a private company sells shares to the public for the first time, listing on a stock exchange.</dd></div><div><dt>Loan sale (secondary market)<a href="#story-4">see story</a></dt><dd>A reminder: this is when a bank sells an existing loan to another investor, transferring the right to receive repayments along with the risk of default.</dd></div><div><dt>National security review<a href="#story-2">see story</a></dt><dd>This is when government agencies examine a company, deal or individual for risks to a country&#39;s safety or strategic interests, which can lead to new restrictions or investigations.</dd></div><div><dt>Securitisation<a href="#story-5">see story</a></dt><dd>This is the process of bundling a loan or lease into smaller tradeable pieces that different investors can buy, similar to slicing a pizza so several people can each have a share.</dd></div><div><dt>Series C funding<a href="#story-7">see story</a></dt><dd>This is a later stage of startup fundraising, usually once a company has paying customers and steady revenue, aimed at scaling the business rather than just building the first product.</dd></div><div><dt>Valuation<a href="#story-0">see story</a></dt><dd>A reminder: this is the price tag investors put on a whole company based on what they&#39;re willing to pay for a small slice of it.</dd></div><div><dt>Venture capital<a href="#story-7">see story</a></dt><dd>This is money invested by specialist firms, or arms of larger companies, into early or growing startups in exchange for equity, betting that some will become very valuable.</dd></div></dl>
+</div>
+
+<div class="panel">
+  <span class="mono">Past digests</span>
+  <ul class="archive"><li><a href="../archive/2026-11-07.html" aria-current="page">2026-11-07</a></li><li><a href="../archive/2026-11-06.html">2026-11-06</a></li><li><a href="../archive/2026-11-05.html">2026-11-05</a></li><li><a href="../archive/2026-11-04.html">2026-11-04</a></li><li><a href="../archive/2026-11-03.html">2026-11-03</a></li><li><a href="../archive/2026-11-02.html">2026-11-02</a></li><li><a href="../archive/2026-11-01.html">2026-11-01</a></li><li><a href="../archive/2026-10-31.html">2026-10-31</a></li><li><a href="../archive/2026-10-30.html">2026-10-30</a></li><li><a href="../archive/2026-10-29.html">2026-10-29</a></li><li><a href="../archive/2026-10-28.html">2026-10-28</a></li><li><a href="../archive/2026-10-27.html">2026-10-27</a></li><li><a href="../archive/2026-10-26.html">2026-10-26</a></li><li><a href="../archive/2026-10-25.html">2026-10-25</a></li><li><a href="../archive/2026-10-24.html">2026-10-24</a></li><li><a href="../archive/2026-10-23.html">2026-10-23</a></li><li><a href="../archive/2026-10-22.html">2026-10-22</a></li><li><a href="../archive/2026-10-21.html">2026-10-21</a></li><li><a href="../archive/2026-10-20.html">2026-10-20</a></li><li><a href="../archive/2026-10-19.html">2026-10-19</a></li><li><a href="../archive/2026-10-18.html">2026-10-18</a></li><li><a href="../archive/2026-10-17.html">2026-10-17</a></li><li><a href="../archive/2026-10-16.html">2026-10-16</a></li><li><a href="../archive/2026-10-15.html">2026-10-15</a></li><li><a href="../archive/2026-10-14.html">2026-10-14</a></li><li><a href="../archive/2026-10-13.html">2026-10-13</a></li><li><a href="../archive/2026-10-12.html">2026-10-12</a></li><li><a href="../archive/2026-10-11.html">2026-10-11</a></li><li><a href="../archive/2026-10-10.html">2026-10-10</a></li><li><a href="../archive/2026-10-09.html">2026-10-09</a></li></ul>
+</div>
+
+<footer>Written by Claude from the linked sources. Check the original article before quoting figures in an interview.</footer>
+</div>
+<script>
+document.querySelectorAll(".q").forEach(function (q) {
+  var correct = Number(q.dataset.correct);
+  var buttons = q.querySelectorAll(".opts button");
+  buttons.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var picked = Number(b.dataset.i);
+      buttons.forEach(function (x) {
+        var i = Number(x.dataset.i);
+        if (i === correct) x.classList.add("right");
+        else if (i === picked) x.classList.add("wrong");
+        x.disabled = true;
+      });
+      q.querySelector("details").open = true;
+    });
+  });
+});
+</script>
+</body>
+</html>
