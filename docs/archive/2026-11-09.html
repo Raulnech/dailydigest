@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI Morning Brief · Monday 9 November 2026</title>
+<meta name="theme-color" content="#3A55C8">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  color-scheme:light dark;
+  --ground:#F3F4F7; --paper:#FFFFFF; --ink:#141827; --muted:#5B6275; --line:#DDE0E8;
+  --industry:#3A55C8; --industry-soft:#E6EAFA;
+  --finance:#1C7453; --finance-soft:#E1F1EA;
+  --startups:#A8561A; --startups-soft:#F7EADF;
+  --code-bg:#161A26; --code-ink:#E4E7F0;
+  --right:#1C7453; --right-soft:#E1F1EA; --wrong:#B3261E; --wrong-soft:#FBE7E5;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --ground:#0F121B; --paper:#171B27; --ink:#E8EAF1; --muted:#9AA1B4; --line:#2A3042;
+    --industry:#8FA3F5; --industry-soft:#20284A;
+    --finance:#6CCBA3; --finance-soft:#15332A;
+    --startups:#E8A06A; --startups-soft:#3A2618;
+    --code-bg:#0B0D14; --code-ink:#E4E7F0;
+    --right:#6CCBA3; --right-soft:#15332A; --wrong:#F2A29B; --wrong-soft:#3A1B19;
+  }
+}
+*{box-sizing:border-box}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.6 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;padding-inline:16px;padding-block:28px 64px}
+.wrap{max-width:700px;margin:0 auto;display:grid;gap:36px}
+a{color:inherit}
+a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var(--industry);outline-offset:3px;border-radius:4px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400}
+header{display:grid;gap:10px}
+header .date{color:var(--muted)}
+h1{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(44px,11vw,64px);line-height:1;margin:0;letter-spacing:-.01em}
+h1 em{color:var(--industry)}
+.lede{color:var(--muted);margin:0;max-width:60ch}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ground);padding-block:10px;display:flex;gap:8px;overflow-x:auto;border-bottom:1px solid var(--line)}
+nav a{flex:none;text-decoration:none;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--paper);font-size:14px}
+nav a.industry{color:var(--industry)} nav a.finance{color:var(--finance)} nav a.startups{color:var(--startups)}
+
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:14px;scroll-margin-top:64px}
+.panel h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:30px;margin:0;line-height:1.15}
+.panel > .mono{color:var(--muted)}
+.talk ol{margin:0;padding-left:20px;display:grid;gap:8px}
+.toc{display:grid;gap:14px}
+.toc h3{margin:0 0 4px}
+.toc ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.toc li a{text-decoration:none}
+.toc li a:hover{text-decoration:underline}
+
+section{display:grid;gap:22px;scroll-margin-top:64px}
+.sec-head{display:grid;gap:2px;border-top:3px solid var(--c);padding-top:12px}
+.sec-head h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:36px;margin:0;line-height:1.1;text-wrap:balance}
+.sec-head p{margin:0;color:var(--muted)}
+.sec-head .mono{color:var(--c)}
+.industry{--c:var(--industry);--cs:var(--industry-soft)}
+.finance{--c:var(--finance);--cs:var(--finance-soft)}
+.startups{--c:var(--startups);--cs:var(--startups-soft)}
+
+article{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px 20px;display:grid;gap:16px;scroll-margin-top:64px}
+article .kicker{color:var(--c)}
+article h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(26px,6vw,32px);line-height:1.15;margin:0;text-wrap:balance}
+.standfirst{margin:0;font-size:18px;line-height:1.5;color:var(--muted)}
+.body{display:grid;gap:14px;font-family:"Source Serif 4",Georgia,serif;font-size:18px;line-height:1.65;max-width:65ch}
+.body p{margin:0}
+.src{margin:0;font-size:13px;color:var(--muted)}
+.concepts{background:var(--cs);border-radius:12px;padding:16px 18px;display:grid;gap:12px}
+.concepts .mono{color:var(--c)}
+.concepts dl{margin:0;display:grid;gap:10px}
+.concepts dt{font-weight:600}
+.concepts dd{margin:2px 0 0}
+.why{display:grid;gap:4px;border-left:2px solid var(--c);padding-left:14px}
+.why .mono{color:var(--c)}
+.why p{margin:0}
+
+pre{margin:0;background:var(--code-bg);color:var(--code-ink);border-radius:10px;padding:16px;overflow-x:auto;font:14px/1.55 "IBM Plex Mono",ui-monospace,Consolas,monospace}
+.walk{margin:0;padding-left:20px;display:grid;gap:6px}
+code{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:.9em}
+.tryit{background:var(--industry-soft);border-radius:10px;padding:12px 16px}
+.tryit p{margin:0}
+
+.q{display:grid;gap:12px;border-top:1px solid var(--line);padding-top:18px}
+.q:first-of-type{border-top:0;padding-top:0}
+.scenario{margin:0;font-family:"Source Serif 4",Georgia,serif;font-style:italic;font-size:17px}
+.q .ask{margin:0;font-weight:600}
+.opts{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.opts button{width:100%;text-align:left;font:inherit;color:var(--ink);background:var(--ground);border:1px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer;display:flex;gap:10px}
+.opts button:hover{border-color:var(--industry)}
+.opts button b{font-family:"IBM Plex Mono",ui-monospace,monospace;font-weight:500}
+.opts button.right{background:var(--right-soft);border-color:var(--right)}
+.opts button.wrong{background:var(--wrong-soft);border-color:var(--wrong)}
+.opts button:disabled{cursor:default}
+details{border-radius:10px}
+summary{cursor:pointer;font-weight:500;color:var(--industry)}
+.answer{display:grid;gap:8px;margin-top:10px}
+.answer p{margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:13px;padding:2px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+
+.gloss{margin:0;display:grid;gap:12px}
+.gloss dt{font-weight:600}
+.gloss dt a{font-weight:400;font-size:13px;color:var(--muted);margin-left:6px}
+.gloss dd{margin:2px 0 0;color:var(--muted)}
+.archive{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.archive a{display:inline-block;padding:4px 10px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-variant-numeric:tabular-nums;font-size:14px}
+.archive a[aria-current]{border-color:var(--industry);color:var(--industry)}
+footer{color:var(--muted);font-size:13px}
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="mono date">Monday 9 November 2026 · 12 min read</span>
+  <h1>AI Morning <em>Brief</em></h1>
+  <p class="lede">Today's AI and fintech news as short articles, with every key concept explained, a bit of Python, and a scenario quiz to check it stuck.</p>
+</header>
+
+<nav aria-label="Sections">
+  <a href="#industry" class="industry">The AI industry</a>
+  <a href="#finance" class="finance">AI &amp; finance</a>
+  <a href="#startups" class="startups">Startups &amp; funding</a>
+  <a href="#code">Code corner</a>
+  <a href="#quiz">Quiz</a>
+  <a href="#glossary">Glossary</a>
+</nav>
+
+<div class="panel talk">
+  <span class="mono">If you only read one thing</span>
+  <h2>Three things to be able to say today</h2>
+  <ol><li>Nvidia&#39;s board is investigating whether CEO Jensen Huang&#39;s personal relationship with an alleged Chinese agent posed a security risk to the chipmaker.</li><li>Google is expanding its own AI chip lineup just as Nvidia faces a distracting scandal, and also quietly bought a stalled $30.9bn data centre project from startup Crusoe.</li><li>US margin debt has hit a record $1.5 trillion, a sign investors are borrowing heavily to ride the AI rally.</li></ol>
+</div>
+
+<div class="panel">
+  <span class="mono">In today's brief</span>
+  <div class="toc">
+  
+    <div class="industry"><h3 class="mono" style="color:var(--c)">The AI industry</h3>
+      <ul><li><a href="#story-0">Nvidia board launches probe into Jensen Huang&#39;s ties to alleged Chinese spy</a></li><li><a href="#story-1">Google expands in-house AI chip lineup as Nvidia faces distraction</a></li><li><a href="#story-2">Nvidia takes stakes in four Korean AI startups and builds sovereign AI racks with SK Telecom</a></li></ul>
+    </div>
+  
+    <div class="finance"><h3 class="mono" style="color:var(--c)">AI &amp; finance</h3>
+      <ul><li><a href="#story-3">Visa finds AI shopping agents fail 43% of test runs</a></li><li><a href="#story-4">RBA says AI will reshape jobs but stay roughly inflation neutral</a></li><li><a href="#story-5">US margin debt hits record $1.502 trillion</a></li></ul>
+    </div>
+  
+    <div class="startups"><h3 class="mono" style="color:var(--c)">Startups &amp; funding</h3>
+      <ul><li><a href="#story-6">Google takes over Crusoe&#39;s unfinished $30.9bn Wyoming data centre</a></li><li><a href="#story-7">Traversal raises $120 million at $1 billion valuation</a></li></ul>
+    </div>
+  
+  </div>
+</div>
+
+
+<section id="industry" class="industry">
+  <div class="sec-head">
+    <span class="mono">Section 1</span>
+    <h2>The AI industry</h2>
+    <p>Big labs, big tech and the direction of travel.</p>
+  </div>
+  
+  <article id="story-0">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Nvidia board launches probe into Jensen Huang&#39;s ties to alleged Chinese spy</h3>
+    <p class="standfirst">The chipmaker&#39;s CEO has admitted to an affair with a former executive reportedly recruited by China&#39;s intelligence service.</p>
+    <div class="body"><p>Nvidia&#39;s board of directors announced on Sunday that it is opening an independent investigation after reports surfaced that CEO Jensen Huang was the target of a Chinese espionage operation. In a memo released by the company, Huang admitted to an affair with Alice Huang, a former executive at Singapore-based chip company Megaspeed, saying he had been unfaithful to his wife and had &#34;fallen short&#34; of his responsibilities to Nvidia.</p><p>A memo circulating among US policymakers earlier this year alleged that Alice Huang had been recruited by China&#39;s Ministry of State Security specifically to get close to Nvidia&#39;s chief executive. The timing is sensitive: Nvidia&#39;s chips sit at the centre of the US-China AI rivalry, and Washington has repeatedly tightened export controls on the kind of advanced chips Nvidia makes, worried they could help China catch up in artificial intelligence and military technology.</p><p>Nvidia&#39;s board said it has &#34;no reason to believe&#34; that national security or trade secrets were compromised, and that Huang &#34;fully supports&#34; the review. Independent directors, working with outside legal counsel, will carry out the investigation. The episode is a reminder that in an industry this strategically important, a chief executive&#39;s personal life can quickly become a matter of national security.</p></div>
+    
+    <p class="src">Sources: <a href="https://techcrunch.com/2026/11/08/nvidia-says-its-investigating-ceo-jensen-huangs-relationship-with-possible-chinese-spy/" target="_blank" rel="noopener">TechCrunch</a> · <a href="https://www.theverge.com/ai-artificial-intelligence/1029562/nvidia-investigating-jensen-huang-relationship-chinese-spy" target="_blank" rel="noopener">The Verge</a> · <a href="https://www.cnbc.com/2026/11/08/nvidia-jensen-huang-investigation-china-spy.html" target="_blank" rel="noopener">Tech</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Board of directors</dt><dd>A group of people elected by shareholders to oversee a company&#39;s management, including hiring, firing and investigating the chief executive if needed.</dd></div><div><dt>Independent investigation</dt><dd>A review carried out by people with no personal stake in the outcome, here independent board members and outside lawyers, so the findings are seen as credible rather than a cover-up.</dd></div><div><dt>Export controls (reminder)</dt><dd>Government rules restricting which technologies, like advanced AI chips, can be sold to certain countries, used to slow rivals&#39; military or AI progress.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>This story shows how corporate governance, geopolitics and AI competition increasingly overlap, creating demand for compliance, legal and risk roles inside tech firms. In an interview, you could note how it illustrates &#39;key person risk&#39; at companies whose products are also considered dual-use national security assets.</p></div>
+  </article>
+  
+  <article id="story-1">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Google expands in-house AI chip lineup as Nvidia faces distraction</h3>
+    <p class="standfirst">New specialised chip variants aim to chip away at Nvidia&#39;s dominance just as its CEO deals with a spying scandal.</p>
+    <div class="body"><p>Google has reportedly launched new specialised versions of its in-house AI chips, broadening a lineup it has used for years to train and run its own AI models more cheaply than renting Nvidia hardware. The expansion comes as Nvidia, the dominant supplier of AI chips, is distracted by the investigation into CEO Jensen Huang.</p><p>Google&#39;s chips, known as TPUs, are custom-built silicon designed specifically for AI workloads rather than general computing, which can make them cheaper to run at scale for the tasks Google needs. Offering more tailored variants could appeal to cloud customers who want chips matched to specific jobs, such as running a trained model to answer queries rather than training it from scratch.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxPam04WS0zYVBvV09xOExDV2hWRTkzRUNIbjZlZHRieVc4enl1blJqa05udTBYb0dRbUwxcWdVUThLUTBhcHpvNzJJTWtZZFV6Q2EtZzUyalczTmJpUFhpTmRPckwtMWx4VmoxQU9rVWpqWjVxcVB2ZklTSnAxLTRBeTEyQXNfdmlwZ2c2MXhscmtTSkFoVTRMX1BSMVpWc0ttSF9GSDQxdVZYSGc?oc=5" target="_blank" rel="noopener">Yahoo Finance</a> · <a href="https://news.google.com/rss/articles/CBMimAFBVV95cUxOYmZ4bWtBYVNQZnY4ajU4cmlvVDFFVkwzRGgwRnJ5ZWlHM3BDaWpNTUh1OFhTMDR1Wkx6VGw4WmNKQ2NDd2ZINlhRT1JwT0pRblZ6azB0SFlnbVZoaHJmQ1A5bERWbVczN1piSC1fOHVzOUI4bjl3S2tuU05PNWdwOVZpa2FhZDJpdWtaWHJfM2M5dFVnd0ZrMQ?oc=5" target="_blank" rel="noopener">Yahoo Finance</a> · <a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxPUzd3SnVVcFBmOXZwOTRvV1d6Ny1paXRzMGxORGMwSmpodjM0dVNtZTJxN0Z3WS1zdlRlNDNuVXZRMzVFeWtJWWlGdXVIQ1FSZE5aaTljQk45blZ3YmJ2c0oxYWlEU2JBci1xSHZsektfUTEwZDdtdEl1MlQ4R0E1d0xQdXR2ZENXcDdFSXE3Y1FWeEl4QWhHWE9PeXd3S3lMTGc?oc=5" target="_blank" rel="noopener">Global Banking &amp; Finance Review</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Custom chip (TPU) (reminder)</dt><dd>A Tensor Processing Unit is a chip Google designed itself specifically for AI tasks, rather than a general-purpose processor, similar to how a specialist tool does one job better than a Swiss army knife.</dd></div><div><dt>Inference (reminder)</dt><dd>The stage where a trained AI model is actually used to answer questions or make predictions, as opposed to the earlier &#39;training&#39; stage where it learns from data.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Chip competition between Google and Nvidia affects which cloud platforms are cheapest for AI work, a detail worth knowing if you ever choose infrastructure for a project or discuss cost trade-offs in a technical interview.</p></div>
+  </article>
+  
+  <article id="story-2">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Nvidia takes stakes in four Korean AI startups and builds sovereign AI racks with SK Telecom</h3>
+    <p class="standfirst">Nvidia deepens its presence in South Korea with investments and a chip partnership built around its NVLink Fusion technology.</p>
+    <div class="body"><p>Nvidia has agreed to take equity stakes in four South Korean startups building large language models and robotics software, while also partnering with SK Telecom and local chipmaker Rebellions to build computing systems for Korea&#39;s national AI infrastructure. The partnership will use Nvidia&#39;s NVLink Fusion technology, which lets different types of chips work together inside the same server rack.</p><p>The push fits a wider trend of countries building &#39;sovereign AI&#39; capacity, meaning computing power and models they control domestically rather than renting from foreign cloud providers. For Nvidia, taking equity stakes alongside selling chips deepens its role from supplier to investor in national AI strategies, giving it a financial upside if these startups succeed.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxNY0NTQ0dCSVRRd1hRUE9JSTBEckxDZlh0LWxieWNaR0MwOGR6TmpZY1ZZSlhCSlNlVTFGTHhOZG5ZQkZIM3lXRTE1SEVGRi1nZElIbDBiOFF4eWtRa3dRRkNDMmJmdnhJWExmeTZhYzNMMFYtRS1xajF1QWNlQU9NR1ZITGVLS0IzMXdPazA5SHNwX05EVU5md0E0YTNaVXpFQXhuc2cyWUgxbHhZRlc0MkM0dw?oc=5" target="_blank" rel="noopener">Dealroom</a> · <a href="https://news.google.com/rss/articles/CBMi2wFBVV95cUxNbHN2dTc3MDlJMFItdWNIU2VOcmF1dmFWdkxxQ2d3ZzhQc2hueEhhbmo4dUMyVDk0SVhIb2lCUjBxMTFpZVFkR1JHTnBNTXNSajNLdVVYS0w2dEJUak90VUlMQzFmNUhvZUVNeFZncER4cE9yTmJ1YmZGZlpnNDNIRVJWY3N3Zi1FdzhJSVNjcFAyeVBKRVRqSGFma1gzZER2OTdtaFFkNGJTSXB3VDhNU0IzM0Vrc0stYUgyZHVpb0lPbWZtTV9nNmUwY2hES0tPNWJaZDF1Yk5xRkXSAdsBQVVfeXFMTWxzdnU3NzA5STBSLXVjSFNlTnJhdXZhVnZMcUNnd2c4UHNobnhIYW5qOHVDMlQ5NElYSG9pQlIwcTExaWVRZEdSR05wTU1zUmozS3VVWEtMNnRCVGpPdFVJTEMxZjVIb2VFTXhWZ3BEeHBPck5idWJmRmZaZzQzSEVSVmNzd2YtRXc4SUlTY3BQMnlQSkVUakhhZmtYM2REdjk3bWhRZDRiU0lwd1Q4TVNCMzNFa3NLLWFIMmR1aW9JT21mbU1fZzZlMGNoREtLTzViWmQxdWJOcUZF?oc=5" target="_blank" rel="noopener">The Korea Times</a> · <a href="https://news.google.com/rss/articles/CBMikwFBVV95cUxQR2g3Nk40a19mU0FkaWY1c0l6OHNLcUp3bTRad1FDZjY5SjEyQzVvWVBJUzBqUXZHcVhoeHAwcGtVVE9YNzdzSU56aXlEblRTS1ZrNkdJZGFaRWUzUTZPb05FSE9kOUxQZ2h0bUxFbzhMdUFoN2h2cXpTZmxQVC14eU93R09fanotb0tTT3RVOHJXQlU?oc=5" target="_blank" rel="noopener">Engineering.com</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Sovereign AI</dt><dd>The idea that a country should build and control its own AI infrastructure and models, rather than depending entirely on foreign companies, similar to how nations want their own power grid rather than relying on a neighbour&#39;s.</dd></div><div><dt>Equity stake (reminder)</dt><dd>Owning a slice of a company&#39;s shares, meaning you gain or lose money as that company&#39;s value rises or falls, not just getting paid for selling it products.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Nvidia investing directly in customers shows how chip supply and venture investing are merging, a trend worth mentioning if asked about Nvidia&#39;s business model beyond selling hardware.</p></div>
+  </article>
+  
+</section>
+
+<section id="finance" class="finance">
+  <div class="sec-head">
+    <span class="mono">Section 2</span>
+    <h2>AI &amp; finance</h2>
+    <p>Where Wall Street and the City meet AI, as users and as funders.</p>
+  </div>
+  
+  <article id="story-3">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>Visa finds AI shopping agents fail 43% of test runs</h3>
+    <p class="standfirst">A new benchmark shows AI models still struggle to complete realistic online shopping tasks on their own.</p>
+    <div class="body"><p>Visa has put a range of AI models through realistic shopping scenarios to test &#39;agentic commerce,&#39; where an AI agent buys things on a person&#39;s behalf. The models failed 43% of the test runs, according to the benchmark.</p><p>The result is a reminder that letting AI handle real purchases and real money is still unreliable, even as banks and retailers race to build these features. For now, the data suggests agentic shopping needs much tighter guardrails before it can be trusted with a customer&#39;s card.</p></div>
+    
+    <p class="src">Sources: <a href="https://www.finextra.com/newsarticle/48719/visa-benchmark-finds-ai-models-fail-43-of-shopping-test-runs?utm_medium=rssfinextra&amp;utm_source=finextrafeed" target="_blank" rel="noopener">Finextra Research Headlines</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>AI agent (reminder)</dt><dd>A piece of software that uses an AI model to take multi-step actions on its own, like searching for a product, comparing prices and completing checkout, rather than just answering a question.</dd></div><div><dt>Eval</dt><dd>A structured test used to measure how well an AI model performs a task, similar to a driving test checking whether a learner can actually drive safely, not just recite the rules.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>This matters for anyone building or evaluating AI products in fintech, since it shows why companies run evals before trusting an AI agent with money, a concept likely to come up if you work in product or risk teams.</p></div>
+  </article>
+  
+  <article id="story-4">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>RBA says AI will reshape jobs but stay roughly inflation neutral</h3>
+    <p class="standfirst">Australia&#39;s central bank expects short-term price pressure from the AI boom even as it predicts a broadly neutral long-run effect.</p>
+    <div class="body"><p>The Reserve Bank of Australia (RBA) said it expects artificial intelligence to significantly affect employment but to be broadly neutral for inflation over time. However, an RBA official reportedly said the AI boom could add near-term pressure on consumer prices (CPI), partly through higher demand for energy and construction tied to data centres.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMitwFBVV95cUxOVk5HTzhBOG42UzI2RVBtbndZQXZ3SXRZQUs2SVRxMUExLTcxc0JLT3B0azVyU3ZjbHgtM1pHZlpYck5RQng4cXR2NjdNN2RZZkEtNk0tMldCcVFNNm1tQ2FiWmJ2cHNEMlczQk9iT2dNMHlOdmRvMFNkWU9xdllZcHJQWTdGQjVXVXNVdVpNdklGMXVLbHJ0QnRSN01KM3hOWWRPZkVEbzdxMm9zR2JNVS0wMkY4MFU?oc=5" target="_blank" rel="noopener">AFR</a> · <a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxQQVAwU2QwNnU3R0dQVlFPcmhqODhXVVlfMXhJZ2l3QS0zVlZYNjVvZm1KYkhEVklBOWlIMEZNMkl2SkFrNFBGWURJR1MtejI4QjRZbGwyTHJMQkR5NGxXZEU0Z0VJZlBOS2pMamNFV3N1VW9OUXd0TUVFc1FqME8zNzVwU3ZTeFhQVmdTb0NBNW5JcGlURTN0MHRrZXl2c1VwVlFIeF9HWmVpdm9IWnZpWnNNSzk?oc=5" target="_blank" rel="noopener">Bloomberg.com</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Central bank</dt><dd>A country&#39;s institution responsible for managing interest rates and monetary policy, like the RBA in Australia or the Bank of England in the UK, often watching how new technologies affect jobs and prices.</dd></div><div><dt>Technological unemployment (reminder)</dt><dd>Job losses caused by machines or software automating tasks humans used to do, a concern central banks track when assessing AI&#39;s economic impact.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Knowing that central banks are actively modelling AI&#39;s effect on jobs and inflation is useful context for finance interviews, since it links directly to interest rate decisions that affect markets.</p></div>
+  </article>
+  
+  <article id="story-5">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>US margin debt hits record $1.502 trillion</h3>
+    <p class="standfirst">Investors are borrowing more than ever to buy stocks, new FINRA data show.</p>
+    <div class="body"><p>Margin debt on Wall Street, the amount investors have borrowed against their portfolios to buy more securities, hit a record $1.502 trillion, according to FINRA data. The surge comes as AI-related stocks have driven much of this year&#39;s market gains.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxPdVl1aDc1Sk0tOGwwbGVCSF9sbVFqb2ZxbEk4OHZVNWFkb0dIZXAySWJOOUVuZjlKVXNodXFVRGVJMnRlSGtMakRhbVZBX2dPT1hsQXI2VDBqZ3AyaldrY3gzQS1NVVVRb1QwdmZXSEJsYUhhTkJaaXMxbWhXZVBnd0ZwS3RXV3hVSldkZkM3UE40WHJiWTExOTZRdw?oc=5" target="_blank" rel="noopener">JournalArta</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Margin debt</dt><dd>Money an investor borrows from a broker, using their existing shares as collateral, to buy even more stock; if prices fall, they may be forced to sell quickly to repay the loan.</dd></div><div><dt>Leverage</dt><dd>Using borrowed money to increase the size of an investment, which magnifies both gains and losses, like putting down a small deposit to buy a much bigger house.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Record margin debt is a classic warning sign watched by risk analysts, since heavily leveraged markets can fall faster in a downturn; it connects directly to ongoing worries about an AI-driven market correction.</p></div>
+  </article>
+  
+</section>
+
+<section id="startups" class="startups">
+  <div class="sec-head">
+    <span class="mono">Section 3</span>
+    <h2>Startups &amp; funding</h2>
+    <p>Who raised, how much, and what investors are betting on.</p>
+  </div>
+  
+  <article id="story-6">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>Google takes over Crusoe&#39;s unfinished $30.9bn Wyoming data centre</h3>
+    <p class="standfirst">The tech giant has reportedly acquired a stalled AI infrastructure project from startup Crusoe at an undisclosed price.</p>
+    <div class="body"><p>Google has reportedly acquired an unfinished data centre project in southeastern Wyoming from AI infrastructure startup Crusoe, a facility earlier valued at around $30.9bn compared with an initial $17bn estimate. The purchase price was not disclosed.</p><p>The move shows hyperscale cloud companies like Google increasingly buying distressed or stalled infrastructure projects outright, rather than just signing contracts to rent capacity, as they race to secure the data centre space needed to run AI models.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxQS0xzWkp0a3dvaDhnNHlaYVR4a0EzbWhCNW51d0tCMHA2LU5KMjZoZ2d0NWlqV1U2UFZ4bDBvcXZWWU9iS0xuYXV2bVhiazM2UWg4ejJkbHRzQUtEbF94Nm9yRW1Gck44ZHZMX0Z3bHNodVRuQXV0ZWtZMnhDX0xKX0loOElqZExBTTU5U2RQMGhJRUhQZG1PLW5zZFF5TU4wNlFMVE00LV95eU03OWV3RUx2a24?oc=5" target="_blank" rel="noopener">The Hans India</a> · <a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxNMzE5c29PVDZXNEh3T2xVbDg1RFBFTU5PMnpLZDNnd2w4RXBseTd2ekJ2UTZtOTU5SGtqQTBZVVBoUFJnVFdaQi1NY1VDREVEbVlpNzhrQk1TWTJhVkhoNUQwVVNxMlF6VV9IZ2k1OURtSTQ2SUs0SHlNNy1HcWgzc2tITnFwNENrYXdmY1djNkhfZk04M0FRUTk1RUVEN2Ru?oc=5" target="_blank" rel="noopener">shattered.io</a> · <a href="https://news.google.com/rss/articles/CBMizgFBVV95cUxOSTExd2FHdFNnc3hLeEpheU54V3VxUy1ON1Y1dWJHelltYjIxTHY1TUdNR3k3UUFraWZUbXVuR1MwUWFtS1RGdElmTXF0Mm5TVDRVV0FoV1pISENEZWJ1bzNxX1d1Zm5ETTBScjVncVpyRXNEWnYwWDBveFhVOXQydTNhUjB0Z2dFN1FKQlpvZ1pSSER0T0NGRkxBTlgyU190Y0VRenExX2hRRmVLY2dienh6ODBMZlJpdFd5NkZfdDl4czJxbVF5cVctUm5QQQ?oc=5" target="_blank" rel="noopener">NewsBytes</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Acquisition (reminder)</dt><dd>When one company buys another company or its assets outright, as opposed to simply partnering with or investing a minority stake in it.</dd></div><div><dt>Data centre (reminder)</dt><dd>A large building full of computer servers that stores data and runs the calculations behind AI models and websites, requiring huge amounts of electricity and cooling.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>It signals how fierce the competition for AI computing capacity has become, with big tech firms willing to buy unfinished projects rather than wait, relevant if you&#39;re tracking data centre or infrastructure careers.</p></div>
+  </article>
+  
+  <article id="story-7">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>Traversal raises $120 million at $1 billion valuation</h3>
+    <p class="standfirst">The AI startup reportedly joined the ranks of &#39;unicorn&#39; companies in a new funding round.</p>
+    <div class="body"><p>AI startup Traversal has raised $120 million in a funding round that reportedly values the company at $1 billion. Details on investors and the startup&#39;s specific product were not included in available reporting.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxOXzRUQUlQREsxdTNUV3BTcHAwcDJDUnBtVGFmbzROM1hiaHBjdkJYcG1VVHhtUURVZTRxYTh6QzlrQmYweFE5dEVySEZrd0N5RS1iQ255bWhYbndyQjJENTJaOHNsaFhOUVg0S0ZxeDViRW1UVWZBRGZKbzVqc2M2LWlkR2JPOE1BcmVKZTFIR2lBTTVrZFB1b0lBNTJ1QWkyOWFiNzBhSEx3QQ?oc=5" target="_blank" rel="noopener">The American Bazaar</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Funding round (reminder)</dt><dd>A round in which a startup sells shares to investors in exchange for cash, usually labelled by stage, such as Series A or Series C.</dd></div><div><dt>Valuation (reminder)</dt><dd>An estimate of what a company is worth, often based on what investors are willing to pay for a slice of it; a $1 billion valuation is informally called &#39;unicorn&#39; status.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Fresh billion-dollar valuations for AI startups, even with thin public detail, are a useful barometer of how much investor appetite remains for AI bets, something worth tracking alongside concerns about an AI bubble.</p></div>
+  </article>
+  
+</section>
+
+
+
+<div class="panel" id="code">
+  <span class="mono">Code corner</span>
+  <h2>Simulating an AI shopping agent eval</h2>
+  <p class="src">Based on: <a href="#story-3">Visa finds AI shopping agents fail 43% of test runs</a></p>
+  <p style="margin:0">Visa&#39;s benchmark found AI shopping agents fail 43% of test runs. Here&#39;s a tiny simulation of how such an eval works: we send a fake &#39;LLM response&#39; for a shopping task and check if it meets the rules, just like a simplified version of Visa&#39;s test.</p>
+  <pre><code>import random
+
+def fake_llm_response(task):
+    # Pretend this came back from an LLM API call
+    outcomes = [
+        {&#34;action&#34;: &#34;buy&#34;, &#34;item&#34;: &#34;blue trainers&#34;, &#34;price&#34;: 45.00},
+        {&#34;action&#34;: &#34;buy&#34;, &#34;item&#34;: &#34;blue trainers&#34;, &#34;price&#34;: 145.00},
+        {&#34;action&#34;: &#34;buy&#34;, &#34;item&#34;: &#34;red trainers&#34;, &#34;price&#34;: 45.00},
+    ]
+    return random.choice(outcomes)
+
+def check_result(task, result):
+    correct_item = task[&#34;item&#34;]
+    max_price = task[&#34;max_price&#34;]
+    if result[&#34;item&#34;] != correct_item:
+        return False, &#34;wrong item&#34;
+    if result[&#34;price&#34;] &gt; max_price:
+        return False, &#34;over budget&#34;
+    return True, &#34;success&#34;
+
+task = {&#34;item&#34;: &#34;blue trainers&#34;, &#34;max_price&#34;: 60.00}
+
+runs = 20
+failures = 0
+for i in range(runs):
+    result = fake_llm_response(task)
+    passed, reason = check_result(task, result)
+    if not passed:
+        failures += 1
+
+fail_rate = failures / runs * 100
+print(f&#34;Failed {failures} of {runs} runs ({fail_rate:.0f}% failure rate)&#34;)</code></pre>
+  <span class="mono">Line by line</span>
+  <ol class="walk"><li>`fake_llm_response` stands in for a real API call to an LLM; it randomly returns one of three possible shopping outcomes, so you can run this without needing an API key.</li><li>`check_result` is the eval logic: it checks whether the agent bought the right item and stayed within budget, returning True/False plus a reason.</li><li>The loop runs the fake agent 20 times and counts how many runs fail, mimicking how Visa tested models across many scenarios rather than just once.</li><li>The final print statement calculates a failure rate, the same kind of number (43%) reported in today&#39;s Visa story.</li></ol>
+  <div class="tryit"><p><b>Try it:</b> Change `outcomes` in fake_llm_response so only one option ever passes the check, then rerun and see how the failure rate changes. Try adding a fourth possible outcome where the agent buys two pairs instead of one, and update check_result to catch that as a new kind of failure.</p></div>
+</div>
+
+<div class="panel" id="quiz">
+  <span class="mono">Quiz · apply today's concepts</span>
+  <h2>What would you do?</h2>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 1</span>
+    <p class="scenario">You&#39;re a junior compliance analyst and your manager asks you to summarise why Nvidia&#39;s board, rather than just Jensen Huang himself, is leading the investigation into his relationship with an alleged Chinese agent.</p>
+    <p class="ask">What&#39;s the best explanation for why an independent board investigation matters here?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>It&#39;s required because Huang broke a specific law</span></button></li><li><button type="button" data-i="1"><b>B</b><span>It ensures the review is seen as credible rather than something the CEO controls or influences himself</span></button></li><li><button type="button" data-i="2"><b>C</b><span>It&#39;s purely a public relations exercise with no real governance function</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Only the CEO is allowed to investigate claims about his own conduct</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> Independent board oversight exists precisely so that sensitive allegations about leadership aren&#39;t investigated by the person accused, making findings more trustworthy to shareholders and regulators. The other options either invent a legal requirement or dismiss the governance function, which isn&#39;t supported by the story.</p>
+        <div class="chips"><span>Board of directors</span><span>Independent investigation</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 2</span>
+    <p class="scenario">In a team meeting, a colleague argues that record US margin debt of $1.502 trillion is nothing to worry about because stock markets have been rising all year.</p>
+    <p class="ask">What&#39;s the strongest counterpoint using concepts from today&#39;s finance stories?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>Margin debt only affects bonds, not stocks, so it&#39;s irrelevant here</span></button></li><li><button type="button" data-i="1"><b>B</b><span>High leverage means losses are magnified if prices fall, so a downturn could force rapid, forced selling</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Margin debt always falls when markets rise, so this is actually a bullish sign</span></button></li><li><button type="button" data-i="3"><b>D</b><span>FINRA data is unrelated to actual investor borrowing</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> Margin debt represents leverage: investors borrowing to buy more stock, which increases gains in a rally but accelerates losses and forced selling if prices drop. The other options misstate what margin debt is or wrongly dismiss the leverage risk.</p>
+        <div class="chips"><span>Margin debt</span><span>Leverage</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 3</span>
+    <p class="scenario">A founder pitches you on their startup, newly valued at $1 billion after a funding round similar to Traversal&#39;s, and claims the valuation proves the product already works at scale.</p>
+    <p class="ask">What should you point out about what a funding round valuation actually tells you?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>It&#39;s an independently audited measure of current revenue</span></button></li><li><button type="button" data-i="1"><b>B</b><span>It mainly reflects what investors are willing to pay for a stake now, not proof the product already works at scale</span></button></li><li><button type="button" data-i="2"><b>C</b><span>It means the company is guaranteed to go public within a year</span></button></li><li><button type="button" data-i="3"><b>D</b><span>It&#39;s the same thing as the company&#39;s annual profit</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> A valuation reached in a funding round reflects investor expectations and willingness to pay for equity, not a verified measure of current revenue, profit, or proven scale. The other options confuse valuation with unrelated financial facts like audited profit or guaranteed IPO timing.</p>
+        <div class="chips"><span>Funding round</span><span>Valuation</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 4</span>
+    <p class="scenario">Your team is deciding whether to launch an AI agent that can autonomously complete purchases for customers, and someone cites Visa&#39;s benchmark showing a 43% failure rate.</p>
+    <p class="ask">What does that 43% figure actually measure, and what should it change about your rollout plan?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>It measures server costs, so you should focus on cheaper chips</span></button></li><li><button type="button" data-i="1"><b>B</b><span>It&#39;s an eval result showing the agent failed realistic test tasks nearly half the time, so you should add stricter guardrails before giving it real purchasing power</span></button></li><li><button type="button" data-i="2"><b>C</b><span>It means 43% of customers dislike AI agents, so you should survey users instead</span></button></li><li><button type="button" data-i="3"><b>D</b><span>It&#39;s irrelevant since it was Visa&#39;s test, not your own company&#39;s agent</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> An eval failure rate directly measures how often an AI agent fails realistic tasks in testing, which is a strong signal to add guardrails, human review, or spending limits before deployment. The other options either misread what the metric measures or wrongly dismiss its relevance to any team building similar agentic features.</p>
+        <div class="chips"><span>Eval</span><span>AI agent</span></div>
+      </div>
+    </details>
+  </div>
+  
+</div>
+
+<div class="panel" id="glossary">
+  <span class="mono">Glossary</span>
+  <h2>Every concept from today</h2>
+  <dl class="gloss"><div><dt>Acquisition (reminder)<a href="#story-6">see story</a></dt><dd>When one company buys another company or its assets outright, as opposed to simply partnering with or investing a minority stake in it.</dd></div><div><dt>AI agent (reminder)<a href="#story-3">see story</a></dt><dd>A piece of software that uses an AI model to take multi-step actions on its own, like searching for a product, comparing prices and completing checkout, rather than just answering a question.</dd></div><div><dt>Board of directors<a href="#story-0">see story</a></dt><dd>A group of people elected by shareholders to oversee a company&#39;s management, including hiring, firing and investigating the chief executive if needed.</dd></div><div><dt>Central bank<a href="#story-4">see story</a></dt><dd>A country&#39;s institution responsible for managing interest rates and monetary policy, like the RBA in Australia or the Bank of England in the UK, often watching how new technologies affect jobs and prices.</dd></div><div><dt>Custom chip (TPU) (reminder)<a href="#story-1">see story</a></dt><dd>A Tensor Processing Unit is a chip Google designed itself specifically for AI tasks, rather than a general-purpose processor, similar to how a specialist tool does one job better than a Swiss army knife.</dd></div><div><dt>Data centre (reminder)<a href="#story-6">see story</a></dt><dd>A large building full of computer servers that stores data and runs the calculations behind AI models and websites, requiring huge amounts of electricity and cooling.</dd></div><div><dt>Equity stake (reminder)<a href="#story-2">see story</a></dt><dd>Owning a slice of a company&#39;s shares, meaning you gain or lose money as that company&#39;s value rises or falls, not just getting paid for selling it products.</dd></div><div><dt>Eval<a href="#story-3">see story</a></dt><dd>A structured test used to measure how well an AI model performs a task, similar to a driving test checking whether a learner can actually drive safely, not just recite the rules.</dd></div><div><dt>Export controls (reminder)<a href="#story-0">see story</a></dt><dd>Government rules restricting which technologies, like advanced AI chips, can be sold to certain countries, used to slow rivals&#39; military or AI progress.</dd></div><div><dt>Funding round (reminder)<a href="#story-7">see story</a></dt><dd>A round in which a startup sells shares to investors in exchange for cash, usually labelled by stage, such as Series A or Series C.</dd></div><div><dt>Independent investigation<a href="#story-0">see story</a></dt><dd>A review carried out by people with no personal stake in the outcome, here independent board members and outside lawyers, so the findings are seen as credible rather than a cover-up.</dd></div><div><dt>Inference (reminder)<a href="#story-1">see story</a></dt><dd>The stage where a trained AI model is actually used to answer questions or make predictions, as opposed to the earlier &#39;training&#39; stage where it learns from data.</dd></div><div><dt>Leverage<a href="#story-5">see story</a></dt><dd>Using borrowed money to increase the size of an investment, which magnifies both gains and losses, like putting down a small deposit to buy a much bigger house.</dd></div><div><dt>Margin debt<a href="#story-5">see story</a></dt><dd>Money an investor borrows from a broker, using their existing shares as collateral, to buy even more stock; if prices fall, they may be forced to sell quickly to repay the loan.</dd></div><div><dt>Sovereign AI<a href="#story-2">see story</a></dt><dd>The idea that a country should build and control its own AI infrastructure and models, rather than depending entirely on foreign companies, similar to how nations want their own power grid rather than relying on a neighbour&#39;s.</dd></div><div><dt>Technological unemployment (reminder)<a href="#story-4">see story</a></dt><dd>Job losses caused by machines or software automating tasks humans used to do, a concern central banks track when assessing AI&#39;s economic impact.</dd></div><div><dt>Valuation (reminder)<a href="#story-7">see story</a></dt><dd>An estimate of what a company is worth, often based on what investors are willing to pay for a slice of it; a $1 billion valuation is informally called &#39;unicorn&#39; status.</dd></div></dl>
+</div>
+
+<div class="panel">
+  <span class="mono">Past digests</span>
+  <ul class="archive"><li><a href="../archive/2026-11-09.html" aria-current="page">2026-11-09</a></li><li><a href="../archive/2026-11-08.html">2026-11-08</a></li><li><a href="../archive/2026-11-07.html">2026-11-07</a></li><li><a href="../archive/2026-11-06.html">2026-11-06</a></li><li><a href="../archive/2026-11-05.html">2026-11-05</a></li><li><a href="../archive/2026-11-04.html">2026-11-04</a></li><li><a href="../archive/2026-11-03.html">2026-11-03</a></li><li><a href="../archive/2026-11-02.html">2026-11-02</a></li><li><a href="../archive/2026-11-01.html">2026-11-01</a></li><li><a href="../archive/2026-10-31.html">2026-10-31</a></li><li><a href="../archive/2026-10-30.html">2026-10-30</a></li><li><a href="../archive/2026-10-29.html">2026-10-29</a></li><li><a href="../archive/2026-10-28.html">2026-10-28</a></li><li><a href="../archive/2026-10-27.html">2026-10-27</a></li><li><a href="../archive/2026-10-26.html">2026-10-26</a></li><li><a href="../archive/2026-10-25.html">2026-10-25</a></li><li><a href="../archive/2026-10-24.html">2026-10-24</a></li><li><a href="../archive/2026-10-23.html">2026-10-23</a></li><li><a href="../archive/2026-10-22.html">2026-10-22</a></li><li><a href="../archive/2026-10-21.html">2026-10-21</a></li><li><a href="../archive/2026-10-20.html">2026-10-20</a></li><li><a href="../archive/2026-10-19.html">2026-10-19</a></li><li><a href="../archive/2026-10-18.html">2026-10-18</a></li><li><a href="../archive/2026-10-17.html">2026-10-17</a></li><li><a href="../archive/2026-10-16.html">2026-10-16</a></li><li><a href="../archive/2026-10-15.html">2026-10-15</a></li><li><a href="../archive/2026-10-14.html">2026-10-14</a></li><li><a href="../archive/2026-10-13.html">2026-10-13</a></li><li><a href="../archive/2026-10-12.html">2026-10-12</a></li><li><a href="../archive/2026-10-11.html">2026-10-11</a></li></ul>
+</div>
+
+<footer>Written by Claude from the linked sources. Check the original article before quoting figures in an interview.</footer>
+</div>
+<script>
+document.querySelectorAll(".q").forEach(function (q) {
+  var correct = Number(q.dataset.correct);
+  var buttons = q.querySelectorAll(".opts button");
+  buttons.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var picked = Number(b.dataset.i);
+      buttons.forEach(function (x) {
+        var i = Number(x.dataset.i);
+        if (i === correct) x.classList.add("right");
+        else if (i === picked) x.classList.add("wrong");
+        x.disabled = true;
+      });
+      q.querySelector("details").open = true;
+    });
+  });
+});
+</script>
+</body>
+</html>
