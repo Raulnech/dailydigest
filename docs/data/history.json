@@ -1,57 +1,5 @@
 [
   {
-    "date": "2026-11-03",
-    "headlines": [
-      "Nvidia Tells Data Centre Partners to Cut China Exposure, FT Reports",
-      "OpenAI Reportedly Raises Less Than Half of $30bn Target",
-      "Palantir's Commercial Revenue Hits $984m, Overtakes Government Business",
-      "Goldman Sachs Bars Staff From Using Claude Code and GitHub Copilot",
-      "ECB Flags AI Valuations and Bond Market Stress as Top Financial Risks",
-      "Barclays Reportedly Plans 5,000 Job Cuts Tied to AI Push",
-      "Salesforce to Acquire Voice-AI Startup Cresta for $2.7bn",
-      "Chip Startup FuriosaAI Raises $620m at $2.9bn Valuation"
-    ],
-    "concepts": [
-      "Export control evasion",
-      "Dual-use technology",
-      "Mega-round",
-      "Pre-money valuation",
-      "AI bubble",
-      "Revenue growth rate",
-      "Earnings per share (EPS)",
-      "Vertical AI",
-      "AI agent",
-      "Guardrails",
-      "AI bubble",
-      "Contagion risk",
-      "Automation",
-      "Technological unemployment",
-      "Acquisition",
-      "Vertical AI",
-      "Agentic AI",
-      "Funding round",
-      "Custom chip (TPU)",
-      "Semiconductor fab"
-    ],
-    "links": [
-      "https://news.google.com/rss/articles/CBMihAFBVV95cUxNcERsWE1GekIyVGJ1cmZzdHdvQnp2TkUtUi00eW5kUlBoeFZNbE5xNFZCMHNZdC02cmhvWXFudFRhRmM3RlpHUWtaZEdpR21rWnpwaFBaajNGMHY0WHYwcGlKbFZwUnhCLVQtRmZGZ0tBVV9fd1dlV041LUg3bnhDcE14emY?oc=5",
-      "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQTE5VaW1iQnZJMlM4aS1lbk9zSWZ5ZEdvdjRULXJuUTE5c3JGdlctT2s4clhIZjRFWnZpR25IVkE5QUlQWEJhNmRHamk4UVg3bmZjT3MwYV9YUzh1c2JwMDhlZk53b1NZX0g4Zmh2QTFoeUJrVjE1QlJSMjN3cV82RVJmVHZJUkpLcU1raUZXdF9OeFhTMGxqc0pMMHhIVmtjaUZvTlgtSGpPQQ?oc=5",
-      "https://news.google.com/rss/articles/CBMiigFBVV95cUxPTi1yMnROTHA1TU1iaXN3X3dMQm1ZZlNCQUJLTnRkNmVSbFBGSDRuU0owYUhvZDZCZUJHVFIwbnRab0hzU1hzaW1xRV92RkxWWl9RVlRYTGdjLXI3NUY3VDliRXJWOV92RHVST3k2dm5Pa1o4SjB4RG41bWdOTjBWal93NWw2dmR5ZVE?oc=5",
-      "https://news.google.com/rss/articles/CBMipAFBVV95cUxQTW9TMmVsZkc2b05TYkloVW41X050RjdtZ1F5U01TRnJOSEthYTJpcDdPWVhJb0FvRGEteHgtbVhSS0lOVEZ3T2N5MTNpSUNWNXpETThZR0RvcFQwY2Q5R3ctRUFvM1ZtdFdMaXhGSnpPM2FiLUhORXNrem84cUpfVGpuQ0VmaGNsZUlxUVQ0dk4zQUE2cWFzUk8yM1R3cjc3dEczVw?oc=5",
-      "https://news.google.com/rss/articles/CBMimwFBVV95cUxNSDVfdjhZdEJVWUxXMkZaczFhOTUwQVBvQ1BaQTI1VkU0UWlpTjZTaWRvQ253NU5IQzJsN2dqcEc5UkQzSkhMOWcwaHRBdVc0VFQ1QlBiRE1JZEhqWWtfOENZVmdNeDhzNUQyeFRTT1AxbHJ1dXZRcEtHX1pBTHItNVJ5Nld4LU9qYUNaN0R3OVdZRFl6cFh3Snpmaw?oc=5",
-      "https://www.cnbc.com/2026/11/02/palantir-pltr-earnings-q3-2026.html",
-      "https://www.finextra.com/newsarticle/48690/goldman-bans-traders-and-bankers-from-using-ai-coding-tools?utm_medium=rssfinextra&utm_source=finextrafeed",
-      "https://news.google.com/rss/articles/CBMiswFBVV95cUxNclZrZGl6M0NLSFpRNXhZMEItQmhQR1QyUEpudk5WeU02eXF4MjAzUS15VlllV0ZyYXZkQmdPM1BZZzZac2VTQTJvekM3VTYtOEx1aXBudmpVakw5RXNXYWExc05Od1FOdzY0T01sZkNCOU80X3lVOXJfVXFJR0FjdXVmTUJVTHgzSGFJWEFLMHRTQmRPaU5RWUdzOHFBWTJvbE5sZFp6NmVCbC1JN2RQS2Npaw?oc=5",
-      "https://news.google.com/rss/articles/CBMiswFBVV95cUxOQkQxS3NGS0FqcXR4TmVZLWk5R0J5NWZIZ0JvZmJFbU5ZTDZkUnJoTVM1dFRFaHNaWVNrRE5TUERaWVVsaVlnUnJ6YW1HeUpUV2ZWc1FIZzU4ckhUTnE5V1NEdllvM3k3eHdldG0zajExWVJXYnNEdjRncTU1ZHFRSjhDb1VGRUFLU3lyTXowalJuaWFhUm8wa09TSmhsd3E4aUgxXzk3aTJ1UnV2ZkRKNFdHdw?oc=5",
-      "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNcm9fN3piSDBLZzJEd0p1OVAyQ0xTZl9UcTR5TGQ4bVZTd19PYkpUdnFTUnN6Z05YV3NRR0hncnFrNl9hTkdrVDEycnpSNWdjMEI0R0FHR2tJelR1SWI2N1NFUnh2Sk9vanVjeC1RbzJleENnYnVya2lvY3BmWV9OQzY3RkRzR19lLW5LbTE2aTRkUE1VTFZpUlZ4VDBNdUZiNnR3Vi1WelNxWE55XzFxWTkwQXoxMHBMalZv?oc=5",
-      "https://news.google.com/rss/articles/CBMisgFBVV95cUxOWXpUWTdKZlBsbXM5VjlkQXphTEx5ZF8tbC1EbWFEaTVQbmVEckxYdGhSNWY0TVJ6MjhiQkE1XzA3enRQN3hSSGIwMEhDTHN5OTUycWVkbi0tZnVLeEJhN0dZa05WRnNfLTJWTXNxdjlmWkZIMUpuLXhEUVVjVGV2NDAxM2FfQy12RXh1aDd4SzVyZGZPN213Y2oyaHlBTzlBYjhHRUY1ZHZOaExQNklnTUh3?oc=5",
-      "https://news.google.com/rss/articles/CBMingFBVV95cUxQWm95Y2tDemxpeUFueHdIU3ZuUTN4MC1VU3dGc2hpWDZWOWZJOTNNQXVNd1ZMaXRLQnA0TTN1OExoM3JyUkpOeC0yNnB1SEcwdjBleXItRmFidjBuaEw4NDBhQllEejgzdlpyN1JSYzhja0FYZkYzNllLcWp1SndMZzRDdVo3MlVkNXBYM2c5aXVMS2lsaUE5Qzd4Si1SZw?oc=5",
-      "https://news.google.com/rss/articles/CBMinAFBVV95cUxPRkRKVlBvYXpwbWxyT1hXRjdrVVNsYnZHZlFNZHl4Vnhnb1FvcWhiaDJ0Ry0taUVfc2lTWE9kUTcydmJDZHZJeVdiSE83V1NNdmtXRVd6a0pMRkIwd0UzZ25abFd3N3lxb3RILU1iak5XNGUwU1dQSTdrVUxaUzhyNDE2Q2ZLanlnT2QzZ3k2YlJJNG9jRUp4M1l6WHM?oc=5",
-      "https://news.google.com/rss/articles/CBMijAFBVV95cUxOejZZdlRoNlluM2Z5bmg2Y0ZSUVJRRlR6S2RWQk9xXzRPRjVlUFNFUG9Gc3NSMEN5OVZjMzdmbmwzWGZXVERHUzZrRHc1NHRGVGJNa284aGgwb1FTYnFaN1IwSkJoaWh0NlNwTnFtZC1GUzVES2tyRktodFpveEJZMjRlWXpySzE1UjBvTw?oc=5",
-      "https://news.google.com/rss/articles/CBMiswFBVV95cUxNYm1VYVJMSVFSaXlhdTlVSG92OW83djVLaEJUZTBXV2Fia1Jyc3p5cDNpUXVkQmo2ZC02ZzZwMXQ0UHlvWjdDR2hEUmctZTE0eVpxeURmVXo4Rnl0YzBacjBRNkVYSHhNeTB5MDhXUklWSll4am5UTlZJWGo5NHJCUkJPbVc0UTVqcHNRellLTVNCUXdJRUpSMWlsbmhrbWZORjZuX2VocFcxb2ZXem84dXFVUQ?oc=5"
-    ]
-  },
-  {
     "date": "2026-11-04",
     "headlines": [
       "OpenAI says ChatGPT search volume now a fifth of Google's",
@@ -408,6 +356,64 @@
       "https://news.google.com/rss/articles/CBMioAFBVV95cUxNMzE5c29PVDZXNEh3T2xVbDg1RFBFTU5PMnpLZDNnd2w4RXBseTd2ekJ2UTZtOTU5SGtqQTBZVVBoUFJnVFdaQi1NY1VDREVEbVlpNzhrQk1TWTJhVkhoNUQwVVNxMlF6VV9IZ2k1OURtSTQ2SUs0SHlNNy1HcWgzc2tITnFwNENrYXdmY1djNkhfZk04M0FRUTk1RUVEN2Ru?oc=5",
       "https://news.google.com/rss/articles/CBMizgFBVV95cUxOSTExd2FHdFNnc3hLeEpheU54V3VxUy1ON1Y1dWJHelltYjIxTHY1TUdNR3k3UUFraWZUbXVuR1MwUWFtS1RGdElmTXF0Mm5TVDRVV0FoV1pISENEZWJ1bzNxX1d1Zm5ETTBScjVncVpyRXNEWnYwWDBveFhVOXQydTNhUjB0Z2dFN1FKQlpvZ1pSSER0T0NGRkxBTlgyU190Y0VRenExX2hRRmVLY2dienh6ODBMZlJpdFd5NkZfdDl4czJxbVF5cVctUm5QQQ?oc=5",
       "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOXzRUQUlQREsxdTNUV3BTcHAwcDJDUnBtVGFmbzROM1hiaHBjdkJYcG1VVHhtUURVZTRxYTh6QzlrQmYweFE5dEVySEZrd0N5RS1iQ255bWhYbndyQjJENTJaOHNsaFhOUVg0S0ZxeDViRW1UVWZBRGZKbzVqc2M2LWlkR2JPOE1BcmVKZTFIR2lBTTVrZFB1b0lBNTJ1QWkyOWFiNzBhSEx3QQ?oc=5"
+    ]
+  },
+  {
+    "date": "2026-11-10",
+    "headlines": [
+      "SoftBank slumps to $7bn loss as AI power bill bites",
+      "TSMC's October sales surge 60% as AI chip boom rolls on",
+      "Microsoft and IBM launch joint AI agent platform for industry",
+      "Elizabeth Warren plots crypto and AI chip crackdown as new Senate Banking chair",
+      "Bank of England's Bailey warns AI stocks could be overvalued",
+      "$1 trillion of AI data centre debt faces a 2027 refinancing shock",
+      "Hardware-testing startup Nominal triples valuation to $3bn in eight months",
+      "Mavria raises $130m to build AI data centres inside a factory"
+    ],
+    "concepts": [
+      "Vision Fund",
+      "Loan-to-value ratio",
+      "Equity stake valuation gain/loss (reminder)",
+      "Contract manufacturer (reminder)",
+      "Operating margin",
+      "Short selling",
+      "AI agent (reminder)",
+      "Vertical AI (reminder)",
+      "Prediction market",
+      "Subpoena power",
+      "Export controls (reminder)",
+      "Central bank (reminder)",
+      "AI bubble (reminder)",
+      "Debt maturity wall (reminder)",
+      "Credit spread (reminder)",
+      "Refinancing",
+      "Up round (reminder)",
+      "Valuation (reminder)",
+      "Seed funding",
+      "Modular construction",
+      "Data centre (reminder)"
+    ],
+    "links": [
+      "https://www.cnbc.com/2026/11/10/softbank-2q-earnings-tech-selloff.html",
+      "https://news.google.com/rss/articles/CBMimgFBVV95cUxQd0UwV1FGeXFrTmxMWjdWNzFiTjZEeTVJTkJZQlFHOG9odzFmb0tpY0RTNGZkR2tzQllINjVEMS1FWUpJNkVIMWxXejBfZXJ5TUhOTzlHcGdKUk5zOVJSY1MxcThKYWlMLTIyb3BKSXZMZWRIYUJPMC0yUERwYkE5al9fNUFaTklka3VPcFhpQTFyTGN1QjZHR0RR?oc=5",
+      "https://news.google.com/rss/articles/CBMi7wFBVV95cUxOTTBwd0c3WlRpSlFOZjhZNTRtY3Q3aUpXMEN4Y3p2OUtXeGVXV01tOGxyLWxySVM5SFRRZW5GalFkc0hMT3A2NDBZa2E3Q0x6YXFkbGh4cmJWamVwSlZrcUpCdDlkQnh6VmtjWi1iUGlSRDdvWHJLQ3pRdGlVdzlybWJqWFVnTVowLWdOZ0dad0xsUDUyNzJRV0Z3RWtPejc2dFlQTFFDS09vWjBxVmhRaUNpaWNJaHloOHJJb05TaFRpSWZYZThxdjZqUFhqYUFKVlZFZlhra3ZBdnRvMmtTRndDSTJJTmVfSGduM20xdw?oc=5",
+      "https://www.cnbc.com/2026/11/10/tsmcs-october-sales-.html",
+      "https://news.google.com/rss/articles/CBMilwFBVV95cUxNNmk5TlNDM0YzZ0Mwcy12QzRSV1U2LWpvbHJrbHVmTkE2Tmh5MFExQU85bENEOFo1enhiWW9MeFdmMHMyMFUwZTVzak8wbDhiOWFwNUlIV28wOVo5SjBnZ1JRQzAxb0s2THlkREJReElFaXNxaEJWQlQxM2xuNk5BMHk4MEt5Vzd2Ti1KLWpjcHZrLUoxWVNz?oc=5",
+      "https://news.google.com/rss/articles/CBMiggFBVV95cUxOWVlFeGdqUkZ4NjlwckhIcHdVckl1X0hHUnJERTVISkVBc05Qc0xQS3JxZWNNTExSdzg0bjN2ajdYVTlyTDVPZU9uSW5IdzljNUtCaDZvLUpMX2psM294LXp2TVpWb0xIWVpTNGxKR1R3TWdSZXFUSGV5T1F2WlJ6a1l3?oc=5",
+      "https://news.google.com/rss/articles/CBMizAFBVV95cUxOQmlzcVoyeUhXT1RZT3l6WFh6S0d0TnY2aDdwTU16S3dRUk4xbE9HaVphcHduV3ZObGE3R3JpNTRTaVFINjdJeXdQUnExdDRmZmpMckYySnlwQjVqX2UxODRfVUlVRXJIaVVrMnRfTDdzTkZ4eUFHa185RTlEcktaM0tTTUw3SEU3NTFDM3EwV2x1d1YzQTh5bXJGa2dZcGZ6dzFSNDRUTnUxRllELW9ZejJsMEE3dGQ2UHBpcFNvc0xTeFJMdXhlSkNtMXU?oc=5",
+      "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNWkM4WmNnMUJCbnloQjNnejYybHRBdi04dGl2MldlU2twZXhCcUpNX01WbnhkVEVHU0Rsd3VtYmRuWk9CLVVOOExkQlBfaVIxMUlOUWpCWDNkTTg0R2tvWFVveEZ0MlJrLUw4V0pwTF90ZkV2Sng0VTNLeHFZbWxOeUhTMmR0UEN0TFFNMlpFOW5MTUVlNzhaR3h6Q3Q1V1o2YkpxY2FCWFZKQVU5VTMwcG5RdVZRS28tSkg3ek8wNXJEV3dNNkdIR2RIaDRqXzhNbGpOb0ZR?oc=5",
+      "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNVDcwUmczaEFOak90aUN4ckQzeEVTRmoyaVAtS0R6QjhlNER2SUxyUGpSZk1zQTVTRTFFUWp5SzY1Z0pSUGxfWWFMT1J2REJMUEdPQUgtX3E0d2xkUWVtNTNRaGZtbGJpbzZablFCSnZkRkRaR0NWLTRBWnRFaFVESDV3eGdibXJ6QVFhdDQ4UjQ3TG82SlU4bVBRSXR3cmdLdC13MERadE5RalZsdXhMMDVBQ2VObW9KYldJUmVtSHg3YnVJNmJQem44dUpnZU5Y?oc=5",
+      "https://www.cnbc.com/2026/11/09/elizabeth-warren-senate-banking-agenda.html",
+      "https://news.google.com/rss/articles/CBMikwFBVV95cUxOeWxaYWJSUXpwbEhCRmk3VGZZWTh4Zk1uUGVPZFo5X1hKX3l1SFladWd4RUduS25WT1l1M0FLdE1RMzhZeGN2ZWRBbjlWZFNMdU02Y2hCbUtIaHJBelowTmdwZWphTUFvQk5Gck5SY3M5ZWFXYjdZMFFOM2x4MFhEZjFDdl9jbmFsME5HcEZsMW1WQ00?oc=5",
+      "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNai1MaWhtN0ZZM3RDcU5hOV9PaS1TUVJIc2JKaGZSNnJ1OU5TbWw0dUlERjU4SjZhUms5X2M5dFJ5RFVRbVBrTndvQnBvV1VwTVpBbVlRUHdkSGI3MVRjVU9Fc2ttUXhMMHBVd2o1cXhQQ2JCQTNDVDhjQ2ZCa0RLaVZJbnRIcDVIRDNDVGd3UHQ5aUJUTE5zSmo4X0JJMDlHek8wLU9Td0F3LVl4Z2tZSF9IQTZONnNrMmxNbTNVenVJdUhaQXZIZko0REZ3MjJUZ1lwMGJGbGMyeG1RamNGMWdtbzQxcmxNQVlfcg?oc=5",
+      "https://news.google.com/rss/articles/CBMidkFVX3lxTE9kZEhpaVctbFc1T2xocDNkQ1ZHeFFlbk1Oa05SbTFxbzVHV3BYNjlsbjh5SVJ6cEJ5RGpBNF92enVwUDZxZER4SkRwaUtlbURHYWtJQ1FUdzFnbVUzU0wyRk1CQ05ydFZXU3diOUM1SjVlSXBoU1E?oc=5",
+      "https://news.google.com/rss/articles/CBMiswFBVV95cUxNZFhlUF9VQ1lUclVQSENzZmtEa1l4dGVwZDNZTWZTT1czYTAxSHVyYld2NjB6QWExS1o3U2xWdzhnNXJCVURraUEtcHE5eVJyY01WOG9KNWMzVjRSNnlfX3g4VU44LVpFN2VZemViWVNSOE9ldzlveEwxTldIRTA4T0lhVnUyc05GWXFlaEl4NGtNSG1jOHRvbmRjYWFDdEdVX1VGVG9WTTlKTnBDNXlFWU9TSQ?oc=5",
+      "https://news.google.com/rss/articles/CBMinwFBVV95cUxQTnJWQXJIc2pUVGIxWG03eW9FVlhnYXd4ZEZyZF95cDNHTEJzM1AzSHYzeGVReGhYMlRmOVU2VUFiM3VSTGFfenAycjA4S3ZfZDl4b3J5UEZhVXBiNGVmRFM3UEdndjg1clQtc3JMVXd2c1NtYTJlODhfNm1IdG1BTlNwWmdmSHNzZzkwRVphcGMwdTlsSmpRY0JuR3hWWWM?oc=5",
+      "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQSDJyMGQ4TDVsUG5NcEFOQXN6NEFiYk5GRXFvT2xNbDBGWG9CM3FobG9GVDBhb3BnLWs0N3Q4NXZkTzBSMmtpMm1oLWxlbXZ4TTFnSlZQekR3OE1hUExYX0tGdmQ2ZWc1NHdhRjdRRUxRdXpzUmZfMDBRTmJ6cnBjYVk2TVVvc01xbVhZMXZJVTlSWWdzXzBNUXJFT204dUY1WVpLR2pzc28wRFRkX2k2d1ZOeHVVYUNNQmkzd1NJb0Q1UQ?oc=5",
+      "https://news.google.com/rss/articles/CBMihgFBVV95cUxNQjBjRkgzc3BYSnN0LTlRVXNpdzdiMGtkNl85UmRRcTVjNmxnS0dHQ1MyS19DelhXYmNCdFlheUpzYkl0QzFTM1ludk4tcGdEMklvTVV6QzdCcmFHQV84MlY5d3RzdERVajNhbzRnUTllNHR0M09qWnhXT1dKYXVJZnJHSTlQUQ?oc=5",
+      "https://news.google.com/rss/articles/CBMisAFBVV95cUxNMk8zWGRCZHE1YzFKOUJDVUpyWFFzaGxGc3FxUDBta253UHhxWnFWOG9vZ2JmQVFhblBxMF91NERDemJ6WDg2ZC14VHBQcHlyRzZ0NWJ4YWZUZzF4RVpaeUp0a3JKTE5DclZMcXpwRnN5YlRHNGJia0E0WndSSy02am92dVJ3RHlpcnRSVnFneGZhMURqbUFxUDJ2dUlXRG54dmdoRDlCcmp0Nk5xOWw5TA?oc=5",
+      "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQQU9BWjJGOFB1LUNlcDJZeDVVUnpwTHFyeWtJYkNWTVRQem5wRUd4Q3pheXlWMjRDZU9pS3JHRUg5YnVqNlNlSGJpT0E5UWEzWWJvelpXYk9zMFhwNzFlTllaQ1BpWHFpdkFwZ2pPSldqNnhweDZpaDVoX290U0NYcGE4dUNqVC1sWXEwdjNHNzZHTV9pRnUtQ1VWUzFvZFRYOHVvb0tybmo2UTRIUTV2VWtidUV1ZllmaHMycmk2TDVWUQ?oc=5",
+      "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPRGsxc0FZSVR6VEd6ZnZSMGp5UnpZeXFDazl0TnNTVXV3NGhFU2xMQXd6VVBrdVB4VlpSZjkxbjNfalZwZ2xBZjNEaDhZVThCQWF1UmZKTGxwc3NHLWxfOVUzSWFuUm5tdVNSNHgxSEx5bDFCSWg1cE5qVFEtS0swekhMaTAyaDE0empPSEtyMUdfVG1nRmhCUWc3NS1QY2txNGJJWjdKTGZzT2RNSGctSXhTRFpZWWJy?oc=5"
     ]
   }
 ]

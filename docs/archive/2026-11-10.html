@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI Morning Brief · Tuesday 10 November 2026</title>
+<meta name="theme-color" content="#3A55C8">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  color-scheme:light dark;
+  --ground:#F3F4F7; --paper:#FFFFFF; --ink:#141827; --muted:#5B6275; --line:#DDE0E8;
+  --industry:#3A55C8; --industry-soft:#E6EAFA;
+  --finance:#1C7453; --finance-soft:#E1F1EA;
+  --startups:#A8561A; --startups-soft:#F7EADF;
+  --code-bg:#161A26; --code-ink:#E4E7F0;
+  --right:#1C7453; --right-soft:#E1F1EA; --wrong:#B3261E; --wrong-soft:#FBE7E5;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --ground:#0F121B; --paper:#171B27; --ink:#E8EAF1; --muted:#9AA1B4; --line:#2A3042;
+    --industry:#8FA3F5; --industry-soft:#20284A;
+    --finance:#6CCBA3; --finance-soft:#15332A;
+    --startups:#E8A06A; --startups-soft:#3A2618;
+    --code-bg:#0B0D14; --code-ink:#E4E7F0;
+    --right:#6CCBA3; --right-soft:#15332A; --wrong:#F2A29B; --wrong-soft:#3A1B19;
+  }
+}
+*{box-sizing:border-box}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.6 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;padding-inline:16px;padding-block:28px 64px}
+.wrap{max-width:700px;margin:0 auto;display:grid;gap:36px}
+a{color:inherit}
+a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var(--industry);outline-offset:3px;border-radius:4px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400}
+header{display:grid;gap:10px}
+header .date{color:var(--muted)}
+h1{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(44px,11vw,64px);line-height:1;margin:0;letter-spacing:-.01em}
+h1 em{color:var(--industry)}
+.lede{color:var(--muted);margin:0;max-width:60ch}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ground);padding-block:10px;display:flex;gap:8px;overflow-x:auto;border-bottom:1px solid var(--line)}
+nav a{flex:none;text-decoration:none;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--paper);font-size:14px}
+nav a.industry{color:var(--industry)} nav a.finance{color:var(--finance)} nav a.startups{color:var(--startups)}
+
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:14px;scroll-margin-top:64px}
+.panel h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:30px;margin:0;line-height:1.15}
+.panel > .mono{color:var(--muted)}
+.talk ol{margin:0;padding-left:20px;display:grid;gap:8px}
+.toc{display:grid;gap:14px}
+.toc h3{margin:0 0 4px}
+.toc ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.toc li a{text-decoration:none}
+.toc li a:hover{text-decoration:underline}
+
+section{display:grid;gap:22px;scroll-margin-top:64px}
+.sec-head{display:grid;gap:2px;border-top:3px solid var(--c);padding-top:12px}
+.sec-head h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:36px;margin:0;line-height:1.1;text-wrap:balance}
+.sec-head p{margin:0;color:var(--muted)}
+.sec-head .mono{color:var(--c)}
+.industry{--c:var(--industry);--cs:var(--industry-soft)}
+.finance{--c:var(--finance);--cs:var(--finance-soft)}
+.startups{--c:var(--startups);--cs:var(--startups-soft)}
+
+article{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px 20px;display:grid;gap:16px;scroll-margin-top:64px}
+article .kicker{color:var(--c)}
+article h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(26px,6vw,32px);line-height:1.15;margin:0;text-wrap:balance}
+.standfirst{margin:0;font-size:18px;line-height:1.5;color:var(--muted)}
+.body{display:grid;gap:14px;font-family:"Source Serif 4",Georgia,serif;font-size:18px;line-height:1.65;max-width:65ch}
+.body p{margin:0}
+.src{margin:0;font-size:13px;color:var(--muted)}
+.concepts{background:var(--cs);border-radius:12px;padding:16px 18px;display:grid;gap:12px}
+.concepts .mono{color:var(--c)}
+.concepts dl{margin:0;display:grid;gap:10px}
+.concepts dt{font-weight:600}
+.concepts dd{margin:2px 0 0}
+.why{display:grid;gap:4px;border-left:2px solid var(--c);padding-left:14px}
+.why .mono{color:var(--c)}
+.why p{margin:0}
+
+pre{margin:0;background:var(--code-bg);color:var(--code-ink);border-radius:10px;padding:16px;overflow-x:auto;font:14px/1.55 "IBM Plex Mono",ui-monospace,Consolas,monospace}
+.walk{margin:0;padding-left:20px;display:grid;gap:6px}
+code{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:.9em}
+.tryit{background:var(--industry-soft);border-radius:10px;padding:12px 16px}
+.tryit p{margin:0}
+
+.q{display:grid;gap:12px;border-top:1px solid var(--line);padding-top:18px}
+.q:first-of-type{border-top:0;padding-top:0}
+.scenario{margin:0;font-family:"Source Serif 4",Georgia,serif;font-style:italic;font-size:17px}
+.q .ask{margin:0;font-weight:600}
+.opts{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.opts button{width:100%;text-align:left;font:inherit;color:var(--ink);background:var(--ground);border:1px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer;display:flex;gap:10px}
+.opts button:hover{border-color:var(--industry)}
+.opts button b{font-family:"IBM Plex Mono",ui-monospace,monospace;font-weight:500}
+.opts button.right{background:var(--right-soft);border-color:var(--right)}
+.opts button.wrong{background:var(--wrong-soft);border-color:var(--wrong)}
+.opts button:disabled{cursor:default}
+details{border-radius:10px}
+summary{cursor:pointer;font-weight:500;color:var(--industry)}
+.answer{display:grid;gap:8px;margin-top:10px}
+.answer p{margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:13px;padding:2px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+
+.gloss{margin:0;display:grid;gap:12px}
+.gloss dt{font-weight:600}
+.gloss dt a{font-weight:400;font-size:13px;color:var(--muted);margin-left:6px}
+.gloss dd{margin:2px 0 0;color:var(--muted)}
+.archive{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.archive a{display:inline-block;padding:4px 10px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-variant-numeric:tabular-nums;font-size:14px}
+.archive a[aria-current]{border-color:var(--industry);color:var(--industry)}
+footer{color:var(--muted);font-size:13px}
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="mono date">Tuesday 10 November 2026 · 15 min read</span>
+  <h1>AI Morning <em>Brief</em></h1>
+  <p class="lede">Today's AI and fintech news as short articles, with every key concept explained, a bit of Python, and a scenario quiz to check it stuck.</p>
+</header>
+
+<nav aria-label="Sections">
+  <a href="#industry" class="industry">The AI industry</a>
+  <a href="#finance" class="finance">AI &amp; finance</a>
+  <a href="#startups" class="startups">Startups &amp; funding</a>
+  <a href="#code">Code corner</a>
+  <a href="#quiz">Quiz</a>
+  <a href="#glossary">Glossary</a>
+</nav>
+
+<div class="panel talk">
+  <span class="mono">If you only read one thing</span>
+  <h2>Three things to be able to say today</h2>
+  <ol><li>SoftBank posted a $7bn quarterly loss after burning billions securing power equipment for its US AI data centres, even as its OpenAI stake soared in paper value.</li><li>TSMC&#39;s October sales jumped nearly 60% as Nvidia and Apple orders keep the chip boom running, while the Bank of England&#39;s governor warned the same AI rally could still turn into a bubble.</li><li>A wall of data-centre debt is approaching its refinancing date just as hardware-testing startup Nominal and modular-builder Mavria show investors are still happy to write fresh cheques for AI infrastructure.</li></ol>
+</div>
+
+<div class="panel">
+  <span class="mono">In today's brief</span>
+  <div class="toc">
+  
+    <div class="industry"><h3 class="mono" style="color:var(--c)">The AI industry</h3>
+      <ul><li><a href="#story-0">SoftBank slumps to $7bn loss as AI power bill bites</a></li><li><a href="#story-1">TSMC&#39;s October sales surge 60% as AI chip boom rolls on</a></li><li><a href="#story-2">Microsoft and IBM launch joint AI agent platform for industry</a></li></ul>
+    </div>
+  
+    <div class="finance"><h3 class="mono" style="color:var(--c)">AI &amp; finance</h3>
+      <ul><li><a href="#story-3">Elizabeth Warren plots crypto and AI chip crackdown as new Senate Banking chair</a></li><li><a href="#story-4">Bank of England&#39;s Bailey warns AI stocks could be overvalued</a></li><li><a href="#story-5">$1 trillion of AI data centre debt faces a 2027 refinancing shock</a></li></ul>
+    </div>
+  
+    <div class="startups"><h3 class="mono" style="color:var(--c)">Startups &amp; funding</h3>
+      <ul><li><a href="#story-6">Hardware-testing startup Nominal triples valuation to $3bn in eight months</a></li><li><a href="#story-7">Mavria raises $130m to build AI data centres inside a factory</a></li></ul>
+    </div>
+  
+  </div>
+</div>
+
+
+<section id="industry" class="industry">
+  <div class="sec-head">
+    <span class="mono">Section 1</span>
+    <h2>The AI industry</h2>
+    <p>Big labs, big tech and the direction of travel.</p>
+  </div>
+  
+  <article id="story-0">
+    <span class="mono kicker">The AI industry</span>
+    <h3>SoftBank slumps to $7bn loss as AI power bill bites</h3>
+    <p class="standfirst">Advance payments to secure power equipment for US data centres, plus a weaker Intel stake, tipped the Japanese investor into the red despite a surging OpenAI valuation.</p>
+    <div class="body"><p>SoftBank Group reported a net loss of 1.12 trillion yen ($7bn) for its fiscal second quarter, reversing a 2.5 trillion yen profit a year earlier. The company said the single biggest drag was a $3.7bn charge tied to changing its procurement plans for power-generation equipment needed for AI data centres in the United States, including a project in Ohio.</p><p>SoftBank has effectively been pre-paying to lock in scarce turbines and generators, worried that electricity supply, not chips, will become the real bottleneck for AI build-outs. Cumulative spending on this US power equipment has reached $9.48bn. Its Vision Fund investment arm, which backs tech start-ups worldwide, swung to a loss as falling share prices at listed holdings such as Coupang and Grab outweighed a $1.3bn gain on ByteDance.</p><p>The silver lining was OpenAI: SoftBank&#39;s cumulative $54.6bn investment is now valued at $99.6bn, a $45bn paper gain, and a rumoured new funding round could push that figure higher once confirmed, which would improve the loan-to-value ratio on SoftBank&#39;s borrowing. Investors shrugged off the loss, sending shares up almost 14% on the day, as SoftBank also unveiled a $1.85bn Malaysian data-centre venture with Grab.</p></div>
+    
+    <p class="src">Sources: <a href="https://www.cnbc.com/2026/11/10/softbank-2q-earnings-tech-selloff.html" target="_blank" rel="noopener">Tech</a> · <a href="https://news.google.com/rss/articles/CBMimgFBVV95cUxQd0UwV1FGeXFrTmxMWjdWNzFiTjZEeTVJTkJZQlFHOG9odzFmb0tpY0RTNGZkR2tzQllINjVEMS1FWUpJNkVIMWxXejBfZXJ5TUhOTzlHcGdKUk5zOVJSY1MxcThKYWlMLTIyb3BKSXZMZWRIYUJPMC0yUERwYkE5al9fNUFaTklka3VPcFhpQTFyTGN1QjZHR0RR?oc=5" target="_blank" rel="noopener">The Independent</a> · <a href="https://news.google.com/rss/articles/CBMi7wFBVV95cUxOTTBwd0c3WlRpSlFOZjhZNTRtY3Q3aUpXMEN4Y3p2OUtXeGVXV01tOGxyLWxySVM5SFRRZW5GalFkc0hMT3A2NDBZa2E3Q0x6YXFkbGh4cmJWamVwSlZrcUpCdDlkQnh6VmtjWi1iUGlSRDdvWHJLQ3pRdGlVdzlybWJqWFVnTVowLWdOZ0dad0xsUDUyNzJRV0Z3RWtPejc2dFlQTFFDS09vWjBxVmhRaUNpaWNJaHloOHJJb05TaFRpSWZYZThxdjZqUFhqYUFKVlZFZlhra3ZBdnRvMmtTRndDSTJJTmVfSGduM20xdw?oc=5" target="_blank" rel="noopener">TradingView</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Vision Fund</dt><dd>SoftBank&#39;s in-house investment vehicle that buys stakes in tech companies worldwide; when those companies&#39; share prices rise or fall, SoftBank books a paper gain or loss even without selling anything.</dd></div><div><dt>Loan-to-value ratio</dt><dd>A measure of how much debt a company has relative to the value of its assets, similar to a mortgage: if your house is worth £300,000 and you owe £150,000, your loan-to-value ratio is 50%. A rising asset value, like OpenAI&#39;s valuation, improves the ratio and makes lenders more comfortable.</dd></div><div><dt>Equity stake valuation gain/loss (reminder)</dt><dd>When a company owns shares in another firm, accounting rules require it to mark that stake up or down to current market value each quarter, which can swing reported profit even if no shares are bought or sold.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>This story shows how AI infrastructure spending creates financial risk even for firms that never build a chip, useful context for anyone pursuing roles in corporate finance, risk, or venture investing where you&#39;ll be asked to explain paper gains versus real cash flow.</p></div>
+  </article>
+  
+  <article id="story-1">
+    <span class="mono kicker">The AI industry</span>
+    <h3>TSMC&#39;s October sales surge 60% as AI chip boom rolls on</h3>
+    <p class="standfirst">The world&#39;s biggest contract chipmaker posted its strongest monthly growth of the year, fuelled by Nvidia and Apple orders.</p>
+    <div class="body"><p>Taiwan Semiconductor Manufacturing Co. reported October revenue of NT$586.89bn ($17.88bn), up 59.7% from a year earlier and 14.7% from September. The figures extend a run of record results, following a third-quarter net profit of NT$763.1bn that beat analyst estimates.</p><p>TSMC makes advanced chips to order for other companies, known as a contract manufacturer, and its customer list includes Nvidia, whose AI processors depend on TSMC&#39;s most advanced production lines, and Apple. Its operating margin, the share of revenue left after running costs, reached 58.7% in the third quarter, above the top of its own guidance. The company says capital expenditure, money spent on new factories and equipment, will be significantly higher between 2026 and 2028 than in the previous three years as it races to keep up with demand.</p><p>Shares rose 2.24% despite broader market jitters in Taiwan, where regulators tightened short-selling rules last week, cutting the daily limit on such trades from 30% to 3% of volume. Separately, Taiwan&#39;s overall exports jumped 58.9% in October, with chip-heavy electronics components leading the increase, underlining how central the island has become to the global AI supply chain.</p></div>
+    
+    <p class="src">Sources: <a href="https://www.cnbc.com/2026/11/10/tsmcs-october-sales-.html" target="_blank" rel="noopener">Tech</a> · <a href="https://news.google.com/rss/articles/CBMilwFBVV95cUxNNmk5TlNDM0YzZ0Mwcy12QzRSV1U2LWpvbHJrbHVmTkE2Tmh5MFExQU85bENEOFo1enhiWW9MeFdmMHMyMFUwZTVzak8wbDhiOWFwNUlIV28wOVo5SjBnZ1JRQzAxb0s2THlkREJReElFaXNxaEJWQlQxM2xuNk5BMHk4MEt5Vzd2Ti1KLWpjcHZrLUoxWVNz?oc=5" target="_blank" rel="noopener">Yahoo Finance</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Contract manufacturer (reminder)</dt><dd>A company like TSMC that builds products, in this case chips, designed by other firms such as Nvidia or Apple, rather than selling its own branded products.</dd></div><div><dt>Operating margin</dt><dd>The percentage of revenue left after paying for day-to-day running costs, before interest and tax. A 58.7% margin means TSMC keeps almost 59p of profit from running the business for every £1 of sales.</dd></div><div><dt>Short selling</dt><dd>Betting that a share price will fall by borrowing and selling shares now, hoping to buy them back cheaper later. Regulators restrict it to curb excessive volatility during market swings.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>TSMC&#39;s results are a real-time health check on AI demand because almost every AI chip, from Nvidia&#39;s GPUs to custom designs, passes through its factories; tracking its monthly sales is a quick way to gauge whether the AI spending boom is still accelerating.</p></div>
+  </article>
+  
+  <article id="story-2">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Microsoft and IBM launch joint AI agent platform for industry</h3>
+    <p class="standfirst">The two tech giants are teaming up to sell AI agents tailored to specific industries rather than generic chatbots.</p>
+    <div class="body"><p>Microsoft and IBM have announced a partnership to build an AI agent platform aimed at industry-specific transformation, according to IBM&#39;s newsroom and trade press reports. Full details of pricing, launch date and target sectors have not yet been disclosed.</p><p>AI agents are software systems that can carry out multi-step tasks on their own, such as processing an insurance claim or reconciling accounts, rather than just answering a single question. Pairing Microsoft&#39;s cloud and productivity software with IBM&#39;s enterprise consulting experience suggests the two companies want to sell these agents directly into specific industries like banking or manufacturing, an approach often called vertical AI.</p><p>Because the available reporting is limited to a headline announcement, specifics on how the platform will be deployed, which clients have signed up, or how revenue will be shared remain unclear, and are worth watching for in follow-up coverage.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxOWVlFeGdqUkZ4NjlwckhIcHdVckl1X0hHUnJERTVISkVBc05Qc0xQS3JxZWNNTExSdzg0bjN2ajdYVTlyTDVPZU9uSW5IdzljNUtCaDZvLUpMX2psM294LXp2TVpWb0xIWVpTNGxKR1R3TWdSZXFUSGV5T1F2WlJ6a1l3?oc=5" target="_blank" rel="noopener">CIO Dive</a> · <a href="https://news.google.com/rss/articles/CBMizAFBVV95cUxOQmlzcVoyeUhXT1RZT3l6WFh6S0d0TnY2aDdwTU16S3dRUk4xbE9HaVphcHduV3ZObGE3R3JpNTRTaVFINjdJeXdQUnExdDRmZmpMckYySnlwQjVqX2UxODRfVUlVRXJIaVVrMnRfTDdzTkZ4eUFHa185RTlEcktaM0tTTUw3SEU3NTFDM3EwV2x1d1YzQTh5bXJGa2dZcGZ6dzFSNDRUTnUxRllELW9ZejJsMEE3dGQ2UHBpcFNvc0xTeFJMdXhlSkNtMXU?oc=5" target="_blank" rel="noopener">IBM Newsroom</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>AI agent (reminder)</dt><dd>Software that can plan and execute a sequence of actions, like booking a trip or processing a refund, rather than just generating a single text response.</dd></div><div><dt>Vertical AI (reminder)</dt><dd>AI products built for one specific industry, such as legal document review or hospital scheduling, instead of a general-purpose tool anyone can use.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Big partnerships like this signal where enterprise software spending is heading, towards agents embedded in specific workflows, which is useful to mention in interviews for product, consulting or sales roles at large tech firms.</p></div>
+  </article>
+  
+</section>
+
+<section id="finance" class="finance">
+  <div class="sec-head">
+    <span class="mono">Section 2</span>
+    <h2>AI &amp; finance</h2>
+    <p>Where Wall Street and the City meet AI, as users and as funders.</p>
+  </div>
+  
+  <article id="story-3">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>Elizabeth Warren plots crypto and AI chip crackdown as new Senate Banking chair</h3>
+    <p class="standfirst">The Massachusetts senator is preparing an aggressive oversight agenda covering prediction markets, chip exports to China and Trump family crypto ventures.</p>
+    <div class="body"><p>Senator Elizabeth Warren is set to take over the Senate Banking Committee after Democrats regained control of committee gavels following last week&#39;s midterm elections. According to an aide, her priorities include tightening export controls on advanced AI chips bound for China, writing new rules for prediction markets, and tackling the cost of living through measures like capping credit card interest rates.</p><p>Prediction markets are platforms where people bet real money on the outcome of future events, such as elections, and have grown rapidly with firms like Kalshi and Polymarket at the centre of the boom. Warren and Republican senator John Curtis have already demanded information from both companies about safeguards on election-related betting. The Banking Committee&#39;s remit also covers monetary policy and bank regulation, giving Warren subpoena power to compel testimony from tech executives, administration officials and Wall Street figures.</p><p>Warren has reportedly told tech CEOs and Wall Street executives to start preserving documents, a sign that formal investigations could follow once the new Congress convenes in January. Her focus on AI chip export controls links directly to ongoing concerns about dual-use technology reaching restricted markets, a theme likely to recur throughout 2027.</p></div>
+    
+    <p class="src">Sources: <a href="https://www.cnbc.com/2026/11/09/elizabeth-warren-senate-banking-agenda.html" target="_blank" rel="noopener">Tech</a> · <a href="https://news.google.com/rss/articles/CBMi1gFBVV95cUxNWkM4WmNnMUJCbnloQjNnejYybHRBdi04dGl2MldlU2twZXhCcUpNX01WbnhkVEVHU0Rsd3VtYmRuWk9CLVVOOExkQlBfaVIxMUlOUWpCWDNkTTg0R2tvWFVveEZ0MlJrLUw4V0pwTF90ZkV2Sng0VTNLeHFZbWxOeUhTMmR0UEN0TFFNMlpFOW5MTUVlNzhaR3h6Q3Q1V1o2YkpxY2FCWFZKQVU5VTMwcG5RdVZRS28tSkg3ek8wNXJEV3dNNkdIR2RIaDRqXzhNbGpOb0ZR?oc=5" target="_blank" rel="noopener">The Block</a> · <a href="https://news.google.com/rss/articles/CBMi0AFBVV95cUxNVDcwUmczaEFOak90aUN4ckQzeEVTRmoyaVAtS0R6QjhlNER2SUxyUGpSZk1zQTVTRTFFUWp5SzY1Z0pSUGxfWWFMT1J2REJMUEdPQUgtX3E0d2xkUWVtNTNRaGZtbGJpbzZablFCSnZkRkRaR0NWLTRBWnRFaFVESDV3eGdibXJ6QVFhdDQ4UjQ3TG82SlU4bVBRSXR3cmdLdC13MERadE5RalZsdXhMMDVBQ2VObW9KYldJUmVtSHg3YnVJNmJQem44dUpnZU5Y?oc=5" target="_blank" rel="noopener">MLQ.ai</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Prediction market</dt><dd>A platform where people trade contracts that pay out based on whether a future event happens, such as an election result, effectively letting market prices act as a forecast.</dd></div><div><dt>Subpoena power</dt><dd>The legal authority of a congressional committee to force someone to testify or hand over documents, backed by the threat of legal penalties if they refuse.</dd></div><div><dt>Export controls (reminder)</dt><dd>Government rules restricting the sale of sensitive technology, like advanced AI chips, to certain countries over national security concerns.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Incoming committee leadership changes can reshape which companies face scrutiny and new regulation, so understanding how congressional oversight works is valuable for anyone working in compliance, policy or fintech who needs to anticipate regulatory risk.</p></div>
+  </article>
+  
+  <article id="story-4">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>Bank of England&#39;s Bailey warns AI stocks could be overvalued</h3>
+    <p class="standfirst">The central bank governor said AI investment is already boosting the UK economy but cautioned that overvaluing AI shares risks a bubble bursting.</p>
+    <div class="body"><p>Bank of England governor Andrew Bailey said AI investment is already providing a measurable boost to the UK economy, according to reports from Investment Week. However, he also warned that if investors overvalue AI-related stocks, the resulting bubble could burst, echoing concerns raised by other central bankers in recent months.</p><p>A central bank is the institution responsible for a country&#39;s monetary policy and financial stability, and its leaders often comment publicly on asset bubbles because a sharp stock market correction can spill over into the wider economy through pension funds, bank balance sheets and consumer confidence.</p><p>Few further details were available beyond the comments themselves, but the remarks add to a growing chorus of senior financial figures flagging the gap between soaring AI company valuations and the underlying cash profits many of them currently generate.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMikwFBVV95cUxOeWxaYWJSUXpwbEhCRmk3VGZZWTh4Zk1uUGVPZFo5X1hKX3l1SFladWd4RUduS25WT1l1M0FLdE1RMzhZeGN2ZWRBbjlWZFNMdU02Y2hCbUtIaHJBelowTmdwZWphTUFvQk5Gck5SY3M5ZWFXYjdZMFFOM2x4MFhEZjFDdl9jbmFsME5HcEZsMW1WQ00?oc=5" target="_blank" rel="noopener">Investment Week</a> · <a href="https://news.google.com/rss/articles/CBMi7AFBVV95cUxNai1MaWhtN0ZZM3RDcU5hOV9PaS1TUVJIc2JKaGZSNnJ1OU5TbWw0dUlERjU4SjZhUms5X2M5dFJ5RFVRbVBrTndvQnBvV1VwTVpBbVlRUHdkSGI3MVRjVU9Fc2ttUXhMMHBVd2o1cXhQQ2JCQTNDVDhjQ2ZCa0RLaVZJbnRIcDVIRDNDVGd3UHQ5aUJUTE5zSmo4X0JJMDlHek8wLU9Td0F3LVl4Z2tZSF9IQTZONnNrMmxNbTNVenVJdUhaQXZIZko0REZ3MjJUZ1lwMGJGbGMyeG1RamNGMWdtbzQxcmxNQVlfcg?oc=5" target="_blank" rel="noopener">London Evening Standard</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Central bank (reminder)</dt><dd>A country&#39;s main monetary authority, like the Bank of England or US Federal Reserve, which sets interest rates and monitors risks to the financial system.</dd></div><div><dt>AI bubble (reminder)</dt><dd>The concern that AI company share prices have risen faster than their actual profits justify, meaning prices could fall sharply if expectations aren&#39;t met.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>When a central bank governor publicly flags bubble risk, it can influence interest rate expectations and investor sentiment, so it&#39;s worth being able to explain in interviews why valuation and real earnings can diverge during a hype cycle.</p></div>
+  </article>
+  
+  <article id="story-5">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>$1 trillion of AI data centre debt faces a 2027 refinancing shock</h3>
+    <p class="standfirst">A wave of borrowing used to fund AI data centres is approaching maturity just as interest rates look set to rise sharply for these borrowers.</p>
+    <div class="body"><p>Data centre operators have collectively borrowed roughly $1 trillion to fund the AI infrastructure boom, and a large share of that debt is reportedly nearing its maturity date around 2027, according to Bloomberg. Analysts warn that refinancing costs for these loans and bonds could jump by almost three percentage points compared with when the debt was originally issued.</p><p>A debt maturity wall describes a situation where a large chunk of a company&#39;s or industry&#39;s borrowing comes due around the same time, forcing issuers to refinance, or replace old debt with new debt, often at prevailing market interest rates. If rates or credit spreads, the extra interest lenders demand over a safe benchmark rate to compensate for risk, have risen since the original loans were taken out, refinancing can become significantly more expensive.</p><p>The scale of the figures matters because many AI data centre projects were financed assuming cheap, steady borrowing costs. A sudden jump in refinancing rates could squeeze profit margins across the sector and raise questions about whether some projects remain economically viable, adding to broader worries about AI-related financial contagion risk.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMidkFVX3lxTE9kZEhpaVctbFc1T2xocDNkQ1ZHeFFlbk1Oa05SbTFxbzVHV3BYNjlsbjh5SVJ6cEJ5RGpBNF92enVwUDZxZER4SkRwaUtlbURHYWtJQ1FUdzFnbVUzU0wyRk1CQ05ydFZXU3diOUM1SjVlSXBoU1E?oc=5" target="_blank" rel="noopener">BigGo Finance</a> · <a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxNZFhlUF9VQ1lUclVQSENzZmtEa1l4dGVwZDNZTWZTT1czYTAxSHVyYld2NjB6QWExS1o3U2xWdzhnNXJCVURraUEtcHE5eVJyY01WOG9KNWMzVjRSNnlfX3g4VU44LVpFN2VZemViWVNSOE9ldzlveEwxTldIRTA4T0lhVnUyc05GWXFlaEl4NGtNSG1jOHRvbmRjYWFDdEdVX1VGVG9WTTlKTnBDNXlFWU9TSQ?oc=5" target="_blank" rel="noopener">Bloomberg.com</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Debt maturity wall (reminder)</dt><dd>A point in time when a large amount of a borrower&#39;s debt comes due at once, forcing them to refinance under whatever market conditions prevail then.</dd></div><div><dt>Credit spread (reminder)</dt><dd>The extra interest rate lenders charge above a risk-free benchmark to compensate for the chance a borrower won&#39;t repay; spreads widen when lenders see more risk.</dd></div><div><dt>Refinancing</dt><dd>Replacing an existing loan or bond with a new one, often because the old one is maturing; if interest rates have risen in the meantime, the new debt costs more to service.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>This is a textbook example of how a supply-side boom, cheap debt-funded data centres, can turn into a financial stability risk; it&#39;s the kind of scenario credit analysts and risk teams at banks are paid to model and explain to senior management.</p></div>
+  </article>
+  
+</section>
+
+<section id="startups" class="startups">
+  <div class="sec-head">
+    <span class="mono">Section 3</span>
+    <h2>Startups &amp; funding</h2>
+    <p>Who raised, how much, and what investors are betting on.</p>
+  </div>
+  
+  <article id="story-6">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>Hardware-testing startup Nominal triples valuation to $3bn in eight months</h3>
+    <p class="standfirst">The engineering software firm raised $240m as investors keep betting on tools that support AI hardware development.</p>
+    <div class="body"><p>Nominal, a startup that builds software for testing and engineering hardware, has raised $240m in a new funding round that values the company at $3bn, according to TechCrunch and other outlets. That is roughly triple its valuation from just eight months earlier.</p><p>Nominal&#39;s tools are reportedly used to test physical hardware such as sensors, vehicles and other equipment, an area of growing importance as AI companies build ever more physical infrastructure, from robots to data centre components, that needs rigorous testing before deployment.</p><p>The rapid jump in valuation, known as an up round because the new price is higher than the last funding round, reflects continued investor appetite for companies supporting the broader AI and hardware boom, even as some question whether valuations across the sector are running ahead of fundamentals.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxQTnJWQXJIc2pUVGIxWG03eW9FVlhnYXd4ZEZyZF95cDNHTEJzM1AzSHYzeGVReGhYMlRmOVU2VUFiM3VSTGFfenAycjA4S3ZfZDl4b3J5UEZhVXBiNGVmRFM3UEdndjg1clQtc3JMVXd2c1NtYTJlODhfNm1IdG1BTlNwWmdmSHNzZzkwRVphcGMwdTlsSmpRY0JuR3hWWWM?oc=5" target="_blank" rel="noopener">TechCrunch</a> · <a href="https://news.google.com/rss/articles/CBMiwgFBVV95cUxQSDJyMGQ4TDVsUG5NcEFOQXN6NEFiYk5GRXFvT2xNbDBGWG9CM3FobG9GVDBhb3BnLWs0N3Q4NXZkTzBSMmtpMm1oLWxlbXZ4TTFnSlZQekR3OE1hUExYX0tGdmQ2ZWc1NHdhRjdRRUxRdXpzUmZfMDBRTmJ6cnBjYVk2TVVvc01xbVhZMXZJVTlSWWdzXzBNUXJFT204dUY1WVpLR2pzc28wRFRkX2k2d1ZOeHVVYUNNQmkzd1NJb0Q1UQ?oc=5" target="_blank" rel="noopener">SiliconANGLE</a> · <a href="https://news.google.com/rss/articles/CBMihgFBVV95cUxNQjBjRkgzc3BYSnN0LTlRVXNpdzdiMGtkNl85UmRRcTVjNmxnS0dHQ1MyS19DelhXYmNCdFlheUpzYkl0QzFTM1ludk4tcGdEMklvTVV6QzdCcmFHQV84MlY5d3RzdERVajNhbzRnUTllNHR0M09qWnhXT1dKYXVJZnJHSTlQUQ?oc=5" target="_blank" rel="noopener">The Tech Buzz</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Up round (reminder)</dt><dd>A funding round where a startup is valued higher than in its previous round, signalling investor confidence has grown rather than shrunk.</dd></div><div><dt>Valuation (reminder)</dt><dd>An estimate of what a company is worth, often based on what investors are willing to pay for a stake in it, rather than audited profits.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Tripling a valuation in eight months shows how much capital is flowing into companies that support AI&#39;s physical build-out, not just the AI models themselves, a trend worth knowing about if you&#39;re assessing where fintech and venture careers might be heading next.</p></div>
+  </article>
+  
+  <article id="story-7">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>Mavria raises $130m to build AI data centres inside a factory</h3>
+    <p class="standfirst">A startup founded by former US Energy Department officials wants to mass-produce data centres on an assembly line rather than build them on-site.</p>
+    <div class="body"><p>Mavria, a startup founded by former US Department of Energy officials, has raised $130m, according to MLQ.ai, with some reports describing it as a $100m seed round that values the company at $1bn. The company&#39;s pitch is to construct AI data centres using factory-based, modular manufacturing rather than traditional on-site construction.</p><p>Building data centres this way could in theory speed up delivery times, since modules can be manufactured in parallel and shipped to site rather than built from scratch, an attractive proposition given how much demand for data centre capacity has outstripped supply during the AI boom.</p><p>Given the limited detail available, it&#39;s unclear which customers Mavria has signed or when its first factory-built facility will go live, but the scale of its early funding, reportedly landing it unicorn status, underlines how much investor interest remains in solving the physical bottlenecks of AI infrastructure.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMiwgFBVV95cUxQQU9BWjJGOFB1LUNlcDJZeDVVUnpwTHFyeWtJYkNWTVRQem5wRUd4Q3pheXlWMjRDZU9pS3JHRUg5YnVqNlNlSGJpT0E5UWEzWWJvelpXYk9zMFhwNzFlTllaQ1BpWHFpdkFwZ2pPSldqNnhweDZpaDVoX290U0NYcGE4dUNqVC1sWXEwdjNHNzZHTV9pRnUtQ1VWUzFvZFRYOHVvb0tybmo2UTRIUTV2VWtidUV1ZllmaHMycmk2TDVWUQ?oc=5" target="_blank" rel="noopener">MLQ.ai</a> · <a href="https://news.google.com/rss/articles/CBMiuAFBVV95cUxPRGsxc0FZSVR6VEd6ZnZSMGp5UnpZeXFDazl0TnNTVXV3NGhFU2xMQXd6VVBrdVB4VlpSZjkxbjNfalZwZ2xBZjNEaDhZVThCQWF1UmZKTGxwc3NHLWxfOVUzSWFuUm5tdVNSNHgxSEx5bDFCSWg1cE5qVFEtS0swekhMaTAyaDE0empPSEtyMUdfVG1nRmhCUWc3NS1QY2txNGJJWjdKTGZzT2RNSGctSXhTRFpZWWJy?oc=5" target="_blank" rel="noopener">Securities.io</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Seed funding</dt><dd>The earliest stage of startup investment, typically used to prove an idea works before a company has significant revenue; a $100m seed round is unusually large.</dd></div><div><dt>Modular construction</dt><dd>Building standardised sections of a structure in a factory, then assembling them on-site, similar to flat-pack furniture, which can be faster than building everything from scratch on location.</dd></div><div><dt>Data centre (reminder)</dt><dd>A large building full of computer servers that runs the software behind AI models, cloud computing and the internet, requiring huge amounts of power and cooling.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Mavria&#39;s approach targets the physical construction bottleneck that is already causing problems elsewhere in today&#39;s digest, like SoftBank&#39;s power procurement costs, showing how startups are racing to solve the engineering side of the AI boom, not just the software side.</p></div>
+  </article>
+  
+</section>
+
+
+
+<div class="panel" id="code">
+  <span class="mono">Code corner</span>
+  <h2>Modelling the data centre refinancing shock</h2>
+  <p class="src">Based on: <a href="#story-5">$1 trillion of AI data centre debt faces a 2027 refinancing shock</a></p>
+  <p style="margin:0">Story 5 describes AI data centre borrowers facing refinancing costs up to three percentage points higher when their debt matures. Here&#39;s a simple Python script that estimates the extra annual interest cost for a portfolio of loans using only the standard library.</p>
+  <pre><code>loans = [
+    {&#34;name&#34;: &#34;DataCentre A&#34;, &#34;principal&#34;: 500_000_000, &#34;old_rate&#34;: 0.045},
+    {&#34;name&#34;: &#34;DataCentre B&#34;, &#34;principal&#34;: 1_200_000_000, &#34;old_rate&#34;: 0.05},
+    {&#34;name&#34;: &#34;DataCentre C&#34;, &#34;principal&#34;: 300_000_000, &#34;old_rate&#34;: 0.04},
+]
+
+rate_increase = 0.03  # three percentage points, per the Bloomberg report
+
+total_extra_cost = 0
+
+for loan in loans:
+    new_rate = loan[&#34;old_rate&#34;] + rate_increase
+    old_interest = loan[&#34;principal&#34;] * loan[&#34;old_rate&#34;]
+    new_interest = loan[&#34;principal&#34;] * new_rate
+    extra_cost = new_interest - old_interest
+    total_extra_cost += extra_cost
+    print(f&#34;{loan[&#39;name&#39;]}: old interest ${old_interest:,.0f}, &#34;
+          f&#34;new interest ${new_interest:,.0f}, &#34;
+          f&#34;extra cost ${extra_cost:,.0f} per year&#34;)
+
+print(f&#34;\nTotal extra annual interest across portfolio: ${total_extra_cost:,.0f}&#34;)</code></pre>
+  <span class="mono">Line by line</span>
+  <ol class="walk"><li>`loans` is a list of dictionaries, each representing one data centre&#39;s debt with a principal (amount borrowed) and an old interest rate.</li><li>`rate_increase = 0.03` encodes the roughly three percentage point jump mentioned in the story, stored as a decimal (3% = 0.03).</li><li>The `for loan in loans:` loop goes through each dictionary one at a time, letting us calculate figures for every loan without repeating code.</li><li>`loan[&#34;principal&#34;] * loan[&#34;old_rate&#34;]` multiplies the amount borrowed by the interest rate to get the annual interest bill in dollars, the same way you&#39;d calculate interest on a savings account.</li><li>`total_extra_cost += extra_cost` keeps a running total across all loans, so by the end we know the combined extra cost for the whole portfolio.</li><li>The f-strings with `:,.0f` format large numbers with comma separators and no decimal places, making the dollar figures easier to read.</li></ol>
+  <div class="tryit"><p><b>Try it:</b> Add a fourth loan to the list with its own name, principal and old_rate, then change rate_increase to 0.02 to see how a smaller rate rise changes the total extra cost.</p></div>
+</div>
+
+<div class="panel" id="quiz">
+  <span class="mono">Quiz · apply today's concepts</span>
+  <h2>What would you do?</h2>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 1</span>
+    <p class="scenario">You&#39;re a junior credit analyst at a bank reviewing a loan to an AI data centre operator. Your manager asks you to flag the single biggest risk in the loan documents before a client call.</p>
+    <p class="ask">Given today&#39;s reporting on AI infrastructure debt, what should you highlight as the key risk?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>The data centre&#39;s power usage is too high for environmental reporting standards</span></button></li><li><button type="button" data-i="1"><b>B</b><span>A large share of the company&#39;s debt matures around the same time, creating a debt maturity wall that could force expensive refinancing</span></button></li><li><button type="button" data-i="2"><b>C</b><span>The company&#39;s revenue growth rate is listed as a percentage rather than a dollar figure</span></button></li><li><button type="button" data-i="3"><b>D</b><span>The loan was arranged as a syndicated loan rather than a single lender</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> The debt maturity wall is the specific, quantified risk flagged in today&#39;s reporting, where refinancing costs could jump nearly three percentage points. The other options are either irrelevant details or standard features of corporate lending that aren&#39;t inherently risky.</p>
+        <div class="chips"><span>Debt maturity wall</span><span>Credit spread</span><span>Refinancing</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 2</span>
+    <p class="scenario">In a team meeting, a colleague suggests buying the new Microsoft-IBM AI agent platform to automate customer complaint handling, but another colleague says &#39;it&#39;s just a chatbot, nothing new.&#39;</p>
+    <p class="ask">Based on today&#39;s story, what&#39;s the most accurate response to clarify the distinction?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>They&#39;re right, agent platforms and chatbots are identical in capability</span></button></li><li><button type="button" data-i="1"><b>B</b><span>An AI agent can autonomously carry out multi-step tasks like resolving a complaint end-to-end, not just answer a single question like a chatbot</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Agent platforms only work with proprietary data and can never use the open internet</span></button></li><li><button type="button" data-i="3"><b>D</b><span>The platform is vertical AI, meaning it only works for one company at a time and can&#39;t be resold</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> AI agents are distinguished from simple chatbots by their ability to plan and execute multi-step actions autonomously, which is the key feature IBM and Microsoft are reportedly building for industry use. The other options misdescribe either agents or vertical AI.</p>
+        <div class="chips"><span>AI agent</span><span>Vertical AI</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="0">
+    <span class="mono" style="color:var(--muted)">Scenario 3</span>
+    <p class="scenario">A founder pitching you, a junior venture associate, says their startup &#39;tripled its valuation&#39; in eight months, citing Nominal as a comparable example, and asks for your view before the partners decide.</p>
+    <p class="ask">What&#39;s the most important follow-up question to ask about this claim?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>Whether the new valuation came from an up round with new investors paying a higher price, or just an internal estimate</span></button></li><li><button type="button" data-i="1"><b>B</b><span>Whether the company&#39;s logo has changed since the last round</span></button></li><li><button type="button" data-i="2"><b>C</b><span>How many employees the company has hired in the past year</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Whether the founder has done any media interviews recently</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: A.</b> A valuation is only meaningful if it reflects what real investors agreed to pay in an actual funding round, known as an up round when the price rises; without that, a claimed valuation increase could be unsubstantiated. The other options are irrelevant to verifying the valuation claim.</p>
+        <div class="chips"><span>Valuation</span><span>Up round</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 4</span>
+    <p class="scenario">During an interview for a graduate analyst role, you&#39;re asked to comment on the Bank of England governor&#39;s recent remarks about AI stocks.</p>
+    <p class="ask">Which answer best demonstrates you understand the concept being discussed?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>He meant AI companies will go bankrupt within a year because they have no revenue</span></button></li><li><button type="button" data-i="1"><b>B</b><span>He meant that if investors price AI shares well above what current profits justify, a correction could hurt the wider economy through pension funds and bank balance sheets</span></button></li><li><button type="button" data-i="2"><b>C</b><span>He meant that central banks will start directly regulating AI company valuations</span></button></li><li><button type="button" data-i="3"><b>D</b><span>He meant that AI stocks are now officially banned from UK pension funds</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> The AI bubble concern is about a valuation gap between share prices and underlying profits, and central bankers worry about spillover effects into the broader financial system, not outright bans or bankruptcy predictions. The wrong options invent actions the governor didn&#39;t describe.</p>
+        <div class="chips"><span>AI bubble</span><span>Central bank</span></div>
+      </div>
+    </details>
+  </div>
+  
+</div>
+
+<div class="panel" id="glossary">
+  <span class="mono">Glossary</span>
+  <h2>Every concept from today</h2>
+  <dl class="gloss"><div><dt>AI agent (reminder)<a href="#story-2">see story</a></dt><dd>Software that can plan and execute a sequence of actions, like booking a trip or processing a refund, rather than just generating a single text response.</dd></div><div><dt>AI bubble (reminder)<a href="#story-4">see story</a></dt><dd>The concern that AI company share prices have risen faster than their actual profits justify, meaning prices could fall sharply if expectations aren&#39;t met.</dd></div><div><dt>Central bank (reminder)<a href="#story-4">see story</a></dt><dd>A country&#39;s main monetary authority, like the Bank of England or US Federal Reserve, which sets interest rates and monitors risks to the financial system.</dd></div><div><dt>Contract manufacturer (reminder)<a href="#story-1">see story</a></dt><dd>A company like TSMC that builds products, in this case chips, designed by other firms such as Nvidia or Apple, rather than selling its own branded products.</dd></div><div><dt>Credit spread (reminder)<a href="#story-5">see story</a></dt><dd>The extra interest rate lenders charge above a risk-free benchmark to compensate for the chance a borrower won&#39;t repay; spreads widen when lenders see more risk.</dd></div><div><dt>Data centre (reminder)<a href="#story-7">see story</a></dt><dd>A large building full of computer servers that runs the software behind AI models, cloud computing and the internet, requiring huge amounts of power and cooling.</dd></div><div><dt>Debt maturity wall (reminder)<a href="#story-5">see story</a></dt><dd>A point in time when a large amount of a borrower&#39;s debt comes due at once, forcing them to refinance under whatever market conditions prevail then.</dd></div><div><dt>Equity stake valuation gain/loss (reminder)<a href="#story-0">see story</a></dt><dd>When a company owns shares in another firm, accounting rules require it to mark that stake up or down to current market value each quarter, which can swing reported profit even if no shares are bought or sold.</dd></div><div><dt>Export controls (reminder)<a href="#story-3">see story</a></dt><dd>Government rules restricting the sale of sensitive technology, like advanced AI chips, to certain countries over national security concerns.</dd></div><div><dt>Loan-to-value ratio<a href="#story-0">see story</a></dt><dd>A measure of how much debt a company has relative to the value of its assets, similar to a mortgage: if your house is worth £300,000 and you owe £150,000, your loan-to-value ratio is 50%. A rising asset value, like OpenAI&#39;s valuation, improves the ratio and makes lenders more comfortable.</dd></div><div><dt>Modular construction<a href="#story-7">see story</a></dt><dd>Building standardised sections of a structure in a factory, then assembling them on-site, similar to flat-pack furniture, which can be faster than building everything from scratch on location.</dd></div><div><dt>Operating margin<a href="#story-1">see story</a></dt><dd>The percentage of revenue left after paying for day-to-day running costs, before interest and tax. A 58.7% margin means TSMC keeps almost 59p of profit from running the business for every £1 of sales.</dd></div><div><dt>Prediction market<a href="#story-3">see story</a></dt><dd>A platform where people trade contracts that pay out based on whether a future event happens, such as an election result, effectively letting market prices act as a forecast.</dd></div><div><dt>Refinancing<a href="#story-5">see story</a></dt><dd>Replacing an existing loan or bond with a new one, often because the old one is maturing; if interest rates have risen in the meantime, the new debt costs more to service.</dd></div><div><dt>Seed funding<a href="#story-7">see story</a></dt><dd>The earliest stage of startup investment, typically used to prove an idea works before a company has significant revenue; a $100m seed round is unusually large.</dd></div><div><dt>Short selling<a href="#story-1">see story</a></dt><dd>Betting that a share price will fall by borrowing and selling shares now, hoping to buy them back cheaper later. Regulators restrict it to curb excessive volatility during market swings.</dd></div><div><dt>Subpoena power<a href="#story-3">see story</a></dt><dd>The legal authority of a congressional committee to force someone to testify or hand over documents, backed by the threat of legal penalties if they refuse.</dd></div><div><dt>Up round (reminder)<a href="#story-6">see story</a></dt><dd>A funding round where a startup is valued higher than in its previous round, signalling investor confidence has grown rather than shrunk.</dd></div><div><dt>Valuation (reminder)<a href="#story-6">see story</a></dt><dd>An estimate of what a company is worth, often based on what investors are willing to pay for a stake in it, rather than audited profits.</dd></div><div><dt>Vertical AI (reminder)<a href="#story-2">see story</a></dt><dd>AI products built for one specific industry, such as legal document review or hospital scheduling, instead of a general-purpose tool anyone can use.</dd></div><div><dt>Vision Fund<a href="#story-0">see story</a></dt><dd>SoftBank&#39;s in-house investment vehicle that buys stakes in tech companies worldwide; when those companies&#39; share prices rise or fall, SoftBank books a paper gain or loss even without selling anything.</dd></div></dl>
+</div>
+
+<div class="panel">
+  <span class="mono">Past digests</span>
+  <ul class="archive"><li><a href="../archive/2026-11-10.html" aria-current="page">2026-11-10</a></li><li><a href="../archive/2026-11-09.html">2026-11-09</a></li><li><a href="../archive/2026-11-08.html">2026-11-08</a></li><li><a href="../archive/2026-11-07.html">2026-11-07</a></li><li><a href="../archive/2026-11-06.html">2026-11-06</a></li><li><a href="../archive/2026-11-05.html">2026-11-05</a></li><li><a href="../archive/2026-11-04.html">2026-11-04</a></li><li><a href="../archive/2026-11-03.html">2026-11-03</a></li><li><a href="../archive/2026-11-02.html">2026-11-02</a></li><li><a href="../archive/2026-11-01.html">2026-11-01</a></li><li><a href="../archive/2026-10-31.html">2026-10-31</a></li><li><a href="../archive/2026-10-30.html">2026-10-30</a></li><li><a href="../archive/2026-10-29.html">2026-10-29</a></li><li><a href="../archive/2026-10-28.html">2026-10-28</a></li><li><a href="../archive/2026-10-27.html">2026-10-27</a></li><li><a href="../archive/2026-10-26.html">2026-10-26</a></li><li><a href="../archive/2026-10-25.html">2026-10-25</a></li><li><a href="../archive/2026-10-24.html">2026-10-24</a></li><li><a href="../archive/2026-10-23.html">2026-10-23</a></li><li><a href="../archive/2026-10-22.html">2026-10-22</a></li><li><a href="../archive/2026-10-21.html">2026-10-21</a></li><li><a href="../archive/2026-10-20.html">2026-10-20</a></li><li><a href="../archive/2026-10-19.html">2026-10-19</a></li><li><a href="../archive/2026-10-18.html">2026-10-18</a></li><li><a href="../archive/2026-10-17.html">2026-10-17</a></li><li><a href="../archive/2026-10-16.html">2026-10-16</a></li><li><a href="../archive/2026-10-15.html">2026-10-15</a></li><li><a href="../archive/2026-10-14.html">2026-10-14</a></li><li><a href="../archive/2026-10-13.html">2026-10-13</a></li><li><a href="../archive/2026-10-12.html">2026-10-12</a></li></ul>
+</div>
+
+<footer>Written by Claude from the linked sources. Check the original article before quoting figures in an interview.</footer>
+</div>
+<script>
+document.querySelectorAll(".q").forEach(function (q) {
+  var correct = Number(q.dataset.correct);
+  var buttons = q.querySelectorAll(".opts button");
+  buttons.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var picked = Number(b.dataset.i);
+      buttons.forEach(function (x) {
+        var i = Number(x.dataset.i);
+        if (i === correct) x.classList.add("right");
+        else if (i === picked) x.classList.add("wrong");
+        x.disabled = true;
+      });
+      q.querySelector("details").open = true;
+    });
+  });
+});
+</script>
+</body>
+</html>
