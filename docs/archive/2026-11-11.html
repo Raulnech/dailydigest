@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI Morning Brief · Wednesday 11 November 2026</title>
+<meta name="theme-color" content="#3A55C8">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  color-scheme:light dark;
+  --ground:#F3F4F7; --paper:#FFFFFF; --ink:#141827; --muted:#5B6275; --line:#DDE0E8;
+  --industry:#3A55C8; --industry-soft:#E6EAFA;
+  --finance:#1C7453; --finance-soft:#E1F1EA;
+  --startups:#A8561A; --startups-soft:#F7EADF;
+  --code-bg:#161A26; --code-ink:#E4E7F0;
+  --right:#1C7453; --right-soft:#E1F1EA; --wrong:#B3261E; --wrong-soft:#FBE7E5;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --ground:#0F121B; --paper:#171B27; --ink:#E8EAF1; --muted:#9AA1B4; --line:#2A3042;
+    --industry:#8FA3F5; --industry-soft:#20284A;
+    --finance:#6CCBA3; --finance-soft:#15332A;
+    --startups:#E8A06A; --startups-soft:#3A2618;
+    --code-bg:#0B0D14; --code-ink:#E4E7F0;
+    --right:#6CCBA3; --right-soft:#15332A; --wrong:#F2A29B; --wrong-soft:#3A1B19;
+  }
+}
+*{box-sizing:border-box}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.6 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;padding-inline:16px;padding-block:28px 64px}
+.wrap{max-width:700px;margin:0 auto;display:grid;gap:36px}
+a{color:inherit}
+a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var(--industry);outline-offset:3px;border-radius:4px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400}
+header{display:grid;gap:10px}
+header .date{color:var(--muted)}
+h1{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(44px,11vw,64px);line-height:1;margin:0;letter-spacing:-.01em}
+h1 em{color:var(--industry)}
+.lede{color:var(--muted);margin:0;max-width:60ch}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ground);padding-block:10px;display:flex;gap:8px;overflow-x:auto;border-bottom:1px solid var(--line)}
+nav a{flex:none;text-decoration:none;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--paper);font-size:14px}
+nav a.industry{color:var(--industry)} nav a.finance{color:var(--finance)} nav a.startups{color:var(--startups)}
+
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:14px;scroll-margin-top:64px}
+.panel h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:30px;margin:0;line-height:1.15}
+.panel > .mono{color:var(--muted)}
+.talk ol{margin:0;padding-left:20px;display:grid;gap:8px}
+.toc{display:grid;gap:14px}
+.toc h3{margin:0 0 4px}
+.toc ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.toc li a{text-decoration:none}
+.toc li a:hover{text-decoration:underline}
+
+section{display:grid;gap:22px;scroll-margin-top:64px}
+.sec-head{display:grid;gap:2px;border-top:3px solid var(--c);padding-top:12px}
+.sec-head h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:36px;margin:0;line-height:1.1;text-wrap:balance}
+.sec-head p{margin:0;color:var(--muted)}
+.sec-head .mono{color:var(--c)}
+.industry{--c:var(--industry);--cs:var(--industry-soft)}
+.finance{--c:var(--finance);--cs:var(--finance-soft)}
+.startups{--c:var(--startups);--cs:var(--startups-soft)}
+
+article{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px 20px;display:grid;gap:16px;scroll-margin-top:64px}
+article .kicker{color:var(--c)}
+article h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(26px,6vw,32px);line-height:1.15;margin:0;text-wrap:balance}
+.standfirst{margin:0;font-size:18px;line-height:1.5;color:var(--muted)}
+.body{display:grid;gap:14px;font-family:"Source Serif 4",Georgia,serif;font-size:18px;line-height:1.65;max-width:65ch}
+.body p{margin:0}
+.src{margin:0;font-size:13px;color:var(--muted)}
+.concepts{background:var(--cs);border-radius:12px;padding:16px 18px;display:grid;gap:12px}
+.concepts .mono{color:var(--c)}
+.concepts dl{margin:0;display:grid;gap:10px}
+.concepts dt{font-weight:600}
+.concepts dd{margin:2px 0 0}
+.why{display:grid;gap:4px;border-left:2px solid var(--c);padding-left:14px}
+.why .mono{color:var(--c)}
+.why p{margin:0}
+
+pre{margin:0;background:var(--code-bg);color:var(--code-ink);border-radius:10px;padding:16px;overflow-x:auto;font:14px/1.55 "IBM Plex Mono",ui-monospace,Consolas,monospace}
+.walk{margin:0;padding-left:20px;display:grid;gap:6px}
+code{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:.9em}
+.tryit{background:var(--industry-soft);border-radius:10px;padding:12px 16px}
+.tryit p{margin:0}
+
+.q{display:grid;gap:12px;border-top:1px solid var(--line);padding-top:18px}
+.q:first-of-type{border-top:0;padding-top:0}
+.scenario{margin:0;font-family:"Source Serif 4",Georgia,serif;font-style:italic;font-size:17px}
+.q .ask{margin:0;font-weight:600}
+.opts{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.opts button{width:100%;text-align:left;font:inherit;color:var(--ink);background:var(--ground);border:1px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer;display:flex;gap:10px}
+.opts button:hover{border-color:var(--industry)}
+.opts button b{font-family:"IBM Plex Mono",ui-monospace,monospace;font-weight:500}
+.opts button.right{background:var(--right-soft);border-color:var(--right)}
+.opts button.wrong{background:var(--wrong-soft);border-color:var(--wrong)}
+.opts button:disabled{cursor:default}
+details{border-radius:10px}
+summary{cursor:pointer;font-weight:500;color:var(--industry)}
+.answer{display:grid;gap:8px;margin-top:10px}
+.answer p{margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:13px;padding:2px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+
+.gloss{margin:0;display:grid;gap:12px}
+.gloss dt{font-weight:600}
+.gloss dt a{font-weight:400;font-size:13px;color:var(--muted);margin-left:6px}
+.gloss dd{margin:2px 0 0;color:var(--muted)}
+.archive{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.archive a{display:inline-block;padding:4px 10px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-variant-numeric:tabular-nums;font-size:14px}
+.archive a[aria-current]{border-color:var(--industry);color:var(--industry)}
+footer{color:var(--muted);font-size:13px}
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="mono date">Wednesday 11 November 2026 · 14 min read</span>
+  <h1>AI Morning <em>Brief</em></h1>
+  <p class="lede">Today's AI and fintech news as short articles, with every key concept explained, a bit of Python, and a scenario quiz to check it stuck.</p>
+</header>
+
+<nav aria-label="Sections">
+  <a href="#industry" class="industry">The AI industry</a>
+  <a href="#finance" class="finance">AI &amp; finance</a>
+  <a href="#startups" class="startups">Startups &amp; funding</a>
+  <a href="#code">Code corner</a>
+  <a href="#quiz">Quiz</a>
+  <a href="#glossary">Glossary</a>
+</nav>
+
+<div class="panel talk">
+  <span class="mono">If you only read one thing</span>
+  <h2>Three things to be able to say today</h2>
+  <ol><li>Jensen Huang tried to project business as usual at Nvidia&#39;s HQ this week, but the board&#39;s affair probe now shadows next week&#39;s earnings and the China chip debate.</li><li>Google just pushed two new custom TPU chips, including one built for confidential AI training, in a fresh swipe at Nvidia&#39;s dominance.</li><li>Oura ditched its stalled IPO plans and instead spent $625 million buying an AI doctor startup, showing acquisitions are filling the gap left by a jittery IPO market.</li></ol>
+</div>
+
+<div class="panel">
+  <span class="mono">In today's brief</span>
+  <div class="toc">
+  
+    <div class="industry"><h3 class="mono" style="color:var(--c)">The AI industry</h3>
+      <ul><li><a href="#story-0">Nvidia Hires Wachtell Lipton as Huang Affair Probe Shadows Earnings Week</a></li><li><a href="#story-1">Google Launches Two New TPU Chips to Challenge Nvidia</a></li><li><a href="#story-2">Blacklisted Chinese University Bought Nvidia H200 Chips, Records Show</a></li></ul>
+    </div>
+  
+    <div class="finance"><h3 class="mono" style="color:var(--c)">AI &amp; finance</h3>
+      <ul><li><a href="#story-3">Morgan Stanley Says AI Debt Deals Now Face a &#39;Higher Bar&#39;</a></li><li><a href="#story-4">AI Could Cut Banks&#39; Costs by 20%, But Most Haven&#39;t Seen It Yet</a></li><li><a href="#story-5">JPMorgan Expands Australia Corporate Bank Team to Chase AI and Mining Deals</a></li></ul>
+    </div>
+  
+    <div class="startups"><h3 class="mono" style="color:var(--c)">Startups &amp; funding</h3>
+      <ul><li><a href="#story-6">AI Training Startup Mercor Doubles Valuation to $20 Billion</a></li><li><a href="#story-7">Oura Buys AI Doctor Startup Counsel Health for $625 Million</a></li></ul>
+    </div>
+  
+  </div>
+</div>
+
+
+<section id="industry" class="industry">
+  <div class="sec-head">
+    <span class="mono">Section 1</span>
+    <h2>The AI industry</h2>
+    <p>Big labs, big tech and the direction of travel.</p>
+  </div>
+  
+  <article id="story-0">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Nvidia Hires Wachtell Lipton as Huang Affair Probe Shadows Earnings Week</h3>
+    <p class="standfirst">Jensen Huang returned to his desk this week projecting calm, but his board has launched an independent investigation into an affair reportedly linked to Chinese intelligence.</p>
+    <div class="body"><p>Nvidia CEO Jensen Huang held his usual morning executive meeting on Monday, just a day after telling staff he&#39;d had an extramarital affair and a week before the company reports quarterly earnings. He apologised to employees but took no questions before moving on to business as usual, according to people familiar with the meeting.</p><p>The affair has taken on much bigger stakes because the woman involved, a former Megaspeed executive, has reportedly been linked by the New York Times and Financial Times to Chinese intelligence. Nvidia&#39;s board has opened an investigation and hired law firm Wachtell, Lipton, Rosen &amp; Katz to lead it, with lead independent director Stephen Neal, whose past clients include Theranos founder Elizabeth Holmes, expected to play a central role.</p><p>Huang, who co-founded Nvidia in 1993 and has become the public face of the AI boom, is also a key figure in US-China trade diplomacy, having travelled with President Trump to China and dined alongside President Xi at a White House state dinner. The scandal has intensified scrutiny of his lobbying for continued chip sales to China, right as Nvidia&#39;s quarterly results and broader confidence in the AI buildout hang in the balance.</p></div>
+    
+    <p class="src">Sources: <a href="https://www.cnbc.com/2026/11/10/nvidia-jensen-huang-affair-office.html" target="_blank" rel="noopener">Tech</a> · <a href="https://www.cnbc.com/2026/11/10/nvidia-wachtell-lipton-huang-affair.html" target="_blank" rel="noopener">Tech</a> · <a href="https://www.cnbc.com/2026/11/09/nvidia-jensen-huang-investigation.html" target="_blank" rel="noopener">Tech</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Due diligence</dt><dd>This means carefully checking the facts and risks around a person or deal before acting, like a buyer inspecting a house before signing contracts. Nvidia&#39;s board is doing due diligence on Huang&#39;s conduct and any security implications.</dd></div><div><dt>Conflict of interest</dt><dd>This is when someone&#39;s personal situation could compromise their professional judgement, such as a CEO&#39;s relationship affecting decisions on sensitive export policy.</dd></div><div><dt>Reputational risk</dt><dd>This is the danger that bad publicity damages trust in a company, even if no law was broken. Investors worry reputational risk at Nvidia could spill over into the whole AI sector&#39;s share prices.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Corporate governance and crisis-management skills are increasingly valued alongside technical AI knowledge; in interviews you can note how a CEO scandal at a company as systemically important as Nvidia creates ripple effects across markets and policy, a useful example of why risk teams matter.</p></div>
+  </article>
+  
+  <article id="story-1">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Google Launches Two New TPU Chips to Challenge Nvidia</h3>
+    <p class="standfirst">Google&#39;s eighth-generation TPU family grows with chips built for secure AI training and for handling much larger workloads.</p>
+    <div class="body"><p>Google unveiled two new tensor processing units (TPUs) on Monday: the TPU 8tx, designed with AMD for confidential AI training, and the TPU 8i Max, which doubles the memory and processing power of its existing inference chip by combining two units into one package. Both chips expand Google&#39;s in-house silicon lineup beyond its earlier eighth-generation TPUs launched in April.</p><p>The TPU 8tx is built so that sensitive data and model weights stay protected even while a model is actively running, making it attractive to companies that want to train AI on proprietary data without moving that data elsewhere. The TPU 8i Max, meanwhile, lets AI models process far larger amounts of information per query thanks to its expanded memory capacity.</p><p>The launch fits a broader pattern of hyperscalers and AI labs such as Microsoft, Amazon, OpenAI and Anthropic building their own chips to reduce reliance on Nvidia. The timing is notable, landing just as Nvidia faces distraction from the fallout of CEO Jensen Huang&#39;s affair disclosure, adding to questions about whether rivals can chip away at Nvidia&#39;s dominant position.</p></div>
+    
+    <p class="src">Sources: <a href="https://techcrunch.com/2026/11/10/google-broadens-its-ai-hardware-portfolio-with-two-new-specialized-chips/" target="_blank" rel="noopener">TechCrunch</a> · <a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxOQ3c3OEFqUWlyNVIyaDZnRzZNcVJBQ0pLZk1rZmhMSkZkR29rTEhVZ2J6OFAzcEpHVEljMFBLV1lDU0lUaHZCQy0tWUZPWWtIcG1DVHBwejlGblU2TGhNbFpsWURBZzc5WHk5Mjg2UzVhSlBrWlgxYm81VzhjZ1N3b2h3?oc=5" target="_blank" rel="noopener">Yahoo! Finance Canada</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>ASIC (application-specific integrated circuit)</dt><dd>This is a chip custom-built for one specific job rather than general computing, making it faster and more efficient at that task. Google&#39;s TPUs are ASICs designed specifically for AI workloads, unlike general-purpose CPUs.</dd></div><div><dt>Confidential computing</dt><dd>This is a way of processing data so it stays encrypted and protected even while it is being actively used, not just when stored or sent. It matters for companies that don&#39;t want their proprietary data exposed during AI training.</dd></div><div><dt>Memory bandwidth</dt><dd>This is how much data a chip can move in and out of memory per second, similar to how wide a motorway determines how much traffic can flow through. More memory bandwidth lets an AI model handle bigger chunks of information at once.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Understanding why companies design their own chips instead of buying Nvidia&#39;s helps explain cost and margin pressures across the AI industry, a useful talking point if you&#39;re asked in an interview why cloud providers are investing billions in custom silicon.</p></div>
+  </article>
+  
+  <article id="story-2">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Blacklisted Chinese University Bought Nvidia H200 Chips, Records Show</h3>
+    <p class="standfirst">Procurement records reportedly show Northwestern Polytechnical University, which has ties to China&#39;s military and has been on a US export blacklist for 25 years, purchased Nvidia&#39;s H200 AI chips last month.</p>
+    <div class="body"><p>Procurement notices reviewed by Reuters reportedly show that Northwestern Polytechnical University (NWPU), a Chinese institution with links to the People&#39;s Liberation Army, bought at least four Nvidia H200 chips despite being on the US Entity List, a blacklist barring American firms from exporting sensitive technology to it without a licence.</p><p>NWPU has been restricted by US export controls since 2001, long before the current wave of AI chip restrictions began. The H200 is one of Nvidia&#39;s higher-end AI chips, and its appearance at a blacklisted military-linked university raises questions about how export controls are being enforced and whether banned buyers are obtaining chips through intermediaries.</p><p>The report adds to ongoing scrutiny of Nvidia&#39;s China sales just as its CEO faces separate controversy over an alleged Chinese intelligence connection, intensifying political pressure in Washington over whether current export rules are tough enough.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMiuAFBVV95cUxQZGFWV2J1LVZpcHZIbWtuMU5qVm1teTBwSTFIaVF0c2hJYzN2WFBlYmdDbHJFeVVJQk5PNzA5WTBmQlNudWpFaHpyZDBGaFJEbGMwd0FlQWNrTWpxZW9kWE5sVGxtbl9sWEljZlBtQmMyMHp1b29wNmVSdnpYOVdGcHcxclo5TjRPNXRVMFNoUUdsWnc4ZUFDM0lZMXZOa3lfQWtlN25rWHFXcFF1RXRGcmI2TmFveEli?oc=5" target="_blank" rel="noopener">Reuters</a> · <a href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxPMnRRSC1jV1FWY3JFc2VtQXBOOVVtU0hVSGgwTEh1Uk5XN1Bfd28wa2UtUDFPdmVJbDJVQ2lMZGw0NDdKbDlybTdnTGRSTm5WR18xeGNaUmQxVXRGRzFMd29sNVo4VXFibURZVXFjbzlPZmVUNF9BSGdJSGdXMkxPMkcyZXNqQ3hRZkVFR3lMSEdSTkNpTjI4em8tQzhSQV83U1hILS10MDJ5endOZkJQcDhWMHotR2FnU2M40gHDAUFVX3lxTE9LcVZSTHprendGbXVNQ0NHTU12VjVqZC1SOTZqZHg2ZndsS2s0WDBQNjBxTGRueFcyd25TSUpzVk1wdFpLVXJNckN3emtFMHgxYXNtcXFnbUQ1dHY2NjRFQVpwS2ZNb09aU2gtU2RrRWw0c0RCaVdMa2NyaWVGZ2FTUDJpSmZMTG4xdzdaWmdPTlVqdHFUazV4ZGt5TVJZYTFlTTExRTAtTnhZeHhTU0hQaFhvR1NjVHQ4NWJQemYxOHdBWQ?oc=5" target="_blank" rel="noopener">NDTV</a> · <a href="https://news.google.com/rss/articles/CBMi3gFBVV95cUxQU0RfTWhJN0gzbUotWnRUWkRnZ2V1N1hRb2dBT3UwRXhxc3Nfd2d3TFAxYmw4LXRMYk85UEhYSUUybUFILTZJS0xpUU1iQjNvRnZaR0xmVDRUZ0U2czhGUzFzcWVMelNpc1pKb1k0U0JJcVdLQXIySnFwUlJFaExPdVVpY2d5cjdtVm1JWlBaT2NzVlliTjNtcnN2d2RockkydmZyUGdBQjY2VTZpeGVELXhuNEppbkczcF9uYXVJNUc2Tm5GR1EzNlg1TjRqQWZ1Zk5acHZ1NXBpU29tZHfSAeMBQVVfeXFMT1hfSGdVRE0ta3Q1Sk9RMEZZYlEyYVJzRFZDak9Qd051SW9yTXhyTmtDWnpobmhRMWNjcWtNYlR1dldNanVYc3c3NzlneGFGUFNqMi05dUhtZnFCTHd6WmEzUlFnaGE2U1pHV05RZEFTalRka0tQaTM4bVJWdjM5eHhiUXFHYjRBSUlySzU4MFdpcVRXN1p1Wjg3d1FwQ1Jpd051RENkSWhseFFXRlN3bmlkaHJ2QktiRWR0T28xX2M2Z2cxaWlBS3piYjRreXpBZnFDeUVNZjNROVlhU0dSb3gwLW8?oc=5" target="_blank" rel="noopener">WION</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Entity List</dt><dd>This is a US government blacklist of organisations barred from receiving certain American technology without special permission, similar to a no-sale list. Being on it since 2001 means NWPU should legally be unable to buy advanced Nvidia chips.</dd></div><div><dt>Export control evasion</dt><dd>This refers to blocked buyers getting restricted goods anyway, often by routing purchases through third parties or shell companies. If confirmed, this case would be an example of such evasion involving AI chips.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Export control enforcement is a growing compliance and policy field, and this story is a good example to cite if asked how national security concerns intersect with AI hardware supply chains in a finance or policy interview.</p></div>
+  </article>
+  
+</section>
+
+<section id="finance" class="finance">
+  <div class="sec-head">
+    <span class="mono">Section 2</span>
+    <h2>AI &amp; finance</h2>
+    <p>Where Wall Street and the City meet AI, as users and as funders.</p>
+  </div>
+  
+  <article id="story-3">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>Morgan Stanley Says AI Debt Deals Now Face a &#39;Higher Bar&#39;</h3>
+    <p class="standfirst">The bank is reportedly warning that lenders are growing more cautious about financing riskier AI infrastructure debt.</p>
+    <div class="body"><p>Morgan Stanley has reportedly signalled that riskier debt deals tied to AI infrastructure now face tougher scrutiny from lenders, as concerns mount over how sustainable the current pace of AI-related borrowing really is.</p><p>The warning reflects a broader shift in how banks and credit investors are approaching the huge sums being borrowed to fund data centres and chip purchases, after a period in which capital flowed relatively easily into the sector.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxOMS0xVnZZQzdId3N2c013NDc4c0VSZUhUbnlvZXBVSnVPM3hOY3dkUGhpNEdQcVhWUi1kdXpYNmxSZEFqUXkxdndOYzhUUGtxT3E5T2xSU0dEWTFIdTJFd3FlcHo2NDVOdmNGUzZHbkJ1MkJCNm9jRW9odl8xNGlxbmxqUmoxU1MzRW5OdFJNOURGQXdtRVhCWDhpOWJoV3dDWElNSk03cDgzeGRMUHk2VnVDdw?oc=5" target="_blank" rel="noopener">Bloomberg.com</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Underwriting standards</dt><dd>These are the rules lenders use to decide who qualifies for a loan and on what terms, like a landlord checking a tenant&#39;s income before renting a flat. Tighter underwriting standards mean fewer risky AI deals get financed, or only at a higher cost.</dd></div><div><dt>Risk premium</dt><dd>This is the extra return investors demand for taking on a riskier investment, on top of a safe baseline rate. A &#39;higher bar&#39; for AI debt deals usually means lenders are charging a bigger risk premium.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>If you want to work in credit or leveraged finance, understanding why banks tighten lending standards for a hot sector like AI is exactly the kind of judgement interviewers probe for.</p></div>
+  </article>
+  
+  <article id="story-4">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>AI Could Cut Banks&#39; Costs by 20%, But Most Haven&#39;t Seen It Yet</h3>
+    <p class="standfirst">McKinsey finds AI has boosted individual bank workers&#39; productivity but has barely moved the industry&#39;s overall bottom line, while AI agent costs are proving harder to control than expected.</p>
+    <div class="body"><p>A new McKinsey report finds that artificial intelligence could eventually cut the banking industry&#39;s cost base by 20% or more, but says most banks have so far only used the technology to make individual employees more productive, with negligible effect on overall profits.</p><p>Separately, McKinsey notes that banks are now trying to rein in the costs of running AI agents, software systems that can autonomously complete multi-step tasks, after finding these systems have become more expensive to operate at scale than initially projected.</p><p>The findings suggest a gap between AI&#39;s promised efficiency gains and what banks are actually capturing, raising questions about whether the sector is investing wisely or simply chasing a trend without a clear path to profit.</p></div>
+    
+    <p class="src">Sources: <a href="https://www.finextra.com/newsarticle/48739/ai-could-cut-banking-industrys-cost-base-by-20---mckinsey?utm_medium=rssfinextra&amp;utm_source=finextrafeed" target="_blank" rel="noopener">Finextra Research Headlines</a> · <a href="https://news.google.com/rss/articles/CBMiqAFBVV95cUxPWlk5SWg5U2ZDeExQOUMycHJsMWoycHpLYWY2S2Ntc3RhZllRcTBFTnpQSlU1eF96emQ3S1VRRFoybFdBaHZvR1k4TmFDd19uT3huaElhUzhmaUtlTW1LaEZjSmZCbENrenRkNzJjMlZwcDN6QW1zc2hHUFYtbHJJYTZWV09yRHllSWtmZ1ZNa1FEZ1NyYVdiRFdibi1OOURTLWpXSGhNRnE?oc=5" target="_blank" rel="noopener">Reuters</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Cost base</dt><dd>This is the total amount a business spends to run itself, including staff, technology and operations. Cutting the cost base by 20% would mean a bank spends a fifth less to do the same amount of business.</dd></div><div><dt>Return on investment (ROI)</dt><dd>This measures whether the money and effort put into something, like an AI project, actually pays off in savings or profit. McKinsey&#39;s findings suggest many banks have spent on AI without yet seeing a clear ROI.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>This is a direct insight into why banks are hiring data and AI specialists right now, but also why they&#39;re becoming pickier about which AI projects get funded, a nuance worth raising if asked about AI adoption in a banking interview.</p></div>
+  </article>
+  
+  <article id="story-5">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>JPMorgan Expands Australia Corporate Bank Team to Chase AI and Mining Deals</h3>
+    <p class="standfirst">The bank is reportedly growing its corporate banking presence in Australia to capture dealmaking tied to AI infrastructure and the mining sector.</p>
+    <div class="body"><p>JPMorgan is reportedly expanding its corporate banking team in Australia, aiming to capture more business from companies involved in AI infrastructure and mining, two sectors seeing significant investment activity.</p><p>The move suggests banks see Australia&#39;s AI data centre buildout and resource-rich mining industry as a growing source of deal fees, even as other parts of the AI financing world face more caution.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxPNGFmUW1LR2NBbDV0WXJvMjVDOElmdU8zdklTQVV4X1ZVa3ZnQnJlcnd2REVCbWFrQ1NYQThoek5WYjBsd1g5UzVDb28xTU5vVnRDdXFGVmFaaWpNQTRlQ18wbVRWbmhONFdXUlhfYnFEQW1aRTdYZGxZLVBUYjFUcTc3X2xPTV9ZSWJUaWZzdlBUQWIyZkxaRmhUenN4RG1qNHdDUGMtOGItdC1rVXROUGlXN2k?oc=5" target="_blank" rel="noopener">Bloomberg.com</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Corporate bank</dt><dd>This is the part of a bank that provides services like loans, advice and deal-making to companies rather than individual consumers. Growing a corporate bank team usually signals a bank expects more big-company deals in that market.</dd></div><div><dt>Deal flow</dt><dd>This refers to the stream of potential transactions, like mergers or financings, that a bank or investor gets to see and potentially work on. More deal flow in AI and mining means more fee opportunities for JPMorgan&#39;s bankers.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Regional hiring moves like this are a signal of where banks expect deal activity to grow, useful intelligence if you&#39;re targeting a career in corporate banking or deal advisory.</p></div>
+  </article>
+  
+</section>
+
+<section id="startups" class="startups">
+  <div class="sec-head">
+    <span class="mono">Section 3</span>
+    <h2>Startups &amp; funding</h2>
+    <p>Who raised, how much, and what investors are betting on.</p>
+  </div>
+  
+  <article id="story-6">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>AI Training Startup Mercor Doubles Valuation to $20 Billion</h3>
+    <p class="standfirst">Mercor, which supplies human-labelled data to train AI models, raised $750 million in a new funding round that doubled its valuation in a year.</p>
+    <div class="body"><p>Mercor, a startup that provides AI labs with human experts to label and evaluate training data, has raised $750 million in a Series D funding round that values the company at $20 billion, roughly double its valuation from a year earlier.</p><p>The rapid rise reflects how valuable data labelling and evaluation work has become as AI labs compete to improve model quality, since large language models need carefully checked, high-quality examples to learn from and to be tested against.</p><p>The scale of the round, and the speed of Mercor&#39;s valuation growth, underscores investor appetite for companies positioned as essential infrastructure to the AI boom, even as questions persist elsewhere about whether AI valuations broadly are overheating.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMivgFBVV95cUxQakRyVVFaNHJEdFVOdTVHYUtNSWN3MEw4SkZXNFFXZFRtM21LLTZmWGtHRU9RcU9QM0dSUENscUhOZWV0WkFBZ1hQQV9vcHBFMzZxRlNrTjZvZFZwZzFZeDR2eGo2U2Q5b3VEcExyek9GY0JxQ0o4SkZYZmRTR21GaDhLTmE2b3J3MzJrRGZORXd0akdkVm41V0gzRGJYVTlvZ1hnZ0VUZ3RSa1RqckxUYUMyQ291NjVVQkdZa3NB?oc=5" target="_blank" rel="noopener">Reuters</a> · <a href="https://news.google.com/rss/articles/CBMilgFBVV95cUxPeDlaSU1lbVY4LXBHaHRZZmNKTlcwNEhBZ1Y4M2l3TkpjZ1BDZDlfbHFsdFh0X0UxNkRHNDlGZTNWcG12ZmtoaTVfNnlROUQ1V3NsUi1qRUlaaGt6bU1FQ2F2dEVlTWRDa3VLX2xuTVlQS0RLak9pbTN5eHFCQXdESjNHYWRaeHhmQ2x1SlZYc0RnTW9EelE?oc=5" target="_blank" rel="noopener">MLQ.ai</a> · <a href="https://news.google.com/rss/articles/CBMilgFBVV95cUxNZzZVUU9PNkx2a0k0RFZmQ09MZ1QybVItbVdWUFNQMkp1U1lwaDJIMTJHZUlDQ3AtOTdLYXBRODEwbGp0OGFodGpEWFZENUFTZS1VOXNNRUZ2UlJBa1M3QkdGYWszMEhMdHdYdzRRaGRWdHp0WXIyVHZrNFlTT2tzcE5iOEpQMnZ5TmVab0k5TW11bDhnOFE?oc=5" target="_blank" rel="noopener">Traders Union</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Series D funding</dt><dd>This is a later-stage round of venture capital funding, typically for companies that have already proven their business model and are scaling up, as opposed to earlier seed or Series A rounds. Reaching Series D with a $20 billion valuation shows strong investor confidence in Mercor&#39;s growth.</dd></div><div><dt>Data labelling</dt><dd>This is the process of humans tagging or checking information, like marking whether an AI&#39;s answer was correct, so that a model can learn from it. High-quality data labelling is one reason some AI models perform noticeably better than others.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Data labelling and evaluation work is becoming a genuine career path in AI, and knowing that human feedback still underpins model quality is a useful point to make if you&#39;re asked how LLMs actually get better over time.</p></div>
+  </article>
+  
+  <article id="story-7">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>Oura Buys AI Doctor Startup Counsel Health for $625 Million</h3>
+    <p class="standfirst">The smart ring maker is turning to acquisitions after shelving its IPO, snapping up an AI-powered primary care platform as its revenue jumps 153%.</p>
+    <div class="body"><p>Oura, the smart ring company, announced on Tuesday it is acquiring Counsel Health, an AI-powered primary care platform, for $625 million. The deal comes weeks after Oura postponed its planned initial public offering, which could have raised up to $2.2 billion, citing uncertainty in the IPO market.</p><p>Counsel Health combines a chat-based AI medical assistant with access to licensed physicians, and has already been integrated into the Oura app since June. The expanded partnership aims to cover preventative, acute, specialty and chronic care, with Counsel&#39;s CEO joining Oura as chief clinical AI officer alongside the startup&#39;s 70 employees.</p><p>The acquisition comes as Oura faces growing competition from rivals like RingConn and Ultrahuman in the smart ring market, and as the company posted strong results: revenue grew 153% year-on-year to $533 million last quarter, with full-year revenue reaching around $1.75 billion. Oura was valued at $11 billion after a funding round last October, making this deal a sign that companies with stalled IPO plans are instead using cash and strong growth to buy their way into new markets.</p></div>
+    
+    <p class="src">Sources: <a href="https://techcrunch.com/2026/11/10/oura-to-acquire-ai-native-primary-care-startup-counsel-health-for-625m/" target="_blank" rel="noopener">TechCrunch</a> · <a href="https://news.google.com/rss/articles/CBMiyAFBVV95cUxQNUc2cW5PUnNMWVdjX3l5Q0NkQWxSS2JXb3A0aXA0TjM1U3U3UW5udHJxX0tUTFhtXzRQNi10bEJCWGoyZlFaM3oxNFBQOEd2ek1uXzBQTzFmQ2xWSmxkbW1JNGhlMlhWdDRjV0JnUmNSYkFQd1dWVHQzRUl3QkQybURoZVk1OHgwbDNSZHJwWm44TFdndmVISlY1NEpKamF2Q3htYm5oQk4tbzZaRkljeVhpdWhicEljaGMySU9YWF9Dc0lQUEsyNQ?oc=5" target="_blank" rel="noopener">Bloomberg.com</a> · <a href="https://news.google.com/rss/articles/CBMic0FVX3lxTFBRMmNWb0lvUmFJZ2dkVU5ZQXRSWlAtYTJJbExwWXZKd3RYZ1FoSURFMzVYZ3pFOGE5bURoWTNpUDVTOVVkS09fQ1RqQW5DanQwNnVPOXFZY2swVEZxc1VXM3I1d2NGTVE2eE82dFI1UDNhbkU?oc=5" target="_blank" rel="noopener">Quartz</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Series A funding</dt><dd>This is typically the first major round of venture capital a startup raises after proving an initial idea works, usually used to build out the product and team. Counsel Health had raised a $25 million Series A a year before being acquired.</dd></div><div><dt>Revenue growth rate</dt><dd>This measures how much a company&#39;s sales have increased over a period, usually shown as a percentage. Oura&#39;s 153% revenue growth means its sales more than doubled compared with the same quarter last year.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>This story shows how companies are substituting acquisitions for IPOs when public markets feel shaky, a pattern worth recognising if you&#39;re tracking exits in AI health tech or considering a career in corporate development.</p></div>
+  </article>
+  
+</section>
+
+
+
+<div class="panel" id="code">
+  <span class="mono">Code corner</span>
+  <h2>Costing Out an AI Agent&#39;s API Calls</h2>
+  <p class="src">Based on: <a href="#story-4">AI Could Cut Banks&#39; Costs by 20%, But Most Haven&#39;t Seen It Yet</a></p>
+  <p style="margin:0">McKinsey&#39;s report said banks are struggling to control the cost of running AI agents. Here&#39;s a simple way to model that: simulate a fake LLM API response and calculate how much a batch of agent calls would cost based on tokens used.</p>
+  <pre><code># Fake LLM API response, like you&#39;d get back from a real provider
+fake_response = {
+    &#34;id&#34;: &#34;chatcmpl-123&#34;,
+    &#34;model&#34;: &#34;gpt-mini&#34;,
+    &#34;usage&#34;: {
+        &#34;prompt_tokens&#34;: 120,
+        &#34;completion_tokens&#34;: 80
+    },
+    &#34;choices&#34;: [
+        {&#34;message&#34;: {&#34;role&#34;: &#34;assistant&#34;, &#34;content&#34;: &#34;Loan approved pending review.&#34;}}
+    ]
+}
+
+# Pretend pricing: cost per 1000 tokens
+PRICE_PROMPT_PER_1K = 0.003
+PRICE_COMPLETION_PER_1K = 0.006
+
+def calculate_cost(usage):
+    prompt_cost = (usage[&#34;prompt_tokens&#34;] / 1000) * PRICE_PROMPT_PER_1K
+    completion_cost = (usage[&#34;completion_tokens&#34;] / 1000) * PRICE_COMPLETION_PER_1K
+    return prompt_cost + completion_cost
+
+cost_per_call = calculate_cost(fake_response[&#34;usage&#34;])
+print(f&#34;Cost per call: ${cost_per_call:.5f}&#34;)
+
+# Now scale it up: a bank&#39;s AI agent handles 50,000 calls a day
+daily_calls = 50000
+daily_cost = cost_per_call * daily_calls
+print(f&#34;Estimated daily cost: ${daily_cost:,.2f}&#34;)
+print(f&#34;Estimated annual cost: ${daily_cost * 365:,.2f}&#34;)</code></pre>
+  <span class="mono">Line by line</span>
+  <ol class="walk"><li>fake_response is a dictionary standing in for what a real LLM API would send back, including a &#39;usage&#39; field showing how many tokens were used.</li><li>Tokens are the small chunks of text (roughly parts of words) that LLMs process; both input (&#39;prompt&#39;) and output (&#39;completion&#39;) tokens usually cost money.</li><li>calculate_cost() divides tokens by 1000 and multiplies by the per-1000-token price, since API pricing is usually quoted per 1000 tokens.</li><li>We then scale a single call&#39;s cost up to 50,000 daily calls, showing how small per-call costs can add up to a very large annual bill, exactly the kind of surprise McKinsey says banks are now facing.</li></ol>
+  <div class="tryit"><p><b>Try it:</b> Change daily_calls to 500,000 to simulate a much bigger bank, and add a new agent type with a higher completion_tokens value (say 300) to see how answer length affects total cost.</p></div>
+</div>
+
+<div class="panel" id="quiz">
+  <span class="mono">Quiz · apply today's concepts</span>
+  <h2>What would you do?</h2>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 1</span>
+    <p class="scenario">You&#39;re in a team meeting at a bank where someone suggests rolling out an AI agent to handle loan queries at massive scale, pointing to McKinsey&#39;s claim that AI could cut costs by 20%.</p>
+    <p class="ask">Based on today&#39;s McKinsey findings, what&#39;s the most important caveat to raise before approving the rollout?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>AI agents are banned by regulators so the project can&#39;t proceed</span></button></li><li><button type="button" data-i="1"><b>B</b><span>Most banks have only seen productivity gains for individual workers, not clear bottom-line savings, and agent running costs have been larger than expected</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Large language models cannot process financial data at all</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Tokens are too expensive for any bank to ever use AI profitably</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> McKinsey specifically found a gap between AI&#39;s promised savings and actual bottom-line impact, plus agent costs running higher than planned, so this is the key risk to flag. The other options either contradict the article or overstate the case.</p>
+        <div class="chips"><span>AI agent</span><span>Cost base</span><span>Return on investment (ROI)</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="0">
+    <span class="mono" style="color:var(--muted)">Scenario 2</span>
+    <p class="scenario">In an interview, you&#39;re asked why Google just launched the TPU 8tx chip aimed at &#39;confidential training&#39;, and why this matters for Nvidia.</p>
+    <p class="ask">Which explanation best captures why this launch is significant?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>It&#39;s an ASIC built to keep sensitive data protected during active use, reducing reliance on Nvidia&#39;s general-purpose GPUs for certain workloads</span></button></li><li><button type="button" data-i="1"><b>B</b><span>It&#39;s a new kind of CPU that replaces all existing data centre servers</span></button></li><li><button type="button" data-i="2"><b>C</b><span>It has nothing to do with chip competition, it&#39;s purely a marketing exercise</span></button></li><li><button type="button" data-i="3"><b>D</b><span>It is identical to Nvidia&#39;s H200 chip but cheaper</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: A.</b> The TPU 8tx is a custom chip (ASIC) designed specifically to protect data and model weights during training, directly reducing dependence on Nvidia GPUs. It is not a CPU replacement and is a distinct chip design, not a copy of Nvidia&#39;s H200.</p>
+        <div class="chips"><span>ASIC (application-specific integrated circuit)</span><span>Confidential computing</span><span>GPU vs CPU</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 3</span>
+    <p class="scenario">A founder is pitching you on a startup that supplies human-reviewed training data to AI labs, citing Mercor&#39;s $20 billion valuation as proof of the opportunity.</p>
+    <p class="ask">What is the most accurate way to describe why data labelling companies like Mercor are attracting huge valuations?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>Because they build their own large language models from scratch</span></button></li><li><button type="button" data-i="1"><b>B</b><span>Because high-quality labelled data improves how well AI models learn and are evaluated, making this a critical, hard-to-replace part of the AI supply chain</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Because they manufacture GPUs more cheaply than Nvidia</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Because they have no real customers but strong marketing</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> Mercor&#39;s value comes from providing the human-reviewed data that AI labs need to train and evaluate models well, not from building models or chips themselves. The other options describe unrelated business models.</p>
+        <div class="chips"><span>Data labelling</span><span>Series D funding</span><span>Valuation</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 4</span>
+    <p class="scenario">You&#39;re reading about Oura buying Counsel Health right after Oura shelved its IPO, and a colleague asks why a company would do an acquisition instead of going public.</p>
+    <p class="ask">What does this story suggest about why Oura chose an acquisition over proceeding with its IPO?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>IPOs are always slower and more expensive than acquisitions in every case</span></button></li><li><button type="button" data-i="1"><b>B</b><span>Oura cited uncertainty in the IPO market, and used its cash and growth to expand strategically through a private deal instead of facing public market scrutiny right now</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Counsel Health was a public company that Oura could only buy via merger</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Acquisitions require regulatory approval while IPOs do not</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> Oura explicitly cited IPO market uncertainty as its reason for postponing the listing, and instead used its strong revenue growth and cash to acquire Counsel Health privately. The other options are factually wrong or irrelevant to this case.</p>
+        <div class="chips"><span>IPO (initial public offering)</span><span>Acquisition</span><span>Revenue growth rate</span></div>
+      </div>
+    </details>
+  </div>
+  
+</div>
+
+<div class="panel" id="glossary">
+  <span class="mono">Glossary</span>
+  <h2>Every concept from today</h2>
+  <dl class="gloss"><div><dt>ASIC (application-specific integrated circuit)<a href="#story-1">see story</a></dt><dd>This is a chip custom-built for one specific job rather than general computing, making it faster and more efficient at that task. Google&#39;s TPUs are ASICs designed specifically for AI workloads, unlike general-purpose CPUs.</dd></div><div><dt>Confidential computing<a href="#story-1">see story</a></dt><dd>This is a way of processing data so it stays encrypted and protected even while it is being actively used, not just when stored or sent. It matters for companies that don&#39;t want their proprietary data exposed during AI training.</dd></div><div><dt>Conflict of interest<a href="#story-0">see story</a></dt><dd>This is when someone&#39;s personal situation could compromise their professional judgement, such as a CEO&#39;s relationship affecting decisions on sensitive export policy.</dd></div><div><dt>Corporate bank<a href="#story-5">see story</a></dt><dd>This is the part of a bank that provides services like loans, advice and deal-making to companies rather than individual consumers. Growing a corporate bank team usually signals a bank expects more big-company deals in that market.</dd></div><div><dt>Cost base<a href="#story-4">see story</a></dt><dd>This is the total amount a business spends to run itself, including staff, technology and operations. Cutting the cost base by 20% would mean a bank spends a fifth less to do the same amount of business.</dd></div><div><dt>Data labelling<a href="#story-6">see story</a></dt><dd>This is the process of humans tagging or checking information, like marking whether an AI&#39;s answer was correct, so that a model can learn from it. High-quality data labelling is one reason some AI models perform noticeably better than others.</dd></div><div><dt>Deal flow<a href="#story-5">see story</a></dt><dd>This refers to the stream of potential transactions, like mergers or financings, that a bank or investor gets to see and potentially work on. More deal flow in AI and mining means more fee opportunities for JPMorgan&#39;s bankers.</dd></div><div><dt>Due diligence<a href="#story-0">see story</a></dt><dd>This means carefully checking the facts and risks around a person or deal before acting, like a buyer inspecting a house before signing contracts. Nvidia&#39;s board is doing due diligence on Huang&#39;s conduct and any security implications.</dd></div><div><dt>Entity List<a href="#story-2">see story</a></dt><dd>This is a US government blacklist of organisations barred from receiving certain American technology without special permission, similar to a no-sale list. Being on it since 2001 means NWPU should legally be unable to buy advanced Nvidia chips.</dd></div><div><dt>Export control evasion<a href="#story-2">see story</a></dt><dd>This refers to blocked buyers getting restricted goods anyway, often by routing purchases through third parties or shell companies. If confirmed, this case would be an example of such evasion involving AI chips.</dd></div><div><dt>Memory bandwidth<a href="#story-1">see story</a></dt><dd>This is how much data a chip can move in and out of memory per second, similar to how wide a motorway determines how much traffic can flow through. More memory bandwidth lets an AI model handle bigger chunks of information at once.</dd></div><div><dt>Reputational risk<a href="#story-0">see story</a></dt><dd>This is the danger that bad publicity damages trust in a company, even if no law was broken. Investors worry reputational risk at Nvidia could spill over into the whole AI sector&#39;s share prices.</dd></div><div><dt>Return on investment (ROI)<a href="#story-4">see story</a></dt><dd>This measures whether the money and effort put into something, like an AI project, actually pays off in savings or profit. McKinsey&#39;s findings suggest many banks have spent on AI without yet seeing a clear ROI.</dd></div><div><dt>Revenue growth rate<a href="#story-7">see story</a></dt><dd>This measures how much a company&#39;s sales have increased over a period, usually shown as a percentage. Oura&#39;s 153% revenue growth means its sales more than doubled compared with the same quarter last year.</dd></div><div><dt>Risk premium<a href="#story-3">see story</a></dt><dd>This is the extra return investors demand for taking on a riskier investment, on top of a safe baseline rate. A &#39;higher bar&#39; for AI debt deals usually means lenders are charging a bigger risk premium.</dd></div><div><dt>Series A funding<a href="#story-7">see story</a></dt><dd>This is typically the first major round of venture capital a startup raises after proving an initial idea works, usually used to build out the product and team. Counsel Health had raised a $25 million Series A a year before being acquired.</dd></div><div><dt>Series D funding<a href="#story-6">see story</a></dt><dd>This is a later-stage round of venture capital funding, typically for companies that have already proven their business model and are scaling up, as opposed to earlier seed or Series A rounds. Reaching Series D with a $20 billion valuation shows strong investor confidence in Mercor&#39;s growth.</dd></div><div><dt>Underwriting standards<a href="#story-3">see story</a></dt><dd>These are the rules lenders use to decide who qualifies for a loan and on what terms, like a landlord checking a tenant&#39;s income before renting a flat. Tighter underwriting standards mean fewer risky AI deals get financed, or only at a higher cost.</dd></div></dl>
+</div>
+
+<div class="panel">
+  <span class="mono">Past digests</span>
+  <ul class="archive"><li><a href="../archive/2026-11-11.html" aria-current="page">2026-11-11</a></li><li><a href="../archive/2026-11-10.html">2026-11-10</a></li><li><a href="../archive/2026-11-09.html">2026-11-09</a></li><li><a href="../archive/2026-11-08.html">2026-11-08</a></li><li><a href="../archive/2026-11-07.html">2026-11-07</a></li><li><a href="../archive/2026-11-06.html">2026-11-06</a></li><li><a href="../archive/2026-11-05.html">2026-11-05</a></li><li><a href="../archive/2026-11-04.html">2026-11-04</a></li><li><a href="../archive/2026-11-03.html">2026-11-03</a></li><li><a href="../archive/2026-11-02.html">2026-11-02</a></li><li><a href="../archive/2026-11-01.html">2026-11-01</a></li><li><a href="../archive/2026-10-31.html">2026-10-31</a></li><li><a href="../archive/2026-10-30.html">2026-10-30</a></li><li><a href="../archive/2026-10-29.html">2026-10-29</a></li><li><a href="../archive/2026-10-28.html">2026-10-28</a></li><li><a href="../archive/2026-10-27.html">2026-10-27</a></li><li><a href="../archive/2026-10-26.html">2026-10-26</a></li><li><a href="../archive/2026-10-25.html">2026-10-25</a></li><li><a href="../archive/2026-10-24.html">2026-10-24</a></li><li><a href="../archive/2026-10-23.html">2026-10-23</a></li><li><a href="../archive/2026-10-22.html">2026-10-22</a></li><li><a href="../archive/2026-10-21.html">2026-10-21</a></li><li><a href="../archive/2026-10-20.html">2026-10-20</a></li><li><a href="../archive/2026-10-19.html">2026-10-19</a></li><li><a href="../archive/2026-10-18.html">2026-10-18</a></li><li><a href="../archive/2026-10-17.html">2026-10-17</a></li><li><a href="../archive/2026-10-16.html">2026-10-16</a></li><li><a href="../archive/2026-10-15.html">2026-10-15</a></li><li><a href="../archive/2026-10-14.html">2026-10-14</a></li><li><a href="../archive/2026-10-13.html">2026-10-13</a></li></ul>
+</div>
+
+<footer>Written by Claude from the linked sources. Check the original article before quoting figures in an interview.</footer>
+</div>
+<script>
+document.querySelectorAll(".q").forEach(function (q) {
+  var correct = Number(q.dataset.correct);
+  var buttons = q.querySelectorAll(".opts button");
+  buttons.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var picked = Number(b.dataset.i);
+      buttons.forEach(function (x) {
+        var i = Number(x.dataset.i);
+        if (i === correct) x.classList.add("right");
+        else if (i === picked) x.classList.add("wrong");
+        x.disabled = true;
+      });
+      q.querySelector("details").open = true;
+    });
+  });
+});
+</script>
+</body>
+</html>
