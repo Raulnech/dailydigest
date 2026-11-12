@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI Morning Brief · Thursday 12 November 2026</title>
+<meta name="theme-color" content="#3A55C8">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  color-scheme:light dark;
+  --ground:#F3F4F7; --paper:#FFFFFF; --ink:#141827; --muted:#5B6275; --line:#DDE0E8;
+  --industry:#3A55C8; --industry-soft:#E6EAFA;
+  --finance:#1C7453; --finance-soft:#E1F1EA;
+  --startups:#A8561A; --startups-soft:#F7EADF;
+  --code-bg:#161A26; --code-ink:#E4E7F0;
+  --right:#1C7453; --right-soft:#E1F1EA; --wrong:#B3261E; --wrong-soft:#FBE7E5;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --ground:#0F121B; --paper:#171B27; --ink:#E8EAF1; --muted:#9AA1B4; --line:#2A3042;
+    --industry:#8FA3F5; --industry-soft:#20284A;
+    --finance:#6CCBA3; --finance-soft:#15332A;
+    --startups:#E8A06A; --startups-soft:#3A2618;
+    --code-bg:#0B0D14; --code-ink:#E4E7F0;
+    --right:#6CCBA3; --right-soft:#15332A; --wrong:#F2A29B; --wrong-soft:#3A1B19;
+  }
+}
+*{box-sizing:border-box}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.6 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;padding-inline:16px;padding-block:28px 64px}
+.wrap{max-width:700px;margin:0 auto;display:grid;gap:36px}
+a{color:inherit}
+a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var(--industry);outline-offset:3px;border-radius:4px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400}
+header{display:grid;gap:10px}
+header .date{color:var(--muted)}
+h1{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(44px,11vw,64px);line-height:1;margin:0;letter-spacing:-.01em}
+h1 em{color:var(--industry)}
+.lede{color:var(--muted);margin:0;max-width:60ch}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ground);padding-block:10px;display:flex;gap:8px;overflow-x:auto;border-bottom:1px solid var(--line)}
+nav a{flex:none;text-decoration:none;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--paper);font-size:14px}
+nav a.industry{color:var(--industry)} nav a.finance{color:var(--finance)} nav a.startups{color:var(--startups)}
+
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:14px;scroll-margin-top:64px}
+.panel h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:30px;margin:0;line-height:1.15}
+.panel > .mono{color:var(--muted)}
+.talk ol{margin:0;padding-left:20px;display:grid;gap:8px}
+.toc{display:grid;gap:14px}
+.toc h3{margin:0 0 4px}
+.toc ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.toc li a{text-decoration:none}
+.toc li a:hover{text-decoration:underline}
+
+section{display:grid;gap:22px;scroll-margin-top:64px}
+.sec-head{display:grid;gap:2px;border-top:3px solid var(--c);padding-top:12px}
+.sec-head h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:36px;margin:0;line-height:1.1;text-wrap:balance}
+.sec-head p{margin:0;color:var(--muted)}
+.sec-head .mono{color:var(--c)}
+.industry{--c:var(--industry);--cs:var(--industry-soft)}
+.finance{--c:var(--finance);--cs:var(--finance-soft)}
+.startups{--c:var(--startups);--cs:var(--startups-soft)}
+
+article{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px 20px;display:grid;gap:16px;scroll-margin-top:64px}
+article .kicker{color:var(--c)}
+article h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(26px,6vw,32px);line-height:1.15;margin:0;text-wrap:balance}
+.standfirst{margin:0;font-size:18px;line-height:1.5;color:var(--muted)}
+.body{display:grid;gap:14px;font-family:"Source Serif 4",Georgia,serif;font-size:18px;line-height:1.65;max-width:65ch}
+.body p{margin:0}
+.src{margin:0;font-size:13px;color:var(--muted)}
+.concepts{background:var(--cs);border-radius:12px;padding:16px 18px;display:grid;gap:12px}
+.concepts .mono{color:var(--c)}
+.concepts dl{margin:0;display:grid;gap:10px}
+.concepts dt{font-weight:600}
+.concepts dd{margin:2px 0 0}
+.why{display:grid;gap:4px;border-left:2px solid var(--c);padding-left:14px}
+.why .mono{color:var(--c)}
+.why p{margin:0}
+
+pre{margin:0;background:var(--code-bg);color:var(--code-ink);border-radius:10px;padding:16px;overflow-x:auto;font:14px/1.55 "IBM Plex Mono",ui-monospace,Consolas,monospace}
+.walk{margin:0;padding-left:20px;display:grid;gap:6px}
+code{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:.9em}
+.tryit{background:var(--industry-soft);border-radius:10px;padding:12px 16px}
+.tryit p{margin:0}
+
+.q{display:grid;gap:12px;border-top:1px solid var(--line);padding-top:18px}
+.q:first-of-type{border-top:0;padding-top:0}
+.scenario{margin:0;font-family:"Source Serif 4",Georgia,serif;font-style:italic;font-size:17px}
+.q .ask{margin:0;font-weight:600}
+.opts{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.opts button{width:100%;text-align:left;font:inherit;color:var(--ink);background:var(--ground);border:1px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer;display:flex;gap:10px}
+.opts button:hover{border-color:var(--industry)}
+.opts button b{font-family:"IBM Plex Mono",ui-monospace,monospace;font-weight:500}
+.opts button.right{background:var(--right-soft);border-color:var(--right)}
+.opts button.wrong{background:var(--wrong-soft);border-color:var(--wrong)}
+.opts button:disabled{cursor:default}
+details{border-radius:10px}
+summary{cursor:pointer;font-weight:500;color:var(--industry)}
+.answer{display:grid;gap:8px;margin-top:10px}
+.answer p{margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:13px;padding:2px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+
+.gloss{margin:0;display:grid;gap:12px}
+.gloss dt{font-weight:600}
+.gloss dt a{font-weight:400;font-size:13px;color:var(--muted);margin-left:6px}
+.gloss dd{margin:2px 0 0;color:var(--muted)}
+.archive{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.archive a{display:inline-block;padding:4px 10px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-variant-numeric:tabular-nums;font-size:14px}
+.archive a[aria-current]{border-color:var(--industry);color:var(--industry)}
+footer{color:var(--muted);font-size:13px}
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="mono date">Thursday 12 November 2026 · 13 min read</span>
+  <h1>AI Morning <em>Brief</em></h1>
+  <p class="lede">Today's AI and fintech news as short articles, with every key concept explained, a bit of Python, and a scenario quiz to check it stuck.</p>
+</header>
+
+<nav aria-label="Sections">
+  <a href="#industry" class="industry">The AI industry</a>
+  <a href="#finance" class="finance">AI &amp; finance</a>
+  <a href="#startups" class="startups">Startups &amp; funding</a>
+  <a href="#code">Code corner</a>
+  <a href="#quiz">Quiz</a>
+  <a href="#glossary">Glossary</a>
+</nav>
+
+<div class="panel talk">
+  <span class="mono">If you only read one thing</span>
+  <h2>Three things to be able to say today</h2>
+  <ol><li>Nvidia&#39;s board reportedly met through Wednesday night deciding whether to oust Jensen Huang after a second alleged affair surfaced.</li><li>TSMC is now investing in Anthropic and OpenAI, deepening the &#39;circular financing&#39; loop that worries some AI investors.</li><li>CoreWeave&#39;s blowout earnings briefly calmed nerves about an AI bubble, even as data-centre debt keeps piling up.</li></ol>
+</div>
+
+<div class="panel">
+  <span class="mono">In today's brief</span>
+  <div class="toc">
+  
+    <div class="industry"><h3 class="mono" style="color:var(--c)">The AI industry</h3>
+      <ul><li><a href="#story-0">Nvidia board reportedly weighs sacking Jensen Huang after second affair allegation</a></li><li><a href="#story-1">TSMC to put up to $1 billion into OpenAI and Anthropic</a></li><li><a href="#story-2">CoreWeave revenue jumps 168% to $3.66 billion, easing AI slowdown fears</a></li></ul>
+    </div>
+  
+    <div class="finance"><h3 class="mono" style="color:var(--c)">AI &amp; finance</h3>
+      <ul><li><a href="#story-3">Anthropic reportedly targets $1.4 trillion valuation ahead of IPO</a></li><li><a href="#story-4">SocGen reportedly seeks to sell Stargate data centre debt at a discount</a></li><li><a href="#story-5">AI data centre operators face $13.4 billion in looming debt maturities</a></li></ul>
+    </div>
+  
+    <div class="startups"><h3 class="mono" style="color:var(--c)">Startups &amp; funding</h3>
+      <ul><li><a href="#story-6">UK chip startup Fractile hits $7 billion valuation before shipping a single chip</a></li><li><a href="#story-7">OpenAI buys AI travel startup Odessia</a></li></ul>
+    </div>
+  
+  </div>
+</div>
+
+
+<section id="industry" class="industry">
+  <div class="sec-head">
+    <span class="mono">Section 1</span>
+    <h2>The AI industry</h2>
+    <p>Big labs, big tech and the direction of travel.</p>
+  </div>
+  
+  <article id="story-0">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Nvidia board reportedly weighs sacking Jensen Huang after second affair allegation</h3>
+    <p class="standfirst">The chipmaker&#39;s 33-year CEO faces removal as scandal and a wobbling AI trade collide.</p>
+    <div class="body"><p>Nvidia&#39;s board reportedly met into Wednesday evening to decide the fate of founder and chief executive Jensen Huang, days after reports emerged of a second extramarital affair, this time with an executive who reported to him directly. The news sent Nvidia shares down around 8% after hours, extending a five-day slide of about 11%.</p><p>Huang has run Nvidia since 1993 and turned it into one of the world&#39;s most valuable companies by designing the chips that underpin the AI boom. The crisis began when he admitted to an earlier affair with a woman reportedly identified by US intelligence as a Chinese spy. Huang is known for an unusually flat management structure, with around 60 direct reports, and Nvidia has never named a clear successor.</p><p>Nvidia&#39;s board has reportedly hired an outside firm to identify possible replacements, and law firm Wachtell, Lipton, Rosen &amp; Katz has been brought in to investigate whether national security or trade secrets were compromised. Even Elon Musk weighed in, suggesting he&#39;d be honoured to take the job. With Nvidia chips powering almost every major AI data centre, the outcome of this boardroom drama could ripple through the entire sector.</p></div>
+    
+    <p class="src">Sources: <a href="https://techcrunch.com/2026/11/11/nvidias-stock-drops-as-board-reportedly-preps-to-oust-ceo-jensen-huang/" target="_blank" rel="noopener">TechCrunch</a> · <a href="https://www.theverge.com/tech/1031652/jensen-huang-rumor" target="_blank" rel="noopener">The Verge</a> · <a href="https://www.cnbc.com/2026/11/11/nvidia-jensen-huang-affair-employee.html" target="_blank" rel="noopener">Tech</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Board of directors</dt><dd>A group elected by shareholders to oversee a company&#39;s management, including the power to hire or fire the chief executive.</dd></div><div><dt>Independent investigation</dt><dd>An inquiry carried out by outside lawyers or consultants, rather than company staff, so its findings are seen as more trustworthy.</dd></div><div><dt>National security review</dt><dd>A government check on whether a company&#39;s dealings - such as leaked secrets or foreign contacts - threaten a country&#39;s security interests.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Leadership uncertainty at the company that supplies most of the world&#39;s AI chips affects jobs and investment decisions across the whole industry, from hardware engineers to finance teams pricing AI-linked debt. In an interview, you could point out how concentrated the AI supply chain is around a handful of firms and individuals.</p></div>
+  </article>
+  
+  <article id="story-1">
+    <span class="mono kicker">The AI industry</span>
+    <h3>TSMC to put up to $1 billion into OpenAI and Anthropic</h3>
+    <p class="standfirst">The world&#39;s biggest contract chipmaker is now investing directly in the AI labs that depend on its factories.</p>
+    <div class="body"><p>TSMC&#39;s board has approved plans to invest up to $500 million in OpenAI preferred stock and a further $500 million to buy Anthropic shares at the price set for its forthcoming stock market listing. The move gives the Taiwanese chipmaker direct equity stakes in two of the leading AI developers.</p><p>TSMC physically manufactures the vast majority of Nvidia&#39;s AI chips and most of Apple&#39;s custom silicon, running factories mainly in Taiwan but also in Japan, the United States and, soon, Germany. Until now its exposure to the AI boom came mostly through chip orders rather than ownership stakes in its customers.</p><p>Analysts told the Wall Street Journal that the deal could offer markets &#39;a shot of confidence&#39; at a moment when the AI trade looks shaky, but also warned that such circular financing - where suppliers invest in customers who then buy more of their products - makes it harder to judge genuine demand for AI hardware and services. As more chipmakers, cloud firms and AI labs become each other&#39;s investors, untangling real growth from recycled capital gets trickier.</p></div>
+    
+    <p class="src">Sources: <a href="https://arstechnica.com/ai/2026/11/taiwans-chipmaking-giant-tsmc-to-invest-1b-in-anthropic-openai/" target="_blank" rel="noopener">AI - Ars Technica</a> · <a href="https://news.google.com/rss/articles/CBMiqAFBVV95cUxPci1EN2F4N2ZqRDRuOXMteDlzYllQWVVzbWdtLVQ5aGJLb01WVmZqV1ZCV3NWWGd0VE9SQzNxcG0zU2xqV2pqV0dEYXBBdkFKZHdhTXpyX1lxbk9saXJPYy1PWU8xQlh1UUNWSHRNZ0taeEtWczFlQkFaWmdzSl9BM25PYk95aGpzajJPXzU5OWJBRWhUZi1fTmZlVm9wOXdYMDZiVGRNRGM?oc=5" target="_blank" rel="noopener">Indian Startup Times</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Circular financing</dt><dd>When money flows in a loop between suppliers, investors and customers - for example, a chipmaker investing in an AI lab that then buys more of its chips - making real demand hard to measure.</dd></div><div><dt>Contract manufacturer</dt><dd>A company that builds products designed by others; TSMC doesn&#39;t design chips like Nvidia&#39;s, it manufactures them to order.</dd></div><div><dt>Preferred stock</dt><dd>A class of shares that usually gets paid before ordinary shareholders if a company is sold or wound up, often used by large investors.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Understanding circular financing is a useful interview talking point if asked to assess whether AI spending is sustainable - it shows you can look past headline deal sizes to where the money actually originates. It also links to today&#39;s CoreWeave and Anthropic stories, where the same small group of firms keeps funding one another.</p></div>
+  </article>
+  
+  <article id="story-2">
+    <span class="mono kicker">The AI industry</span>
+    <h3>CoreWeave revenue jumps 168% to $3.66 billion, easing AI slowdown fears</h3>
+    <p class="standfirst">Strong earnings and a record $132.5 billion backlog steadied a neocloud stock that had lost 40% of its value in a month.</p>
+    <div class="body"><p>CoreWeave&#39;s shares jumped more than 24% after it beat revenue forecasts and raised its 2026 guidance. Third-quarter revenue rose 168% year-on-year to $3.66 billion, though the company still posted a net loss of $709 million as it continues to spend heavily on data centre capacity.</p><p>The results land amid growing nervousness about AI infrastructure spending, with CoreWeave&#39;s bond yields recently topping 16% as lenders demand more compensation for risk. Executives said they would avoid issuing new unsecured debt through 2027, instead relying on customer prepayments, hardware-partner financing and a more stable market for loans secured against specific assets. The company owed almost $47 billion in debt at quarter&#39;s end.</p><p>CoreWeave now has a $132.5 billion revenue backlog, up from $104 billion in June, and plans $37-39 billion in capital expenditure this year. Voters in Texas recently rejected tax breaks tied to data centre construction, but CoreWeave said it expects no impact, since most of its power supply is already under construction or permitted. Investors are now watching rival neocloud Nebius&#39;s earnings and Anthropic&#39;s imminent stock market debut, a key CoreWeave customer, for further signs of whether AI demand can keep pace with the spending.</p></div>
+    
+    <p class="src">Sources: <a href="https://www.cnbc.com/2026/11/10/coreweave-crwv-q3-earnings-report-2026.html" target="_blank" rel="noopener">Tech</a> · <a href="https://www.cnbc.com/2026/11/11/coreweave-crwv-outlook-earnings-ai.html" target="_blank" rel="noopener">Tech</a> · <a href="https://news.google.com/rss/articles/CBMiwgFBVV95cUxPaTZzT256WkU3aE4zUnA1UXBqX05FOENKeXI4MFZtUDQtc28zeDBLWEE2UGdydUU0OXI0LVotdWEwUVBJeDB0bVh6Z1BrN0dQbHFRa0RwZ2xEdDlBaS12T3ZSQXlzcHNSTHAxN2FBUjFXTTlaTmRUWWVJdFZmaXBDZTJteWlWQ2d0MDYzRHRyLWV3Y0xiMU5ndjRMdlBOaDR0T25uVVFNZS12ZDhjWkRMRzBDc2EzN2RyR0dvTnZqWlgxZw?oc=5" target="_blank" rel="noopener">Reuters</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Contract backlog</dt><dd>The total value of work a company has already agreed to deliver but hasn&#39;t yet billed for - CoreWeave&#39;s backlog of $132.5 billion shows future revenue already lined up.</dd></div><div><dt>Bond yield</dt><dd>The return investors demand for lending money via a bond; a yield of 16% signals lenders see real risk of not being repaid.</dd></div><div><dt>Capital expenditure (capex)</dt><dd>Money spent on long-term assets like buildings or servers rather than day-to-day running costs - CoreWeave is spending tens of billions building data centres.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>These numbers matter for anyone analysing fintech or AI credit risk, since they show how backlog, debt structure and capex guidance together reveal whether a &#39;hot&#39; AI company can actually fund its growth. It&#39;s a good example to cite if asked in an interview how to separate growth headlines from balance-sheet reality.</p></div>
+  </article>
+  
+</section>
+
+<section id="finance" class="finance">
+  <div class="sec-head">
+    <span class="mono">Section 2</span>
+    <h2>AI &amp; finance</h2>
+    <p>Where Wall Street and the City meet AI, as users and as funders.</p>
+  </div>
+  
+  <article id="story-3">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>Anthropic reportedly targets $1.4 trillion valuation ahead of IPO</h3>
+    <p class="standfirst">The ChatGPT rival&#39;s stock market debut is said to be heavily oversubscribed as it seeks to raise around $90 billion.</p>
+    <div class="body"><p>Anthropic is reportedly aiming for a valuation of up to $1.4 trillion as it prepares its initial public offering, according to multiple reports, with plans to raise roughly $90 billion through a combination of its public listing and a private placement of shares. One report put the targeted valuation closer to $1.3 trillion.</p><p>Reports suggest the offering is multiple times oversubscribed, reflecting strong investor appetite for AI labs even as parts of the AI trade have wobbled this month. Anthropic&#39;s listing is expected imminently and is being closely watched by its infrastructure partners, including CoreWeave, which has signed data centre deals with the company.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMidkFVX3lxTFBWWWhzNWttUWJZVjlpX2xCcnhyRVhRVGNBVnlXWGZBWnNVbE55bm1SQVVfR2xuekhqbVJCZkVmRlZFS0xZMmZvdXVkVF9pX0g4V3cwSzZDV1hEMHBVazNRSVlPejM0ZXpWeERaWVpyZ0lDdHF3aGc?oc=5" target="_blank" rel="noopener">WSJ</a> · <a href="https://news.google.com/rss/articles/CBMihgFBVV95cUxPeFFVa09qVHpqQ2ppN3BQeXhZQUxNeWl1Qzg1VGpmZEc3UGVrRTBqUmxEMElfU2V1UFpsejZyOFhvV0tlX19pd0Y4WGZ4amJlTWxSVzJidEctdi1UY2Z1eElLYVlKMkVnbVpXQUo3dXFhRjhsMjFZRnNhQzdyOHJWVXMyaC0xQQ?oc=5" target="_blank" rel="noopener">JournalArta</a> · <a href="https://news.google.com/rss/articles/CBMi4gFBVV95cUxNUVB0MURzY09yMkpNVHJxU3cxYmF1UkF5M3JaNGpReUJXOUN3czJIOU9qQ2V1emJMRXlmNm1SbVgwbDBpOElXZ0J5OV9nVUtKRzctOENJN19hMnZ3bnNCeHd5aGowMk5nRzlCa2hnLVZKN1RKSGVlVnFtQTMyRHNWUm8tazNnV0d4UTZBZHVsVGtyUkMzYXZRTFlGdjVsUnlTRlZCSzRlMmhLbmFfZm5iOWFMY2hrU0ljTHIwNjZSX1ZWZzExQ29zaWt3QWNIS216NnA3aTJIY2pQZEpRX3Vua19R?oc=5" target="_blank" rel="noopener">TradingKey</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>IPO (initial public offering)</dt><dd>The first time a private company sells shares to the public on a stock exchange, letting ordinary investors buy in.</dd></div><div><dt>Oversubscribed</dt><dd>When investors want to buy more shares in an IPO than are actually on offer, often a sign of strong demand that can push the price up.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Anthropic&#39;s IPO will be one of the largest in history and a test of whether public markets still trust frontier AI valuations - worth tracking closely if you&#39;re interested in fintech or equity research roles.</p></div>
+  </article>
+  
+  <article id="story-4">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>SocGen reportedly seeks to sell Stargate data centre debt at a discount</h3>
+    <p class="standfirst">The French bank is said to be offloading loans tied to the giant AI data centre project below face value.</p>
+    <div class="body"><p>Société Générale is reportedly looking to sell debt linked to the Stargate data centre project at a discount, according to a single trade report. Selling debt below its original value typically signals that a lender wants to reduce its exposure or that buyers see added risk in holding it.</p><p>Stargate is one of the largest AI infrastructure projects announced to date, and any sign of banks trimming their exposure to it will be watched closely as a barometer of confidence in AI data centre financing more broadly.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMib0FVX3lxTFBleExOMEttR1ZjUWdESXcwRm1kdlNWOUNsUzNkbURMd204NFRYd2NTZUVJTjhqblU1RGVmTlgya0d0NmlYTVd2SkJOMjhqSlp1a19wMmJVbUdBQndYNHBPQVFfV1JTc1huRVQzR2R2NA?oc=5" target="_blank" rel="noopener">9fin</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Loan sale (secondary market)</dt><dd>Banks often sell loans they&#39;ve made to other investors after issuing them, moving the risk off their own books; selling &#39;at a discount&#39; means for less than the loan&#39;s face value.</dd></div><div><dt>Data centre</dt><dd>A large facility packed with servers and computing hardware - often now built specifically to train or run AI models - that requires huge amounts of power and capital.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>If major banks start selling AI-linked debt cheaply, it&#39;s an early warning sign worth recognising for anyone working in credit or risk analysis.</p></div>
+  </article>
+  
+  <article id="story-5">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>AI data centre operators face $13.4 billion in looming debt maturities</h3>
+    <p class="standfirst">Rising refinancing costs are squeezing firms that borrowed heavily to build AI infrastructure.</p>
+    <div class="body"><p>AI data centre companies reportedly face $13.4 billion in debt coming due, at a time when refinancing costs are climbing, according to a single report. Higher borrowing costs mean companies rolling over old loans into new ones will likely pay noticeably more interest than before.</p><p>This adds to a wider pattern this week, with CoreWeave&#39;s own bond yields near 16% and SocGen reportedly trying to sell Stargate-linked debt at a discount, suggesting lenders are growing more cautious about the sector&#39;s borrowing binge.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxQYU9vTkhUTTBlX21NS21lWUNta1lFWXZ1Tjk5c01BUjFxRnhCcFNGUkloQzdiM3AxRDdKcGN6cTJiZkpTdWxjZ21DbnMtWHhiREF5eU5kcEU1NHFkMnM5c1otVlZOTkROM0ZLWXZrUGlTNEU4cGRhVUFFZkoyaXBFc3dQU1VWaE1xNVVmUmlrRnNoOWVDc0ZlbVU4bk90Zms?oc=5" target="_blank" rel="noopener">Coin Edition</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Debt maturity wall</dt><dd>A point in time when a large amount of a company&#39;s or sector&#39;s debt comes due at once, forcing refinancing - risky if borrowing costs have risen since the original loans were made.</dd></div><div><dt>Refinancing</dt><dd>Replacing an existing loan with a new one, often because the old one is due to be repaid; if interest rates have risen, refinancing can become much more expensive.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Debt maturity walls are a classic early signal analysts watch for stress in a sector - a useful concept to bring up if asked in an interview how you&#39;d spot financial risk building up behind a booming industry.</p></div>
+  </article>
+  
+</section>
+
+<section id="startups" class="startups">
+  <div class="sec-head">
+    <span class="mono">Section 3</span>
+    <h2>Startups &amp; funding</h2>
+    <p>Who raised, how much, and what investors are betting on.</p>
+  </div>
+  
+  <article id="story-6">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>UK chip startup Fractile hits $7 billion valuation before shipping a single chip</h3>
+    <p class="standfirst">The British AI inference specialist raised roughly $720 million in a Series C aimed at challenging Nvidia.</p>
+    <div class="body"><p>Fractile, a UK-based startup designing chips specialised for AI inference, has reportedly raised a Series C round of more than £500 million, valuing the company at around $7 billion (£5 billion). Notably, reports say the company has not yet shipped a commercial chip.</p><p>The round highlights investor appetite for alternatives to Nvidia&#39;s dominant AI chips, particularly for inference - running an already-trained AI model to generate answers - which is becoming a larger and more lucrative market as AI tools scale into everyday use. Fractile is being described by some outlets as a potential British rival to Nvidia in this space.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMiyAFBVV95cUxPU0V1VVc2X0ppTUpCU0lET0pMdzV1YjFLbV83a0luR0VCdmVFN0g0ZzFzZXpZeWdWMjBNWVppUWV5QlNNYkFEdkY3QnJadVhleU5saHFaMk1USXRUZkpoTGEzeE9rejdTbGFnYVVMdk5DZVBLWlFuNnlKZi0wRnR2cE96UlRTWXluUGdpME53bkEtQWZPSGowd2l5OXU0WVM2ZHZ0OXlHSW5KZjFuUFVSYWpSZWlobFZJSnNiblE1YVZSc0ozVlNJaA?oc=5" target="_blank" rel="noopener">Reuters</a> · <a href="https://news.google.com/rss/articles/CBMi0AFBVV95cUxQSDdWV2RERG5qamZTaWsweEROMEpPZ1F5MElBa0RmSEhULVZkMTY2ZkkwdExuQzRFQnVIeE1KZGlOdS1ybmhTRWNhLURwYXhsWkEyc3VKQnh5SVlXa0VLLXBuZ1pWWXdEWU4xbTYzcHlVc0dVa21nTjBiMlZkd1dxNlo3SFg5c1FSOUtDcEY0WW5VaHYwR3pUWTk5T1haS0FScEZhZHNBODk3ZkVYQmdJNkFzWGtab2tTNktHYmIxOU1GM3k0ZXo3Z0dIV3BHSUVu?oc=5" target="_blank" rel="noopener">Tech Times</a> · <a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxPV3BGNHFmOUw4b1NIYkd1NHNaT3o2Q2ZPa3pFRHBzMFVia29UTnpoU1dBTXgtYkNheWE3UEREdHVPYmNZNUs5dG81SE5Cd0hJQzZHYkxNWEVGRWMtLWhXX2dWczJNVFRjNjVVSDM1NkVQcC1LS0JOd1lVUkJYNnkxeEg1SlN6ZlF1VDZCQkNtSnVmMmsta3JfbHF2YmhUXzZIZi1lS1dLZnl5Wnh2X01menU0azNjUS1nYUJTWFQyTQ?oc=5" target="_blank" rel="noopener">MLQ.ai</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Series C funding</dt><dd>A later-stage startup funding round, typically raised once a company has a working product or strong growth and needs capital to scale further.</dd></div><div><dt>Inference</dt><dd>The process of actually running a trained AI model to produce an answer or prediction, as opposed to the earlier training stage - this is where most ongoing computing cost sits.</dd></div><div><dt>ASIC (application-specific integrated circuit)</dt><dd>A chip custom-built for one specific job, such as AI inference, rather than a general-purpose processor - it can be faster and more efficient for that one task.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Big valuations for pre-revenue chip startups show investors betting heavily that inference demand will keep growing - good context if you&#39;re asked in an interview to explain why &#39;picks and shovels&#39; hardware plays attract so much venture capital.</p></div>
+  </article>
+  
+  <article id="story-7">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>OpenAI buys AI travel startup Odessia</h3>
+    <p class="standfirst">The deal brings an AI-agent-powered travel planning tool, and its founder, into ChatGPT&#39;s orbit.</p>
+    <div class="body"><p>OpenAI has acquired Odessia, a startup that built AI travel-planning tools using AI agents, according to multiple reports. Odessia&#39;s founder, Francis Davidson, who previously founded the startup Sonder, is reportedly joining OpenAI as part of the deal.</p><p>The acquisition is expected to expand ChatGPT&#39;s travel-related capabilities, continuing OpenAI&#39;s pattern of buying smaller, specialised AI startups rather than building every feature from scratch. Terms of the deal were not disclosed in the reports.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxPTXFIcGFjc281aUtUOE9oNHZSVTIySlRuUE9zLW5LZjZhcm1NRmdNTmUzOG9GVG0tN1dkV3FCY3B5N0ZiVDZyNEhxNXpTbEMyREJfeVgxWmwxU2kxNE51cUl6VkZEc1hXY1ViYldQbXByRHVFYWVEUWp2YUt4cUkxd2J6cjdMZmZGaTVFSjJlUHZ1aVVncDktUDNocGFBcWNQcUtGbC1KeDllcDV6YmxzUmVR?oc=5" target="_blank" rel="noopener">Adgully</a> · <a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxQd1RETmVsTDRVY2h2VUZWaW1PenJrX1czV1E4amtjNUtlQThnallSMHFoWkNjbk9qOVJlRno5d0RnNzJMSmo5MWxBNDMtNEVJVW9QOXBta3JUQ3M1Tk9IaTJxYjROUzVPaU9LR3QtR0habVJTbEJBX29FcEVSODBUUXJDVjVfQnhUdkRSOXptMF8weFFjeTZZNUZEWmJPbUJITnB3?oc=5" target="_blank" rel="noopener">Digital Journal</a> · <a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxPSDMtaDQ0a0lpYkVDTm9sUWd1MXFIblM0VllOdURYNFZDQ3Vhc29vTE1RdVd3bnB2cUhIbzVZNThFd3d1NDhER2N0S2huci10WHJKNnJtRmFQZW1jU20xbnJmb0NfcUdZRDJqYVBRSWYybkJrNVV5N1VWaHZCTWJvSjZMMDh6cU1tX1ZEdnlZbzVyYm9ob3k0cnJmNUdaUDFvNDEtTU5QaHdYa0Y2OUlCLXozUQ?oc=5" target="_blank" rel="noopener">Tekedia</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>AI agent</dt><dd>An AI system that can take multi-step actions on a user&#39;s behalf - like searching flights, comparing prices and booking a trip - rather than just answering a single question.</dd></div><div><dt>Vertical AI</dt><dd>AI built for one specific industry or task, such as travel or law, rather than general-purpose use; Odessia was a vertical AI travel tool before being folded into ChatGPT.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Acquisitions like this show how frontier labs are buying their way into specific industries rather than building every feature in-house - a trend worth mentioning if discussing career paths into applied AI product roles.</p></div>
+  </article>
+  
+</section>
+
+
+
+<div class="panel" id="code">
+  <span class="mono">Code corner</span>
+  <h2>Simulating a Travel-Planning AI Agent&#39;s Response</h2>
+  <p class="src">Based on: <a href="#story-7">OpenAI buys AI travel startup Odessia</a></p>
+  <p style="margin:0">OpenAI just bought a travel-planning startup built on AI agents. Here&#39;s a simplified example of how an app might call an LLM and parse back a structured travel plan - using a fake response so it runs without an API key.</p>
+  <pre><code>import json
+
+def fake_llm_call(prompt):
+    # Pretend this is what the model returns after receiving our prompt
+    return json.dumps({
+        &#34;destination&#34;: &#34;Lisbon&#34;,
+        &#34;nights&#34;: 4,
+        &#34;estimated_cost_gbp&#34;: 650,
+        &#34;activities&#34;: [&#34;Tram tour&#34;, &#34;Belem tower&#34;, &#34;Day trip to Sintra&#34;]
+    })
+
+def plan_trip(city, budget):
+    prompt = f&#34;Plan a trip to {city} with a budget of £{budget}.&#34;
+    raw_response = fake_llm_call(prompt)
+    plan = json.loads(raw_response)
+    return plan
+
+if __name__ == &#34;__main__&#34;:
+    trip = plan_trip(&#34;Lisbon&#34;, 700)
+    print(f&#34;Destination: {trip[&#39;destination&#39;]}&#34;)
+    print(f&#34;Nights: {trip[&#39;nights&#39;]}&#34;)
+    print(f&#34;Estimated cost: £{trip[&#39;estimated_cost_gbp&#39;]}&#34;)
+    print(&#34;Activities:&#34;)
+    for activity in trip[&#34;activities&#34;]:
+        print(f&#34; - {activity}&#34;)</code></pre>
+  <span class="mono">Line by line</span>
+  <ol class="walk"><li>`fake_llm_call` stands in for a real API request to an LLM - in production this would send the prompt over the internet and get text back.</li><li>The function returns a JSON string, mimicking how many LLM APIs are told to format their answers as structured data rather than free text.</li><li>`plan_trip` builds a prompt combining the city and budget, then calls the fake LLM and loads the JSON string into a Python dictionary with `json.loads`.</li><li>The `if __name__ == &#34;__main__&#34;` block runs only when the file is executed directly, printing the parsed plan in a readable format.</li></ol>
+  <div class="tryit"><p><b>Try it:</b> Change the budget or city in the `plan_trip` call, then update `fake_llm_call` to return a different destination and a longer `activities` list - see how the printed output changes.</p></div>
+</div>
+
+<div class="panel" id="quiz">
+  <span class="mono">Quiz · apply today's concepts</span>
+  <h2>What would you do?</h2>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 1</span>
+    <p class="scenario">You&#39;re in a team meeting at a fintech startup discussing whether to use an outside AI lab&#39;s model via an API, after reading about TSMC investing directly in OpenAI and Anthropic.</p>
+    <p class="ask">A colleague argues the circular financing between chipmakers and AI labs proves genuine demand for AI is huge. What&#39;s the best response?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>Agree completely - more investment always means more real demand</span></button></li><li><button type="button" data-i="1"><b>B</b><span>Point out that when suppliers invest in their own customers, it gets harder to tell real demand from recycled capital</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Say it&#39;s irrelevant to your company&#39;s API choice</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Argue TSMC only invests in companies with proven demand, so it&#39;s a reliable signal</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> Circular financing arrangements, like TSMC investing in OpenAI and Anthropic, can make demand numbers look stronger than they are because the same money is moving in a loop between a few related firms. The tempting wrong answer assumes more investment automatically proves demand, ignoring how the funding loop can inflate appearances.</p>
+        <div class="chips"><span>Circular financing</span><span>Due diligence</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 2</span>
+    <p class="scenario">As a junior credit analyst, you&#39;re asked to assess risk in a portfolio that holds CoreWeave bonds and Stargate-linked loans, days after reading about CoreWeave&#39;s earnings and SocGen&#39;s reported discounted loan sale.</p>
+    <p class="ask">Which combination of facts should most worry you about repayment risk in this portfolio?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>CoreWeave&#39;s revenue grew 168% year-on-year</span></button></li><li><button type="button" data-i="1"><b>B</b><span>CoreWeave&#39;s bond yields near 16% and a bank reportedly selling related data centre debt at a discount</span></button></li><li><button type="button" data-i="2"><b>C</b><span>CoreWeave signed new data centre deals in Asia</span></button></li><li><button type="button" data-i="3"><b>D</b><span>CoreWeave raised its 2026 revenue guidance</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> High bond yields and a bank offloading related debt below face value both signal that the market sees meaningful risk of non-repayment, regardless of strong headline revenue growth. Revenue growth and new deals sound positive but don&#39;t by themselves address whether debt can be serviced.</p>
+        <div class="chips"><span>Bond yield</span><span>Loan sale (secondary market)</span><span>Debt maturity wall</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="0">
+    <span class="mono" style="color:var(--muted)">Scenario 3</span>
+    <p class="scenario">In an interview for an analyst role, you&#39;re asked to explain why Fractile raised $7 billion in valuation despite not having shipped a chip yet.</p>
+    <p class="ask">Which explanation best demonstrates you understand the AI inference chip market?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>Investors are betting inference demand will keep growing as AI tools scale, making efficient specialised chips valuable even pre-revenue</span></button></li><li><button type="button" data-i="1"><b>B</b><span>The valuation is meaningless because the company has no product</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Chip startups are always overvalued compared to software startups</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Fractile&#39;s valuation reflects current chip sales to major cloud providers</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: A.</b> Investors are pricing in future inference demand and the potential for a custom ASIC to beat general-purpose chips on efficiency, which explains a high pre-revenue valuation. The other options either dismiss the valuation without reasoning or invent facts not in the story.</p>
+        <div class="chips"><span>Inference</span><span>ASIC (application-specific integrated circuit)</span><span>Series C funding</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 4</span>
+    <p class="scenario">A friend asks why Nvidia&#39;s stock dropped sharply this week, citing the Jensen Huang scandal, as you discuss today&#39;s industry stories.</p>
+    <p class="ask">What&#39;s the most accurate way to explain the stock drop and its broader significance?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>Nvidia&#39;s chips suddenly stopped working, causing panic</span></button></li><li><button type="button" data-i="1"><b>B</b><span>Investor uncertainty over leadership and possible national security concerns, compounded by an already jittery AI trade, triggered the sell-off</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Nvidia lost a major contract with Apple</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Nvidia&#39;s board confirmed Huang will stay, which disappointed investors</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> The drop reflects uncertainty about leadership continuity and a potential national security review, layered on top of broader nervousness about AI valuations - not a product failure or contract loss, which aren&#39;t mentioned in the reporting. The last option is wrong because the board&#39;s decision wasn&#39;t confirmed as keeping Huang; it was reportedly weighing his removal.</p>
+        <div class="chips"><span>Board of directors</span><span>National security review</span><span>AI bubble</span></div>
+      </div>
+    </details>
+  </div>
+  
+</div>
+
+<div class="panel" id="glossary">
+  <span class="mono">Glossary</span>
+  <h2>Every concept from today</h2>
+  <dl class="gloss"><div><dt>AI agent<a href="#story-7">see story</a></dt><dd>An AI system that can take multi-step actions on a user&#39;s behalf - like searching flights, comparing prices and booking a trip - rather than just answering a single question.</dd></div><div><dt>ASIC (application-specific integrated circuit)<a href="#story-6">see story</a></dt><dd>A chip custom-built for one specific job, such as AI inference, rather than a general-purpose processor - it can be faster and more efficient for that one task.</dd></div><div><dt>Board of directors<a href="#story-0">see story</a></dt><dd>A group elected by shareholders to oversee a company&#39;s management, including the power to hire or fire the chief executive.</dd></div><div><dt>Bond yield<a href="#story-2">see story</a></dt><dd>The return investors demand for lending money via a bond; a yield of 16% signals lenders see real risk of not being repaid.</dd></div><div><dt>Capital expenditure (capex)<a href="#story-2">see story</a></dt><dd>Money spent on long-term assets like buildings or servers rather than day-to-day running costs - CoreWeave is spending tens of billions building data centres.</dd></div><div><dt>Circular financing<a href="#story-1">see story</a></dt><dd>When money flows in a loop between suppliers, investors and customers - for example, a chipmaker investing in an AI lab that then buys more of its chips - making real demand hard to measure.</dd></div><div><dt>Contract backlog<a href="#story-2">see story</a></dt><dd>The total value of work a company has already agreed to deliver but hasn&#39;t yet billed for - CoreWeave&#39;s backlog of $132.5 billion shows future revenue already lined up.</dd></div><div><dt>Contract manufacturer<a href="#story-1">see story</a></dt><dd>A company that builds products designed by others; TSMC doesn&#39;t design chips like Nvidia&#39;s, it manufactures them to order.</dd></div><div><dt>Data centre<a href="#story-4">see story</a></dt><dd>A large facility packed with servers and computing hardware - often now built specifically to train or run AI models - that requires huge amounts of power and capital.</dd></div><div><dt>Debt maturity wall<a href="#story-5">see story</a></dt><dd>A point in time when a large amount of a company&#39;s or sector&#39;s debt comes due at once, forcing refinancing - risky if borrowing costs have risen since the original loans were made.</dd></div><div><dt>Independent investigation<a href="#story-0">see story</a></dt><dd>An inquiry carried out by outside lawyers or consultants, rather than company staff, so its findings are seen as more trustworthy.</dd></div><div><dt>Inference<a href="#story-6">see story</a></dt><dd>The process of actually running a trained AI model to produce an answer or prediction, as opposed to the earlier training stage - this is where most ongoing computing cost sits.</dd></div><div><dt>IPO (initial public offering)<a href="#story-3">see story</a></dt><dd>The first time a private company sells shares to the public on a stock exchange, letting ordinary investors buy in.</dd></div><div><dt>Loan sale (secondary market)<a href="#story-4">see story</a></dt><dd>Banks often sell loans they&#39;ve made to other investors after issuing them, moving the risk off their own books; selling &#39;at a discount&#39; means for less than the loan&#39;s face value.</dd></div><div><dt>National security review<a href="#story-0">see story</a></dt><dd>A government check on whether a company&#39;s dealings - such as leaked secrets or foreign contacts - threaten a country&#39;s security interests.</dd></div><div><dt>Oversubscribed<a href="#story-3">see story</a></dt><dd>When investors want to buy more shares in an IPO than are actually on offer, often a sign of strong demand that can push the price up.</dd></div><div><dt>Preferred stock<a href="#story-1">see story</a></dt><dd>A class of shares that usually gets paid before ordinary shareholders if a company is sold or wound up, often used by large investors.</dd></div><div><dt>Refinancing<a href="#story-5">see story</a></dt><dd>Replacing an existing loan with a new one, often because the old one is due to be repaid; if interest rates have risen, refinancing can become much more expensive.</dd></div><div><dt>Series C funding<a href="#story-6">see story</a></dt><dd>A later-stage startup funding round, typically raised once a company has a working product or strong growth and needs capital to scale further.</dd></div><div><dt>Vertical AI<a href="#story-7">see story</a></dt><dd>AI built for one specific industry or task, such as travel or law, rather than general-purpose use; Odessia was a vertical AI travel tool before being folded into ChatGPT.</dd></div></dl>
+</div>
+
+<div class="panel">
+  <span class="mono">Past digests</span>
+  <ul class="archive"><li><a href="../archive/2026-11-12.html" aria-current="page">2026-11-12</a></li><li><a href="../archive/2026-11-11.html">2026-11-11</a></li><li><a href="../archive/2026-11-10.html">2026-11-10</a></li><li><a href="../archive/2026-11-09.html">2026-11-09</a></li><li><a href="../archive/2026-11-08.html">2026-11-08</a></li><li><a href="../archive/2026-11-07.html">2026-11-07</a></li><li><a href="../archive/2026-11-06.html">2026-11-06</a></li><li><a href="../archive/2026-11-05.html">2026-11-05</a></li><li><a href="../archive/2026-11-04.html">2026-11-04</a></li><li><a href="../archive/2026-11-03.html">2026-11-03</a></li><li><a href="../archive/2026-11-02.html">2026-11-02</a></li><li><a href="../archive/2026-11-01.html">2026-11-01</a></li><li><a href="../archive/2026-10-31.html">2026-10-31</a></li><li><a href="../archive/2026-10-30.html">2026-10-30</a></li><li><a href="../archive/2026-10-29.html">2026-10-29</a></li><li><a href="../archive/2026-10-28.html">2026-10-28</a></li><li><a href="../archive/2026-10-27.html">2026-10-27</a></li><li><a href="../archive/2026-10-26.html">2026-10-26</a></li><li><a href="../archive/2026-10-25.html">2026-10-25</a></li><li><a href="../archive/2026-10-24.html">2026-10-24</a></li><li><a href="../archive/2026-10-23.html">2026-10-23</a></li><li><a href="../archive/2026-10-22.html">2026-10-22</a></li><li><a href="../archive/2026-10-21.html">2026-10-21</a></li><li><a href="../archive/2026-10-20.html">2026-10-20</a></li><li><a href="../archive/2026-10-19.html">2026-10-19</a></li><li><a href="../archive/2026-10-18.html">2026-10-18</a></li><li><a href="../archive/2026-10-17.html">2026-10-17</a></li><li><a href="../archive/2026-10-16.html">2026-10-16</a></li><li><a href="../archive/2026-10-15.html">2026-10-15</a></li><li><a href="../archive/2026-10-14.html">2026-10-14</a></li></ul>
+</div>
+
+<footer>Written by Claude from the linked sources. Check the original article before quoting figures in an interview.</footer>
+</div>
+<script>
+document.querySelectorAll(".q").forEach(function (q) {
+  var correct = Number(q.dataset.correct);
+  var buttons = q.querySelectorAll(".opts button");
+  buttons.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var picked = Number(b.dataset.i);
+      buttons.forEach(function (x) {
+        var i = Number(x.dataset.i);
+        if (i === correct) x.classList.add("right");
+        else if (i === picked) x.classList.add("wrong");
+        x.disabled = true;
+      });
+      q.querySelector("details").open = true;
+    });
+  });
+});
+</script>
+</body>
+</html>
