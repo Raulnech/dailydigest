@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI Morning Brief · Friday 13 November 2026</title>
+<meta name="theme-color" content="#3A55C8">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  color-scheme:light dark;
+  --ground:#F3F4F7; --paper:#FFFFFF; --ink:#141827; --muted:#5B6275; --line:#DDE0E8;
+  --industry:#3A55C8; --industry-soft:#E6EAFA;
+  --finance:#1C7453; --finance-soft:#E1F1EA;
+  --startups:#A8561A; --startups-soft:#F7EADF;
+  --code-bg:#161A26; --code-ink:#E4E7F0;
+  --right:#1C7453; --right-soft:#E1F1EA; --wrong:#B3261E; --wrong-soft:#FBE7E5;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --ground:#0F121B; --paper:#171B27; --ink:#E8EAF1; --muted:#9AA1B4; --line:#2A3042;
+    --industry:#8FA3F5; --industry-soft:#20284A;
+    --finance:#6CCBA3; --finance-soft:#15332A;
+    --startups:#E8A06A; --startups-soft:#3A2618;
+    --code-bg:#0B0D14; --code-ink:#E4E7F0;
+    --right:#6CCBA3; --right-soft:#15332A; --wrong:#F2A29B; --wrong-soft:#3A1B19;
+  }
+}
+*{box-sizing:border-box}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.6 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;padding-inline:16px;padding-block:28px 64px}
+.wrap{max-width:700px;margin:0 auto;display:grid;gap:36px}
+a{color:inherit}
+a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var(--industry);outline-offset:3px;border-radius:4px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400}
+header{display:grid;gap:10px}
+header .date{color:var(--muted)}
+h1{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(44px,11vw,64px);line-height:1;margin:0;letter-spacing:-.01em}
+h1 em{color:var(--industry)}
+.lede{color:var(--muted);margin:0;max-width:60ch}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ground);padding-block:10px;display:flex;gap:8px;overflow-x:auto;border-bottom:1px solid var(--line)}
+nav a{flex:none;text-decoration:none;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--paper);font-size:14px}
+nav a.industry{color:var(--industry)} nav a.finance{color:var(--finance)} nav a.startups{color:var(--startups)}
+
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:14px;scroll-margin-top:64px}
+.panel h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:30px;margin:0;line-height:1.15}
+.panel > .mono{color:var(--muted)}
+.talk ol{margin:0;padding-left:20px;display:grid;gap:8px}
+.toc{display:grid;gap:14px}
+.toc h3{margin:0 0 4px}
+.toc ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.toc li a{text-decoration:none}
+.toc li a:hover{text-decoration:underline}
+
+section{display:grid;gap:22px;scroll-margin-top:64px}
+.sec-head{display:grid;gap:2px;border-top:3px solid var(--c);padding-top:12px}
+.sec-head h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:36px;margin:0;line-height:1.1;text-wrap:balance}
+.sec-head p{margin:0;color:var(--muted)}
+.sec-head .mono{color:var(--c)}
+.industry{--c:var(--industry);--cs:var(--industry-soft)}
+.finance{--c:var(--finance);--cs:var(--finance-soft)}
+.startups{--c:var(--startups);--cs:var(--startups-soft)}
+
+article{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px 20px;display:grid;gap:16px;scroll-margin-top:64px}
+article .kicker{color:var(--c)}
+article h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(26px,6vw,32px);line-height:1.15;margin:0;text-wrap:balance}
+.standfirst{margin:0;font-size:18px;line-height:1.5;color:var(--muted)}
+.body{display:grid;gap:14px;font-family:"Source Serif 4",Georgia,serif;font-size:18px;line-height:1.65;max-width:65ch}
+.body p{margin:0}
+.src{margin:0;font-size:13px;color:var(--muted)}
+.concepts{background:var(--cs);border-radius:12px;padding:16px 18px;display:grid;gap:12px}
+.concepts .mono{color:var(--c)}
+.concepts dl{margin:0;display:grid;gap:10px}
+.concepts dt{font-weight:600}
+.concepts dd{margin:2px 0 0}
+.why{display:grid;gap:4px;border-left:2px solid var(--c);padding-left:14px}
+.why .mono{color:var(--c)}
+.why p{margin:0}
+
+pre{margin:0;background:var(--code-bg);color:var(--code-ink);border-radius:10px;padding:16px;overflow-x:auto;font:14px/1.55 "IBM Plex Mono",ui-monospace,Consolas,monospace}
+.walk{margin:0;padding-left:20px;display:grid;gap:6px}
+code{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:.9em}
+.tryit{background:var(--industry-soft);border-radius:10px;padding:12px 16px}
+.tryit p{margin:0}
+
+.q{display:grid;gap:12px;border-top:1px solid var(--line);padding-top:18px}
+.q:first-of-type{border-top:0;padding-top:0}
+.scenario{margin:0;font-family:"Source Serif 4",Georgia,serif;font-style:italic;font-size:17px}
+.q .ask{margin:0;font-weight:600}
+.opts{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.opts button{width:100%;text-align:left;font:inherit;color:var(--ink);background:var(--ground);border:1px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer;display:flex;gap:10px}
+.opts button:hover{border-color:var(--industry)}
+.opts button b{font-family:"IBM Plex Mono",ui-monospace,monospace;font-weight:500}
+.opts button.right{background:var(--right-soft);border-color:var(--right)}
+.opts button.wrong{background:var(--wrong-soft);border-color:var(--wrong)}
+.opts button:disabled{cursor:default}
+details{border-radius:10px}
+summary{cursor:pointer;font-weight:500;color:var(--industry)}
+.answer{display:grid;gap:8px;margin-top:10px}
+.answer p{margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:13px;padding:2px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+
+.gloss{margin:0;display:grid;gap:12px}
+.gloss dt{font-weight:600}
+.gloss dt a{font-weight:400;font-size:13px;color:var(--muted);margin-left:6px}
+.gloss dd{margin:2px 0 0;color:var(--muted)}
+.archive{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.archive a{display:inline-block;padding:4px 10px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-variant-numeric:tabular-nums;font-size:14px}
+.archive a[aria-current]{border-color:var(--industry);color:var(--industry)}
+footer{color:var(--muted);font-size:13px}
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="mono date">Friday 13 November 2026 · 14 min read</span>
+  <h1>AI Morning <em>Brief</em></h1>
+  <p class="lede">Today's AI and fintech news as short articles, with every key concept explained, a bit of Python, and a scenario quiz to check it stuck.</p>
+</header>
+
+<nav aria-label="Sections">
+  <a href="#industry" class="industry">The AI industry</a>
+  <a href="#finance" class="finance">AI &amp; finance</a>
+  <a href="#startups" class="startups">Startups &amp; funding</a>
+  <a href="#code">Code corner</a>
+  <a href="#quiz">Quiz</a>
+  <a href="#glossary">Glossary</a>
+</nav>
+
+<div class="panel talk">
+  <span class="mono">If you only read one thing</span>
+  <h2>Three things to be able to say today</h2>
+  <ol><li>Jensen Huang&#39;s shock resignation as Nvidia&#39;s CEO leaves the AI chip giant in the hands of CFO Colette Kress while Congress still wants answers on national security risk.</li><li>Cisco and Cerebras earnings show the AI infrastructure boom still has room for challengers to Nvidia&#39;s dominance.</li><li>Anthropic&#39;s oversubscribed IPO is testing investor appetite for AI stocks at the worst possible moment for confidence.</li></ol>
+</div>
+
+<div class="panel">
+  <span class="mono">In today's brief</span>
+  <div class="toc">
+  
+    <div class="industry"><h3 class="mono" style="color:var(--c)">The AI industry</h3>
+      <ul><li><a href="#story-0">Jensen Huang resigns as Nvidia CEO after affair scandal, CFO Kress steps in</a></li><li><a href="#story-1">Cisco shares jump as AI infrastructure revenue guidance doubles to $9bn</a></li><li><a href="#story-2">Cerebras stock surges 17% on new Microsoft deal and tripled revenue forecast</a></li></ul>
+    </div>
+  
+    <div class="finance"><h3 class="mono" style="color:var(--c)">AI &amp; finance</h3>
+      <ul><li><a href="#story-3">Anthropic&#39;s IPO oversubscribed nearly six times as Wall Street tests AI appetite</a></li><li><a href="#story-4">Alphabet draws $7bn in orders for Hong Kong and Singapore bond sale to fund AI build-out</a></li><li><a href="#story-5">ECB: AI investment now drives a quarter of euro zone credit growth</a></li></ul>
+    </div>
+  
+    <div class="startups"><h3 class="mono" style="color:var(--c)">Startups &amp; funding</h3>
+      <ul><li><a href="#story-6">LangChain more than doubles valuation to $3bn in $300m round led by CapitalG</a></li><li><a href="#story-7">Mirendil raises $1bn Series A to fund frontier AI research</a></li></ul>
+    </div>
+  
+  </div>
+</div>
+
+
+<section id="industry" class="industry">
+  <div class="sec-head">
+    <span class="mono">Section 1</span>
+    <h2>The AI industry</h2>
+    <p>Big labs, big tech and the direction of travel.</p>
+  </div>
+  
+  <article id="story-0">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Jensen Huang resigns as Nvidia CEO after affair scandal, CFO Kress steps in</h3>
+    <p class="standfirst">The only chief executive Nvidia has ever had quits after a board probe into multiple alleged affairs, including one with a suspected Chinese spy.</p>
+    <div class="body"><p>Jensen Huang has resigned as chief executive of Nvidia, the chipmaker he co-founded in 1993 and built into the world&#39;s most valuable AI hardware company. Nvidia&#39;s board met on Wednesday night after reports surfaced of a second alleged affair, this time with an executive who reported directly to Huang, and announced his departure the next morning. Chief financial officer Colette Kress has been installed as interim CEO while the board, now chaired for the first time by Harvey Jones, continues its investigation.</p><p>The scandal began with Huang&#39;s acknowledged relationship with Alice Huang, an executive at AI compute firm Megaspeed who US intelligence reportedly identified as working for China&#39;s Ministry of State Security. A second alleged affair, with Nvidia vice president Kimberly Powell, reportedly involved a non-disclosure agreement being sought from a bystander who recorded the pair together. Reuters later reported a third alleged relationship with another Nvidia employee, and the stock closed down 4.3 percent on the news.</p><p>Senate Minority Leader Chuck Schumer says Huang must still face Congress to explain what national security risks Nvidia and the Trump administration knew about. Huang had made himself central to US AI policy, including talks over Chinese access to advanced chips, and had no succession plan in place. President Trump has already floated former Apple boss Tim Cook as a replacement, while reaction from tech leaders has split between calling the resignation an overreaction and a necessary response to a serious conflict of interest.</p></div>
+    
+    <p class="src">Sources: <a href="https://www.theverge.com/ai-artificial-intelligence/1030422/nvidia-jensen-huang-ai-china-alice-huang" target="_blank" rel="noopener">The Verge</a> · <a href="https://www.theverge.com/ai-artificial-intelligence/1032028/read-nvidias-internal-emails-jensen-huang" target="_blank" rel="noopener">The Verge</a> · <a href="https://news.google.com/rss/articles/CBMidEFVX3lxTE1ZNXBiTEpIYWNHT2hlMWVfSXJ1UWd6eEVKUW1URllFTkpERzVyRWpBOEgyaU90Sk5KVm9VZXRseUlXSEswU1JSNHhzeVhRN2lxQXRUbVk1cTBLZXRjSHFNWTNQRWNXb2FrQno3TzNzQTg2UXA1?oc=5" target="_blank" rel="noopener">NVIDIA Newsroom</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Market capitalisation</dt><dd>This is the total value of a company&#39;s shares, calculated by multiplying share price by the number of shares outstanding. Nvidia&#39;s market cap has topped $4 trillion, making it one of the most valuable companies ever.</dd></div><div><dt>Interim CEO</dt><dd>An interim CEO temporarily runs a company, often during a crisis or search for a permanent replacement, without the board committing to keep them long-term.</dd></div><div><dt>Congressional oversight</dt><dd>Reminder: this is when lawmakers question or investigate companies and government agencies to check they&#39;re acting legally and safely, as Schumer wants to do with Huang.</dd></div><div><dt>NDA (non-disclosure agreement)</dt><dd>Reminder: a legal contract that stops someone sharing certain information, often used to keep embarrassing or sensitive details private.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Governance, compliance and investor-relations roles suddenly matter a lot at AI companies, and the episode is a reminder that even dominant firms are vulnerable to leadership shocks. In interviews, being able to discuss succession planning and board oversight shows you think beyond the technology itself.</p></div>
+  </article>
+  
+  <article id="story-1">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Cisco shares jump as AI infrastructure revenue guidance doubles to $9bn</h3>
+    <p class="standfirst">The networking giant, late to the AI boom, says hyperscaler demand for its gear will roughly double this fiscal year.</p>
+    <div class="body"><p>Cisco&#39;s shares rose after the company beat Wall Street&#39;s expectations in its fiscal first quarter, reporting revenue of $18.5 billion against forecasts of $18.1 billion, and adjusted earnings per share of $1.40 versus the $1.33 expected. Revenue was up 24 percent on the year, while net income more than doubled to $4.6 billion.</p><p>Cisco has spent much of the generative AI boom playing catch-up to chipmakers and cloud providers, but it now says demand from hyperscalers, the giant cloud companies like Microsoft and Amazon that run vast data centres, is accelerating. The firm raised its guidance for AI infrastructure revenue to $9 billion this fiscal year, more than double what it made last year. CEO Chuck Robbins said customers are turning to Cisco to help them &#34;scale, secure and optimise&#34; their networks for what he called the &#34;agentic AI era.&#34;</p><p>For the current quarter, Cisco is forecasting revenue of $18 billion to $18.2 billion and adjusted earnings per share of $1.34 to $1.36, both ahead of analyst estimates. The results land on a day when the AI industry&#39;s biggest name, Nvidia, is dealing with a leadership crisis, underlining that the AI buildout has many beneficiaries beyond chipmakers.</p></div>
+    
+    <p class="src">Sources: <a href="https://www.cnbc.com/2026/11/12/cisco-csco-q1-2027-earnings.html" target="_blank" rel="noopener">Tech</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Earnings per share (EPS)</dt><dd>This is a company&#39;s profit divided by its number of shares outstanding, used to judge how profitable a company is per share owned. If a firm earns $140 million profit and has 100 million shares, EPS is $1.40.</dd></div><div><dt>Hyperscaler</dt><dd>A hyperscaler is a company that runs enormous cloud computing operations, like Microsoft, Amazon or Google, with data centres spanning the globe. They&#39;re the biggest buyers of AI chips and networking equipment.</dd></div><div><dt>AI agent</dt><dd>Reminder: an AI agent is software that can take multi-step actions on its own, like booking a flight or managing a workflow, rather than just answering a single question.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Networking, security and infrastructure roles are becoming just as important to the AI boom as chip design, so it&#39;s worth knowing Cisco&#39;s pivot when discussing where AI job growth is happening beyond the obvious names.</p></div>
+  </article>
+  
+  <article id="story-2">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Cerebras stock surges 17% on new Microsoft deal and tripled revenue forecast</h3>
+    <p class="standfirst">The Nvidia challenger beat earnings estimates and says a newly signed Microsoft partnership will start generating revenue next year.</p>
+    <div class="body"><p>Cerebras Systems&#39; shares jumped 17 percent in after-hours trading after the company posted better-than-expected quarterly results and unveiled a new deal with Microsoft. Core revenue rose 70 percent year-on-year to $230.9 million, beating the $214.7 million analysts had expected, while the company posted an adjusted profit of 12 cents per share against a forecast loss.</p><p>CEO Andrew Feldman said long lead times and high prices for Nvidia&#39;s graphics processing units (GPUs) have created an opening for Cerebras&#39; alternative hardware. The Microsoft deal, signed in October, is expected to start showing up in revenue in the first quarter of 2027, adding to existing partnerships with Amazon and Oracle. Cerebras said it is now evaluating financing options to keep up with demand.</p><p>Looking further ahead, Cerebras forecast fourth-quarter revenue of $310 million to $330 million with a gross margin of 47 to 49 percent, both ahead of estimates, and said it expects 2027 revenue to triple to roughly $2.85 billion. Even so, the stock remains down about 47 percent since its Nasdaq debut in May, a reminder that beating one quarter&#39;s numbers doesn&#39;t erase broader investor doubts about the AI chip race. The results landed on the same day Nvidia&#39;s Jensen Huang resigned, a coincidence that only sharpened attention on who might challenge Nvidia next.</p></div>
+    
+    <p class="src">Sources: <a href="https://www.cnbc.com/2026/11/12/cerebras-systems-cbrs-q3-earnings-report-2026.html" target="_blank" rel="noopener">Tech</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Gross margin</dt><dd>Gross margin is the percentage of revenue left after subtracting the direct cost of making a product. If a chip sells for $100 and costs $50 to make, gross margin is 50 percent.</dd></div><div><dt>Wafer-scale chip</dt><dd>Most computer chips are small squares cut from a round silicon wafer, but Cerebras makes chips the size of an entire wafer, aiming for faster performance on certain AI workloads.</dd></div><div><dt>GPU vs CPU</dt><dd>Reminder: a GPU (graphics processing unit) can do many simple calculations at once, making it well suited to AI, while a CPU (central processing unit) handles tasks one after another and is more general-purpose.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Watching how smaller chip challengers like Cerebras win hyperscaler deals helps you understand that the AI hardware market isn&#39;t a one-horse race, which is a useful point to raise if asked in an interview about competition to Nvidia.</p></div>
+  </article>
+  
+</section>
+
+<section id="finance" class="finance">
+  <div class="sec-head">
+    <span class="mono">Section 2</span>
+    <h2>AI &amp; finance</h2>
+    <p>Where Wall Street and the City meet AI, as users and as funders.</p>
+  </div>
+  
+  <article id="story-3">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>Anthropic&#39;s IPO oversubscribed nearly six times as Wall Street tests AI appetite</h3>
+    <p class="standfirst">The ChatGPT rival&#39;s stock market debut arrives just as Nvidia&#39;s leadership crisis rattles confidence in AI investing.</p>
+    <div class="body"><p>Anthropic&#39;s initial public offering has reportedly been oversubscribed by nearly six times, suggesting strong investor demand for shares in the AI lab behind the Claude chatbot. The listing is being closely watched as a test of whether public markets still have an appetite for AI stocks after a volatile few weeks.</p><p>Commentators have reportedly asked whether Anthropic could become &#34;the new Nvidia&#34; for investors seeking AI exposure, though the comparison comes amid a broader stock market pullback in the sector. The timing has been complicated further by Jensen Huang&#39;s abrupt resignation as Nvidia&#39;s chief executive, which has added fresh uncertainty to how investors view AI-related listings right now.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMi7AFBVV95cUxPbXRpX1lmNi1RcURLcWR4cFpTVUZERVpFWlcwUUR3VDZCbEdGcDJxQnY1RVI4S3JvUXl6TDJBMFdqTzN3c2wzbUJUb0M1eDVoSHBmVGt1bGNycXo2bjluN21Kbzc1bF9pWWRGRHJFZngtS1NBTHJ4LW9fenVRM2NiQXBXeWxQYkc5VWdCdy02Zzl6XzZJV3QtRUZ0Z05sV0JGVERSX3RINGxDZkRnc2kwYm5LUF96VkxZYlU3eHpiM2dxeXcyS0ZhUmlxbWR6TnNaYXRvSnN4eVVoSGwxZWR4RUZ4VmhhemJNX1czStIB5gFBVV95cUxPUDFsel9ua0t2cC0ta3ZjY0M2cDJsUkRBOVBKLTJmQ1otVWNETmdiSFdHNl9BZHU4X1hhM1ItdElqS2RtSFF3LU9kbmVuYV9GODZCQjB5MkQzV1dLOUktQTFxVThNc3gwVnpjSllOT1ljd1c1YlVlREtxVERHY1Q1RWE3bTJRYmxlb3JuTUlNaFM5U1JiME83WG5YWjJWMjZpVTVyWXdkVEFSMktlU2RFMU9CN3AxSUgtRzJGWWdTVXJkdDdrS3hFdEZTQ214NHV6ekh2QTlhOVcxeWFyUnBtMVdRZFFVdw?oc=5" target="_blank" rel="noopener">The Economic Times</a> · <a href="https://news.google.com/rss/articles/CBMihwJBVV95cUxPTVJBQjJUbG4yQzNuYVg2djdYazhGU2NQQ1Bvalk5T0ZqWUVUTENhZnNXcUNfQ3pqVkt5ajcxejZFWWpvNmtsMWpYOG9vMDBTSXBqRksxZmVRRTI0ZWJhRGRrMGk5OTlCanNlcldqSERtdDFvc2RGaEdIelh3NHNiYjZ5SkdudU9fd0ZMNkRYbjZ6UTNyUnBJejEzRDZvNVFIS1BYcWYwUGcyYjNuMU1BV0lFczFvVmFPQmtWdVFJeXpjSUlPNXZmMUpNaWJEdzV6bWIxTEZXVDdnUVpmd212Z3dvOGdXWEhEUVFpdXFTSFZCOERWWWFDcGpTbDNFYXJRbkRrYUlMUdIBjAJBVV95cUxPakV4VjlWM1NRek1QNU9kUzVNVzA0ejN6QlFIeEMyQ215am9FZDJwVUNYR1dRcFpseFVyNDU2dUtBeEhpVzVSaEZqZ0lHM18zM0NSR0VKYU9TYThwYi04YjdRblNyd1hxcEhXRlBsRmc4Q1RydS1OdFRvcXpSWkY3SUNIbVZLZEk2S0FxT0NTZmtmZUM0NnBuSUNUZXI2Y2hlMTZHNFhucFlaSVZheHRtRUVYcWhBUWY5ZXh2S0U2Wk5nOVZWa2V6WWdBdTRVeTctc0FuMktvd1FVZHJ2cEF4YW9SUncwcFIteE50RGZuZ2dKckQtNGgyQjYzUlh5WWtfRkZZMTlrdXBDM29f?oc=5" target="_blank" rel="noopener">Livemint</a> · <a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxOaGgwMUQ0a24yanhHM3hQZ0owamNHdC1PRGwtV2M2d2x2bks3Z2hWbWpGZ1FmbE5jRXZJR2hmLUUtLU1IRnNYU2EtNWU2UzJrQVFRQ3UwaVJ6SF8wS0RCUDlxVUdfYm9NUnNOMHZPUUc5MDQ1dUxjNjB0VThfcURQM3JXWQ?oc=5" target="_blank" rel="noopener">Fortune</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Oversubscribed</dt><dd>Reminder: an IPO is oversubscribed when investors want to buy more shares than are actually being offered, a sign of strong demand that can push the price up on debut.</dd></div><div><dt>IPO (initial public offering)</dt><dd>Reminder: an IPO is the first time a private company sells shares to the public on a stock exchange, letting ordinary investors buy in.</dd></div><div><dt>AI bubble</dt><dd>Reminder: this is the worry that AI company valuations have risen faster than their actual profits justify, meaning prices could fall sharply if expectations aren&#39;t met.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>If you&#39;re interested in equity research or investment banking, Anthropic&#39;s IPO is a live case study in how to judge whether a hot sector&#39;s valuations are justified by real revenue.</p></div>
+  </article>
+  
+  <article id="story-4">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>Alphabet draws $7bn in orders for Hong Kong and Singapore bond sale to fund AI build-out</h3>
+    <p class="standfirst">Google&#39;s parent company reportedly tapped Asian debt markets as it keeps spending heavily on AI infrastructure.</p>
+    <div class="body"><p>Alphabet has reportedly drawn around $7 billion in investor orders for a bond sale in Hong Kong and Singapore, as the Google parent taps Asian debt markets to help fund its ongoing AI spending. The move adds to a wave of borrowing by big tech companies seeking cash for data centres and chips without having to sell more shares.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMiwgFBVV95cUxNek4yVU1iUTh4U3BzQmRRNEZRRl9SVTJOYTR1UFoxZFRrd1F6RjEzcDUyajdPcGNGdnlBbDI1OTVTU3NFeXJnZC1BdEhyY2ZNWWowQVVVTDNqUWJhTUJQaXp5dzlQRUxLaGVtWXA5SFJSZURvdkhVcXhBUkVzMVRxaXhwaDhiMWI1dW5tWTRPQ1I3SVU5alpvYlRkSnl5SGZPN19ONzltVWFqWmJSRlRNeEdQcUhhVXROeUpSdFkxRWtKQdIBxwFBVV95cUxQaHZYUmhUdWFuV3l3OGxSOUFoNzMwdTY3elpaaEEzaDlFMlNiR2gxTUY2LXJOV3Nzci1oOWd5N3p5QlFXZUF2LXl5MlhNNjFZM2hzR1IyLWJsSHJjRTBBSHpxY1dGRWcyXzN6UnBFSUd0V3ZxSzkxbGQySDRSYTJBOHpvOFVnMnREMmxycnBLRXNDTGRCQloyOC0tYnN1bUZtYlRRN0R1R2VQRHJlMlk1Zm9GamRHWEYyMXlpZzRVbnlzS25seXlN?oc=5" target="_blank" rel="noopener">Simply Wall St</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Bond</dt><dd>Reminder: a bond is a loan investors make to a company or government, which pays back the amount borrowed plus interest over an agreed period.</dd></div><div><dt>Capital expenditure (capex)</dt><dd>Reminder: capex is money a company spends on long-term assets like buildings, equipment or data centres, rather than day-to-day running costs.</dd></div><div><dt>Debt market</dt><dd>A debt market is where companies and governments sell bonds to investors to raise money, as an alternative to issuing shares.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Big tech&#39;s growing reliance on debt to fund AI spending is a key thread connecting today&#39;s stories about circular financing and balance sheet risk across the industry.</p></div>
+  </article>
+  
+  <article id="story-5">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>ECB: AI investment now drives a quarter of euro zone credit growth</h3>
+    <p class="standfirst">Europe&#39;s central bank says lending tied to AI projects has become a significant driver of new borrowing across the bloc.</p>
+    <div class="body"><p>The European Central Bank has reportedly said that AI-related investment now accounts for roughly a quarter of all new credit growth across the euro area. The finding highlights how deeply AI spending, from data centres to chips, is becoming woven into the wider European banking and lending system, not just confined to a handful of tech giants.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMi2gFBVV95cUxPNmhWQkd1MTd2Skl1LU5rM2ZZck1Qb0NyYlZURHplQVVEbjlIdGZpZHpWaXBpWHcwQ0RZN1Jja0hFdmdVTjFyWmxEeDg1M3hCWXRFNGRLX1pKM19PR093MV9YMkw4NW00Yk0wbElXVllobDBDM1hDUDdzSHdMM0t4UE9FRkU3OTgwMVRlalNURDNxb0FrT0xtVjRlY21WMlU0WWYzQzg0TUdtV1pPUHhLaTBjakFHZDJWQUwzUkptM3V5aXR4RXAwblRoSzlmNEs3ZExSZ2lmVFhzZ9IB3wFBVV95cUxPRmZiakdFV0xnNV8xbE5GX1d0ZDNDaVJoR2piTUZkWFZSam1SVmZuRUdKbHZSZGtvMnprWUFTdHpETEJWcFBocnRtTXkyY3E1dFp5OTI3bVpBczQ5NjIyazI5bjlBUjVTUTZ4WkFhVGpvQkg3ajE0R0g1RDhiUFlGSmYyMGdmN0dqNklHbXkyc29aODBfdXZVbjl2ZU4wSWQ2U1ptSjRVNGFFS2RTR0w4SVF5V1FmOTM0dTNJdWQzeUlEcGhqclFEdWhtNmU0d3hhZjRVeVRuYldRclFpVUMw?oc=5" target="_blank" rel="noopener">The Economic Times</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Central bank</dt><dd>Reminder: a central bank, like the European Central Bank, manages a currency and oversees the banking system, including tracking how fast lending across the economy is growing.</dd></div><div><dt>Credit growth</dt><dd>Credit growth measures how much more borrowing is happening across an economy compared to before, which can signal rising investment or rising risk.</dd></div><div><dt>AI bubble</dt><dd>Reminder: the worry that AI-linked valuations and lending have outpaced the actual profits being generated, meaning a slowdown could hit banks as well as tech firms.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>When central banks start tracking AI&#39;s share of credit growth, it shows regulators are watching for systemic risk, a theme worth mentioning if asked about regulation in a banking interview.</p></div>
+  </article>
+  
+</section>
+
+<section id="startups" class="startups">
+  <div class="sec-head">
+    <span class="mono">Section 3</span>
+    <h2>Startups &amp; funding</h2>
+    <p>Who raised, how much, and what investors are betting on.</p>
+  </div>
+  
+  <article id="story-6">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>LangChain more than doubles valuation to $3bn in $300m round led by CapitalG</h3>
+    <p class="standfirst">The popular framework for building AI agents raised fresh funding from Alphabet&#39;s growth-equity arm.</p>
+    <div class="body"><p>LangChain, the startup behind a widely used open-source framework for building AI agents, has reportedly raised $300 million in a round that more than doubles its valuation to $3 billion. The round was led by CapitalG, the growth-equity investment arm of Alphabet, Google&#39;s parent company.</p><p>LangChain&#39;s tools help developers chain together calls to large language models, giving chatbots memory, access to external data and the ability to take multi-step actions. The scale of this round, more than doubling its valuation in a short period, shows how much investor money is still chasing companies that sit underneath the big AI labs rather than building their own models from scratch.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMi1AFBVV95cUxNVU5jVDYydkRMUzMwY0Y2aUhpUXZicTk2endESjMwM3JXeUtfaG0tYS1YQlpYSTdPV1NFTE9fMjRmZ1BWMEw3bENOQlpyWkR6dWtOUnNqb2N1QVlmWDVBUzFQVGl1VGJWMVVna2VUVnpXdDlnd3RSX0NhNkNYdUVMQXpKc3loNmo2ZElLZWFWMGI5VFFSSmtMaV85c0lDQ1h3Z1NUQWFtN2w5eUh1THJKMDU1LVBiYktaQ3hPc3J6U3JOa3hwVmJ4eEhPZC13U3FYajd2Ng?oc=5" target="_blank" rel="noopener">TradingView</a> · <a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxQTTExQ3Y3Q3JBV2Z1WGtJbmpzZWdJbTV1UjlDZ21BenEzUWhOTW1pc2doRlhDRktWZFNDT1lhWjROcE9UZUQzQmQxRFBYZW9kYTBockNoUEtzWFhVbDBTb2pZNXFpSnAtU2tMRVdySzA5Y2d4bmY1WFhvQV9Fd3dTbHVmTFhNNXVxcEN2UXFrenhpUy1jdVJ0UHVUUTRpS2djV3lZZ185MXB3QQ?oc=5" target="_blank" rel="noopener">WSJ</a> · <a href="https://news.google.com/rss/articles/CBMisAFBVV95cUxNcE05by1ET2NIY0ZuM01zeC1IV2ZLSVFHNkx3WUlVdTQwWUtLT0lUWW9kTWxFLWFSNUhLMUhUY2ZRLXZFX2Q4RDM5bkI5ZlZiTVJ4T0o1RUI2MDkyWkdlZUlFTzB4TXpNajhTZDR5SGI3OW11elNaQXc4Q3lEcGZOekU0a2F0NXRFb2hSME1FVUNHSEZOQ3J1cGFUTmE2c1p6eEhTTGxOUGpwa1NGcTBvbw?oc=5" target="_blank" rel="noopener">MLQ.ai</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Funding round</dt><dd>Reminder: a funding round is when a startup sells a stake in itself to investors in exchange for cash, usually named by stage such as Series A or Series C.</dd></div><div><dt>Valuation</dt><dd>Reminder: a valuation is what investors agree a company is worth, usually estimated from the price paid for a small stake multiplied up to the whole company.</dd></div><div><dt>Open source</dt><dd>Open-source software has its underlying code made publicly available for anyone to use, modify or build on, which is how LangChain built such a large developer following.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>LangChain&#39;s rise shows that tooling for AI agents, not just the models themselves, is becoming a huge business, useful to know if you&#39;re considering roles building on top of LLMs rather than training them.</p></div>
+  </article>
+  
+  <article id="story-7">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>Mirendil raises $1bn Series A to fund frontier AI research</h3>
+    <p class="standfirst">The unusually large early-stage round reflects investors&#39; willingness to write giant cheques for AI labs before they&#39;ve built a track record.</p>
+    <div class="body"><p>Startup Mirendil has reportedly raised $1 billion in a Series A funding round aimed at bringing frontier AI research and development capabilities to more teams. A round of this size is highly unusual at the Series A stage, which typically involves far smaller sums for young companies still proving their idea works.</p><p>The scale of the raise underlines how much capital investors are prepared to commit early to companies positioning themselves as frontier AI labs, even before widespread public details about products or customers.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMilwFBVV95cUxNQUszbXRZb1A0eEh2SVFYWHBhZjVxdEhqOG9zU1BrSHY2Tno2c3F4a29FM3Q1bFF0TVh0ZGp4cnVob25PcXRiZWNsSW0yTFRtTGZ2MTl1ODhOYzJ6SEVzeENFcmxIaFpNTW9McVJKakEzRFhqc1RfTlNXUzRTS3F3WHVyeTRoYWo2M1Y0a0NmVlF0RmdmdkNj?oc=5" target="_blank" rel="noopener">Unite.AI</a> · <a href="https://news.google.com/rss/articles/CBMiO0FVX3lxTE5tTkdlQUV4eG8zdmd0U00wZ0dsZzlaZDNRSzNaWjZteHExejZhTndmZ2FlZ1FFbWZuME9n?oc=5" target="_blank" rel="noopener">Howl.Link</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Series A funding</dt><dd>Reminder: Series A is typically a startup&#39;s first major round of venture funding after smaller seed investment, usually used to build out a product and team.</dd></div><div><dt>Frontier AI lab</dt><dd>Reminder: a frontier AI lab is a company trying to build the most advanced, cutting-edge AI models, such as OpenAI, Anthropic or Google DeepMind.</dd></div><div><dt>Mega-round</dt><dd>A mega-round is an unusually large funding round, often hundreds of millions or billions of dollars, far above what&#39;s typical for a startup at that stage.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Billion-dollar Series A rounds show investors betting heavily on unproven AI labs, a trend worth flagging in any discussion about whether startup valuations are getting ahead of actual results.</p></div>
+  </article>
+  
+</section>
+
+
+
+<div class="panel" id="code">
+  <span class="mono">Code corner</span>
+  <h2>Projecting Cerebras&#39; revenue growth with compound annual growth rate</h2>
+  <p class="src">Based on: <a href="#story-2">Cerebras stock surges 17% on new Microsoft deal and tripled revenue forecast</a></p>
+  <p style="margin:0">Cerebras said it expects 2027 revenue to roughly triple. Let&#39;s use Python to check what growth rate that implies and project a few years forward.</p>
+  <pre><code>def project_revenue(start_revenue, growth_rate, years):
+    results = []
+    revenue = start_revenue
+    for year in range(1, years + 1):
+        revenue = revenue * (1 + growth_rate)
+        results.append((year, round(revenue, 1)))
+    return results
+
+# Cerebras 2026 guidance midpoint (approx, in $ millions)
+revenue_2026 = (310 + 330) / 2 * 4  # rough annualised estimate
+
+# Implied growth rate to triple by 2027
+triple_growth_rate = 3 ** (1/1) - 1  # one year to triple
+
+projection = project_revenue(revenue_2026, triple_growth_rate, 3)
+
+print(f&#34;Estimated 2026 revenue: ${revenue_2026:,.1f}m&#34;)
+for year, rev in projection:
+    print(f&#34;Year {year}: ${rev:,.1f}m&#34;)</code></pre>
+  <span class="mono">Line by line</span>
+  <ol class="walk"><li>def project_revenue(...): defines a reusable function that compounds revenue growth year by year, like interest compounding on savings.</li><li>revenue = revenue * (1 + growth_rate) increases revenue by a fixed percentage each year, the same maths used for compound interest.</li><li>revenue_2026 estimates a rough annual figure by averaging Cerebras&#39; quarterly guidance and multiplying by four quarters.</li><li>triple_growth_rate works out what single-year growth rate would be needed to triple revenue, using Python&#39;s exponent operator **.</li><li>The for loop at the bottom calls the function and prints out a simple year-by-year projection table.</li></ol>
+  <div class="tryit"><p><b>Try it:</b> Change growth_rate to model a slower scenario, such as revenue doubling instead of tripling, by replacing &#39;3 ** (1/1) - 1&#39; with &#39;2 ** (1/1) - 1&#39;, and see how the projected figures change.</p></div>
+</div>
+
+<div class="panel" id="quiz">
+  <span class="mono">Quiz · apply today's concepts</span>
+  <h2>What would you do?</h2>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 1</span>
+    <p class="scenario">You&#39;re in a job interview for a compliance analyst role, and the interviewer asks you to explain why Nvidia&#39;s board needed to act quickly after the Huang allegations surfaced.</p>
+    <p class="ask">Which concept best explains why the board&#39;s swift investigation and resignation mattered beyond Huang&#39;s personal life?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>It was purely a public relations issue with no business consequences</span></button></li><li><button type="button" data-i="1"><b>B</b><span>The alleged affair with a suspected spy raised national security and conflict-of-interest concerns tied to Nvidia&#39;s role in AI chip policy</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Nvidia&#39;s market capitalisation was too low to justify an investigation</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Boards are legally required to replace any CEO who has an affair</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> Because Nvidia is central to AI chip export policy and national security discussions, an alleged relationship with a suspected foreign intelligence operative creates real conflict-of-interest and security risks, not just reputational ones. The first option wrongly dismisses the business stakes, and the other two misstate how boards and valuations work.</p>
+        <div class="chips"><span>Conflict of interest</span><span>National security review</span><span>Board of directors</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 2</span>
+    <p class="scenario">As a first-week analyst at a corporate bank, you&#39;re asked to summarise why Alphabet chose to raise money by selling bonds in Hong Kong and Singapore rather than issuing more shares.</p>
+    <p class="ask">What&#39;s the main advantage of using a bond sale instead of issuing new shares to fund AI spending?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>Bonds never need to be repaid</span></button></li><li><button type="button" data-i="1"><b>B</b><span>Selling bonds avoids diluting existing shareholders&#39; ownership, while still raising large sums for capital expenditure</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Bonds automatically increase a company&#39;s market capitalisation</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Only startups are allowed to issue bonds</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> Issuing bonds lets a company borrow money without giving investors a stake in the company, unlike selling shares, which dilutes existing owners. Bonds do have to be repaid with interest, so the first option is wrong, and the other two misunderstand what bonds do.</p>
+        <div class="chips"><span>Bond</span><span>Capital expenditure (capex)</span><span>Debt market</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 3</span>
+    <p class="scenario">In a startup pitch meeting, a founder compares their seed-stage AI company to Mirendil&#39;s $1 billion Series A and LangChain&#39;s tripled valuation, arguing their own $3 million seed round is &#39;basically the same thing&#39;.</p>
+    <p class="ask">What&#39;s the clearest flaw in the founder&#39;s comparison?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>Seed rounds and Series A rounds are identical in size and purpose</span></button></li><li><button type="button" data-i="1"><b>B</b><span>Mirendil and LangChain are both far later-stage or far larger raises than a typical seed round, so the comparison overstates how similar the deals are</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Valuations only apply to public companies, not startups</span></button></li><li><button type="button" data-i="3"><b>D</b><span>LangChain&#39;s valuation increase proves all AI startups will succeed</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> Series A and growth-stage rounds involve much larger sums and typically come after a company has shown more traction than a seed-stage startup, so comparing a $3 million seed round directly to billion-dollar raises ignores major differences in stage and risk. The other options misunderstand funding stages or valuations entirely.</p>
+        <div class="chips"><span>Series A funding</span><span>Valuation</span><span>Funding round</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 4</span>
+    <p class="scenario">Your team is deciding whether to build a customer support tool using LangChain&#39;s agent framework on top of an existing large language model.</p>
+    <p class="ask">Which statement best describes what an AI agent built with a framework like LangChain actually adds compared to a plain chatbot?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>It replaces the underlying language model entirely with new training data</span></button></li><li><button type="button" data-i="1"><b>B</b><span>It allows the system to take multi-step actions, like looking up data or calling other tools, rather than just answering a single question</span></button></li><li><button type="button" data-i="2"><b>C</b><span>It guarantees the AI will never make mistakes</span></button></li><li><button type="button" data-i="3"><b>D</b><span>It removes the need for the AI to use inference at all</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> AI agent frameworks let a language model chain together steps, call external tools or APIs, and act more autonomously, rather than just producing a one-off text response. The model still relies on inference to generate each step, so the last option is wrong, and agents don&#39;t retrain or guarantee accuracy.</p>
+        <div class="chips"><span>AI agent</span><span>Inference</span><span>Open source</span></div>
+      </div>
+    </details>
+  </div>
+  
+</div>
+
+<div class="panel" id="glossary">
+  <span class="mono">Glossary</span>
+  <h2>Every concept from today</h2>
+  <dl class="gloss"><div><dt>AI agent<a href="#story-1">see story</a></dt><dd>Reminder: an AI agent is software that can take multi-step actions on its own, like booking a flight or managing a workflow, rather than just answering a single question.</dd></div><div><dt>AI bubble<a href="#story-5">see story</a></dt><dd>Reminder: the worry that AI-linked valuations and lending have outpaced the actual profits being generated, meaning a slowdown could hit banks as well as tech firms.</dd></div><div><dt>Bond<a href="#story-4">see story</a></dt><dd>Reminder: a bond is a loan investors make to a company or government, which pays back the amount borrowed plus interest over an agreed period.</dd></div><div><dt>Capital expenditure (capex)<a href="#story-4">see story</a></dt><dd>Reminder: capex is money a company spends on long-term assets like buildings, equipment or data centres, rather than day-to-day running costs.</dd></div><div><dt>Central bank<a href="#story-5">see story</a></dt><dd>Reminder: a central bank, like the European Central Bank, manages a currency and oversees the banking system, including tracking how fast lending across the economy is growing.</dd></div><div><dt>Congressional oversight<a href="#story-0">see story</a></dt><dd>Reminder: this is when lawmakers question or investigate companies and government agencies to check they&#39;re acting legally and safely, as Schumer wants to do with Huang.</dd></div><div><dt>Credit growth<a href="#story-5">see story</a></dt><dd>Credit growth measures how much more borrowing is happening across an economy compared to before, which can signal rising investment or rising risk.</dd></div><div><dt>Debt market<a href="#story-4">see story</a></dt><dd>A debt market is where companies and governments sell bonds to investors to raise money, as an alternative to issuing shares.</dd></div><div><dt>Earnings per share (EPS)<a href="#story-1">see story</a></dt><dd>This is a company&#39;s profit divided by its number of shares outstanding, used to judge how profitable a company is per share owned. If a firm earns $140 million profit and has 100 million shares, EPS is $1.40.</dd></div><div><dt>Frontier AI lab<a href="#story-7">see story</a></dt><dd>Reminder: a frontier AI lab is a company trying to build the most advanced, cutting-edge AI models, such as OpenAI, Anthropic or Google DeepMind.</dd></div><div><dt>Funding round<a href="#story-6">see story</a></dt><dd>Reminder: a funding round is when a startup sells a stake in itself to investors in exchange for cash, usually named by stage such as Series A or Series C.</dd></div><div><dt>GPU vs CPU<a href="#story-2">see story</a></dt><dd>Reminder: a GPU (graphics processing unit) can do many simple calculations at once, making it well suited to AI, while a CPU (central processing unit) handles tasks one after another and is more general-purpose.</dd></div><div><dt>Gross margin<a href="#story-2">see story</a></dt><dd>Gross margin is the percentage of revenue left after subtracting the direct cost of making a product. If a chip sells for $100 and costs $50 to make, gross margin is 50 percent.</dd></div><div><dt>Hyperscaler<a href="#story-1">see story</a></dt><dd>A hyperscaler is a company that runs enormous cloud computing operations, like Microsoft, Amazon or Google, with data centres spanning the globe. They&#39;re the biggest buyers of AI chips and networking equipment.</dd></div><div><dt>Interim CEO<a href="#story-0">see story</a></dt><dd>An interim CEO temporarily runs a company, often during a crisis or search for a permanent replacement, without the board committing to keep them long-term.</dd></div><div><dt>IPO (initial public offering)<a href="#story-3">see story</a></dt><dd>Reminder: an IPO is the first time a private company sells shares to the public on a stock exchange, letting ordinary investors buy in.</dd></div><div><dt>Market capitalisation<a href="#story-0">see story</a></dt><dd>This is the total value of a company&#39;s shares, calculated by multiplying share price by the number of shares outstanding. Nvidia&#39;s market cap has topped $4 trillion, making it one of the most valuable companies ever.</dd></div><div><dt>Mega-round<a href="#story-7">see story</a></dt><dd>A mega-round is an unusually large funding round, often hundreds of millions or billions of dollars, far above what&#39;s typical for a startup at that stage.</dd></div><div><dt>NDA (non-disclosure agreement)<a href="#story-0">see story</a></dt><dd>Reminder: a legal contract that stops someone sharing certain information, often used to keep embarrassing or sensitive details private.</dd></div><div><dt>Open source<a href="#story-6">see story</a></dt><dd>Open-source software has its underlying code made publicly available for anyone to use, modify or build on, which is how LangChain built such a large developer following.</dd></div><div><dt>Oversubscribed<a href="#story-3">see story</a></dt><dd>Reminder: an IPO is oversubscribed when investors want to buy more shares than are actually being offered, a sign of strong demand that can push the price up on debut.</dd></div><div><dt>Series A funding<a href="#story-7">see story</a></dt><dd>Reminder: Series A is typically a startup&#39;s first major round of venture funding after smaller seed investment, usually used to build out a product and team.</dd></div><div><dt>Valuation<a href="#story-6">see story</a></dt><dd>Reminder: a valuation is what investors agree a company is worth, usually estimated from the price paid for a small stake multiplied up to the whole company.</dd></div><div><dt>Wafer-scale chip<a href="#story-2">see story</a></dt><dd>Most computer chips are small squares cut from a round silicon wafer, but Cerebras makes chips the size of an entire wafer, aiming for faster performance on certain AI workloads.</dd></div></dl>
+</div>
+
+<div class="panel">
+  <span class="mono">Past digests</span>
+  <ul class="archive"><li><a href="../archive/2026-11-13.html" aria-current="page">2026-11-13</a></li><li><a href="../archive/2026-11-12.html">2026-11-12</a></li><li><a href="../archive/2026-11-11.html">2026-11-11</a></li><li><a href="../archive/2026-11-10.html">2026-11-10</a></li><li><a href="../archive/2026-11-09.html">2026-11-09</a></li><li><a href="../archive/2026-11-08.html">2026-11-08</a></li><li><a href="../archive/2026-11-07.html">2026-11-07</a></li><li><a href="../archive/2026-11-06.html">2026-11-06</a></li><li><a href="../archive/2026-11-05.html">2026-11-05</a></li><li><a href="../archive/2026-11-04.html">2026-11-04</a></li><li><a href="../archive/2026-11-03.html">2026-11-03</a></li><li><a href="../archive/2026-11-02.html">2026-11-02</a></li><li><a href="../archive/2026-11-01.html">2026-11-01</a></li><li><a href="../archive/2026-10-31.html">2026-10-31</a></li><li><a href="../archive/2026-10-30.html">2026-10-30</a></li><li><a href="../archive/2026-10-29.html">2026-10-29</a></li><li><a href="../archive/2026-10-28.html">2026-10-28</a></li><li><a href="../archive/2026-10-27.html">2026-10-27</a></li><li><a href="../archive/2026-10-26.html">2026-10-26</a></li><li><a href="../archive/2026-10-25.html">2026-10-25</a></li><li><a href="../archive/2026-10-24.html">2026-10-24</a></li><li><a href="../archive/2026-10-23.html">2026-10-23</a></li><li><a href="../archive/2026-10-22.html">2026-10-22</a></li><li><a href="../archive/2026-10-21.html">2026-10-21</a></li><li><a href="../archive/2026-10-20.html">2026-10-20</a></li><li><a href="../archive/2026-10-19.html">2026-10-19</a></li><li><a href="../archive/2026-10-18.html">2026-10-18</a></li><li><a href="../archive/2026-10-17.html">2026-10-17</a></li><li><a href="../archive/2026-10-16.html">2026-10-16</a></li><li><a href="../archive/2026-10-15.html">2026-10-15</a></li></ul>
+</div>
+
+<footer>Written by Claude from the linked sources. Check the original article before quoting figures in an interview.</footer>
+</div>
+<script>
+document.querySelectorAll(".q").forEach(function (q) {
+  var correct = Number(q.dataset.correct);
+  var buttons = q.querySelectorAll(".opts button");
+  buttons.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var picked = Number(b.dataset.i);
+      buttons.forEach(function (x) {
+        var i = Number(x.dataset.i);
+        if (i === correct) x.classList.add("right");
+        else if (i === picked) x.classList.add("wrong");
+        x.disabled = true;
+      });
+      q.querySelector("details").open = true;
+    });
+  });
+});
+</script>
+</body>
+</html>

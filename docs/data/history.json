@@ -1,59 +1,5 @@
 [
   {
-    "date": "2026-11-06",
-    "headlines": [
-      "43 of 44 data centre moratoria pass as Democrats sweep midterms",
-      "OpenAI drops NDAs for data centre deals after election rebuke",
-      "China's Moonshot AI seeks Nvidia Blackwell access via European data centres",
-      "Mystery seller tries to offload $500 million of data centre loans",
-      "RBC: hedge funds were 'massive' sellers of AI debt",
-      "Banks brace for tighter oversight after Democrats' Congress sweep",
-      "Shield AI to buy radar maker Echodyne for $5.3bn, hitting $28.8bn valuation",
-      "Thinking Machines Lab nears $5bn round at $40bn valuation"
-    ],
-    "concepts": [
-      "Ballot measure",
-      "Regulatory risk",
-      "Data centre (reminder)",
-      "NDA (non-disclosure agreement)",
-      "Community benefits agreement",
-      "Export control evasion (reminder)",
-      "Offtake agreement",
-      "Inference (reminder)",
-      "Syndicated loan (reminder)",
-      "Loan sale (secondary market)",
-      "Hedge fund",
-      "Credit spread (reminder)",
-      "Banking regulation",
-      "Congressional oversight",
-      "Defence tech (reminder)",
-      "Dual-use technology (reminder)",
-      "Acquisition (reminder)",
-      "Funding round (reminder)",
-      "Frontier AI lab (reminder)"
-    ],
-    "links": [
-      "https://www.theverge.com/ai-artificial-intelligence/1026927/total-repudiation-the-blue-wave-is-about-to-hit-ai",
-      "https://www.cnbc.com/2026/11/05/meta-spacex-ai-data-centers-use-millions-of-gallons-of-water-a-day.html",
-      "https://www.cnbc.com/2026/11/04/data-center-ballot-measures-2026-midterm.html",
-      "https://news.google.com/rss/articles/CBMipgFBVV95cUxQY25sM2ZPZHZMTUVBd3I0a1dRUFM0bERwSzRNQTktd2dHdmtsRFoyS1d6LVZxeWFTem9GZER1aV9fOTBpU0o0Y3Z1Y0JWMEpvX2FlX1pFXzhZbktrNW9BMkF1cEZBbDlXSUZuaUR6VlR2TjhEYVJqcVJlSmFTLUZDemtuV0k5emdQNm9RQnQ0eEs1VDd0ZTcyNHNDaUJlUGFtcXVvSGNB?oc=5",
-      "https://www.theverge.com/ai-artificial-intelligence/1028454/openai-data-center-nda",
-      "https://www.cnbc.com/2026/11/05/openai-to-pay-for-data-center-power-after-election-shows-ai-concern.html",
-      "https://www.cnbc.com/2026/11/05/moonshot-ai-nvidia-chips-europe-china.html",
-      "https://news.google.com/rss/articles/CBMihgFBVV95cUxNc1U5cG1DRjdOTFJsQmw2TGUtVTY4aHpsWHNGeFZtVXpFcm1VYjFFV0JWazlRVUo1TXRRaFV0VmFQSWxVdXk5ZW9Hekt4SXVUbFhNU0hmeXkzaXZHVENzNF9nZjZqa0YtSmx2VzF2V0ZwX0czYWpvQjljZGx3R2VRdnFSQmhzQQ?oc=5",
-      "https://news.google.com/rss/articles/CBMidEFVX3lxTE5VRnh3cDJ6eTN1VU1lTjI2VFo5dUFLRm14SG5FcXRWcVFHWG51aWgzUk5MNVFUWTE2Ul9ZLXNWV05EUGhKUVZpSTVGbi1BZU5EZTRFU3BxQ3RvRXdJTUV1WWc3ZWFoaWV3cENjQk1uTkUxVndm0gF6QVVfeXFMUDh5OWZHUVR2NXRMZDJJOVdxLURfYmVheVFmdzlSSVh4UUpkMTVnUDM2cFpNc3VsdmdVVVFZbG1QWGxBM0xLdGppeUdxMHZEa29aRzhKLTVsUUJ0MGd0YnM0bUR0ejl5bmNlYV9RTXRDenVBaS1Ja0dLb2c?oc=5",
-      "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPc3l0QXB3MW5hNE1uQUpzcUloU0NuckhSWG9ZWUFDeVdLYVp0MmlVR25Lb0c0bnhlbUdzZ09TYzh2RnkxTnJnZ1d6WkFkWkw3TEMzZUlDaWJsb0xCSXBiMXhDTEZyVkhOVzJpR3prSkk1SEQ1bWcwZXN1RnUzNFlRMFNOVDhGZUNiXzVqRGMwVTVybmRkbUZiVWthVGc4aDNHTXMzMDF4SXJyODdFb0syUWRJWWFVNVEzRHlYd2tVOXQ2SzlVVWE0SA?oc=5",
-      "https://news.google.com/rss/articles/CBMickFVX3lxTE0zaDd0bmM1NjdmczZfMjhjOFpicU95ME5xWEZON3NIUkFHRFpocFhPRWwwYmZpckYwcC10RWp5X0puUXFfWWRTdnJ3SjVzcDItbGtGQVQ3a2JyZENvMWNDZGdHdVA1Rklvb3U3UldTYzBpUQ?oc=5",
-      "https://news.google.com/rss/articles/CBMisAFBVV95cUxOdnZrQ0ZFd0ZvSEh6Ui1GYXNyOGxSS2pNYVB6bFZJUjJpYUVQX3Fsa0hnczhYaS1wTTVyN1JWcEpkZmpHd2VtbE81ZHBiU09hNWMxNWJoRC1ub0RUZ0FfNEdMR3lkdS1oQVFIUEFvYTc5cDJYS0Z2Nndmb25nX1pTUHBwNC03WldVVlVSWkxLeXVVWjUzTWdZSTZwSnlGWEJKb01VTVA2ODg5NHl5bEdiUg?oc=5",
-      "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNVlFoZ24wX3JPZXBNam5vSTZmdEpLX2JMZkw4U0JuTWJEek1pS3RmRnl5TGpqTUEwejdBTnk4RFpiU2JHSVBxaXp1UzlXZ0d2eEt0cmgzZkNhVXlPbEpfTU1lai10QUN0SHFubnRyb3FCc3cxUjc0Zi1sb0ZKOVdici1nUDZqTlRucFQ5UEtDdVM3SmxrR0ZfSGtBWnVLLVBnNllONkhxMjN4Rl9ROXJxVXVGZGlLb2ZCd1U4?oc=5",
-      "https://news.google.com/rss/articles/CBMivgFBVV95cUxQSjRORUh4SzBLb1JTdk1VY09fUjNnOWQxLU5Lc3dMVklfdWhMZTl6X3UyRjVlLWFrd1ZIaHA0S19wX2IwdGF3V0FnMzRwRnExTlFwYWlsNFhKaHBRNmZNd2d6dmJBWHQ1S19KYXdVR1FGQ3Bibllfbi1FU2JfS3VEZGRTaWVlQ1RWZ2FOM0ZwUHJwR01mdkVpZTVQLU5zcXFSMHQyOUNINTVUSEF1cVlDamtCTGFTc2Y5S3ZJakdR?oc=5",
-      "https://news.google.com/rss/articles/CBMiswFBVV95cUxNdk1nalhoNlcyMnE1YzF3NDZkaXZ2dE83ZlEyOUN1R05HTkVkZDI5NFVqeGVxdWFCZ203TXA2cTlROWhHcEdFRU1Lc1h6LWZ1cDhrYVFhQjZ6RmFqQnZ4TlhnTXZNSF9zbENUS0twUy1uN1Q0Z2E5bGxsNllQNF9qejdGVmRfU1Bod19hb0tHbEstNHNKeV9JeVpuM2JfUVM0T0Y3UUVfRG51M3AzNUJTcHp0SQ?oc=5",
-      "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQVlJZTU9SSDVhZUNESmZrWlh0UkxTZW5xYmNFRDloSWpMTnRqUFVJX0hOV3dXMERpWDlZSmJ2dl9HN2pIdEduSHk5Y2FoWVgyc3VlVlRCTFdoWGx5dnVLSDFZNDUyNEpzUU5MWlBRSEtUSnRMdTlYVDVyZ0duaXV6RmpjTVdES1RiNnZDQjktYV9GR2FZQi1IRUZScUFHN0Q5dDRQZ3FlYnMydw?oc=5",
-      "https://news.google.com/rss/articles/CBMiigFBVV95cUxPdVhmajJUb3BMSk43Q1VtVGNNSDJsbzJQQ3R1bm0xTTQ5T2xoNmNOYjJwWHNyam9XOVB3UjhRVHhDb1FtQUwzbk0wbERyMGVIUTNFdEJ4X0wwUm1lRnh1RmRqSE45SjR0eEwxMGExb0ZmOU5XLWwzVjFtMTdKZVpDOG8tcldQREZJbUE?oc=5",
-      "https://news.google.com/rss/articles/CBMilwFBVV95cUxQZ3RIWjQyVzNMbGh6TXRFLWFJNVJWNjhuaVMySWZYendJb3BsbURidWIwbm9vMkNvZEhSQ2xDQ1d6V0ZnOU1VYWYwc2dNNTA2UDBfanJFTnNfLWVVcldHX21jWklUQi1uN2RkTU0wM3hYTksxZldMd01lRXJpTGZNT0hWbEpZeTVmTnFBQ1QwRml0MVBkc1VF?oc=5"
-    ]
-  },
-  {
     "date": "2026-11-07",
     "headlines": [
       "OpenAI reportedly raises $11bn at a $1.25 trillion valuation",
@@ -417,6 +363,63 @@
       "https://news.google.com/rss/articles/CBMiswFBVV95cUxPSDMtaDQ0a0lpYkVDTm9sUWd1MXFIblM0VllOdURYNFZDQ3Vhc29vTE1RdVd3bnB2cUhIbzVZNThFd3d1NDhER2N0S2huci10WHJKNnJtRmFQZW1jU20xbnJmb0NfcUdZRDJqYVBRSWYybkJrNVV5N1VWaHZCTWJvSjZMMDh6cU1tX1ZEdnlZbzVyYm9ob3k0cnJmNUdaUDFvNDEtTU5QaHdYa0Y2OUlCLXozUQ?oc=5",
       "https://news.google.com/rss/articles/CBMinAFBVV95cUxQSzRQdDM4QWUtSVFERGtnVS1rQ3RrbzRwdWtzSnNKRm16NFlES3F4LXNESmtHR0tWdEl3RzU1R3E1VjUzd3d2eEl4VXlZVVMzZXN6djcxZEZlOU1oMGhIN1p4TzlwTW1UWWlQVEZMQmI1anhTcUtGbmQwb3JZSy05aVBCMEFFcmMyMGV3V2FGbFpaaTZreUw0eEZvSlM?oc=5",
       "https://news.google.com/rss/articles/CBMickFVX3lxTE1GTXBtLXhZY052UHJuVm9WcEZYTjI1YWs2Q2poSTg5T0xMRFhxUFJUcXRRMm9rdmh1RFNFc0lNd2FTRGlkOW04RnZCdkN5cjduZjhzemtBUnVPalhMcXg1Q1hoY2M2T2dvVFVUVnJTQ2VfUQ?oc=5"
+    ]
+  },
+  {
+    "date": "2026-11-13",
+    "headlines": [
+      "Jensen Huang resigns as Nvidia CEO after affair scandal, CFO Kress steps in",
+      "Cisco shares jump as AI infrastructure revenue guidance doubles to $9bn",
+      "Cerebras stock surges 17% on new Microsoft deal and tripled revenue forecast",
+      "Anthropic's IPO oversubscribed nearly six times as Wall Street tests AI appetite",
+      "Alphabet draws $7bn in orders for Hong Kong and Singapore bond sale to fund AI build-out",
+      "ECB: AI investment now drives a quarter of euro zone credit growth",
+      "LangChain more than doubles valuation to $3bn in $300m round led by CapitalG",
+      "Mirendil raises $1bn Series A to fund frontier AI research"
+    ],
+    "concepts": [
+      "Market capitalisation",
+      "Interim CEO",
+      "Congressional oversight",
+      "NDA (non-disclosure agreement)",
+      "Earnings per share (EPS)",
+      "Hyperscaler",
+      "AI agent",
+      "Gross margin",
+      "Wafer-scale chip",
+      "GPU vs CPU",
+      "Oversubscribed",
+      "IPO (initial public offering)",
+      "AI bubble",
+      "Bond",
+      "Capital expenditure (capex)",
+      "Debt market",
+      "Central bank",
+      "Credit growth",
+      "AI bubble",
+      "Funding round",
+      "Valuation",
+      "Open source",
+      "Series A funding",
+      "Frontier AI lab",
+      "Mega-round"
+    ],
+    "links": [
+      "https://www.theverge.com/ai-artificial-intelligence/1030422/nvidia-jensen-huang-ai-china-alice-huang",
+      "https://www.theverge.com/ai-artificial-intelligence/1032028/read-nvidias-internal-emails-jensen-huang",
+      "https://news.google.com/rss/articles/CBMidEFVX3lxTE1ZNXBiTEpIYWNHT2hlMWVfSXJ1UWd6eEVKUW1URllFTkpERzVyRWpBOEgyaU90Sk5KVm9VZXRseUlXSEswU1JSNHhzeVhRN2lxQXRUbVk1cTBLZXRjSHFNWTNQRWNXb2FrQno3TzNzQTg2UXA1?oc=5",
+      "https://www.cnbc.com/2026/11/12/cisco-csco-q1-2027-earnings.html",
+      "https://www.cnbc.com/2026/11/12/cerebras-systems-cbrs-q3-earnings-report-2026.html",
+      "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPbXRpX1lmNi1RcURLcWR4cFpTVUZERVpFWlcwUUR3VDZCbEdGcDJxQnY1RVI4S3JvUXl6TDJBMFdqTzN3c2wzbUJUb0M1eDVoSHBmVGt1bGNycXo2bjluN21Kbzc1bF9pWWRGRHJFZngtS1NBTHJ4LW9fenVRM2NiQXBXeWxQYkc5VWdCdy02Zzl6XzZJV3QtRUZ0Z05sV0JGVERSX3RINGxDZkRnc2kwYm5LUF96VkxZYlU3eHpiM2dxeXcyS0ZhUmlxbWR6TnNaYXRvSnN4eVVoSGwxZWR4RUZ4VmhhemJNX1czStIB5gFBVV95cUxPUDFsel9ua0t2cC0ta3ZjY0M2cDJsUkRBOVBKLTJmQ1otVWNETmdiSFdHNl9BZHU4X1hhM1ItdElqS2RtSFF3LU9kbmVuYV9GODZCQjB5MkQzV1dLOUktQTFxVThNc3gwVnpjSllOT1ljd1c1YlVlREtxVERHY1Q1RWE3bTJRYmxlb3JuTUlNaFM5U1JiME83WG5YWjJWMjZpVTVyWXdkVEFSMktlU2RFMU9CN3AxSUgtRzJGWWdTVXJkdDdrS3hFdEZTQ214NHV6ekh2QTlhOVcxeWFyUnBtMVdRZFFVdw?oc=5",
+      "https://news.google.com/rss/articles/CBMihwJBVV95cUxPTVJBQjJUbG4yQzNuYVg2djdYazhGU2NQQ1Bvalk5T0ZqWUVUTENhZnNXcUNfQ3pqVkt5ajcxejZFWWpvNmtsMWpYOG9vMDBTSXBqRksxZmVRRTI0ZWJhRGRrMGk5OTlCanNlcldqSERtdDFvc2RGaEdIelh3NHNiYjZ5SkdudU9fd0ZMNkRYbjZ6UTNyUnBJejEzRDZvNVFIS1BYcWYwUGcyYjNuMU1BV0lFczFvVmFPQmtWdVFJeXpjSUlPNXZmMUpNaWJEdzV6bWIxTEZXVDdnUVpmd212Z3dvOGdXWEhEUVFpdXFTSFZCOERWWWFDcGpTbDNFYXJRbkRrYUlMUdIBjAJBVV95cUxPakV4VjlWM1NRek1QNU9kUzVNVzA0ejN6QlFIeEMyQ215am9FZDJwVUNYR1dRcFpseFVyNDU2dUtBeEhpVzVSaEZqZ0lHM18zM0NSR0VKYU9TYThwYi04YjdRblNyd1hxcEhXRlBsRmc4Q1RydS1OdFRvcXpSWkY3SUNIbVZLZEk2S0FxT0NTZmtmZUM0NnBuSUNUZXI2Y2hlMTZHNFhucFlaSVZheHRtRUVYcWhBUWY5ZXh2S0U2Wk5nOVZWa2V6WWdBdTRVeTctc0FuMktvd1FVZHJ2cEF4YW9SUncwcFIteE50RGZuZ2dKckQtNGgyQjYzUlh5WWtfRkZZMTlrdXBDM29f?oc=5",
+      "https://news.google.com/rss/articles/CBMigwFBVV95cUxOaGgwMUQ0a24yanhHM3hQZ0owamNHdC1PRGwtV2M2d2x2bks3Z2hWbWpGZ1FmbE5jRXZJR2hmLUUtLU1IRnNYU2EtNWU2UzJrQVFRQ3UwaVJ6SF8wS0RCUDlxVUdfYm9NUnNOMHZPUUc5MDQ1dUxjNjB0VThfcURQM3JXWQ?oc=5",
+      "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNek4yVU1iUTh4U3BzQmRRNEZRRl9SVTJOYTR1UFoxZFRrd1F6RjEzcDUyajdPcGNGdnlBbDI1OTVTU3NFeXJnZC1BdEhyY2ZNWWowQVVVTDNqUWJhTUJQaXp5dzlQRUxLaGVtWXA5SFJSZURvdkhVcXhBUkVzMVRxaXhwaDhiMWI1dW5tWTRPQ1I3SVU5alpvYlRkSnl5SGZPN19ONzltVWFqWmJSRlRNeEdQcUhhVXROeUpSdFkxRWtKQdIBxwFBVV95cUxQaHZYUmhUdWFuV3l3OGxSOUFoNzMwdTY3elpaaEEzaDlFMlNiR2gxTUY2LXJOV3Nzci1oOWd5N3p5QlFXZUF2LXl5MlhNNjFZM2hzR1IyLWJsSHJjRTBBSHpxY1dGRWcyXzN6UnBFSUd0V3ZxSzkxbGQySDRSYTJBOHpvOFVnMnREMmxycnBLRXNDTGRCQloyOC0tYnN1bUZtYlRRN0R1R2VQRHJlMlk1Zm9GamRHWEYyMXlpZzRVbnlzS25seXlN?oc=5",
+      "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPNmhWQkd1MTd2Skl1LU5rM2ZZck1Qb0NyYlZURHplQVVEbjlIdGZpZHpWaXBpWHcwQ0RZN1Jja0hFdmdVTjFyWmxEeDg1M3hCWXRFNGRLX1pKM19PR093MV9YMkw4NW00Yk0wbElXVllobDBDM1hDUDdzSHdMM0t4UE9FRkU3OTgwMVRlalNURDNxb0FrT0xtVjRlY21WMlU0WWYzQzg0TUdtV1pPUHhLaTBjakFHZDJWQUwzUkptM3V5aXR4RXAwblRoSzlmNEs3ZExSZ2lmVFhzZ9IB3wFBVV95cUxPRmZiakdFV0xnNV8xbE5GX1d0ZDNDaVJoR2piTUZkWFZSam1SVmZuRUdKbHZSZGtvMnprWUFTdHpETEJWcFBocnRtTXkyY3E1dFp5OTI3bVpBczQ5NjIyazI5bjlBUjVTUTZ4WkFhVGpvQkg3ajE0R0g1RDhiUFlGSmYyMGdmN0dqNklHbXkyc29aODBfdXZVbjl2ZU4wSWQ2U1ptSjRVNGFFS2RTR0w4SVF5V1FmOTM0dTNJdWQzeUlEcGhqclFEdWhtNmU0d3hhZjRVeVRuYldRclFpVUMw?oc=5",
+      "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNVU5jVDYydkRMUzMwY0Y2aUhpUXZicTk2endESjMwM3JXeUtfaG0tYS1YQlpYSTdPV1NFTE9fMjRmZ1BWMEw3bENOQlpyWkR6dWtOUnNqb2N1QVlmWDVBUzFQVGl1VGJWMVVna2VUVnpXdDlnd3RSX0NhNkNYdUVMQXpKc3loNmo2ZElLZWFWMGI5VFFSSmtMaV85c0lDQ1h3Z1NUQWFtN2w5eUh1THJKMDU1LVBiYktaQ3hPc3J6U3JOa3hwVmJ4eEhPZC13U3FYajd2Ng?oc=5",
+      "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQTTExQ3Y3Q3JBV2Z1WGtJbmpzZWdJbTV1UjlDZ21BenEzUWhOTW1pc2doRlhDRktWZFNDT1lhWjROcE9UZUQzQmQxRFBYZW9kYTBockNoUEtzWFhVbDBTb2pZNXFpSnAtU2tMRVdySzA5Y2d4bmY1WFhvQV9Fd3dTbHVmTFhNNXVxcEN2UXFrenhpUy1jdVJ0UHVUUTRpS2djV3lZZ185MXB3QQ?oc=5",
+      "https://news.google.com/rss/articles/CBMisAFBVV95cUxNcE05by1ET2NIY0ZuM01zeC1IV2ZLSVFHNkx3WUlVdTQwWUtLT0lUWW9kTWxFLWFSNUhLMUhUY2ZRLXZFX2Q4RDM5bkI5ZlZiTVJ4T0o1RUI2MDkyWkdlZUlFTzB4TXpNajhTZDR5SGI3OW11elNaQXc4Q3lEcGZOekU0a2F0NXRFb2hSME1FVUNHSEZOQ3J1cGFUTmE2c1p6eEhTTGxOUGpwa1NGcTBvbw?oc=5",
+      "https://news.google.com/rss/articles/CBMilwFBVV95cUxNQUszbXRZb1A0eEh2SVFYWHBhZjVxdEhqOG9zU1BrSHY2Tno2c3F4a29FM3Q1bFF0TVh0ZGp4cnVob25PcXRiZWNsSW0yTFRtTGZ2MTl1ODhOYzJ6SEVzeENFcmxIaFpNTW9McVJKakEzRFhqc1RfTlNXUzRTS3F3WHVyeTRoYWo2M1Y0a0NmVlF0RmdmdkNj?oc=5",
+      "https://news.google.com/rss/articles/CBMiO0FVX3lxTE5tTkdlQUV4eG8zdmd0U00wZ0dsZzlaZDNRSzNaWjZteHExejZhTndmZ2FlZ1FFbWZuME9n?oc=5"
     ]
   }
 ]
