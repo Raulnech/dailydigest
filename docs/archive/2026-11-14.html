@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI Morning Brief · Saturday 14 November 2026</title>
+<meta name="theme-color" content="#3A55C8">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  color-scheme:light dark;
+  --ground:#F3F4F7; --paper:#FFFFFF; --ink:#141827; --muted:#5B6275; --line:#DDE0E8;
+  --industry:#3A55C8; --industry-soft:#E6EAFA;
+  --finance:#1C7453; --finance-soft:#E1F1EA;
+  --startups:#A8561A; --startups-soft:#F7EADF;
+  --code-bg:#161A26; --code-ink:#E4E7F0;
+  --right:#1C7453; --right-soft:#E1F1EA; --wrong:#B3261E; --wrong-soft:#FBE7E5;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --ground:#0F121B; --paper:#171B27; --ink:#E8EAF1; --muted:#9AA1B4; --line:#2A3042;
+    --industry:#8FA3F5; --industry-soft:#20284A;
+    --finance:#6CCBA3; --finance-soft:#15332A;
+    --startups:#E8A06A; --startups-soft:#3A2618;
+    --code-bg:#0B0D14; --code-ink:#E4E7F0;
+    --right:#6CCBA3; --right-soft:#15332A; --wrong:#F2A29B; --wrong-soft:#3A1B19;
+  }
+}
+*{box-sizing:border-box}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.6 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;padding-inline:16px;padding-block:28px 64px}
+.wrap{max-width:700px;margin:0 auto;display:grid;gap:36px}
+a{color:inherit}
+a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var(--industry);outline-offset:3px;border-radius:4px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400}
+header{display:grid;gap:10px}
+header .date{color:var(--muted)}
+h1{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(44px,11vw,64px);line-height:1;margin:0;letter-spacing:-.01em}
+h1 em{color:var(--industry)}
+.lede{color:var(--muted);margin:0;max-width:60ch}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ground);padding-block:10px;display:flex;gap:8px;overflow-x:auto;border-bottom:1px solid var(--line)}
+nav a{flex:none;text-decoration:none;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--paper);font-size:14px}
+nav a.industry{color:var(--industry)} nav a.finance{color:var(--finance)} nav a.startups{color:var(--startups)}
+
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:14px;scroll-margin-top:64px}
+.panel h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:30px;margin:0;line-height:1.15}
+.panel > .mono{color:var(--muted)}
+.talk ol{margin:0;padding-left:20px;display:grid;gap:8px}
+.toc{display:grid;gap:14px}
+.toc h3{margin:0 0 4px}
+.toc ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.toc li a{text-decoration:none}
+.toc li a:hover{text-decoration:underline}
+
+section{display:grid;gap:22px;scroll-margin-top:64px}
+.sec-head{display:grid;gap:2px;border-top:3px solid var(--c);padding-top:12px}
+.sec-head h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:36px;margin:0;line-height:1.1;text-wrap:balance}
+.sec-head p{margin:0;color:var(--muted)}
+.sec-head .mono{color:var(--c)}
+.industry{--c:var(--industry);--cs:var(--industry-soft)}
+.finance{--c:var(--finance);--cs:var(--finance-soft)}
+.startups{--c:var(--startups);--cs:var(--startups-soft)}
+
+article{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px 20px;display:grid;gap:16px;scroll-margin-top:64px}
+article .kicker{color:var(--c)}
+article h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(26px,6vw,32px);line-height:1.15;margin:0;text-wrap:balance}
+.standfirst{margin:0;font-size:18px;line-height:1.5;color:var(--muted)}
+.body{display:grid;gap:14px;font-family:"Source Serif 4",Georgia,serif;font-size:18px;line-height:1.65;max-width:65ch}
+.body p{margin:0}
+.src{margin:0;font-size:13px;color:var(--muted)}
+.concepts{background:var(--cs);border-radius:12px;padding:16px 18px;display:grid;gap:12px}
+.concepts .mono{color:var(--c)}
+.concepts dl{margin:0;display:grid;gap:10px}
+.concepts dt{font-weight:600}
+.concepts dd{margin:2px 0 0}
+.why{display:grid;gap:4px;border-left:2px solid var(--c);padding-left:14px}
+.why .mono{color:var(--c)}
+.why p{margin:0}
+
+pre{margin:0;background:var(--code-bg);color:var(--code-ink);border-radius:10px;padding:16px;overflow-x:auto;font:14px/1.55 "IBM Plex Mono",ui-monospace,Consolas,monospace}
+.walk{margin:0;padding-left:20px;display:grid;gap:6px}
+code{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:.9em}
+.tryit{background:var(--industry-soft);border-radius:10px;padding:12px 16px}
+.tryit p{margin:0}
+
+.q{display:grid;gap:12px;border-top:1px solid var(--line);padding-top:18px}
+.q:first-of-type{border-top:0;padding-top:0}
+.scenario{margin:0;font-family:"Source Serif 4",Georgia,serif;font-style:italic;font-size:17px}
+.q .ask{margin:0;font-weight:600}
+.opts{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.opts button{width:100%;text-align:left;font:inherit;color:var(--ink);background:var(--ground);border:1px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer;display:flex;gap:10px}
+.opts button:hover{border-color:var(--industry)}
+.opts button b{font-family:"IBM Plex Mono",ui-monospace,monospace;font-weight:500}
+.opts button.right{background:var(--right-soft);border-color:var(--right)}
+.opts button.wrong{background:var(--wrong-soft);border-color:var(--wrong)}
+.opts button:disabled{cursor:default}
+details{border-radius:10px}
+summary{cursor:pointer;font-weight:500;color:var(--industry)}
+.answer{display:grid;gap:8px;margin-top:10px}
+.answer p{margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:13px;padding:2px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+
+.gloss{margin:0;display:grid;gap:12px}
+.gloss dt{font-weight:600}
+.gloss dt a{font-weight:400;font-size:13px;color:var(--muted);margin-left:6px}
+.gloss dd{margin:2px 0 0;color:var(--muted)}
+.archive{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.archive a{display:inline-block;padding:4px 10px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-variant-numeric:tabular-nums;font-size:14px}
+.archive a[aria-current]{border-color:var(--industry);color:var(--industry)}
+footer{color:var(--muted);font-size:13px}
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="mono date">Saturday 14 November 2026 · 14 min read</span>
+  <h1>AI Morning <em>Brief</em></h1>
+  <p class="lede">Today's AI and fintech news as short articles, with every key concept explained, a bit of Python, and a scenario quiz to check it stuck.</p>
+</header>
+
+<nav aria-label="Sections">
+  <a href="#industry" class="industry">The AI industry</a>
+  <a href="#finance" class="finance">AI &amp; finance</a>
+  <a href="#startups" class="startups">Startups &amp; funding</a>
+  <a href="#code">Code corner</a>
+  <a href="#quiz">Quiz</a>
+  <a href="#glossary">Glossary</a>
+</nav>
+
+<div class="panel talk">
+  <span class="mono">If you only read one thing</span>
+  <h2>Three things to be able to say today</h2>
+  <ol><li>OpenAI&#39;s new ChatGPT Wallet lets its AI agents actually spend your money, with biometric sign-off before every purchase.</li><li>The Federal Reserve&#39;s own staff now rank AI as the single biggest risk to financial stability, even as US banking regulators warn about credit exposure to the data-centre boom.</li><li>Fintech valuations keep climbing fast — Rogo at $2bn and Rox at $1.3bn — while OpenAI quietly dissolved its robotics team, betting that general-purpose models can run machines too.</li></ol>
+</div>
+
+<div class="panel">
+  <span class="mono">In today's brief</span>
+  <div class="toc">
+  
+    <div class="industry"><h3 class="mono" style="color:var(--c)">The AI industry</h3>
+      <ul><li><a href="#story-0">OpenAI launches ChatGPT Wallet so its AI agents can shop with your card</a></li><li><a href="#story-1">FAA rolls out $875m AI traffic tool nationwide after 180-flight trial</a></li><li><a href="#story-2">OpenAI disbands stand-alone robotics team, betting general models can run machines</a></li></ul>
+    </div>
+  
+    <div class="finance"><h3 class="mono" style="color:var(--c)">AI &amp; finance</h3>
+      <ul><li><a href="#story-3">Fed survey: bankers now see AI as the top threat to financial stability</a></li><li><a href="#story-4">US bank regulator OCC flags credit risk from AI infrastructure lending</a></li><li><a href="#story-5">Wall Street AI tool Rogo reportedly valued at $2bn</a></li></ul>
+    </div>
+  
+    <div class="startups"><h3 class="mono" style="color:var(--c)">Startups &amp; funding</h3>
+      <ul><li><a href="#story-6">Cohere acquires code-review startup Cubic in latest buyout</a></li><li><a href="#story-7">Rox raises $100m at $1.3bn valuation for AI sales agents</a></li></ul>
+    </div>
+  
+  </div>
+</div>
+
+
+<section id="industry" class="industry">
+  <div class="sec-head">
+    <span class="mono">Section 1</span>
+    <h2>The AI industry</h2>
+    <p>Big labs, big tech and the direction of travel.</p>
+  </div>
+  
+  <article id="story-0">
+    <span class="mono kicker">The AI industry</span>
+    <h3>OpenAI launches ChatGPT Wallet so its AI agents can shop with your card</h3>
+    <p class="standfirst">The new feature lets OpenAI&#39;s &#39;dots&#39; agents complete purchases on your behalf, using tokenised payments and biometric approval rather than your actual card number.</p>
+    <div class="body"><p>OpenAI has begun rolling out ChatGPT Wallet, a tool that lets its Dots AI agents make purchases on a user&#39;s behalf. The feature is launching for ChatGPT Pro subscribers in the United States who are 18 or older, have a US billing address, and hold an eligible American Express, Chase, Mastercard or Visa card.</p><p>Once a card is linked, a Dots agent can act on instructions such as &#39;book me a hotel for next weekend&#39; and carry the transaction through to checkout. Crucially, OpenAI says every purchase triggers a security check, such as a fingerprint or face scan, before it goes through. The system also never hands the agent your real card details: instead it uses a payment token, a stand-in number that works like the one used in Apple Pay or Google Wallet, so merchants and the AI agent only ever see a substitute code rather than your actual account number.</p><p>OpenAI says the long-term goal is to let users set spending limits, categories or time windows and then let an agent buy things with no further check-ins needed. For now, adoption may be patchy: some retailers already block AI shopping agents outright, as Amazon did earlier this year with a rival system, meaning merchants will need to update their systems to recognise and trust legitimate agent purchases.</p></div>
+    
+    <p class="src">Sources: <a href="https://openai.com/index/introducing-chatgpt-wallet" target="_blank" rel="noopener">OpenAI News</a> · <a href="https://www.theverge.com/ai-artificial-intelligence/1033425/openai-chatgpt-wallet" target="_blank" rel="noopener">The Verge</a> · <a href="https://www.cnbc.com/2026/11/13/openai-chatgpt-wallet-dot-purchases.html" target="_blank" rel="noopener">Tech</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>AI agent</dt><dd>An AI agent is a model set up to take multi-step actions on your behalf, not just answer questions — here, actually completing a purchase rather than just suggesting one.</dd></div><div><dt>Payment tokenisation</dt><dd>Tokenisation swaps your real card number for a one-time stand-in code, so if that code leaks it&#39;s useless to a thief. It&#39;s the same trick that makes tap-to-pay on your phone safer than handing over a physical card.</dd></div><div><dt>Biometric authentication</dt><dd>This means proving it&#39;s really you using a physical trait, like a fingerprint or face scan, instead of typing a password.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>This creates demand for people who understand both payments infrastructure and AI safety — fraud teams, trust-and-safety engineers and product managers who can design approval flows for autonomous spending. In an interview, you could point out that agentic commerce shifts risk from &#39;did the user mean to buy this&#39; to &#39;did the agent correctly interpret the user&#39; — a subtle but important distinction.</p></div>
+  </article>
+  
+  <article id="story-1">
+    <span class="mono kicker">The AI industry</span>
+    <h3>FAA rolls out $875m AI traffic tool nationwide after 180-flight trial</h3>
+    <p class="standfirst">The SMART system, credited with saving airlines fuel and time in Washington airspace, is now advising controllers across all 22 US air traffic centres — but the controllers&#39; union says it wasn&#39;t consulted.</p>
+    <div class="body"><p>The US Federal Aviation Administration has expanded its AI-powered SMART system from a single regional trial into nationwide use, covering all 22 air traffic control centres in the country. The agency says that since being deployed over Washington DC in September, SMART has helped reroute 180 flights, saving an average of 10 minutes and nearly 80 gallons of fuel per flight.</p><p>SMART is a cloud-based tool that combines weather data, flight paths, traffic flow and controller staffing levels to predict congestion and suggest better routes or arrival orders. Airlines have welcomed the rollout as a way to cut delays and fuel costs. However, the union representing air traffic controllers says it had no role in designing or testing the system before it went live more broadly.</p><p>Crucially, the FAA insists a human team still reviews every SMART recommendation before it reaches controllers on the ground — a human-in-the-loop design, meaning the AI proposes but a person decides. The open question, raised by critics, is whether tired or overstretched staff will always have the time or inclination to challenge a machine&#39;s suggestion, especially as the system scales to cover the entire country&#39;s skies.</p></div>
+    
+    <p class="src">Sources: <a href="https://arstechnica.com/features/2026/11/faa-expands-ai-advice-to-manage-air-traffic-congestion-across-entire-us-airspace/" target="_blank" rel="noopener">AI - Ars Technica</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Human-in-the-loop AI</dt><dd>This is a setup where an AI makes a recommendation but a human must check and approve it before anything happens — like a spellchecker suggesting a word but you still choosing whether to accept it.</dd></div><div><dt>Phased rollout</dt><dd>Rather than launching everywhere at once, a new system is tested in one location first, then expanded once it proves reliable — reducing the risk of a failure affecting everyone immediately.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Safety-critical AI deployment like this is a growing field for engineers who can build reliable, auditable decision-support tools, and it&#39;s a good example to raise in interviews about why &#39;human-in-the-loop&#39; design matters even when a model performs well in testing.</p></div>
+  </article>
+  
+  <article id="story-2">
+    <span class="mono kicker">The AI industry</span>
+    <h3>OpenAI disbands stand-alone robotics team, betting general models can run machines</h3>
+    <p class="standfirst">Researchers are reportedly being reassigned as OpenAI concludes its general-purpose AI models may make specialised robotics software redundant.</p>
+    <div class="body"><p>OpenAI has reportedly disbanded its dedicated robotics research team, reassigning staff to other parts of the company. According to Fortune and the-decoder.com, the move reflects a bet that general-purpose AI models — the same kind that power chatbots — can increasingly control physical robots directly, without needing separate, specially built robotics software.</p><p>Historically, robots have relied on narrow AI: systems trained specifically to handle tasks like grasping objects or navigating a warehouse floor. OpenAI&#39;s apparent view is that its broader models, built to reason and respond across many domains, are becoming capable enough to run robots too, reducing the need for a dedicated robotics unit.</p><p>If confirmed, this would mark a shift in how AI labs think about hardware: rather than building bespoke &#39;brains&#39; for each type of machine, companies could deploy one general model across many physical devices. That would be cheaper to maintain, but also raises questions about whether general models are truly safe and reliable enough for tasks where mistakes can cause physical harm.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMi5AFBVV95cUxQc0RCaDFRSml1TkxBN09Ed3pkZDhDNDAzYThkdktlU3lVMy1IblZSb0dyRkw2TjNCTFF0c0dha25JdlZNNzh1OWlrTzI5T2dOUEtGSHdWNDVMTlMyZm5BS3lGQXNtTnN3Wm82OUtMOGVHX2FsOUhBZHRGQlVKQXJrMTZtM2xHTWQ2VmVnRlhhd0RTamJiWEZabWc1TVFZTk1ieDdDQ3ZxTmxJVy1kczNnUWM0UVpEVVFZWmgtM1RhVXpyMGdKN0ZpY3I4SzZIR0RJd2JMdmY5S1Q2VTFYTFVTUG1zcmE?oc=5" target="_blank" rel="noopener">the-decoder.com</a> · <a href="https://news.google.com/rss/articles/CBMipwFBVV95cUxQdUpabzdVdVRFd0RUN0pnVTJuQUtkYThSdzlhc3FHSmxmTnZETWNyajZGcGEtVHFvYmxMTGJMa0VHaGxEMVh5bmY1MXlVTDlWTHVBWlotdkJ0ZmRSdk9GRzh0ZTNrZElwYzlLWmp0ZkZqRFZKOEI5RkdDdkVHYzVUWFpOU2NqTnJGTmF3R0dTQTRGaDFXZl9jQ2s5bEd4dHJFZFRyQ3hrcw?oc=5" target="_blank" rel="noopener">Fortune</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>General-purpose model</dt><dd>This is an AI model trained broadly, so it can handle many different kinds of tasks — like a Swiss army knife — rather than being built for just one job.</dd></div><div><dt>Narrow (specialised) AI</dt><dd>This is AI built and trained for one specific task, such as controlling a robotic arm, and usually performs that task better than a general model but can&#39;t do much else.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>If general models really can control robots, it changes what skills robotics engineers need — less custom motor-control code, more prompt design and safety evaluation for physical actions.</p></div>
+  </article>
+  
+</section>
+
+<section id="finance" class="finance">
+  <div class="sec-head">
+    <span class="mono">Section 2</span>
+    <h2>AI &amp; finance</h2>
+    <p>Where Wall Street and the City meet AI, as users and as funders.</p>
+  </div>
+  
+  <article id="story-3">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>Fed survey: bankers now see AI as the top threat to financial stability</h3>
+    <p class="standfirst">A Federal Reserve survey of market contacts has ranked AI-related risks above other long-standing worries, CNBC reports.</p>
+    <div class="body"><p>A survey conducted by the Federal Reserve has found that financial professionals now view risks tied to artificial intelligence as the single biggest threat to the stability of the financial system, according to CNBC. This marks a notable shift, with AI overtaking concerns that have traditionally topped such surveys.</p><p>The Fed regularly polls market participants, including bank executives and asset managers, about what could destabilise markets or the broader economy. A top ranking for AI suggests growing unease about how deeply AI spending, valuations and infrastructure debt have become woven into the financial system — echoing broader &#39;AI bubble&#39; concerns about whether current valuations are justified by actual returns.</p><p>The finding adds pressure on regulators to scrutinise how exposed banks and investors are to AI-related debt and equity, a theme also reflected in a separate warning from the Office of the Comptroller of the Currency about banks&#39; credit exposure to AI infrastructure lending.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMihAFBVV95cUxOd1luSGcydUl6NE15cEcydlNhSnRuNjNjVHdMQldrQjRYcXpLZ3FfbnNrWndndDNTaUowRWJ6NDg0dUdaN084LW00YU4tNEhPTXh6Ymx3WVFpZk5MQTgwVFpMX1o4cFdXT2lCQi1xSzlncG9mUkpDa0xTUF9BY2E3cXVnS2fSAYoBQVVfeXFMTmZFcVNQMElxVkdHNTFNMVBOYTg0SGVKNm5ISHM5N3pGUUxKSE5Za2ZuMmZNb3RnY0FpVWxNbWtIdXFIdm0wOWVIa3FXWVJJaVhhTHBzOVpJbzVnY2VGZk04WE5aRHVBdjdkRlVpSm1VQXo1ckRPRTV4aDNjNGJNeGlhSXZ4ZEhIa1dR?oc=5" target="_blank" rel="noopener">CNBC</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Financial stability survey</dt><dd>Central banks periodically ask market professionals what risks worry them most, to spot dangers before they cause a crisis — similar to a doctor asking patients about symptoms before diagnosing an illness.</dd></div><div><dt>AI bubble</dt><dd>This is the worry that AI company valuations have risen far faster than their actual profits justify, and could crash sharply if expectations aren&#39;t met — reminder: similar to the dot-com bubble of the late 1990s.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>This matters for anyone heading into risk management or compliance roles in banking: understanding how regulators measure systemic risk, and being able to discuss AI exposure specifically, is increasingly an interview-ready topic.</p></div>
+  </article>
+  
+  <article id="story-4">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>US bank regulator OCC flags credit risk from AI infrastructure lending</h3>
+    <p class="standfirst">The Office of the Comptroller of the Currency has warned banks to tighten scrutiny of loans tied to data centres and AI buildouts, reports say.</p>
+    <div class="body"><p>The Office of the Comptroller of the Currency (OCC), a key US bank regulator, has reportedly flagged credit risks facing banks that lend to companies building out AI infrastructure such as data centres. Separate reporting says the OCC has also outlined a supervisory framework for how banks should handle advanced AI tools themselves.</p><p>The concern is that banks may be extending large amounts of credit to AI infrastructure projects whose future cash flows depend on continued strong demand for AI compute — a bet that could sour if AI spending slows or if projects struggle to generate revenue matching their huge capital expenditure.</p><p>Separately, Alabama&#39;s banking regulator has previewed its own AI examination framework due to take effect in 2027, suggesting state-level regulators are moving in step with federal ones. Together, these moves signal that supervisors are increasingly treating AI-linked lending as a distinct risk category requiring its own underwriting standards.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxObkh2Q3N3Y3RtWTczVnVTM0FyVlROUXVTdXhiWHhwNXg3eTlnamlndHZ3OUpQa2JPVkt5bW9VS1QtcHBUR1FwNzdYNUk5bXJIZHk4X256TkNMdDA4N2U4UFFMS1pqWXZFNUFQekJGS3lsZzlRWVJaV3ZtMW9hdlJ6SUVRRkN1eG5UVXhsR1ZmVjJROFlQVG45YUs3bGttQnPSAVZBVV95cUxNMXV6TGFuYmE3bDJnV0MyMU9nSXItUGpNNnFKYW5iaFRLZm5mNWJ3QUt3NjJyeWI5QTVQWHZyaEl1WFdfVnlKSlh2WmJOLTFlVXoxam50UQ?oc=5" target="_blank" rel="noopener">Law360</a> · <a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxPY1c1SWl0UkptTUZHVzhMdGpEcnRHSUVYRmpEanpxd2NrVGZVaUhzMVlNd1ZhdmVhZ2F3Wnp1bjdtNkMyX0JpeXBnUGJfN1JjRjV5ai1NeEZJVFJqZDNUdnUtYUZvRVEwMzA1LWVTdlRzMjc2N1A2ODI1Z2hCRGEwd0Zkb2tybW4w?oc=5" target="_blank" rel="noopener">JD Supra</a> · <a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxQd2NiUTNadW5Pd1I3QzQwRnVUdkVQbzktVkJ2XzdScW5HTnlBR1BsdDJyUHNpbVM4aWNXTjRIZ252cVJ3VFg2bG5ZOWRkQTJEY1kwLWlwSHBEeXhjNHhVNUw5Y1B5RzREWDJuTW9jODgwRzQ5NWNFZHpubnRzVUU1VVcya2FYc3BPRFN3UHVZLXN1ZGNicmhoUE1QeU9rdHZVeVA0aDl6RFl0Z9IBrwFBVV95cUxNVWk5ODJPamxqNXBmY0c5SzRkMVByR2dBZmN0WjNSaERtTFpZTlhJa3pfN3ZLR0k3X2ZSX2dBb29DdzhWMjBzSHh2ZmJEaGlEVTNDX0UzNkxwSVJaQVNQMzcwZERCYTdmc0pJWVo5OHFSb2JDOHZ4c1VaQm5CSHlLcmNYZi1lWlJFWTlBZnlPZjhqMkx4eXFaUDdremxUQmttNnpXWTBvMGZLNURQOUJj?oc=5" target="_blank" rel="noopener">The National Law Review</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>OCC (Office of the Comptroller of the Currency)</dt><dd>This is the US federal regulator that supervises national banks, checking they&#39;re lending responsibly and holding enough capital to survive losses.</dd></div><div><dt>Underwriting standards</dt><dd>These are the rules a bank follows when deciding whether to approve a loan — for example, checking a borrower&#39;s income and collateral. Reminder: looser standards mean riskier, more easily approved loans.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>This is relevant for anyone eyeing a career in credit risk or bank regulation — expect interview questions on how lenders should assess collateral when a loan is backed by rapidly depreciating GPUs rather than, say, a building.</p></div>
+  </article>
+  
+  <article id="story-5">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>Wall Street AI tool Rogo reportedly valued at $2bn</h3>
+    <p class="standfirst">Rogo, which builds agentic AI for banks and investment firms, has reached a $2bn valuation, according to AI Magazine.</p>
+    <div class="body"><p>Rogo, a startup building agentic AI tools for Wall Street banks, has reportedly reached a $2bn valuation. The company&#39;s software is designed to act as an AI agent for financial professionals, automating research and analysis tasks traditionally done manually by junior bankers and analysts.</p><p>The valuation reflects strong investor appetite for &#39;vertical AI&#39; — AI products built specifically for one industry, in this case finance, rather than general-purpose tools. Banks have been increasingly receptive to adopting AI agents for tasks like document review and market research, provided the tools can be trusted with sensitive financial data.</p><p>Rogo&#39;s rise comes as financial regulators simultaneously raise concerns about AI risk in the sector, underlining the tension between banks racing to adopt AI tools for efficiency and regulators warning about the risks that same adoption can create.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMikAFBVV95cUxOY1g1NU1TN0U5dEVxTUJkTVBFWW1uZjJQUHZ6eXFfNWFYZ0M2dzRmOWZjOEZ0TS14cTlBUDB3TTZWN0Z0U2EzdHRMTTl3WkliVUFxaTgzaTVQMW5xSm9LcGhoR3Y4WWdhLUg5b1A5b1lPR1BmS1hTREhRRXJoZGtqb0JvQTl0enVvOGZ6eXZ1bVQ?oc=5" target="_blank" rel="noopener">AI Magazine</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Vertical AI</dt><dd>Reminder: this means AI built for one specific industry — like legal research or banking — rather than general use, often trained or tuned on that industry&#39;s own data and jargon.</dd></div><div><dt>Valuation</dt><dd>Reminder: a valuation is what investors believe a company is worth, based on funding deals, not necessarily its current profit — Rogo&#39;s $2bn figure reflects investor confidence, not audited earnings.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Vertical AI for finance is a fast-growing hiring area combining domain knowledge of banking with AI engineering skills — a good niche to mention if you&#39;re pitching yourself for fintech roles.</p></div>
+  </article>
+  
+</section>
+
+<section id="startups" class="startups">
+  <div class="sec-head">
+    <span class="mono">Section 3</span>
+    <h2>Startups &amp; funding</h2>
+    <p>Who raised, how much, and what investors are betting on.</p>
+  </div>
+  
+  <article id="story-6">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>Cohere acquires code-review startup Cubic in latest buyout</h3>
+    <p class="standfirst">The Canadian AI lab continues its acquisition spree by buying Cubic, a platform that uses AI to review software code.</p>
+    <div class="body"><p>Cohere, a Canadian frontier AI lab known for its enterprise-focused language models, has acquired Cubic, a startup that builds AI-powered code review tools. The deal is reportedly the latest in a string of acquisitions by Cohere as it expands its product lineup beyond core model development.</p><p>Code review tools like Cubic use AI to automatically scan software changes for bugs, security issues or style problems before they&#39;re merged into a codebase, a task traditionally done by human engineers reading each other&#39;s code. Folding this into Cohere&#39;s offering suggests the company wants to sell complete AI-powered developer workflows, not just a chatbot model.</p><p>Details of the deal&#39;s size were not disclosed in current reporting. The acquisition fits a wider pattern among AI labs: rather than building every feature from scratch, companies are buying smaller, specialised startups to quickly add capabilities their core models can&#39;t yet match.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMilwFBVV95cUxQZ0VYTV8yd00tYkdyYUtKeURaazhVUDN1ZEVHTS1IVi1za3hORW0xYmt6R2VHUDA4dHNvMU9CemkwV3Z1OENmLVpvc0hjQ0ZfcEhfUERDNm13SmpjUm1LRkpSYk9mN1VRQ3BsMWdmX1VEb1hfcWVCQlF1NzlKWExwUndTRkpUaE1FMF9maG90RXVkc2RSY1hv?oc=5" target="_blank" rel="noopener">BetaKit</a> · <a href="https://news.google.com/rss/articles/CBMiWEFVX3lxTFAyM0JZYlRCOVNsb1pNRDdYekxWVHBLRWRSM082SlZ5ZWxYU09zaHhZMlVMUUNoczBOUlBiS25NLS1ZbF9ZY2k1LUlSV0t0MXhseGtjZHp0bGU?oc=5" target="_blank" rel="noopener">TOKENPOST</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>AI code review</dt><dd>This is software that uses AI to automatically check code for errors or security problems, similar to how a spellchecker flags mistakes in writing, but for programming languages.</dd></div><div><dt>Frontier AI lab</dt><dd>Reminder: this term refers to companies, like Cohere, building the most advanced large language models available, as opposed to firms simply using AI tools built by others.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Acquisitions like this show how AI labs are becoming full software companies, which widens the kinds of engineering and product roles available beyond pure model research.</p></div>
+  </article>
+  
+  <article id="story-7">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>Rox raises $100m at $1.3bn valuation for AI sales agents</h3>
+    <p class="standfirst">The startup, backed by Saudi Aramco&#39;s venture arm Prosperity7, builds AI agents designed to generate revenue for sales teams.</p>
+    <div class="body"><p>Rox has reportedly raised $100m in new funding at a $1.3bn valuation, with backing from Prosperity7, the venture capital arm of Saudi Arabian oil giant Aramco. The startup builds AI agents focused on helping sales teams generate revenue, a category sometimes called &#39;vertical AI&#39; because it&#39;s built for one specific business function.</p><p>The involvement of an oil company&#39;s venture fund in an AI sales startup reflects how widely AI investment has spread beyond traditional tech investors, with sovereign wealth-linked funds increasingly chasing stakes in fast-growing AI firms.</p><p>No further details on the round&#39;s structure were confirmed in current reporting. The deal adds to a growing list of AI startups reaching billion-dollar valuations on relatively young products, underscoring investors&#39; continued willingness to bet heavily on AI agents despite broader worries about an AI valuation bubble.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMivgFBVV95cUxOcDY2alEwanBSLVFsNG5LdC1rU3ZqcXliSXJEd3BSdDhLQ0xtQXg3WmF0aHdSVF9LallGVUlnTWFjek9GeVpIZ3hEWGFUMUhBYjEwQk9taWIwYUR1OUlhaUpqWlpLT2xJY3NxU1Ntd19MT0RRaGtwY3N2QUVIbVFMNUNSaXBUbV96TXMydkFaVUxGV0U1dmVvZEEyWHVLaktaWjV2Z2NkZzltS1dkX1ZBUjBnUTVlRjVCQ0lHY29B?oc=5" target="_blank" rel="noopener">entARABI</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Funding round</dt><dd>Reminder: this is when a company sells a slice of ownership to investors in exchange for cash to grow — here, Rox raised $100m in such a deal.</dd></div><div><dt>Corporate venture capital</dt><dd>This is when a large company, like oil giant Aramco, invests in startups through its own venture fund rather than through a traditional venture capital firm, often to gain strategic access to new technology.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Seeing oil money flow into AI sales agents is a handy talking point for showing you understand how AI investment has spread well beyond Silicon Valley into sovereign wealth and energy-sector capital.</p></div>
+  </article>
+  
+</section>
+
+
+
+<div class="panel" id="code">
+  <span class="mono">Code corner</span>
+  <h2>Simulating an AI agent&#39;s purchase approval</h2>
+  <p class="src">Based on: <a href="#story-0">OpenAI launches ChatGPT Wallet so its AI agents can shop with your card</a></p>
+  <p style="margin:0">ChatGPT Wallet lets an AI agent propose a purchase that you then approve or block. Here&#39;s a simplified version of that logic using a fake JSON response, so you can see how an app might decide whether to let a purchase through.</p>
+  <pre><code>import json
+
+# Pretend this is the JSON response an AI agent sent after finding something to buy
+fake_agent_response = &#39;&#39;&#39;
+{
+  &#34;action&#34;: &#34;purchase_request&#34;,
+  &#34;item&#34;: &#34;wireless mouse&#34;,
+  &#34;price_usd&#34;: 24.99,
+  &#34;merchant&#34;: &#34;techstore.example&#34;,
+  &#34;requires_approval&#34;: true
+}
+&#39;&#39;&#39;
+
+def review_purchase(response_json, spending_limit):
+    data = json.loads(response_json)
+    price = data[&#34;price_usd&#34;]
+    item = data[&#34;item&#34;]
+
+    if price &gt; spending_limit:
+        return f&#34;Blocked: {item} costs ${price}, over your ${spending_limit} limit.&#34;
+    elif data[&#34;requires_approval&#34;]:
+        return f&#34;Pending approval: agent wants to buy {item} for ${price}.&#34;
+    else:
+        return f&#34;Auto-approved: {item} purchased for ${price}.&#34;
+
+spending_limit = 20.00
+result = review_purchase(fake_agent_response, spending_limit)
+print(result)</code></pre>
+  <span class="mono">Line by line</span>
+  <ol class="walk"><li>`import json` brings in Python&#39;s built-in tool for reading and writing JSON, the text format most AI APIs use to send structured data.</li><li>`fake_agent_response` is a string that mimics what an AI agent&#39;s purchase request might look like — in real life this would come from an actual API call.</li><li>`json.loads(response_json)` converts that JSON text into a Python dictionary, so we can access fields like `data[&#34;price_usd&#34;]` directly.</li><li>The function checks the price against a spending limit first, then checks whether approval is still required, returning a different message for each case.</li><li>`spending_limit = 20.00` sets a rule the code enforces automatically — in this example the $24.99 mouse gets blocked because it&#39;s over budget.</li></ol>
+  <div class="tryit"><p><b>Try it:</b> Change `spending_limit` to 30.00 and rerun — notice the message changes from &#39;Blocked&#39; to &#39;Pending approval&#39;. Then try adding a new field `&#34;category&#34;: &#34;electronics&#34;` to the fake response and update the function to block any purchase in a category you choose, like &#39;gambling&#39;.</p></div>
+</div>
+
+<div class="panel" id="quiz">
+  <span class="mono">Quiz · apply today's concepts</span>
+  <h2>What would you do?</h2>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 1</span>
+    <p class="scenario">You&#39;re a product manager reviewing OpenAI&#39;s new ChatGPT Wallet feature before launch in your own company&#39;s AI assistant.</p>
+    <p class="ask">Why does the system use a payment token instead of sharing the user&#39;s actual card number with the AI agent?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>Tokens process faster than real card numbers, speeding up checkout</span></button></li><li><button type="button" data-i="1"><b>B</b><span>If the token is intercepted, it&#39;s useless without the original card details, limiting fraud risk</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Tokens let the merchant charge the card multiple times automatically</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Tokens are required by law for all AI-related purchases</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> Tokenisation protects the real card number by substituting it with a one-time stand-in code that&#39;s useless to a thief or a careless agent if exposed. It&#39;s not primarily about speed or automatic recurring charges, and no law specifically mandates tokens for AI purchases.</p>
+        <div class="chips"><span>Payment tokenisation</span><span>AI agent</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="2">
+    <span class="mono" style="color:var(--muted)">Scenario 2</span>
+    <p class="scenario">You&#39;re an air traffic control supervisor whose team now receives recommendations from the FAA&#39;s expanded SMART system.</p>
+    <p class="ask">What does it mean that SMART is described as using a &#39;human-in-the-loop&#39; design?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>The AI makes final decisions and controllers are only informed afterwards</span></button></li><li><button type="button" data-i="1"><b>B</b><span>Controllers must manually type every instruction with no AI involvement</span></button></li><li><button type="button" data-i="2"><b>C</b><span>A human team reviews and approves AI recommendations before they reach controllers</span></button></li><li><button type="button" data-i="3"><b>D</b><span>The system only works when at least one human is physically inside the data centre</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: C.</b> Human-in-the-loop means a person checks the AI&#39;s suggestion before it&#39;s acted on — in this case, FAA specialists validate SMART&#39;s recommendations first. The AI doesn&#39;t make final unchecked decisions, and the term has nothing to do with physical presence in a data centre.</p>
+        <div class="chips"><span>Human-in-the-loop AI</span><span>Phased rollout</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="0">
+    <span class="mono" style="color:var(--muted)">Scenario 3</span>
+    <p class="scenario">You&#39;re a junior credit analyst at a bank asked to assess a loan request from a company building a new data centre for AI compute.</p>
+    <p class="ask">Given the OCC&#39;s recent warning, what should most concern you about underwriting this loan?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>Whether the borrower&#39;s cash flows depend on AI demand staying strong enough to repay the debt</span></button></li><li><button type="button" data-i="1"><b>B</b><span>Whether the data centre building has enough parking spaces</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Whether the AI model being trained there uses open-source code</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Whether the borrower has a frontier AI lab as a customer</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: A.</b> Regulators are worried banks are lending against projects whose revenue depends entirely on continued strong AI demand — if that demand slows, repayment is at risk. Parking spaces and the AI&#39;s open-source status aren&#39;t credit risk factors, and having a frontier lab as a customer doesn&#39;t itself guarantee repayment ability.</p>
+        <div class="chips"><span>Underwriting standards</span><span>OCC (Office of the Comptroller of the Currency)</span><span>AI bubble</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 4</span>
+    <p class="scenario">In a pitch meeting, a founder tells you their vertical AI startup for bank sales teams just raised money at a $1.3bn valuation.</p>
+    <p class="ask">What&#39;s the most accurate way to interpret that $1.3bn figure?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>It means the company currently has $1.3bn in annual profit</span></button></li><li><button type="button" data-i="1"><b>B</b><span>It reflects what investors in the recent funding round believe the company is worth, not confirmed profit</span></button></li><li><button type="button" data-i="2"><b>C</b><span>It is the total amount of cash the company has raised to date</span></button></li><li><button type="button" data-i="3"><b>D</b><span>It is a number set by a government regulator</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> A valuation reflects investor belief about future worth based on a funding deal, not audited profit or total cash raised, and it&#39;s set by negotiation between the company and investors, not a regulator. Confusing valuation with profit is a common beginner mistake.</p>
+        <div class="chips"><span>Valuation</span><span>Funding round</span><span>Vertical AI</span></div>
+      </div>
+    </details>
+  </div>
+  
+</div>
+
+<div class="panel" id="glossary">
+  <span class="mono">Glossary</span>
+  <h2>Every concept from today</h2>
+  <dl class="gloss"><div><dt>AI agent<a href="#story-0">see story</a></dt><dd>An AI agent is a model set up to take multi-step actions on your behalf, not just answer questions — here, actually completing a purchase rather than just suggesting one.</dd></div><div><dt>AI bubble<a href="#story-3">see story</a></dt><dd>This is the worry that AI company valuations have risen far faster than their actual profits justify, and could crash sharply if expectations aren&#39;t met — reminder: similar to the dot-com bubble of the late 1990s.</dd></div><div><dt>AI code review<a href="#story-6">see story</a></dt><dd>This is software that uses AI to automatically check code for errors or security problems, similar to how a spellchecker flags mistakes in writing, but for programming languages.</dd></div><div><dt>Biometric authentication<a href="#story-0">see story</a></dt><dd>This means proving it&#39;s really you using a physical trait, like a fingerprint or face scan, instead of typing a password.</dd></div><div><dt>Corporate venture capital<a href="#story-7">see story</a></dt><dd>This is when a large company, like oil giant Aramco, invests in startups through its own venture fund rather than through a traditional venture capital firm, often to gain strategic access to new technology.</dd></div><div><dt>Financial stability survey<a href="#story-3">see story</a></dt><dd>Central banks periodically ask market professionals what risks worry them most, to spot dangers before they cause a crisis — similar to a doctor asking patients about symptoms before diagnosing an illness.</dd></div><div><dt>Frontier AI lab<a href="#story-6">see story</a></dt><dd>Reminder: this term refers to companies, like Cohere, building the most advanced large language models available, as opposed to firms simply using AI tools built by others.</dd></div><div><dt>Funding round<a href="#story-7">see story</a></dt><dd>Reminder: this is when a company sells a slice of ownership to investors in exchange for cash to grow — here, Rox raised $100m in such a deal.</dd></div><div><dt>General-purpose model<a href="#story-2">see story</a></dt><dd>This is an AI model trained broadly, so it can handle many different kinds of tasks — like a Swiss army knife — rather than being built for just one job.</dd></div><div><dt>Human-in-the-loop AI<a href="#story-1">see story</a></dt><dd>This is a setup where an AI makes a recommendation but a human must check and approve it before anything happens — like a spellchecker suggesting a word but you still choosing whether to accept it.</dd></div><div><dt>Narrow (specialised) AI<a href="#story-2">see story</a></dt><dd>This is AI built and trained for one specific task, such as controlling a robotic arm, and usually performs that task better than a general model but can&#39;t do much else.</dd></div><div><dt>OCC (Office of the Comptroller of the Currency)<a href="#story-4">see story</a></dt><dd>This is the US federal regulator that supervises national banks, checking they&#39;re lending responsibly and holding enough capital to survive losses.</dd></div><div><dt>Payment tokenisation<a href="#story-0">see story</a></dt><dd>Tokenisation swaps your real card number for a one-time stand-in code, so if that code leaks it&#39;s useless to a thief. It&#39;s the same trick that makes tap-to-pay on your phone safer than handing over a physical card.</dd></div><div><dt>Phased rollout<a href="#story-1">see story</a></dt><dd>Rather than launching everywhere at once, a new system is tested in one location first, then expanded once it proves reliable — reducing the risk of a failure affecting everyone immediately.</dd></div><div><dt>Underwriting standards<a href="#story-4">see story</a></dt><dd>These are the rules a bank follows when deciding whether to approve a loan — for example, checking a borrower&#39;s income and collateral. Reminder: looser standards mean riskier, more easily approved loans.</dd></div><div><dt>Valuation<a href="#story-5">see story</a></dt><dd>Reminder: a valuation is what investors believe a company is worth, based on funding deals, not necessarily its current profit — Rogo&#39;s $2bn figure reflects investor confidence, not audited earnings.</dd></div><div><dt>Vertical AI<a href="#story-5">see story</a></dt><dd>Reminder: this means AI built for one specific industry — like legal research or banking — rather than general use, often trained or tuned on that industry&#39;s own data and jargon.</dd></div></dl>
+</div>
+
+<div class="panel">
+  <span class="mono">Past digests</span>
+  <ul class="archive"><li><a href="../archive/2026-11-14.html" aria-current="page">2026-11-14</a></li><li><a href="../archive/2026-11-13.html">2026-11-13</a></li><li><a href="../archive/2026-11-12.html">2026-11-12</a></li><li><a href="../archive/2026-11-11.html">2026-11-11</a></li><li><a href="../archive/2026-11-10.html">2026-11-10</a></li><li><a href="../archive/2026-11-09.html">2026-11-09</a></li><li><a href="../archive/2026-11-08.html">2026-11-08</a></li><li><a href="../archive/2026-11-07.html">2026-11-07</a></li><li><a href="../archive/2026-11-06.html">2026-11-06</a></li><li><a href="../archive/2026-11-05.html">2026-11-05</a></li><li><a href="../archive/2026-11-04.html">2026-11-04</a></li><li><a href="../archive/2026-11-03.html">2026-11-03</a></li><li><a href="../archive/2026-11-02.html">2026-11-02</a></li><li><a href="../archive/2026-11-01.html">2026-11-01</a></li><li><a href="../archive/2026-10-31.html">2026-10-31</a></li><li><a href="../archive/2026-10-30.html">2026-10-30</a></li><li><a href="../archive/2026-10-29.html">2026-10-29</a></li><li><a href="../archive/2026-10-28.html">2026-10-28</a></li><li><a href="../archive/2026-10-27.html">2026-10-27</a></li><li><a href="../archive/2026-10-26.html">2026-10-26</a></li><li><a href="../archive/2026-10-25.html">2026-10-25</a></li><li><a href="../archive/2026-10-24.html">2026-10-24</a></li><li><a href="../archive/2026-10-23.html">2026-10-23</a></li><li><a href="../archive/2026-10-22.html">2026-10-22</a></li><li><a href="../archive/2026-10-21.html">2026-10-21</a></li><li><a href="../archive/2026-10-20.html">2026-10-20</a></li><li><a href="../archive/2026-10-19.html">2026-10-19</a></li><li><a href="../archive/2026-10-18.html">2026-10-18</a></li><li><a href="../archive/2026-10-17.html">2026-10-17</a></li><li><a href="../archive/2026-10-16.html">2026-10-16</a></li></ul>
+</div>
+
+<footer>Written by Claude from the linked sources. Check the original article before quoting figures in an interview.</footer>
+</div>
+<script>
+document.querySelectorAll(".q").forEach(function (q) {
+  var correct = Number(q.dataset.correct);
+  var buttons = q.querySelectorAll(".opts button");
+  buttons.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var picked = Number(b.dataset.i);
+      buttons.forEach(function (x) {
+        var i = Number(x.dataset.i);
+        if (i === correct) x.classList.add("right");
+        else if (i === picked) x.classList.add("wrong");
+        x.disabled = true;
+      });
+      q.querySelector("details").open = true;
+    });
+  });
+});
+</script>
+</body>
+</html>
