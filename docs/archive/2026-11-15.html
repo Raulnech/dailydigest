@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI Morning Brief · Sunday 15 November 2026</title>
+<meta name="theme-color" content="#3A55C8">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  color-scheme:light dark;
+  --ground:#F3F4F7; --paper:#FFFFFF; --ink:#141827; --muted:#5B6275; --line:#DDE0E8;
+  --industry:#3A55C8; --industry-soft:#E6EAFA;
+  --finance:#1C7453; --finance-soft:#E1F1EA;
+  --startups:#A8561A; --startups-soft:#F7EADF;
+  --code-bg:#161A26; --code-ink:#E4E7F0;
+  --right:#1C7453; --right-soft:#E1F1EA; --wrong:#B3261E; --wrong-soft:#FBE7E5;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --ground:#0F121B; --paper:#171B27; --ink:#E8EAF1; --muted:#9AA1B4; --line:#2A3042;
+    --industry:#8FA3F5; --industry-soft:#20284A;
+    --finance:#6CCBA3; --finance-soft:#15332A;
+    --startups:#E8A06A; --startups-soft:#3A2618;
+    --code-bg:#0B0D14; --code-ink:#E4E7F0;
+    --right:#6CCBA3; --right-soft:#15332A; --wrong:#F2A29B; --wrong-soft:#3A1B19;
+  }
+}
+*{box-sizing:border-box}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.6 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;padding-inline:16px;padding-block:28px 64px}
+.wrap{max-width:700px;margin:0 auto;display:grid;gap:36px}
+a{color:inherit}
+a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var(--industry);outline-offset:3px;border-radius:4px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400}
+header{display:grid;gap:10px}
+header .date{color:var(--muted)}
+h1{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(44px,11vw,64px);line-height:1;margin:0;letter-spacing:-.01em}
+h1 em{color:var(--industry)}
+.lede{color:var(--muted);margin:0;max-width:60ch}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ground);padding-block:10px;display:flex;gap:8px;overflow-x:auto;border-bottom:1px solid var(--line)}
+nav a{flex:none;text-decoration:none;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--paper);font-size:14px}
+nav a.industry{color:var(--industry)} nav a.finance{color:var(--finance)} nav a.startups{color:var(--startups)}
+
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:14px;scroll-margin-top:64px}
+.panel h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:30px;margin:0;line-height:1.15}
+.panel > .mono{color:var(--muted)}
+.talk ol{margin:0;padding-left:20px;display:grid;gap:8px}
+.toc{display:grid;gap:14px}
+.toc h3{margin:0 0 4px}
+.toc ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.toc li a{text-decoration:none}
+.toc li a:hover{text-decoration:underline}
+
+section{display:grid;gap:22px;scroll-margin-top:64px}
+.sec-head{display:grid;gap:2px;border-top:3px solid var(--c);padding-top:12px}
+.sec-head h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:36px;margin:0;line-height:1.1;text-wrap:balance}
+.sec-head p{margin:0;color:var(--muted)}
+.sec-head .mono{color:var(--c)}
+.industry{--c:var(--industry);--cs:var(--industry-soft)}
+.finance{--c:var(--finance);--cs:var(--finance-soft)}
+.startups{--c:var(--startups);--cs:var(--startups-soft)}
+
+article{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px 20px;display:grid;gap:16px;scroll-margin-top:64px}
+article .kicker{color:var(--c)}
+article h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(26px,6vw,32px);line-height:1.15;margin:0;text-wrap:balance}
+.standfirst{margin:0;font-size:18px;line-height:1.5;color:var(--muted)}
+.body{display:grid;gap:14px;font-family:"Source Serif 4",Georgia,serif;font-size:18px;line-height:1.65;max-width:65ch}
+.body p{margin:0}
+.src{margin:0;font-size:13px;color:var(--muted)}
+.concepts{background:var(--cs);border-radius:12px;padding:16px 18px;display:grid;gap:12px}
+.concepts .mono{color:var(--c)}
+.concepts dl{margin:0;display:grid;gap:10px}
+.concepts dt{font-weight:600}
+.concepts dd{margin:2px 0 0}
+.why{display:grid;gap:4px;border-left:2px solid var(--c);padding-left:14px}
+.why .mono{color:var(--c)}
+.why p{margin:0}
+
+pre{margin:0;background:var(--code-bg);color:var(--code-ink);border-radius:10px;padding:16px;overflow-x:auto;font:14px/1.55 "IBM Plex Mono",ui-monospace,Consolas,monospace}
+.walk{margin:0;padding-left:20px;display:grid;gap:6px}
+code{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:.9em}
+.tryit{background:var(--industry-soft);border-radius:10px;padding:12px 16px}
+.tryit p{margin:0}
+
+.q{display:grid;gap:12px;border-top:1px solid var(--line);padding-top:18px}
+.q:first-of-type{border-top:0;padding-top:0}
+.scenario{margin:0;font-family:"Source Serif 4",Georgia,serif;font-style:italic;font-size:17px}
+.q .ask{margin:0;font-weight:600}
+.opts{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.opts button{width:100%;text-align:left;font:inherit;color:var(--ink);background:var(--ground);border:1px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer;display:flex;gap:10px}
+.opts button:hover{border-color:var(--industry)}
+.opts button b{font-family:"IBM Plex Mono",ui-monospace,monospace;font-weight:500}
+.opts button.right{background:var(--right-soft);border-color:var(--right)}
+.opts button.wrong{background:var(--wrong-soft);border-color:var(--wrong)}
+.opts button:disabled{cursor:default}
+details{border-radius:10px}
+summary{cursor:pointer;font-weight:500;color:var(--industry)}
+.answer{display:grid;gap:8px;margin-top:10px}
+.answer p{margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:13px;padding:2px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+
+.gloss{margin:0;display:grid;gap:12px}
+.gloss dt{font-weight:600}
+.gloss dt a{font-weight:400;font-size:13px;color:var(--muted);margin-left:6px}
+.gloss dd{margin:2px 0 0;color:var(--muted)}
+.archive{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.archive a{display:inline-block;padding:4px 10px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-variant-numeric:tabular-nums;font-size:14px}
+.archive a[aria-current]{border-color:var(--industry);color:var(--industry)}
+footer{color:var(--muted);font-size:13px}
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="mono date">Sunday 15 November 2026 · 12 min read</span>
+  <h1>AI Morning <em>Brief</em></h1>
+  <p class="lede">Today's AI and fintech news as short articles, with every key concept explained, a bit of Python, and a scenario quiz to check it stuck.</p>
+</header>
+
+<nav aria-label="Sections">
+  <a href="#industry" class="industry">The AI industry</a>
+  <a href="#finance" class="finance">AI &amp; finance</a>
+  <a href="#startups" class="startups">Startups &amp; funding</a>
+  <a href="#code">Code corner</a>
+  <a href="#quiz">Quiz</a>
+  <a href="#glossary">Glossary</a>
+</nav>
+
+<div class="panel talk">
+  <span class="mono">If you only read one thing</span>
+  <h2>Three things to be able to say today</h2>
+  <ol><li>Jensen Huang&#39;s reported resignation has turned America&#39;s AI chip export row into a full-blown Washington crisis.</li><li>A Nvidia director&#39;s $947m share sale before the scandal broke is fuelling fresh questions about governance and insider knowledge.</li><li>Vertical AI valuations keep climbing fast, with Agile Robots and Utopai Studios both crossing billion-dollar territory this week.</li></ol>
+</div>
+
+<div class="panel">
+  <span class="mono">In today's brief</span>
+  <div class="toc">
+  
+    <div class="industry"><h3 class="mono" style="color:var(--c)">The AI industry</h3>
+      <ul><li><a href="#story-0">Congress Fast-Tracks AI Chip Export Curbs After Huang Resignation Shock</a></li><li><a href="#story-1">Treasury Secretary Questions Whether Nvidia Knowingly Sold Chips to Shell Firms</a></li><li><a href="#story-2">Microsoft Disbands AI Frontiers Research Group, Veteran Scientist Departs</a></li></ul>
+    </div>
+  
+    <div class="finance"><h3 class="mono" style="color:var(--c)">AI &amp; finance</h3>
+      <ul><li><a href="#story-3">Senate Banking Committee Summons Lutnick and Huang Over AI Chip Probe</a></li><li><a href="#story-4">Nvidia Director Sold $947m in Stock Before Huang Scandal Broke</a></li><li><a href="#story-5">New ETF Bets on Orbital Data Centres as Nvidia&#39;s $500bn Financing Faces Scrutiny</a></li></ul>
+    </div>
+  
+    <div class="startups"><h3 class="mono" style="color:var(--c)">Startups &amp; funding</h3>
+      <ul><li><a href="#story-6">Agile Robots Raises $500m at $8.5bn Valuation</a></li><li><a href="#story-7">Utopai Studios Hits $1bn Valuation With $60m Raise for AI Video</a></li></ul>
+    </div>
+  
+  </div>
+</div>
+
+
+<section id="industry" class="industry">
+  <div class="sec-head">
+    <span class="mono">Section 1</span>
+    <h2>The AI industry</h2>
+    <p>Big labs, big tech and the direction of travel.</p>
+  </div>
+  
+  <article id="story-0">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Congress Fast-Tracks AI Chip Export Curbs After Huang Resignation Shock</h3>
+    <p class="standfirst">Lawmakers move to tighten rules on advanced AI chip sales abroad after reports that Nvidia&#39;s chief executive quit amid a congressional probe.</p>
+    <div class="body"><p>Congress is reportedly accelerating legislation to tighten export controls on advanced AI chips, following news that Nvidia chief executive Jensen Huang has resigned amid a congressional investigation into the company&#39;s overseas sales. Export controls are government rules restricting the sale of sensitive technology, such as powerful AI chips, to certain countries or buyers, usually to stop rivals gaining military or strategic advantage.</p><p>The investigation reportedly centres on whether Nvidia chips reached sanctioned buyers through shell companies, firms that exist mainly on paper to disguise who is really receiving the goods. Concerns about diversion of AI chips have simmered for months, with chipmakers previously accused of allowing hardware to slip past restrictions via intermediaries in third countries.</p><p>The Senate Banking Committee has reportedly summoned both Commerce Secretary Howard Lutnick and Huang to testify, a sign that the probe is moving from reporting into formal hearings. If new export rules pass, chipmakers could face tighter screening requirements on buyers, slowing sales growth but reducing the risk of future scandals.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMihAFBVV95cUxQVGxvZmxUQ0JxLVJuWmRILTBpbUwwbEMxbDV1bEhkYVdjdnl3WVYzWFBGZFhqckFER1JyYWptWEI3XzAzeEZ1dnZuSUdYVkFCdFZXTjVmMUxtVjJSc0dPZHR2R05TbE1mQzA0OU84TEdXd1I0UkFrS2Z0dDRIUXoxV2Y3b2o?oc=5" target="_blank" rel="noopener">Financial Times</a> · <a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxNUXo5NjhRWlBKYml5ZUdxM1lzTW1ZLTU3Uk9mOUZ0YzhJaTdtQXZJUWU5cG01bkJuSHpVM2ZJd0lJMWFjS09nVGFTYVJEaXA0Z2FwcDJLVnFQY3ZndWRCQVZWempzY28zX1VQVUx5TnowTDhKc1gxODNaeVRhSDFIQmJMYmJDbmpyU0U3d2hNY2p2UjE0clFCWU5CVTd0SWg3WjVSU3dzR0xuUQ?oc=5" target="_blank" rel="noopener">Startup Fortune</a> · <a href="https://news.google.com/rss/articles/CBMiZkFVX3lxTFBGVkZNaVNDWG04RmNRcWtsZTd4NXREV0ZKZ2lYSUdURGMxTXl0ZmxDckE1dk1RSUNBaTdyTklrUnlHd2J0d2JTUGxhWXJxS3VmZE1tOVcwQTI3dWNoTUhrMFpmVWMyUdIBa0FVX3lxTFBKSXhGanU4aG9CaUx5aml2QkZvNWZpYjVRRTF5LVNHUEFOTU53enZRb2pQeW9WZEF5YUlCOFBxdmNac0dTSU1XQ2pBcXpVMlAyZHJlc0pKdVFIaHIxTVdhTkVJWUd0U0FOZTJZ?oc=5" target="_blank" rel="noopener">FOX 10 Phoenix</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Export controls</dt><dd>Rules that stop companies selling sensitive technology, like advanced AI chips, to certain countries or buyers without government approval.</dd></div><div><dt>Shell company</dt><dd>A business that exists mostly on paper, often used to hide who actually controls money or goods moving through it.</dd></div><div><dt>Congressional subpoena</dt><dd>A legal order from Congress compelling someone to testify or hand over documents; refusing can lead to legal penalties.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>This creates demand for export compliance analysts and trade lawyers who understand both chip technology and sanctions law. In an interview, you could note that AI hardware firms increasingly need legal and policy expertise alongside engineers.</p></div>
+  </article>
+  
+  <article id="story-1">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Treasury Secretary Questions Whether Nvidia Knowingly Sold Chips to Shell Firms</h3>
+    <p class="standfirst">The US Treasury Secretary says Nvidia itself, not just individuals, should be held accountable if it knew buyers were shell companies.</p>
+    <div class="body"><p>The US Treasury Secretary has reportedly questioned whether Nvidia knowingly sold advanced AI chips to shell companies, arguing that accountability should extend to the company as a whole rather than just individual employees. The comments add political weight to the ongoing congressional investigation into Nvidia&#39;s export practices.</p><p>At issue is due diligence, the process of checking who a customer really is before selling them sensitive goods. If a chipmaker sells to a shell company without proper checks, it risks letting chips reach buyers who were never meant to have them, potentially including sanctioned states or rival powers.</p><p>The remarks suggest regulators may look beyond export law into broader corporate accountability, which could affect how Nvidia and its rivals structure sales teams and compliance departments going forward.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMijgNBVV95cUxNc1otajVZRUIwV256cWxSZGVkR2EzWDB6ZWxpYnR4XzhUTHpTSXJiRmRMcGF3eGRlaXFMRDVzWmRQbzVWRHlEVzJWeGxFREZ6Mkc3X2tNOE5sQlRaeFVZbkhjWllQS2pOS1RHNTV3VkliVGVkSlR5RTBlN2VVMXBneVUtdG5TVi1Vc29lcUJ5Mm4yVjRNckhRMS1ZNHNiaDVab21wRFdoZkVVaTRNUDVvalV4cGI3b0lrRlVFUUFua1R1R3dXd2dyYkdaeFdnUmw5MmlUOWJWMnpPRy1na190N0lzdEpDRkNBOUNYMk95Y0Y5ZTNIQ0RsMTFZSks0NFp3MFc4UEwzeTNFLWE4cld2TjFBNm5BaFg3N1dFX3RuclUwSkdsSVZEbW5QdE1yRVZqU3lxbGZnVzdSWFd1NldxVVJnTDF4bkpacnhUZnE4ajRYdEg2YUxMQVM1X3E2TFpOVnBNZEVWYkw2LXNwN1V0N2NlVnFQdjhSd05WVjBHZENfUkNQYnA3UmFIMmFjdw?oc=5" target="_blank" rel="noopener">Tom&#39;s Hardware</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Due diligence</dt><dd>The careful checking a company does before a deal, such as verifying who a buyer really is, to avoid legal or reputational trouble.</dd></div><div><dt>Shell company</dt><dd>A business that exists mainly on paper, often used to disguise the real buyer of goods or services.</dd></div><div><dt>Reputational risk</dt><dd>The danger that a company&#39;s public image, and therefore its sales and share price, suffers because of a scandal or perceived wrongdoing.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Compliance and risk roles at tech companies are becoming as important as engineering roles; mentioning due diligence processes shows interview-ready knowledge of how firms manage legal exposure.</p></div>
+  </article>
+  
+  <article id="story-2">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Microsoft Disbands AI Frontiers Research Group, Veteran Scientist Departs</h3>
+    <p class="standfirst">Reinforcement learning pioneer John Langford leaves Microsoft as the company shuts down its AI Frontiers unit.</p>
+    <div class="body"><p>Microsoft has reportedly shut down its AI Frontiers research group, prompting the departure of longtime researcher John Langford. Langford is known for work on reinforcement learning, a method where an AI system learns by trial and error, receiving rewards for good decisions and penalties for bad ones, similar to how a dog learns tricks through treats.</p><p>The closure follows a broader pattern across the industry of large tech firms consolidating pure research teams into product-focused divisions, as pressure grows to turn AI research into revenue quickly rather than fund open-ended exploration.</p><p>Langford&#39;s exit adds to a wave of senior AI researchers leaving big tech labs this year, raising questions about where cutting-edge, non-commercial AI research will happen next, and whether talent will shift toward startups or academia instead.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMilgFBVV95cUxNOHVybkpTTzR4VW1mdHJEY1BrSGdEWWZNR1FNU3BIZ1pMOHRTNDhqcnd4cS1sVExnS2VjVFBuZW9YRVh6ZDhobW5HTU1xY3JoeW9qQU1iSTVwSU9XdjR1V3I5dTZEdDlDZFU2WEg5dU1zWi1lMXAydk5XeUxtQkJqVW9BUmtXWGxwS19MSi0xeDlWQkthWVE?oc=5" target="_blank" rel="noopener">Pasquale Pillitteri</a> · <a href="https://news.google.com/rss/articles/CBMi1AFBVV95cUxPSkNUY2Z2ZDAyd3NaMFNpTEZLenYtNHh0Mk1FZlhHWjhPVVpPUnpPVDRZS3d1amFGR21jOWk0QXRDMHlrcnhxcUpUWUxQT1FIUDRIVmhuRGstaGh1XzA4a3FTdVh2S1NQVkJBZ01LM1RtdVJCcW8zRjdUQ3N4aV9sX2FlZUtQX1lZMUFNQTJHLWZjZ29fbHdRSjMwSFlWUWdSOHVnQTAzNk1GLTlaYlJ1VHF6YjRTRjc1N1FOcEZVS214d0FydWc5X3pGRk9HZVNiRmh3TdIB2gFBVV95cUxOVmNyRTFJbjhIbDdKTVFOTDBJM29Tclg3ajlkZklNM1Z5Q2J6cnZrM1k0OW1oUWhKb21XeUNiX1JPbHdtRFZYZzNrb1pHUXpNMkRmdGxNUXlaVEl0V1kwQXBJZ1JZWGF6RU5Gd0N3TWdrdno5U051Z2pYMG11T0FzTmNXdVYzekJxaHhDcms4WWt3QWJrYzB5MjdhZU1WTjZkZE5uOEpxdXUtY3cxakxMYWJWU3dKR0pVUFVEc0dJVkl1UGlPa1NhYk1qTlV1RC1sNnpqUHE0a2pUZw?oc=5" target="_blank" rel="noopener">Moneycontrol.com</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Reinforcement learning</dt><dd>A way of training AI by rewarding good actions and penalising bad ones, like training a dog with treats, so the system gradually learns better behaviour.</dd></div><div><dt>Research lab vs product team</dt><dd>Research labs explore new ideas without immediate commercial goals, while product teams build and ship features that generate revenue now.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Understanding reinforcement learning helps you discuss how models like chatbots are fine-tuned to behave well, a common interview topic when explaining how LLMs are trained beyond basic prediction.</p></div>
+  </article>
+  
+</section>
+
+<section id="finance" class="finance">
+  <div class="sec-head">
+    <span class="mono">Section 2</span>
+    <h2>AI &amp; finance</h2>
+    <p>Where Wall Street and the City meet AI, as users and as funders.</p>
+  </div>
+  
+  <article id="story-3">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>Senate Banking Committee Summons Lutnick and Huang Over AI Chip Probe</h3>
+    <p class="standfirst">Markets brace for a high-profile hearing as regulators prepare to question two of the most powerful figures in America&#39;s AI supply chain.</p>
+    <div class="body"><p>The Senate Banking Committee has reportedly summoned Commerce Secretary Howard Lutnick and Nvidia&#39;s Jensen Huang to testify over the unfolding AI chip export investigation. The move signals that congressional oversight, the power of lawmakers to scrutinise government and corporate conduct, is intensifying rapidly.</p><p>Such hearings can move markets because they can lead to new regulation, fines, or reputational damage for companies involved. Investors in chipmakers and AI infrastructure firms are reportedly watching closely, given how central Nvidia has become to the broader AI investment boom.</p><p>If testimony reveals serious wrongdoing, it could trigger tighter sales rules industry-wide, affecting not just Nvidia but any company exporting advanced chips, with knock-on effects for valuations across the AI hardware sector.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMiigFBVV95cUxPc2tFT1V2Um1OemZNU0t6NWwzQUtQd0k1MFR0X2N1N3FQMXZRWldGN0ZZREdKNXlhclg4ck5YMHhHVFctOWZOZldDWERHSmFzN1FvSGdtZzNuSG9rd2puMnZ0TGpYSlp2VDQwRFlHZUZlcU01V0RwQTZaTXJXVGdtYnpxWF9FNG03Qnc?oc=5" target="_blank" rel="noopener">CASRAI</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Congressional oversight</dt><dd>The power of elected lawmakers to investigate and question government officials or company executives about their conduct.</dd></div><div><dt>Subpoena power</dt><dd>The legal authority to compel someone to testify or produce documents, backed by legal penalties for refusal.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Financial analysts need to track political and regulatory risk alongside earnings, since a single hearing can move a chipmaker&#39;s share price as much as a product launch.</p></div>
+  </article>
+  
+  <article id="story-4">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>Nvidia Director Sold $947m in Stock Before Huang Scandal Broke</h3>
+    <p class="standfirst">The timing of Mark Stevens&#39;s massive share sale is drawing scrutiny amid the unfolding chip export investigation.</p>
+    <div class="body"><p>Nvidia board member Mark Stevens reportedly sold $947 million worth of company stock shortly before news broke of the investigation into Jensen Huang and alleged chip sales to shell companies. The scale and timing of the sale have raised questions about whether board members had advance knowledge of trouble ahead.</p><p>Directors sit on a company&#39;s board, overseeing management and approving major decisions; trading stock around sensitive news can trigger scrutiny from regulators checking for insider trading, which is using non-public information to gain an unfair advantage when buying or selling shares.</p><p>No wrongdoing has been confirmed, but the sale adds pressure on Nvidia&#39;s governance just as the company faces a congressional investigation, and could become a focus of the Senate Banking Committee&#39;s upcoming hearing.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMiqAFBVV95cUxNWUR4TkQtVmxySC1jLUdidFVoS3FmUHl2WDJjQ3ZVNDhidlpaaE51Z2RYei1iRldmWF8wR0I3NGo0SWFOVk1DTHFQYU9GR1MyTlk3X1FXd3gwS1dfZjhWX3RBMDh1T1ZWUzdNdnJiQzJkYWtqY09nVGJ3ZEFFR19mTlptaGI1RlNPVThZc2dXZTFZWFhIUzJzUlowSzFsUWF1U1UwRU9TalE?oc=5" target="_blank" rel="noopener">Pasquale Pillitteri</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Insider trading</dt><dd>Buying or selling shares using important information that is not yet public, which is illegal because it gives an unfair advantage over other investors.</dd></div><div><dt>Board of directors</dt><dd>A group of people elected to oversee a company&#39;s management and major decisions on behalf of shareholders.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Spotting unusual insider stock sales is a key skill for analysts and journalists covering corporate scandals, and it&#39;s a good example to raise in interviews about financial due diligence.</p></div>
+  </article>
+  
+  <article id="story-5">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>New ETF Bets on Orbital Data Centres as Nvidia&#39;s $500bn Financing Faces Scrutiny</h3>
+    <p class="standfirst">Investors launch a fund targeting space-based computing just as doubts grow over AI&#39;s debt-heavy, earthbound buildout.</p>
+    <div class="body"><p>A new exchange-traded fund, or ETF, a basket of investments that trades like a single stock, has reportedly launched to target companies building data centres in orbit, betting that space could solve some of the land, power and cooling constraints facing AI infrastructure on Earth.</p><p>The launch comes as scrutiny mounts over Nvidia&#39;s reported $500 billion in infrastructure financing commitments, with some investors worried that heavy borrowing to fund AI data centres echoes earlier warnings about an AI bubble, a fear that AI company valuations have risen faster than the profits to justify them.</p><p>Space-based data centres remain an early-stage idea, but the ETF&#39;s launch shows investors are already looking for new ways to bet on AI infrastructure growth, even as questions swirl over how sustainable the current debt-fuelled buildout really is.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxNVExvOEJtUW5iaG9DNllyc3JMSFE2WlBHcmJFYlg3aGJNakM4cWtGOXRueTBJM2JoQ2ZySk1KcmFjWTRMVHVVWHg1MzdFeHVnM1M5UTlnWGMzUnJ6cE5zZVlfUE5vcld6OGhfWUJNZmh5S1ZYWmRBbXZwZVJlWXRUb0sxNHdiTlU5SFI3czJka2Y2YU5pd2IwelBpTkk0QmI5OW11Y2VDSUNoTFI4X1AzRC1qNUVUdG9BYW5FbTNfcDQ2SEYzMTNVcDZEbw?oc=5" target="_blank" rel="noopener">Coinpaper</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>ETF (exchange-traded fund)</dt><dd>A fund that holds a basket of investments, such as shares in several companies, and trades on an exchange like a single stock.</dd></div><div><dt>AI bubble</dt><dd>The fear that AI company valuations have risen much faster than their actual profits, meaning prices could fall sharply if expectations aren&#39;t met.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Understanding how new financial products package emerging themes, like orbital data centres, helps you spot both genuine innovation and hype when evaluating investment pitches.</p></div>
+  </article>
+  
+</section>
+
+<section id="startups" class="startups">
+  <div class="sec-head">
+    <span class="mono">Section 3</span>
+    <h2>Startups &amp; funding</h2>
+    <p>Who raised, how much, and what investors are betting on.</p>
+  </div>
+  
+  <article id="story-6">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>Agile Robots Raises $500m at $8.5bn Valuation</h3>
+    <p class="standfirst">The robotics startup&#39;s latest funding round values it at $8.5 billion as investors bet on physical AI.</p>
+    <div class="body"><p>Robotics company Agile Robots has reportedly secured $500 million in a new funding round, valuing the company at $8.5 billion. The raise adds to a wave of investment in companies combining robotics hardware with AI software, a category often called vertical AI because it focuses on one specific industry rather than general-purpose tools.</p><p>Details of the round, including investors and intended use of funds, have not been fully disclosed, but the scale of the raise places Agile Robots among the better-funded robotics startups globally.</p><p>The deal reflects continued investor appetite for AI applied to physical tasks, even as questions persist across the sector about how quickly such companies can turn large valuations into real-world revenue.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMigAFBVV95cUxNcFVvTXlYbVB5aEdDOVh1NFFLT1VfZ0VNZGtQZmo3clpaN0dOUWVZVWZueVA3MS1yMTZUTG9rd2JKeHF1UE1aZU1IVXVzbkdaYnpDNkxpZXlhelpDTXhzVlJTdnJhZ0hfNnZvcWx3SC1qOGFZelR2R3gyOS1MbU1DUw?oc=5" target="_blank" rel="noopener">StartupValley</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Valuation</dt><dd>An estimate of what a company is worth, often based on a funding round&#39;s price per share multiplied by total shares outstanding.</dd></div><div><dt>Vertical AI</dt><dd>AI built for one specific industry or task, like robotics or legal document review, rather than general-purpose tools like chatbots.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Robotics-plus-AI roles are growing fast; knowing the difference between vertical and general-purpose AI helps you frame your skills clearly when applying to specialised startups.</p></div>
+  </article>
+  
+  <article id="story-7">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>Utopai Studios Hits $1bn Valuation With $60m Raise for AI Video</h3>
+    <p class="standfirst">The video AI startup joins the billion-dollar club as investor interest in generative video tools intensifies.</p>
+    <div class="body"><p>Utopai Studios has reportedly raised $60 million in new funding, pushing its valuation to $1 billion. The company works in AI-generated video, a fast-growing niche within the broader generative AI boom, where models create moving images from text prompts or other inputs.</p><p>Reaching a $1 billion valuation, sometimes called unicorn status, with a relatively modest $60 million raise suggests investors are pricing in strong future growth rather than current revenue, a pattern common across many AI startups today.</p><p>The raise adds to a busy year for AI video funding, as studios and investors race to capture a market that could reshape advertising, film production and social media content creation.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMipAFBVV95cUxNR3BXWXlSM0RVeDA5WVNNYmNjcERSdV9SaXMyT0V2VFlwZDh1RW1haE5VMlRROGtXNXRrclY4RUIyS19MbC1CZW9aRHQzNVF5QlVoVTdTeWl6aWdZS3dyUWR2NVI0RVRlck9kc0hvVjlEdGZxMWFXNzBPRExKSngtYWxvSEQwXzFjMnUxNk9mNzVuNkxPX09JV3ZBT0tKb05SeVRWRw?oc=5" target="_blank" rel="noopener">Dealroom</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Up round</dt><dd>A funding round where a company&#39;s valuation increases compared with its previous round, signalling investor confidence.</dd></div><div><dt>Valuation</dt><dd>An estimate of what a company is worth, often set by how much investors are willing to pay for a stake in a funding round.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>AI video tools are creating new roles in prompt engineering and content production; understanding how valuations are set helps you judge whether a startup&#39;s pitch numbers are realistic.</p></div>
+  </article>
+  
+</section>
+
+
+
+<div class="panel" id="code">
+  <span class="mono">Code corner</span>
+  <h2>Screening Customers for Export Control Risk</h2>
+  <p class="src">Based on: <a href="#story-1">Treasury Secretary Questions Whether Nvidia Knowingly Sold Chips to Shell Firms</a></p>
+  <p style="margin:0">Inspired by the Nvidia shell-company investigation, here&#39;s a simplified Python script that flags customers who might need extra compliance checks before a sale.</p>
+  <pre><code>customers = [
+    {&#34;name&#34;: &#34;Acme Robotics&#34;, &#34;employees&#34;: 450, &#34;country&#34;: &#34;Germany&#34;},
+    {&#34;name&#34;: &#34;Quickchip Trading LLC&#34;, &#34;employees&#34;: 2, &#34;country&#34;: &#34;Unknown&#34;},
+    {&#34;name&#34;: &#34;Northfield AI&#34;, &#34;employees&#34;: 80, &#34;country&#34;: &#34;Canada&#34;},
+    {&#34;name&#34;: &#34;Starlogic Holdings&#34;, &#34;employees&#34;: 1, &#34;country&#34;: &#34;Unknown&#34;},
+]
+
+def flag_risk(customer):
+    reasons = []
+    if customer[&#34;employees&#34;] &lt; 5:
+        reasons.append(&#34;very small headcount&#34;)
+    if customer[&#34;country&#34;] == &#34;Unknown&#34;:
+        reasons.append(&#34;unverified location&#34;)
+    return reasons
+
+for customer in customers:
+    risks = flag_risk(customer)
+    if risks:
+        print(f&#34;{customer[&#39;name&#39;]}: FLAGGED - {&#39;, &#39;.join(risks)}&#34;)
+    else:
+        print(f&#34;{customer[&#39;name&#39;]}: looks fine&#34;)
+</code></pre>
+  <span class="mono">Line by line</span>
+  <ol class="walk"><li>The customers list stores each buyer as a dictionary with name, employee count, and country, similar to a row in a spreadsheet.</li><li>flag_risk takes one customer and builds a list of reasons to worry, such as having very few employees or an unverified country.</li><li>The function returns an empty list if nothing looks suspicious, which Python treats as &#39;falsy&#39; in an if statement.</li><li>The for loop checks every customer, printing a warning with the specific reasons if any risks were found, or a clean bill of health otherwise.</li></ol>
+  <div class="tryit"><p><b>Try it:</b> Add a new customer with 0 employees and a known country, then add a rule to flag_risk that also flags any customer with exactly 0 employees, regardless of country.</p></div>
+</div>
+
+<div class="panel" id="quiz">
+  <span class="mono">Quiz · apply today's concepts</span>
+  <h2>What would you do?</h2>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 1</span>
+    <p class="scenario">You&#39;re a junior compliance analyst at a chipmaker. A sales report shows a buyer with two employees and no verified address, but a very large order.</p>
+    <p class="ask">Which concept should most concern you here?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>Vertical AI, because the buyer might only use the chips for one industry</span></button></li><li><button type="button" data-i="1"><b>B</b><span>Shell company, because the buyer&#39;s profile suggests it may not be a genuine end-user</span></button></li><li><button type="button" data-i="2"><b>C</b><span>AI bubble, because chip prices might be overvalued</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Reinforcement learning, because the chips might be used for training robots</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> A tiny, unverifiable company placing a huge order is a classic warning sign of a shell company used to disguise the real buyer, which is central to the Nvidia export investigation. The other options are unrelated technical or market concepts that don&#39;t address the suspicious buyer profile.</p>
+        <div class="chips"><span>Shell company</span><span>Due diligence</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 2</span>
+    <p class="scenario">During a team meeting, a colleague mentions that a company director sold nearly a billion dollars of stock right before bad news broke.</p>
+    <p class="ask">What should you flag as the key financial governance concern?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>The company&#39;s gross margin dropped sharply</span></button></li><li><button type="button" data-i="1"><b>B</b><span>Possible insider trading, since the timing suggests advance knowledge of bad news</span></button></li><li><button type="button" data-i="2"><b>C</b><span>The company issued a bond at a high yield</span></button></li><li><button type="button" data-i="3"><b>D</b><span>The company&#39;s valuation rose too quickly in its last funding round</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> Selling a large stake right before negative news becomes public is the textbook red flag for insider trading, regardless of whether wrongdoing is ever proven. The other options describe unrelated financial metrics that don&#39;t match the scenario described.</p>
+        <div class="chips"><span>Insider trading</span><span>Board of directors</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 3</span>
+    <p class="scenario">A founder pitching you a robotics startup says their $500 million raise values the company at $8.5 billion, even though revenue is still small.</p>
+    <p class="ask">What should you ask to properly evaluate this valuation?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>Whether the model uses reinforcement learning</span></button></li><li><button type="button" data-i="1"><b>B</b><span>What justifies pricing future growth so far ahead of current revenue</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Whether the company has filed for an IPO yet</span></button></li><li><button type="button" data-i="3"><b>D</b><span>How many tokens their AI model processes per second</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> A high valuation relative to current revenue is normal in AI investing, but a good investor should ask what growth assumptions justify the price, which is the core of vertical AI valuation debates like Agile Robots&#39;. The other options are technical details unrelated to assessing whether the price makes financial sense.</p>
+        <div class="chips"><span>Valuation</span><span>Vertical AI</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 4</span>
+    <p class="scenario">In a team meeting, someone argues that AI research labs should never be shut down because that&#39;s where breakthroughs like reinforcement learning come from.</p>
+    <p class="ask">What&#39;s the most accurate response based on today&#39;s news?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>Research labs are shut down for legal reasons, never business ones</span></button></li><li><button type="button" data-i="1"><b>B</b><span>Companies sometimes consolidate research into product teams to turn ideas into revenue faster, as seen with Microsoft&#39;s AI Frontiers closure</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Reinforcement learning is no longer used in modern AI systems</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Only startups do fundamental AI research, not big tech companies</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> Microsoft&#39;s closure of AI Frontiers reflects a common industry pattern of shifting resources from pure research to product-focused teams to generate revenue sooner. The other options misstate facts, such as claiming reinforcement learning is obsolete or that only startups do research, which isn&#39;t supported by today&#39;s stories.</p>
+        <div class="chips"><span>Reinforcement learning</span><span>Research lab vs product team</span></div>
+      </div>
+    </details>
+  </div>
+  
+</div>
+
+<div class="panel" id="glossary">
+  <span class="mono">Glossary</span>
+  <h2>Every concept from today</h2>
+  <dl class="gloss"><div><dt>AI bubble<a href="#story-5">see story</a></dt><dd>The fear that AI company valuations have risen much faster than their actual profits, meaning prices could fall sharply if expectations aren&#39;t met.</dd></div><div><dt>Board of directors<a href="#story-4">see story</a></dt><dd>A group of people elected to oversee a company&#39;s management and major decisions on behalf of shareholders.</dd></div><div><dt>Congressional oversight<a href="#story-3">see story</a></dt><dd>The power of elected lawmakers to investigate and question government officials or company executives about their conduct.</dd></div><div><dt>Congressional subpoena<a href="#story-0">see story</a></dt><dd>A legal order from Congress compelling someone to testify or hand over documents; refusing can lead to legal penalties.</dd></div><div><dt>Due diligence<a href="#story-1">see story</a></dt><dd>The careful checking a company does before a deal, such as verifying who a buyer really is, to avoid legal or reputational trouble.</dd></div><div><dt>ETF (exchange-traded fund)<a href="#story-5">see story</a></dt><dd>A fund that holds a basket of investments, such as shares in several companies, and trades on an exchange like a single stock.</dd></div><div><dt>Export controls<a href="#story-0">see story</a></dt><dd>Rules that stop companies selling sensitive technology, like advanced AI chips, to certain countries or buyers without government approval.</dd></div><div><dt>Insider trading<a href="#story-4">see story</a></dt><dd>Buying or selling shares using important information that is not yet public, which is illegal because it gives an unfair advantage over other investors.</dd></div><div><dt>Reinforcement learning<a href="#story-2">see story</a></dt><dd>A way of training AI by rewarding good actions and penalising bad ones, like training a dog with treats, so the system gradually learns better behaviour.</dd></div><div><dt>Reputational risk<a href="#story-1">see story</a></dt><dd>The danger that a company&#39;s public image, and therefore its sales and share price, suffers because of a scandal or perceived wrongdoing.</dd></div><div><dt>Research lab vs product team<a href="#story-2">see story</a></dt><dd>Research labs explore new ideas without immediate commercial goals, while product teams build and ship features that generate revenue now.</dd></div><div><dt>Shell company<a href="#story-1">see story</a></dt><dd>A business that exists mainly on paper, often used to disguise the real buyer of goods or services.</dd></div><div><dt>Subpoena power<a href="#story-3">see story</a></dt><dd>The legal authority to compel someone to testify or produce documents, backed by legal penalties for refusal.</dd></div><div><dt>Up round<a href="#story-7">see story</a></dt><dd>A funding round where a company&#39;s valuation increases compared with its previous round, signalling investor confidence.</dd></div><div><dt>Valuation<a href="#story-7">see story</a></dt><dd>An estimate of what a company is worth, often set by how much investors are willing to pay for a stake in a funding round.</dd></div><div><dt>Vertical AI<a href="#story-6">see story</a></dt><dd>AI built for one specific industry or task, like robotics or legal document review, rather than general-purpose tools like chatbots.</dd></div></dl>
+</div>
+
+<div class="panel">
+  <span class="mono">Past digests</span>
+  <ul class="archive"><li><a href="../archive/2026-11-15.html" aria-current="page">2026-11-15</a></li><li><a href="../archive/2026-11-14.html">2026-11-14</a></li><li><a href="../archive/2026-11-13.html">2026-11-13</a></li><li><a href="../archive/2026-11-12.html">2026-11-12</a></li><li><a href="../archive/2026-11-11.html">2026-11-11</a></li><li><a href="../archive/2026-11-10.html">2026-11-10</a></li><li><a href="../archive/2026-11-09.html">2026-11-09</a></li><li><a href="../archive/2026-11-08.html">2026-11-08</a></li><li><a href="../archive/2026-11-07.html">2026-11-07</a></li><li><a href="../archive/2026-11-06.html">2026-11-06</a></li><li><a href="../archive/2026-11-05.html">2026-11-05</a></li><li><a href="../archive/2026-11-04.html">2026-11-04</a></li><li><a href="../archive/2026-11-03.html">2026-11-03</a></li><li><a href="../archive/2026-11-02.html">2026-11-02</a></li><li><a href="../archive/2026-11-01.html">2026-11-01</a></li><li><a href="../archive/2026-10-31.html">2026-10-31</a></li><li><a href="../archive/2026-10-30.html">2026-10-30</a></li><li><a href="../archive/2026-10-29.html">2026-10-29</a></li><li><a href="../archive/2026-10-28.html">2026-10-28</a></li><li><a href="../archive/2026-10-27.html">2026-10-27</a></li><li><a href="../archive/2026-10-26.html">2026-10-26</a></li><li><a href="../archive/2026-10-25.html">2026-10-25</a></li><li><a href="../archive/2026-10-24.html">2026-10-24</a></li><li><a href="../archive/2026-10-23.html">2026-10-23</a></li><li><a href="../archive/2026-10-22.html">2026-10-22</a></li><li><a href="../archive/2026-10-21.html">2026-10-21</a></li><li><a href="../archive/2026-10-20.html">2026-10-20</a></li><li><a href="../archive/2026-10-19.html">2026-10-19</a></li><li><a href="../archive/2026-10-18.html">2026-10-18</a></li><li><a href="../archive/2026-10-17.html">2026-10-17</a></li></ul>
+</div>
+
+<footer>Written by Claude from the linked sources. Check the original article before quoting figures in an interview.</footer>
+</div>
+<script>
+document.querySelectorAll(".q").forEach(function (q) {
+  var correct = Number(q.dataset.correct);
+  var buttons = q.querySelectorAll(".opts button");
+  buttons.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var picked = Number(b.dataset.i);
+      buttons.forEach(function (x) {
+        var i = Number(x.dataset.i);
+        if (i === correct) x.classList.add("right");
+        else if (i === picked) x.classList.add("wrong");
+        x.disabled = true;
+      });
+      q.querySelector("details").open = true;
+    });
+  });
+});
+</script>
+</body>
+</html>

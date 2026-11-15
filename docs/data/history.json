@@ -1,66 +1,5 @@
 [
   {
-    "date": "2026-11-08",
-    "headlines": [
-      "US Memo Claims Chinese Spy Had 'Close' Ties to Nvidia's Jensen Huang",
-      "Microsoft Reportedly Pulls Back From Oracle Cloud Deal Over Ageing Nvidia Chips",
-      "Big Tech's 'Hidden' AI Debt Reaches $3.2 Trillion, Report Finds",
-      "Anthropic's IPO Valuation Talk Slides as Low as $1.1 Trillion Amid AI Stock Rout",
-      "Deutsche Bank Secures Lighter Capital Rules for 2027 as It Pushes Its AI Narrative",
-      "Meta's Latest Bond Sale Signals a Costlier Era for Tech Debt",
-      "Alphabet Builds $548 Million Stake in Qualcomm, Boosting Chipmaker's Data Centre Ambitions",
-      "SpaceX Reportedly Nearing $60 Billion Deal to Acquire AI Coding Startup Cursor"
-    ],
-    "concepts": [
-      "Dual-use technology",
-      "Export controls",
-      "Front company",
-      "Neocloud",
-      "GPU vs CPU",
-      "Compute capacity",
-      "Off-balance-sheet debt",
-      "Capital expenditure (capex)",
-      "Debt-to-asset ratio",
-      "IPO (initial public offering)",
-      "Valuation",
-      "AI bubble",
-      "Capital requirements",
-      "Regulator",
-      "Net profit",
-      "Bond",
-      "Credit spread",
-      "Capital expenditure (capex)",
-      "Equity stake valuation gain/loss",
-      "Custom chip",
-      "Market share",
-      "Acquisition",
-      "Vertical AI",
-      "Valuation"
-    ],
-    "links": [
-      "https://techcrunch.com/2026/11/07/chinese-exec-was-recruited-to-spy-on-nvidia-ceo-according-to-us-intelligence-memo/",
-      "https://news.google.com/rss/articles/CBMipAFBVV95cUxQVFh0LUVsV293Tk1rc2xNRVMzYmlfaWh5c2JrNlR4eWZEUnhza2hZaHhBWXVRUS1iemN1Q0pwcmRKMGFJYm0zV1lqUG5LMUdMczlhMXRydDRxeHhJTGVOZG1JVGVTaUJUQ1ZZX1BXQlIzR0cyVWVPaXNxTURGbm5nT2dFZThvNXFlSFNvV29kWGxhSEtlVEFiV3hHY1NXRXRKbDlUeg?oc=5",
-      "https://news.google.com/rss/articles/CBMixgFBVV95cUxOU0EtYkt5UHlqMnUtYVFDY1hIM0hrc3FVLWtvOG5fdVo2WUdQLWhzQ1ZjeXo4MkxiLXJROHlBS21CcVZwN0VwTE1ZQUUyWC0zanRvbzNLckk4Zllpby01SmNLaURNd3ZuTU9xUENqZ1M1aTFpNXpOYnhrb1ZhRTUwNkZzdDRQUFRDM2lfdF9aRlliZWg3QTZZeDJNMWRyYV9sS2h6VGg1bzF3RHQ0Vy1haUxOaEZqcUNLcGZqR1pWMjlJS2lTUEE?oc=5",
-      "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOUnpNTk9aNHUzSFFGd01sc2JLTTlWTVNFWUYtQmJ2YkY5MEhpakJUSUpSMkRocXlLSUtCUk5tbFkzODVpeUZMeXFEdnlyNjRZVWZiNzhheFJZYTRPNGFkMmtaTS02RE5JcFVrRm5LcWNLWVhBdi15eWRFSUh5RkZjNkpuampYQ3NzWW0xanMtcUlVNXFVVWlaeUVpeTFxYXhidmVuNmFvVFF5dw?oc=5",
-      "https://news.google.com/rss/articles/CBMirwFBVV95cUxQeTNjZWxsY09KZXJRbWRsZ3BOVGw0TDN3Wm9KWFZEdEtaUEFnNVdvNloyaWcxWEhrbVhPdTdSaVdYMU84eUp1cmdjbjUyNm5hSkI4cS05ZTZqQVFzWmpIdngxbHp5dGlGVEVIOElaMG9lc1VudzkzbnlBUGVJXzhxT3pKYnJEaUpKdGZjOGRuS2lJcnk0NlozSl9uaW5wTHViYVBIb3RrM2t0LTlYeUtB?oc=5",
-      "https://news.google.com/rss/articles/CBMiowFBVV95cUxQMVpHMU9kNjRsUWlWREtkdlBPbGU4WlRZdXVaYUlGaS1HUWFBeTY5MWUtZ0sxUFVtOEpnRi1mVl9rWEV2U2dOcmFaZExsdzh1dGlyUHBpQmVtcmdMMzJrMmZ2V1RBZnROZDJIU2ctdWpIdlByUG0tTUlwd3hvMkY2Rm1jU3p3ZmFQOTBkS2xEOTI5U3dtNHRPb25IZkV2RloyOUxv?oc=5",
-      "https://news.google.com/rss/articles/CBMitgFBVV95cUxObmhaU3l3RFE1eG9LM2dFcmdzbkpiMk5EVnNDYV96X1A4dTBTVnVhUjg0WDFlN0JuYVJxSVlIblNtNkprZ20xMVl6MWwweVRtWmQyVDc1dE04Rkk5TDdQb2d3ZWFic3VjZkNGa2lsWlQxTUhCSm9WeFVvbXg3MThJQXFMX2xrNVJCQ1FpeWJfQ1dSTElvQnNaSEJSdUdLb29OeG1WTzVOeGFPSXpLbFVSTFFZRjJRUQ?oc=5",
-      "https://news.google.com/rss/articles/CBMisAFBVV95cUxNcmNGbk9TZ01lNUlzU1pzcmUxU0dwNGpCTFZPYW91dTNCY0s0N3VXRms2MHhKUmJpRm1kVjExVjNYWHdxb0ZBOUh5ZEhHX1NCTzF4VUk4a3dzZ1RnZ01seUVsTDFrRDhmT2tnSkVTaWlxalNVM2JNTE84NWNHTkhwWU9RUy1ySU9YWE1FR1FYemtzWXlWamQ5cDZ1Uk5sdzRXM1B1djJSVHBBWkg4MnAzSdIBtgFBVV95cUxQY2hHSHVBR3FVN3pwTjg0QWpoT1pIWXhDU091UHdtT1pneTFsclh3LVVGbDU2LUNjQ1Fzb3oxa3VhRmJfeHJPQnVQeENBcHY3dlczOWZzWDA0Y2JJMnpRakcyd2Q5eDdubzdsNjY2V3JURzlGS3lhdmVKa2RHY0JYYThQQlRYekpOa1VJNm5ndFd1QllUVUlLbHJ3SE9yU0hCczZXd2UzTEVkd0Z0YUFXQVFQQ3pPdw?oc=5",
-      "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQdGVlOVdiWUtkVkJEU25XdE1DS3dhNTRxTXp3ZC11cGpHbnc1SlF0OHpqM0oxaXhPYWgycnp1cVMxbGMtZGs3NWVScVdaWjgzdHk2YUI5TXpPWUlyOVkyMUZub1NMeVBsYWJEVGZ0eUQwRHZWX29oejBlQ2JlMmFRZDgweGdBRkowRUQ2U2FIaFU0VE91WUcwZGtBNE4yUG13WkR6amo2UC1mNUdkcFBBWUlHTmxVNnlFWmFvN0ExXzhmYVRJTkZfTFU5QW1oYmtDdzRrRVpsRk0tbDdnTWpj0gHmAUFVX3lxTE13cTZ6dHA1QmNWRkRvVU9xN2ZjbnM0bFhMQzRyZDVaMmNHX2dqVDFmZGNnZFV5OFA3TU9qaGlpWnlpSHRhaTMyZnpTSDdJNDdRdERBdnA0a1pzUnBCZ2M1d21KLUNuWjRGYktrVEZERDVDYXhTOWhQYnhxZnYyNi1oeFJYQk0tWUlsUU5iXzNiNzlhOTg2MGdpaUVOMFB0VDNnektFYmN0dEhvRlRyVkRHakFoQXpNNVV6Q2xJaHRhaHVUZXdFb3ctb0FzdkhESU1SUmd2dU12QzltY2NKTHVPU2RQTmNB?oc=5",
-      "https://news.google.com/rss/articles/CBMidkFVX3lxTE5yQmktQUVUaUtENmxCMFgwN3BoRzktTWRXb3o3WXgtY3ZkRHdRck9fOHBjOUVvc0Rfc1dRSU5hdFE3eDhvSDZKUnAxMUY5cGo5VlEzZ0xTYTV0cDBLaWhrdW9UaFdzdzRCc2VrUHJmNUZRQ2ZILXc?oc=5",
-      "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQVEttSUR3MjdkN1NhT0JMZ096YldsZUdDSW1sbVBEV093VHdUbU01ME5ZZms1VVFDMWpTUzZxbXJ6X19RaXo5QnZadFpfdGhqRi1aaUhyRkQ4ZnU1eFJqOVg4UUpuUExSbFZqY3hrS3lfS1hoLU8zNExsalUweHc0RXNQLTVnUHpoQnhySlpxNGNLVkdEWEZOZTRNWmN6aGdBakRiVEJfUUpXZXpKdEZha2o0YzhWX0ptNkpkYnZKUHliRXM?oc=5",
-      "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNWTdMeklsUm96Y1ktbjJxQU5RSlRyb1RJOTNYUUUzRmRmRWo0eklLWk83TmxEWGdYYjBBeDVwVDlfSDJaV0U0dlVCSUZUbFlrZ3hQc183M1FEdVNpRENqQW5ORENybmFWNG9oMW9JLUQ4QW9ydTUzTTZUSTl1Z3BGQTFTWkI1dF9ManRhb3diUDBkVHR5X0NIMFBpSHlHbml2d1dRVWxLZjNDdWM?oc=5",
-      "https://news.google.com/rss/articles/CBMizAFBVV95cUxQWHpGbnNqM3BNV3B2X0dPYnN5b01IZWYwbFpwYVB4NWV0Z0pkdEV5U0xJZG41cGY0WWJtWDdpcVBGWTRDblAxb0pLbTFuWEUxWE5selY2Uy1yMlhiTUhYWnFoWHdTcnlvajBlZzlkSFkxa0NTSHNjZU5WUHAtRk1oTXBwUmV4bWg3NEZxWTJ4Z2c4YzU4aTd0Mk40WjdVZ3BfVDZGM2c5VEk1S19kblpoRGkxdFMyMGVrcE03MFU5bG9JTmRycFgyb0pfaEQ?oc=5",
-      "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBFcFg2UGt4V0VMT2FnenpocUNiQm44XzlxNEJLWklKVEttMjY1LUM2ejBBVS0ycC1haVl2LUwzZjQ4eDYwb1V5WjZfZ05mVkdxRE9yejliVlVfSGhR?oc=5",
-      "https://news.google.com/rss/articles/CBMigwFBVV95cUxNZVdmV0xKUjljSFpySjNJNGtERHlWU2pLM2Z3cHZEdmY2SHU3VlR2WllnazB3b0hYRUgzS3NST2ZqNlJNd2Q3TXJlR3RON3VGM2JrOG1YOHk3TjJCbGJVdnotR2x4OWp1b2JIak84MnR0OUR3NEVvWlY2YXJnUmM2ZkctVQ?oc=5",
-      "https://news.google.com/rss/articles/CBMi7gFBVV95cUxOa3JjTlNQU1VkMmV6N3kwR0FRVXR0bWQxR3NzdUswQW45a0ZYb3phdlhacmpaYmNuUHl1aTY0bkVXMDNxZk4zWUdsbEFUUGM4RDhPUnc2MElsWldSejZ4ZC11MEZjUU9WU2x5LVN1NUgxemxZVGNhTVMwNWxad0NUNDZ0N0hGc203aksyQVRSYW9MOFlHYWptQWo5cklHd1o2dUZwVS1UQXI2OEhwdGpSN2xYUXhIVWZzME5ZMXRXWV80N01nbTNZZlM3RlhtLW50dFlzLVF2cThzbXZGZzVfc3VRUlNwblRIQk1qU1F3?oc=5",
-      "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPZjNoS1hpN19Xbkt1eU9hT3RPam1UT25PZV9WTWpNTGI1RWhnNW9Za01VR0VOS1NPck9XQ3NrSGh4S1BkUXg5ODNGQmVyeU5EOHNnN2x6UWlfZlJCRm1LVGVzbnJla0NZQXF4UmJDWWl0eWNranlVV25LNERnUFptRi1feHktRUROYWlZcUcwM05KNlNfYU9WbWF0Vk9uLWhyaU9vN212VGpYR0JqckRaWkdQV3pORVQzZnBQYlpyc0JrenR0N09aQWsxdkNfNlh1d1FVSVFHakc?oc=5",
-      "https://news.google.com/rss/articles/CBMigwFBVV95cUxNQmExcDJ5R0N3NURrWnpPcWpRVjI4blFXdTBxVWZHeVp2YlQ2M0I5WHVlbjVkNjI2TlNCVjIwc0ZQa3BTQ002cEJ0Tl9hRFNKYmdtYUtJemNoWDUyUEs5cFdXUklmd3doV1JBV3VUSU9ocmVzT3JSWEZNeFNNZmRiYWlHVQ?oc=5",
-      "https://news.google.com/rss/articles/CBMidkFVX3lxTE9MblJUeVpEdldkRjIzWWt2OGtDUmttSFhoNktzSmR3RV9jb0lEUVRZMnlreDJGUEV1SzltOVNnMmx4aHRVVGZ6b25pazNfTEhWamZjZzdGeGV6R0c5RDMzQzg2ZUVHMHhmbXVsQ1ZYUVlSeENJMGc?oc=5",
-      "https://news.google.com/rss/articles/CBMisgFBVV95cUxOT3JJQnJZdHRjQTVMbjh1LUlnU1pGaTBpUFFubzZWYXN4OTZJNUo0RjBkZGk1S2NvX29TUEd5TjY1ckpXaHFhV0JXTmdhdUJNWVk4U1M4RHJJc2VPQ1NQMUtUYjJjaHFYV3VjMG1ld01LOG1rNUlmN2szbVk3WXpVUWlwLThVNTNRbDNYSWQ4aExZeUp0dzVFbEpwMVUzRTZFMkE3cGpmS2xldjBhcHd4dnRR?oc=5"
-    ]
-  },
-  {
     "date": "2026-11-09",
     "headlines": [
       "Nvidia board launches probe into Jensen Huang's ties to alleged Chinese spy",
@@ -404,6 +343,53 @@
       "https://news.google.com/rss/articles/CBMilwFBVV95cUxQZ0VYTV8yd00tYkdyYUtKeURaazhVUDN1ZEVHTS1IVi1za3hORW0xYmt6R2VHUDA4dHNvMU9CemkwV3Z1OENmLVpvc0hjQ0ZfcEhfUERDNm13SmpjUm1LRkpSYk9mN1VRQ3BsMWdmX1VEb1hfcWVCQlF1NzlKWExwUndTRkpUaE1FMF9maG90RXVkc2RSY1hv?oc=5",
       "https://news.google.com/rss/articles/CBMiWEFVX3lxTFAyM0JZYlRCOVNsb1pNRDdYekxWVHBLRWRSM082SlZ5ZWxYU09zaHhZMlVMUUNoczBOUlBiS25NLS1ZbF9ZY2k1LUlSV0t0MXhseGtjZHp0bGU?oc=5",
       "https://news.google.com/rss/articles/CBMivgFBVV95cUxOcDY2alEwanBSLVFsNG5LdC1rU3ZqcXliSXJEd3BSdDhLQ0xtQXg3WmF0aHdSVF9LallGVUlnTWFjek9GeVpIZ3hEWGFUMUhBYjEwQk9taWIwYUR1OUlhaUpqWlpLT2xJY3NxU1Ntd19MT0RRaGtwY3N2QUVIbVFMNUNSaXBUbV96TXMydkFaVUxGV0U1dmVvZEEyWHVLaktaWjV2Z2NkZzltS1dkX1ZBUjBnUTVlRjVCQ0lHY29B?oc=5"
+    ]
+  },
+  {
+    "date": "2026-11-15",
+    "headlines": [
+      "Congress Fast-Tracks AI Chip Export Curbs After Huang Resignation Shock",
+      "Treasury Secretary Questions Whether Nvidia Knowingly Sold Chips to Shell Firms",
+      "Microsoft Disbands AI Frontiers Research Group, Veteran Scientist Departs",
+      "Senate Banking Committee Summons Lutnick and Huang Over AI Chip Probe",
+      "Nvidia Director Sold $947m in Stock Before Huang Scandal Broke",
+      "New ETF Bets on Orbital Data Centres as Nvidia's $500bn Financing Faces Scrutiny",
+      "Agile Robots Raises $500m at $8.5bn Valuation",
+      "Utopai Studios Hits $1bn Valuation With $60m Raise for AI Video"
+    ],
+    "concepts": [
+      "Export controls",
+      "Shell company",
+      "Congressional subpoena",
+      "Due diligence",
+      "Shell company",
+      "Reputational risk",
+      "Reinforcement learning",
+      "Research lab vs product team",
+      "Congressional oversight",
+      "Subpoena power",
+      "Insider trading",
+      "Board of directors",
+      "ETF (exchange-traded fund)",
+      "AI bubble",
+      "Valuation",
+      "Vertical AI",
+      "Up round",
+      "Valuation"
+    ],
+    "links": [
+      "https://news.google.com/rss/articles/CBMihAFBVV95cUxQVGxvZmxUQ0JxLVJuWmRILTBpbUwwbEMxbDV1bEhkYVdjdnl3WVYzWFBGZFhqckFER1JyYWptWEI3XzAzeEZ1dnZuSUdYVkFCdFZXTjVmMUxtVjJSc0dPZHR2R05TbE1mQzA0OU84TEdXd1I0UkFrS2Z0dDRIUXoxV2Y3b2o?oc=5",
+      "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNUXo5NjhRWlBKYml5ZUdxM1lzTW1ZLTU3Uk9mOUZ0YzhJaTdtQXZJUWU5cG01bkJuSHpVM2ZJd0lJMWFjS09nVGFTYVJEaXA0Z2FwcDJLVnFQY3ZndWRCQVZWempzY28zX1VQVUx5TnowTDhKc1gxODNaeVRhSDFIQmJMYmJDbmpyU0U3d2hNY2p2UjE0clFCWU5CVTd0SWg3WjVSU3dzR0xuUQ?oc=5",
+      "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBGVkZNaVNDWG04RmNRcWtsZTd4NXREV0ZKZ2lYSUdURGMxTXl0ZmxDckE1dk1RSUNBaTdyTklrUnlHd2J0d2JTUGxhWXJxS3VmZE1tOVcwQTI3dWNoTUhrMFpmVWMyUdIBa0FVX3lxTFBKSXhGanU4aG9CaUx5aml2QkZvNWZpYjVRRTF5LVNHUEFOTU53enZRb2pQeW9WZEF5YUlCOFBxdmNac0dTSU1XQ2pBcXpVMlAyZHJlc0pKdVFIaHIxTVdhTkVJWUd0U0FOZTJZ?oc=5",
+      "https://news.google.com/rss/articles/CBMiigFBVV95cUxPc2tFT1V2Um1OemZNU0t6NWwzQUtQd0k1MFR0X2N1N3FQMXZRWldGN0ZZREdKNXlhclg4ck5YMHhHVFctOWZOZldDWERHSmFzN1FvSGdtZzNuSG9rd2puMnZ0TGpYSlp2VDQwRFlHZUZlcU01V0RwQTZaTXJXVGdtYnpxWF9FNG03Qnc?oc=5",
+      "https://news.google.com/rss/articles/CBMijgNBVV95cUxNc1otajVZRUIwV256cWxSZGVkR2EzWDB6ZWxpYnR4XzhUTHpTSXJiRmRMcGF3eGRlaXFMRDVzWmRQbzVWRHlEVzJWeGxFREZ6Mkc3X2tNOE5sQlRaeFVZbkhjWllQS2pOS1RHNTV3VkliVGVkSlR5RTBlN2VVMXBneVUtdG5TVi1Vc29lcUJ5Mm4yVjRNckhRMS1ZNHNiaDVab21wRFdoZkVVaTRNUDVvalV4cGI3b0lrRlVFUUFua1R1R3dXd2dyYkdaeFdnUmw5MmlUOWJWMnpPRy1na190N0lzdEpDRkNBOUNYMk95Y0Y5ZTNIQ0RsMTFZSks0NFp3MFc4UEwzeTNFLWE4cld2TjFBNm5BaFg3N1dFX3RuclUwSkdsSVZEbW5QdE1yRVZqU3lxbGZnVzdSWFd1NldxVVJnTDF4bkpacnhUZnE4ajRYdEg2YUxMQVM1X3E2TFpOVnBNZEVWYkw2LXNwN1V0N2NlVnFQdjhSd05WVjBHZENfUkNQYnA3UmFIMmFjdw?oc=5",
+      "https://news.google.com/rss/articles/CBMilgFBVV95cUxNOHVybkpTTzR4VW1mdHJEY1BrSGdEWWZNR1FNU3BIZ1pMOHRTNDhqcnd4cS1sVExnS2VjVFBuZW9YRVh6ZDhobW5HTU1xY3JoeW9qQU1iSTVwSU9XdjR1V3I5dTZEdDlDZFU2WEg5dU1zWi1lMXAydk5XeUxtQkJqVW9BUmtXWGxwS19MSi0xeDlWQkthWVE?oc=5",
+      "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPSkNUY2Z2ZDAyd3NaMFNpTEZLenYtNHh0Mk1FZlhHWjhPVVpPUnpPVDRZS3d1amFGR21jOWk0QXRDMHlrcnhxcUpUWUxQT1FIUDRIVmhuRGstaGh1XzA4a3FTdVh2S1NQVkJBZ01LM1RtdVJCcW8zRjdUQ3N4aV9sX2FlZUtQX1lZMUFNQTJHLWZjZ29fbHdRSjMwSFlWUWdSOHVnQTAzNk1GLTlaYlJ1VHF6YjRTRjc1N1FOcEZVS214d0FydWc5X3pGRk9HZVNiRmh3TdIB2gFBVV95cUxOVmNyRTFJbjhIbDdKTVFOTDBJM29Tclg3ajlkZklNM1Z5Q2J6cnZrM1k0OW1oUWhKb21XeUNiX1JPbHdtRFZYZzNrb1pHUXpNMkRmdGxNUXlaVEl0V1kwQXBJZ1JZWGF6RU5Gd0N3TWdrdno5U051Z2pYMG11T0FzTmNXdVYzekJxaHhDcms4WWt3QWJrYzB5MjdhZU1WTjZkZE5uOEpxdXUtY3cxakxMYWJWU3dKR0pVUFVEc0dJVkl1UGlPa1NhYk1qTlV1RC1sNnpqUHE0a2pUZw?oc=5",
+      "https://news.google.com/rss/articles/CBMiigFBVV95cUxPc2tFT1V2Um1OemZNU0t6NWwzQUtQd0k1MFR0X2N1N3FQMXZRWldGN0ZZREdKNXlhclg4ck5YMHhHVFctOWZOZldDWERHSmFzN1FvSGdtZzNuSG9rd2puMnZ0TGpYSlp2VDQwRFlHZUZlcU01V0RwQTZaTXJXVGdtYnpxWF9FNG03Qnc?oc=5",
+      "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNWUR4TkQtVmxySC1jLUdidFVoS3FmUHl2WDJjQ3ZVNDhidlpaaE51Z2RYei1iRldmWF8wR0I3NGo0SWFOVk1DTHFQYU9GR1MyTlk3X1FXd3gwS1dfZjhWX3RBMDh1T1ZWUzdNdnJiQzJkYWtqY09nVGJ3ZEFFR19mTlptaGI1RlNPVThZc2dXZTFZWFhIUzJzUlowSzFsUWF1U1UwRU9TalE?oc=5",
+      "https://news.google.com/rss/articles/CBMiywFBVV95cUxNVExvOEJtUW5iaG9DNllyc3JMSFE2WlBHcmJFYlg3aGJNakM4cWtGOXRueTBJM2JoQ2ZySk1KcmFjWTRMVHVVWHg1MzdFeHVnM1M5UTlnWGMzUnJ6cE5zZVlfUE5vcld6OGhfWUJNZmh5S1ZYWmRBbXZwZVJlWXRUb0sxNHdiTlU5SFI3czJka2Y2YU5pd2IwelBpTkk0QmI5OW11Y2VDSUNoTFI4X1AzRC1qNUVUdG9BYW5FbTNfcDQ2SEYzMTNVcDZEbw?oc=5",
+      "https://news.google.com/rss/articles/CBMigAFBVV95cUxNcFVvTXlYbVB5aEdDOVh1NFFLT1VfZ0VNZGtQZmo3clpaN0dOUWVZVWZueVA3MS1yMTZUTG9rd2JKeHF1UE1aZU1IVXVzbkdaYnpDNkxpZXlhelpDTXhzVlJTdnJhZ0hfNnZvcWx3SC1qOGFZelR2R3gyOS1MbU1DUw?oc=5",
+      "https://news.google.com/rss/articles/CBMipAFBVV95cUxNR3BXWXlSM0RVeDA5WVNNYmNjcERSdV9SaXMyT0V2VFlwZDh1RW1haE5VMlRROGtXNXRrclY4RUIyS19MbC1CZW9aRHQzNVF5QlVoVTdTeWl6aWdZS3dyUWR2NVI0RVRlck9kc0hvVjlEdGZxMWFXNzBPRExKSngtYWxvSEQwXzFjMnUxNk9mNzVuNkxPX09JV3ZBT0tKb05SeVRWRw?oc=5"
     ]
   }
 ]
