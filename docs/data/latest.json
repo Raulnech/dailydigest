@@ -1,8 +1,8 @@
 {
-  "date_label": "Tuesday 17 November 2026",
+  "date_label": "Wednesday 18 November 2026",
   "talking_points": [
-    "Nvidia reports its first earnings since Jensen Huang's shock resignation, with investors watching for clues on China exposure and neocloud financing risk.",
-    "California has become the first state to sue OpenAI over 'rogue agent' incidents, arguing the company shipped an unsafe product without proper safeguards.",
-    "AMD has closed its $8.2 billion purchase of World Labs, putting AI pioneer Fei-Fei Li in charge of its push into 'spatial intelligence'."
+    "Nvidia has quietly stopped shipping even its US-approved H200 chips to China, just as its own disclosures come under SEC scrutiny.",
+    "Anthropic's IPO is pricing above range despite a wider AI bubble debate now being voiced by the ECB itself.",
+    "AMD just paid nearly $3 billion for a tiny inference-chip startup, showing how fiercely the chip wars have moved from training to deployment."
   ]
 }

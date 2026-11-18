@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI Morning Brief · Wednesday 18 November 2026</title>
+<meta name="theme-color" content="#3A55C8">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  color-scheme:light dark;
+  --ground:#F3F4F7; --paper:#FFFFFF; --ink:#141827; --muted:#5B6275; --line:#DDE0E8;
+  --industry:#3A55C8; --industry-soft:#E6EAFA;
+  --finance:#1C7453; --finance-soft:#E1F1EA;
+  --startups:#A8561A; --startups-soft:#F7EADF;
+  --code-bg:#161A26; --code-ink:#E4E7F0;
+  --right:#1C7453; --right-soft:#E1F1EA; --wrong:#B3261E; --wrong-soft:#FBE7E5;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --ground:#0F121B; --paper:#171B27; --ink:#E8EAF1; --muted:#9AA1B4; --line:#2A3042;
+    --industry:#8FA3F5; --industry-soft:#20284A;
+    --finance:#6CCBA3; --finance-soft:#15332A;
+    --startups:#E8A06A; --startups-soft:#3A2618;
+    --code-bg:#0B0D14; --code-ink:#E4E7F0;
+    --right:#6CCBA3; --right-soft:#15332A; --wrong:#F2A29B; --wrong-soft:#3A1B19;
+  }
+}
+*{box-sizing:border-box}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.6 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;padding-inline:16px;padding-block:28px 64px}
+.wrap{max-width:700px;margin:0 auto;display:grid;gap:36px}
+a{color:inherit}
+a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var(--industry);outline-offset:3px;border-radius:4px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400}
+header{display:grid;gap:10px}
+header .date{color:var(--muted)}
+h1{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(44px,11vw,64px);line-height:1;margin:0;letter-spacing:-.01em}
+h1 em{color:var(--industry)}
+.lede{color:var(--muted);margin:0;max-width:60ch}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ground);padding-block:10px;display:flex;gap:8px;overflow-x:auto;border-bottom:1px solid var(--line)}
+nav a{flex:none;text-decoration:none;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--paper);font-size:14px}
+nav a.industry{color:var(--industry)} nav a.finance{color:var(--finance)} nav a.startups{color:var(--startups)}
+
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:14px;scroll-margin-top:64px}
+.panel h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:30px;margin:0;line-height:1.15}
+.panel > .mono{color:var(--muted)}
+.talk ol{margin:0;padding-left:20px;display:grid;gap:8px}
+.toc{display:grid;gap:14px}
+.toc h3{margin:0 0 4px}
+.toc ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.toc li a{text-decoration:none}
+.toc li a:hover{text-decoration:underline}
+
+section{display:grid;gap:22px;scroll-margin-top:64px}
+.sec-head{display:grid;gap:2px;border-top:3px solid var(--c);padding-top:12px}
+.sec-head h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:36px;margin:0;line-height:1.1;text-wrap:balance}
+.sec-head p{margin:0;color:var(--muted)}
+.sec-head .mono{color:var(--c)}
+.industry{--c:var(--industry);--cs:var(--industry-soft)}
+.finance{--c:var(--finance);--cs:var(--finance-soft)}
+.startups{--c:var(--startups);--cs:var(--startups-soft)}
+
+article{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px 20px;display:grid;gap:16px;scroll-margin-top:64px}
+article .kicker{color:var(--c)}
+article h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(26px,6vw,32px);line-height:1.15;margin:0;text-wrap:balance}
+.standfirst{margin:0;font-size:18px;line-height:1.5;color:var(--muted)}
+.body{display:grid;gap:14px;font-family:"Source Serif 4",Georgia,serif;font-size:18px;line-height:1.65;max-width:65ch}
+.body p{margin:0}
+.src{margin:0;font-size:13px;color:var(--muted)}
+.concepts{background:var(--cs);border-radius:12px;padding:16px 18px;display:grid;gap:12px}
+.concepts .mono{color:var(--c)}
+.concepts dl{margin:0;display:grid;gap:10px}
+.concepts dt{font-weight:600}
+.concepts dd{margin:2px 0 0}
+.why{display:grid;gap:4px;border-left:2px solid var(--c);padding-left:14px}
+.why .mono{color:var(--c)}
+.why p{margin:0}
+
+pre{margin:0;background:var(--code-bg);color:var(--code-ink);border-radius:10px;padding:16px;overflow-x:auto;font:14px/1.55 "IBM Plex Mono",ui-monospace,Consolas,monospace}
+.walk{margin:0;padding-left:20px;display:grid;gap:6px}
+code{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:.9em}
+.tryit{background:var(--industry-soft);border-radius:10px;padding:12px 16px}
+.tryit p{margin:0}
+
+.q{display:grid;gap:12px;border-top:1px solid var(--line);padding-top:18px}
+.q:first-of-type{border-top:0;padding-top:0}
+.scenario{margin:0;font-family:"Source Serif 4",Georgia,serif;font-style:italic;font-size:17px}
+.q .ask{margin:0;font-weight:600}
+.opts{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.opts button{width:100%;text-align:left;font:inherit;color:var(--ink);background:var(--ground);border:1px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer;display:flex;gap:10px}
+.opts button:hover{border-color:var(--industry)}
+.opts button b{font-family:"IBM Plex Mono",ui-monospace,monospace;font-weight:500}
+.opts button.right{background:var(--right-soft);border-color:var(--right)}
+.opts button.wrong{background:var(--wrong-soft);border-color:var(--wrong)}
+.opts button:disabled{cursor:default}
+details{border-radius:10px}
+summary{cursor:pointer;font-weight:500;color:var(--industry)}
+.answer{display:grid;gap:8px;margin-top:10px}
+.answer p{margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:13px;padding:2px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+
+.gloss{margin:0;display:grid;gap:12px}
+.gloss dt{font-weight:600}
+.gloss dt a{font-weight:400;font-size:13px;color:var(--muted);margin-left:6px}
+.gloss dd{margin:2px 0 0;color:var(--muted)}
+.archive{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.archive a{display:inline-block;padding:4px 10px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-variant-numeric:tabular-nums;font-size:14px}
+.archive a[aria-current]{border-color:var(--industry);color:var(--industry)}
+footer{color:var(--muted);font-size:13px}
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="mono date">Wednesday 18 November 2026 · 16 min read</span>
+  <h1>AI Morning <em>Brief</em></h1>
+  <p class="lede">Today's AI and fintech news as short articles, with every key concept explained, a bit of Python, and a scenario quiz to check it stuck.</p>
+</header>
+
+<nav aria-label="Sections">
+  <a href="#industry" class="industry">The AI industry</a>
+  <a href="#finance" class="finance">AI &amp; finance</a>
+  <a href="#startups" class="startups">Startups &amp; funding</a>
+  <a href="#code">Code corner</a>
+  <a href="#quiz">Quiz</a>
+  <a href="#glossary">Glossary</a>
+</nav>
+
+<div class="panel talk">
+  <span class="mono">If you only read one thing</span>
+  <h2>Three things to be able to say today</h2>
+  <ol><li>Nvidia has quietly stopped shipping even its US-approved H200 chips to China, just as its own disclosures come under SEC scrutiny.</li><li>Anthropic&#39;s IPO is pricing above range despite a wider AI bubble debate now being voiced by the ECB itself.</li><li>AMD just paid nearly $3 billion for a tiny inference-chip startup, showing how fiercely the chip wars have moved from training to deployment.</li></ol>
+</div>
+
+<div class="panel">
+  <span class="mono">In today's brief</span>
+  <div class="toc">
+  
+    <div class="industry"><h3 class="mono" style="color:var(--c)">The AI industry</h3>
+      <ul><li><a href="#story-0">Nvidia halts all AI chip shipments to China, even the ones Washington approved</a></li><li><a href="#story-1">Amazon set for nearly 15% of Anthropic after IPO, with room to nearly double it</a></li><li><a href="#story-2">Microsoft launches seven in-house AI models to undercut OpenAI and Anthropic</a></li></ul>
+    </div>
+  
+    <div class="finance"><h3 class="mono" style="color:var(--c)">AI &amp; finance</h3>
+      <ul><li><a href="#story-3">SEC opens civil probe into Nvidia disclosures as leadership crisis deepens</a></li><li><a href="#story-4">ECB compares AI boom to dotcom bubble as tech firms pile up debt</a></li><li><a href="#story-5">Anthropic set to price IPO above $70–78 range as demand surges</a></li></ul>
+    </div>
+  
+    <div class="startups"><h3 class="mono" style="color:var(--c)">Startups &amp; funding</h3>
+      <ul><li><a href="#story-6">AMD pays roughly $2.9 billion for inference-chip startup Taalas</a></li><li><a href="#story-7">Isomorphic Labs raises €4.5 billion to accelerate AI-designed drugs</a></li></ul>
+    </div>
+  
+  </div>
+</div>
+
+
+<section id="industry" class="industry">
+  <div class="sec-head">
+    <span class="mono">Section 1</span>
+    <h2>The AI industry</h2>
+    <p>Big labs, big tech and the direction of travel.</p>
+  </div>
+  
+  <article id="story-0">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Nvidia halts all AI chip shipments to China, even the ones Washington approved</h3>
+    <p class="standfirst">Interim chief Colette Kress confirms Nvidia has stopped sending licensed H200 processors to Chinese buyers, reversing a fight the company itself won last December.</p>
+    <div class="body"><p>Nvidia has stopped shipping its advanced H200 artificial intelligence chips to China, despite having secured explicit permission from the White House to do so less than a year ago. The disclosure came from interim CEO Colette Kress during Tuesday&#39;s earnings call, who said guidance for coming quarters assumes zero revenue from licensed Hopper-generation data centre chips sold into China.</p><p>The H200 is part of Nvidia&#39;s Hopper chip architecture, essentially a generation or &#39;family&#39; of processor designs built for training and running AI models. Washington restricts exports of the most powerful chips to China through a licensing system designed to slow Chinese military and AI progress; Nvidia had spent much of the past two years lobbying for permission to keep selling a cut-down, export-compliant version. Getting that approval last December was seen as a win for then-CEO Jensen Huang. Kress gave no reason for the about-turn, and didn&#39;t say whether Nvidia would pursue other China business.</p><p>The shift follows Huang&#39;s abrupt departure last week amid reports of personal scandal, and separate difficulties getting chips into China at all: Reuters has reported that roughly 600,000 H200 units are stuck in Hong Kong because Beijing is withholding import approval, part of a broader push by China to wean itself off US chip technology. The result is that Nvidia, the world&#39;s most valuable chipmaker, is now locked out of a market it fought hard to keep.</p></div>
+    
+    <p class="src">Sources: <a href="https://www.theverge.com/tech/1036445/nvidia-h200-ai-chips-china-stop-selling" target="_blank" rel="noopener">The Verge</a> · <a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxQc0dHN3dEWU8xaElLV21veDdXMWI3eUpBYWNYV2ZXSWZTUkJLX3dELUNmeEZhSGtlczFEMWFjXzZMTWhNRUJrZnlHT0VqN0ZYcXZwQ1dXTzJLSnJCREtWZXhQWVlQY20waTh4WlVZNmVTemVLM1l4UXNrbUJDd3p4OUhweklHT2F2SDRXTXpiWTRab3dIalpnQjVJNmc?oc=5" target="_blank" rel="noopener">Reuters</a> · <a href="https://news.google.com/rss/articles/CBMitgFBVV95cUxQVk5ZV2dpR3EyVEtJcVdSZTBCVGl6UE1qZ1gzNWdiaHJ3WGR1S3NUd2VRcWVzUWhjanFicXVzNi1zRWZNel9EdlVOaC1uMUFCckRXMkRGWkRZeHdZUnE4VTdtUkZ2N0dITkRYa040X29HanoxODdGVXV3NzEyOGhnR1VOb2VwcFNIcHFJQlFrNXM3T1hqQlN5WnB0MHJTU0R2cTZOUnBNbV9Ubm81clFKM0x5cHRxdw?oc=5" target="_blank" rel="noopener">Bloomberg.com</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Export licence</dt><dd>A government permit allowing a company to sell a restricted product abroad. Nvidia needed one to ship advanced chips to China legally, even after getting approval it can later choose not to use it.</dd></div><div><dt>Chip architecture generation</dt><dd>Chipmakers design processors in &#39;families&#39; that share an underlying blueprint, like Hopper or its successor Blackwell. The H200 belongs to the Hopper family, which is older and easier for regulators to approve for export than newer designs.</dd></div><div><dt>Export controls (reminder)</dt><dd>Rules restricting which countries or companies can buy sensitive technology, used here by the US to slow China&#39;s access to cutting-edge AI chips.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>If you work in chip supply chains, trade compliance or equity research, this shows how fast export policy and corporate strategy can diverge from each other, and why geopolitics now sits inside every semiconductor earnings call.</p></div>
+  </article>
+  
+  <article id="story-1">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Amazon set for nearly 15% of Anthropic after IPO, with room to nearly double it</h3>
+    <p class="standfirst">Filings show Amazon and Google will together hold close to 30% of the AI firm once it lists, largely through old investments converting into new shares.</p>
+    <div class="body"><p>Anthropic&#39;s IPO filing reveals that Amazon will own just under 15% of the company at listing, while Google will hold close to 14%, making the two cloud giants collectively the biggest shareholders outside Anthropic&#39;s founders. Both stakes come in the form of non-voting shares, meaning the companies get the financial upside without a vote on Anthropic&#39;s board.</p><p>The shares originate from promissory notes, essentially IOUs that convert into equity later, which Amazon and Google received when they invested in Anthropic back in 2023 and 2024, long before its coding tool Claude Code made it a serious rival to OpenAI. Amazon&#39;s notes convert at roughly $2.09 to $5.05 per share depending on when they were issued; converting all of them today would push its stake to nearly 24%. It has chosen to convert only part of its holding for now. A consortium including AMD, Broadcom, Google, Micron, Microsoft, Nvidia and TSMC Partners has also agreed to buy $26 billion of this non-voting stock through a private placement, a direct sale of shares outside the public offering.</p><p>None of this counts the commercial side: Anthropic has committed to spend more than $100 billion on Amazon&#39;s cloud division over the next decade. For Amazon, that means profiting both as an investor and as Anthropic&#39;s landlord, a dual position that will be closely watched by investors weighing how much of Big Tech&#39;s AI enthusiasm is really about securing captive customers.</p></div>
+    
+    <p class="src">Sources: <a href="https://techcrunch.com/2026/11/17/amazon-and-google-will-together-own-nearly-30-of-anthropic-after-its-ipo/" target="_blank" rel="noopener">TechCrunch</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Non-voting shares</dt><dd>Shares that pay out financially like ordinary stock but give the holder no say in company decisions, letting investors profit without gaining control.</dd></div><div><dt>Promissory note / convertible note</dt><dd>An early-stage IOU that can later be exchanged for company shares at a pre-agreed price, letting investors lock in cheap equity before a company is publicly valued.</dd></div><div><dt>Private placement</dt><dd>Selling shares directly to a small group of chosen investors rather than to the public market, often used alongside an IPO to secure strategic backers.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Understanding how cloud providers quietly become major shareholders in the AI labs they host explains a recurring pattern in this market, and it&#39;s a sharp interview talking point about conflicts between being an investor and a supplier.</p></div>
+  </article>
+  
+  <article id="story-2">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Microsoft launches seven in-house AI models to undercut OpenAI and Anthropic</h3>
+    <p class="standfirst">New coding and cybersecurity models are pitched as matching rivals&#39; performance at a fraction of the cost.</p>
+    <div class="body"><p>Microsoft used its Ignite conference to unveil seven AI models built by its own research teams, aimed squarely at reducing its reliance on partners OpenAI and Anthropic. Among them is a coding model Microsoft says performs similarly to Anthropic&#39;s Claude Opus 5.5 while costing only around 5% as much to run.</p><p>The move signals Microsoft&#39;s push for &#39;price-performance&#39;: getting comparable quality from a model at a much lower running cost, known as inference cost. Rather than competing purely on raw capability, Microsoft appears to be targeting specialised tasks like coding and cybersecurity, where a smaller, more efficient model can match a larger general-purpose rival for a fraction of the compute bill.</p><p>The strategy reflects a wider industry trend of labs building narrower, cheaper models for specific jobs rather than only chasing bigger, more expensive general-purpose systems. For Microsoft, which has invested billions in OpenAI, in-house models reduce dependence on external suppliers and give it more pricing control as AI spending comes under growing investor scrutiny.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMixgFBVV95cUxPQ05INXRWaGd0ZFhsSkZWMjBZeFNJYU1JOEhkRG9PT1V5SUl6YTNNMzFWblJXZVdjVHJzZW5raFlUbzlHMTNHemFUVWZab28xS0M3RzkyN2c2Ukl6VUR4SUF6RFRpVjRieGRFUWJGZUNsMzkyR1B0bnlxSFFQMHpFT2JCQ09KM0FMcUZWXzlZaEVmanRiMmtuOGxGQnNKbDZkM0hJVGpwNURRN0daX29GX2tHZ0pIU3NrRk5JbVVpZ1d1WGN0cHc?oc=5" target="_blank" rel="noopener">Reuters</a> · <a href="https://news.google.com/rss/articles/CBMidkFVX3lxTFBuTWNMclIyMVRybENZZm9QR2txcVhZWXdNNnZOeXVXN2tlOVRKQlExYmZZRnAyZWlDV0RLUmpucXVnWnViODhaR2RicTROMHZMdklDSUlfNGlieHVPbjMxanBPaHJ1cVRGMDJYR3BxOFFzdjJ3Qnc?oc=5" target="_blank" rel="noopener">BigGo Finance</a> · <a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxOWnpSWUhVX2NkMm9wR1R1dE92a2VBYVM5TUpKc19Ia3NsSlVmUmZfTjNfYVVuTnU4ZjJPMHJJWHNrclcxT3dSZGZ5ckdDYlM3M3BvcGVNNGtkb1ZKZk5KM2ZvOGJKdVhtLU5fQ3JtSDZsMW5rbGwwczhEX2R4TTY5Nm9n?oc=5" target="_blank" rel="noopener">Axios</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Price-performance</dt><dd>A measure of how much capability you get per pound or dollar spent, not just raw quality. A model that&#39;s 95% as good but costs 20 times less can have far better price-performance.</dd></div><div><dt>Narrow (specialised) AI model (reminder)</dt><dd>A model built and tuned for a specific task, like writing code, rather than trying to handle everything a general-purpose model does.</dd></div><div><dt>Inference cost</dt><dd>The computing expense of actually running a trained model to answer a query, as opposed to the one-off cost of training it. Cheaper inference means a company can serve more users profitably.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>This is the clearest sign yet that the AI price war is shifting from training breakthroughs to efficient deployment, a trend worth mentioning if you&#39;re asked in an interview how AI companies plan to become profitable.</p></div>
+  </article>
+  
+</section>
+
+<section id="finance" class="finance">
+  <div class="sec-head">
+    <span class="mono">Section 2</span>
+    <h2>AI &amp; finance</h2>
+    <p>Where Wall Street and the City meet AI, as users and as funders.</p>
+  </div>
+  
+  <article id="story-3">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>SEC opens civil probe into Nvidia disclosures as leadership crisis deepens</h3>
+    <p class="standfirst">Regulators are reportedly examining what Nvidia told investors, days after Jensen Huang&#39;s abrupt exit.</p>
+    <div class="body"><p>The US Securities and Exchange Commission has reportedly opened a civil investigation into Nvidia&#39;s public disclosures, according to the Wall Street Journal, adding regulatory pressure to a company already dealing with a leadership vacuum following Jensen Huang&#39;s resignation.</p><p>A civil probe is distinct from a criminal investigation: it focuses on whether a company broke securities rules, such as failing to tell investors about material risks, rather than alleging crimes carrying prison sentences. Penalties can still include heavy fines and demands for corrective disclosures. The exact focus of the SEC&#39;s inquiry hasn&#39;t been detailed in reporting so far.</p><p>The timing is awkward for Nvidia, which is also navigating fallout from its halted China chip sales and questions about its vetting of Chinese buyers. With no permanent CEO in place, investors will be watching closely for how the board handles both the regulatory scrutiny and the broader uncertainty over Nvidia&#39;s China strategy.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMidkFVX3lxTE5LcW9LTFhaZkFOelRQYUgxZ3FPcVYzR2hzWDVnOXdPblNEcmFRajY0eWM2MHJhZG1SWlhCRUxzclAtTDQyRW05R2Zkd29vSHBIaDE5cjlkZzNOTjNvUG5UX01QeDVROUNCclAxLWUzWkZyXzNhRWc?oc=5" target="_blank" rel="noopener">BigGo Finance</a> · <a href="https://news.google.com/rss/articles/CBMidkFVX3lxTE1wUU9uN08zSWFsY0UyQUJlSFVEcjFqVnZ4OUU4aWhHRjFrUk9nQ3Vvam9mOVMxNFdkdzFjcDRCekZnY2o3bmZFMXlPeExpMGs5S29qYjd5S2xjdmt2NUI2dzVKWHd5ZGlBSTVtbkdGWjZtOEl1TFE?oc=5" target="_blank" rel="noopener">BigGo Finance</a> · <a href="https://news.google.com/rss/articles/CBMiygFBVV95cUxQUkVuYVdjQkVtZkxoX2RPSnJxT1h6Vk5ZLTZPQy1Pby15a2ZJRGdvWk1zMk5LQ3hId2xHdk5qTHlvZDVfYm10U2JsQmEwb0hqNno4TU4xeTRNY2xSSzVmcTZnV2pGcTh5RE05S1p4VFVyY19IZ01lUjZodk84RXBHLXlXQzIwUDBwRmN3WUNySVdlZTZSUmhmcVl5eTV0TkJ5eExvQ1QycUJRa1luSlEzNTBxWi1yNE03TUkyejUtcEpkUjFMaEJfb0VB0gHKAUFVX3lxTFBSRW5hV2NCRW1mTGhfZE9KcnFPWHpWTlktNk9DLU9vLXlrZklEZ29aTXMyTktDeEh3bEd2TmpMeW9kNV9ibXRTYmxCYTBvSGo2ejhNTjF5NE1jbFJLNWZxNmdXakZxOHlETTlLWnhUVXJjX0hnTWVSNmh2TzhFcEcteVdDMjBQMHBGY3dZQ3JJV2VlNlJSaGZxWXl5NXROQnl4TG9DVDJxQlFrWW5KUTM1MHFaLXI0TTdNSTJ6NS1wSmRSMUxoQl9vRUE?oc=5" target="_blank" rel="noopener">Business Standard</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Civil probe</dt><dd>A regulatory investigation into whether rules were broken, typically resulting in fines or forced changes rather than criminal charges, unlike a criminal investigation which can lead to prosecution.</dd></div><div><dt>Disclosure obligations</dt><dd>Legal requirements for public companies to tell investors about information that could affect the share price, such as major risks or management changes.</dd></div><div><dt>Insider trading (reminder)</dt><dd>Buying or selling shares based on non-public information, which is illegal; SEC probes into disclosures sometimes uncover related insider trading concerns.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Knowing the difference between civil and criminal regulatory action is a basic but often-tested piece of financial literacy, useful if you end up in compliance, legal or investor relations roles.</p></div>
+  </article>
+  
+  <article id="story-4">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>ECB compares AI boom to dotcom bubble as tech firms pile up debt</h3>
+    <p class="standfirst">Europe&#39;s central bank flags borrowing by major tech companies as a growing financial stability risk.</p>
+    <div class="body"><p>The European Central Bank has reportedly drawn parallels between today&#39;s AI investment boom and the dotcom bubble of the late 1990s, warning that large technology companies are increasingly funding AI infrastructure with debt rather than cash.</p><p>The dotcom bubble saw internet company valuations soar on hype before crashing sharply in 2000, wiping out huge amounts of investor wealth. The ECB&#39;s concern is that AI firms&#39; heavy capital spending on data centres and chips, increasingly financed through bond issuance, could leave the wider financial system exposed if AI revenues fail to justify the spending.</p><p>This adds to a chorus of warnings this year about an AI bubble, but comes with an added twist: unlike the dotcom era, much of today&#39;s spending is debt-financed, meaning a slowdown could hit bond markets and banks, not just shareholders. Central banks like the ECB monitor this kind of systemic risk because trouble at large borrowers can ripple into the broader financial system.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMiuAFBVV95cUxPUXF3cnVfZ0J3R3NzTFlNLWQ1SDM2Qkd5MzVJOGhiZWh1VU1vU2FjZmpObldaRHBFMVVGWGU3eU15MDdlNjJhVHVzVFZLTWwtZUkzckJkeF94M2JFT3R6eE13QUZoRHV4MXlHT2t5aDVDYUJBeUNoVExuUEpMTkJLV0Y1cXlNMjRJOWJSVlp5YTVSMW5jRHluQWJnT0xnN214UHB1alRnVmx2U2RDZ29XcURzWlRuSUZY?oc=5" target="_blank" rel="noopener">Euronews.com</a> · <a href="https://news.google.com/rss/articles/CBMi4gFBVV95cUxQbnNVYVFaZGVtQ0pOTEh6Ri1UdU5FREs3aktBODlkQlE4RzJ6cVh4NjlzX0xrdVlSR0gxRzhpZWhzd2tkQ0NrMmFTZzNqd2YwWldsV1dxM1k4TGU5Z3lnZDdkRk0wZDNmd2loclllX05RZVBCcU1lS3FMRFdQaDVDUVI1OV9rOGFjekI4emg5LWI2RVdreDZWanpScDdxNGJOQVAzRHoxcTVDUzF2a2ZyU2hCSUNOU0xMRVJvZGZWTGhTWXAwbGlzTXFDX1FpbHJLNmxPWDBTVTlHRXNPZUl6dU1R?oc=5" target="_blank" rel="noopener">Bankingnews</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Dotcom bubble</dt><dd>A period around 1999–2000 when internet company share prices soared far beyond their actual earnings, before crashing dramatically when investors realised many had no viable business model.</dd></div><div><dt>AI bubble (reminder)</dt><dd>The concern that AI company valuations and spending have outrun realistic near-term profits, risking a sharp correction if expectations aren&#39;t met.</dd></div><div><dt>Systemic risk</dt><dd>The danger that trouble at one large company or sector spreads through the wider financial system, for example if heavily-indebted tech firms struggling to repay bonds causes losses at the banks holding that debt.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Central bank warnings like this shape regulation and lending conditions across the economy, so it&#39;s worth being able to explain in an interview why debt-funded AI spending is seen as riskier than cash-funded spending.</p></div>
+  </article>
+  
+  <article id="story-5">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>Anthropic set to price IPO above $70–78 range as demand surges</h3>
+    <p class="standfirst">Order books are closing with strong demand for the Claude maker&#39;s Nasdaq debut under ticker &#39;ANT&#39;, even as broader AI stocks wobble.</p>
+    <div class="body"><p>Anthropic looks set to price its initial public offering above its initial $70 to $78 per share range, according to multiple sources briefed on the deal, with order books closing on Tuesday ahead of a Nasdaq debut under the ticker ANT on 19 November. One major backer, investor Brad Gerstner of Altimeter, has reportedly said he aims to put around $5 billion into the offering, five times more than he has committed to any previous IPO.</p><p>The listing comes roughly five months after SpaceX&#39;s record-breaking $85.7 billion IPO, but into a public market now far warier of AI valuations. Anthropic&#39;s prospectus shows revenue of $33.24 billion for the nine months to September, up roughly 1,200% year-on-year, driven largely by its Claude Code coding tool. It also reported a $104 billion net loss over the same period, though the company says most of that reflects accounting changes in the fair value of convertible notes and derivative liabilities rather than operating losses.</p><p>Founded in 2021 by researchers who left OpenAI, Anthropic has built its reputation on AI safety, and its prospectus includes more than 90 pages of risk factors. CEO Dario Amodei has framed the listing as a step toward solving long-standing scientific problems, while acknowledging the need to manage AI&#39;s risks carefully. The IPO is widely seen as a key test of investor appetite in an otherwise jittery AI market.</p></div>
+    
+    <p class="src">Sources: <a href="https://www.cnbc.com/2026/11/17/anthropic-ipo-price.html" target="_blank" rel="noopener">Tech</a> · <a href="https://www.cnbc.com/2026/11/16/altimeters-brad-gerstner-investing-5-billion-in-anthropic-ipo.html" target="_blank" rel="noopener">Tech</a> · <a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxQbWllWlQ0OVRrVGN4cXBpLU9ycXNjNWNBbmdNUmNBdkI4N3p6eHZwM0FEdjZpamRkN3ZycERMMzJtUkZaWURvMHdlRG55SGdqZXJHbzV4Q3ZXeDR1SER1d2VmUXVKMHc0ci1UN0JhVk9PSWlvOUF6S2ZmMWtLOVlIdE91ZzV1S2UyUlBLS1plWHNkbElCMkRPTXpiMnMxdmJaRlg0aC1CVmI3RXdMMTUw?oc=5" target="_blank" rel="noopener">AP News</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Order book (IPO)</dt><dd>The running tally of investor demand for shares before a listing; a large, oversubscribed order book lets a company price its IPO higher than originally planned.</dd></div><div><dt>Fair value accounting of convertible notes</dt><dd>Companies must periodically re-estimate what their convertible notes are currently worth; a rising company valuation can paradoxically create large accounting losses on these instruments even though no cash has actually been lost.</dd></div><div><dt>Revenue growth rate (reminder)</dt><dd>How fast a company&#39;s sales are increasing, usually shown as a percentage versus the same period last year; Anthropic&#39;s 1,200% figure shows extremely rapid expansion.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>The Anthropic listing is becoming a bellwether for whether public markets still believe in AI valuations, and understanding net loss driven by accounting rather than operations is a genuinely useful skill for reading any growth company&#39;s financial filing.</p></div>
+  </article>
+  
+</section>
+
+<section id="startups" class="startups">
+  <div class="sec-head">
+    <span class="mono">Section 3</span>
+    <h2>Startups &amp; funding</h2>
+    <p>Who raised, how much, and what investors are betting on.</p>
+  </div>
+  
+  <article id="story-6">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>AMD pays roughly $2.9 billion for inference-chip startup Taalas</h3>
+    <p class="standfirst">The deal deepens AMD&#39;s push into chips built specifically to run AI models cheaply, rather than train them.</p>
+    <div class="body"><p>AMD has acquired AI chip startup Taalas for approximately $2.9 billion, strengthening its line-up of processors built for inference, the stage where a trained AI model is actually used to generate answers, as distinct from the much more compute-intensive training stage. The deal adds Taalas&#39;s inference-focused chip designs to AMD&#39;s existing accelerator roadmap as it competes with Nvidia for a bigger share of the AI hardware market.</p><p>Training a large AI model is enormously expensive and happens relatively rarely, but running it to serve millions of users every day, inference, is where ongoing costs pile up. Specialised inference chips, often application-specific integrated circuits or ASICs, can be far cheaper to run for this purpose than general-purpose GPUs originally designed for training. By acquiring Taalas rather than building similar technology from scratch, AMD gains engineering talent and designs more quickly.</p><p>The acquisition fits a broader pattern of large chipmakers buying smaller specialists to fill gaps in their product line, rather than relying solely on internal research. For AMD, it&#39;s a bet that owning dedicated inference silicon will help it chip away at Nvidia&#39;s dominance as AI companies increasingly care more about running costs than raw training power.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMidkFVX3lxTE40cHQyREQzd2pCZk1ZS1QwTy1iTVJfVExpNzIwWDd1dldCbXBON2FtZWdnN0RMNUt5MlhDMC1KRG5WdUJUZ2pOUEZraG1iaGlVcllXSDRCNHBkNTB5ZXRFUS04RG9iNE1pTWVKeE96MkVZZHYzM0E?oc=5" target="_blank" rel="noopener">BigGo Finance</a> · <a href="https://news.google.com/rss/articles/CBMikAFBVV95cUxNb1JCXzgwN0NjbTI3Mk5CRnFCVzUtdXJUdDdmcUJNODJGUDJpZm9DcWtVWmJaMkNyMjB1UzcyWWdPcUtubThvdlVsYzhNaS1Vb2ZLdUFxM1dpclQtajFsVFVzcUhVc0tFWHlmaVl1Z2FvRklwci1uS2tSazh6V0M4ekwwY2hVdU1hTkVEYW54RVU?oc=5" target="_blank" rel="noopener">OC3D</a> · <a href="https://news.google.com/rss/articles/CBMitwFBVV95cUxOUXlZckpESUVMc1pOS2xXZ3NjU1ZqVnBGR29ic3l6aW5PZVBuc2tpVkVOdXcwUXR2bGpMalB0SmFnX2pTdFZnNnd4cno4YXNIWDZwaTNmV0lRRWNRV0tvdnZrTzBwazNQQTBHUjVWMGpFWmhxamtEZDBtQ041SjFPc1ZMcFNxTmx0YXk3dW1ZRHIyQlB2b2Rvd3g5UVVpWU85NVFRbjN1QS16X1ZlTGd6M0NnYWVmY2s?oc=5" target="_blank" rel="noopener">KuCoin</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>AI inference chip (reminder)</dt><dd>A processor optimised for running an already-trained AI model efficiently and cheaply, rather than training it from scratch.</dd></div><div><dt>Strategic acquisition</dt><dd>Buying a smaller company primarily to obtain its technology, patents or engineering team quickly, rather than for its existing revenue or customer base.</dd></div><div><dt>ASIC (reminder)</dt><dd>A chip custom-built for one specific job, like running AI inference, which can be far more efficient than a general-purpose chip for that single task.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>If you&#39;re interested in hardware or semiconductor investing, this shows deal-making is shifting from training-focused GPUs toward cheaper inference chips, a theme likely to keep driving M&amp;A activity.</p></div>
+  </article>
+  
+  <article id="story-7">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>Isomorphic Labs raises €4.5 billion to accelerate AI-designed drugs</h3>
+    <p class="standfirst">The DeepMind spin-off, built around AlphaFold&#39;s protein-structure breakthroughs, lands one of Europe&#39;s largest AI funding rounds.</p>
+    <div class="body"><p>Isomorphic Labs, a company using AI to design new medicines, has raised €4.5 billion in a new funding round, one of the largest AI deals to come out of Europe this year. The company grew out of Google DeepMind, leveraging the AlphaFold technology that won its creators a Nobel Prize for predicting how proteins fold, a step that is central to understanding diseases and designing drugs to treat them.</p><p>Traditional drug discovery can take over a decade and cost billions of pounds per approved medicine, with most candidate compounds failing in testing. Isomorphic&#39;s pitch is that AI models can simulate how potential drug molecules will behave far faster than lab experiments alone, narrowing down candidates before expensive physical trials begin.</p><p>The scale of the round reflects investor enthusiasm for &#39;vertical AI&#39;, models built for a single high-value industry rather than general use, with drug discovery seen as one of the sectors where AI could have the most tangible real-world impact. Whether that promise translates into actual approved medicines, and real revenue, remains the key test ahead.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxNSGVLWUwwb0cwOFo1ZUlIWkgwbGcyNmZ0cGJsMG1sQXpJcUY1cGg3aUpnQnBUV2JDbzZQRmg3X0RtemMzUTJVSjZJdThVMHBPU1ljc2VxQmp2cFpzLXY0UjA3UUdFa21CR1BOdGk5SnF0V0JkMTBsT3Z1eldvSF84R2hqTU1FeDB2MWlmZ0sxTmFHY0NVaWI2OWowYk9PaVE2cno5T0M5dFpSQW1ROFQwaWRRYkJoMGZ6VkRzRDRaRUwwUmc?oc=5" target="_blank" rel="noopener">EU-Startups</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>AI drug discovery</dt><dd>Using AI models to predict how molecules will behave in the body, helping researchers narrow down which drug candidates are worth testing in costly, time-consuming lab and clinical trials.</dd></div><div><dt>Spin-off company</dt><dd>A new, independent business created out of part of an existing company; Isomorphic Labs was spun out of Google DeepMind to focus specifically on medicine.</dd></div><div><dt>Vertical AI (reminder)</dt><dd>AI built and tuned for one specific industry, like drug discovery or law, rather than general-purpose use.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>This is a strong example of AI investment moving beyond chatbots into capital-intensive scientific fields, relevant if you&#39;re considering biotech, pharma or deep-tech venture roles.</p></div>
+  </article>
+  
+</section>
+
+
+
+<div class="panel" id="code">
+  <span class="mono">Code corner</span>
+  <h2>Calculating Anthropic&#39;s eye-watering revenue growth</h2>
+  <p class="src">Based on: <a href="#story-5">Anthropic set to price IPO above $70–78 range as demand surges</a></p>
+  <p style="margin:0">Anthropic&#39;s prospectus said revenue grew roughly 1,200% year-on-year. Let&#39;s write a small function to calculate growth rates like this ourselves, and use it to sanity-check the headline number from the article.</p>
+  <pre><code>def growth_rate(old_value, new_value):
+    &#34;&#34;&#34;Return percentage growth from old_value to new_value.&#34;&#34;&#34;
+    if old_value == 0:
+        raise ValueError(&#34;Cannot calculate growth from zero&#34;)
+    change = new_value - old_value
+    percent = (change / old_value) * 100
+    return round(percent, 1)
+
+# Figures from Anthropic&#39;s prospectus (nine months to September, in billions)
+revenue_this_year = 33.24
+# Implied prior-year revenue, based on the ~1200% growth reported
+revenue_last_year = revenue_this_year / 13  # growth of 1200% means new = 13x old
+
+rate = growth_rate(revenue_last_year, revenue_this_year)
+
+print(f&#34;Revenue last year (approx): ${revenue_last_year:.2f}bn&#34;)
+print(f&#34;Revenue this year: ${revenue_this_year:.2f}bn&#34;)
+print(f&#34;Growth rate: {rate}%&#34;)
+
+if rate &gt; 1000:
+    print(&#34;That&#39;s extraordinary growth, even by AI industry standards.&#34;)</code></pre>
+  <span class="mono">Line by line</span>
+  <ol class="walk"><li>def growth_rate(old_value, new_value): defines a reusable function with two inputs, the earlier and later figures.</li><li>The function raises an error if old_value is zero, since you can&#39;t calculate a percentage change from nothing — division by zero would crash the program otherwise.</li><li>change = new_value - old_value finds the absolute increase in revenue, then percent = (change / old_value) * 100 converts that into a percentage.</li><li>We work backwards from the reported 1,200% growth to estimate last year&#39;s revenue (new = 13 × old when growth is 1200%, since 1200% growth means the new figure is old + 12×old = 13×old).</li><li>print(f&#34;...&#34;) uses an f-string to neatly embed variable values inside text, rounding to a sensible number of decimal places.</li><li>The final if statement shows how you can add simple conditional commentary based on a calculated result.</li></ol>
+  <div class="tryit"><p><b>Try it:</b> Change revenue_last_year to use the actual 2025 figure (around $2.55bn) instead of the estimate, and see how close the function&#39;s calculated growth rate comes to the reported 1,200%.</p></div>
+</div>
+
+<div class="panel" id="quiz">
+  <span class="mono">Quiz · apply today's concepts</span>
+  <h2>What would you do?</h2>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 1</span>
+    <p class="scenario">You&#39;re a junior analyst at an investment bank, and a senior colleague asks you to summarise why Nvidia halting China chip shipments is significant, given that the chips were already export-approved.</p>
+    <p class="ask">What&#39;s the most accurate explanation?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>Nvidia broke the law by shipping without a licence</span></button></li><li><button type="button" data-i="1"><b>B</b><span>Nvidia had a valid export licence but chose to stop shipments anyway, likely due to a mix of political, commercial and vetting concerns</span></button></li><li><button type="button" data-i="2"><b>C</b><span>The chips were never actually approved for export</span></button></li><li><button type="button" data-i="3"><b>D</b><span>China banned all imports of foreign semiconductors</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> Nvidia had secured a legal export licence last December but voluntarily stopped shipments, with reports citing vetting problems with Chinese buyers and China&#39;s own reluctance to approve imports. Option 0 and 2 misstate the legal position, and option 3 overstates China&#39;s actions, which involved withholding import approval rather than a blanket ban.</p>
+        <div class="chips"><span>Export licence</span><span>Export controls</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 2</span>
+    <p class="scenario">In a graduate interview, you&#39;re asked to explain the difference between the SEC opening a &#39;civil probe&#39; into Nvidia and a criminal investigation.</p>
+    <p class="ask">Which answer best describes the distinction?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>A civil probe can only happen after a criminal conviction</span></button></li><li><button type="button" data-i="1"><b>B</b><span>A civil probe examines whether securities rules were broken, typically leading to fines or forced disclosures, while a criminal investigation can result in prosecution and prison sentences</span></button></li><li><button type="button" data-i="2"><b>C</b><span>There is no real difference; both terms mean the same thing</span></button></li><li><button type="button" data-i="3"><b>D</b><span>A civil probe is run by the company itself, not by regulators</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> Civil and criminal investigations are legally distinct: civil probes focus on regulatory compliance with financial penalties, while criminal cases involve potential imprisonment. The other options misstate who conducts the probe or imply a non-existent sequencing rule.</p>
+        <div class="chips"><span>Civil probe</span><span>Disclosure obligations</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="0">
+    <span class="mono" style="color:var(--muted)">Scenario 3</span>
+    <p class="scenario">Your team is deciding whether to use Microsoft&#39;s new coding model or Anthropic&#39;s Claude Opus 5.5 for an internal tool, and budget is tight.</p>
+    <p class="ask">Based on today&#39;s news, what is the key trade-off to weigh?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>Microsoft&#39;s model is reportedly far cheaper to run for similar coding performance, so it may offer better price-performance even if it&#39;s not the most capable model overall</span></button></li><li><button type="button" data-i="1"><b>B</b><span>Microsoft&#39;s model is definitely more accurate in every task</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Cost doesn&#39;t matter because all AI models charge the same price per query</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Anthropic&#39;s model cannot be used for coding tasks</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: A.</b> The story specifically highlights Microsoft&#39;s claim of similar performance at roughly 5% of the cost, which is a price-performance trade-off, not a claim of superior accuracy. The other options ignore or invent facts not in the article.</p>
+        <div class="chips"><span>Price-performance</span><span>Inference cost</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="2">
+    <span class="mono" style="color:var(--muted)">Scenario 4</span>
+    <p class="scenario">A founder pitching you on a fintech startup mentions that a big strategic investor holds &#39;non-voting shares&#39; converted from a promissory note, similar to Amazon&#39;s position in Anthropic.</p>
+    <p class="ask">What does this arrangement most likely mean for the investor?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>They have no financial stake at all in the company</span></button></li><li><button type="button" data-i="1"><b>B</b><span>They get board control but no financial upside</span></button></li><li><button type="button" data-i="2"><b>C</b><span>They can share in financial gains if the company does well, but without a vote on company decisions</span></button></li><li><button type="button" data-i="3"><b>D</b><span>The shares automatically convert to cash within a year</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: C.</b> Non-voting shares give an investor economic exposure, like dividends and value growth, without governance rights. The other options invert or invent facts: non-voting shares still carry financial value, and conversion terms depend on the specific agreement, not a fixed one-year rule.</p>
+        <div class="chips"><span>Non-voting shares</span><span>Promissory note / convertible note</span></div>
+      </div>
+    </details>
+  </div>
+  
+</div>
+
+<div class="panel" id="glossary">
+  <span class="mono">Glossary</span>
+  <h2>Every concept from today</h2>
+  <dl class="gloss"><div><dt>AI bubble (reminder)<a href="#story-4">see story</a></dt><dd>The concern that AI company valuations and spending have outrun realistic near-term profits, risking a sharp correction if expectations aren&#39;t met.</dd></div><div><dt>AI drug discovery<a href="#story-7">see story</a></dt><dd>Using AI models to predict how molecules will behave in the body, helping researchers narrow down which drug candidates are worth testing in costly, time-consuming lab and clinical trials.</dd></div><div><dt>AI inference chip (reminder)<a href="#story-6">see story</a></dt><dd>A processor optimised for running an already-trained AI model efficiently and cheaply, rather than training it from scratch.</dd></div><div><dt>ASIC (reminder)<a href="#story-6">see story</a></dt><dd>A chip custom-built for one specific job, like running AI inference, which can be far more efficient than a general-purpose chip for that single task.</dd></div><div><dt>Chip architecture generation<a href="#story-0">see story</a></dt><dd>Chipmakers design processors in &#39;families&#39; that share an underlying blueprint, like Hopper or its successor Blackwell. The H200 belongs to the Hopper family, which is older and easier for regulators to approve for export than newer designs.</dd></div><div><dt>Civil probe<a href="#story-3">see story</a></dt><dd>A regulatory investigation into whether rules were broken, typically resulting in fines or forced changes rather than criminal charges, unlike a criminal investigation which can lead to prosecution.</dd></div><div><dt>Disclosure obligations<a href="#story-3">see story</a></dt><dd>Legal requirements for public companies to tell investors about information that could affect the share price, such as major risks or management changes.</dd></div><div><dt>Dotcom bubble<a href="#story-4">see story</a></dt><dd>A period around 1999–2000 when internet company share prices soared far beyond their actual earnings, before crashing dramatically when investors realised many had no viable business model.</dd></div><div><dt>Export controls (reminder)<a href="#story-0">see story</a></dt><dd>Rules restricting which countries or companies can buy sensitive technology, used here by the US to slow China&#39;s access to cutting-edge AI chips.</dd></div><div><dt>Export licence<a href="#story-0">see story</a></dt><dd>A government permit allowing a company to sell a restricted product abroad. Nvidia needed one to ship advanced chips to China legally, even after getting approval it can later choose not to use it.</dd></div><div><dt>Fair value accounting of convertible notes<a href="#story-5">see story</a></dt><dd>Companies must periodically re-estimate what their convertible notes are currently worth; a rising company valuation can paradoxically create large accounting losses on these instruments even though no cash has actually been lost.</dd></div><div><dt>Inference cost<a href="#story-2">see story</a></dt><dd>The computing expense of actually running a trained model to answer a query, as opposed to the one-off cost of training it. Cheaper inference means a company can serve more users profitably.</dd></div><div><dt>Insider trading (reminder)<a href="#story-3">see story</a></dt><dd>Buying or selling shares based on non-public information, which is illegal; SEC probes into disclosures sometimes uncover related insider trading concerns.</dd></div><div><dt>Narrow (specialised) AI model (reminder)<a href="#story-2">see story</a></dt><dd>A model built and tuned for a specific task, like writing code, rather than trying to handle everything a general-purpose model does.</dd></div><div><dt>Non-voting shares<a href="#story-1">see story</a></dt><dd>Shares that pay out financially like ordinary stock but give the holder no say in company decisions, letting investors profit without gaining control.</dd></div><div><dt>Order book (IPO)<a href="#story-5">see story</a></dt><dd>The running tally of investor demand for shares before a listing; a large, oversubscribed order book lets a company price its IPO higher than originally planned.</dd></div><div><dt>Price-performance<a href="#story-2">see story</a></dt><dd>A measure of how much capability you get per pound or dollar spent, not just raw quality. A model that&#39;s 95% as good but costs 20 times less can have far better price-performance.</dd></div><div><dt>Private placement<a href="#story-1">see story</a></dt><dd>Selling shares directly to a small group of chosen investors rather than to the public market, often used alongside an IPO to secure strategic backers.</dd></div><div><dt>Promissory note / convertible note<a href="#story-1">see story</a></dt><dd>An early-stage IOU that can later be exchanged for company shares at a pre-agreed price, letting investors lock in cheap equity before a company is publicly valued.</dd></div><div><dt>Revenue growth rate (reminder)<a href="#story-5">see story</a></dt><dd>How fast a company&#39;s sales are increasing, usually shown as a percentage versus the same period last year; Anthropic&#39;s 1,200% figure shows extremely rapid expansion.</dd></div><div><dt>Spin-off company<a href="#story-7">see story</a></dt><dd>A new, independent business created out of part of an existing company; Isomorphic Labs was spun out of Google DeepMind to focus specifically on medicine.</dd></div><div><dt>Strategic acquisition<a href="#story-6">see story</a></dt><dd>Buying a smaller company primarily to obtain its technology, patents or engineering team quickly, rather than for its existing revenue or customer base.</dd></div><div><dt>Systemic risk<a href="#story-4">see story</a></dt><dd>The danger that trouble at one large company or sector spreads through the wider financial system, for example if heavily-indebted tech firms struggling to repay bonds causes losses at the banks holding that debt.</dd></div><div><dt>Vertical AI (reminder)<a href="#story-7">see story</a></dt><dd>AI built and tuned for one specific industry, like drug discovery or law, rather than general-purpose use.</dd></div></dl>
+</div>
+
+<div class="panel">
+  <span class="mono">Past digests</span>
+  <ul class="archive"><li><a href="../archive/2026-11-18.html" aria-current="page">2026-11-18</a></li><li><a href="../archive/2026-11-17.html">2026-11-17</a></li><li><a href="../archive/2026-11-16.html">2026-11-16</a></li><li><a href="../archive/2026-11-15.html">2026-11-15</a></li><li><a href="../archive/2026-11-14.html">2026-11-14</a></li><li><a href="../archive/2026-11-13.html">2026-11-13</a></li><li><a href="../archive/2026-11-12.html">2026-11-12</a></li><li><a href="../archive/2026-11-11.html">2026-11-11</a></li><li><a href="../archive/2026-11-10.html">2026-11-10</a></li><li><a href="../archive/2026-11-09.html">2026-11-09</a></li><li><a href="../archive/2026-11-08.html">2026-11-08</a></li><li><a href="../archive/2026-11-07.html">2026-11-07</a></li><li><a href="../archive/2026-11-06.html">2026-11-06</a></li><li><a href="../archive/2026-11-05.html">2026-11-05</a></li><li><a href="../archive/2026-11-04.html">2026-11-04</a></li><li><a href="../archive/2026-11-03.html">2026-11-03</a></li><li><a href="../archive/2026-11-02.html">2026-11-02</a></li><li><a href="../archive/2026-11-01.html">2026-11-01</a></li><li><a href="../archive/2026-10-31.html">2026-10-31</a></li><li><a href="../archive/2026-10-30.html">2026-10-30</a></li><li><a href="../archive/2026-10-29.html">2026-10-29</a></li><li><a href="../archive/2026-10-28.html">2026-10-28</a></li><li><a href="../archive/2026-10-27.html">2026-10-27</a></li><li><a href="../archive/2026-10-26.html">2026-10-26</a></li><li><a href="../archive/2026-10-25.html">2026-10-25</a></li><li><a href="../archive/2026-10-24.html">2026-10-24</a></li><li><a href="../archive/2026-10-23.html">2026-10-23</a></li><li><a href="../archive/2026-10-22.html">2026-10-22</a></li><li><a href="../archive/2026-10-21.html">2026-10-21</a></li><li><a href="../archive/2026-10-20.html">2026-10-20</a></li></ul>
+</div>
+
+<footer>Written by Claude from the linked sources. Check the original article before quoting figures in an interview.</footer>
+</div>
+<script>
+document.querySelectorAll(".q").forEach(function (q) {
+  var correct = Number(q.dataset.correct);
+  var buttons = q.querySelectorAll(".opts button");
+  buttons.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var picked = Number(b.dataset.i);
+      buttons.forEach(function (x) {
+        var i = Number(x.dataset.i);
+        if (i === correct) x.classList.add("right");
+        else if (i === picked) x.classList.add("wrong");
+        x.disabled = true;
+      });
+      q.querySelector("details").open = true;
+    });
+  });
+});
+</script>
+</body>
+</html>
