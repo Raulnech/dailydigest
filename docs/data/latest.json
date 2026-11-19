@@ -1,8 +1,8 @@
 {
-  "date_label": "Wednesday 18 November 2026",
+  "date_label": "Thursday 19 November 2026",
   "talking_points": [
-    "Nvidia has quietly stopped shipping even its US-approved H200 chips to China, just as its own disclosures come under SEC scrutiny.",
-    "Anthropic's IPO is pricing above range despite a wider AI bubble debate now being voiced by the ECB itself.",
-    "AMD just paid nearly $3 billion for a tiny inference-chip startup, showing how fiercely the chip wars have moved from training to deployment."
+    "Palo Alto Networks just bet $4.5 billion that securing AI models, not just networks, is cybersecurity's next big business.",
+    "Intel finally landed an outside customer for its most advanced 18A chips, a milestone in its attempt to rival TSMC.",
+    "Regulators in Singapore, the US and the OCC are all scrambling to work out how to supervise AI agents that can move money on their own."
   ]
 }

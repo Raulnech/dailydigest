@@ -1,66 +1,5 @@
 [
   {
-    "date": "2026-11-12",
-    "headlines": [
-      "Nvidia board reportedly weighs sacking Jensen Huang after second affair allegation",
-      "TSMC to put up to $1 billion into OpenAI and Anthropic",
-      "CoreWeave revenue jumps 168% to $3.66 billion, easing AI slowdown fears",
-      "Anthropic reportedly targets $1.4 trillion valuation ahead of IPO",
-      "SocGen reportedly seeks to sell Stargate data centre debt at a discount",
-      "AI data centre operators face $13.4 billion in looming debt maturities",
-      "UK chip startup Fractile hits $7 billion valuation before shipping a single chip",
-      "OpenAI buys AI travel startup Odessia"
-    ],
-    "concepts": [
-      "Board of directors",
-      "Independent investigation",
-      "National security review",
-      "Circular financing",
-      "Contract manufacturer",
-      "Preferred stock",
-      "Contract backlog",
-      "Bond yield",
-      "Capital expenditure (capex)",
-      "IPO (initial public offering)",
-      "Oversubscribed",
-      "Loan sale (secondary market)",
-      "Data centre",
-      "Debt maturity wall",
-      "Refinancing",
-      "Series C funding",
-      "Inference",
-      "ASIC (application-specific integrated circuit)",
-      "AI agent",
-      "Vertical AI"
-    ],
-    "links": [
-      "https://techcrunch.com/2026/11/11/nvidias-stock-drops-as-board-reportedly-preps-to-oust-ceo-jensen-huang/",
-      "https://www.theverge.com/tech/1031652/jensen-huang-rumor",
-      "https://www.cnbc.com/2026/11/11/nvidia-jensen-huang-affair-employee.html",
-      "https://news.google.com/rss/articles/CBMizAFBVV95cUxNZElYdFVBSHIybWd1YV8wamtSLXVfVWFKWWlhQzBJN3dLOFNNWndma1lSLVRjc2M5YTFfOTh3TFUzX0g2aERNcEZXaVNBWGhPX3N3OTRubmc1QVg1TTZsZjB2TnNvcGZSQkRESnZWMTRyTWdXamJrVDM5ZXZfLUNRczJhMmJVdTlibFFOaURJVWlTODZrWlhPQUhtamtsS2RHak4xeDY3d3Y5ZGdmYzVCNkFQSEpJdkhIU3d0bUVfTlZkcjF1d1hTUGFtVnY?oc=5",
-      "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPUEhSNVppUnRvUExpLXlQOGhkckZhemRoLW1ZRTFrOFppMkRPLW5naVZaaWtGMGNucndxMHNUb0l4N2l0c1dDNmxNZUl0c1J5M3hHSlRLZy1FSm5KNnNEOTdpRkUyYThkbXhZeVBsTlE1NERDaDVVVUtLZ2pXMnJ6OFBOM2VFOVN5a3c0NmE0eFVRTTFWZDI5cVk1ZGJEeUdOQWxxTEJzV3ljLW8wYlI3dnhBRlpQMDExMk5HcUlxdjN1Q0t4THpqRHppNW9VblJwNHZ2Zw?oc=5",
-      "https://arstechnica.com/ai/2026/11/taiwans-chipmaking-giant-tsmc-to-invest-1b-in-anthropic-openai/",
-      "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPci1EN2F4N2ZqRDRuOXMteDlzYllQWVVzbWdtLVQ5aGJLb01WVmZqV1ZCV3NWWGd0VE9SQzNxcG0zU2xqV2pqV0dEYXBBdkFKZHdhTXpyX1lxbk9saXJPYy1PWU8xQlh1UUNWSHRNZ0taeEtWczFlQkFaWmdzSl9BM25PYk95aGpzajJPXzU5OWJBRWhUZi1fTmZlVm9wOXdYMDZiVGRNRGM?oc=5",
-      "https://www.cnbc.com/2026/11/10/coreweave-crwv-q3-earnings-report-2026.html",
-      "https://www.cnbc.com/2026/11/11/coreweave-crwv-outlook-earnings-ai.html",
-      "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPaTZzT256WkU3aE4zUnA1UXBqX05FOENKeXI4MFZtUDQtc28zeDBLWEE2UGdydUU0OXI0LVotdWEwUVBJeDB0bVh6Z1BrN0dQbHFRa0RwZ2xEdDlBaS12T3ZSQXlzcHNSTHAxN2FBUjFXTTlaTmRUWWVJdFZmaXBDZTJteWlWQ2d0MDYzRHRyLWV3Y0xiMU5ndjRMdlBOaDR0T25uVVFNZS12ZDhjWkRMRzBDc2EzN2RyR0dvTnZqWlgxZw?oc=5",
-      "https://news.google.com/rss/articles/CBMidkFVX3lxTFBWWWhzNWttUWJZVjlpX2xCcnhyRVhRVGNBVnlXWGZBWnNVbE55bm1SQVVfR2xuekhqbVJCZkVmRlZFS0xZMmZvdXVkVF9pX0g4V3cwSzZDV1hEMHBVazNRSVlPejM0ZXpWeERaWVpyZ0lDdHF3aGc?oc=5",
-      "https://news.google.com/rss/articles/CBMihgFBVV95cUxPeFFVa09qVHpqQ2ppN3BQeXhZQUxNeWl1Qzg1VGpmZEc3UGVrRTBqUmxEMElfU2V1UFpsejZyOFhvV0tlX19pd0Y4WGZ4amJlTWxSVzJidEctdi1UY2Z1eElLYVlKMkVnbVpXQUo3dXFhRjhsMjFZRnNhQzdyOHJWVXMyaC0xQQ?oc=5",
-      "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNUVB0MURzY09yMkpNVHJxU3cxYmF1UkF5M3JaNGpReUJXOUN3czJIOU9qQ2V1emJMRXlmNm1SbVgwbDBpOElXZ0J5OV9nVUtKRzctOENJN19hMnZ3bnNCeHd5aGowMk5nRzlCa2hnLVZKN1RKSGVlVnFtQTMyRHNWUm8tazNnV0d4UTZBZHVsVGtyUkMzYXZRTFlGdjVsUnlTRlZCSzRlMmhLbmFfZm5iOWFMY2hrU0ljTHIwNjZSX1ZWZzExQ29zaWt3QWNIS216NnA3aTJIY2pQZEpRX3Vua19R?oc=5",
-      "https://news.google.com/rss/articles/CBMib0FVX3lxTFBleExOMEttR1ZjUWdESXcwRm1kdlNWOUNsUzNkbURMd204NFRYd2NTZUVJTjhqblU1RGVmTlgya0d0NmlYTVd2SkJOMjhqSlp1a19wMmJVbUdBQndYNHBPQVFfV1JTc1huRVQzR2R2NA?oc=5",
-      "https://news.google.com/rss/articles/CBMinwFBVV95cUxQYU9vTkhUTTBlX21NS21lWUNta1lFWXZ1Tjk5c01BUjFxRnhCcFNGUkloQzdiM3AxRDdKcGN6cTJiZkpTdWxjZ21DbnMtWHhiREF5eU5kcEU1NHFkMnM5c1otVlZOTkROM0ZLWXZrUGlTNEU4cGRhVUFFZkoyaXBFc3dQU1VWaE1xNVVmUmlrRnNoOWVDc0ZlbVU4bk90Zms?oc=5",
-      "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPU0V1VVc2X0ppTUpCU0lET0pMdzV1YjFLbV83a0luR0VCdmVFN0g0ZzFzZXpZeWdWMjBNWVppUWV5QlNNYkFEdkY3QnJadVhleU5saHFaMk1USXRUZkpoTGEzeE9rejdTbGFnYVVMdk5DZVBLWlFuNnlKZi0wRnR2cE96UlRTWXluUGdpME53bkEtQWZPSGowd2l5OXU0WVM2ZHZ0OXlHSW5KZjFuUFVSYWpSZWlobFZJSnNiblE1YVZSc0ozVlNJaA?oc=5",
-      "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQSDdWV2RERG5qamZTaWsweEROMEpPZ1F5MElBa0RmSEhULVZkMTY2ZkkwdExuQzRFQnVIeE1KZGlOdS1ybmhTRWNhLURwYXhsWkEyc3VKQnh5SVlXa0VLLXBuZ1pWWXdEWU4xbTYzcHlVc0dVa21nTjBiMlZkd1dxNlo3SFg5c1FSOUtDcEY0WW5VaHYwR3pUWTk5T1haS0FScEZhZHNBODk3ZkVYQmdJNkFzWGtab2tTNktHYmIxOU1GM3k0ZXo3Z0dIV3BHSUVu?oc=5",
-      "https://news.google.com/rss/articles/CBMivwFBVV95cUxPV3BGNHFmOUw4b1NIYkd1NHNaT3o2Q2ZPa3pFRHBzMFVia29UTnpoU1dBTXgtYkNheWE3UEREdHVPYmNZNUs5dG81SE5Cd0hJQzZHYkxNWEVGRWMtLWhXX2dWczJNVFRjNjVVSDM1NkVQcC1LS0JOd1lVUkJYNnkxeEg1SlN6ZlF1VDZCQkNtSnVmMmsta3JfbHF2YmhUXzZIZi1lS1dLZnl5Wnh2X01menU0azNjUS1nYUJTWFQyTQ?oc=5",
-      "https://news.google.com/rss/articles/CBMipwFBVV95cUxNSEUwNnBPWHg3QUUwWVBHbHQ4a1NxNXY5VDdGd05lWWFkcFZHU3JpWkpFU2FFck1ZamRLc01LRWdyRExaSmRZWG9GUnlVaGpycExaTmY4aVdLUnU2Z3B4LV9Hck5ZQW1pb18wUXBKeXR2Q21wdzJqdUF0ZUVFdE82YVdUbnNqZTdNSjB5bHlieUxBdmNoelMtXzVHeWJoaDhKVHRSbnFXb9IBrAFBVV95cUxPNmpSaTk1SHFCbVhOS2hYc3EzeVpYZldRSU5KblVrUG9wVS1CUXN1MHZlU1VnbUxlNmNtUWtnNjlhSHd4Njc5R2h5alNXVnNLX3o0bjE4bWJOZFBTeldHNDBFUHhEcHpVS0Q5VUx5NTNGazdDcHhrYkk2MHFyTi1MQi1xRFlhZzNLQmxKMDNqMUtSWUxpeUQ3UFhRZXRjaW1IbmlrYVBXSGJJTGtf?oc=5",
-      "https://news.google.com/rss/articles/CBMisgFBVV95cUxPTXFIcGFjc281aUtUOE9oNHZSVTIySlRuUE9zLW5LZjZhcm1NRmdNTmUzOG9GVG0tN1dkV3FCY3B5N0ZiVDZyNEhxNXpTbEMyREJfeVgxWmwxU2kxNE51cUl6VkZEc1hXY1ViYldQbXByRHVFYWVEUWp2YUt4cUkxd2J6cjdMZmZGaTVFSjJlUHZ1aVVncDktUDNocGFBcWNQcUtGbC1KeDllcDV6YmxzUmVR?oc=5",
-      "https://news.google.com/rss/articles/CBMiowFBVV95cUxQd1RETmVsTDRVY2h2VUZWaW1PenJrX1czV1E4amtjNUtlQThnallSMHFoWkNjbk9qOVJlRno5d0RnNzJMSmo5MWxBNDMtNEVJVW9QOXBta3JUQ3M1Tk9IaTJxYjROUzVPaU9LR3QtR0habVJTbEJBX29FcEVSODBUUXJDVjVfQnhUdkRSOXptMF8weFFjeTZZNUZEWmJPbUJITnB3?oc=5",
-      "https://news.google.com/rss/articles/CBMiswFBVV95cUxPSDMtaDQ0a0lpYkVDTm9sUWd1MXFIblM0VllOdURYNFZDQ3Vhc29vTE1RdVd3bnB2cUhIbzVZNThFd3d1NDhER2N0S2huci10WHJKNnJtRmFQZW1jU20xbnJmb0NfcUdZRDJqYVBRSWYybkJrNVV5N1VWaHZCTWJvSjZMMDh6cU1tX1ZEdnlZbzVyYm9ob3k0cnJmNUdaUDFvNDEtTU5QaHdYa0Y2OUlCLXozUQ?oc=5",
-      "https://news.google.com/rss/articles/CBMinAFBVV95cUxQSzRQdDM4QWUtSVFERGtnVS1rQ3RrbzRwdWtzSnNKRm16NFlES3F4LXNESmtHR0tWdEl3RzU1R3E1VjUzd3d2eEl4VXlZVVMzZXN6djcxZEZlOU1oMGhIN1p4TzlwTW1UWWlQVEZMQmI1anhTcUtGbmQwb3JZSy05aVBCMEFFcmMyMGV3V2FGbFpaaTZreUw0eEZvSlM?oc=5",
-      "https://news.google.com/rss/articles/CBMickFVX3lxTE1GTXBtLXhZY052UHJuVm9WcEZYTjI1YWs2Q2poSTg5T0xMRFhxUFJUcXRRMm9rdmh1RFNFc0lNd2FTRGlkOW04RnZCdkN5cjduZjhzemtBUnVPalhMcXg1Q1hoY2M2T2dvVFVUVnJTQ2VfUQ?oc=5"
-    ]
-  },
-  {
     "date": "2026-11-13",
     "headlines": [
       "Jensen Huang resigns as Nvidia CEO after affair scandal, CFO Kress steps in",
@@ -418,6 +357,59 @@
       "https://news.google.com/rss/articles/CBMikAFBVV95cUxNb1JCXzgwN0NjbTI3Mk5CRnFCVzUtdXJUdDdmcUJNODJGUDJpZm9DcWtVWmJaMkNyMjB1UzcyWWdPcUtubThvdlVsYzhNaS1Vb2ZLdUFxM1dpclQtajFsVFVzcUhVc0tFWHlmaVl1Z2FvRklwci1uS2tSazh6V0M4ekwwY2hVdU1hTkVEYW54RVU?oc=5",
       "https://news.google.com/rss/articles/CBMitwFBVV95cUxOUXlZckpESUVMc1pOS2xXZ3NjU1ZqVnBGR29ic3l6aW5PZVBuc2tpVkVOdXcwUXR2bGpMalB0SmFnX2pTdFZnNnd4cno4YXNIWDZwaTNmV0lRRWNRV0tvdnZrTzBwazNQQTBHUjVWMGpFWmhxamtEZDBtQ041SjFPc1ZMcFNxTmx0YXk3dW1ZRHIyQlB2b2Rvd3g5UVVpWU85NVFRbjN1QS16X1ZlTGd6M0NnYWVmY2s?oc=5",
       "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNSGVLWUwwb0cwOFo1ZUlIWkgwbGcyNmZ0cGJsMG1sQXpJcUY1cGg3aUpnQnBUV2JDbzZQRmg3X0RtemMzUTJVSjZJdThVMHBPU1ljc2VxQmp2cFpzLXY0UjA3UUdFa21CR1BOdGk5SnF0V0JkMTBsT3Z1eldvSF84R2hqTU1FeDB2MWlmZ0sxTmFHY0NVaWI2OWowYk9PaVE2cno5T0M5dFpSQW1ROFQwaWRRYkJoMGZ6VkRzRDRaRUwwUmc?oc=5"
+    ]
+  },
+  {
+    "date": "2026-11-19",
+    "headlines": [
+      "Palo Alto Networks buys Applied Compute for $4.5bn as AI security demand drives earnings beat",
+      "Intel lands first outside customer for advanced 18A chip process",
+      "IEA warns data centre electricity use could double by 2030",
+      "Singapore regulator warns AI agents could speed up financial risks",
+      "US bank regulator OCC begins using agentic AI in examinations",
+      "Federal Reserve flags scrutiny of AI-driven credit denials",
+      "Bret Taylor's Sierra reportedly in talks to raise funding at $30bn valuation",
+      "Robotics startup Genesis AI raises $500m at $3.5bn valuation"
+    ],
+    "concepts": [
+      "Earnings per share (EPS)",
+      "Open-weight model",
+      "Annual recurring revenue (ARR)",
+      "Acquisition",
+      "Semiconductor foundry",
+      "Process node",
+      "Advanced packaging",
+      "Hyperscaler",
+      "Data centre",
+      "Terawatt-hour",
+      "Grid capacity",
+      "Electrification",
+      "AI agent",
+      "Systemic risk",
+      "OCC (Office of the Comptroller of the Currency)",
+      "Agentic AI",
+      "Credit denial",
+      "Algorithmic bias",
+      "Funding round",
+      "Valuation",
+      "Vertical AI",
+      "Funding round",
+      "World model"
+    ],
+    "links": [
+      "https://www.cnbc.com/2026/11/18/palo-alto-networks-panw-q1-2027-earnings-.html",
+      "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNYzJMRVRpMDh6UlVrLWNaa0JYTmZhMkUxWWdweFJuWDdJZWE2NmVsSFczcFMwT3FVYzRxVV93TXlrSVhfWDBnRTBsSTNRcjMxUF9KMnp5UVNYOTRKSlJPa0tRMC1Mc2FTN3I4RGpZRVJxZ3FCOUVkaEZkQTlDUzNpZ1V2VS1UOXZRdEkyODVCMTJuMC1pSWd2QnN1Skw1eTFWS0Z3dzd1enk?oc=5",
+      "https://news.google.com/rss/articles/CBMinwFBVV95cUxOZW5sQ0s3NEtGMUtHWHpjajhUZjB3WW1PcGNIOF9IdktwUTVFbVh6V2VsMVFsWFRBMlE5VmtyUXlPMUtfZlk2UU4zbGxoZ19ocThmVjNudnNUWFhNR3BlT0V5dUxuYVk5VXUyT2EwZHI3QmtTS1N1ejVTV005UmNvdV93MjVEVDBkQldGU3E2bTBzVHpUbWZNY2wtbWx6TzA?oc=5",
+      "https://www.cnbc.com/2026/11/18/intel-first-18a-foundry-customer.html",
+      "https://www.cnbc.com/2026/11/19/data-center-electricity-demand-iea.html",
+      "https://news.google.com/rss/articles/CBMitAFBVV95cUxNM3phS3NuMW04a3d4cEVhNnVDM25naVJfNUUtR0w3a2M4WHpjUVhxMmt5MWtoMU9DUzZrdFc3RFU1TU15djdQV1I1R1RaQ1g2ZUJnM3BqX2RXbFg4WGdDYTdfUWxic0ltSVJRQjcwd0ZXV2ZpeWF2UXFTSm16Sm9Wdl9QWTZXU1RSMkQxdF9CTWNFWS0wbmRMMjBFMVF6RmUtV1IwdXlMcHctVTBkN3RCaHJvWE4?oc=5",
+      "https://news.google.com/rss/articles/CBMirgFBVV95cUxPZ0tSQVo4LW9HeGd5SjhZSGdVaEhENVp1SW5ySDRBZEVZOTFTTldCLUlCYWh1ejNoaHVCaVdKc3FKbHlBb2JfTldBMHJyTFMtdTh6QlN5UlRTU0pLaDgxTVVIN05wZjJUWHQ5X2pKYW9hekNGbzhnUDlFYlVrR1o3ZXRUQUEwVDV1X3BpVExNeVpUWXNrRzV6dmZBMGhyeWFqa0JPNEFxSFB1emNDZ2c?oc=5",
+      "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOam9VbnkydnI0RzJlSF9kQS1pOXg5N0tJUGdYUU5iamZTbUg0UFV1TElVVXhJREprS3ZzUlM0b08yajBNLTVYMHF2eVMybVBGUm9xVHM4ZUV3clp3a3dhNEtwU0Jjb1pvbF9KOEY4M1pjZEhrQXNEb2lKaHBsT0pVRms2Tjd5XzdxYVFyMkxpRGlXYlg2Q3plWk5HX3JXLU83WTYyc3RZVjdhNkJuSzlZWWtpZTY2NkdibXE1NWhxbHRad1lkdmtoankwbnoxQkJJZ1JJ?oc=5",
+      "https://news.google.com/rss/articles/CBMilwFBVV95cUxQRXpITHY5ei1PMW5CdmJfdkdVZG9maXdPbUluWW5raXlEYmJVd1UzVTJVZEhvc213NHBPb0pVX2MyMmNaUzdLcER4b1FlSTJuUmNmVlRZTHY2RXR4Mi04emFSYjF4dnRmdkRhSGEyQ2RqMUJ5ZWFYeHVobzRZRC1kbG9IWktqUHNJeGQyajVQdHdHVjllem1N?oc=5",
+      "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPV29VelB5d1p2VjNIRi1yWkVjdnlTLVVIZXRmczhFeDEzZ1d1ajVEZzRFSlNlelNZc2hjRVhRZGF0QTkybWVPMTdXd25IM1lKaHRpQnRkb0pSQU9jWmo5OTRRckhWLThzeHZTQ1U2OWtDSmo2SzJ2T1NDU2FOdXQtSjhNaUNuLXp5a2h0WFF6azB2NUhwWEs4VW56U3lsWGo3Y2QyQUI4bnE4WGNwTkpMaEtyMENQU2pMd2JoamxpcEJGUQ?oc=5",
+      "https://news.google.com/rss/articles/CBMipAFBVV95cUxNVlpvdTVpLVltYTBiRlJWZUd5SDhCTi0xb2Y5Q0dFYWVFWEs2UFF0WDliSElpeHF5RURLWjRweE0zdno3Q1hBNWJjUkZxVkhxTXV3M1pqdFJTeWt0eXlBMHJTd1ktSGhyZ3NiVGZMOERocGtackRvT19qTFptd2x2T0VxMXNJaXFpZTZGWE5EX1BqbHV2dmExNXhRYTFCbWs0XzJvWA?oc=5",
+      "https://news.google.com/rss/articles/CBMixwFBVV95cUxQQklEaVo1M2VhVjlwa1hjMnRRb1lCT0tCVmo5TUZYMlhXMDZmU0dOVHRKMjd2SlFlU2pxVWl2UlI1a0puaEhsM0Zzdk52RDRYRzNqeExUV0U2RWM0R2k4SEI3WldrcHFJYjBwZ1YzdWhfM2IwaTN5UzQxbG5iQnlhb0l3S2dBeVdtZGszVDJDakZ4YTVNZ2I0ZGRZQ0J3dVBlV19hSm1PTHg0NHhYUWNkcHRyUW1UTnNkc0FWbmhGVFdtT2xrNU1j?oc=5",
+      "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPV3lzYm1FTkJCX3pLSEFrQ3BZMEV4bk5iWmpNSWE3Mk1pNEJzNlhhNld0SWMzOV9SSWZRU3JLa01tZkV6Vldzbl84ckJSNHNnV2JhNDFkYWFQbDRCYlFxVDVmSTUyLW9WelRVcHpjS25NSnpkX21MSV9RdG1PS19hN2N5X2o2c0ZJT2NhUjA4WXM5SUR3Z2llZGRMRlliQUxFZWt3RzV6SVI5YTJXTmpRZDFNZXd6eFlyVWV1Q05YQ3BkZjYxTzVRS09sMXhLMlprNFlLRnl0SXHSAdgBQVVfeXFMT1d5c2JtRU5CQl96S0hBa0NwWTBFeG5OYlpqTUlhNzJNaTRCczZYYTZXdEljMzlfUklmUVNyS2tNbWZFelZXc25fOHJCUjRzZ1diYTQxZGFhUGw0QmJRcVQ1Zkk1Mi1vVnpUVXB6Y0tuTUp6ZF9tTElfUXRtT0tfYTdjeV9qNnNGSU9jYVIwOFlzOUlEd2dpZWRkTEZZYkFMRWVrd0c1eklSOWEyV05qUWQxTWV3enhZclVldUNOWENwZGY2MU81UUtPbDF4SzJaazRZS0Z5dElx?oc=5"
     ]
   }
 ]

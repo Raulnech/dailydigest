@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI Morning Brief · Thursday 19 November 2026</title>
+<meta name="theme-color" content="#3A55C8">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  color-scheme:light dark;
+  --ground:#F3F4F7; --paper:#FFFFFF; --ink:#141827; --muted:#5B6275; --line:#DDE0E8;
+  --industry:#3A55C8; --industry-soft:#E6EAFA;
+  --finance:#1C7453; --finance-soft:#E1F1EA;
+  --startups:#A8561A; --startups-soft:#F7EADF;
+  --code-bg:#161A26; --code-ink:#E4E7F0;
+  --right:#1C7453; --right-soft:#E1F1EA; --wrong:#B3261E; --wrong-soft:#FBE7E5;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --ground:#0F121B; --paper:#171B27; --ink:#E8EAF1; --muted:#9AA1B4; --line:#2A3042;
+    --industry:#8FA3F5; --industry-soft:#20284A;
+    --finance:#6CCBA3; --finance-soft:#15332A;
+    --startups:#E8A06A; --startups-soft:#3A2618;
+    --code-bg:#0B0D14; --code-ink:#E4E7F0;
+    --right:#6CCBA3; --right-soft:#15332A; --wrong:#F2A29B; --wrong-soft:#3A1B19;
+  }
+}
+*{box-sizing:border-box}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.6 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;padding-inline:16px;padding-block:28px 64px}
+.wrap{max-width:700px;margin:0 auto;display:grid;gap:36px}
+a{color:inherit}
+a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var(--industry);outline-offset:3px;border-radius:4px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400}
+header{display:grid;gap:10px}
+header .date{color:var(--muted)}
+h1{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(44px,11vw,64px);line-height:1;margin:0;letter-spacing:-.01em}
+h1 em{color:var(--industry)}
+.lede{color:var(--muted);margin:0;max-width:60ch}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ground);padding-block:10px;display:flex;gap:8px;overflow-x:auto;border-bottom:1px solid var(--line)}
+nav a{flex:none;text-decoration:none;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--paper);font-size:14px}
+nav a.industry{color:var(--industry)} nav a.finance{color:var(--finance)} nav a.startups{color:var(--startups)}
+
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:14px;scroll-margin-top:64px}
+.panel h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:30px;margin:0;line-height:1.15}
+.panel > .mono{color:var(--muted)}
+.talk ol{margin:0;padding-left:20px;display:grid;gap:8px}
+.toc{display:grid;gap:14px}
+.toc h3{margin:0 0 4px}
+.toc ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.toc li a{text-decoration:none}
+.toc li a:hover{text-decoration:underline}
+
+section{display:grid;gap:22px;scroll-margin-top:64px}
+.sec-head{display:grid;gap:2px;border-top:3px solid var(--c);padding-top:12px}
+.sec-head h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:36px;margin:0;line-height:1.1;text-wrap:balance}
+.sec-head p{margin:0;color:var(--muted)}
+.sec-head .mono{color:var(--c)}
+.industry{--c:var(--industry);--cs:var(--industry-soft)}
+.finance{--c:var(--finance);--cs:var(--finance-soft)}
+.startups{--c:var(--startups);--cs:var(--startups-soft)}
+
+article{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px 20px;display:grid;gap:16px;scroll-margin-top:64px}
+article .kicker{color:var(--c)}
+article h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(26px,6vw,32px);line-height:1.15;margin:0;text-wrap:balance}
+.standfirst{margin:0;font-size:18px;line-height:1.5;color:var(--muted)}
+.body{display:grid;gap:14px;font-family:"Source Serif 4",Georgia,serif;font-size:18px;line-height:1.65;max-width:65ch}
+.body p{margin:0}
+.src{margin:0;font-size:13px;color:var(--muted)}
+.concepts{background:var(--cs);border-radius:12px;padding:16px 18px;display:grid;gap:12px}
+.concepts .mono{color:var(--c)}
+.concepts dl{margin:0;display:grid;gap:10px}
+.concepts dt{font-weight:600}
+.concepts dd{margin:2px 0 0}
+.why{display:grid;gap:4px;border-left:2px solid var(--c);padding-left:14px}
+.why .mono{color:var(--c)}
+.why p{margin:0}
+
+pre{margin:0;background:var(--code-bg);color:var(--code-ink);border-radius:10px;padding:16px;overflow-x:auto;font:14px/1.55 "IBM Plex Mono",ui-monospace,Consolas,monospace}
+.walk{margin:0;padding-left:20px;display:grid;gap:6px}
+code{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:.9em}
+.tryit{background:var(--industry-soft);border-radius:10px;padding:12px 16px}
+.tryit p{margin:0}
+
+.q{display:grid;gap:12px;border-top:1px solid var(--line);padding-top:18px}
+.q:first-of-type{border-top:0;padding-top:0}
+.scenario{margin:0;font-family:"Source Serif 4",Georgia,serif;font-style:italic;font-size:17px}
+.q .ask{margin:0;font-weight:600}
+.opts{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.opts button{width:100%;text-align:left;font:inherit;color:var(--ink);background:var(--ground);border:1px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer;display:flex;gap:10px}
+.opts button:hover{border-color:var(--industry)}
+.opts button b{font-family:"IBM Plex Mono",ui-monospace,monospace;font-weight:500}
+.opts button.right{background:var(--right-soft);border-color:var(--right)}
+.opts button.wrong{background:var(--wrong-soft);border-color:var(--wrong)}
+.opts button:disabled{cursor:default}
+details{border-radius:10px}
+summary{cursor:pointer;font-weight:500;color:var(--industry)}
+.answer{display:grid;gap:8px;margin-top:10px}
+.answer p{margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:13px;padding:2px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+
+.gloss{margin:0;display:grid;gap:12px}
+.gloss dt{font-weight:600}
+.gloss dt a{font-weight:400;font-size:13px;color:var(--muted);margin-left:6px}
+.gloss dd{margin:2px 0 0;color:var(--muted)}
+.archive{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.archive a{display:inline-block;padding:4px 10px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-variant-numeric:tabular-nums;font-size:14px}
+.archive a[aria-current]{border-color:var(--industry);color:var(--industry)}
+footer{color:var(--muted);font-size:13px}
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="mono date">Thursday 19 November 2026 · 14 min read</span>
+  <h1>AI Morning <em>Brief</em></h1>
+  <p class="lede">Today's AI and fintech news as short articles, with every key concept explained, a bit of Python, and a scenario quiz to check it stuck.</p>
+</header>
+
+<nav aria-label="Sections">
+  <a href="#industry" class="industry">The AI industry</a>
+  <a href="#finance" class="finance">AI &amp; finance</a>
+  <a href="#startups" class="startups">Startups &amp; funding</a>
+  <a href="#code">Code corner</a>
+  <a href="#quiz">Quiz</a>
+  <a href="#glossary">Glossary</a>
+</nav>
+
+<div class="panel talk">
+  <span class="mono">If you only read one thing</span>
+  <h2>Three things to be able to say today</h2>
+  <ol><li>Palo Alto Networks just bet $4.5 billion that securing AI models, not just networks, is cybersecurity&#39;s next big business.</li><li>Intel finally landed an outside customer for its most advanced 18A chips, a milestone in its attempt to rival TSMC.</li><li>Regulators in Singapore, the US and the OCC are all scrambling to work out how to supervise AI agents that can move money on their own.</li></ol>
+</div>
+
+<div class="panel">
+  <span class="mono">In today's brief</span>
+  <div class="toc">
+  
+    <div class="industry"><h3 class="mono" style="color:var(--c)">The AI industry</h3>
+      <ul><li><a href="#story-0">Palo Alto Networks buys Applied Compute for $4.5bn as AI security demand drives earnings beat</a></li><li><a href="#story-1">Intel lands first outside customer for advanced 18A chip process</a></li><li><a href="#story-2">IEA warns data centre electricity use could double by 2030</a></li></ul>
+    </div>
+  
+    <div class="finance"><h3 class="mono" style="color:var(--c)">AI &amp; finance</h3>
+      <ul><li><a href="#story-3">Singapore regulator warns AI agents could speed up financial risks</a></li><li><a href="#story-4">US bank regulator OCC begins using agentic AI in examinations</a></li><li><a href="#story-5">Federal Reserve flags scrutiny of AI-driven credit denials</a></li></ul>
+    </div>
+  
+    <div class="startups"><h3 class="mono" style="color:var(--c)">Startups &amp; funding</h3>
+      <ul><li><a href="#story-6">Bret Taylor&#39;s Sierra reportedly in talks to raise funding at $30bn valuation</a></li><li><a href="#story-7">Robotics startup Genesis AI raises $500m at $3.5bn valuation</a></li></ul>
+    </div>
+  
+  </div>
+</div>
+
+
+<section id="industry" class="industry">
+  <div class="sec-head">
+    <span class="mono">Section 1</span>
+    <h2>The AI industry</h2>
+    <p>Big labs, big tech and the direction of travel.</p>
+  </div>
+  
+  <article id="story-0">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Palo Alto Networks buys Applied Compute for $4.5bn as AI security demand drives earnings beat</h3>
+    <p class="standfirst">The cybersecurity giant&#39;s shares jumped 7% after strong results and a bet that securing AI models could become bigger than its core business.</p>
+    <div class="body"><p>Palo Alto Networks shares rose more than 7% on Wednesday after the cybersecurity firm beat Wall Street&#39;s quarterly estimates and announced an all-stock $4.5 billion deal to buy AI startup Applied Compute. Revenue climbed 39% year-on-year to $3.44 billion, with adjusted earnings per share of $1.05 comfortably ahead of the $0.97 analysts had expected.</p><p>Applied Compute helps businesses run and customise their own open-weight models — AI models whose underlying parameters are published so companies can adapt them in-house rather than relying entirely on a vendor like OpenAI. CEO Nikesh Arora said the deal could help firms adopt AI more securely and, if it succeeds, &#39;dwarf&#39; the company&#39;s existing cybersecurity business. Palo Alto&#39;s annual recurring revenue — the predictable, repeating income a subscription business books each year — for its next-generation security products jumped 66% to $9.73 billion.</p><p>Demand is being fuelled by fears that AI is making cyberattacks faster and more sophisticated, a worry sharpened by recent high-profile breaches and outages across Microsoft, banks and air-traffic systems. Palo Alto lifted its guidance for fiscal 2027, forecasting revenue of up to $14.57 billion, above analyst expectations, as Arora predicted the company will issue tens of thousands of software patches this year as clients race to shore up ageing systems.</p></div>
+    
+    <p class="src">Sources: <a href="https://www.cnbc.com/2026/11/18/palo-alto-networks-panw-q1-2027-earnings-.html" target="_blank" rel="noopener">Tech</a> · <a href="https://news.google.com/rss/articles/CBMiqAFBVV95cUxNYzJMRVRpMDh6UlVrLWNaa0JYTmZhMkUxWWdweFJuWDdJZWE2NmVsSFczcFMwT3FVYzRxVV93TXlrSVhfWDBnRTBsSTNRcjMxUF9KMnp5UVNYOTRKSlJPa0tRMC1Mc2FTN3I4RGpZRVJxZ3FCOUVkaEZkQTlDUzNpZ1V2VS1UOXZRdEkyODVCMTJuMC1pSWd2QnN1Skw1eTFWS0Z3dzd1enk?oc=5" target="_blank" rel="noopener">WSJ</a> · <a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxOZW5sQ0s3NEtGMUtHWHpjajhUZjB3WW1PcGNIOF9IdktwUTVFbVh6V2VsMVFsWFRBMlE5VmtyUXlPMUtfZlk2UU4zbGxoZ19ocThmVjNudnNUWFhNR3BlT0V5dUxuYVk5VXUyT2EwZHI3QmtTS1N1ejVTV005UmNvdV93MjVEVDBkQldGU3E2bTBzVHpUbWZNY2wtbWx6TzA?oc=5" target="_blank" rel="noopener">Reuters</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Earnings per share (EPS)</dt><dd>A company&#39;s profit divided by its number of shares outstanding — a quick way to judge whether profits are growing faster than the share count. Beating the expected EPS, as Palo Alto did, often pushes a stock price up.</dd></div><div><dt>Open-weight model</dt><dd>An AI model whose trained internal settings (its &#39;weights&#39;) are made public, so other companies can download, run and customise it themselves instead of only accessing it through an API.</dd></div><div><dt>Annual recurring revenue (ARR)</dt><dd>The yearly income a subscription business can reliably expect, used heavily by software and cloud firms. If a company has 1,000 customers each paying $10,000 a year, its ARR is $10 million.</dd></div><div><dt>Acquisition</dt><dd>When one company buys another, often to gain its technology or customers quickly rather than building it from scratch. Palo Alto paid entirely in its own shares rather than cash.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>This shows cybersecurity firms pivoting from protecting networks to protecting AI systems themselves, a growing niche for engineers and analysts with both security and machine-learning knowledge. In an interview, you could note that AI adoption is creating demand not just for AI builders but for people who secure AI deployments.</p></div>
+  </article>
+  
+  <article id="story-1">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Intel lands first outside customer for advanced 18A chip process</h3>
+    <p class="standfirst">CEO Lip-Bu Tan says an unnamed client has signed up for Intel&#39;s most advanced manufacturing node, a milestone in its turnaround bid against TSMC.</p>
+    <div class="body"><p>Intel CEO Lip-Bu Tan announced on Wednesday that the company has signed its first external customer for chips made using its 18A manufacturing process, without naming the client. A foundry is a factory that manufactures chips designed by other companies, and for years Intel&#39;s foundry business has made chips almost exclusively for Intel&#39;s own products.</p><p>Analysts called it a significant win after a difficult period for Intel&#39;s chipmaking ambitions, with technology chief Pushkar Ranade clarifying the customer actually signed up for a variant called 18A-P, which entered limited &#39;risk production&#39; in June. Speculation has centred on Apple, Nvidia or one of the big cloud computing providers — Amazon, Microsoft and Google — which are reportedly struggling to secure enough manufacturing capacity from TSMC for their own custom processors. Tan separately said Microsoft is now the first publicly named customer for Intel&#39;s advanced chip-packaging technology, EMIB, which connects multiple chips together within one package.</p><p>The announcement comes as Intel&#39;s stock has lost more than half its value since September after warning that revenue would fall short of expectations due to weak PC sales and supply chain issues. The US government took a 10% stake in Intel last year, and Nvidia invested $5 billion, reflecting broader hopes that Intel can reduce reliance on Taiwan for advanced chip production. Tan has said the market for server processors could grow fivefold to roughly $200 billion over five years, but admitted Intel cannot currently meet demand.</p></div>
+    
+    <p class="src">Sources: <a href="https://www.cnbc.com/2026/11/18/intel-first-18a-foundry-customer.html" target="_blank" rel="noopener">Tech</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Semiconductor foundry</dt><dd>A factory that manufactures chips designed by other companies, similar to a printing press that prints books written by many different publishers. TSMC is the world&#39;s dominant foundry; Intel is trying to become a serious rival.</dd></div><div><dt>Process node</dt><dd>A generation of chip manufacturing technology, often named by a number like &#39;18A&#39;, roughly indicating how small and efficient the transistors are. Smaller, newer nodes generally pack in more computing power per chip.</dd></div><div><dt>Advanced packaging</dt><dd>Techniques that connect multiple separate chips together into one combined unit after they&#39;re manufactured, improving speed and efficiency compared with using one giant chip.</dd></div><div><dt>Hyperscaler</dt><dd>A reminder: a hyperscaler is a company running vast cloud computing operations, like Amazon, Microsoft or Google, that need enormous and reliable chip supply.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Intel&#39;s foundry breakthrough matters for anyone tracking the global chip supply chain that underpins AI infrastructure, and it&#39;s a useful example to cite when discussing supply-chain risk in tech interviews. It also links to today&#39;s data-centre electricity story — more chip capacity means more power demand.</p></div>
+  </article>
+  
+  <article id="story-2">
+    <span class="mono kicker">The AI industry</span>
+    <h3>IEA warns data centre electricity use could double by 2030</h3>
+    <p class="standfirst">The International Energy Agency says AI-driven data centre growth risks straining power grids already facing tight supply chains and local opposition.</p>
+    <div class="body"><p>The International Energy Agency (IEA) has warned that global electricity consumption by data centres — the large facilities housing the servers that power AI — could roughly double by 2030, reaching around 1,000 terawatt-hours a year. A terawatt-hour is a huge unit of electricity, equivalent to a trillion watt-hours; for comparison, that&#39;s roughly the annual electricity use of a mid-sized country.</p><p>The warning, part of the IEA&#39;s &#39;Stated Policies Scenario&#39; based on currently proposed but not yet adopted measures, flags Texas, Virginia, Finland and the UK as regions where planned data centre capacity already exceeds current peak electricity demand. Without grid upgrades, the IEA cautions that new projects could face long delays connecting to the power network, while existing generators might be forced to cut output at peak times. Peak electricity demand is projected to rise 40–50% by 2035, requiring 26 million kilometres of new power lines and refurbishment of 16 million kilometres of existing lines — against a backdrop of tight supplies of copper, cables and transformers.</p><p>The IEA expects grid spending to rise 75% over the next decade and predicts solar power will become the world&#39;s largest electricity source by the late 2030s. The report ties this to wider energy security concerns following this year&#39;s disruptions around the Strait of Hormuz, a vital route for global oil and gas shipments, arguing that electrification can reduce dependence on imported fuel but raises the stakes for keeping power grids reliable.</p></div>
+    
+    <p class="src">Sources: <a href="https://www.cnbc.com/2026/11/19/data-center-electricity-demand-iea.html" target="_blank" rel="noopener">Tech</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Data centre</dt><dd>A reminder: a large building full of servers that run the computing behind websites, apps and AI models. Training and running AI models like ChatGPT requires enormous numbers of these machines.</dd></div><div><dt>Terawatt-hour</dt><dd>A unit measuring a huge amount of electricity used over time — one terawatt-hour could power roughly 100,000 average homes for a year.</dd></div><div><dt>Grid capacity</dt><dd>The maximum amount of electricity a power network can transmit and distribute reliably at once, similar to how a motorway has a maximum traffic flow before congestion occurs.</dd></div><div><dt>Electrification</dt><dd>The shift from using fuels like oil and gas directly (e.g. petrol cars, gas heating) to using electricity instead, which can come from cleaner sources like solar or wind.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Energy is becoming one of the biggest bottlenecks in AI&#39;s growth, creating demand for engineers, analysts and policy specialists who understand both power grids and computing. It&#39;s a good talking point linking AI capital expenditure stories to real-world infrastructure limits.</p></div>
+  </article>
+  
+</section>
+
+<section id="finance" class="finance">
+  <div class="sec-head">
+    <span class="mono">Section 2</span>
+    <h2>AI &amp; finance</h2>
+    <p>Where Wall Street and the City meet AI, as users and as funders.</p>
+  </div>
+  
+  <article id="story-3">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>Singapore regulator warns AI agents could speed up financial risks</h3>
+    <p class="standfirst">MAS says AI agents capable of moving money automatically could accelerate shocks through the financial system.</p>
+    <div class="body"><p>Singapore&#39;s Monetary Authority (MAS), the country&#39;s financial regulator and central bank, has reportedly warned that AI agents — software that can take actions like initiating payments or trades without a human clicking &#39;confirm&#39; each time — could move money faster than traditional systems, potentially amplifying financial risks. The warning reflects growing concern among regulators globally that autonomous AI tools embedded in banking and trading systems could make crises spread more quickly than people or existing safeguards can respond to.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxNM3phS3NuMW04a3d4cEVhNnVDM25naVJfNUUtR0w3a2M4WHpjUVhxMmt5MWtoMU9DUzZrdFc3RFU1TU15djdQV1I1R1RaQ1g2ZUJnM3BqX2RXbFg4WGdDYTdfUWxic0ltSVJRQjcwd0ZXV2ZpeWF2UXFTSm16Sm9Wdl9QWTZXU1RSMkQxdF9CTWNFWS0wbmRMMjBFMVF6RmUtV1IwdXlMcHctVTBkN3RCaHJvWE4?oc=5" target="_blank" rel="noopener">Bloomberg</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>AI agent</dt><dd>A reminder: software that can independently take multi-step actions — like moving money between accounts — rather than just answering questions, based on goals a human sets rather than approving every single step.</dd></div><div><dt>Systemic risk</dt><dd>A reminder: the danger that problems in one part of the financial system spread rapidly to others, the way one bank&#39;s trouble can trigger panic withdrawals at many banks.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Regulators asking these questions signals rising demand for compliance and risk professionals who understand AI systems, not just financial products. It&#39;s a sharp example to raise in interviews about why &#39;AI agents&#39; need guardrails before being trusted with real money.</p></div>
+  </article>
+  
+  <article id="story-4">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>US bank regulator OCC begins using agentic AI in examinations</h3>
+    <p class="standfirst">The Office of the Comptroller of the Currency is reportedly incorporating AI agents into how it inspects banks&#39; operations.</p>
+    <div class="body"><p>The Office of the Comptroller of the Currency (OCC), the US regulator that supervises and examines national banks, has reportedly started bringing agentic AI — AI systems capable of carrying out multi-step tasks with limited human oversight — into its bank examination process. Bank examinations are periodic reviews where regulators check whether a bank is following rules on lending, capital and risk management.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMirgFBVV95cUxPZ0tSQVo4LW9HeGd5SjhZSGdVaEhENVp1SW5ySDRBZEVZOTFTTldCLUlCYWh1ejNoaHVCaVdKc3FKbHlBb2JfTldBMHJyTFMtdTh6QlN5UlRTU0pLaDgxTVVIN05wZjJUWHQ5X2pKYW9hekNGbzhnUDlFYlVrR1o3ZXRUQUEwVDV1X3BpVExNeVpUWXNrRzV6dmZBMGhyeWFqa0JPNEFxSFB1emNDZ2c?oc=5" target="_blank" rel="noopener">PYMNTS.com</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>OCC (Office of the Comptroller of the Currency)</dt><dd>A reminder: the US government agency that supervises and inspects national banks to make sure they&#39;re financially sound and following the rules.</dd></div><div><dt>Agentic AI</dt><dd>A reminder: AI systems that can plan and carry out sequences of actions toward a goal, rather than just responding to a single prompt, such as automatically gathering and flagging suspicious transactions during an audit.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Regulators adopting the same AI agent technology they&#39;re also worried about shows how deeply these tools are spreading through finance, creating jobs for people who can build and audit them. Expect interview questions about how AI can both help and complicate regulatory oversight.</p></div>
+  </article>
+  
+  <article id="story-5">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>Federal Reserve flags scrutiny of AI-driven credit denials</h3>
+    <p class="standfirst">The Fed has reportedly raised concerns about banks using AI models to decide who gets denied credit.</p>
+    <div class="body"><p>The US Federal Reserve has reportedly signalled closer scrutiny of banks&#39; use of AI in deciding credit denials — cases where a loan or credit card application is rejected. Lending decisions are subject to fair lending laws requiring banks to explain why an applicant was turned down, and regulators are concerned that complex AI models can make those explanations harder to produce, raising the risk of discrimination going undetected.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMi0wFBVV95cUxOam9VbnkydnI0RzJlSF9kQS1pOXg5N0tJUGdYUU5iamZTbUg0UFV1TElVVXhJREprS3ZzUlM0b08yajBNLTVYMHF2eVMybVBGUm9xVHM4ZUV3clp3a3dhNEtwU0Jjb1pvbF9KOEY4M1pjZEhrQXNEb2lKaHBsT0pVRms2Tjd5XzdxYVFyMkxpRGlXYlg2Q3plWk5HX3JXLU83WTYyc3RZVjdhNkJuSzlZWWtpZTY2NkdibXE1NWhxbHRad1lkdmtoankwbnoxQkJJZ1JJ?oc=5" target="_blank" rel="noopener">PYMNTS.com</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Credit denial</dt><dd>When a bank refuses to approve a loan, credit card or other form of credit for an applicant, which under US law it must be able to explain clearly.</dd></div><div><dt>Algorithmic bias</dt><dd>When an AI model unintentionally produces unfair outcomes for certain groups of people, often because of patterns in the historical data it was trained on, such as systematically rejecting applicants from a particular area.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>This connects directly to &#39;underwriting standards&#39; and AI risk themes seen across finance, and is a strong example for interviews about why explainability matters when deploying machine learning in regulated industries.</p></div>
+  </article>
+  
+</section>
+
+<section id="startups" class="startups">
+  <div class="sec-head">
+    <span class="mono">Section 3</span>
+    <h2>Startups &amp; funding</h2>
+    <p>Who raised, how much, and what investors are betting on.</p>
+  </div>
+  
+  <article id="story-6">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>Bret Taylor&#39;s Sierra reportedly in talks to raise funding at $30bn valuation</h3>
+    <p class="standfirst">The AI customer-service startup is said to be seeking around $1.5 billion in new funding, tripling its valuation from an earlier round.</p>
+    <div class="body"><p>Sierra, the AI customer-service startup co-founded by former Salesforce co-CEO Bret Taylor, is reportedly in talks to raise roughly $1.5 billion in a new funding round that would value the company at $30 billion. Sierra builds AI agents that handle customer support conversations for businesses, a category often called vertical AI — AI products built for one specific industry or task rather than general-purpose use.</p><p>The reported figures, if confirmed, would mark a dramatic jump in valuation as investors continue pouring money into specialised AI applications they believe can be sold directly to enterprises at scale.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMilwFBVV95cUxQRXpITHY5ei1PMW5CdmJfdkdVZG9maXdPbUluWW5raXlEYmJVd1UzVTJVZEhvc213NHBPb0pVX2MyMmNaUzdLcER4b1FlSTJuUmNmVlRZTHY2RXR4Mi04emFSYjF4dnRmdkRhSGEyQ2RqMUJ5ZWFYeHVobzRZRC1kbG9IWktqUHNJeGQyajVQdHdHVjllem1N?oc=5" target="_blank" rel="noopener">The Information</a> · <a href="https://news.google.com/rss/articles/CBMiwgFBVV95cUxPV29VelB5d1p2VjNIRi1yWkVjdnlTLVVIZXRmczhFeDEzZ1d1ajVEZzRFSlNlelNZc2hjRVhRZGF0QTkybWVPMTdXd25IM1lKaHRpQnRkb0pSQU9jWmo5OTRRckhWLThzeHZTQ1U2OWtDSmo2SzJ2T1NDU2FOdXQtSjhNaUNuLXp5a2h0WFF6azB2NUhwWEs4VW56U3lsWGo3Y2QyQUI4bnE4WGNwTkpMaEtyMENQU2pMd2JoamxpcEJGUQ?oc=5" target="_blank" rel="noopener">디지털투데이</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Funding round</dt><dd>A reminder: a fundraising event where a startup sells a stake in itself to investors in exchange for cash, usually named by letter (Series A, B, C) as the company matures.</dd></div><div><dt>Valuation</dt><dd>A reminder: an estimate of what a company is worth, often based on what investors are willing to pay for a small slice of it. A $30 billion valuation means investors believe the whole company is worth that much, even if it isn&#39;t yet profitable.</dd></div><div><dt>Vertical AI</dt><dd>A reminder: AI software built to serve one specific industry or task extremely well — like customer service — rather than being general-purpose like a chatbot that can discuss anything.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Sierra&#39;s reported valuation jump shows investors still betting heavily on AI agents replacing or assisting human customer service teams, a growing area for product and engineering roles. It&#39;s worth mentioning in interviews as an example of how &#39;vertical AI&#39; companies are commanding premium valuations versus general-purpose AI labs.</p></div>
+  </article>
+  
+  <article id="story-7">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>Robotics startup Genesis AI raises $500m at $3.5bn valuation</h3>
+    <p class="standfirst">The Eric Schmidt-backed robotics company reportedly secured major new funding, with Premji Invest among the investors.</p>
+    <div class="body"><p>Genesis AI, a robotics startup backed by billionaire Eric Schmidt, has reportedly raised $500 million in new funding at a $3.5 billion valuation, with investors including Premji Invest. The company is working on AI systems for robots, an area that often relies on what&#39;s known as a world model — an AI&#39;s internal understanding of how physical objects and spaces behave, which robots use to plan movements before acting.</p><p>The large funding round reflects growing investor appetite for AI applied beyond chatbots and software, into physical robotics that must understand and interact with the real world.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMipAFBVV95cUxNVlpvdTVpLVltYTBiRlJWZUd5SDhCTi0xb2Y5Q0dFYWVFWEs2UFF0WDliSElpeHF5RURLWjRweE0zdno3Q1hBNWJjUkZxVkhxTXV3M1pqdFJTeWt0eXlBMHJTd1ktSGhyZ3NiVGZMOERocGtackRvT19qTFptd2x2T0VxMXNJaXFpZTZGWE5EX1BqbHV2dmExNXhRYTFCbWs0XzJvWA?oc=5" target="_blank" rel="noopener">BW Disrupt</a> · <a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxQQklEaVo1M2VhVjlwa1hjMnRRb1lCT0tCVmo5TUZYMlhXMDZmU0dOVHRKMjd2SlFlU2pxVWl2UlI1a0puaEhsM0Zzdk52RDRYRzNqeExUV0U2RWM0R2k4SEI3WldrcHFJYjBwZ1YzdWhfM2IwaTN5UzQxbG5iQnlhb0l3S2dBeVdtZGszVDJDakZ4YTVNZ2I0ZGRZQ0J3dVBlV19hSm1PTHg0NHhYUWNkcHRyUW1UTnNkc0FWbmhGVFdtT2xrNU1j?oc=5" target="_blank" rel="noopener">Billionaires.Africa</a> · <a href="https://news.google.com/rss/articles/CBMi2AFBVV95cUxPV3lzYm1FTkJCX3pLSEFrQ3BZMEV4bk5iWmpNSWE3Mk1pNEJzNlhhNld0SWMzOV9SSWZRU3JLa01tZkV6Vldzbl84ckJSNHNnV2JhNDFkYWFQbDRCYlFxVDVmSTUyLW9WelRVcHpjS25NSnpkX21MSV9RdG1PS19hN2N5X2o2c0ZJT2NhUjA4WXM5SUR3Z2llZGRMRlliQUxFZWt3RzV6SVI5YTJXTmpRZDFNZXd6eFlyVWV1Q05YQ3BkZjYxTzVRS09sMXhLMlprNFlLRnl0SXHSAdgBQVVfeXFMT1d5c2JtRU5CQl96S0hBa0NwWTBFeG5OYlpqTUlhNzJNaTRCczZYYTZXdEljMzlfUklmUVNyS2tNbWZFelZXc25fOHJCUjRzZ1diYTQxZGFhUGw0QmJRcVQ1Zkk1Mi1vVnpUVXB6Y0tuTUp6ZF9tTElfUXRtT0tfYTdjeV9qNnNGSU9jYVIwOFlzOUlEd2dpZWRkTEZZYkFMRWVrd0c1eklSOWEyV05qUWQxTWV3enhZclVldUNOWENwZGY2MU81UUtPbDF4SzJaazRZS0Z5dElx?oc=5" target="_blank" rel="noopener">Indian Startup News</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Funding round</dt><dd>A reminder: an event where a startup raises money from investors in exchange for equity, with larger and later rounds typically valuing the company more highly.</dd></div><div><dt>World model</dt><dd>A reminder: an AI&#39;s internal representation of how the physical world works — for example, predicting that a dropped cup will fall and might break — which is especially important for robots that must act safely in real environments.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Robotics is emerging as a major new frontier for AI investment beyond language models, creating demand for engineers who combine machine learning with physical hardware. It&#39;s a good example to bring up when discussing where AI funding is diversifying beyond chatbots.</p></div>
+  </article>
+  
+</section>
+
+
+
+<div class="panel" id="code">
+  <span class="mono">Code corner</span>
+  <h2>Simulating an AI payment agent with a human-in-the-loop check</h2>
+  <p class="src">Based on: <a href="#story-3">Singapore regulator warns AI agents could speed up financial risks</a></p>
+  <p style="margin:0">Regulators are worried about AI agents moving money automatically. Here&#39;s a simplified Python example showing how a finance AI agent might decide on a payment, and why a human-in-the-loop safety check matters before anything actually moves.</p>
+  <pre><code>import json
+
+def fake_llm_response(prompt):
+    # Pretend this is what an LLM API would return as JSON
+    return json.dumps({
+        &#34;action&#34;: &#34;transfer_funds&#34;,
+        &#34;amount&#34;: 50000,
+        &#34;destination&#34;: &#34;account_9981&#34;,
+        &#34;confidence&#34;: 0.92
+    })
+
+def run_agent(prompt, approval_threshold=10000):
+    raw_response = fake_llm_response(prompt)
+    decision = json.loads(raw_response)
+
+    print(&#34;Agent wants to:&#34;, decision[&#34;action&#34;])
+    print(f&#34;Amount: ${decision[&#39;amount&#39;]:,}&#34;)
+
+    if decision[&#34;amount&#34;] &gt; approval_threshold:
+        print(&#34;Amount exceeds threshold -&gt; sending for human approval.&#34;)
+        return &#34;PENDING_HUMAN_REVIEW&#34;
+    else:
+        print(&#34;Within threshold -&gt; executing automatically.&#34;)
+        return &#34;EXECUTED&#34;
+
+result = run_agent(&#34;Move funds to settle the client&#39;s invoice.&#34;)
+print(&#34;Final status:&#34;, result)</code></pre>
+  <span class="mono">Line by line</span>
+  <ol class="walk"><li>`fake_llm_response` stands in for a real AI model API call, returning a JSON string just like a real LLM would.</li><li>`json.loads` converts that JSON text into a Python dictionary we can work with directly.</li><li>The `if decision[&#34;amount&#34;] &gt; approval_threshold` line is the human-in-the-loop safeguard: it stops the agent acting alone on large transfers.</li><li>The function returns a status string so other code (or a human reviewer) knows what happened next.</li></ol>
+  <div class="tryit"><p><b>Try it:</b> Change `approval_threshold` to 100000 so the $50,000 transfer executes automatically, then think about what real-world risks that might create.</p></div>
+</div>
+
+<div class="panel" id="quiz">
+  <span class="mono">Quiz · apply today's concepts</span>
+  <h2>What would you do?</h2>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 1</span>
+    <p class="scenario">You&#39;re in a risk meeting at a bank, and someone proposes letting an AI agent automatically move customer funds between accounts without manual approval, to speed up processing.</p>
+    <p class="ask">Based on regulators&#39; concerns discussed today, what is the main risk with this proposal?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>AI agents can&#39;t technically perform financial transactions</span></button></li><li><button type="button" data-i="1"><b>B</b><span>The agent could execute actions faster than humans can review, amplifying errors or risks across the system</span></button></li><li><button type="button" data-i="2"><b>C</b><span>AI agents only work with open-weight models</span></button></li><li><button type="button" data-i="3"><b>D</b><span>It would reduce the bank&#39;s annual recurring revenue</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> Regulators like MAS warned that AI agents could move money faster than oversight mechanisms can keep up, increasing systemic risk. The other options are either technically incorrect or irrelevant to risk oversight.</p>
+        <div class="chips"><span>AI agent</span><span>Systemic risk</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 2</span>
+    <p class="scenario">An interviewer at a chipmaker asks you to explain why Intel signing an external customer for its 18A process is significant.</p>
+    <p class="ask">What does this news actually demonstrate about Intel&#39;s business?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>Intel has stopped making its own chips entirely</span></button></li><li><button type="button" data-i="1"><b>B</b><span>Intel&#39;s foundry business is starting to attract manufacturing customers beyond its own products, challenging TSMC&#39;s dominance</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Intel is now the largest data centre operator in the world</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Intel has fully replaced Nvidia in AI chip design</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> The story is specifically about Intel&#39;s foundry (manufacturing-for-others) business gaining its first outside customer on an advanced node, a milestone in competing with TSMC. The other options overstate or misstate the news.</p>
+        <div class="chips"><span>Semiconductor foundry</span><span>Process node</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 3</span>
+    <p class="scenario">A founder pitches you on their customer-service AI startup, claiming a $30 billion valuation purely because &#39;AI is hot right now&#39;.</p>
+    <p class="ask">What follow-up question would best test whether that valuation reflects genuine business fundamentals, rather than hype alone?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>What colour is your company logo?</span></button></li><li><button type="button" data-i="1"><b>B</b><span>What is your revenue growth rate and how does the new funding round compare to your prior valuation?</span></button></li><li><button type="button" data-i="2"><b>C</b><span>How many employees have a computer science degree?</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Is your product open-weight?</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> Valuations should be tied to real metrics like revenue growth and how much the valuation has changed between funding rounds, not vibes. The other options are irrelevant distractions, echoing concerns about an AI bubble inflating valuations without matching fundamentals.</p>
+        <div class="chips"><span>Valuation</span><span>Funding round</span><span>Vertical AI</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 4</span>
+    <p class="scenario">You&#39;re asked in an interview why data centre electricity demand is suddenly a major topic in AI industry discussions.</p>
+    <p class="ask">Which best explains the connection highlighted by the IEA&#39;s warning?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>AI models are trained once and never use electricity again afterwards</span></button></li><li><button type="button" data-i="1"><b>B</b><span>Running and training AI models requires enormous computing power in data centres, and that demand is straining power grids faster than they can be upgraded</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Electricity prices have no relation to AI infrastructure</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Data centres are being replaced entirely by solar panels</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> The IEA&#39;s warning centres on data centres&#39; growing electricity needs for AI outpacing grid upgrade capacity, risking delays and reliability issues. The other options misunderstand how AI computing and power consumption relate.</p>
+        <div class="chips"><span>Data centre</span><span>Grid capacity</span><span>Electrification</span></div>
+      </div>
+    </details>
+  </div>
+  
+</div>
+
+<div class="panel" id="glossary">
+  <span class="mono">Glossary</span>
+  <h2>Every concept from today</h2>
+  <dl class="gloss"><div><dt>Acquisition<a href="#story-0">see story</a></dt><dd>When one company buys another, often to gain its technology or customers quickly rather than building it from scratch. Palo Alto paid entirely in its own shares rather than cash.</dd></div><div><dt>Advanced packaging<a href="#story-1">see story</a></dt><dd>Techniques that connect multiple separate chips together into one combined unit after they&#39;re manufactured, improving speed and efficiency compared with using one giant chip.</dd></div><div><dt>Agentic AI<a href="#story-4">see story</a></dt><dd>A reminder: AI systems that can plan and carry out sequences of actions toward a goal, rather than just responding to a single prompt, such as automatically gathering and flagging suspicious transactions during an audit.</dd></div><div><dt>AI agent<a href="#story-3">see story</a></dt><dd>A reminder: software that can independently take multi-step actions — like moving money between accounts — rather than just answering questions, based on goals a human sets rather than approving every single step.</dd></div><div><dt>Algorithmic bias<a href="#story-5">see story</a></dt><dd>When an AI model unintentionally produces unfair outcomes for certain groups of people, often because of patterns in the historical data it was trained on, such as systematically rejecting applicants from a particular area.</dd></div><div><dt>Annual recurring revenue (ARR)<a href="#story-0">see story</a></dt><dd>The yearly income a subscription business can reliably expect, used heavily by software and cloud firms. If a company has 1,000 customers each paying $10,000 a year, its ARR is $10 million.</dd></div><div><dt>Credit denial<a href="#story-5">see story</a></dt><dd>When a bank refuses to approve a loan, credit card or other form of credit for an applicant, which under US law it must be able to explain clearly.</dd></div><div><dt>Data centre<a href="#story-2">see story</a></dt><dd>A reminder: a large building full of servers that run the computing behind websites, apps and AI models. Training and running AI models like ChatGPT requires enormous numbers of these machines.</dd></div><div><dt>Earnings per share (EPS)<a href="#story-0">see story</a></dt><dd>A company&#39;s profit divided by its number of shares outstanding — a quick way to judge whether profits are growing faster than the share count. Beating the expected EPS, as Palo Alto did, often pushes a stock price up.</dd></div><div><dt>Electrification<a href="#story-2">see story</a></dt><dd>The shift from using fuels like oil and gas directly (e.g. petrol cars, gas heating) to using electricity instead, which can come from cleaner sources like solar or wind.</dd></div><div><dt>Funding round<a href="#story-7">see story</a></dt><dd>A reminder: an event where a startup raises money from investors in exchange for equity, with larger and later rounds typically valuing the company more highly.</dd></div><div><dt>Grid capacity<a href="#story-2">see story</a></dt><dd>The maximum amount of electricity a power network can transmit and distribute reliably at once, similar to how a motorway has a maximum traffic flow before congestion occurs.</dd></div><div><dt>Hyperscaler<a href="#story-1">see story</a></dt><dd>A reminder: a hyperscaler is a company running vast cloud computing operations, like Amazon, Microsoft or Google, that need enormous and reliable chip supply.</dd></div><div><dt>OCC (Office of the Comptroller of the Currency)<a href="#story-4">see story</a></dt><dd>A reminder: the US government agency that supervises and inspects national banks to make sure they&#39;re financially sound and following the rules.</dd></div><div><dt>Open-weight model<a href="#story-0">see story</a></dt><dd>An AI model whose trained internal settings (its &#39;weights&#39;) are made public, so other companies can download, run and customise it themselves instead of only accessing it through an API.</dd></div><div><dt>Process node<a href="#story-1">see story</a></dt><dd>A generation of chip manufacturing technology, often named by a number like &#39;18A&#39;, roughly indicating how small and efficient the transistors are. Smaller, newer nodes generally pack in more computing power per chip.</dd></div><div><dt>Semiconductor foundry<a href="#story-1">see story</a></dt><dd>A factory that manufactures chips designed by other companies, similar to a printing press that prints books written by many different publishers. TSMC is the world&#39;s dominant foundry; Intel is trying to become a serious rival.</dd></div><div><dt>Systemic risk<a href="#story-3">see story</a></dt><dd>A reminder: the danger that problems in one part of the financial system spread rapidly to others, the way one bank&#39;s trouble can trigger panic withdrawals at many banks.</dd></div><div><dt>Terawatt-hour<a href="#story-2">see story</a></dt><dd>A unit measuring a huge amount of electricity used over time — one terawatt-hour could power roughly 100,000 average homes for a year.</dd></div><div><dt>Valuation<a href="#story-6">see story</a></dt><dd>A reminder: an estimate of what a company is worth, often based on what investors are willing to pay for a small slice of it. A $30 billion valuation means investors believe the whole company is worth that much, even if it isn&#39;t yet profitable.</dd></div><div><dt>Vertical AI<a href="#story-6">see story</a></dt><dd>A reminder: AI software built to serve one specific industry or task extremely well — like customer service — rather than being general-purpose like a chatbot that can discuss anything.</dd></div><div><dt>World model<a href="#story-7">see story</a></dt><dd>A reminder: an AI&#39;s internal representation of how the physical world works — for example, predicting that a dropped cup will fall and might break — which is especially important for robots that must act safely in real environments.</dd></div></dl>
+</div>
+
+<div class="panel">
+  <span class="mono">Past digests</span>
+  <ul class="archive"><li><a href="../archive/2026-11-19.html" aria-current="page">2026-11-19</a></li><li><a href="../archive/2026-11-18.html">2026-11-18</a></li><li><a href="../archive/2026-11-17.html">2026-11-17</a></li><li><a href="../archive/2026-11-16.html">2026-11-16</a></li><li><a href="../archive/2026-11-15.html">2026-11-15</a></li><li><a href="../archive/2026-11-14.html">2026-11-14</a></li><li><a href="../archive/2026-11-13.html">2026-11-13</a></li><li><a href="../archive/2026-11-12.html">2026-11-12</a></li><li><a href="../archive/2026-11-11.html">2026-11-11</a></li><li><a href="../archive/2026-11-10.html">2026-11-10</a></li><li><a href="../archive/2026-11-09.html">2026-11-09</a></li><li><a href="../archive/2026-11-08.html">2026-11-08</a></li><li><a href="../archive/2026-11-07.html">2026-11-07</a></li><li><a href="../archive/2026-11-06.html">2026-11-06</a></li><li><a href="../archive/2026-11-05.html">2026-11-05</a></li><li><a href="../archive/2026-11-04.html">2026-11-04</a></li><li><a href="../archive/2026-11-03.html">2026-11-03</a></li><li><a href="../archive/2026-11-02.html">2026-11-02</a></li><li><a href="../archive/2026-11-01.html">2026-11-01</a></li><li><a href="../archive/2026-10-31.html">2026-10-31</a></li><li><a href="../archive/2026-10-30.html">2026-10-30</a></li><li><a href="../archive/2026-10-29.html">2026-10-29</a></li><li><a href="../archive/2026-10-28.html">2026-10-28</a></li><li><a href="../archive/2026-10-27.html">2026-10-27</a></li><li><a href="../archive/2026-10-26.html">2026-10-26</a></li><li><a href="../archive/2026-10-25.html">2026-10-25</a></li><li><a href="../archive/2026-10-24.html">2026-10-24</a></li><li><a href="../archive/2026-10-23.html">2026-10-23</a></li><li><a href="../archive/2026-10-22.html">2026-10-22</a></li><li><a href="../archive/2026-10-21.html">2026-10-21</a></li></ul>
+</div>
+
+<footer>Written by Claude from the linked sources. Check the original article before quoting figures in an interview.</footer>
+</div>
+<script>
+document.querySelectorAll(".q").forEach(function (q) {
+  var correct = Number(q.dataset.correct);
+  var buttons = q.querySelectorAll(".opts button");
+  buttons.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var picked = Number(b.dataset.i);
+      buttons.forEach(function (x) {
+        var i = Number(x.dataset.i);
+        if (i === correct) x.classList.add("right");
+        else if (i === picked) x.classList.add("wrong");
+        x.disabled = true;
+      });
+      q.querySelector("details").open = true;
+    });
+  });
+});
+</script>
+</body>
+</html>
