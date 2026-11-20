@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI Morning Brief · Friday 20 November 2026</title>
+<meta name="theme-color" content="#3A55C8">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  color-scheme:light dark;
+  --ground:#F3F4F7; --paper:#FFFFFF; --ink:#141827; --muted:#5B6275; --line:#DDE0E8;
+  --industry:#3A55C8; --industry-soft:#E6EAFA;
+  --finance:#1C7453; --finance-soft:#E1F1EA;
+  --startups:#A8561A; --startups-soft:#F7EADF;
+  --code-bg:#161A26; --code-ink:#E4E7F0;
+  --right:#1C7453; --right-soft:#E1F1EA; --wrong:#B3261E; --wrong-soft:#FBE7E5;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --ground:#0F121B; --paper:#171B27; --ink:#E8EAF1; --muted:#9AA1B4; --line:#2A3042;
+    --industry:#8FA3F5; --industry-soft:#20284A;
+    --finance:#6CCBA3; --finance-soft:#15332A;
+    --startups:#E8A06A; --startups-soft:#3A2618;
+    --code-bg:#0B0D14; --code-ink:#E4E7F0;
+    --right:#6CCBA3; --right-soft:#15332A; --wrong:#F2A29B; --wrong-soft:#3A1B19;
+  }
+}
+*{box-sizing:border-box}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.6 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;padding-inline:16px;padding-block:28px 64px}
+.wrap{max-width:700px;margin:0 auto;display:grid;gap:36px}
+a{color:inherit}
+a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var(--industry);outline-offset:3px;border-radius:4px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400}
+header{display:grid;gap:10px}
+header .date{color:var(--muted)}
+h1{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(44px,11vw,64px);line-height:1;margin:0;letter-spacing:-.01em}
+h1 em{color:var(--industry)}
+.lede{color:var(--muted);margin:0;max-width:60ch}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ground);padding-block:10px;display:flex;gap:8px;overflow-x:auto;border-bottom:1px solid var(--line)}
+nav a{flex:none;text-decoration:none;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--paper);font-size:14px}
+nav a.industry{color:var(--industry)} nav a.finance{color:var(--finance)} nav a.startups{color:var(--startups)}
+
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:14px;scroll-margin-top:64px}
+.panel h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:30px;margin:0;line-height:1.15}
+.panel > .mono{color:var(--muted)}
+.talk ol{margin:0;padding-left:20px;display:grid;gap:8px}
+.toc{display:grid;gap:14px}
+.toc h3{margin:0 0 4px}
+.toc ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.toc li a{text-decoration:none}
+.toc li a:hover{text-decoration:underline}
+
+section{display:grid;gap:22px;scroll-margin-top:64px}
+.sec-head{display:grid;gap:2px;border-top:3px solid var(--c);padding-top:12px}
+.sec-head h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:36px;margin:0;line-height:1.1;text-wrap:balance}
+.sec-head p{margin:0;color:var(--muted)}
+.sec-head .mono{color:var(--c)}
+.industry{--c:var(--industry);--cs:var(--industry-soft)}
+.finance{--c:var(--finance);--cs:var(--finance-soft)}
+.startups{--c:var(--startups);--cs:var(--startups-soft)}
+
+article{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px 20px;display:grid;gap:16px;scroll-margin-top:64px}
+article .kicker{color:var(--c)}
+article h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(26px,6vw,32px);line-height:1.15;margin:0;text-wrap:balance}
+.standfirst{margin:0;font-size:18px;line-height:1.5;color:var(--muted)}
+.body{display:grid;gap:14px;font-family:"Source Serif 4",Georgia,serif;font-size:18px;line-height:1.65;max-width:65ch}
+.body p{margin:0}
+.src{margin:0;font-size:13px;color:var(--muted)}
+.concepts{background:var(--cs);border-radius:12px;padding:16px 18px;display:grid;gap:12px}
+.concepts .mono{color:var(--c)}
+.concepts dl{margin:0;display:grid;gap:10px}
+.concepts dt{font-weight:600}
+.concepts dd{margin:2px 0 0}
+.why{display:grid;gap:4px;border-left:2px solid var(--c);padding-left:14px}
+.why .mono{color:var(--c)}
+.why p{margin:0}
+
+pre{margin:0;background:var(--code-bg);color:var(--code-ink);border-radius:10px;padding:16px;overflow-x:auto;font:14px/1.55 "IBM Plex Mono",ui-monospace,Consolas,monospace}
+.walk{margin:0;padding-left:20px;display:grid;gap:6px}
+code{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:.9em}
+.tryit{background:var(--industry-soft);border-radius:10px;padding:12px 16px}
+.tryit p{margin:0}
+
+.q{display:grid;gap:12px;border-top:1px solid var(--line);padding-top:18px}
+.q:first-of-type{border-top:0;padding-top:0}
+.scenario{margin:0;font-family:"Source Serif 4",Georgia,serif;font-style:italic;font-size:17px}
+.q .ask{margin:0;font-weight:600}
+.opts{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.opts button{width:100%;text-align:left;font:inherit;color:var(--ink);background:var(--ground);border:1px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer;display:flex;gap:10px}
+.opts button:hover{border-color:var(--industry)}
+.opts button b{font-family:"IBM Plex Mono",ui-monospace,monospace;font-weight:500}
+.opts button.right{background:var(--right-soft);border-color:var(--right)}
+.opts button.wrong{background:var(--wrong-soft);border-color:var(--wrong)}
+.opts button:disabled{cursor:default}
+details{border-radius:10px}
+summary{cursor:pointer;font-weight:500;color:var(--industry)}
+.answer{display:grid;gap:8px;margin-top:10px}
+.answer p{margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:13px;padding:2px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+
+.gloss{margin:0;display:grid;gap:12px}
+.gloss dt{font-weight:600}
+.gloss dt a{font-weight:400;font-size:13px;color:var(--muted);margin-left:6px}
+.gloss dd{margin:2px 0 0;color:var(--muted)}
+.archive{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.archive a{display:inline-block;padding:4px 10px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-variant-numeric:tabular-nums;font-size:14px}
+.archive a[aria-current]{border-color:var(--industry);color:var(--industry)}
+footer{color:var(--muted);font-size:13px}
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="mono date">Friday 20 November 2026 · 17 min read</span>
+  <h1>AI Morning <em>Brief</em></h1>
+  <p class="lede">Today's AI and fintech news as short articles, with every key concept explained, a bit of Python, and a scenario quiz to check it stuck.</p>
+</header>
+
+<nav aria-label="Sections">
+  <a href="#industry" class="industry">The AI industry</a>
+  <a href="#finance" class="finance">AI &amp; finance</a>
+  <a href="#startups" class="startups">Startups &amp; funding</a>
+  <a href="#code">Code corner</a>
+  <a href="#quiz">Quiz</a>
+  <a href="#glossary">Glossary</a>
+</nav>
+
+<div class="panel talk">
+  <span class="mono">If you only read one thing</span>
+  <h2>Three things to be able to say today</h2>
+  <ol><li>Nvidia is reportedly closing in on a $500m+ deal for diffusion-AI startup Inception, scooping up researchers rather than just technology.</li><li>Congress released data showing US regulators approved only one in four requests to sell advanced AI chips to China, reigniting the Jensen Huang scandal fallout.</li><li>SpaceX borrowed $32bn at yields above 8% to fund AI chip purchases, a reminder that the AI boom is increasingly being financed with expensive debt.</li></ol>
+</div>
+
+<div class="panel">
+  <span class="mono">In today's brief</span>
+  <div class="toc">
+  
+    <div class="industry"><h3 class="mono" style="color:var(--c)">The AI industry</h3>
+      <ul><li><a href="#story-0">Nvidia Nears $500m Deal for Diffusion AI Startup Inception</a></li><li><a href="#story-1">Nestle and Danaher Turn to Microsoft for AI Agents in Factories and Labs</a></li><li><a href="#story-2">Congress Reveals US Approved 879,000 AI Chips for Sale to China</a></li></ul>
+    </div>
+  
+    <div class="finance"><h3 class="mono" style="color:var(--c)">AI &amp; finance</h3>
+      <ul><li><a href="#story-3">SpaceX Borrows $32bn at Yields Above 8% to Fund AI Chip Buildout</a></li><li><a href="#story-4">FCA Launches &#39;AI Spotlight Observatory&#39; to Track Fintech Adoption</a></li><li><a href="#story-5">Fed Flags $3 Trillion Hidden Risk From AI Investment Boom</a></li></ul>
+    </div>
+  
+    <div class="startups"><h3 class="mono" style="color:var(--c)">Startups &amp; funding</h3>
+      <ul><li><a href="#story-6">Drug-Design Startup Boltz Raises $110m to Speed Up Molecule Research</a></li><li><a href="#story-7">Deutsche Telekom Invests $110m in French AI Lab Mistral</a></li></ul>
+    </div>
+  
+  </div>
+</div>
+
+
+<section id="industry" class="industry">
+  <div class="sec-head">
+    <span class="mono">Section 1</span>
+    <h2>The AI industry</h2>
+    <p>Big labs, big tech and the direction of travel.</p>
+  </div>
+  
+  <article id="story-0">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Nvidia Nears $500m Deal for Diffusion AI Startup Inception</h3>
+    <p class="standfirst">The chipmaker is reportedly close to buying a Stanford-linked startup that builds AI models using a different method from standard chatbots.</p>
+    <div class="body"><p>Nvidia is reportedly in advanced talks to acquire Inception, a startup spun out of Stanford research, in a deal said to be worth more than $500 million, according to multiple outlets citing The Information. The startup specialises in diffusion-based AI models, a technique more commonly associated with image generators like Midjourney than with text chatbots.</p><p>Most large language models generate text one word, or &#39;token&#39;, at a time, predicting each next piece based on everything written so far. Diffusion models work differently: they start with something close to random noise and gradually refine it into a finished output, often allowing many parts of the answer to be produced simultaneously rather than one word after another. Some researchers believe this could make certain tasks, like writing code, faster to run.</p><p>Reports suggest the deal would bring Inception&#39;s small team of researchers into Nvidia, feeding into the company&#39;s Nemotron family of AI models. Nvidia already dominates the chips that train and run AI, so building more of its own models would deepen its reach across the entire AI stack, from hardware to software.</p><p>If confirmed, the acquisition would be one of several recent moves by big tech firms snapping up small, specialised AI teams rather than building everything from scratch. It also keeps alive questions about how much of the AI boom is now driven by a handful of giant companies buying up talent and technology at high prices.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxONjI2ZmljcWphUkcxbzlYMXNKeFZFRkw3Zzh1Y1dHVFVVSXBIbTNFNFlyNnY1UktVV3VRNlBIMVJKaXBGd1kzM2RyMkN4eGpNbVVwSzhwRm9mWXcwSGZlcjg5eFdxZHpqMlVCQjExZ084dVZCUDBBeW05Ni1vaUNNWTdvcDFDMjRiRl9oS2czcUJSbTZuemRRLVBtMWtFWTZ0?oc=5" target="_blank" rel="noopener">The Information</a> · <a href="https://news.google.com/rss/articles/CBMiwgFBVV95cUxQelhTc2k2eDFkMjdJam9mM2d1RHRMWlcxZThvMU5PYXl2QkRZT2tHQ1Q4dXNlenllN0ZRcXB2TXVjc25vdkgyZ0wweGlzb09kTUdGUHRVT245OVpjRk82aTdLaF9oOW5oT2xuREdoM0ZuWnJ1ZVhJTnNIQ2xVY1Iyb3daeEg5a3N5ODhpVlZrRmU2QklYYXJWTjdUMzNxTzRvc3V4NWlfQzhUcmF3QWFtTnREcjhxX29YOUVDSklSWEV0Zw?oc=5" target="_blank" rel="noopener">Tech Funding News</a> · <a href="https://news.google.com/rss/articles/CBMitgFBVV95cUxNeDhDOFk2dFc0VDJnTE9wUmZvUjM1YkxnS3FFMTI5aEtYdTl4MHNCNmxfbFNfTkdrbzVtWEpmYXk2MTdMYktJVEFnbGlfUzFuRUJyMzBjYUZKajZ5NjliTDViX1hMSGtPTXhNLWRqeXVrMlBnV1hpcUpQMndXVTRPQnlBdU9lQjVENFVqdEd1Z0VoR0ZVcGQ2SU42VzRubWFNeDVudEJrTmtvVXBzdGJVYW9DTjhiUQ?oc=5" target="_blank" rel="noopener">Superpower Daily</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Diffusion model</dt><dd>A type of AI model that creates an output by starting with random noise and gradually refining it, rather than generating word by word. It&#39;s the technique behind most AI image generators, and some researchers are now applying it to text and code.</dd></div><div><dt>Inference</dt><dd>Inference is when an already-trained AI model is actually used to produce an answer, as opposed to the earlier, much more expensive process of training it. Faster inference means an AI assistant can reply to you more quickly and cheaply.</dd></div><div><dt>Acquisition</dt><dd>Reminder: an acquisition is when one company buys another outright, taking ownership of its technology, products and usually its staff.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Deals like this show big AI firms increasingly buy niche research teams instead of hiring one by one, which is good news if you&#39;re building a specialism like diffusion models or efficient inference. In an interview, you could note that &#39;acqui-hires&#39; are becoming a standard way frontier labs absorb new techniques.</p></div>
+  </article>
+  
+  <article id="story-1">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Nestle and Danaher Turn to Microsoft for AI Agents in Factories and Labs</h3>
+    <p class="standfirst">Two very different industrial giants are building AI systems that can act, not just answer questions, inside their operations.</p>
+    <div class="body"><p>Nestle has partnered with Microsoft and robotics firm Boston Dynamics to bring AI into its factories and product development, according to the Wall Street Journal. Separately, lab-equipment maker Danaher said it is working with Microsoft to build an &#39;agentic&#39; AI platform for laboratory instruments.</p><p>Both deals point to the same shift: AI is moving from chatbots that answer questions to &#39;agents&#39; that can carry out multi-step tasks on their own, such as adjusting factory settings or running a sequence of lab experiments. For Danaher, that could mean AI that monitors test results and adjusts instrument settings without a scientist manually checking each step.</p><p>Neither company gave full financial details of the partnerships. For Microsoft, deals like these extend its AI tools beyond offices and into physical, specialised environments such as factory floors and science labs, areas where mistakes can be costly, so systems are typically rolled out with a person checking the AI&#39;s decisions before they take effect.</p><p>The push into &#39;vertical&#39; AI, tools built for one specific industry rather than general use, reflects where much of the money in enterprise AI is now flowing, as companies look for returns beyond general chatbots.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMitgFBVV95cUxQWUFvdy1NOXphTWxlN25CWVV2TlppczdLSERycm44cVJmNmF5Q1g5Y184Tmoyak96ekgyZDd4N1h2d3diVUktU1E5aGNtSm1hV2JyNUltOENIU3NLdW1OcEdKVUk0THhOWF94aVlhMUFrNTBULW5hckZ4eWppTG1uMmU1TW1zdmZzSC14QmZySElQbm53dWE1bnhoMVhYNEtCV3ViMGp1bTl3MzB3QnhnVjdGbVJmUQ?oc=5" target="_blank" rel="noopener">WSJ</a> · <a href="https://news.google.com/rss/articles/CBMilAFBVV95cUxNSGNUZ19ZdGhpVGp0ck1DVm5JRmtXbnhGMmQyYmZJMHhmVXo1UGNwQ3c2SVVYX3RNekwzSnRSVWtPNk1Id1pvUXNRYV9kc2hMSmV6RUxoWFdtWFduNlV6Q2tiR09nTWdHZkhPcFJkYU1pVjYycFpET0F0YmRBV1NnWk1RVlZjbE8tcnNNX0xIbkN4bWxq?oc=5" target="_blank" rel="noopener">Yahoo Finance</a> · <a href="https://news.google.com/rss/articles/CBMiygFBVV95cUxNcXBMbzEyYm96YVZmQ0NiMnVnWjRWTGtVeElyZ1N3d0lkYXJZdklUTVo4eTVQaFdpQkNteW1CNXk2dEVhX1JiYVJMZUh6ekNDby1WTm40QjdmZnJGdDBVX3YySVJBQWRUVXFyVDVpOFJDUzEyVG56bkNhLThQYzBfZXpEMkRLWUJnSi0zQnVLeDdpdkpoWUxmVWdKMHNJMEo0YVlBYUZFQmF0a1h6akplSGF6MXN0YjFCTlBMdjNYY3F5V3B1NkdzbVJ3?oc=5" target="_blank" rel="noopener">marketscreener.com</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>AI agent</dt><dd>Reminder: an AI agent is software that can take a series of actions toward a goal, such as checking a reading and then adjusting a setting, rather than just giving a one-off answer to a question.</dd></div><div><dt>Vertical AI</dt><dd>Reminder: vertical AI means a model or product built for one specific industry, like laboratories or food manufacturing, instead of a general-purpose assistant.</dd></div><div><dt>Human-in-the-loop AI</dt><dd>Reminder: this means a person reviews or approves an AI&#39;s decisions before they&#39;re acted on, which is especially important in factories and labs where errors are expensive or dangerous.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Industrial and scientific AI deployments are creating demand for people who understand both a specific industry (food production, lab science) and AI tools, a useful niche if you&#39;re early in your career and want to avoid competing purely on general AI skills.</p></div>
+  </article>
+  
+  <article id="story-2">
+    <span class="mono kicker">The AI industry</span>
+    <h3>Congress Reveals US Approved 879,000 AI Chips for Sale to China</h3>
+    <p class="standfirst">Newly released documents show regulators approved roughly one in four requests to export advanced Nvidia and AMD chips, reigniting scrutiny after the Jensen Huang scandal.</p>
+    <div class="body"><p>The House Foreign Affairs Committee released documents on Thursday showing the Commerce Department&#39;s Bureau of Industry and Security approved the export of more than 879,000 AI chips to Chinese firms, including Alibaba and Tencent, as of May 2026. That came out of 3.4 million chips requested for export by Nvidia and AMD since December, meaning roughly one in four requests were approved.</p><p>Some approvals reportedly went to companies the Department of Defense has designated as &#39;Chinese Military Companies&#39;. Lawmakers also flagged two firms, Maginfra and New Matrix, as suspected shell companies used to disguise the real buyer of the chips, raising concerns about diversion, where restricted technology ends up with a different, often sanctioned, end user than the one named on the paperwork. Nvidia said it has since stopped shipping its H200 chip to China and that China-linked sales made up under 1% of its data-centre revenue last quarter.</p><p>The release follows weeks of political fallout after Nvidia&#39;s chief executive resigned over revelations involving an alleged Chinese intelligence contact, which triggered fears that sensitive chip technology could be diverted to Beijing. Lawmakers from both parties are now pushing for tighter export licence rules, which govern which products can legally be sold abroad and to whom.</p><p>Analysts have downplayed the scale of the approvals relative to the overall chip market, but the political temperature around US-China chip exports remains high, and more congressional scrutiny of licensing decisions looks likely in the coming months.</p></div>
+    
+    <p class="src">Sources: <a href="https://www.cnbc.com/2026/11/19/nvidia-amd-china-chip-sales-congress.html" target="_blank" rel="noopener">Tech</a> · <a href="https://news.google.com/rss/articles/CBMihAFBVV95cUxNeEFnbEotSkNBcWVHSFZuOWlRck1JOXVhUGp1R2tnTnhlUURqbVo4aEprdDhhbVdhSEdiVkgzcURHRVB3c1BrOXRlZ1hGeENoMVZCWW43b0dTaEJ2OXRlTzJTdktHejFwa3lMSXFUMjY4QUtBQkhzY19JV29mVTJpdGo2TzQ?oc=5" target="_blank" rel="noopener">Financial Times</a> · <a href="https://news.google.com/rss/articles/CBMixgFBVV95cUxPRDlYQ1M4U2NVMEl4VTRnSGJZY1Nhck12YzZ2aHZ3ZUtlUV8zay11QU1VRktvNGpwT094aHFaVFFRdll5b2hrYVR3MkwtSkJlUjZmdDBBcWVJNHhNb2dQRWFGdnRUWjhDZ1hFX2JEMzh6bncwa3lOT3ppdWlYYTUtaE04VS1kR0k1bkFpUlFqaHljcmVzMUF2TXNDNndVQTRuYzJabXV2U2RxRDNXdUNaOVlRMEJJdGFZakVFY1RoUTdmNnlVdHc?oc=5" target="_blank" rel="noopener">investingLive</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Export licence</dt><dd>An export licence is government permission required before a company can legally sell certain restricted goods, like advanced AI chips, to a foreign buyer.</dd></div><div><dt>Entity List</dt><dd>Reminder: the Entity List is a US government blacklist of companies barred, or restricted, from receiving American technology without special approval.</dd></div><div><dt>Diversion risk</dt><dd>Reminder: diversion risk is the danger that goods sold to one buyer are secretly passed on to someone else, such as a sanctioned company or government, who was never meant to receive them.</dd></div><div><dt>Congressional oversight</dt><dd>Reminder: this is Congress&#39;s role in monitoring how government agencies and companies are behaving, including by demanding documents or holding hearings.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Export control compliance is becoming a serious career track in tech and finance, with firms hiring specialists to navigate licensing rules; understanding how chip export approvals work would be a strong talking point in any interview touching on AI supply chains or China risk.</p></div>
+  </article>
+  
+</section>
+
+<section id="finance" class="finance">
+  <div class="sec-head">
+    <span class="mono">Section 2</span>
+    <h2>AI &amp; finance</h2>
+    <p>Where Wall Street and the City meet AI, as users and as funders.</p>
+  </div>
+  
+  <article id="story-3">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>SpaceX Borrows $32bn at Yields Above 8% to Fund AI Chip Buildout</h3>
+    <p class="standfirst">Elon Musk&#39;s rocket company sold a large pile of debt at unusually high interest rates, underlining how costly it&#39;s becoming to finance the AI infrastructure race.</p>
+    <div class="body"><p>SpaceX has sold $32 billion in debt linked to AI chip purchases, with yields, the effective interest rate investors demand, topping 8%, according to Bloomberg. That is a notably high rate for a well-known company, reflecting the risk investors attach to debt tied to expensive, fast-depreciating AI hardware.</p><p>Companies building AI infrastructure, from chips to data centres, increasingly rely on debt markets rather than just cash or equity to fund this spending, which counts as capital expenditure, or capex, because it buys long-lasting equipment. Borrowing at 8% means SpaceX will pay substantially more in interest than a typical investment-grade borrower would, suggesting lenders see real risk in betting on AI chip demand staying strong enough to justify the cost.</p><p>The deal adds to a growing pile of AI-linked debt across the industry, feeding into broader worries about an AI bubble, where spending and valuations run far ahead of proven profits. If AI demand or chip prices falter, companies that borrowed heavily to buy hardware could find themselves repaying expensive debt against assets that have fallen in value.</p><p>The size and cost of this deal will likely be watched closely by other AI infrastructure firms weighing whether to follow SpaceX&#39;s path of debt-funded expansion rather than relying on their own cash.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxONVcyODRRd3dtZnhoUVlCTGhjdjZjamw4Wll5Z1BhZ01iUFZFX2N0dUNXYlQ5Sk5uU2lVQnJJNERaTnc5TER1aGRvV3ZKWk41a1Ywbm5fTVU5LVVpcjNpaHZFQWw1ZG9aUE95TkRSSkV0Qnd0YVhXUmtpSFhJWEFrUmwwRWxMb2NDdE8zdXR4YjZhM3E4eTc3TVpoUWNkelNUM0lEUEVCcDg3UU00UTNoZVNB?oc=5" target="_blank" rel="noopener">Bloomberg.com</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Yield</dt><dd>A bond&#39;s yield is the effective annual return a lender earns for lending money, expressed as a percentage; a higher yield usually means investors see more risk of not being repaid in full.</dd></div><div><dt>Bond</dt><dd>Reminder: a bond is essentially an IOU, where an investor lends money to a company or government in exchange for regular interest payments and the return of the original sum later.</dd></div><div><dt>Capital expenditure (capex)</dt><dd>Reminder: capex is money spent on long-term assets like chips, buildings or equipment, as opposed to day-to-day running costs.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Debt-financed AI buildouts are creating demand for credit analysts who can judge whether a company&#39;s AI bets will generate enough cash to repay expensive loans, a useful skill to flag if you&#39;re interviewing for roles in fixed income or risk.</p></div>
+  </article>
+  
+  <article id="story-4">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>FCA Launches &#39;AI Spotlight Observatory&#39; to Track Fintech Adoption</h3>
+    <p class="standfirst">Britain&#39;s financial regulator has opened a public platform showcasing real examples of how banks and fintechs are actually using AI.</p>
+    <div class="body"><p>The UK&#39;s Financial Conduct Authority (FCA) has launched the AI Spotlight Observatory, a platform collecting real-world examples of AI use across banking, insurance and other financial services, according to Finextra and other outlets. The FCA describes it as a world-first tool meant to help firms spot emerging trends and opportunities in how AI is actually being deployed, rather than how it is marketed.</p><p>The FCA is the body responsible for supervising financial firms operating in the UK, making sure they treat customers fairly and manage risk properly. As AI tools spread into areas like fraud detection, credit decisions and customer service, regulators have been trying to keep pace by understanding how firms are using these systems in practice, not just in press releases.</p><p>No specific financial figures were given alongside the launch, but the observatory adds to a wave of regulatory attention on AI in finance this year, following warnings from central banks about AI-related risks to financial stability.</p><p>For fintech firms, the platform could become a useful reference point when designing new AI products, showing them what kinds of use cases regulators are already comfortable discussing openly.</p></div>
+    
+    <p class="src">Sources: <a href="https://www.finextra.com/newsarticle/48787/fca-opens-ai-spotlight-observatory?utm_medium=rssfinextra&amp;utm_source=finextrafeed" target="_blank" rel="noopener">Finextra Research Headlines</a> · <a href="https://news.google.com/rss/articles/CBMivgFBVV95cUxOYktfbkFuOGZmUU92WlBzdmZZWE9TWUpYakRqSGNoRHc1RTR3aFNKZWo4RHpKRk44LURFczk2VFNpZkZRRDJDTjItNnJMSlBFQWlhUTdGZ04tbnV1WEwwWVowSDhTenNNSGtvcFN0ZVRLZHhRbktkbXNmSC1VbS1GdmZmNkZsSGtfQUZ6Q05NbkF6RExXVjJ6UlJ6WTBJVjZtMmYxc05icE1QdVZ3cTdhdUo5U1M4ZU9uTFVmN2V3?oc=5" target="_blank" rel="noopener">Global Regulation Tomorrow</a> · <a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxObmUyakVYMFNWWF9kZkppQ2xSdzFkMkRjWVBZb2pBZG1ackItOVFTdDN6R01HemlYdF8yS2RJTVJSMGwxU253YjdjZml2R2VzOXVLWm5nWW1xRTl3ckZEMUZPSjQydWVEd1dOMWtXWkEyU3V3dm1tQWdDd0FPcEUzanc4ODVhSUZQX0phR2tGYWNwUlp3TTI4XzlBTTBfUEY2dWpaNTEzdWw0X1J1V0FF?oc=5" target="_blank" rel="noopener">FF News</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Financial Conduct Authority (FCA)</dt><dd>The FCA is the UK regulator that oversees banks, insurers and other financial firms, with powers to set rules and take action against firms that treat customers unfairly or take on excessive risk.</dd></div><div><dt>Regulator</dt><dd>A regulator is a government body that sets and enforces rules for an industry; in finance, this usually includes making sure firms are safe, fair and transparent with customers.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Understanding how regulators like the FCA are approaching AI is useful if you&#39;re aiming for a compliance, risk or product role at a UK bank or fintech, since regulatory expectations increasingly shape what AI features firms are allowed to launch.</p></div>
+  </article>
+  
+  <article id="story-5">
+    <span class="mono kicker">AI &amp; finance</span>
+    <h3>Fed Flags $3 Trillion Hidden Risk From AI Investment Boom</h3>
+    <p class="standfirst">The central bank has warned that losses from an AI slowdown could ripple well beyond technology stocks and into the wider financial system.</p>
+    <div class="body"><p>The Federal Reserve has reportedly warned about a roughly $3 trillion risk tied to the AI investment boom, according to 24/7 Wall St, though full details of the warning were not available beyond this report. The concern centres on how deeply AI-related spending, borrowing and stock valuations have become woven into the broader financial system.</p><p>Much of the AI build-out, from data centres to chips, has been funded not just by company cash but by debt and investor capital, meaning a slowdown in AI demand or profits could hit lenders, bondholders and shareholders well beyond the tech sector itself. This is sometimes described as systemic risk, where problems in one part of the financial system spread to others that seem unrelated at first glance.</p><p>The warning adds to a string of similar concerns raised this year by other financial institutions about an AI bubble, where valuations and spending run ahead of clear profits. Central banks have generally stopped short of predicting an imminent crash, instead flagging the scale of exposure as something worth monitoring closely.</p><p>If AI earnings disappoint or spending slows sharply, the Fed&#39;s warning suggests the fallout could be felt in pension funds, insurers and banks that are indirectly exposed to AI-linked debt and equity, not just in technology company share prices.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMi1wFBVV95cUxOVV9Zc3ZVbUFNcmp5WXg2YXgwaVg5YjBPZnVuRXItNWNBT1hiOXExamoydFAyN2xvWVhtTmlyYWU5Q1psR2JwV2k3YTNQOC1VR0ZyclhoUmxBTm5VSnJKakhzckprZnowNEZzRjd4Rkp0YWRCYzBrTTFDclpNLUkyRXZYbFIxcmlCUFp4dHBkRmlHMWtXSy1PR2luVmJPb3EwbkpFZVRXWDNGdmZocEIwVFJSVHRhMzAtOG5KcnRvUnNDWjE2bDduSGJmZTQ0MjBaQjhIaF83cw?oc=5" target="_blank" rel="noopener">24/7 Wall St.</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Systemic risk</dt><dd>Reminder: systemic risk is the danger that trouble in one part of the financial system, like one sector or one type of debt, spreads and damages the wider economy.</dd></div><div><dt>AI bubble</dt><dd>Reminder: an AI bubble refers to the fear that AI company valuations and spending have risen faster than actual profits can justify, similar to the dotcom bubble of the late 1990s.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Central bank warnings like this are a useful talking point in interviews for risk or macro roles, showing you understand that AI exposure isn&#39;t confined to tech stocks but runs through bonds, pensions and bank balance sheets too.</p></div>
+  </article>
+  
+</section>
+
+<section id="startups" class="startups">
+  <div class="sec-head">
+    <span class="mono">Section 3</span>
+    <h2>Startups &amp; funding</h2>
+    <p>Who raised, how much, and what investors are betting on.</p>
+  </div>
+  
+  <article id="story-6">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>Drug-Design Startup Boltz Raises $110m to Speed Up Molecule Research</h3>
+    <p class="standfirst">The AI startup wants to help pharmaceutical researchers design small-molecule drugs faster using machine learning models.</p>
+    <div class="body"><p>Boltz, a startup building AI tools for drug design, has raised $110 million to expand its work helping pharmaceutical researchers speed up the search for new small-molecule drugs, according to SiliconANGLE and Superpower Daily. Small molecules are the chemical compounds behind most traditional pills, as opposed to larger biological drugs like antibodies.</p><p>Designing a new drug candidate traditionally takes years of trial-and-error lab work. AI drug discovery tools aim to predict which chemical structures are likely to work and be safe before they are physically tested, potentially cutting years and significant cost from the process. Boltz&#39;s funding will reportedly go toward building and selling these prediction tools directly to pharmaceutical researchers.</p><p>No valuation or list of investors was disclosed in the available reporting. The raise adds Boltz to a growing list of AI-for-science startups attracting large early-stage cheques, as investors bet that AI can meaningfully shorten the drug development pipeline.</p><p>The sector remains unproven at scale, with few AI-discovered drugs having completed clinical trials so far, but continued funding rounds like this suggest investor appetite for the space remains strong.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMirgFBVV95cUxPTGVSME02djlGR3JYbmxzSnZESTZzbjdyUGdNVGpoNzJMUlVtWXd1QmpQVE5fRXpmZEdqeG90VEtGUmxtcXZnOEY4cDZQRGtoVDh3T2gybTZiNmxlNjJUZEJzY0hyM3dqdDQxYk9hajYycnZaMzFFdllMb2ZlblIzbEl2MlVETl9zUF9HcUNnck1ReExTay11THdjdUl5azE2dk04NHljVzI5NTlMeFE?oc=5" target="_blank" rel="noopener">SiliconANGLE</a> · <a href="https://news.google.com/rss/articles/CBMiuAFBVV95cUxNSXNGWGVpZWNTLU9Ka2RHamdIRXByZmpHNGRYS0pHSEhld2ZNbHpZTDFRMzlfaEJ6VEtmNnJHNWhrd2k1a2oyZWxvZ3JrN1Q1T2pmY016QWp0bXpuQzdEMjdZd1o4VE5va1QtTy1HOTFFb3FnMzQzQ1pWbFFFQnQxN1hlZW5xempDQ0J0ZjJVY2I3Ymc1TkFGZDg5blN4c01hdjN3dmNMS3ltOVd2Z0N5WElxQ1hEdmpN?oc=5" target="_blank" rel="noopener">Superpower Daily</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>AI drug discovery</dt><dd>Reminder: this is the use of AI models to predict which chemical compounds might work as safe, effective drugs, aiming to speed up the slow, expensive traditional lab process.</dd></div><div><dt>Funding round</dt><dd>Reminder: a funding round is a batch of investment a startup raises at one time, usually in exchange for a share of ownership in the company.</dd></div><div><dt>Valuation</dt><dd>Reminder: a valuation is investors&#39; estimate of what a whole company is worth, often calculated from the price paid for a small stake in a funding round.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Big raises for AI-for-science startups highlight a growing career path for people who combine coding skills with a science background, such as biology or chemistry, bridging the gap between machine learning teams and lab researchers.</p></div>
+  </article>
+  
+  <article id="story-7">
+    <span class="mono kicker">Startups &amp; funding</span>
+    <h3>Deutsche Telekom Invests $110m in French AI Lab Mistral</h3>
+    <p class="standfirst">Europe&#39;s largest telecoms company is putting money behind Mistral AI as it tries to build a European alternative to US AI giants.</p>
+    <div class="body"><p>Deutsche Telekom is investing roughly $110 million in Mistral AI, the French artificial intelligence startup, according to Quartz. The investment comes from a major telecoms operator rather than a traditional venture capital fund, a pattern known as corporate venture capital, where established companies invest directly in startups whose technology could benefit their own business.</p><p>Mistral AI has positioned itself as a leading European player among frontier AI labs, the small group of companies building the most advanced general-purpose AI models, competing with larger US firms like OpenAI and Google. Backing from a telecoms giant could give Mistral both capital and a potential distribution partner, since Deutsche Telekom serves millions of customers across Europe who could eventually access AI tools built on Mistral&#39;s technology.</p><p>No further details on Mistral&#39;s resulting valuation or ownership stake were available in the source reporting.</p><p>The investment fits a wider European push to build &#39;sovereign&#39; AI capability, so the region isn&#39;t entirely dependent on American AI companies, a theme likely to keep attracting both government and corporate money into European AI labs.</p></div>
+    
+    <p class="src">Sources: <a href="https://news.google.com/rss/articles/CBMieEFVX3lxTE56U3RMN2pack13RjJWYkE0NU9fTnNRSkZhSTcyMWNRVV9vRTJrMlNNQ25uRG80c0xaeFNFU21zLTVMWmc0R1FQME8wVldxV1BOTzBodnphazlzcE8xTi16VmpjcUJBOThJeWJ4cDlGbVp1N1VDRnZxNg?oc=5" target="_blank" rel="noopener">Quartz</a></p>
+    
+    <div class="concepts">
+      <span class="mono">Key concepts in this story</span>
+      <dl><div><dt>Corporate venture capital</dt><dd>Reminder: this is when an established company, rather than a dedicated investment fund, puts money into a startup, often because the startup&#39;s technology could help its own business.</dd></div><div><dt>Frontier AI lab</dt><dd>Reminder: a frontier AI lab is one of the small number of companies, like OpenAI, Google DeepMind or Mistral, building the most advanced general-purpose AI models available.</dd></div><div><dt>Funding round</dt><dd>Reminder: a funding round is a batch of investment a startup raises at one time, typically in exchange for equity.</dd></div></dl>
+    </div>
+    
+    <div class="why"><span class="mono">Why it matters for you</span><p>Corporate investors like telecoms firms backing AI labs shows how non-tech companies are trying to secure early access to AI technology, which is worth mentioning if you&#39;re asked in an interview how industries outside Silicon Valley are positioning themselves around AI.</p></div>
+  </article>
+  
+</section>
+
+
+
+<div class="panel" id="code">
+  <span class="mono">Code corner</span>
+  <h2>Checking the Chip Export Approval Rate</h2>
+  <p class="src">Based on: <a href="#story-2">Congress Reveals US Approved 879,000 AI Chips for Sale to China</a></p>
+  <p style="margin:0">Story 2 mentioned that out of 3.4 million AI chip export requests, only 879,000 were approved, roughly one in four. Here&#39;s a small Python script that works with that kind of data using dictionaries, the way an analyst might summarise a dataset of export license requests.</p>
+  <pre><code>requests = [
+    {&#34;company&#34;: &#34;Alibaba&#34;, &#34;requested&#34;: 500000, &#34;approved&#34;: 120000},
+    {&#34;company&#34;: &#34;Tencent&#34;, &#34;requested&#34;: 400000, &#34;approved&#34;: 95000},
+    {&#34;company&#34;: &#34;ByteDance&#34;, &#34;requested&#34;: 300000, &#34;approved&#34;: 60000},
+]
+
+total_requested = 0
+total_approved = 0
+
+for row in requests:
+    total_requested += row[&#34;requested&#34;]
+    total_approved += row[&#34;approved&#34;]
+    rate = row[&#34;approved&#34;] / row[&#34;requested&#34;] * 100
+    print(f&#34;{row[&#39;company&#39;]}: {rate:.1f}% approved&#34;)
+
+overall_rate = total_approved / total_requested * 100
+print(f&#34;\nOverall approval rate: {overall_rate:.1f}%&#34;)</code></pre>
+  <span class="mono">Line by line</span>
+  <ol class="walk"><li>`requests = [...]` creates a list of dictionaries, each representing one company&#39;s chip export requests, with keys for the company name, the number requested, and the number approved.</li><li>The `for row in requests:` loop goes through each dictionary one at a time, letting us read and use its values.</li><li>`rate = row[&#34;approved&#34;] / row[&#34;requested&#34;] * 100` calculates the approval percentage for that single company, and `:.1f` formats it to one decimal place.</li><li>After the loop, `total_approved / total_requested * 100` calculates one overall rate across all companies combined, mirroring how the real committee reported an overall &#39;roughly one in four&#39; approval rate.</li></ol>
+  <div class="tryit"><p><b>Try it:</b> Add a fourth company to the `requests` list with its own requested and approved numbers, then rerun the script to see how it changes the overall approval rate.</p></div>
+</div>
+
+<div class="panel" id="quiz">
+  <span class="mono">Quiz · apply today's concepts</span>
+  <h2>What would you do?</h2>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 1</span>
+    <p class="scenario">You&#39;re in a technical interview and the interviewer asks you to explain, in simple terms, why Nvidia might be interested in buying a company that builds &#39;diffusion&#39; AI models instead of standard chatbot models.</p>
+    <p class="ask">Which answer best explains the key technical difference that would matter here?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>Diffusion models can only generate images, so Nvidia must want to expand into photo editing software</span></button></li><li><button type="button" data-i="1"><b>B</b><span>Diffusion models generate outputs by refining noise, sometimes producing many parts of an answer at once, which can make certain tasks faster than generating word by word</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Diffusion models require no GPUs at all, so Nvidia is trying to compete with its own hardware business</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Diffusion models are simply a rebranded version of reinforcement learning with no real architectural difference</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> Diffusion models build an output by gradually refining noise rather than predicting one token at a time, which can allow faster or parallel generation for some tasks. The image-only claim is wrong because diffusion techniques are increasingly applied to text and code too, and diffusion models still rely heavily on GPUs.</p>
+        <div class="chips"><span>Diffusion model</span><span>Inference</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 2</span>
+    <p class="scenario">It&#39;s your first week as a junior credit analyst, and your manager shows you that SpaceX recently borrowed $32 billion at yields above 8% to fund AI chip purchases, while typical large, stable companies often borrow at much lower rates.</p>
+    <p class="ask">What does the high yield most likely signal to investors?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>That SpaceX chips will be worth more in the future, so the loan is effectively free money</span></button></li><li><button type="button" data-i="1"><b>B</b><span>That lenders see meaningfully more risk in this debt, possibly linked to how quickly AI chips lose value or uncertainty over future AI demand</span></button></li><li><button type="button" data-i="2"><b>C</b><span>That the yield is unrelated to risk and purely reflects government interest rate policy</span></button></li><li><button type="button" data-i="3"><b>D</b><span>That SpaceX is a public company and must pay higher yields by law</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> A high yield typically compensates lenders for taking on more risk, and lending against fast-depreciating, demand-uncertain AI chips is riskier than lending to a stable, diversified borrower. The &#39;free money&#39; and &#39;required by law&#39; options misunderstand how bond pricing reflects risk, not guaranteed profit or legal mandate.</p>
+        <div class="chips"><span>Yield</span><span>Bond</span><span>Capital expenditure (capex)</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="1">
+    <span class="mono" style="color:var(--muted)">Scenario 3</span>
+    <p class="scenario">Your team is deciding whether to deploy an agentic AI system, similar to the one Danaher is reportedly building with Microsoft, to run lab experiments with minimal supervision.</p>
+    <p class="ask">What is the most important safeguard to consider before giving the AI agent full control over experiments?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>Making sure the AI has the largest possible context window so it remembers every past experiment</span></button></li><li><button type="button" data-i="1"><b>B</b><span>Keeping a human in the loop to review or approve key decisions before they are carried out, especially where mistakes are costly</span></button></li><li><button type="button" data-i="2"><b>C</b><span>Switching to a general-purpose chatbot instead of any specialised vertical AI tool</span></button></li><li><button type="button" data-i="3"><b>D</b><span>Avoiding any monitoring, since AI agents are designed to be fully autonomous from day one</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: B.</b> Human-in-the-loop review is the standard safeguard for agentic AI in high-stakes settings like labs or factories, catching errors before they cause real damage. A larger context window doesn&#39;t address safety, and removing monitoring entirely increases risk rather than reducing it.</p>
+        <div class="chips"><span>AI agent</span><span>Human-in-the-loop AI</span><span>Vertical AI</span></div>
+      </div>
+    </details>
+  </div>
+  
+  <div class="q" data-correct="0">
+    <span class="mono" style="color:var(--muted)">Scenario 4</span>
+    <p class="scenario">You&#39;re in a startup pitch meeting and a founder mentions that a large telecoms company, rather than a venture capital fund, wants to invest $110 million in their AI company.</p>
+    <p class="ask">What should you understand about this kind of investor compared to a typical venture capital fund?</p>
+    <ol class="opts"><li><button type="button" data-i="0"><b>A</b><span>It&#39;s a corporate venture capital investment, meaning the telecoms company is investing partly because the startup&#39;s technology could benefit its own business, not purely for financial return</span></button></li><li><button type="button" data-i="1"><b>B</b><span>It must be a scam, since only specialist VC funds are legally allowed to invest in startups</span></button></li><li><button type="button" data-i="2"><b>C</b><span>It means the startup is guaranteed to be acquired by the telecoms company within a year</span></button></li><li><button type="button" data-i="3"><b>D</b><span>It has no effect on the startup&#39;s valuation or future funding rounds</span></button></li></ol>
+    <details>
+      <summary>Show answer</summary>
+      <div class="answer">
+        <p><b>Answer: A.</b> Corporate venture capital investors often have strategic motives, such as wanting early access to the technology or a partnership angle, alongside financial return, which is a key difference from traditional VC funds. The other options either invent a legal restriction that doesn&#39;t exist or wrongly assume guaranteed outcomes that aren&#39;t implied by an investment alone.</p>
+        <div class="chips"><span>Corporate venture capital</span><span>Funding round</span><span>Frontier AI lab</span></div>
+      </div>
+    </details>
+  </div>
+  
+</div>
+
+<div class="panel" id="glossary">
+  <span class="mono">Glossary</span>
+  <h2>Every concept from today</h2>
+  <dl class="gloss"><div><dt>Acquisition<a href="#story-0">see story</a></dt><dd>Reminder: an acquisition is when one company buys another outright, taking ownership of its technology, products and usually its staff.</dd></div><div><dt>AI agent<a href="#story-1">see story</a></dt><dd>Reminder: an AI agent is software that can take a series of actions toward a goal, such as checking a reading and then adjusting a setting, rather than just giving a one-off answer to a question.</dd></div><div><dt>AI bubble<a href="#story-5">see story</a></dt><dd>Reminder: an AI bubble refers to the fear that AI company valuations and spending have risen faster than actual profits can justify, similar to the dotcom bubble of the late 1990s.</dd></div><div><dt>AI drug discovery<a href="#story-6">see story</a></dt><dd>Reminder: this is the use of AI models to predict which chemical compounds might work as safe, effective drugs, aiming to speed up the slow, expensive traditional lab process.</dd></div><div><dt>Bond<a href="#story-3">see story</a></dt><dd>Reminder: a bond is essentially an IOU, where an investor lends money to a company or government in exchange for regular interest payments and the return of the original sum later.</dd></div><div><dt>Capital expenditure (capex)<a href="#story-3">see story</a></dt><dd>Reminder: capex is money spent on long-term assets like chips, buildings or equipment, as opposed to day-to-day running costs.</dd></div><div><dt>Congressional oversight<a href="#story-2">see story</a></dt><dd>Reminder: this is Congress&#39;s role in monitoring how government agencies and companies are behaving, including by demanding documents or holding hearings.</dd></div><div><dt>Corporate venture capital<a href="#story-7">see story</a></dt><dd>Reminder: this is when an established company, rather than a dedicated investment fund, puts money into a startup, often because the startup&#39;s technology could help its own business.</dd></div><div><dt>Diffusion model<a href="#story-0">see story</a></dt><dd>A type of AI model that creates an output by starting with random noise and gradually refining it, rather than generating word by word. It&#39;s the technique behind most AI image generators, and some researchers are now applying it to text and code.</dd></div><div><dt>Diversion risk<a href="#story-2">see story</a></dt><dd>Reminder: diversion risk is the danger that goods sold to one buyer are secretly passed on to someone else, such as a sanctioned company or government, who was never meant to receive them.</dd></div><div><dt>Entity List<a href="#story-2">see story</a></dt><dd>Reminder: the Entity List is a US government blacklist of companies barred, or restricted, from receiving American technology without special approval.</dd></div><div><dt>Export licence<a href="#story-2">see story</a></dt><dd>An export licence is government permission required before a company can legally sell certain restricted goods, like advanced AI chips, to a foreign buyer.</dd></div><div><dt>Financial Conduct Authority (FCA)<a href="#story-4">see story</a></dt><dd>The FCA is the UK regulator that oversees banks, insurers and other financial firms, with powers to set rules and take action against firms that treat customers unfairly or take on excessive risk.</dd></div><div><dt>Frontier AI lab<a href="#story-7">see story</a></dt><dd>Reminder: a frontier AI lab is one of the small number of companies, like OpenAI, Google DeepMind or Mistral, building the most advanced general-purpose AI models available.</dd></div><div><dt>Funding round<a href="#story-7">see story</a></dt><dd>Reminder: a funding round is a batch of investment a startup raises at one time, typically in exchange for equity.</dd></div><div><dt>Human-in-the-loop AI<a href="#story-1">see story</a></dt><dd>Reminder: this means a person reviews or approves an AI&#39;s decisions before they&#39;re acted on, which is especially important in factories and labs where errors are expensive or dangerous.</dd></div><div><dt>Inference<a href="#story-0">see story</a></dt><dd>Inference is when an already-trained AI model is actually used to produce an answer, as opposed to the earlier, much more expensive process of training it. Faster inference means an AI assistant can reply to you more quickly and cheaply.</dd></div><div><dt>Regulator<a href="#story-4">see story</a></dt><dd>A regulator is a government body that sets and enforces rules for an industry; in finance, this usually includes making sure firms are safe, fair and transparent with customers.</dd></div><div><dt>Systemic risk<a href="#story-5">see story</a></dt><dd>Reminder: systemic risk is the danger that trouble in one part of the financial system, like one sector or one type of debt, spreads and damages the wider economy.</dd></div><div><dt>Valuation<a href="#story-6">see story</a></dt><dd>Reminder: a valuation is investors&#39; estimate of what a whole company is worth, often calculated from the price paid for a small stake in a funding round.</dd></div><div><dt>Vertical AI<a href="#story-1">see story</a></dt><dd>Reminder: vertical AI means a model or product built for one specific industry, like laboratories or food manufacturing, instead of a general-purpose assistant.</dd></div><div><dt>Yield<a href="#story-3">see story</a></dt><dd>A bond&#39;s yield is the effective annual return a lender earns for lending money, expressed as a percentage; a higher yield usually means investors see more risk of not being repaid in full.</dd></div></dl>
+</div>
+
+<div class="panel">
+  <span class="mono">Past digests</span>
+  <ul class="archive"><li><a href="../archive/2026-11-20.html" aria-current="page">2026-11-20</a></li><li><a href="../archive/2026-11-19.html">2026-11-19</a></li><li><a href="../archive/2026-11-18.html">2026-11-18</a></li><li><a href="../archive/2026-11-17.html">2026-11-17</a></li><li><a href="../archive/2026-11-16.html">2026-11-16</a></li><li><a href="../archive/2026-11-15.html">2026-11-15</a></li><li><a href="../archive/2026-11-14.html">2026-11-14</a></li><li><a href="../archive/2026-11-13.html">2026-11-13</a></li><li><a href="../archive/2026-11-12.html">2026-11-12</a></li><li><a href="../archive/2026-11-11.html">2026-11-11</a></li><li><a href="../archive/2026-11-10.html">2026-11-10</a></li><li><a href="../archive/2026-11-09.html">2026-11-09</a></li><li><a href="../archive/2026-11-08.html">2026-11-08</a></li><li><a href="../archive/2026-11-07.html">2026-11-07</a></li><li><a href="../archive/2026-11-06.html">2026-11-06</a></li><li><a href="../archive/2026-11-05.html">2026-11-05</a></li><li><a href="../archive/2026-11-04.html">2026-11-04</a></li><li><a href="../archive/2026-11-03.html">2026-11-03</a></li><li><a href="../archive/2026-11-02.html">2026-11-02</a></li><li><a href="../archive/2026-11-01.html">2026-11-01</a></li><li><a href="../archive/2026-10-31.html">2026-10-31</a></li><li><a href="../archive/2026-10-30.html">2026-10-30</a></li><li><a href="../archive/2026-10-29.html">2026-10-29</a></li><li><a href="../archive/2026-10-28.html">2026-10-28</a></li><li><a href="../archive/2026-10-27.html">2026-10-27</a></li><li><a href="../archive/2026-10-26.html">2026-10-26</a></li><li><a href="../archive/2026-10-25.html">2026-10-25</a></li><li><a href="../archive/2026-10-24.html">2026-10-24</a></li><li><a href="../archive/2026-10-23.html">2026-10-23</a></li><li><a href="../archive/2026-10-22.html">2026-10-22</a></li></ul>
+</div>
+
+<footer>Written by Claude from the linked sources. Check the original article before quoting figures in an interview.</footer>
+</div>
+<script>
+document.querySelectorAll(".q").forEach(function (q) {
+  var correct = Number(q.dataset.correct);
+  var buttons = q.querySelectorAll(".opts button");
+  buttons.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var picked = Number(b.dataset.i);
+      buttons.forEach(function (x) {
+        var i = Number(x.dataset.i);
+        if (i === correct) x.classList.add("right");
+        else if (i === picked) x.classList.add("wrong");
+        x.disabled = true;
+      });
+      q.querySelector("details").open = true;
+    });
+  });
+});
+</script>
+</body>
+</html>
