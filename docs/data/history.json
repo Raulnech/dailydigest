@@ -1,56 +1,5 @@
 [
   {
-    "date": "2026-11-14",
-    "headlines": [
-      "OpenAI launches ChatGPT Wallet so its AI agents can shop with your card",
-      "FAA rolls out $875m AI traffic tool nationwide after 180-flight trial",
-      "OpenAI disbands stand-alone robotics team, betting general models can run machines",
-      "Fed survey: bankers now see AI as the top threat to financial stability",
-      "US bank regulator OCC flags credit risk from AI infrastructure lending",
-      "Wall Street AI tool Rogo reportedly valued at $2bn",
-      "Cohere acquires code-review startup Cubic in latest buyout",
-      "Rox raises $100m at $1.3bn valuation for AI sales agents"
-    ],
-    "concepts": [
-      "AI agent",
-      "Payment tokenisation",
-      "Biometric authentication",
-      "Human-in-the-loop AI",
-      "Phased rollout",
-      "General-purpose model",
-      "Narrow (specialised) AI",
-      "Financial stability survey",
-      "AI bubble",
-      "OCC (Office of the Comptroller of the Currency)",
-      "Underwriting standards",
-      "Vertical AI",
-      "Valuation",
-      "AI code review",
-      "Frontier AI lab",
-      "Funding round",
-      "Corporate venture capital"
-    ],
-    "links": [
-      "https://openai.com/index/introducing-chatgpt-wallet",
-      "https://www.theverge.com/ai-artificial-intelligence/1033425/openai-chatgpt-wallet",
-      "https://www.cnbc.com/2026/11/13/openai-chatgpt-wallet-dot-purchases.html",
-      "https://news.google.com/rss/articles/CBMihwFBVV95cUxPZWhSdDY4UU1NV212WnA1Vm9taWxQMmU5bE52OTdKZ0hPQ3lOeE1PRm9nQl9EeUFURm9ZNHFwUUdQbWV3Y0xlQzgxS2xjUHNsSzB4MUVrcTZ4N2ZlRGdNdFdLamhYQUlvaEt3ZXV0amthQi11SmVsaUNfUC1XRkczVGV0S3RZb2s?oc=5",
-      "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9lV1YtYXc2bXJmZ3hBYzRpVTdCbEZaNkZPdU01XzJPSV9OV25GMUNsQVV3ZVQ4bklPQ2c3Tzd2c0RpV2ppTUEwREU3aW5QbHh0RUZwWUFxYXhPb0wzQTFHXzZZYzFrUnZM?oc=5",
-      "https://www.finextra.com/newsarticle/48759/openai-launches-chatgpt-wallet?utm_medium=rssfinextra&utm_source=finextrafeed",
-      "https://arstechnica.com/features/2026/11/faa-expands-ai-advice-to-manage-air-traffic-congestion-across-entire-us-airspace/",
-      "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQc0RCaDFRSml1TkxBN09Ed3pkZDhDNDAzYThkdktlU3lVMy1IblZSb0dyRkw2TjNCTFF0c0dha25JdlZNNzh1OWlrTzI5T2dOUEtGSHdWNDVMTlMyZm5BS3lGQXNtTnN3Wm82OUtMOGVHX2FsOUhBZHRGQlVKQXJrMTZtM2xHTWQ2VmVnRlhhd0RTamJiWEZabWc1TVFZTk1ieDdDQ3ZxTmxJVy1kczNnUWM0UVpEVVFZWmgtM1RhVXpyMGdKN0ZpY3I4SzZIR0RJd2JMdmY5S1Q2VTFYTFVTUG1zcmE?oc=5",
-      "https://news.google.com/rss/articles/CBMipwFBVV95cUxQdUpabzdVdVRFd0RUN0pnVTJuQUtkYThSdzlhc3FHSmxmTnZETWNyajZGcGEtVHFvYmxMTGJMa0VHaGxEMVh5bmY1MXlVTDlWTHVBWlotdkJ0ZmRSdk9GRzh0ZTNrZElwYzlLWmp0ZkZqRFZKOEI5RkdDdkVHYzVUWFpOU2NqTnJGTmF3R0dTQTRGaDFXZl9jQ2s5bEd4dHJFZFRyQ3hrcw?oc=5",
-      "https://news.google.com/rss/articles/CBMihAFBVV95cUxOd1luSGcydUl6NE15cEcydlNhSnRuNjNjVHdMQldrQjRYcXpLZ3FfbnNrWndndDNTaUowRWJ6NDg0dUdaN084LW00YU4tNEhPTXh6Ymx3WVFpZk5MQTgwVFpMX1o4cFdXT2lCQi1xSzlncG9mUkpDa0xTUF9BY2E3cXVnS2fSAYoBQVVfeXFMTmZFcVNQMElxVkdHNTFNMVBOYTg0SGVKNm5ISHM5N3pGUUxKSE5Za2ZuMmZNb3RnY0FpVWxNbWtIdXFIdm0wOWVIa3FXWVJJaVhhTHBzOVpJbzVnY2VGZk04WE5aRHVBdjdkRlVpSm1VQXo1ckRPRTV4aDNjNGJNeGlhSXZ4ZEhIa1dR?oc=5",
-      "https://news.google.com/rss/articles/CBMinwFBVV95cUxObkh2Q3N3Y3RtWTczVnVTM0FyVlROUXVTdXhiWHhwNXg3eTlnamlndHZ3OUpQa2JPVkt5bW9VS1QtcHBUR1FwNzdYNUk5bXJIZHk4X256TkNMdDA4N2U4UFFMS1pqWXZFNUFQekJGS3lsZzlRWVJaV3ZtMW9hdlJ6SUVRRkN1eG5UVXhsR1ZmVjJROFlQVG45YUs3bGttQnPSAVZBVV95cUxNMXV6TGFuYmE3bDJnV0MyMU9nSXItUGpNNnFKYW5iaFRLZm5mNWJ3QUt3NjJyeWI5QTVQWHZyaEl1WFdfVnlKSlh2WmJOLTFlVXoxam50UQ?oc=5",
-      "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPY1c1SWl0UkptTUZHVzhMdGpEcnRHSUVYRmpEanpxd2NrVGZVaUhzMVlNd1ZhdmVhZ2F3Wnp1bjdtNkMyX0JpeXBnUGJfN1JjRjV5ai1NeEZJVFJqZDNUdnUtYUZvRVEwMzA1LWVTdlRzMjc2N1A2ODI1Z2hCRGEwd0Zkb2tybW4w?oc=5",
-      "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQd2NiUTNadW5Pd1I3QzQwRnVUdkVQbzktVkJ2XzdScW5HTnlBR1BsdDJyUHNpbVM4aWNXTjRIZ252cVJ3VFg2bG5ZOWRkQTJEY1kwLWlwSHBEeXhjNHhVNUw5Y1B5RzREWDJuTW9jODgwRzQ5NWNFZHpubnRzVUU1VVcya2FYc3BPRFN3UHVZLXN1ZGNicmhoUE1QeU9rdHZVeVA0aDl6RFl0Z9IBrwFBVV95cUxNVWk5ODJPamxqNXBmY0c5SzRkMVByR2dBZmN0WjNSaERtTFpZTlhJa3pfN3ZLR0k3X2ZSX2dBb29DdzhWMjBzSHh2ZmJEaGlEVTNDX0UzNkxwSVJaQVNQMzcwZERCYTdmc0pJWVo5OHFSb2JDOHZ4c1VaQm5CSHlLcmNYZi1lWlJFWTlBZnlPZjhqMkx4eXFaUDdremxUQmttNnpXWTBvMGZLNURQOUJj?oc=5",
-      "https://news.google.com/rss/articles/CBMikAFBVV95cUxOY1g1NU1TN0U5dEVxTUJkTVBFWW1uZjJQUHZ6eXFfNWFYZ0M2dzRmOWZjOEZ0TS14cTlBUDB3TTZWN0Z0U2EzdHRMTTl3WkliVUFxaTgzaTVQMW5xSm9LcGhoR3Y4WWdhLUg5b1A5b1lPR1BmS1hTREhRRXJoZGtqb0JvQTl0enVvOGZ6eXZ1bVQ?oc=5",
-      "https://news.google.com/rss/articles/CBMilwFBVV95cUxQZ0VYTV8yd00tYkdyYUtKeURaazhVUDN1ZEVHTS1IVi1za3hORW0xYmt6R2VHUDA4dHNvMU9CemkwV3Z1OENmLVpvc0hjQ0ZfcEhfUERDNm13SmpjUm1LRkpSYk9mN1VRQ3BsMWdmX1VEb1hfcWVCQlF1NzlKWExwUndTRkpUaE1FMF9maG90RXVkc2RSY1hv?oc=5",
-      "https://news.google.com/rss/articles/CBMiWEFVX3lxTFAyM0JZYlRCOVNsb1pNRDdYekxWVHBLRWRSM082SlZ5ZWxYU09zaHhZMlVMUUNoczBOUlBiS25NLS1ZbF9ZY2k1LUlSV0t0MXhseGtjZHp0bGU?oc=5",
-      "https://news.google.com/rss/articles/CBMivgFBVV95cUxOcDY2alEwanBSLVFsNG5LdC1rU3ZqcXliSXJEd3BSdDhLQ0xtQXg3WmF0aHdSVF9LallGVUlnTWFjek9GeVpIZ3hEWGFUMUhBYjEwQk9taWIwYUR1OUlhaUpqWlpLT2xJY3NxU1Ntd19MT0RRaGtwY3N2QUVIbVFMNUNSaXBUbV96TXMydkFaVUxGV0U1dmVvZEEyWHVLaktaWjV2Z2NkZzltS1dkX1ZBUjBnUTVlRjVCQ0lHY29B?oc=5"
-    ]
-  },
-  {
     "date": "2026-11-15",
     "headlines": [
       "Congress Fast-Tracks AI Chip Export Curbs After Huang Resignation Shock",
@@ -422,6 +371,62 @@
       "https://news.google.com/rss/articles/CBMirgFBVV95cUxPTGVSME02djlGR3JYbmxzSnZESTZzbjdyUGdNVGpoNzJMUlVtWXd1QmpQVE5fRXpmZEdqeG90VEtGUmxtcXZnOEY4cDZQRGtoVDh3T2gybTZiNmxlNjJUZEJzY0hyM3dqdDQxYk9hajYycnZaMzFFdllMb2ZlblIzbEl2MlVETl9zUF9HcUNnck1ReExTay11THdjdUl5azE2dk04NHljVzI5NTlMeFE?oc=5",
       "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNSXNGWGVpZWNTLU9Ka2RHamdIRXByZmpHNGRYS0pHSEhld2ZNbHpZTDFRMzlfaEJ6VEtmNnJHNWhrd2k1a2oyZWxvZ3JrN1Q1T2pmY016QWp0bXpuQzdEMjdZd1o4VE5va1QtTy1HOTFFb3FnMzQzQ1pWbFFFQnQxN1hlZW5xempDQ0J0ZjJVY2I3Ymc1TkFGZDg5blN4c01hdjN3dmNMS3ltOVd2Z0N5WElxQ1hEdmpN?oc=5",
       "https://news.google.com/rss/articles/CBMieEFVX3lxTE56U3RMN2pack13RjJWYkE0NU9fTnNRSkZhSTcyMWNRVV9vRTJrMlNNQ25uRG80c0xaeFNFU21zLTVMWmc0R1FQME8wVldxV1BOTzBodnphazlzcE8xTi16VmpjcUJBOThJeWJ4cDlGbVp1N1VDRnZxNg?oc=5"
+    ]
+  },
+  {
+    "date": "2026-11-21",
+    "headlines": [
+      "Trump Threatens 'Tremendous Tax' on US Firms Building AI Data Centres Abroad",
+      "Nvidia Shares Sink 13% as SEC Probes Its China Accounting",
+      "Anthropic Researcher Says AI Helped Crack 150-Year-Old Riemann Hypothesis",
+      "Bill.com Agrees to $6bn Take-Private Deal with TPG and Corpay",
+      "Barclays, Citadel and BNY Deploy Anthropic's Claude Across Trading and Operations",
+      "Fed Governor Cook Says Central Bank Is Watching How AI Firms Are Financed",
+      "Coding Startup Cognition in Talks for $75bn Valuation",
+      "Arva AI Raises $20m to Automate Bank Financial-Crime Compliance"
+    ],
+    "concepts": [
+      "Tariff",
+      "Hyperscaler",
+      "Data sovereignty",
+      "SEC (Securities and Exchange Commission)",
+      "Revenue disclosure (geographic reporting)",
+      "Short selling (reminder)",
+      "Riemann hypothesis",
+      "AI reasoning model",
+      "Peer review",
+      "Take-private deal",
+      "Definitive agreement",
+      "Spend management",
+      "Large language model (LLM)",
+      "Enterprise AI deployment",
+      "Hedge fund (reminder)",
+      "Federal Reserve",
+      "Systemic risk (reminder)",
+      "AI bubble (reminder)",
+      "AI coding agent",
+      "Funding round (reminder)",
+      "Up round (reminder)",
+      "Series A",
+      "Anti-money laundering (AML)",
+      "Vertical AI (reminder)"
+    ],
+    "links": [
+      "https://www.cnbc.com/2026/11/20/trump-data-centers-ai-companies-tax.html",
+      "https://www.theverge.com/policy/1038892/trump-foreign-data-centers-tax",
+      "https://news.google.com/rss/articles/CBMitgFBVV95cUxPMzlPdFVTT2cyVkhmMFVKNWZ1MnpNT0NLcURnblg4THMwUWNuYTRBLWUxU0ZSSUR5bk1zNnBmVlhIUjByNkN6TzVBNC1uaXQxM0dwY2FkMzZQdm00a0xyMXo3NFNpSUNPdERZWU82aGZLa0lNZHpMOXVnVDBVQW9lMmNrWEVRczVYS1Racm1NNlNERDBJeTFJRG1pZVRfTC1LTy1pNjhpVzRaeGRrY25kSzQ1aDNUUQ?oc=5",
+      "https://news.google.com/rss/articles/CBMi-AFBVV95cUxOUTByVEFEb202bVlZSXFnSmg2UDJtcGQyS0Z6RHEydldXV3VJMkFseU1XdUoyc0V1YzVKNzJmQWNWWkh2NHlWbldmak5oaWtBYll0b01fMGhsSmtyRjBIZXFiYk5HUFplcjAzRFUwY24wQ2tiSEZCMzdTR3VLZlNJQ1NmTFNpaFJTY3pPR2JvZUNsTlRwVUJrbkh5b2phYkRmcWZaZHlLaXo2eWRfM01tWXNaOFFORTZGSTkyeGFTUk1qVDdiNHl3cmw3a3JTX3dNQzJlcmhqTENyakRYU3JIc2c4NGhYUjZHckRsbHhYRDUyemM2U09feNIB_gFBVV95cUxPSnllN0U0M094ZHZTWVZWc1RHUXBBZ0V6YnFjLVdZaTN0RjBVeVBwdVhYbHZYMGxhZmlNX2RBMk14S2JSQ1NpQjlZNWRpaWFMaUVrQnBwQWdKZEtpcnlpN0NyQm55aWVMMUVZRUN4ejVJUENkLU5nRzczX3JIZThoYkdPQlFoVldqTExQV2RCdEdHOHFMdmlMLUgxeGEzMDlKZzhyVlFkR283SjdIUHdxYUJfUlRJbDduNmRXdHowZXpBTnpxQjRNekkwbVVmYTMydEFQMkVfQV82enp2NFVFMkEwbWpQVk5mdHJrd0xwaU94anJLYUxfeWFwMmppZw?oc=5",
+      "https://news.google.com/rss/articles/CBMidkFVX3lxTE9FSWRXdzg4OFVyS2psVVE5X2lGMkZlbzNTbEc4Q0JGeXZKcVg2N0ZOVUIzdmVDS3JPYWw5WjU4MXBzMUZjQkl1MURZX3lIYnNtSEczaHJfMXhxT25iUGl2cUE0ZUxZdDNWRDQ0RkswZW02Yi1ITkE?oc=5",
+      "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5Bb1piT1o1MksyOHJFX1Z2WXM3WVpqcDNGd0czODZyN1Iyd1JYRmlTWDFPWmxNSlFmeWRuQWFvNTBDcmRseWtHR05FMlg2XzV0Ny1iazhwdlFKaXpqQkE?oc=5",
+      "https://news.google.com/rss/articles/CBMitgFBVV95cUxQd2R1UU5HMEVNTGhtYWxQaTNBMjVRZnZxZjJVU0U1MVk0U2dIRHh6akhYNV9tNWxXYjNmeU16UzdqZDM3bUpDS1BxOEd2b3oySzVMako4Z25JMmNFUVd5ZlFWNTZ4WmJ6d2NXT0R5Z1JsNVNGMi04MGowVF9CQkl4dEEtXzJNYWRDeHA3Rk1hV250dEZWQjNRLW5RZHZPQ0ZMMlNLSDdkejFKTklvZW1ZNDZZalFOQQ?oc=5",
+      "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOZE9XWEc4d3I3VjlqVUhQZmhVdjNaRkNBbkY0cmIzbkg4a19YZmIzVDRFZjBqb0VIWlNqUkF5RXZUWVd4RVd3eXZLTVo0RkFienNVOGc0Yl9ZV2RuU3lYZWpRUjJxMldGaW51ZGw3OW5XREdDRUpMUFdnbHlaemhIR3dPb25uWXZMLVpReEduaE80VktsX0w3d29DNU5RVWhfZ3RNOG1jdHhLQzBlc240a0xGMHA0WXZJYXJZbm54c3l3bkVESzNCdVBBclBQWUpfUV9mUXlYTjZQcTlGc2Y1VnhxdVDSAeoBQVVfeXFMUHl5X3JkS3FJaHI0UGR5ZHJTSHEwcE5LNkxVWmpaT1NwcnZRaXJ0b3dadFppNkl2UTNjLVM3ZjdWMVZPLVREN19YMWpGR0tkOGZfVG0tRDZMOE5HUkpFc09kR0lVcHJXV293Uk5JVllIZ1NETVBnNmRwTl94a0xtVjNoZXkxT2tGZ2pCeDZyWlMxdjUyRFZuNkhzNjhqd1dvTE1yZ1RHSE04VzBFVEFHdEJoZkhaWlR2cXZ5RTNiT0hjTFVmNnBxUHNvZFpnT2g0Nm1QUVpoT1pPOVpTTjJVY2pIcXlWSi1EV3FB?oc=5",
+      "https://www.finextra.com/pressarticle/111752/bill-agrees-to-be-acquired-by-tpg-in-6bn-deal?utm_medium=rssfinextra&utm_source=finextrafeed",
+      "https://news.google.com/rss/articles/CBMipwFBVV95cUxOWGdDcDFGTVNMdmJjdTM3UEZITDRUa3ZONXo5RWVZZjlxaTdwUXFES19JWjBQdG1qYTBMWDRPbHFjSHZ2S0l1Q0V2dFpPU1QwUk0ydGVKeGFndUk1SkRNSDJxUUUySEIwX0cwSDYzemQxN1IxN0ZkT0s3S3lRWjdWOHVVaEloNFlWbGE1V080OG15X29KM1J5M2ZwN3NMVEZxdHdxMVBPMA?oc=5",
+      "https://news.google.com/rss/articles/CBMipgFBVV95cUxNRHI2aWRzcEgxVVM4TVNuQWFOMVpVZ2cwb19XUEo2ZlhhYjJQXzJlMXdZVFlRVFdicHlrYmoxRE9GZ1NZUFF0R09CeFZ4SV80dWh5M0YxUzFyUEVqMXJLUDBGR0Q5NEhNMkhDYWRRVHZMVWZYZ05UczcyT1hvMkdJLW5jSDZyQU9lUloza1hhQ2EzZWl1cldEaXdmUE50aWJZVGoxYmF3?oc=5",
+      "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOanNxamp2UGFnbHNLSlFpZW4yMXN5MkNzT3ZZTmhLLTcyYmM1clBTc0h3TzRxN2JxM0taQnlCU2tPVnZIMGVJQ1VlSGhtcEZDbE80YjhWOVNyLWtPdW1sekwwN3ZuSnYxcWhJbDBWNDVmRzBqZjhBbkpvYnRFQUxoaW9YZDNOZl9Zd3hETmF3MUwzMklyRnBzVk5ZNkxvcUZvMGg5djFCOWEzZE0?oc=5",
+      "https://news.google.com/rss/articles/CBMivwFBVV95cUxOcWhpaU9neVJMd3hnYmh2YlYzbl9DMF8yWjFqQ2k4LWZVazFRTHdLNmh6alVaM29vaTIwUjFHX1FWWksyX3k4Y1ZmRHk0V21mcldQa29vUXR1QWQyX2xaT1NRaTVHaW1UZGRXQllFM0ticDU1S2lxSG5kMGNLdE1SRnFCNzFGMnd1TW1tVlRWcTZrQVlBVVI5UWx0M29xR2gyckhhTmxKVHVxWllDZlQ3WkJoS1V0VW0tVFpoS0JRTQ?oc=5",
+      "https://news.google.com/rss/articles/CBMikAFBVV95cUxQNzd6LXFGYl9OUTlMYnladkRCa0lFeWZQU09nM3Y1ZXAtbUl5X2NCbnA2eDhhejE5a084RGs5czhJOFVUQ1l1M3FYSjZfQjVWTkVwbGpBTWE2ZzllZ09uRzM4WjhQSTBlNXJiMGpPRGZpenFvN0U2UW01Zjk1bkNNQ2V4aHlzQ1J1TUw5eEhkQWQ?oc=5",
+      "https://news.google.com/rss/articles/CBMiU0FVX3lxTE95UEl3YUE2M3ZfMVR3TjJNUW9BN2VsVFdJaWgxNGZfRFloZy1hb1ltLXZDRk9PUFhiSGlIWkw0TWRIVXViMHlXekJ2VDkxV2RXMng4?oc=5"
     ]
   }
 ]
